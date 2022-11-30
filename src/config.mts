@@ -3,7 +3,8 @@ import {default as debugModule} from 'debug';
 const debug = debugModule('ldk-parser:config');
 
 export default class Config {
-	static getHeaderPath(): string {
+
+	getHeaderPath(): string {
 		// test unions
 		// return '/Users/arik/Developer/ldk-parser/res/union_test.h';
 

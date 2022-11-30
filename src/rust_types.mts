@@ -1,4 +1,4 @@
-export const GLOSSARY: { [name: string]: RustType } = {};
+// export const GLOSSARY: { [name: string]: RustType } = {};
 
 export abstract class RustType {
 	/**

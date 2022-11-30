@@ -3,7 +3,6 @@ import Config from './config.mjs';
 import fs from 'fs';
 import {
 	ContextualRustType,
-	GLOSSARY,
 	RustArray,
 	RustKind,
 	RustLambda,
@@ -15,7 +14,8 @@ import {
 	RustStruct,
 	RustStructField,
 	RustTaggedValueEnum,
-	RustTrait
+	RustTrait,
+	RustType
 } from './rust_types.mjs';
 
 const debug = debugModule('ldk-parser:parser');
@@ -28,7 +28,17 @@ const LAMBDA_REGEX = /^(struct |enum |union )?([A-Za-z_0-9]* \*?)\(\*([A-Za-z_0-
 
 export default class Parser {
 
+	private config: Config;
 	private headerFile: string;
+	private typeGlossary: { [name: string]: RustType } = {};
+
+	constructor(config: Config) {
+		this.config = config;
+	}
+
+	get glossary() {
+		return this.typeGlossary;
+	}
 
 	parse() {
 		// first, read the header file
@@ -40,7 +50,7 @@ export default class Parser {
 	}
 
 	private readHeaderFile() {
-		const headerPath = Config.getHeaderPath();
+		const headerPath = this.config.getHeaderPath();
 		const headerData = fs.readFileSync(headerPath);
 		this.headerFile = headerData.toString();
 	}
@@ -138,7 +148,7 @@ export default class Parser {
 			const mustUseStruct = !!matches[2];
 			const name = matches[3];
 
-			let descriptor = GLOSSARY[name];
+			let descriptor = this.typeGlossary[name];
 			if (!descriptor) {
 				if (type === 'enum') {
 					// either unitary, or union enum
@@ -164,12 +174,18 @@ export default class Parser {
 					 * 4) Aforementioned glossary entry is of type `RustResultValueEnum`
 					 */
 
+					/**
+					 * Lastly, a struct may also be a trait. That happens if any one of its fields
+					 * is a lambda. That's right, we don't mix and match.
+					 * We check lambda presence using a simple regex.
+					 */
+
 					const hypotheticalTagName = name + '_Tag';
 					const hypotheticalResultEnumName = name + 'Ptr';
-					if (hypotheticalTagName in GLOSSARY && GLOSSARY[hypotheticalTagName] instanceof RustPrimitiveEnum) {
+					if (hypotheticalTagName in this.typeGlossary && this.typeGlossary[hypotheticalTagName] instanceof RustPrimitiveEnum) {
 						// it's an enum with associated values, buddy, not a conventional struct
 						descriptor = new RustTaggedValueEnum();
-					} else if (hypotheticalResultEnumName in GLOSSARY && GLOSSARY[hypotheticalResultEnumName] instanceof RustResultValueEnum) {
+					} else if (hypotheticalResultEnumName in this.typeGlossary && this.typeGlossary[hypotheticalResultEnumName] instanceof RustResultValueEnum) {
 						descriptor = new RustResult();
 					} else if (this.containsLambdas(objectLines)) {
 						descriptor = new RustTrait();
@@ -188,7 +204,7 @@ export default class Parser {
 			}
 			descriptor.name = name;
 			descriptor.documentation = docComment;
-			GLOSSARY[name] = descriptor;
+			this.typeGlossary[name] = descriptor;
 
 			if (descriptor instanceof RustPrimitiveEnum) {
 				for (const currentValueLine of objectLines) {
@@ -250,10 +266,10 @@ export default class Parser {
 				// const tagField = this.parseStructField(obj)
 			} else if (descriptor instanceof RustTrait) {
 				for (const currentLambdaLine of objectLines) {
-					if (!LAMBDA_REGEX.test(currentLambdaLine.code)){
+					if (!LAMBDA_REGEX.test(currentLambdaLine.code)) {
 						const currentIdentifier = this.parseStructField(currentLambdaLine);
-						if (descriptor.identifierField){
-							console.error('Multiple identifier fields?', currentLambdaLine.code)
+						if (descriptor.identifierField) {
+							console.error('Multiple identifier fields?', currentLambdaLine.code);
 							process.exit(1);
 						}
 						descriptor.identifierField = currentIdentifier;
@@ -427,8 +443,8 @@ export default class Parser {
 			if (components.length === 2) {
 				const typeName = components[0];
 				const variableName = components[1];
-				if (typeName in GLOSSARY) {
-					rustType = GLOSSARY[typeName];
+				if (typeName in this.typeGlossary) {
+					rustType = this.typeGlossary[typeName];
 					typelessLineRemainder = variableName;
 				} else {
 					console.log('Unknown non-primitive type:\n>', typeLine);
