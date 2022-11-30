@@ -6,6 +6,7 @@ import {
 	GLOSSARY,
 	RustArray,
 	RustKind,
+	RustLambda,
 	RustPrimitive,
 	RustPrimitiveEnum,
 	RustPrimitiveEnumVariant,
@@ -13,7 +14,8 @@ import {
 	RustResultValueEnum,
 	RustStruct,
 	RustStructField,
-	RustTaggedValueEnum
+	RustTaggedValueEnum,
+	RustTrait
 } from './rust_types.mjs';
 
 const debug = debugModule('ldk-parser:parser');
@@ -22,6 +24,7 @@ const debug = debugModule('ldk-parser:parser');
 debug('Here we go');
 
 const FUNCTION_REGEX = /([A-Za-z_0-9\* ]* \*?)([a-zA-Z_0-9]*)\((.*)\);$/;
+const LAMBDA_REGEX = /^(struct |enum |union )?([A-Za-z_0-9]* \*?)\(\*([A-Za-z_0-9]*)\)\((const )?void \*this_arg(.*)\);$/;
 
 export default class Parser {
 
@@ -168,6 +171,8 @@ export default class Parser {
 						descriptor = new RustTaggedValueEnum();
 					} else if (hypotheticalResultEnumName in GLOSSARY && GLOSSARY[hypotheticalResultEnumName] instanceof RustResultValueEnum) {
 						descriptor = new RustResult();
+					} else if (this.containsLambdas(objectLines)) {
+						descriptor = new RustTrait();
 					} else {
 						descriptor = new RustStruct();
 					}
@@ -176,8 +181,7 @@ export default class Parser {
 						// these are all the different values that a Result type may assume
 						descriptor = new RustResultValueEnum();
 					} else {
-						console.log(name);
-						// unimplemented
+						console.log('Unimplemented union type:', name);
 						process.exit(1);
 					}
 				}
@@ -216,6 +220,7 @@ export default class Parser {
 						process.exit(1);
 					}
 				}
+				debugger
 			} else if (descriptor instanceof RustTaggedValueEnum) {
 				let isInsideUnion = false;
 				let structDepth = 0;
@@ -243,8 +248,32 @@ export default class Parser {
 
 				}
 				// const tagField = this.parseStructField(obj)
+			} else if (descriptor instanceof RustTrait) {
+				for (const currentLambdaLine of objectLines) {
+					if (!LAMBDA_REGEX.test(currentLambdaLine.code)){
+						const currentIdentifier = this.parseStructField(currentLambdaLine);
+						if (descriptor.identifierField){
+							console.error('Multiple identifier fields?', currentLambdaLine.code)
+							process.exit(1);
+						}
+						descriptor.identifierField = currentIdentifier;
+						continue;
+					}
+					const currentLambda = this.parseLambda(currentLambdaLine);
+					descriptor.lambdas.push(currentLambda);
+				}
 			}
 		}
+	}
+
+	private containsLambdas(objectLines: ObjectLine[]): boolean {
+		for (const currentLine of objectLines) {
+			console.log(currentLine.code);
+			if (LAMBDA_REGEX.test(currentLine.code)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private parseEnumValue(objectLine: ObjectLine): RustPrimitiveEnumVariant {
@@ -269,6 +298,37 @@ export default class Parser {
 		return rustType;
 	}
 
+	private parseLambda(objectLine: ObjectLine): RustLambda {
+		const matches = LAMBDA_REGEX.exec(objectLine.code);
+
+		const returnType = matches[2];
+		const name = matches[3];
+		const isThisArgConst = !!matches[4];
+		const argumentLine = matches[5];
+		const argumentStrings = argumentLine.split(', ');
+
+		const lambda = new RustLambda();
+		lambda.returnValue = this.parseTypeInformation(returnType.trim());
+		lambda.name = name;
+		lambda.documentation = objectLine.comments;
+
+		for (let currentArgumentLine of argumentStrings) {
+			currentArgumentLine = currentArgumentLine.trim();
+			if (currentArgumentLine.length < 1) {
+				continue;
+			}
+			const currentArgument = this.parseTypeInformation(currentArgumentLine.trim());
+			lambda.arguments.push(currentArgument);
+		}
+
+		return lambda;
+	}
+
+	/**
+	 * Parse the type and variable name information from a single field line of an object
+	 * @param typeLine
+	 * @private
+	 */
 	private parseTypeInformation(typeLine: string): ContextualRustType {
 		let rustType = null;
 
@@ -289,9 +349,9 @@ export default class Parser {
 			relevantTypeLine = relevantTypeLine.substring('const '.length);
 		}
 
-		const nonNullablePointer = relevantTypeLine.includes('NONNULL_PTR');
+		const nonNullablePointer = relevantTypeLine.includes('NONNULL_PTR ');
 		if (nonNullablePointer) {
-			relevantTypeLine = relevantTypeLine.replace('NONNULL_PTR', '');
+			relevantTypeLine = relevantTypeLine.replace('NONNULL_PTR ', '');
 		}
 
 		let typelessLineRemainder = relevantTypeLine;

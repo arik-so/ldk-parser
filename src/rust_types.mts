@@ -39,6 +39,11 @@ export class RustStruct extends RustType {
 	fields: { [name: string]: RustStructField } = {};
 }
 
+export class RustTrait extends RustType {
+	identifierField: ContextualRustType;
+	lambdas: RustLambda[] = [];
+}
+
 export class RustPrimitiveEnum extends RustType {
 	values: RustPrimitiveEnumVariant[] = [];
 }
@@ -81,6 +86,12 @@ export class RustResult extends RustType {
 
 export class RustFunction extends RustType {
 	arguments: RustFunctionArgument[] = [];
+	returnValue: ContextualRustType;
+}
+
+export class RustLambda extends RustType {
+	arguments: RustFunctionArgument[] = [];
+	returnValue: ContextualRustType;
 }
 
 export class ContextualRustType {
