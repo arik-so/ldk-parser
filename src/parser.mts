@@ -8,10 +8,12 @@ import {
 	RustKind,
 	RustPrimitive,
 	RustPrimitiveEnum,
-	RustPrimitiveEnumVariant, RustResult, RustResultValueEnum,
+	RustPrimitiveEnumVariant,
+	RustResult,
+	RustResultValueEnum,
 	RustStruct,
-	RustStructField, RustTaggedValueEnum,
-	RustValueEnum
+	RustStructField,
+	RustTaggedValueEnum
 } from './rust_types.mjs';
 
 const debug = debugModule('ldk-parser:parser');
@@ -82,8 +84,13 @@ export default class Parser {
 				}
 			}
 
+			// handle the real stuff
+
 			if (aggregateBlockObject.length > 0) {
+				// we are in the midst of parsing a block object
 				if (currentLine.startsWith('} ')) {
+					// it's over. Now the block object has ended
+
 					const currentBlockObject = aggregateBlockObject;
 					aggregateBlockObject = '';
 
@@ -101,13 +108,16 @@ export default class Parser {
 				}
 			}
 
-			// handle the real stuff
 			if (currentLine.startsWith('#include <')) {
 				continue;
 			}
 
 			if (currentLine.startsWith('typedef')) {
+				// memoize the completed comment for the block, because there are gonna be
+				// smaller comments inside the object
 				blockComment = aggregateComment;
+
+				// make the aggregate block object non-empty so we know we're actively writing one
 				aggregateBlockObject += currentLine;
 			}
 		}
@@ -156,7 +166,7 @@ export default class Parser {
 					if (hypotheticalTagName in GLOSSARY && GLOSSARY[hypotheticalTagName] instanceof RustPrimitiveEnum) {
 						// it's an enum with associated values, buddy, not a conventional struct
 						descriptor = new RustTaggedValueEnum();
-					} else if(hypotheticalResultEnumName in GLOSSARY && GLOSSARY[hypotheticalResultEnumName] instanceof RustResultValueEnum) {
+					} else if (hypotheticalResultEnumName in GLOSSARY && GLOSSARY[hypotheticalResultEnumName] instanceof RustResultValueEnum) {
 						descriptor = new RustResult();
 					} else {
 						descriptor = new RustStruct();
@@ -164,7 +174,7 @@ export default class Parser {
 				} else if (type === 'union') {
 					if (name.startsWith('LDKCResult_')) {
 						// these are all the different values that a Result type may assume
-						descriptor = new RustResultValueEnum()
+						descriptor = new RustResultValueEnum();
 					} else {
 						console.log(name);
 						// unimplemented
@@ -186,7 +196,7 @@ export default class Parser {
 			} else if (descriptor instanceof RustStruct) {
 				for (const currentFieldLine of objectLines) {
 					const currentField = this.parseStructField(currentFieldLine);
-					descriptor.fields[currentField.contextualName] = currentField
+					descriptor.fields[currentField.contextualName] = currentField;
 				}
 			} else if (descriptor instanceof RustResultValueEnum) {
 				for (const currentEnumLine of objectLines) {
@@ -195,23 +205,33 @@ export default class Parser {
 					descriptor.variants[currentVariant.contextualName] = currentVariant;
 				}
 			} else if (descriptor instanceof RustResult) {
-				debugger
-			}else if (descriptor instanceof RustTaggedValueEnum) {
+				for (const currentFieldLine of objectLines) {
+					const currentField = this.parseStructField(currentFieldLine);
+					if (currentField.contextualName === 'contents') {
+						descriptor.valueField = currentField;
+					} else if (currentField.contextualName === 'result_ok') {
+						descriptor.tagField = currentField;
+					} else {
+						console.error('Unexpected field inside result:\n>', currentFieldLine.code);
+						process.exit(1);
+					}
+				}
+			} else if (descriptor instanceof RustTaggedValueEnum) {
 				let isInsideUnion = false;
 				let structDepth = 0;
-				for (const [i, currentEnumLine] of objectLines.entries()){
+				for (const [i, currentEnumLine] of objectLines.entries()) {
 					if (currentEnumLine.code.startsWith('union {') && !isInsideUnion) {
 						isInsideUnion = true;
 					} else if (currentEnumLine.code.startsWith('struct {') && isInsideUnion) {
 						structDepth++;
 					} else if (currentEnumLine.code === '};') {
-						if (structDepth > 0){
+						if (structDepth > 0) {
 							structDepth--;
-						}else{
+						} else {
 							isInsideUnion = false;
 						}
 					} else {
-						if (i === 0 && !isInsideUnion){
+						if (i === 0 && !isInsideUnion) {
 							const tagField = this.parseStructField(currentEnumLine);
 							descriptor.variantTag = tagField;
 						} else {
@@ -335,10 +355,12 @@ export default class Parser {
 			let unprefixedTypeLine = relevantTypeLine;
 
 			// TODO: figure out why these prefixes sometimes exist
-			if (relevantTypeLine.startsWith('struct ')){
-				unprefixedTypeLine = relevantTypeLine.substring('struct '.length).trim()
-			}else if (relevantTypeLine.startsWith('enum ')){
-				unprefixedTypeLine = relevantTypeLine.substring('enum '.length).trim()
+			if (relevantTypeLine.startsWith('struct ')) {
+				unprefixedTypeLine = relevantTypeLine.substring('struct '.length).trim();
+			} else if (relevantTypeLine.startsWith('enum ')) {
+				unprefixedTypeLine = relevantTypeLine.substring('enum '.length).trim();
+			} else if (relevantTypeLine.startsWith('union ')) {
+				unprefixedTypeLine = relevantTypeLine.substring('union '.length).trim();
 			}
 
 			const components = unprefixedTypeLine.split(' ');

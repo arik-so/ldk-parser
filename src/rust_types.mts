@@ -64,14 +64,19 @@ export class RustValueEnum extends RustType {
 	variants: { [name: string]: ContextualRustType } = {};
 }
 
-export class RustTaggedValueEnum extends RustValueEnum {}
-export class RustResultValueEnum extends RustValueEnum {}
+export class RustTaggedValueEnum extends RustValueEnum {
+}
+
+export class RustResultValueEnum extends RustValueEnum {
+}
 
 class RustEnumVariant extends RustType {
 	associatedType: RustType | null;
 }
 
 export class RustResult extends RustType {
+	valueField: RustStructField;
+	tagField: RustStructField;
 }
 
 export class RustFunction extends RustType {
