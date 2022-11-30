@@ -3,7 +3,14 @@ import Config from '../src/config.mjs';
 
 import * as url from 'url';
 import Parser from '../src/parser.mjs';
-import {ContextualRustType, RustLambda, RustPrimitive, RustStruct, RustTrait} from '../src/rust_types.mjs';
+import {
+	ContextualRustType,
+	OpaqueRustStruct,
+	RustLambda,
+	RustPrimitive,
+	RustStruct,
+	RustTrait
+} from '../src/rust_types.mjs';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -27,7 +34,7 @@ describe('Parser Tests', () => {
 		const glossary = parser.glossary;
 		const glossaryKeys = Object.keys(glossary);
 
-		chai.expect(glossaryKeys.length).equals(2);
+		chai.expect(glossaryKeys.length).equals(3);
 		chai.expect(glossaryKeys).contains('LDKRecord');
 		chai.expect(glossaryKeys).contains('LDKLogger');
 
@@ -38,6 +45,16 @@ describe('Parser Tests', () => {
 
 		const recordFieldKeys = Object.keys(ldkRecord.fields);
 		chai.expect(recordFieldKeys.length).equals(2);
+
+		const innerField = ldkRecord.fields['inner'];
+		chai.assert(innerField instanceof ContextualRustType);
+		chai.expect(innerField.contextualName).equals('inner');
+		chai.expect(innerField.documentation).equals('A pointer to the opaque Rust object.\nNearly everywhere, inner must be non-null, however in places where\nthe Rust equivalent takes an Option, it may be set to null to indicate None.');
+		chai.expect(innerField.isConstant).equals(true);
+
+		const innerType = innerField.type;
+		chai.assert(innerType instanceof OpaqueRustStruct);
+		chai.expect(innerType.name).equals('LDKnativeRecord');
 
 		const isOwnedField = ldkRecord.fields['is_owned'];
 		chai.assert(isOwnedField instanceof ContextualRustType);

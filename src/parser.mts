@@ -3,6 +3,7 @@ import Config from './config.mjs';
 import fs from 'fs';
 import {
 	ContextualRustType,
+	OpaqueRustStruct,
 	RustArray,
 	RustKind,
 	RustLambda,
@@ -446,8 +447,15 @@ export default class Parser {
 				if (typeName in this.typeGlossary) {
 					rustType = this.typeGlossary[typeName];
 					typelessLineRemainder = variableName;
+				} else if (typeName.startsWith('LDKnative') && variableName.endsWith('inner')) {
+					rustType = new OpaqueRustStruct();
+					rustType.name = typeName;
+					this.typeGlossary[typeName] = rustType;
+					typelessLineRemainder = variableName;
+					console.log('New opaque type detected:', typeName, '\n>', typeLine);
 				} else {
-					console.log('Unknown non-primitive type:\n>', typeLine);
+					console.error('Unknown non-primitive type:\n>', typeLine);
+					process.exit(1)
 				}
 			}
 		}
