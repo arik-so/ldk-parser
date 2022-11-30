@@ -5,10 +5,10 @@ const debug = debugModule('ldk-parser:config');
 export default class Config {
 	static getHeaderPath(): string {
 		// test unions
-		// return '/Users/arik/Developer/ldk-parser/res/union_test.txt';
+		// return '/Users/arik/Developer/ldk-parser/res/union_test.h';
 
 		// test results
-		// return '/Users/arik/Developer/ldk-parser/res/result_test.txt';
+		return '/Users/arik/Developer/ldk-parser/res/result_test.h';
 
 		return '/Users/arik/Developer/ldk-c-bindings/lightning-c-bindings/include/lightning.h';
 	}

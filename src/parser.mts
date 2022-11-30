@@ -8,9 +8,9 @@ import {
 	RustKind,
 	RustPrimitive,
 	RustPrimitiveEnum,
-	RustPrimitiveEnumVariant, RustResult,
+	RustPrimitiveEnumVariant, RustResult, RustResultValueEnum,
 	RustStruct,
-	RustStructField,
+	RustStructField, RustTaggedValueEnum,
 	RustValueEnum
 } from './rust_types.mjs';
 
@@ -134,25 +134,37 @@ export default class Parser {
 				} else if (type === 'struct') {
 
 					/**
-					 * there are several indications that a struct is actually an enum with associated values
+					 * There are several indications that a struct is actually an enum with associated values
 					 * 1) it only contains two fields (the tag and the union)
-					 * 2) its name with _Tag appended to it already exists in the glossary, and is a primitive enum
+					 * 2) its name with _Tag appended to it already exists in the glossary, and is a `RustPrimitiveEnum`
 					 * i. e. if our struct is LDKBech32Error, then we already know about LDKBech32Error_Tag,
 					 * which is a primitive enum
 					 * 3) its first field is a tag
 					 * 4) its second field is the union
 					 */
 
+					/**
+					 * Separately, there may also be an indication that a struct is actually a Result
+					 * 1) If the name starts with LDKCResult_
+					 * 2) If the name ends with Z
+					 * 3) If the name with Ptr appended to it already exists in the glossary
+					 * 4) Aforementioned glossary entry is of type `RustResultValueEnum`
+					 */
+
 					const hypotheticalTagName = name + '_Tag';
+					const hypotheticalResultEnumName = name + 'Ptr';
 					if (hypotheticalTagName in GLOSSARY && GLOSSARY[hypotheticalTagName] instanceof RustPrimitiveEnum) {
 						// it's an enum with associated values, buddy, not a conventional struct
-						descriptor = new RustValueEnum();
+						descriptor = new RustTaggedValueEnum();
+					} else if(hypotheticalResultEnumName in GLOSSARY && GLOSSARY[hypotheticalResultEnumName] instanceof RustResultValueEnum) {
+						descriptor = new RustResult();
 					} else {
 						descriptor = new RustStruct();
 					}
 				} else if (type === 'union') {
 					if (name.startsWith('LDKCResult_')) {
-						descriptor = new RustResult();
+						// these are all the different values that a Result type may assume
+						descriptor = new RustResultValueEnum()
 					} else {
 						console.log(name);
 						// unimplemented
@@ -176,9 +188,15 @@ export default class Parser {
 					const currentField = this.parseStructField(currentFieldLine);
 					descriptor.fields[currentField.contextualName] = currentField
 				}
+			} else if (descriptor instanceof RustResultValueEnum) {
+				for (const currentEnumLine of objectLines) {
+					const currentVariant = this.parseTypeInformation(currentEnumLine.code);
+					currentVariant.documentation = currentEnumLine.comments;
+					descriptor.variants[currentVariant.contextualName] = currentVariant;
+				}
 			} else if (descriptor instanceof RustResult) {
 				debugger
-			}else if (descriptor instanceof RustValueEnum) {
+			}else if (descriptor instanceof RustTaggedValueEnum) {
 				let isInsideUnion = false;
 				let structDepth = 0;
 				for (const [i, currentEnumLine] of objectLines.entries()){
@@ -198,6 +216,7 @@ export default class Parser {
 							descriptor.variantTag = tagField;
 						} else {
 							const currentVariant = this.parseTypeInformation(currentEnumLine.code);
+							currentVariant.documentation = currentEnumLine.comments;
 							descriptor.variants[currentVariant.contextualName] = currentVariant;
 						}
 					}

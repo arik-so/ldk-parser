@@ -64,6 +64,9 @@ export class RustValueEnum extends RustType {
 	variants: { [name: string]: ContextualRustType } = {};
 }
 
+export class RustTaggedValueEnum extends RustValueEnum {}
+export class RustResultValueEnum extends RustValueEnum {}
+
 class RustEnumVariant extends RustType {
 	associatedType: RustType | null;
 }
