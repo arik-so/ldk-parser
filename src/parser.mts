@@ -223,7 +223,14 @@ export default class Parser {
 				for (const currentEnumLine of objectLines) {
 					const currentVariant = this.parseTypeInformation(currentEnumLine.code);
 					currentVariant.documentation = currentEnumLine.comments;
-					descriptor.variants[currentVariant.contextualName] = currentVariant;
+					if(currentVariant.contextualName === 'result'){
+						descriptor.resultVariant = currentVariant
+					} else if(currentVariant.contextualName === 'err'){
+						descriptor.errorVariant = currentVariant
+					}else{
+						console.error('Unexpected result value enum variant name:\n>', currentEnumLine.code);
+						process.exit(1);
+					}
 				}
 			} else if (descriptor instanceof RustResult) {
 				for (const currentFieldLine of objectLines) {

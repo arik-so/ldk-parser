@@ -65,14 +65,21 @@ export class RustBinaryOption extends RustOption {
 }
 
 export class RustValueEnum extends RustType {
-	variantTag: RustStructField;
+	variantTag: RustStructField | null;
 	variants: { [name: string]: ContextualRustType } = {};
 }
 
 export class RustTaggedValueEnum extends RustValueEnum {
 }
 
-export class RustResultValueEnum extends RustValueEnum {
+/**
+ * This is somewhat similar to the RustTaggedValueEnum, except that it has no tag.
+ * Instead, the tag is external, and lives in the RustResult type.
+ * Plus, there can only be two variants, either result or error.
+ */
+export class RustResultValueEnum extends RustType {
+	resultVariant: ContextualRustType;
+	errorVariant: ContextualRustType;
 }
 
 class RustEnumVariant extends RustType {

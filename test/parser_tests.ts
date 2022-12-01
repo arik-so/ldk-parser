@@ -10,7 +10,10 @@ import {
 	RustPrimitive,
 	RustPrimitiveEnum,
 	RustPrimitiveEnumVariant,
-	RustStruct, RustTaggedValueEnum,
+	RustResult,
+	RustResultValueEnum,
+	RustStruct,
+	RustTaggedValueEnum,
 	RustTrait
 } from '../src/rust_types.mjs';
 import CaseUtil from '../src/generator/case_util.mjs';
@@ -30,7 +33,7 @@ class TestConfig extends Config {
 
 describe('Parser Tests', () => {
 
-	describe('Value Enum Parsing', () => {
+	describe('Value Enum Parsing Tests', () => {
 		it('should parse tagged value enum 01', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 			const config = new TestConfig(`${__dirname}/fixtures/tagged_value_enum_test_01.h`);
@@ -95,7 +98,43 @@ describe('Parser Tests', () => {
 		});
 	});
 
-	describe('Trait Parsing', () => {
+	describe('Result Parsing Tests', () => {
+		it('should parse result 01', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/result_test_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+
+			chai.expect(glossaryKeys.length).equals(4);
+
+			const result = <RustResult>glossary['LDKCResult_BlindedRouteNoneZ'];
+			const resultEnum = <RustResultValueEnum>glossary['LDKCResult_BlindedRouteNoneZPtr'];
+			chai.assert(result instanceof RustResult);
+			chai.assert(resultEnum instanceof RustResultValueEnum);
+			chai.expect(result.documentation)
+			.equals('A CResult_BlindedRouteNoneZ represents the result of a fallible operation,\ncontaining a crate::lightning::onion_message::blinded_route::BlindedRoute on success and a () on failure.\n`result_ok` indicates the overall state, and the contents are provided via `contents`.');
+			chai.expect(resultEnum.documentation).equals('The contents of CResult_BlindedRouteNoneZ');
+
+			chai.assert(result.tagField instanceof ContextualRustType);
+			chai.assert(result.valueField instanceof ContextualRustType);
+			chai.expect(result.tagField.contextualName).equals('result_ok');
+			chai.expect(result.tagField.documentation)
+			.equals('Whether this CResult_BlindedRouteNoneZ represents a success state.');
+
+			chai.assert(result.tagField.type instanceof RustPrimitive);
+			chai.expect(result.tagField.type.cSignature).equals('bool');
+			chai.expect(result.tagField.type.swiftRawSignature).equals('Bool');
+
+			chai.expect(result.valueField.type).equals(resultEnum);
+
+			chai.assert(resultEnum.errorVariant.type instanceof RustPrimitive);
+			chai.expect(resultEnum.resultVariant.type).equals(glossary['LDKBlindedRoute']);
+		});
+	});
+
+	describe('Trait Parsing Tests', () => {
 		it('should parse trait 01', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 			const config = new TestConfig(`${__dirname}/fixtures/trait_test_01.h`);
