@@ -211,7 +211,7 @@ export default class Parser {
 				for (const currentValueLine of objectLines) {
 					const currentValue = this.parseEnumValue(currentValueLine);
 					if (currentValue) {
-						descriptor.values.push(currentValue);
+						descriptor.variants.push(currentValue);
 					}
 				}
 			} else if (descriptor instanceof RustStruct) {
@@ -237,7 +237,6 @@ export default class Parser {
 						process.exit(1);
 					}
 				}
-				debugger
 			} else if (descriptor instanceof RustTaggedValueEnum) {
 				let isInsideUnion = false;
 				let structDepth = 0;
@@ -285,7 +284,6 @@ export default class Parser {
 
 	private containsLambdas(objectLines: ObjectLine[]): boolean {
 		for (const currentLine of objectLines) {
-			console.log(currentLine.code);
 			if (LAMBDA_REGEX.test(currentLine.code)) {
 				return true;
 			}

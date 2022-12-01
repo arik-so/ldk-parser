@@ -45,7 +45,7 @@ export class RustTrait extends RustType {
 }
 
 export class RustPrimitiveEnum extends RustType {
-	values: RustPrimitiveEnumVariant[] = [];
+	variants: RustPrimitiveEnumVariant[] = [];
 }
 
 export class RustPrimitiveEnumVariant extends RustType {

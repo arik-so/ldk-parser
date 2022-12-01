@@ -1,5 +1,7 @@
 import Parser from './parser.mjs';
+import Config from './config.mjs';
 
 // add comments
-const parser = new Parser();
+let config = new Config();
+const parser = new Parser(config);
 parser.parse();

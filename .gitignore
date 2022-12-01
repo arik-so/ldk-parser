@@ -2,5 +2,7 @@
 node_modules
 
 src/lab/*
-*.mjs
-*.mjs.map
+src/**/*.mjs
+src/**/*.mjs.map
+test/**/*.js
+test/**/*.js.map
