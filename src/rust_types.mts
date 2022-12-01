@@ -39,7 +39,7 @@ export class RustStruct extends RustType {
 	fields: { [name: string]: RustStructField } = {};
 }
 
-export class RustTrait extends RustType {
+export class RustTrait extends RustStruct {
 	identifierField: ContextualRustType;
 	lambdas: RustLambda[] = [];
 }
@@ -107,11 +107,13 @@ export class ContextualRustType {
 	/**
 	 * This is usually a variable name, an argument name, or a field name
 	 */
-	contextualName: string;
+	contextualName: string | null;
 
 	isPointer: boolean;
 	isNullable: boolean;
 	isConstant: boolean;
+
+	isReturnValue: boolean;
 
 	/**
 	 * Rustdoc comments preceding the type

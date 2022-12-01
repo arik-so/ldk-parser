@@ -21,9 +21,6 @@ import {
 
 const debug = debugModule('ldk-parser:parser');
 
-// here we go
-debug('Here we go');
-
 const FUNCTION_REGEX = /([A-Za-z_0-9\* ]* \*?)([a-zA-Z_0-9]*)\((.*)\);$/;
 const LAMBDA_REGEX = /^(struct |enum |union )?([A-Za-z_0-9]* \*?)\(\*([A-Za-z_0-9]*)\)\((const )?void \*this_arg(.*)\);$/;
 
@@ -47,7 +44,7 @@ export default class Parser {
 
 		// second, collect all types and methods
 		this.collectRawTypes();
-		// this.collectRawMethods();
+		this.collectRawMethods();
 	}
 
 	private readHeaderFile() {
@@ -120,6 +117,8 @@ export default class Parser {
 					objectLines.push({code: currentLine, comments: aggregateComment.trim()});
 					aggregateComment = '';
 				}
+			} else if (FUNCTION_REGEX.test(currentLine)) {
+				debugger
 			}
 
 			if (currentLine.startsWith('#include <')) {
@@ -198,7 +197,7 @@ export default class Parser {
 						// these are all the different values that a Result type may assume
 						descriptor = new RustResultValueEnum();
 					} else {
-						console.log('Unimplemented union type:', name);
+						debug('Unimplemented union type: %s', name);
 						process.exit(1);
 					}
 				}
@@ -214,6 +213,22 @@ export default class Parser {
 						descriptor.variants.push(currentValue);
 					}
 				}
+			} else if (descriptor instanceof RustTrait) {
+				// RustTrait inherits from RustStruct, so its check must come first
+				for (const currentLambdaLine of objectLines) {
+					if (!LAMBDA_REGEX.test(currentLambdaLine.code)) {
+						const currentField = this.parseStructField(currentLambdaLine);
+						if (currentField.contextualName === 'this_arg') {
+							descriptor.identifierField = currentField;
+						} else {
+							debug('Trait %s has transparent field %s:\n> %s', descriptor.name, currentField.contextualName, currentLambdaLine.code)
+							descriptor.fields[currentField.contextualName] = currentField;
+						}
+						continue;
+					}
+					const currentLambda = this.parseLambda(currentLambdaLine);
+					descriptor.lambdas.push(currentLambda);
+				}
 			} else if (descriptor instanceof RustStruct) {
 				for (const currentFieldLine of objectLines) {
 					const currentField = this.parseStructField(currentFieldLine);
@@ -223,11 +238,11 @@ export default class Parser {
 				for (const currentEnumLine of objectLines) {
 					const currentVariant = this.parseTypeInformation(currentEnumLine.code);
 					currentVariant.documentation = currentEnumLine.comments;
-					if(currentVariant.contextualName === 'result'){
-						descriptor.resultVariant = currentVariant
-					} else if(currentVariant.contextualName === 'err'){
-						descriptor.errorVariant = currentVariant
-					}else{
+					if (currentVariant.contextualName === 'result') {
+						descriptor.resultVariant = currentVariant;
+					} else if (currentVariant.contextualName === 'err') {
+						descriptor.errorVariant = currentVariant;
+					} else {
 						console.error('Unexpected result value enum variant name:\n>', currentEnumLine.code);
 						process.exit(1);
 					}
@@ -271,20 +286,6 @@ export default class Parser {
 
 				}
 				// const tagField = this.parseStructField(obj)
-			} else if (descriptor instanceof RustTrait) {
-				for (const currentLambdaLine of objectLines) {
-					if (!LAMBDA_REGEX.test(currentLambdaLine.code)) {
-						const currentIdentifier = this.parseStructField(currentLambdaLine);
-						if (descriptor.identifierField) {
-							console.error('Multiple identifier fields?', currentLambdaLine.code);
-							process.exit(1);
-						}
-						descriptor.identifierField = currentIdentifier;
-						continue;
-					}
-					const currentLambda = this.parseLambda(currentLambdaLine);
-					descriptor.lambdas.push(currentLambda);
-				}
 			}
 		}
 	}
@@ -331,6 +332,7 @@ export default class Parser {
 
 		const lambda = new RustLambda();
 		lambda.returnValue = this.parseTypeInformation(returnType.trim());
+		lambda.returnValue.isReturnValue = true;
 		lambda.name = name;
 		lambda.documentation = objectLine.comments;
 
@@ -446,9 +448,17 @@ export default class Parser {
 			}
 
 			const components = unprefixedTypeLine.split(' ');
-			if (components.length === 2) {
+			if (components.length >= 1) {
 				const typeName = components[0];
-				const variableName = components[1];
+				let variableName = null;
+
+				if (components.length === 2) {
+					variableName = components[1];
+				} else if (components.length > 2) {
+					console.error('Excessive type component count:\n>', typeLine);
+					process.exit(1);
+				}
+
 				if (typeName in this.typeGlossary) {
 					rustType = this.typeGlossary[typeName];
 					typelessLineRemainder = variableName;
@@ -457,16 +467,16 @@ export default class Parser {
 					rustType.name = typeName;
 					this.typeGlossary[typeName] = rustType;
 					typelessLineRemainder = variableName;
-					console.log('New opaque type detected:', typeName, '\n>', typeLine);
+					debug('New opaque type detected: %s\n> %s', typeName, typeLine);
 				} else {
 					console.error('Unknown non-primitive type:\n>', typeLine);
-					process.exit(1)
+					process.exit(1);
 				}
 			}
 		}
 		// continue for other types
 
-		if (typelessLineRemainder.startsWith('*')) {
+		if (typelessLineRemainder && typelessLineRemainder.startsWith('*')) {
 			typelessLineRemainder = typelessLineRemainder.substring('*'.length).trim();
 			if (isConstant) {
 				// duplicate constant declaration. Find out why this is necessary
@@ -490,7 +500,8 @@ export default class Parser {
 			rustType = actualType;
 			contextualName = name;
 		} else if (!rustType) {
-			console.log('Unparsed type information:\n>', typeLine);
+			console.error('Unknown type information:\n>', typeLine);
+			process.exit(1);
 		}
 
 		const returnedType = new ContextualRustType();

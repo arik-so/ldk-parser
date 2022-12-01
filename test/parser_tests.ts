@@ -17,6 +17,7 @@ import {
 	RustTrait
 } from '../src/rust_types.mjs';
 import CaseUtil from '../src/generator/case_util.mjs';
+import {describe} from 'mocha';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -32,6 +33,17 @@ class TestConfig extends Config {
 }
 
 describe('Parser Tests', () => {
+
+	describe('Vector Parsing Tests', () => {
+		it('should parse a vector 01', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/vector_test_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+		});
+	});
 
 	describe('Value Enum Parsing Tests', () => {
 		it('should parse tagged value enum 01', () => {
@@ -221,6 +233,17 @@ describe('Parser Tests', () => {
 			chai.expect(logArgument.isConstant).equals(true);
 			chai.expect(logArgument.isNullable).equals(false);
 			chai.expect(logArgument.type).equals(ldkRecord);
+		});
+
+		it('should parse trait 02', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/trait_test_02.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+
+			debugger
 		});
 	});
 
