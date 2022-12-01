@@ -5,6 +5,7 @@ import {
 	ContextualRustType,
 	OpaqueRustStruct,
 	RustArray,
+	RustFunction,
 	RustKind,
 	RustLambda,
 	RustPrimitive,
@@ -29,6 +30,7 @@ export default class Parser {
 	private config: Config;
 	private headerFile: string;
 	private typeGlossary: { [name: string]: RustType } = {};
+	private methodGlossary: { [name: string]: RustFunction } = {};
 
 	constructor(config: Config) {
 		this.config = config;
@@ -44,7 +46,6 @@ export default class Parser {
 
 		// second, collect all types and methods
 		this.collectRawTypes();
-		this.collectRawMethods();
 	}
 
 	private readHeaderFile() {
@@ -118,7 +119,10 @@ export default class Parser {
 					aggregateComment = '';
 				}
 			} else if (FUNCTION_REGEX.test(currentLine)) {
-				debugger
+				const currentComment = aggregateComment.trim();
+				aggregateComment = '';
+
+				this.parseMethod(currentLine, currentComment);
 			}
 
 			if (currentLine.startsWith('#include <')) {
@@ -221,7 +225,7 @@ export default class Parser {
 						if (currentField.contextualName === 'this_arg') {
 							descriptor.identifierField = currentField;
 						} else {
-							debug('Trait %s has transparent field %s:\n> %s', descriptor.name, currentField.contextualName, currentLambdaLine.code)
+							debug('Trait %s has transparent field %s:\n> %s', descriptor.name, currentField.contextualName, currentLambdaLine.code);
 							descriptor.fields[currentField.contextualName] = currentField;
 						}
 						continue;
@@ -515,7 +519,13 @@ export default class Parser {
 		return returnedType;
 	}
 
-	private collectRawMethods() {
+	/**
+	 *
+	 * @param methodLine
+	 * @param docComment
+	 * @private
+	 */
+	private parseMethod(methodLine: string, docComment: string) {
 
 	}
 
