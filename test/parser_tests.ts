@@ -44,6 +44,24 @@ describe('Parser Tests', () => {
 			const glossary = parser.glossary;
 			const glossaryKeys = Object.keys(glossary);
 		});
+
+		it('should parse a vector 02', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/vector_test_02.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+		});
+
+		it('should parse a vector 03', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/vector_test_03.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+		});
 	});
 
 	describe('Binary Option Parsing Tests', () => {

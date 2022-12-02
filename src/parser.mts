@@ -18,7 +18,8 @@ import {
 	RustStructField,
 	RustTaggedValueEnum,
 	RustTrait,
-	RustType
+	RustType,
+	RustVector
 } from './rust_types.mjs';
 
 const debug = debugModule('ldk-parser:parser');
@@ -213,6 +214,8 @@ export default class Parser {
 						descriptor = new RustResult();
 					} else if (this.containsLambdas(objectLines)) {
 						descriptor = new RustTrait();
+					} else if (name.startsWith('LDKCVec_')) {
+						descriptor = new RustVector();
 					} else {
 						descriptor = new RustStruct();
 					}
@@ -256,6 +259,16 @@ export default class Parser {
 			} else if (descriptor instanceof RustStruct) {
 				for (const currentFieldLine of objectLines) {
 					const currentField = this.parseStructField(currentFieldLine);
+					if (descriptor instanceof RustVector) {
+						if (currentField.contextualName === 'data') {
+							descriptor.iterateeField = currentField;
+						} else if (currentField.contextualName === 'datalen') {
+							descriptor.lengthField = currentField;
+						} else {
+							console.error(`Unexpected field name inside vector ${descriptor.name}: ${currentField.contextualName}\n>`, currentFieldLine.code);
+							process.exit(1);
+						}
+					}
 					descriptor.fields[currentField.contextualName] = currentField;
 				}
 			} else if (descriptor instanceof RustResultValueEnum) {
@@ -267,7 +280,7 @@ export default class Parser {
 					} else if (currentVariant.contextualName === 'err') {
 						descriptor.errorVariant = currentVariant;
 					} else {
-						console.error('Unexpected result value enum variant name:\n>', currentEnumLine.code);
+						console.error(`Unexpected variant name inside result value enum ${descriptor.name}: ${currentVariant.contextualName}\n>`, currentEnumLine.code);
 						process.exit(1);
 					}
 				}
@@ -279,7 +292,7 @@ export default class Parser {
 					} else if (currentField.contextualName === 'result_ok') {
 						descriptor.tagField = currentField;
 					} else {
-						console.error('Unexpected field inside result:\n>', currentFieldLine.code);
+						console.error(`Unexpected field inside result ${descriptor.name}: ${currentField.contextualName}\n>`, currentFieldLine.code);
 						process.exit(1);
 					}
 				}
@@ -304,19 +317,20 @@ export default class Parser {
 						} else {
 							const currentVariant = this.parseTypeInformation(currentEnumLine.code);
 							currentVariant.documentation = currentEnumLine.comments;
+
 							if (descriptor instanceof RustBinaryOption) {
 								if (currentVariant.contextualName !== 'some') {
 									console.error(`Unexpected variant name inside binary option: ${currentVariant.contextualName}\n>`, currentEnumLine.code);
 									process.exit(1);
 								}
-								if(descriptor.someVariant){
+								if (descriptor.someVariant) {
 									console.error('Duplicate attempt to set `some` variant of binary option:\n>', currentEnumLine.code);
 									process.exit(1);
 								}
 								descriptor.someVariant = currentVariant;
-							} else {
-								descriptor.variants[currentVariant.contextualName] = currentVariant;
 							}
+
+							descriptor.variants[currentVariant.contextualName] = currentVariant;
 						}
 					}
 
