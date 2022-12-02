@@ -40,7 +40,7 @@ export default class Parser {
 	/**
 	 * Free-floating functions without an associated type
 	 */
-	private functions: RustFunction[] = [];
+	private floatingFunctions: RustFunction[] = [];
 	private kindsWithMethodAssociations = new Set();
 
 	constructor(config: Config) {
@@ -49,6 +49,10 @@ export default class Parser {
 
 	get glossary() {
 		return this.typeGlossary;
+	}
+
+	get functions() {
+		return this.floatingFunctions;
 	}
 
 	parse() {
@@ -617,7 +621,7 @@ export default class Parser {
 		const prefixMatches = METHOD_TYPE_ASSOCIATION_PREFIX_REGEX.exec(name);
 		if (!prefixMatches) {
 			// debug('object-unassociated method name: %s', name);
-			this.functions.push(method);
+			this.floatingFunctions.push(method);
 			return;
 		}
 

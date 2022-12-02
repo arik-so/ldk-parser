@@ -18,8 +18,8 @@ import {
 	RustTrait,
 	RustVector
 } from '../src/rust_types.mjs';
-import CaseUtil from '../src/generator/case_util.mjs';
 import {describe} from 'mocha';
+import Generator from '../src/generation/index.mjs';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -138,7 +138,7 @@ describe('Parser Tests', () => {
 				chai.assert(currentVariant instanceof ContextualRustType);
 				chai.expect(currentVariant.contextualName).equals(variantName);
 
-				const camelCasedVariantName = CaseUtil.snakeCaseToCamelCase(variantName, true);
+				const camelCasedVariantName = Generator.snakeCaseToCamelCase(variantName, true);
 				const expectedTaggedEnumVariantName = `${errorEnum.name}_${camelCasedVariantName}`;
 				chai.expect(tagVariantNames).contains(expectedTaggedEnumVariantName);
 			}
@@ -317,6 +317,5 @@ describe('Parser Tests', () => {
 			chai.expect(lockableScoreField.type).equals(glossary['LDKLockableScore']);
 		});
 	});
-
 
 });
