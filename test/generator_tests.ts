@@ -32,6 +32,8 @@ describe('Generator Tests', () => {
 			const generator = new StructGenerator(config);
 			const output = generator.generateFileContents(chainMonitor);
 
+			debugger
+
 			expect(output).contains('public typealias ChainMonitor = Bindings.ChainMonitor');
 			expect(output).contains('internal var cType: LDKChainMonitor?');
 			expect(output).contains('public init(chainSource: Filter?) -> ChainMonitor {');

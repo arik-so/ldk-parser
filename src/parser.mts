@@ -398,7 +398,7 @@ export default class Parser {
 			relevantTypeLine = relevantTypeLine.substring('MUST_USE_RES '.length);
 		}
 
-		let isConstant = relevantTypeLine.startsWith('const ');
+		const isConstant = relevantTypeLine.startsWith('const ');
 		if (isConstant) {
 			relevantTypeLine = relevantTypeLine.substring('const '.length);
 		}
@@ -506,6 +506,7 @@ export default class Parser {
 		}
 		// continue for other types
 
+		let isAsteriskPointer = false;
 		if (typelessLineRemainder && typelessLineRemainder.startsWith('*')) {
 			typelessLineRemainder = typelessLineRemainder.substring('*'.length).trim();
 			if (isConstant) {
@@ -513,7 +514,7 @@ export default class Parser {
 			} else {
 				// singular constant declaration. Find out why this is necessary
 			}
-			isConstant = true;
+			isAsteriskPointer = true;
 		}
 
 		let contextualName = typelessLineRemainder;
@@ -537,11 +538,11 @@ export default class Parser {
 		const returnedType = new ContextualRustType();
 		returnedType.type = rustType;
 		returnedType.contextualName = contextualName;
+
 		returnedType.isConstant = isConstant;
-		if (nonNullablePointer) {
-			returnedType.isNullable = false;
-			returnedType.isPointer = true;
-		}
+		returnedType.isNonnullablePointer = nonNullablePointer;
+		returnedType.isAsteriskPointer = isAsteriskPointer;
+		returnedType.mustUseResult = mustUseRes;
 		return returnedType;
 	}
 

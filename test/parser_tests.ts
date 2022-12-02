@@ -299,9 +299,9 @@ describe('Parser Tests', () => {
 			const logArgument = logArguments[0];
 			chai.assert(logArgument instanceof ContextualRustType);
 			chai.expect(logArgument.contextualName).equals('record');
-			chai.expect(logArgument.isPointer).equals(true);
+			chai.expect(logArgument.isNonnullablePointer).equals(true);
 			chai.expect(logArgument.isConstant).equals(true);
-			chai.expect(logArgument.isNullable).equals(false);
+			chai.expect(logArgument.isAsteriskPointer).equals(false);
 			chai.expect(logArgument.type).equals(ldkRecord);
 		});
 

@@ -116,9 +116,10 @@ export class ContextualRustType {
 	 */
 	contextualName: string | null;
 
-	isPointer: boolean;
-	isNullable: boolean;
+	isNonnullablePointer: boolean;
+	isAsteriskPointer: boolean;
 	isConstant: boolean;
+	mustUseResult: boolean;
 
 	isReturnValue: boolean;
 
