@@ -6,6 +6,7 @@ import Parser from '../src/parser.mjs';
 import {
 	ContextualRustType,
 	OpaqueRustStruct,
+	RustBinaryOption,
 	RustLambda,
 	RustPrimitive,
 	RustPrimitiveEnum,
@@ -42,6 +43,30 @@ describe('Parser Tests', () => {
 			parser.parse();
 			const glossary = parser.glossary;
 			const glossaryKeys = Object.keys(glossary);
+		});
+	});
+
+	describe('Binary Option Parsing Tests', () => {
+		it('should parse a binary option 01', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/binary_option_test_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+
+			chai.expect(glossaryKeys.length).equals(2);
+			chai.expect(glossaryKeys).contains('LDKCOption_u32Z');
+			chai.expect(glossaryKeys).contains('LDKCOption_u32Z_Tag');
+
+			const option = <RustBinaryOption>glossary['LDKCOption_u32Z'];
+			chai.assert(option instanceof RustBinaryOption);
+			chai.assert(option.someVariant instanceof ContextualRustType);
+			chai.assert(option.variantTag instanceof ContextualRustType);
+			chai.expect(option.variantTag.contextualName).equals('tag');
+			chai.expect(option.variantTag.type).equals(glossary['LDKCOption_u32Z_Tag']);
+			chai.expect(option.someVariant.contextualName).equals('some');
+			chai.assert(option.someVariant.type instanceof RustPrimitive);
 		});
 	});
 

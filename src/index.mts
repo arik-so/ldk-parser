@@ -5,3 +5,4 @@ import Config from './config.mjs';
 let config = new Config();
 const parser = new Parser(config);
 parser.parse();
+debugger

@@ -5,6 +5,7 @@ import {
 	ContextualRustType,
 	OpaqueRustStruct,
 	RustArray,
+	RustBinaryOption,
 	RustFunction,
 	RustKind,
 	RustLambda,
@@ -198,6 +199,16 @@ export default class Parser {
 					if (hypotheticalTagName in this.typeGlossary && this.typeGlossary[hypotheticalTagName] instanceof RustPrimitiveEnum) {
 						// it's an enum with associated values, buddy, not a conventional struct
 						descriptor = new RustTaggedValueEnum();
+						const primitiveEnum = this.typeGlossary[hypotheticalTagName] as RustPrimitiveEnum;
+						let enumVariants = primitiveEnum.variants;
+						if (enumVariants.length === 2) {
+							const variantAName = enumVariants[0].name;
+							const variantBName = enumVariants[1].name;
+							if ((variantAName.endsWith('_Some') && variantBName.endsWith('_None')) || (variantAName.endsWith('_None') && variantBName.endsWith('_Some'))) {
+								descriptor = new RustBinaryOption();
+							}
+						}
+
 					} else if (hypotheticalResultEnumName in this.typeGlossary && this.typeGlossary[hypotheticalResultEnumName] instanceof RustResultValueEnum) {
 						descriptor = new RustResult();
 					} else if (this.containsLambdas(objectLines)) {
@@ -293,7 +304,19 @@ export default class Parser {
 						} else {
 							const currentVariant = this.parseTypeInformation(currentEnumLine.code);
 							currentVariant.documentation = currentEnumLine.comments;
-							descriptor.variants[currentVariant.contextualName] = currentVariant;
+							if (descriptor instanceof RustBinaryOption) {
+								if (currentVariant.contextualName !== 'some') {
+									console.error(`Unexpected variant name inside binary option: ${currentVariant.contextualName}\n>`, currentEnumLine.code);
+									process.exit(1);
+								}
+								if(descriptor.someVariant){
+									console.error('Duplicate attempt to set `some` variant of binary option:\n>', currentEnumLine.code);
+									process.exit(1);
+								}
+								descriptor.someVariant = currentVariant;
+							} else {
+								descriptor.variants[currentVariant.contextualName] = currentVariant;
+							}
 						}
 					}
 

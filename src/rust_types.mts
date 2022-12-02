@@ -58,14 +58,6 @@ export class RustArray extends RustType {
 	length: number | null;
 }
 
-export class RustOption extends RustType {
-	isBinary: boolean;
-}
-
-export class RustBinaryOption extends RustOption {
-	type: RustType;
-}
-
 export class RustValueEnum extends RustType {
 	variantTag: RustStructField | null;
 	variants: { [name: string]: ContextualRustType } = {};
@@ -73,6 +65,10 @@ export class RustValueEnum extends RustType {
 
 export class RustTaggedValueEnum extends RustValueEnum {
 	methods: RustFunction[] = [];
+}
+
+export class RustBinaryOption extends RustTaggedValueEnum {
+	someVariant: ContextualRustType;
 }
 
 /**
