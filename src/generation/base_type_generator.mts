@@ -82,10 +82,17 @@ export abstract class BaseTypeGenerator {
 		}
 
 		const swiftReturnType = this.getPublicTypeSignature(method.returnValue.type);
+		const returnTypeInfix = swiftReturnType == 'Void' ? '' : `-> ${swiftReturnType} `;
 
 		const staticInfix = isInstanceMethod ? '' : 'static ';
+		let methodDeclarationKeywords = `public ${staticInfix}func`;
+		if (swiftMethodName === 'init') {
+			// it's a constructor
+			methodDeclarationKeywords = 'public';
+		}
+
 		return `
-					public${staticInfix} func ${swiftMethodName}(${swiftMethodArguments.join(', ')}) -> ${swiftReturnType} {
+					${methodDeclarationKeywords} ${swiftMethodName}(${swiftMethodArguments.join(', ')}) ${returnTypeInfix}{
 						
 					}
 		`;

@@ -2,6 +2,7 @@ import url from 'url';
 import Parser from '../src/parser.mjs';
 import Config from '../src/config.mjs';
 import StructGenerator from '../src/generation/struct_generator.mjs';
+import {expect} from 'chai';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -30,7 +31,13 @@ describe('Generator Tests', () => {
 			const chainMonitor = parser.glossary['LDKChainMonitor'];
 			const generator = new StructGenerator(config);
 			const output = generator.generateFileContents(chainMonitor);
-			debugger
+
+			expect(output).contains('public typealias ChainMonitor = Bindings.ChainMonitor');
+			expect(output).contains('internal var cType: LDKChainMonitor?');
+			expect(output).contains('public init(chainSource: Filter?) -> ChainMonitor {');
+			expect(output).contains('public func getClaimableBalances() -> [UInt8] {');
+			expect(output).contains('public func free() {');
+
 		});
 	});
 
