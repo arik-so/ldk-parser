@@ -74,7 +74,7 @@ export class RustTaggedValueEnum extends RustValueEnum {
 	methods: RustFunction[] = [];
 }
 
-export class RustBinaryOption extends RustTaggedValueEnum {
+export class RustNullableOption extends RustTaggedValueEnum {
 	someVariant: ContextualRustType;
 }
 

@@ -6,7 +6,7 @@ import Parser from '../src/parser.mjs';
 import {
 	ContextualRustType,
 	OpaqueRustStruct,
-	RustBinaryOption,
+	RustNullableOption,
 	RustLambda,
 	RustPrimitive,
 	RustPrimitiveEnum,
@@ -39,7 +39,7 @@ describe('Parser Tests', () => {
 	describe('Vector Parsing Tests', () => {
 		it('should parse a vector 01', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-			const config = new TestConfig(`${__dirname}/fixtures/vector_test_01.h`);
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/vector_test_01.h`);
 			const parser = new Parser(config);
 			parser.parse();
 			const glossary = parser.glossary;
@@ -48,7 +48,7 @@ describe('Parser Tests', () => {
 
 		it('should parse a vector 02', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-			const config = new TestConfig(`${__dirname}/fixtures/vector_test_02.h`);
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/vector_test_02.h`);
 			const parser = new Parser(config);
 			parser.parse();
 			const glossary = parser.glossary;
@@ -57,7 +57,7 @@ describe('Parser Tests', () => {
 
 		it('should parse a vector 03', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-			const config = new TestConfig(`${__dirname}/fixtures/vector_test_03.h`);
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/vector_test_03.h`);
 			const parser = new Parser(config);
 			parser.parse();
 			const glossary = parser.glossary;
@@ -82,19 +82,19 @@ describe('Parser Tests', () => {
 
 	describe('Tuple Parsing Tests', () => {
 		const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-		const config = new TestConfig(`${__dirname}/fixtures/tuple_test_01.h`);
+		const config = new TestConfig(`${__dirname}/fixtures/parsing/tuple_test_01.h`);
 		const parser = new Parser(config);
 		parser.parse();
 		const glossary = parser.glossary;
 		const glossaryKeys = Object.keys(glossary);
 
-		chai.expect(glossaryKeys.length).equals(4);
+		chai.expect(glossaryKeys.length).equals(2);
 	})
 
 	describe('Binary Option Parsing Tests', () => {
 		it('should parse a binary option 01', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-			const config = new TestConfig(`${__dirname}/fixtures/binary_option_test_01.h`);
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/binary_option_test_01.h`);
 			const parser = new Parser(config);
 			parser.parse();
 			const glossary = parser.glossary;
@@ -104,8 +104,8 @@ describe('Parser Tests', () => {
 			chai.expect(glossaryKeys).contains('LDKCOption_u32Z');
 			chai.expect(glossaryKeys).contains('LDKCOption_u32Z_Tag');
 
-			const option = <RustBinaryOption>glossary['LDKCOption_u32Z'];
-			chai.assert(option instanceof RustBinaryOption);
+			const option = <RustNullableOption>glossary['LDKCOption_u32Z'];
+			chai.assert(option instanceof RustNullableOption);
 			chai.assert(option.someVariant instanceof ContextualRustType);
 			chai.assert(option.variantTag instanceof ContextualRustType);
 			chai.expect(option.variantTag.contextualName).equals('tag');
@@ -118,7 +118,7 @@ describe('Parser Tests', () => {
 	describe('Value Enum Parsing Tests', () => {
 		it('should parse tagged value enum 01', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-			const config = new TestConfig(`${__dirname}/fixtures/tagged_value_enum_test_01.h`);
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/tagged_value_enum_test_01.h`);
 			const parser = new Parser(config);
 			parser.parse();
 			const glossary = parser.glossary;
@@ -157,7 +157,7 @@ describe('Parser Tests', () => {
 
 		it('should parse tagged value enum 02', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-			const config = new TestConfig(`${__dirname}/fixtures/tagged_value_enum_test_02.h`);
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/tagged_value_enum_test_02.h`);
 			const parser = new Parser(config);
 			parser.parse();
 			const glossary = parser.glossary;
@@ -183,7 +183,7 @@ describe('Parser Tests', () => {
 	describe('Result Parsing Tests', () => {
 		it('should parse result 01', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-			const config = new TestConfig(`${__dirname}/fixtures/result_test_01.h`);
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/result_test_01.h`);
 			const parser = new Parser(config);
 			parser.parse();
 			const glossary = parser.glossary;
@@ -219,7 +219,7 @@ describe('Parser Tests', () => {
 	describe('Trait Parsing Tests', () => {
 		it('should parse trait 01', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-			const config = new TestConfig(`${__dirname}/fixtures/trait_test_01.h`);
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/trait_test_01.h`);
 			const parser = new Parser(config);
 			parser.parse();
 			const glossary = parser.glossary;
@@ -307,7 +307,7 @@ describe('Parser Tests', () => {
 
 		it('should parse trait 02', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-			const config = new TestConfig(`${__dirname}/fixtures/trait_test_02.h`);
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/trait_test_02.h`);
 			const parser = new Parser(config);
 			parser.parse();
 			const glossary = parser.glossary;

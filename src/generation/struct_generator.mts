@@ -8,7 +8,50 @@ export default class StructGenerator extends BaseTypeGenerator {
 			throw new Error('type must be a RustStruct!');
 		}
 
-		return '';
+		const swiftTypeName = this.swiftTypeName(type);
+
+		let generatedMethods = '';
+
+		for (const currentMethod of type.methods) {
+			generatedMethods += this.generateMethod(currentMethod, type);
+		}
+
+		return `
+			#if SWIFT_PACKAGE
+			import LDKHeaders
+			#endif
+			
+			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}
+			
+			extension Bindings {
+			
+				public class ${swiftTypeName}: NativeTypeWrapper {
+			
+					private static var instanceCounter: UInt = 0
+					internal let instanceNumber: UInt
+			
+					internal var cType: ${type.name}?
+					
+					${generatedMethods}
+					
+					internal func dangle() -> ${swiftTypeName} {
+        				self.dangling = true
+						return self
+					}
+
+					deinit {
+						if !self.dangling {
+							Bindings.print("Freeing ${swiftTypeName} \(self.instanceNumber).")
+							self.free()
+						} else {
+							Bindings.print("Not freeing ${swiftTypeName} \(self.instanceNumber) due to dangle.")
+						}
+					}
+					
+				}
+				
+			}
+		`;
 	}
 
 	outputDirectorySuffix(): string {

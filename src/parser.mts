@@ -5,7 +5,7 @@ import {
 	ContextualRustType,
 	OpaqueRustStruct,
 	RustArray,
-	RustBinaryOption,
+	RustNullableOption,
 	RustFunction,
 	RustKind,
 	RustLambda,
@@ -211,7 +211,7 @@ export default class Parser {
 							const variantAName = enumVariants[0].name;
 							const variantBName = enumVariants[1].name;
 							if ((variantAName.endsWith('_Some') && variantBName.endsWith('_None')) || (variantAName.endsWith('_None') && variantBName.endsWith('_Some'))) {
-								descriptor = new RustBinaryOption();
+								descriptor = new RustNullableOption();
 							}
 						}
 
@@ -325,7 +325,7 @@ export default class Parser {
 							const currentVariant = this.parseTypeInformation(currentEnumLine.code);
 							currentVariant.documentation = currentEnumLine.comments;
 
-							if (descriptor instanceof RustBinaryOption) {
+							if (descriptor instanceof RustNullableOption) {
 								if (currentVariant.contextualName !== 'some') {
 									console.error(`Unexpected variant name inside binary option: ${currentVariant.contextualName}\n>`, currentEnumLine.code);
 									process.exit(1);
@@ -499,7 +499,7 @@ export default class Parser {
 					typelessLineRemainder = variableName;
 					debug('New opaque type detected: %s\n> %s', typeName, typeLine);
 				} else {
-					console.error('Unknown non-primitive type:\n>', typeLine);
+					console.error(`Unknown non-primitive type: ${typeName}\n>`, typeLine);
 					process.exit(1);
 				}
 			}
