@@ -15,7 +15,8 @@ import {
 	RustResultValueEnum,
 	RustStruct,
 	RustTaggedValueEnum,
-	RustTrait
+	RustTrait,
+	RustVector
 } from '../src/rust_types.mjs';
 import CaseUtil from '../src/generator/case_util.mjs';
 import {describe} from 'mocha';
@@ -61,6 +62,21 @@ describe('Parser Tests', () => {
 			parser.parse();
 			const glossary = parser.glossary;
 			const glossaryKeys = Object.keys(glossary);
+
+			chai.expect(glossaryKeys.length).equals(4);
+			chai.expect(glossaryKeys).contains('LDKCVec_RouteHopZ');
+			chai.expect(glossaryKeys).contains('LDKCVec_CVec_RouteHopZZ');
+
+			const routeHopArrayArray = glossary['LDKCVec_CVec_RouteHopZZ'];
+			chai.assert(routeHopArrayArray instanceof RustVector);
+			chai.assert(routeHopArrayArray.iterateeField instanceof ContextualRustType);
+			chai.assert(routeHopArrayArray.lengthField instanceof ContextualRustType);
+			chai.expect(routeHopArrayArray.lengthField.contextualName).equals('datalen');
+
+			const routeHopArray = glossary['LDKCVec_RouteHopZ'];
+			chai.expect(routeHopArrayArray.iterateeField.type).equals(routeHopArray);
+			chai.assert(routeHopArray instanceof RustVector);
+			chai.expect(routeHopArray.iterateeField.type).equals(glossary['LDKRouteHop']);
 		});
 	});
 
@@ -286,7 +302,19 @@ describe('Parser Tests', () => {
 			const glossary = parser.glossary;
 			const glossaryKeys = Object.keys(glossary);
 
-			debugger
+			chai.expect(glossaryKeys.length).equals(11);
+
+			const writeableScore = glossary['LDKWriteableScore'];
+			chai.assert(writeableScore instanceof RustTrait);
+			chai.expect(writeableScore.lambdas.length).equals(2);
+
+			const fieldKeys = Object.keys(writeableScore.fields);
+			chai.expect(fieldKeys).length(1);
+			chai.expect(writeableScore.fields).key('LockableScore');
+
+			const lockableScoreField = writeableScore.fields['LockableScore'];
+			chai.expect(lockableScoreField).instanceof(ContextualRustType);
+			chai.expect(lockableScoreField.type).equals(glossary['LDKLockableScore']);
 		});
 	});
 
