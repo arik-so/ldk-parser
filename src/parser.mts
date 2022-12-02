@@ -29,8 +29,17 @@ export default class Parser {
 
 	private config: Config;
 	private headerFile: string;
+	/**
+	 * All the types
+	 * @private
+	 */
 	private typeGlossary: { [name: string]: RustType } = {};
-	private methodGlossary: { [name: string]: RustFunction } = {};
+
+	/**
+	 * Free-floating functions without an associated type
+	 */
+	private functions: RustFunction[] = [];
+	private kindsWithMethodAssociations = new Set();
 
 	constructor(config: Config) {
 		this.config = config;
@@ -325,33 +334,6 @@ export default class Parser {
 		return rustType;
 	}
 
-	private parseLambda(objectLine: ObjectLine): RustLambda {
-		const matches = LAMBDA_REGEX.exec(objectLine.code);
-
-		const returnType = matches[2];
-		const name = matches[3];
-		const isThisArgConst = !!matches[4];
-		const argumentLine = matches[5];
-		const argumentStrings = argumentLine.split(', ');
-
-		const lambda = new RustLambda();
-		lambda.returnValue = this.parseTypeInformation(returnType.trim());
-		lambda.returnValue.isReturnValue = true;
-		lambda.name = name;
-		lambda.documentation = objectLine.comments;
-
-		for (let currentArgumentLine of argumentStrings) {
-			currentArgumentLine = currentArgumentLine.trim();
-			if (currentArgumentLine.length < 1) {
-				continue;
-			}
-			const currentArgument = this.parseTypeInformation(currentArgumentLine.trim());
-			lambda.arguments.push(currentArgument);
-		}
-
-		return lambda;
-	}
-
 	/**
 	 * Parse the type and variable name information from a single field line of an object
 	 * @param typeLine
@@ -519,6 +501,33 @@ export default class Parser {
 		return returnedType;
 	}
 
+	private parseLambda(objectLine: ObjectLine): RustLambda {
+		const matches = LAMBDA_REGEX.exec(objectLine.code);
+
+		const returnType = matches[2];
+		const name = matches[3];
+		const isThisArgConst = !!matches[4];
+		const argumentLine = matches[5];
+		const argumentStrings = argumentLine.split(', ');
+
+		const lambda = new RustLambda();
+		lambda.returnValue = this.parseTypeInformation(returnType.trim());
+		lambda.returnValue.isReturnValue = true;
+		lambda.name = name;
+		lambda.documentation = objectLine.comments;
+
+		for (let currentArgumentLine of argumentStrings) {
+			currentArgumentLine = currentArgumentLine.trim();
+			if (currentArgumentLine.length < 1) {
+				continue;
+			}
+			const currentArgument = this.parseTypeInformation(currentArgumentLine.trim());
+			lambda.arguments.push(currentArgument);
+		}
+
+		return lambda;
+	}
+
 	/**
 	 *
 	 * @param methodLine
@@ -526,7 +535,80 @@ export default class Parser {
 	 * @private
 	 */
 	private parseMethod(methodLine: string, docComment: string) {
+		const matches = FUNCTION_REGEX.exec(methodLine);
 
+		const returnType = matches[1];
+		const name = matches[2];
+		const argumentLine = matches[3];
+		const argumentStrings = argumentLine.split(', ');
+
+		const method = new RustFunction();
+		method.returnValue = this.parseTypeInformation(returnType.trim());
+		method.returnValue.isReturnValue = true;
+		method.name = name;
+		method.documentation = docComment;
+
+		for (let currentArgumentLine of argumentStrings) {
+			currentArgumentLine = currentArgumentLine.trim();
+			if (currentArgumentLine.length < 1) {
+				continue;
+			}
+			const currentArgument = this.parseTypeInformation(currentArgumentLine.trim());
+			method.arguments.push(currentArgument);
+		}
+
+		/**
+		 * If a method has a name like CVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ_free
+		 * Then the object it belongs to is CVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ
+		 * Finding that object name is a matter of finding the first entry of the method
+		 * following an underscore that is lowercase.
+		 *
+		 * Another nasty example is CResult__u832APIErrorZ_ok
+		 * There, too, we find CResult__u832APIErrorZ as the prefix because the first underscore
+		 * is not followed by a lowercase letter, but rather by another underscore.
+		 *
+		 * However, even that rule may sometimes have an exception, such as here:
+		 * C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ_clone
+		 * The exception being that if an underscore is followed by a u16/u32 (u with numbers),
+		 * it's acceptable.
+		 *
+		 * Additionally, CResult_boolPeerHandleErrorZ_ok is also valid.
+		 *
+		 */
+
+		const METHOD_TYPE_ASSOCIATION_PREFIX_REGEX = /^([A-Z][a-zA-Z0-9]*)(_([A-Z_][a-zA-Z0-9]*))*(_(u5|u8|u16|u32|u64|usize|bool)[a-zA-Z0-9]+)?/;
+		const prefixMatches = METHOD_TYPE_ASSOCIATION_PREFIX_REGEX.exec(name);
+		if (!prefixMatches) {
+			// debug('object-unassociated method name: %s', name);
+			this.functions.push(method);
+			return;
+		}
+
+		const namePrefix = prefixMatches[0];
+		for (const [typeName, currentType] of Object.entries(this.typeGlossary)) {
+			if (typeName.startsWith(`LDK${namePrefix}`) && typeName.endsWith(namePrefix)) {
+				// debug('Method association: %s -> %s', name, typeName);
+
+				// this is purely for curiosity
+				let typeKind = currentType.constructor.name;
+				if (!this.kindsWithMethodAssociations.has(typeKind)) {
+					debug('Kind using methods: %s (first instance: %s)', typeKind, typeName);
+					this.kindsWithMethodAssociations.add(typeKind);
+				}
+
+				const methodsArray = currentType['methods'];
+				if (!Array.isArray(methodsArray)) {
+					console.error(`Type ${typeName} of kind ${typeKind} is missing a methods property for ${name}!\n>`, methodLine);
+					process.exit(1);
+				}
+
+				methodsArray.push(method);
+				return;
+			}
+		}
+
+		console.error(`Method ${name} cannot finds its associated type!\n>`, methodLine);
+		process.exit(1);
 	}
 
 }

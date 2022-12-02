@@ -37,6 +37,7 @@ export class OpaqueRustStruct extends RustType {
 
 export class RustStruct extends RustType {
 	fields: { [name: string]: RustStructField } = {};
+	methods: RustFunction[] = [];
 }
 
 export class RustTrait extends RustStruct {
@@ -46,6 +47,7 @@ export class RustTrait extends RustStruct {
 
 export class RustPrimitiveEnum extends RustType {
 	variants: RustPrimitiveEnumVariant[] = [];
+	methods: RustFunction[] = [];
 }
 
 export class RustPrimitiveEnumVariant extends RustType {
@@ -70,6 +72,7 @@ export class RustValueEnum extends RustType {
 }
 
 export class RustTaggedValueEnum extends RustValueEnum {
+	methods: RustFunction[] = [];
 }
 
 /**
@@ -89,6 +92,7 @@ class RustEnumVariant extends RustType {
 export class RustResult extends RustType {
 	valueField: RustStructField;
 	tagField: RustStructField;
+	methods: RustFunction[] = [];
 }
 
 export class RustFunction extends RustType {
