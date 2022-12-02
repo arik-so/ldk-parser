@@ -16,4 +16,8 @@ export default class Config {
 
 		return '/Users/arik/Developer/ldk-c-bindings/lightning-c-bindings/include/lightning.h';
 	}
+
+	getOutputBaseDirectoryPath(): string {
+		return '/Users/arik/Developer/ldk-parser/out';
+	}
 }

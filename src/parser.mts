@@ -17,7 +17,7 @@ import {
 	RustStruct,
 	RustStructField,
 	RustTaggedValueEnum,
-	RustTrait,
+	RustTrait, RustTuple,
 	RustType,
 	RustVector
 } from './rust_types.mjs';
@@ -161,6 +161,7 @@ export default class Parser {
 	 */
 	private parseExplicitlyDefinedType(blockObject: string, docComment: string, objectLines: ObjectLine[]) {
 		const NAME_REGEX = /^typedef (struct|enum|union) (MUST_USE_STRUCT )?(LDK[A-Za-z_0-9]*) {$/;
+		const TUPLE_NAME_REGEX = /^LDKC[0-9]+Tuple_/;
 		const matches = NAME_REGEX.exec(blockObject);
 		if (matches && matches.length > 0) {
 			const type = matches[1];
@@ -220,6 +221,8 @@ export default class Parser {
 						descriptor = new RustTrait();
 					} else if (name.startsWith('LDKCVec_')) {
 						descriptor = new RustVector();
+					}else if (TUPLE_NAME_REGEX.test(name)) {
+						descriptor = new RustTuple();
 					} else {
 						descriptor = new RustStruct();
 					}

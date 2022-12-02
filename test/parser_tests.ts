@@ -80,6 +80,17 @@ describe('Parser Tests', () => {
 		});
 	});
 
+	describe('Tuple Parsing Tests', () => {
+		const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+		const config = new TestConfig(`${__dirname}/fixtures/tuple_test_01.h`);
+		const parser = new Parser(config);
+		parser.parse();
+		const glossary = parser.glossary;
+		const glossaryKeys = Object.keys(glossary);
+
+		chai.expect(glossaryKeys.length).equals(4);
+	})
+
 	describe('Binary Option Parsing Tests', () => {
 		it('should parse a binary option 01', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));

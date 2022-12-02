@@ -40,6 +40,8 @@ export class RustStruct extends RustType {
 	methods: RustFunction[] = [];
 }
 
+export class RustTuple extends RustStruct {}
+
 export class RustVector extends RustStruct {
 	iterateeField: ContextualRustType;
 	lengthField: ContextualRustType;
