@@ -40,7 +40,20 @@ describe('Generator Tests', () => {
 
 			expect(output).contains('let chainSourceOption = Option_FilterZ(value: chainSource)');
 			expect(output).contains('let nativeCallResult = ChainMonitor_free(self.cType!)');
+		});
 
+		it('should generate ChainMonitor completely', () => {
+			// only the new and get_claimable_balances methods are present
+			// some parameters have been removed
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/../res/lightning_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+
+			const chainMonitor = parser.glossary['LDKChainMonitor'];
+			const generator = new StructGenerator(config);
+			const output = generator.generateFileContents(chainMonitor);
+			debugger
 		});
 	});
 

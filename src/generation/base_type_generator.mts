@@ -5,6 +5,7 @@ import {
 	RustFunction,
 	RustNullableOption,
 	RustPrimitive,
+	RustStruct,
 	RustType,
 	RustVector
 } from '../rust_types.mjs';
@@ -79,6 +80,7 @@ export abstract class BaseTypeGenerator {
 
 		let nativeCallPrefix = '';
 		let nativeCallWrapperPrefix = '', nativeCallWrapperSuffix = '';
+		let nativeCallSuffix = '';
 
 		for (const currentArgument of method.arguments) {
 			let isInstanceArgument = false;
@@ -98,6 +100,7 @@ export abstract class BaseTypeGenerator {
 			nativeCallWrapperPrefix += preparedArgument.nativeCallWrapperPrefix;
 			nativeCallWrapperSuffix += preparedArgument.nativeCallWrapperSuffix;
 			nativeCallValueAccessors.push(preparedArgument.accessor);
+			nativeCallSuffix += preparedArgument.deferredCleanup;
 		}
 
 		const swiftReturnType = this.getPublicTypeSignature(method.returnValue.type);
@@ -110,7 +113,7 @@ export abstract class BaseTypeGenerator {
 			methodDeclarationKeywords = 'public';
 		}
 
-		let returnValuePrefix = '', returnValueSuffix = '';
+		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue);
 
 		return `
 					${methodDeclarationKeywords} ${swiftMethodName}(${swiftMethodArguments.join(', ')}) ${returnTypeInfix}{
@@ -120,8 +123,11 @@ export abstract class BaseTypeGenerator {
 						// native method call
 						let nativeCallResult = ${nativeCallWrapperPrefix}${method.name}(${nativeCallValueAccessors.join(', ')})${nativeCallWrapperSuffix}
 						
+						// cleanup
+						${nativeCallSuffix}
+						
 						// return value (do some wrapping)
-						let returnValue = ${returnValuePrefix}nativeCallResult${returnValueSuffix}
+						let returnValue = ${preparedReturnValue.wrapperPrefix}nativeCallResult${preparedReturnValue.wrapperSuffix}
 						
 						return returnValue;
 					}
@@ -229,6 +235,18 @@ export abstract class BaseTypeGenerator {
 			preparedArgument.accessor = preparedArgument.name + '.cType!';
 		}
 
+		if (argument.type instanceof RustVector) {
+			preparedArgument.name += 'Vector';
+			preparedArgument.conversion += `
+						let ${preparedArgument.name} = Bindings.new_${argument.type.name}Wrapper(array: ${publicName})
+			`;
+			// figure out when it needs to be dangled
+			preparedArgument.accessor = preparedArgument.name + '.cType!';
+			preparedArgument.deferredCleanup += `
+						${preparedArgument.name}.noOpRetain()
+			`;
+		}
+
 		if (argument.isConstant) {
 			// we must wrap the native call in a withUnsafePointer component
 			preparedArgument.name += 'Pointer';
@@ -244,6 +262,22 @@ export abstract class BaseTypeGenerator {
 		}
 
 		return preparedArgument;
+	}
+
+	protected prepareRustReturnValueForSwift(returnType: ContextualRustType) {
+		const preparedReturnValue: PreparedReturnValue = {
+			wrapperPrefix: '',
+			wrapperSuffix: ''
+		};
+
+		if(returnType.type instanceof RustVector){
+			preparedReturnValue.wrapperPrefix += `Bindings.${returnType.type.name}_to_array(nativeType: `;
+			preparedReturnValue.wrapperSuffix += `)`;
+		} else if (returnType.type instanceof RustStruct) {
+			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
+			preparedReturnValue.wrapperSuffix += `)`;
+		}
+		return preparedReturnValue;
 	}
 
 	private outputFilePath(type: RustType): string {
@@ -281,4 +315,9 @@ interface PreparedArgument {
 	 * memory deallocation or, ironically, retention beyond the call site
 	 */
 	deferredCleanup: string
+}
+
+interface PreparedReturnValue {
+	wrapperPrefix: string;
+	wrapperSuffix: string;
 }
