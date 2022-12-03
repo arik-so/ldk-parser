@@ -118,7 +118,7 @@ export abstract class BaseTypeGenerator {
 			}
 
 			const swiftArgumentName = Generator.snakeCaseToCamelCase(currentArgument.contextualName);
-			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type);
+			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, containerType);
 			if (!isInstanceArgument) {
 				swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
 			}
@@ -131,17 +131,17 @@ export abstract class BaseTypeGenerator {
 			nativeCallSuffix += preparedArgument.deferredCleanup;
 		}
 
-		const swiftReturnType = this.getPublicTypeSignature(method.returnValue.type);
+		const swiftReturnType = this.getPublicTypeSignature(method.returnValue.type, containerType);
 		const returnTypeInfix = swiftReturnType == 'Void' ? '' : `-> ${swiftReturnType} `;
 
-		const staticInfix = isInstanceMethod ? '' : 'static ';
+		const staticInfix = isInstanceMethod ? '' : 'class ';
 		let methodDeclarationKeywords = `public ${staticInfix}func`;
 		if (swiftMethodName === 'init') {
 			// it's a constructor
 			methodDeclarationKeywords = 'public';
 		}
 
-		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue);
+		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue, containerType);
 
 		return `
 					${this.renderDocComment(method.documentation, 5)}
@@ -163,15 +163,19 @@ export abstract class BaseTypeGenerator {
 		`;
 	}
 
+	protected standaloneMethodName(method: RustFunction, containerType: RustType): string {
+		let typeNamePrefix = containerType.name;
+		if (typeNamePrefix.startsWith('LDK')) {
+			typeNamePrefix = typeNamePrefix.substring('LDK'.length);
+		}
+		return method.name.replace(typeNamePrefix + '_', '');
+	}
+
 	protected swiftMethodName(method: RustFunction, containerType?: RustType): string {
 		let standaloneMethodName = method.name;
 		if (containerType) {
-			let typeNamePrefix = containerType.name;
-			if (typeNamePrefix.startsWith('LDK')) {
-				typeNamePrefix = typeNamePrefix.substring('LDK'.length);
-			}
-			standaloneMethodName = standaloneMethodName.replace(typeNamePrefix + '_', '');
-			if (method.returnValue.type === containerType) {
+			standaloneMethodName = this.standaloneMethodName(method, containerType);
+			if (method.returnValue.type === containerType && !['clone', 'none'].includes(standaloneMethodName)) {
 				return 'init';
 			}
 			return Generator.snakeCaseToCamelCase(standaloneMethodName);
@@ -203,10 +207,12 @@ export abstract class BaseTypeGenerator {
 		return false;
 	}
 
-	protected getPublicTypeSignature(type: RustType): string {
-		const swiftTypeName = this.swiftTypeName(type);
+	protected getPublicTypeSignature(type: RustType, containerType?: RustType): string {
 
-		if (!this.isMercurialType(type)) {
+		let isTypeMercurial = this.isMercurialType(type);
+		const isTypeCurrentContainerType = (type === containerType);
+		if (!isTypeMercurial || isTypeCurrentContainerType) {
+			// even if the type is mercurial, it isn't within the context of its own internals
 			return this.swiftTypeName(type);
 		}
 
@@ -251,29 +257,32 @@ export abstract class BaseTypeGenerator {
 			deferredCleanup: ''
 		};
 
-		if (containerType && containerType === argument.type) {
+		if (argument.type === containerType) {
 			// we're passing self
 			preparedArgument.accessor = 'self.cType!';
-		}
+		}else {
 
-		if (argument.type instanceof RustNullableOption) {
-			preparedArgument.name += 'Option';
-			preparedArgument.conversion += `
+			// these type elision helpers only apply outside the context of the very eliding type
+
+			if (argument.type instanceof RustNullableOption) {
+				preparedArgument.name += 'Option';
+				preparedArgument.conversion += `
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})
 			`;
-			preparedArgument.accessor = preparedArgument.name + '.cType!';
-		}
+				preparedArgument.accessor = preparedArgument.name + '.cType!';
+			}
 
-		if (argument.type instanceof RustVector) {
-			preparedArgument.name += 'Vector';
-			preparedArgument.conversion += `
+			if (argument.type instanceof RustVector) {
+				preparedArgument.name += 'Vector';
+				preparedArgument.conversion += `
 						let ${preparedArgument.name} = Bindings.new_${argument.type.name}Wrapper(array: ${publicName})
 			`;
-			// figure out when it needs to be dangled
-			preparedArgument.accessor = preparedArgument.name + '.cType!';
-			preparedArgument.deferredCleanup += `
+				// figure out when it needs to be dangled
+				preparedArgument.accessor = preparedArgument.name + '.cType!';
+				preparedArgument.deferredCleanup += `
 						${preparedArgument.name}.noOpRetain()
 			`;
+			}
 		}
 
 		if (argument.isConstant) {
@@ -293,7 +302,7 @@ export abstract class BaseTypeGenerator {
 		return preparedArgument;
 	}
 
-	protected prepareRustReturnValueForSwift(returnType: ContextualRustType) {
+	protected prepareRustReturnValueForSwift(returnType: ContextualRustType, containerType?: RustType) {
 		const preparedReturnValue: PreparedReturnValue = {
 			wrapperPrefix: '',
 			wrapperSuffix: ''
@@ -305,6 +314,13 @@ export abstract class BaseTypeGenerator {
 		} else if (returnType.type instanceof RustStruct) {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
 			preparedReturnValue.wrapperSuffix += `)`;
+		} else if (returnType.type instanceof RustNullableOption) {
+			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
+			preparedReturnValue.wrapperSuffix += `)`;
+			if (returnType.type !== containerType) {
+				// it's a mercurial type, so we pass it through
+				preparedReturnValue.wrapperSuffix += '.getValue()';
+			}
 		}
 		return preparedReturnValue;
 	}

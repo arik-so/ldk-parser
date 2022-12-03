@@ -1,0 +1,118 @@
+import {BaseTypeGenerator} from './base_type_generator.mjs';
+import {RustFunction, RustNullableOption, RustPrimitiveEnum, RustType} from '../rust_types.mjs';
+import Generator from './index.mjs';
+
+export default class NullableOptionGenerator extends BaseTypeGenerator {
+	generateFileContents(type: RustType): string {
+		if (!(type instanceof RustNullableOption)) {
+			throw new Error('type must be a RustStruct!');
+		}
+
+		const swiftTypeName = this.swiftTypeName(type);
+
+		let generatedMethods = '';
+
+		let someTag = '';
+		let noneTag = '';
+
+		let someInitializerMethod: RustFunction = null;
+		let noneInitializerMethod: RustFunction = null;
+
+		const tagEnumType = type.variantTag.type as RustPrimitiveEnum;
+		for (const currentTag of tagEnumType.variants) {
+			if (currentTag.name.endsWith('_Some')) {
+				someTag = currentTag.name;
+			} else if (currentTag.name.endsWith('_None')) {
+				noneTag = currentTag.name;
+			} else {
+				throw new Error('Unexpected nullable option tag enum variant name: ' + currentTag.name);
+			}
+		}
+
+		for (const currentMethod of type.methods) {
+			const standaloneMethodName = this.standaloneMethodName(currentMethod, type);
+			if (standaloneMethodName === 'some') {
+				someInitializerMethod = currentMethod;
+				continue;
+			}
+			if (standaloneMethodName === 'none') {
+				noneInitializerMethod = currentMethod;
+				continue;
+			}
+			generatedMethods += this.generateMethod(currentMethod, type);
+		}
+
+		const swiftReturnType = this.getPublicTypeSignature(type.someVariant.type);
+		const preparedReturnValue = this.prepareRustReturnValueForSwift(type.someVariant, type);
+
+		const valueArgumentName = Generator.snakeCaseToCamelCase(type.someVariant.contextualName);
+		const preparedArgument = this.prepareSwiftArgumentForRust(type.someVariant)
+
+		return `
+			#if SWIFT_PACKAGE
+			import LDKHeaders
+			#endif
+			
+			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}
+			
+			extension Bindings {
+				
+				${this.renderDocComment(type.variantTag.type.documentation, 4)}
+				public class ${swiftTypeName}: NativeTypeWrapper {
+			
+					private static var instanceCounter: UInt = 0
+					internal let instanceNumber: UInt
+			
+					internal var cType: ${type.name}?
+					
+					public init(${valueArgumentName}: ${swiftReturnType}?) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						
+						if let value = value {
+							self.cType = ${someInitializerMethod.name}(${preparedArgument.accessor})
+						} else {
+							self.cType = ${noneInitializerMethod.name}()
+						}
+						
+						super.init(conflictAvoidingVariableName: 0)
+					}
+					
+					${generatedMethods}
+					
+					public func getValue() -> ${swiftReturnType}? {
+						if self.cType!.tag == ${noneTag} {
+							return nil
+						}
+						if self.cType!.tag == ${someTag} {
+							return ${preparedReturnValue.wrapperPrefix}self.cOpaqueStruct!.some${preparedReturnValue.wrapperSuffix}
+						}
+						assert(false, "invalid option enum value")
+						return nil
+					}
+					
+					internal func dangle() -> ${swiftTypeName} {
+        				self.dangling = true
+						return self
+					}
+
+					deinit {
+						if !self.dangling {
+							Bindings.print("Freeing ${swiftTypeName} \(self.instanceNumber).")
+							self.free()
+						} else {
+							Bindings.print("Not freeing ${swiftTypeName} \(self.instanceNumber) due to dangle.")
+						}
+					}
+					
+				}
+				
+			}
+		`;
+	}
+
+	protected outputDirectorySuffix(): string {
+		return 'options';
+	}
+
+}

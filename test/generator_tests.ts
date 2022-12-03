@@ -3,6 +3,10 @@ import Parser from '../src/parser.mjs';
 import Config from '../src/config.mjs';
 import StructGenerator from '../src/generation/struct_generator.mjs';
 import {expect} from 'chai';
+import {describe} from 'mocha';
+import chai from 'chai';
+import {ContextualRustType, RustNullableOption, RustPrimitive} from '../src/rust_types.mjs';
+import NullableOptionGenerator from '../src/generation/nullable_option_generator.mjs';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -53,6 +57,21 @@ describe('Generator Tests', () => {
 			const chainMonitor = parser.glossary['LDKChainMonitor'];
 			const generator = new StructGenerator(config);
 			const output = generator.generateFileContents(chainMonitor);
+		});
+	});
+
+	describe('Nullable Option Generation Tests', () => {
+		it('should generate binary option 01', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/generation/option_u32_test.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+
+			const option = <RustNullableOption>glossary['LDKCOption_u32Z'];
+			const generator = new NullableOptionGenerator(config);
+			const output = generator.generateFileContents(option);
 			debugger
 		});
 	});
