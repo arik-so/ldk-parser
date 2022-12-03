@@ -116,6 +116,7 @@ export abstract class BaseTypeGenerator {
 		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue);
 
 		return `
+					${this.renderDocComment(method.documentation, 5)}
 					${methodDeclarationKeywords} ${swiftMethodName}(${swiftMethodArguments.join(', ')}) ${returnTypeInfix}{
 						// native call variable prep
 						${nativeCallPrefix}
@@ -270,7 +271,7 @@ export abstract class BaseTypeGenerator {
 			wrapperSuffix: ''
 		};
 
-		if(returnType.type instanceof RustVector){
+		if (returnType.type instanceof RustVector) {
 			preparedReturnValue.wrapperPrefix += `Bindings.${returnType.type.name}_to_array(nativeType: `;
 			preparedReturnValue.wrapperSuffix += `)`;
 		} else if (returnType.type instanceof RustStruct) {
@@ -278,6 +279,12 @@ export abstract class BaseTypeGenerator {
 			preparedReturnValue.wrapperSuffix += `)`;
 		}
 		return preparedReturnValue;
+	}
+
+	protected renderDocComment(comment: string, indentationDepth: number = 0): string {
+		const indentation = '\t'.repeat(indentationDepth);
+		const commentPrefix = '/// ';
+		return commentPrefix + comment.replaceAll('\n', '\n' + indentation + commentPrefix);
 	}
 
 	private outputFilePath(type: RustType): string {

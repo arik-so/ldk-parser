@@ -24,7 +24,8 @@ export default class StructGenerator extends BaseTypeGenerator {
 			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}
 			
 			extension Bindings {
-			
+				
+				${this.renderDocComment(type.documentation, 4)}
 				public class ${swiftTypeName}: NativeTypeWrapper {
 			
 					private static var instanceCounter: UInt = 0
