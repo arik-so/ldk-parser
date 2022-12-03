@@ -315,6 +315,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (returnType.type instanceof RustVector) {
 			preparedReturnValue.wrapperPrefix += `Bindings.${returnType.type.name}_to_array(nativeType: `;
 			preparedReturnValue.wrapperSuffix += `)`;
+		} else if(returnType.type instanceof RustTrait){
+			preparedReturnValue.wrapperPrefix += `NativelyImplemented${this.swiftTypeName(returnType.type)}(pointer: `;
+			preparedReturnValue.wrapperSuffix += `, anchor: self)`;
 		} else if (returnType.type instanceof RustStruct) {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
 			preparedReturnValue.wrapperSuffix += `)`;
