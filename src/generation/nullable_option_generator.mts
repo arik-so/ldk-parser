@@ -53,12 +53,12 @@ export default class NullableOptionGenerator extends BaseTypeGenerator {
 			import LDKHeaders
 			#endif
 			
-			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}
+			internal typealias ${swiftTypeName} = Bindings.${swiftTypeName}
 			
 			extension Bindings {
 				
 				${this.renderDocComment(type.variantTag.type.documentation, 4)}
-				public class ${swiftTypeName}: NativeTypeWrapper {
+				internal class ${swiftTypeName}: NativeTypeWrapper {
 			
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
