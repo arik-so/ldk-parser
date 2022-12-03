@@ -17,7 +17,7 @@ import Generator from './index.mjs';
 /**
  * Generates just one individual type. Each kind has its own implementation.
  */
-export abstract class BaseTypeGenerator {
+export abstract class BaseTypeGenerator<Type extends RustType> {
 
 	protected config: Config;
 
@@ -29,7 +29,7 @@ export abstract class BaseTypeGenerator {
 	 *
 	 * @param type
 	 */
-	generate(type: RustType) {
+	generate(type: Type) {
 		const fileContents = this.generateFileContents(type);
 		this.persist(type, fileContents);
 	}
@@ -38,7 +38,7 @@ export abstract class BaseTypeGenerator {
 	 *
 	 * @param type
 	 */
-	abstract generateFileContents(type: RustType): string;
+	abstract generateFileContents(type: Type): string;
 
 	protected abstract outputDirectorySuffix(): string;
 

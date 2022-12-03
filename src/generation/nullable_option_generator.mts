@@ -2,12 +2,8 @@ import {BaseTypeGenerator} from './base_type_generator.mjs';
 import {RustFunction, RustNullableOption, RustPrimitiveEnum, RustType} from '../rust_types.mjs';
 import Generator from './index.mjs';
 
-export default class NullableOptionGenerator extends BaseTypeGenerator {
-	generateFileContents(type: RustType): string {
-		if (!(type instanceof RustNullableOption)) {
-			throw new Error('type must be a RustStruct!');
-		}
-
+export default class NullableOptionGenerator extends BaseTypeGenerator<RustNullableOption> {
+	generateFileContents(type: RustNullableOption): string {
 		const swiftTypeName = this.swiftTypeName(type);
 
 		let generatedMethods = '';

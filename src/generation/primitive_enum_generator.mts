@@ -1,13 +1,9 @@
 import {RustPrimitiveEnum, RustType} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 
-export default class PrimitiveEnumGenerator extends BaseTypeGenerator {
+export default class PrimitiveEnumGenerator extends BaseTypeGenerator<RustPrimitiveEnum> {
 
-	generateFileContents(type: RustType): string {
-		if (!(type instanceof RustPrimitiveEnum)) {
-			throw new Error('type must be a RustStruct!');
-		}
-
+	generateFileContents(type: RustPrimitiveEnum): string {
 		const swiftTypeName = this.swiftTypeName(type);
 
 		let fieldAccessors = '';

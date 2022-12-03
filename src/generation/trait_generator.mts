@@ -1,13 +1,9 @@
 import {RustTrait, RustType} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 
-export default class TraitGenerator extends BaseTypeGenerator {
+export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
-	generateFileContents(type: RustType): string {
-		if (!(type instanceof RustTrait)) {
-			throw new Error('type must be a RustStruct!');
-		}
-
+	generateFileContents(type: RustTrait): string {
 		const swiftTypeName = this.swiftTypeName(type);
 
 		let fieldAccessors = '';

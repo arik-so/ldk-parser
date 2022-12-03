@@ -5,7 +5,7 @@ import StructGenerator from '../src/generation/struct_generator.mjs';
 import {expect} from 'chai';
 import {describe} from 'mocha';
 import chai from 'chai';
-import {ContextualRustType, RustNullableOption, RustPrimitive} from '../src/rust_types.mjs';
+import {ContextualRustType, RustNullableOption, RustPrimitive, RustStruct} from '../src/rust_types.mjs';
 import NullableOptionGenerator from '../src/generation/nullable_option_generator.mjs';
 
 class TestConfig extends Config {
@@ -32,7 +32,7 @@ describe('Generator Tests', () => {
 			const parser = new Parser(config);
 			parser.parse();
 
-			const chainMonitor = parser.glossary['LDKChainMonitor'];
+			const chainMonitor = <RustStruct>parser.glossary['LDKChainMonitor'];
 			const generator = new StructGenerator(config);
 			const output = generator.generateFileContents(chainMonitor);
 
@@ -54,7 +54,7 @@ describe('Generator Tests', () => {
 			const parser = new Parser(config);
 			parser.parse();
 
-			const chainMonitor = parser.glossary['LDKChainMonitor'];
+			const chainMonitor = <RustStruct>parser.glossary['LDKChainMonitor'];
 			const generator = new StructGenerator(config);
 			const output = generator.generateFileContents(chainMonitor);
 			debugger

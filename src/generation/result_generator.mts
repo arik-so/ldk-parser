@@ -1,13 +1,9 @@
 import {RustResult, RustType} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 
-export default class ResultGenerator extends BaseTypeGenerator {
+export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 
-	generateFileContents(type: RustType): string {
-		if (!(type instanceof RustResult)) {
-			throw new Error('type must be a RustStruct!');
-		}
-
+	generateFileContents(type: RustResult): string {
 		const swiftTypeName = this.swiftTypeName(type);
 
 		let fieldAccessors = '';
