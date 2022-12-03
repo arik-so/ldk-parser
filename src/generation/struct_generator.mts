@@ -10,7 +10,12 @@ export default class StructGenerator extends BaseTypeGenerator {
 
 		const swiftTypeName = this.swiftTypeName(type);
 
+		let fieldAccessors = '';
 		let generatedMethods = '';
+
+		for (const [_, currentField] of Object.entries(type.fields)){
+			fieldAccessors += this.generateAccessor(currentField, type);
+		}
 
 		for (const currentMethod of type.methods) {
 			generatedMethods += this.generateMethod(currentMethod, type);
@@ -34,6 +39,8 @@ export default class StructGenerator extends BaseTypeGenerator {
 					internal var cType: ${type.name}?
 					
 					${generatedMethods}
+					
+					${fieldAccessors}
 					
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true

@@ -1,6 +1,7 @@
 import Config from '../config.mjs';
 import {
 	ContextualRustType,
+	OpaqueRustStruct,
 	RustArray,
 	RustFunction,
 	RustNullableOption,
@@ -69,6 +70,33 @@ export abstract class BaseTypeGenerator {
 		const outputDirectory = path.dirname(outputPath);
 		fs.mkdirSync(outputDirectory, {recursive: true});
 		fs.writeFileSync(outputPath, fileContents, {});
+	}
+
+	protected generateAccessor(field: ContextualRustType, containerType: RustType): string {
+		if (field.type instanceof OpaqueRustStruct) {
+			// this should not be exposed
+			return '';
+		}
+
+		let accessorName = 'get' + Generator.snakeCaseToCamelCase(field.contextualName, true);
+		if (field.contextualName.startsWith('is') && field.type instanceof RustPrimitive && field.type.swiftRawSignature === 'Bool') {
+			// this is just a flag
+			accessorName = Generator.snakeCaseToCamelCase(field.contextualName);
+		}
+
+		const swiftReturnType = this.getPublicTypeSignature(field.type);
+		const fieldAccessor = `self.cType!.${field.contextualName}`;
+		const preparedReturnValue = this.prepareRustReturnValueForSwift(field);
+
+		return `
+					${this.renderDocComment(field.documentation, 5)}
+					public func ${accessorName}() -> ${swiftReturnType} {
+						// return value (do some wrapping)
+						let returnValue = ${preparedReturnValue.wrapperPrefix}${fieldAccessor}${preparedReturnValue.wrapperSuffix}
+						
+						return returnValue;
+					}
+		`;
 	}
 
 	protected generateMethod(method: RustFunction, containerType?: RustType): string {
