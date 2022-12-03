@@ -1,23 +1,17 @@
 import {default as debugModule} from 'debug';
+import url from 'url';
 
 const debug = debugModule('ldk-parser:config');
 
 export default class Config {
 
 	getHeaderPath(): string {
-		// test unions
-		// return '/Users/arik/Developer/ldk-parser/res/union_test.h';
-
-		// test results
-		// return '/Users/arik/Developer/ldk-parser/res/result_test.h';
-
-		// test traits
-		// return '/Users/arik/Developer/ldk-parser/res/trait_test.h';
-
-		return '/Users/arik/Developer/ldk-c-bindings/lightning-c-bindings/include/lightning.h';
+		const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+		return `${__dirname}/../../ldk-c-bindings/lightning-c-bindings/include/lightning.h`;
 	}
 
 	getOutputBaseDirectoryPath(): string {
-		return '/Users/arik/Developer/ldk-parser/out';
+		const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+		return `${__dirname}/../out`;
 	}
 }
