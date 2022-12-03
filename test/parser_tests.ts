@@ -243,7 +243,7 @@ describe('Parser Tests', () => {
 			chai.expect(innerField.contextualName).equals('inner');
 			chai.expect(innerField.documentation)
 			.equals('A pointer to the opaque Rust object.\nNearly everywhere, inner must be non-null, however in places where\nthe Rust equivalent takes an Option, it may be set to null to indicate None.');
-			chai.expect(innerField.isConstant).equals(true);
+			chai.expect(innerField.isAsteriskPointer).equals(true);
 
 			const innerType = innerField.type;
 			chai.assert(innerType instanceof OpaqueRustStruct);
@@ -301,7 +301,7 @@ describe('Parser Tests', () => {
 			chai.expect(logArgument.contextualName).equals('record');
 			chai.expect(logArgument.isNonnullablePointer).equals(true);
 			chai.expect(logArgument.isConstant).equals(true);
-			chai.expect(logArgument.isAsteriskPointer).equals(false);
+			chai.expect(logArgument.isAsteriskPointer).equals(true);
 			chai.expect(logArgument.type).equals(ldkRecord);
 		});
 

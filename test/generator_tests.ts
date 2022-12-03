@@ -32,13 +32,14 @@ describe('Generator Tests', () => {
 			const generator = new StructGenerator(config);
 			const output = generator.generateFileContents(chainMonitor);
 
-			debugger
-
 			expect(output).contains('public typealias ChainMonitor = Bindings.ChainMonitor');
 			expect(output).contains('internal var cType: LDKChainMonitor?');
 			expect(output).contains('public init(chainSource: Filter?) -> ChainMonitor {');
 			expect(output).contains('public func getClaimableBalances() -> [UInt8] {');
 			expect(output).contains('public func free() {');
+
+			expect(output).contains('let chainSourceOption = Option_FilterZ(value: chainSource)');
+			expect(output).contains('let nativeCallResult = ChainMonitor_free(self.cType!)');
 
 		});
 	});
