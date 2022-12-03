@@ -57,6 +57,7 @@ describe('Generator Tests', () => {
 			const chainMonitor = parser.glossary['LDKChainMonitor'];
 			const generator = new StructGenerator(config);
 			const output = generator.generateFileContents(chainMonitor);
+			debugger
 		});
 	});
 

@@ -6,7 +6,7 @@ import {
 	RustFunction,
 	RustNullableOption,
 	RustPrimitive,
-	RustStruct,
+	RustStruct, RustTrait,
 	RustType,
 	RustVector
 } from '../rust_types.mjs';
@@ -282,6 +282,10 @@ export abstract class BaseTypeGenerator {
 				preparedArgument.deferredCleanup += `
 						${preparedArgument.name}.noOpRetain()
 			`;
+			}
+
+			if (argument.type instanceof RustTrait) {
+				preparedArgument.accessor = preparedArgument.name + '.activate().cType!';
 			}
 		}
 
