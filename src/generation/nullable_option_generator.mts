@@ -71,6 +71,8 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 						super.init(conflictAvoidingVariableName: 0)
 					}
 					
+					${generatedMethods}
+					
 					public func getValue() -> ${swiftReturnType}? {
 						if self.cType!.tag == ${noneTag} {
 							return nil
@@ -81,8 +83,6 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 						assert(false, "invalid option enum value")
 						return nil
 					}
-					
-					${generatedMethods}
 					
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true

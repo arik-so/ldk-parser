@@ -7,7 +7,6 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 	generateFileContents(type: RustTaggedValueEnum): string {
 		const swiftTypeName = this.swiftTypeName(type);
 
-		let fieldAccessors = '';
 		let generatedMethods = '';
 
 		for (const currentMethod of type.methods) {
@@ -50,7 +49,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 							return nil
 						}
 						
-						${preparedReturnValue.wrapperPrefix}self.cType!.${currentVariant.contextualName}${preparedReturnValue.wrapperSuffix}
+						return ${preparedReturnValue.wrapperPrefix}self.cType!.${currentVariant.contextualName}${preparedReturnValue.wrapperSuffix}
 					}
 			`;
 		}
@@ -77,11 +76,9 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 						${valueTypeDetector}
 					}
 					
-					${polymorphicAccessors}
-					
 					${generatedMethods}
 					
-					${fieldAccessors}
+					${polymorphicAccessors}
 					
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true

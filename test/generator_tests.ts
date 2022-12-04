@@ -4,10 +4,11 @@ import Config from '../src/config.mjs';
 import StructGenerator from '../src/generation/struct_generator.mjs';
 import {expect} from 'chai';
 import {describe} from 'mocha';
-import {RustNullableOption, RustStruct, RustTaggedValueEnum, RustVector} from '../src/rust_types.mjs';
+import {RustNullableOption, RustResult, RustStruct, RustTaggedValueEnum, RustVector} from '../src/rust_types.mjs';
 import NullableOptionGenerator from '../src/generation/nullable_option_generator.mjs';
 import VectorGenerator from '../src/generation/vector_generator.mjs';
 import ComplexEnumGenerator from '../src/generation/complex_enum_generator.mjs';
+import ResultGenerator from '../src/generation/result_generator.mjs';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -106,9 +107,24 @@ describe('Generator Tests', () => {
 			const parser = new Parser(config);
 			parser.parse();
 
-			const chainMonitor = <RustTaggedValueEnum>parser.glossary['LDKPaymentSendFailure'];
+			const paymentSendFailure = <RustTaggedValueEnum>parser.glossary['LDKPaymentSendFailure'];
 			const generator = new ComplexEnumGenerator(config);
-			const output = generator.generateFileContents(chainMonitor);
+			const output = generator.generateFileContents(paymentSendFailure);
+		})
+	});
+
+	describe('Result Generation Tests', () => {
+		it('should generate channel config decore error completely', () => {
+			// only the new and get_claimable_balances methods are present
+			// some parameters have been removed
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/../res/lightning_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+
+			const channelConfigDecodeError = <RustResult>parser.glossary['LDKCResult_ChannelConfigDecodeErrorZ'];
+			const generator = new ResultGenerator(config);
+			const output = generator.generateFileContents(channelConfigDecodeError);
 			debugger
 		})
 	});

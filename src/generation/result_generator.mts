@@ -1,4 +1,4 @@
-import {RustResult, RustType} from '../rust_types.mjs';
+import {RustResult, RustResultValueEnum, RustType} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 
 export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
@@ -6,12 +6,15 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 	generateFileContents(type: RustResult): string {
 		const swiftTypeName = this.swiftTypeName(type);
 
-		let fieldAccessors = '';
 		let generatedMethods = '';
 
 		for (const currentMethod of type.methods) {
 			generatedMethods += this.generateMethod(currentMethod, type);
 		}
+
+		const valueEnum = type.valueField.type as RustResultValueEnum;
+		const preparedErrorReturnValue = this.prepareRustReturnValueForSwift(valueEnum.errorVariant, type);
+		const preparedSuccessReturnValue = this.prepareRustReturnValueForSwift(valueEnum.resultVariant, type);
 
 		return `
 			#if SWIFT_PACKAGE
@@ -25,44 +28,34 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 				${this.renderDocComment(type.documentation, 4)}
 				public class ${swiftTypeName}: NativeTypeWrapper {
 			
-					private static var instanceCounter: UInt = 0
-					internal let instanceNumber: UInt
-			
-					internal var cType: ${type.name}?
-					
-					public init(pointer: ${type.name}){
-						Self.instanceCounter += 1
-						self.instanceNumber = Self.instanceCounter
-						self.cOpaqueStruct = pointer
-						super.init(conflictAvoidingVariableName: 0)
-					}
-			
-					public init(pointer: ${type.name}, anchor: NativeTypeWrapper){
-						Self.instanceCounter += 1
-						self.instanceNumber = Self.instanceCounter
-						self.cOpaqueStruct = pointer
-						super.init(conflictAvoidingVariableName: 0)
-						self.dangling = true
-						try! self.addAnchor(anchor: anchor)
-					}
+					${this.inheritedInits(type)}
 					
 					${generatedMethods}
 					
-					${fieldAccessors}
+					public func isOk() -> Bool {
+						return self.cOpaqueStruct?.result_ok == true
+					}
+			
+					public func getError() -> ${this.getPublicTypeSignature(valueEnum.errorVariant.type)}? {
+						if self.cType?.result_ok == false {
+							return ${preparedErrorReturnValue.wrapperPrefix}self.cType!.contents.err.pointee${preparedErrorReturnValue.wrapperSuffix}
+						}
+						return nil
+					}
+					
+					public func getValue() -> ${this.getPublicTypeSignature(valueEnum.resultVariant.type)}? {
+						if self.cType?.result_ok == true {
+							return ${preparedSuccessReturnValue.wrapperPrefix}self.cType!.contents.result.pointee${preparedSuccessReturnValue.wrapperSuffix}
+						}
+						return nil
+					}
 					
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true
 						return self
 					}
 
-					deinit {
-						if !self.dangling {
-							Bindings.print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
-							self.free()
-						} else {
-							Bindings.print("Not freeing ${swiftTypeName} \\(self.instanceNumber) due to dangle.")
-						}
-					}
+					${this.deinitCode(type)}
 					
 				}
 				

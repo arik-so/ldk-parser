@@ -6,7 +6,7 @@ import {
 	RustFunction,
 	RustLambda,
 	RustNullableOption,
-	RustPrimitive,
+	RustPrimitive, RustResult,
 	RustStruct,
 	RustTaggedValueEnum,
 	RustTrait,
@@ -146,10 +146,15 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		const returnTypeInfix = (swiftReturnType === 'Void' || swiftMethodName === 'init') ? '' : `-> ${swiftReturnType} `;
 
 		const staticInfix = isInstanceMethod ? '' : 'class ';
-		let methodDeclarationKeywords = `public ${staticInfix}func`;
+		let visibility = 'public';
+		if (swiftMethodName === 'free' || swiftMethodName === 'clone'){
+			visibility = 'internal';
+		}
+
+		let methodDeclarationKeywords = `${visibility} ${staticInfix}func`;
 		if (swiftMethodName === 'init') {
 			// it's a constructor
-			methodDeclarationKeywords = 'public';
+			methodDeclarationKeywords = visibility;
 		}
 
 		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue, containerType);
@@ -239,6 +244,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			// this becomes a native Swift nullable that we're gonna unwrap or construct,
 			// depending on the context
 			const someVariantTypeName = this.getPublicTypeSignature(type.someVariant.type);
+			// TODO: if outer context already implies a Nullable, find way to avoid `??`
 			return someVariantTypeName + '?';
 		}
 
@@ -331,13 +337,14 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			wrapperSuffix: ''
 		};
 
+		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes
 		if (returnType.type instanceof RustVector) {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
 			preparedReturnValue.wrapperSuffix += `).getValue()`;
 		} else if (returnType.type instanceof RustTrait) {
 			preparedReturnValue.wrapperPrefix += `NativelyImplemented${this.swiftTypeName(returnType.type)}(pointer: `;
 			preparedReturnValue.wrapperSuffix += `, anchor: self)`;
-		} else if (returnType.type instanceof RustStruct) {
+		} else if (returnType.type instanceof RustStruct || returnType.type instanceof RustResult || returnType.type instanceof RustTaggedValueEnum) {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
 			preparedReturnValue.wrapperSuffix += `)`;
 		} else if (returnType.type instanceof RustNullableOption) {
@@ -347,6 +354,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				// it's a mercurial type, so we pass it through
 				preparedReturnValue.wrapperSuffix += '.getValue()';
 			}
+		} else if (returnType.type instanceof RustPrimitive) {
+			// nothing to do here
+			return preparedReturnValue;
+		} else {
+			throw new Error(`Unsupported return type ${returnType.type.name} of kind ${returnType.type.constructor.name}`);
 		}
 		return preparedReturnValue;
 	}
