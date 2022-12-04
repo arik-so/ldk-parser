@@ -5,10 +5,10 @@ import {
 	ContextualRustType,
 	OpaqueRustStruct,
 	RustArray,
-	RustNullableOption,
 	RustFunction,
 	RustKind,
 	RustLambda,
+	RustNullableOption,
 	RustPrimitive,
 	RustPrimitiveEnum,
 	RustPrimitiveEnumVariant,
@@ -17,7 +17,8 @@ import {
 	RustStruct,
 	RustStructField,
 	RustTaggedValueEnum,
-	RustTrait, RustTuple,
+	RustTrait,
+	RustTuple,
 	RustType,
 	RustVector
 } from './rust_types.mjs';
@@ -195,6 +196,40 @@ export default class Parser {
 					 */
 
 					/**
+					 * A particularly hard to detect situation is when the struct is really
+					 * a wrapper around either a primitive or a primitive array that should be
+					 * elided. Examples of such types are
+					 * LDKStr, LDKBigEndianScalar, LDKu5, LDKTransaction, LDKu8slice, LDKBigEndianScalar,
+					 * and many, many, more.
+					 * The indications are really varied, because there are multiple breakdowns:
+					 * a) is it a wrapper over one primitive (LDKu5), or an array of primitives
+					 * (all other instances)
+					 * b) if it's a wrapper over an array, is it fixed-length or variable-length?
+					 * Fixed-length examples are LDKRecoverableSignature, LDKBigEndianScalar.
+					 * Variable-length examples are LDKStr, LDKu8slice, LDKTransaction
+					 * c) what's the name of the field that contains the data?
+					 * Examples are big_endian_bytes (LDKBigEndianScalar), *chars (LDKStr)
+					 * d) if variable-length, what's the name of the field that contains the length?
+					 * Currently, it's datalen for all fields except LDKStr, where it's len
+					 * e) is this type ownable and, if so, what's the name of the ownership
+					 * indication field?
+					 * LDKTransaction is ownable (is_owned), as is LDKStr (chars_is_owned)
+					 *
+					 * So all these inconsistent indications beg the question: how do we find
+					 * one of those things? The current approach is rather imprecise:
+					 * if a struct contains between 1 and 3 fields, and all of them are either
+					 * primitives or primitive arrays
+					 *
+					 * Because this detection is so difficult to do prior to parsing the type,
+					 * we first parse it, and then try to do a conversion where we try to infer
+					 * the responsibility of each field.
+					 *
+					 * However, this approach has drawbacks. Types like
+					 * LDKHTLCDestination_LDKUnknownNextHop_Body end up caught in the dragnet
+					 * that way. But perhaps it makes sense to just elide those types, as well
+					 */
+
+					/**
 					 * Lastly, a struct may also be a trait. That happens if any one of its fields
 					 * is a lambda. That's right, we don't mix and match.
 					 * We check lambda presence using a simple regex.
@@ -221,7 +256,7 @@ export default class Parser {
 						descriptor = new RustTrait();
 					} else if (name.startsWith('LDKCVec_')) {
 						descriptor = new RustVector();
-					}else if (TUPLE_NAME_REGEX.test(name)) {
+					} else if (TUPLE_NAME_REGEX.test(name)) {
 						descriptor = new RustTuple();
 					} else {
 						descriptor = new RustStruct();
@@ -277,6 +312,10 @@ export default class Parser {
 						}
 					}
 					descriptor.fields[currentField.contextualName] = currentField;
+				}
+				if (this.isPrimitiveWrapper(descriptor)) {
+					// try to detect if this is a primitive wrapping struct
+					debug('Potential primitive wrapper: %s', descriptor.name);
 				}
 			} else if (descriptor instanceof RustResultValueEnum) {
 				for (const currentEnumLine of objectLines) {
@@ -345,6 +384,42 @@ export default class Parser {
 				// const tagField = this.parseStructField(obj)
 			}
 		}
+	}
+
+	private isPrimitiveWrapper(descriptor: RustStruct): boolean {
+		const fieldNames = Object.keys(descriptor.fields);
+		if (fieldNames.length < 1 || fieldNames.length > 3) {
+			return false;
+		}
+
+		// if there are two types, one of them has to be either an array of an asterisk-based pointer
+		let arrayType = null;
+		let asteriskPointerType = null;
+
+		for (const [fieldName, currentField] of Object.entries(descriptor.fields)) {
+			let typeToCheck = currentField.type;
+
+			if (currentField.isAsteriskPointer) {
+				asteriskPointerType = typeToCheck;
+			}
+
+			if (typeToCheck instanceof RustArray) {
+				arrayType = typeToCheck;
+				typeToCheck = typeToCheck.iteratee;
+			}
+
+			if (!(typeToCheck instanceof RustPrimitive)) {
+				return false;
+			}
+		}
+
+		if (fieldNames.length >= 2) {
+			if (arrayType === null && asteriskPointerType === null) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	private containsLambdas(objectLines: ObjectLine[]): boolean {
@@ -528,6 +603,11 @@ export default class Parser {
 			actualType.iteratee = rustType;
 			actualType.length = length;
 			actualType.kind = RustKind.Array;
+
+			if (!(rustType instanceof RustPrimitive)) {
+				debug('Non-primitive fixed-length-array: %s\n> %s', rustType.name, typeLine);
+			}
+
 			rustType = actualType;
 			contextualName = name;
 		} else if (!rustType) {
