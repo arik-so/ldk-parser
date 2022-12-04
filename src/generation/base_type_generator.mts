@@ -4,9 +4,12 @@ import {
 	OpaqueRustStruct,
 	RustArray,
 	RustFunction,
+	RustLambda,
 	RustNullableOption,
 	RustPrimitive,
-	RustStruct, RustTrait,
+	RustStruct,
+	RustTaggedValueEnum,
+	RustTrait,
 	RustType,
 	RustVector
 } from '../rust_types.mjs';
@@ -63,6 +66,14 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			return ldkLessTypeName;
 		}
 		throw new Error('Rust type names should always start with LDK');
+	}
+
+	protected hasFreeMethod(type: RustType): boolean {
+		return this.hasMethod(type, 'free');
+	}
+
+	protected hasCloneMethod(type: RustType): boolean {
+		return this.hasMethod(type, 'clone');
 	}
 
 	protected persist(type: RustType, fileContents: string) {
@@ -171,6 +182,14 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return method.name.replace(typeNamePrefix + '_', '');
 	}
 
+	protected standaloneLambdaName(lambda: RustLambda, containerType: RustType): string {
+		let typeNamePrefix = containerType.name;
+		if (typeNamePrefix.startsWith('LDK')) {
+			typeNamePrefix = typeNamePrefix.substring('LDK'.length);
+		}
+		return lambda.name.replace(typeNamePrefix + '_', '');
+	}
+
 	protected swiftMethodName(method: RustFunction, containerType?: RustType): string {
 		let standaloneMethodName = method.name;
 		if (containerType) {
@@ -260,7 +279,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (argument.type === containerType) {
 			// we're passing self
 			preparedArgument.accessor = 'self.cType!';
-		}else {
+		} else {
 
 			// these type elision helpers only apply outside the context of the very eliding type
 
@@ -315,7 +334,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (returnType.type instanceof RustVector) {
 			preparedReturnValue.wrapperPrefix += `Bindings.${returnType.type.name}_to_array(nativeType: `;
 			preparedReturnValue.wrapperSuffix += `)`;
-		} else if(returnType.type instanceof RustTrait){
+		} else if (returnType.type instanceof RustTrait) {
 			preparedReturnValue.wrapperPrefix += `NativelyImplemented${this.swiftTypeName(returnType.type)}(pointer: `;
 			preparedReturnValue.wrapperSuffix += `, anchor: self)`;
 		} else if (returnType.type instanceof RustStruct) {
@@ -332,10 +351,53 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return preparedReturnValue;
 	}
 
+	protected deinitCode(type: RustType): string {
+		const hasFreeMethod = this.hasFreeMethod(type);
+		if (!hasFreeMethod) {
+			return '';
+		}
+
+		const swiftTypeName = this.swiftTypeName(type);
+		return `deinit {
+						if !self.dangling {
+							Bindings.print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
+							self.free()
+						} else {
+							Bindings.print("Not freeing ${swiftTypeName} \\(self.instanceNumber) due to dangle.")
+						}
+					}
+		`;
+	}
+
 	protected renderDocComment(comment: string, indentationDepth: number = 0): string {
 		const indentation = '\t'.repeat(indentationDepth);
 		const commentPrefix = '/// ';
 		return commentPrefix + comment.replaceAll('\n', '\n' + indentation + commentPrefix);
+	}
+
+	private hasMethod(type: RustType, methodName: string) {
+		let methods: RustFunction[] = [];
+		if (type instanceof RustStruct) {
+			methods = type.methods;
+		} else if (type instanceof RustTaggedValueEnum) {
+			methods = type.methods;
+		}
+		for (const currentMethod of methods) {
+			const standaloneName = this.standaloneMethodName(currentMethod, type);
+			if (standaloneName === methodName) {
+				return true;
+			}
+		}
+
+		if (type instanceof RustTrait) {
+			for (const currentLambda of type.lambdas) {
+				const standaloneName = this.standaloneLambdaName(currentLambda, type);
+				if (standaloneName === methodName) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	private outputFilePath(type: RustType): string {

@@ -4,9 +4,9 @@ import Config from '../src/config.mjs';
 import StructGenerator from '../src/generation/struct_generator.mjs';
 import {expect} from 'chai';
 import {describe} from 'mocha';
-import chai from 'chai';
-import {ContextualRustType, RustNullableOption, RustPrimitive, RustStruct} from '../src/rust_types.mjs';
+import {RustNullableOption, RustStruct, RustVector} from '../src/rust_types.mjs';
 import NullableOptionGenerator from '../src/generation/nullable_option_generator.mjs';
+import VectorGenerator from '../src/generation/vector_generator.mjs';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -57,7 +57,7 @@ describe('Generator Tests', () => {
 			const chainMonitor = <RustStruct>parser.glossary['LDKChainMonitor'];
 			const generator = new StructGenerator(config);
 			const output = generator.generateFileContents(chainMonitor);
-			debugger
+			// debugger
 		});
 	});
 
@@ -73,6 +73,26 @@ describe('Generator Tests', () => {
 			const option = <RustNullableOption>glossary['LDKCOption_u32Z'];
 			const generator = new NullableOptionGenerator(config);
 			const output = generator.generateFileContents(option);
+			// debugger
+		});
+	});
+
+	describe('Vector Generation Tests', () => {
+		it('should generate Vec<Vec<RouteHop>>', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/generation/vec_vec_route_hop_test.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+
+			const routeVectorVector = <RustVector>glossary['LDKCVec_CVec_RouteHopZZ'];
+			const generator = new VectorGenerator(config);
+			const output = generator.generateFileContents(routeVectorVector);
+
+			const routeVector = <RustVector>glossary['LDKCVec_RouteHopZ'];
+			const subOutput = generator.generateFileContents(routeVector);
+			const aggregateOutput = subOutput + output;
 			debugger
 		});
 	});

@@ -108,14 +108,7 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 						return self
 					}
 
-					deinit {
-						if !self.dangling {
-							Bindings.print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
-							self.free()
-						} else {
-							Bindings.print("Not freeing ${swiftTypeName} \\(self.instanceNumber) due to dangle.")
-						}
-					}
+					${this.deinitCode(type)}
 					
 				}
 				
