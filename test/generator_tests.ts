@@ -4,9 +4,10 @@ import Config from '../src/config.mjs';
 import StructGenerator from '../src/generation/struct_generator.mjs';
 import {expect} from 'chai';
 import {describe} from 'mocha';
-import {RustNullableOption, RustStruct, RustVector} from '../src/rust_types.mjs';
+import {RustNullableOption, RustStruct, RustTaggedValueEnum, RustVector} from '../src/rust_types.mjs';
 import NullableOptionGenerator from '../src/generation/nullable_option_generator.mjs';
 import VectorGenerator from '../src/generation/vector_generator.mjs';
+import ComplexEnumGenerator from '../src/generation/complex_enum_generator.mjs';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -93,8 +94,23 @@ describe('Generator Tests', () => {
 			const routeVector = <RustVector>glossary['LDKCVec_RouteHopZ'];
 			const subOutput = generator.generateFileContents(routeVector);
 			const aggregateOutput = subOutput + output;
-			debugger
 		});
+	});
+
+	describe('Complex Enum Generation Tests', () => {
+		it('should generate payment send failure completely', () => {
+			// only the new and get_claimable_balances methods are present
+			// some parameters have been removed
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/../res/lightning_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+
+			const chainMonitor = <RustTaggedValueEnum>parser.glossary['LDKPaymentSendFailure'];
+			const generator = new ComplexEnumGenerator(config);
+			const output = generator.generateFileContents(chainMonitor);
+			debugger
+		})
 	});
 
 });

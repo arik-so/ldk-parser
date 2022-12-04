@@ -29,26 +29,7 @@ export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
 				${this.renderDocComment(type.documentation, 4)}
 				public class ${swiftTypeName}: NativeTypeWrapper {
 			
-					private static var instanceCounter: UInt = 0
-					internal let instanceNumber: UInt
-			
-					internal var cType: ${type.name}?
-					
-					public init(pointer: ${type.name}){
-						Self.instanceCounter += 1
-						self.instanceNumber = Self.instanceCounter
-						self.cOpaqueStruct = pointer
-						super.init(conflictAvoidingVariableName: 0)
-					}
-			
-					public init(pointer: ${type.name}, anchor: NativeTypeWrapper){
-						Self.instanceCounter += 1
-						self.instanceNumber = Self.instanceCounter
-						self.cOpaqueStruct = pointer
-						super.init(conflictAvoidingVariableName: 0)
-						self.dangling = true
-						try! self.addAnchor(anchor: anchor)
-					}
+					${this.inheritedInits(type)}
 					
 					${generatedMethods}
 					

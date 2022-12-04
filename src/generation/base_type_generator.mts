@@ -143,7 +143,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		}
 
 		const swiftReturnType = this.getPublicTypeSignature(method.returnValue.type, containerType);
-		const returnTypeInfix = swiftReturnType == 'Void' ? '' : `-> ${swiftReturnType} `;
+		const returnTypeInfix = (swiftReturnType === 'Void' || swiftMethodName === 'init') ? '' : `-> ${swiftReturnType} `;
 
 		const staticInfix = isInstanceMethod ? '' : 'class ';
 		let methodDeclarationKeywords = `public ${staticInfix}func`;
@@ -294,7 +294,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			if (argument.type instanceof RustVector) {
 				preparedArgument.name += 'Vector';
 				preparedArgument.conversion += `
-						let ${preparedArgument.name} = Bindings.new_${argument.type.name}Wrapper(array: ${publicName})
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(array: ${publicName})
 			`;
 				// figure out when it needs to be dangled
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
@@ -332,8 +332,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		};
 
 		if (returnType.type instanceof RustVector) {
-			preparedReturnValue.wrapperPrefix += `Bindings.${returnType.type.name}_to_array(nativeType: `;
-			preparedReturnValue.wrapperSuffix += `)`;
+			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
+			preparedReturnValue.wrapperSuffix += `).getValue()`;
 		} else if (returnType.type instanceof RustTrait) {
 			preparedReturnValue.wrapperPrefix += `NativelyImplemented${this.swiftTypeName(returnType.type)}(pointer: `;
 			preparedReturnValue.wrapperSuffix += `, anchor: self)`;
@@ -349,6 +349,31 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 		}
 		return preparedReturnValue;
+	}
+
+	protected inheritedInits(type: RustType): string {
+		return `
+					private static var instanceCounter: UInt = 0
+					internal let instanceNumber: UInt
+			
+					internal var cType: ${type.name}?
+					
+					public init(pointer: ${type.name}) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+					}
+			
+					public init(pointer: ${type.name}, anchor: NativeTypeWrapper) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+						self.dangling = true
+						try! self.addAnchor(anchor: anchor)
+					}
+		`;
 	}
 
 	protected deinitCode(type: RustType): string {

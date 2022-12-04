@@ -56,26 +56,7 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 				${this.renderDocComment(type.variantTag.type.documentation, 4)}
 				internal class ${swiftTypeName}: NativeTypeWrapper {
 			
-					private static var instanceCounter: UInt = 0
-					internal let instanceNumber: UInt
-			
-					internal var cType: ${type.name}?
-					
-					public init(pointer: ${type.name}){
-						Self.instanceCounter += 1
-						self.instanceNumber = Self.instanceCounter
-						self.cOpaqueStruct = pointer
-						super.init(conflictAvoidingVariableName: 0)
-					}
-			
-					public init(pointer: ${type.name}, anchor: NativeTypeWrapper){
-						Self.instanceCounter += 1
-						self.instanceNumber = Self.instanceCounter
-						self.cOpaqueStruct = pointer
-						super.init(conflictAvoidingVariableName: 0)
-						self.dangling = true
-						try! self.addAnchor(anchor: anchor)
-					}
+					${this.inheritedInits(type)}
 					
 					public init(${valueArgumentName}: ${swiftReturnType}?) {
 						Self.instanceCounter += 1
@@ -90,18 +71,18 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 						super.init(conflictAvoidingVariableName: 0)
 					}
 					
-					${generatedMethods}
-					
 					public func getValue() -> ${swiftReturnType}? {
 						if self.cType!.tag == ${noneTag} {
 							return nil
 						}
 						if self.cType!.tag == ${someTag} {
-							return ${preparedReturnValue.wrapperPrefix}self.cOpaqueStruct!.some${preparedReturnValue.wrapperSuffix}
+							return ${preparedReturnValue.wrapperPrefix}self.cType!.some${preparedReturnValue.wrapperSuffix}
 						}
 						assert(false, "invalid option enum value")
 						return nil
 					}
+					
+					${generatedMethods}
 					
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true

@@ -1,5 +1,6 @@
-import {RustTaggedValueEnum, RustType} from '../rust_types.mjs';
+import {RustPrimitiveEnum, RustTaggedValueEnum} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
+import Generator from './index.mjs';
 
 export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedValueEnum> {
 
@@ -13,6 +14,47 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 			generatedMethods += this.generateMethod(currentMethod, type);
 		}
 
+		const tagType = type.variantTag.type as RustPrimitiveEnum;
+
+		let tagEnumVariants = '';
+		let valueTypeDetector = 'switch self.cType!.tag {';
+		for (const currentVariant of tagType.variants) {
+			const currentVariantSwiftName = currentVariant.name.replace(type.name + '_', '');
+			tagEnumVariants += `
+						${this.renderDocComment(currentVariant.documentation, 6)}
+						case ${currentVariantSwiftName}
+			`;
+			valueTypeDetector += `
+							case ${currentVariant.name}:
+								return .${currentVariantSwiftName}
+			`;
+		}
+
+		valueTypeDetector += `
+							default:
+								return nil
+						}
+		`;
+
+		let polymorphicAccessors = '';
+		for (const [_, currentVariant] of Object.entries(type.variants)) {
+			const currentPublicType = this.getPublicTypeSignature(currentVariant.type, type);
+			const camelCasedVariantName = Generator.snakeCaseToCamelCase(currentVariant.contextualName, true);
+			const currentSwiftTypeName = camelCasedVariantName
+
+			const preparedReturnValue = this.prepareRustReturnValueForSwift(currentVariant, type);
+
+			polymorphicAccessors += `
+					public func getValueAs${currentSwiftTypeName}() -> ${currentPublicType}? {
+						if self.cType?.tag != ${type.name}_${camelCasedVariantName} {
+							return nil
+						}
+						
+						${preparedReturnValue.wrapperPrefix}self.cType!.${currentVariant.contextualName}${preparedReturnValue.wrapperSuffix}
+					}
+			`;
+		}
+
 		return `
 			#if SWIFT_PACKAGE
 			import LDKHeaders
@@ -22,29 +64,20 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 			
 			extension Bindings {
 				
-				${this.renderDocComment(type.documentation, 4)}
+				${this.renderDocComment(type.variantTag.type.documentation, 4)}
 				public class ${swiftTypeName}: NativeTypeWrapper {
 			
-					private static var instanceCounter: UInt = 0
-					internal let instanceNumber: UInt
-			
-					internal var cType: ${type.name}?
+					${this.inheritedInits(type)}
 					
-					public init(pointer: ${type.name}){
-						Self.instanceCounter += 1
-						self.instanceNumber = Self.instanceCounter
-						self.cOpaqueStruct = pointer
-						super.init(conflictAvoidingVariableName: 0)
+					public enum ${swiftTypeName}Type {
+						${tagEnumVariants}
 					}
-			
-					public init(pointer: ${type.name}, anchor: NativeTypeWrapper){
-						Self.instanceCounter += 1
-						self.instanceNumber = Self.instanceCounter
-						self.cOpaqueStruct = pointer
-						super.init(conflictAvoidingVariableName: 0)
-						self.dangling = true
-						try! self.addAnchor(anchor: anchor)
+					
+					public func getValueType() -> ${swiftTypeName}Type? {
+						${valueTypeDetector}
 					}
+					
+					${polymorphicAccessors}
 					
 					${generatedMethods}
 					
@@ -55,14 +88,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 						return self
 					}
 
-					deinit {
-						if !self.dangling {
-							Bindings.print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
-							self.free()
-						} else {
-							Bindings.print("Not freeing ${swiftTypeName} \\(self.instanceNumber) due to dangle.")
-						}
-					}
+					${this.deinitCode(type)}
 					
 				}
 				
