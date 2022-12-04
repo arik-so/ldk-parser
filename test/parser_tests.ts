@@ -353,11 +353,60 @@ describe('Parser Tests', () => {
 			const string = glossary['LDKStr'];
 			chai.assert(string instanceof RustPrimitiveWrapper);
 			chai.expect(string.dataField.contextualName).equals('chars');
-			chai.expect(string.lengthField).not.equals(null);
+			chai.assert(!!string.lengthField);
 			chai.expect(string.lengthField.contextualName).equals('len');
-			chai.expect(string.ownershipField).not.equals(null);
+			chai.assert(!!string.ownershipField);
 			chai.expect(string.ownershipField.contextualName).equals('chars_is_owned');
-			debugger
+
+			const bigEndianScalar = glossary['LDKBigEndianScalar'];
+			chai.assert(bigEndianScalar instanceof RustPrimitiveWrapper);
+			chai.expect(bigEndianScalar.dataField.contextualName).equals('big_endian_bytes');
+			chai.assert(!bigEndianScalar.lengthField);
+			chai.assert(!bigEndianScalar.ownershipField);
+
+			const thirtyTwoBytes = glossary['LDKThirtyTwoBytes'];
+			chai.assert(thirtyTwoBytes instanceof RustPrimitiveWrapper);
+			chai.expect(thirtyTwoBytes.dataField.contextualName).equals('data');
+			chai.assert(!thirtyTwoBytes.lengthField);
+			chai.assert(!thirtyTwoBytes.ownershipField);
+
+			const u5 = glossary['LDKu5'];
+			chai.assert(u5 instanceof RustPrimitiveWrapper);
+			chai.expect(u5.dataField.contextualName).equals('_0');
+			chai.assert(!u5.lengthField);
+			chai.assert(!u5.ownershipField);
+
+			const witnessVersion = glossary['LDKWitnessVersion'];
+			chai.assert(witnessVersion instanceof RustPrimitiveWrapper);
+			chai.expect(witnessVersion.dataField.contextualName).equals('_0');
+			chai.assert(!witnessVersion.lengthField);
+			chai.assert(!witnessVersion.ownershipField);
+
+			const transaction = glossary['LDKTransaction'];
+			chai.assert(transaction instanceof RustPrimitiveWrapper);
+			chai.expect(transaction.dataField.contextualName).equals('data');
+			chai.assert(transaction.lengthField);
+			chai.expect(transaction.lengthField.contextualName).equals('datalen');
+			chai.assert(transaction.ownershipField);
+			chai.expect(transaction.ownershipField.contextualName).equals('data_is_owned');
+
+			const secretKey = glossary['LDKSecretKey'];
+			chai.assert(secretKey instanceof RustPrimitiveWrapper);
+			chai.expect(secretKey.dataField.contextualName).equals('bytes');
+			chai.assert(!secretKey.lengthField);
+			chai.assert(!secretKey.ownershipField);
+
+			const signature = glossary['LDKSignature'];
+			chai.assert(signature instanceof RustPrimitiveWrapper);
+			chai.expect(signature.dataField.contextualName).equals('compact_form');
+			chai.assert(!signature.lengthField);
+			chai.assert(!signature.ownershipField);
+
+			const recoverableSignature = glossary['LDKRecoverableSignature'];
+			chai.assert(recoverableSignature instanceof RustPrimitiveWrapper);
+			chai.expect(recoverableSignature.dataField.contextualName).equals('serialized_form');
+			chai.assert(!recoverableSignature.lengthField);
+			chai.assert(!recoverableSignature.ownershipField);
 		});
 	});
 

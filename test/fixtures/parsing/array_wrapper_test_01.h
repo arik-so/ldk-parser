@@ -186,3 +186,10 @@ typedef struct LDKError {
     */
    uint8_t _dummy;
 } LDKError;
+
+/**
+ * Integer in the range `0..=16`
+ */
+typedef struct LDKWitnessVersion {
+   uint8_t _0;
+} LDKWitnessVersion;
