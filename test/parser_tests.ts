@@ -329,4 +329,16 @@ describe('Parser Tests', () => {
 		});
 	});
 
+	describe('Primitive Array Wrapper Struct Parsing Tests', () => {
+		it('should parse several primitive array wrappers 01', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/array_wrapper_test_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+			debugger
+		})
+	})
+
 });
