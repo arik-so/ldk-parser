@@ -6,11 +6,12 @@ import Parser from '../src/parser.mjs';
 import {
 	ContextualRustType,
 	OpaqueRustStruct,
-	RustNullableOption,
 	RustLambda,
+	RustNullableOption,
 	RustPrimitive,
 	RustPrimitiveEnum,
 	RustPrimitiveEnumVariant,
+	RustPrimitiveWrapper,
 	RustResult,
 	RustResultValueEnum,
 	RustStruct,
@@ -89,7 +90,7 @@ describe('Parser Tests', () => {
 		const glossaryKeys = Object.keys(glossary);
 
 		chai.expect(glossaryKeys.length).equals(2);
-	})
+	});
 
 	describe('Binary Option Parsing Tests', () => {
 		it('should parse a binary option 01', () => {
@@ -337,8 +338,54 @@ describe('Parser Tests', () => {
 			parser.parse();
 			const glossary = parser.glossary;
 			const glossaryKeys = Object.keys(glossary);
+
+			// false positive tests
+			const vector = glossary['LDKCVec_u8Z'];
+			const nextHopBody = glossary['LDKHTLCDestination_LDKUnknownNextHop_Body']
+			const error = glossary['LDKError']
+			chai.expect(vector).not.instanceof(RustPrimitiveWrapper);
+			chai.expect(vector).instanceof(RustVector);
+			chai.expect(nextHopBody).not.instanceof(RustPrimitiveWrapper);
+			chai.expect(nextHopBody).instanceof(RustStruct);
+			chai.expect(error).not.instanceof(RustPrimitiveWrapper);
+			chai.expect(error).instanceof(RustStruct);
+
+			const string = glossary['LDKStr'];
+			chai.assert(string instanceof RustPrimitiveWrapper);
+			chai.expect(string.dataField.contextualName).equals('chars');
+			chai.expect(string.lengthField).not.equals(null);
+			chai.expect(string.lengthField.contextualName).equals('len');
+			chai.expect(string.ownershipField).not.equals(null);
+			chai.expect(string.ownershipField.contextualName).equals('chars_is_owned');
 			debugger
-		})
-	})
+		});
+	});
+
+	describe('Complete Parser Tests', () => {
+		it('should parse everything completely', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/../res/lightning_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+
+			const primitiveWrapperTypes = new Set<RustPrimitiveWrapper>();
+			for (const [_, currentType] of Object.entries(glossary)) {
+				if (currentType instanceof RustPrimitiveWrapper) {
+					primitiveWrapperTypes.add(currentType);
+				}
+			}
+
+			for (const currentWrapper of primitiveWrapperTypes) {
+				console.log(currentWrapper.name);
+				console.dir({
+					dataField: currentWrapper.dataField ? currentWrapper.dataField.contextualName : null,
+					lengthField: currentWrapper.lengthField ? currentWrapper.lengthField.contextualName : null,
+					ownershipField: currentWrapper.ownershipField ? currentWrapper.ownershipField.contextualName : null
+				});
+			}
+		});
+	});
 
 });

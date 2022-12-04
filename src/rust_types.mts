@@ -18,6 +18,17 @@ export abstract class RustType {
 	 * Rustdoc comments preceding the type
 	 */
 	documentation: string;
+
+	/**
+	 * Pretty much any type may have methods
+	 */
+	methods: RustFunction[] = [];
+
+	/**
+	 * Some types are only relevant within the context of another type, and
+	 * may need to be generated therein
+	 */
+	parentType: RustType | null;
 }
 
 export class RustPrimitive extends RustType {
@@ -37,7 +48,6 @@ export class OpaqueRustStruct extends RustType {
 
 export class RustStruct extends RustType {
 	fields: { [name: string]: RustStructField } = {};
-	methods: RustFunction[] = [];
 }
 
 export class RustTuple extends RustStruct {}
@@ -52,9 +62,14 @@ export class RustTrait extends RustStruct {
 	lambdas: RustLambda[] = [];
 }
 
+export class RustPrimitiveWrapper extends RustStruct {
+	dataField: RustStructField;
+	lengthField: RustStructField | null;
+	ownershipField: RustStructField | null;
+}
+
 export class RustPrimitiveEnum extends RustType {
 	variants: RustPrimitiveEnumVariant[] = [];
-	methods: RustFunction[] = [];
 }
 
 export class RustPrimitiveEnumVariant extends RustType {
@@ -71,7 +86,6 @@ export class RustValueEnum extends RustType {
 }
 
 export class RustTaggedValueEnum extends RustValueEnum {
-	methods: RustFunction[] = [];
 }
 
 export class RustNullableOption extends RustTaggedValueEnum {
@@ -95,7 +109,6 @@ class RustEnumVariant extends RustType {
 export class RustResult extends RustType {
 	valueField: RustStructField;
 	tagField: RustStructField;
-	methods: RustFunction[] = [];
 }
 
 export class RustFunction extends RustType {

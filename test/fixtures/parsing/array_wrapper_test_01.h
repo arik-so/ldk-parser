@@ -153,3 +153,36 @@ typedef struct LDKBigEndianScalar {
     */
    uint8_t big_endian_bytes[32];
 } LDKBigEndianScalar;
+
+typedef struct LDKHTLCDestination_LDKUnknownNextHop_Body {
+   /**
+    * Short channel id we are requesting to forward an HTLC to.
+    */
+   uint64_t requested_forward_scid;
+} LDKHTLCDestination_LDKUnknownNextHop_Body;
+
+/**
+ * A dynamically-allocated array of u8s of arbitrary size.
+ * This corresponds to std::vector in C++
+ */
+typedef struct LDKCVec_u8Z {
+   /**
+    * The elements in the array.
+    * If datalen is non-0 this must be a valid, non-NULL pointer allocated by malloc().
+    */
+   uint8_t *data;
+   /**
+    * The number of elements pointed to by `data`.
+    */
+   uintptr_t datalen;
+} LDKCVec_u8Z;
+
+/**
+ * Sub-errors which don't have specific information in them use this type.
+ */
+typedef struct LDKError {
+   /**
+    * Zero-Sized_types aren't consistent across Rust/C/C++, so we add some size here
+    */
+   uint8_t _dummy;
+} LDKError;

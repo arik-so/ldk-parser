@@ -12,6 +12,7 @@ import {
 	RustPrimitive,
 	RustPrimitiveEnum,
 	RustPrimitiveEnumVariant,
+	RustPrimitiveWrapper,
 	RustResult,
 	RustResultValueEnum,
 	RustStruct,
@@ -202,8 +203,8 @@ export default class Parser {
 					 * LDKStr, LDKBigEndianScalar, LDKu5, LDKTransaction, LDKu8slice, LDKBigEndianScalar,
 					 * and many, many, more.
 					 * The indications are really varied, because there are multiple breakdowns:
-					 * a) is it a wrapper over one primitive (LDKu5), or an array of primitives
-					 * (all other instances)
+					 * a) is it a wrapper over one primitive (LDKu5, LDKWitnessVersion), or over an
+					 * array of primitives (all other instances)
 					 * b) if it's a wrapper over an array, is it fixed-length or variable-length?
 					 * Fixed-length examples are LDKRecoverableSignature, LDKBigEndianScalar.
 					 * Variable-length examples are LDKStr, LDKu8slice, LDKTransaction
@@ -316,6 +317,11 @@ export default class Parser {
 				if (this.isPrimitiveWrapper(descriptor)) {
 					// try to detect if this is a primitive wrapping struct
 					debug('Potential primitive wrapper: %s', descriptor.name);
+
+					// DANGER ZONE! Overwrite the glossary entry with the newly parsed descriptor
+					// TODO: figure out a way to detect wrapper type before object lines are parsed
+					descriptor = this.parsePrimitiveWrapper(descriptor);
+					this.typeGlossary[name] = descriptor;
 				}
 			} else if (descriptor instanceof RustResultValueEnum) {
 				for (const currentEnumLine of objectLines) {
@@ -359,10 +365,39 @@ export default class Parser {
 					} else {
 						if (i === 0 && !isInsideUnion) {
 							const tagField = this.parseStructField(currentEnumLine);
+							/**
+							 * The tag variants are named LDKEnum_VariantName (with type prefix, and camel case)
+							 * If a variant were to contain an associated type, like LDKPaymentSendFailure's
+							 * partial_failure variant (LDKPaymentSendFailure_PartialFailure),
+							 * its corresponding type could be identified from the tag's enum variant,
+							 * because it's LDKPaymentSendFailure_LDKPartialFailure_Body
+							 *
+							 * That's why we have to iterate through the variant tags here and
+							 * identify any type that might actually belong to this complex / tagged value enum
+							 *
+							 * There's still one complication, however:
+							 * The variant name is "LDKPaymentSendFailure_PartialFailure,"
+							 * but the type name is LDKPaymentSendFailure_LDKPartialFailure_Body
+							 * (note the "LDK" infix)
+							 */
+							//
 							descriptor.variantTag = tagField;
+
+							for (const currentPrimitiveVariant of (tagField.type as RustPrimitiveEnum).variants) {
+								const searchString = descriptor.name + '_';
+								const replacementString = descriptor.name + '_LDK';
+								const potentialChildTypeName = currentPrimitiveVariant.name.replace(searchString, replacementString) + '_Body';
+								if (this.typeGlossary[potentialChildTypeName]) {
+									const childType = this.typeGlossary[potentialChildTypeName];
+									childType.parentType = descriptor;
+								}
+							}
+
 						} else {
 							const currentVariant = this.parseTypeInformation(currentEnumLine.code);
 							currentVariant.documentation = currentEnumLine.comments;
+
+							// the actual variant accessors are just named variant_name (no type prefix, and snake case)
 
 							if (descriptor instanceof RustNullableOption) {
 								if (currentVariant.contextualName !== 'some') {
@@ -387,8 +422,35 @@ export default class Parser {
 	}
 
 	private isPrimitiveWrapper(descriptor: RustStruct): boolean {
+		if (descriptor instanceof RustVector) {
+			return false;
+		}
+		if (descriptor instanceof RustTuple) {
+			return false;
+		}
+
 		const fieldNames = Object.keys(descriptor.fields);
 		if (fieldNames.length < 1 || fieldNames.length > 3) {
+			return false;
+		}
+
+		// a wrapper type is not gonna belong to just one singular parent
+		// besides, if it did, then replacing the value inside the glossary would break
+		// the dependency graph, because the old value of that variable would be used
+		// in some nested descriptor trees, but the value inside the glossary would no longer
+		// be the same
+		if (descriptor.parentType) {
+			return false;
+		}
+
+		/**
+		 * However, because this check might occur before the parent type has been set or discovered,
+		 * we're also proactively gonna check if it looks like a parent type
+		 * An example of a parent type is LDKPaymentSendFailure_LDKPartialFailure_Body,
+		 * so the detection is fairly straightforward: it ends with '_Body' (and potentially
+		 * contains at least two `LDK` substrings, though we're not gonna check for that yet)
+		 */
+		if (descriptor.name.endsWith('_Body')) {
 			return false;
 		}
 
@@ -397,6 +459,12 @@ export default class Parser {
 		let asteriskPointerType = null;
 
 		for (const [fieldName, currentField] of Object.entries(descriptor.fields)) {
+			if (fieldName === '_dummy') {
+				// this currently only occurs in LDKError, but fields thus named suggest
+				// the whole struct should be discarded from this consideration
+				return false;
+			}
+
 			let typeToCheck = currentField.type;
 
 			if (currentField.isAsteriskPointer) {
@@ -420,6 +488,60 @@ export default class Parser {
 		}
 
 		return true;
+	}
+
+	private parsePrimitiveWrapper(descriptor: RustStruct): RustPrimitiveWrapper {
+		const fieldNames = Object.keys(descriptor.fields);
+
+		const primitiveWrapper = new RustPrimitiveWrapper();
+		Object.assign(primitiveWrapper, descriptor);
+
+		if (fieldNames.length === 1) {
+			// DANGER: the fields are a dictionary, not an array
+			// perhaps this was the wrong design decision
+			primitiveWrapper.dataField = primitiveWrapper.fields[fieldNames[0]];
+			return primitiveWrapper;
+		}
+
+		let isDataFieldArrayLike = false;
+		for (const [_, currentField] of Object.entries(descriptor.fields)) {
+			if (currentField.type instanceof RustArray) {
+				primitiveWrapper.dataField = currentField;
+				isDataFieldArrayLike = true;
+			} else if (currentField.type instanceof RustPrimitive) {
+				if (currentField.type.swiftRawSignature === 'Bool' && currentField.contextualName.includes('is_owned')) {
+					primitiveWrapper.ownershipField = currentField;
+				} else if (currentField.isAsteriskPointer) {
+					primitiveWrapper.dataField = currentField;
+					isDataFieldArrayLike = true;
+				}
+			}
+		}
+
+		// now we can do a second pass
+		for (const [_, currentField] of Object.entries(descriptor.fields)) {
+			if (currentField === primitiveWrapper.dataField) {
+				continue;
+			}
+			if (currentField === primitiveWrapper.lengthField) {
+				continue;
+			}
+			if (currentField === primitiveWrapper.ownershipField) {
+				continue;
+			}
+
+			// the current field MUST be hitherto unassigned
+			if (currentField.type instanceof RustPrimitive) {
+				if (primitiveWrapper.dataField && isDataFieldArrayLike) {
+					if (currentField.type.swiftRawSignature.includes('Int')) {
+						primitiveWrapper.lengthField = currentField;
+					}
+				} else if (!primitiveWrapper.dataField && !isDataFieldArrayLike) {
+					primitiveWrapper.dataField = currentField;
+				}
+			}
+		}
+		return primitiveWrapper;
 	}
 
 	private containsLambdas(objectLines: ObjectLine[]): boolean {
