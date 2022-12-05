@@ -31,14 +31,12 @@ const LAMBDA_REGEX = /^(struct |enum |union )?([A-Za-z_0-9]* \*?)\(\*([A-Za-z_0-
 
 export default class Parser {
 
-	private _config: Config;
 	private headerFile: string;
 	/**
 	 * All the types
 	 * @private
 	 */
 	private typeGlossary: { [name: string]: RustType } = {};
-
 	/**
 	 * Free-floating functions without an associated type
 	 */
@@ -49,16 +47,18 @@ export default class Parser {
 		this._config = config;
 	}
 
+	private _config: Config;
+
+	get config() {
+		return this._config;
+	}
+
 	get glossary() {
 		return this.typeGlossary;
 	}
 
 	get functions() {
 		return this.floatingFunctions;
-	}
-
-	get config() {
-		return this._config
 	}
 
 	parse() {
@@ -86,7 +86,6 @@ export default class Parser {
 		let objectLines: ObjectLine[] = [];
 		for (let currentLine of headerLines) {
 			currentLine = currentLine.trim();
-
 			// handle comments
 			{
 				if (currentLine.startsWith('/*')) {
@@ -118,6 +117,10 @@ export default class Parser {
 			}
 
 			// handle the real stuff
+			if (currentLine.length === 0) {
+				// outside of comments, empty lines are useless
+				continue;
+			}
 
 			if (aggregateBlockObject.length > 0) {
 				// we are in the midst of parsing a block object
@@ -157,6 +160,9 @@ export default class Parser {
 
 				// make the aggregate block object non-empty so we know we're actively writing one
 				aggregateBlockObject += currentLine;
+
+				// initialize for the next thing
+				aggregateComment = '';
 			}
 		}
 	}

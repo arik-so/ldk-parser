@@ -79,17 +79,30 @@ describe('Parser Tests', () => {
 			chai.assert(routeHopArray instanceof RustVector);
 			chai.expect(routeHopArray.iterateeField.type).equals(glossary['LDKRouteHop']);
 		});
+
+		it('should parse a vector 04', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/vector_test_04.h`);
+			const parser = new Parser(config);
+			parser.parse();
+
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+		});
 	});
 
 	describe('Tuple Parsing Tests', () => {
-		const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-		const config = new TestConfig(`${__dirname}/fixtures/parsing/tuple_test_01.h`);
-		const parser = new Parser(config);
-		parser.parse();
-		const glossary = parser.glossary;
-		const glossaryKeys = Object.keys(glossary);
+		it('should parse first tuple', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/tuple_test_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
 
-		chai.expect(glossaryKeys.length).equals(2);
+			chai.expect(glossaryKeys.length).equals(2);
+		})
+
 	});
 
 	describe('Binary Option Parsing Tests', () => {
@@ -327,6 +340,17 @@ describe('Parser Tests', () => {
 			const lockableScoreField = writeableScore.fields['LockableScore'];
 			chai.expect(lockableScoreField).instanceof(ContextualRustType);
 			chai.expect(lockableScoreField.type).equals(glossary['LDKLockableScore']);
+		});
+
+		it('should parse trait 03', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/parsing/trait_test_03.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+
+			debugger
 		});
 	});
 
