@@ -231,7 +231,7 @@ describe('Parser Tests', () => {
 	});
 
 	describe('Trait Parsing Tests', () => {
-		it('should parse trait 01', () => {
+		xit('should parse trait 01', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 			const config = new TestConfig(`${__dirname}/fixtures/parsing/trait_test_01.h`);
 			const parser = new Parser(config);
@@ -319,7 +319,7 @@ describe('Parser Tests', () => {
 			chai.expect(logArgument.type).equals(ldkRecord);
 		});
 
-		it('should parse trait 02', () => {
+		xit('should parse trait 02', () => {
 			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 			const config = new TestConfig(`${__dirname}/fixtures/parsing/trait_test_02.h`);
 			const parser = new Parser(config);

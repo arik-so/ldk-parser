@@ -27,7 +27,8 @@ import {
 const debug = debugModule('ldk-parser:parser');
 
 const FUNCTION_REGEX = /([A-Za-z_0-9\* ]* \*?)([a-zA-Z_0-9]*)\((.*)\);$/;
-const LAMBDA_REGEX = /^(struct |enum |union )?([A-Za-z_0-9]* \*?)\(\*([A-Za-z_0-9]*)\)\((const )?void \*this_arg(.*)\);$/;
+const STRICT_LAMBDA_REGEX = /^(struct |enum |union )?([A-Za-z_0-9]* \*?)\(\*([A-Za-z_0-9]*)\)\((const )?void \*this_arg(.*)\);$/;
+const LAMBDA_REGEX = /^(struct |enum |union )?([A-Za-z_0-9]* \*?)\(\*([A-Za-z_0-9]*)\)\(((const )?void \*this_arg)?(.*)\);$/;
 
 export default class Parser {
 
@@ -307,10 +308,12 @@ export default class Parser {
 							debug('Trait %s has transparent field %s:\n> %s', descriptor.name, currentField.contextualName, currentLambdaLine.code);
 							descriptor.fields[currentField.contextualName] = currentField;
 						}
+						descriptor.orderedFields.push(currentField);
 						continue;
 					}
 					const currentLambda = this.parseLambda(currentLambdaLine);
 					descriptor.lambdas.push(currentLambda);
+					descriptor.orderedFields.push(currentLambda);
 				}
 			} else if (descriptor instanceof RustStruct) {
 				for (const currentFieldLine of objectLines) {
@@ -726,6 +729,26 @@ export default class Parser {
 				// singular constant declaration. Find out why this is necessary
 			}
 			isAsteriskPointer = true;
+		} else if (typelessLineRemainder && typelessLineRemainder.startsWith('(*')) {
+			const arrayPointerRegex = /^\(\*(.+)\)\[(\d+)\]$/;
+			const matches = arrayPointerRegex.exec(typelessLineRemainder);
+			if (Array.isArray(matches)) {
+				isAsteriskPointer = true;
+				const name = matches[1];
+				const length = parseInt(matches[2]);
+				const actualType = new RustArray();
+				actualType.iteratee = rustType;
+				actualType.length = length;
+				actualType.kind = RustKind.Array;
+
+				if (!(rustType instanceof RustPrimitive)) {
+					debug('Non-primitive fixed-length-array pointer: %s\n> %s', rustType.name, typeLine);
+				}
+
+				rustType = actualType;
+				typelessLineRemainder = name;
+			}
+			// this is likely an array
 		}
 
 		let contextualName = typelessLineRemainder;
@@ -767,22 +790,38 @@ export default class Parser {
 
 		const returnType = matches[2];
 		const name = matches[3];
-		const isThisArgConst = !!matches[4];
-		const argumentLine = matches[5];
+
+		const thisArgLine = matches[4];
+		const hasThisArg = !!thisArgLine;
+
+		const argumentLine = matches[6];
 		const argumentStrings = argumentLine.split(', ');
 
 		const lambda = new RustLambda();
-		lambda.returnValue = this.parseTypeInformation(returnType.trim());
-		lambda.returnValue.isReturnValue = true;
 		lambda.name = name;
 		lambda.documentation = objectLine.comments;
+		lambda.returnValue = this.parseTypeInformation(returnType.trim());
+		lambda.returnValue.isReturnValue = true;
+
+		if (hasThisArg) {
+			const thisArgument = this.parseTypeInformation(thisArgLine);
+			lambda.thisArgument = thisArgument;
+			lambda.arguments.push(thisArgument);
+		} else {
+			// TODO: figure out a way to parse nameless lambda arguments
+			// disregard all the other arguments; this lambda won't be initialized anyway
+			// headache-causing example:
+			// void (*set_pubkeys)(const struct LDKBaseSign*NONNULL_PTR );
+			// where's the argument name?! This is unparseable
+			return lambda;
+		}
 
 		for (let currentArgumentLine of argumentStrings) {
 			currentArgumentLine = currentArgumentLine.trim();
 			if (currentArgumentLine.length < 1) {
 				continue;
 			}
-			const currentArgument = this.parseTypeInformation(currentArgumentLine.trim());
+			const currentArgument = this.parseTypeInformation(currentArgumentLine);
 			lambda.arguments.push(currentArgument);
 		}
 

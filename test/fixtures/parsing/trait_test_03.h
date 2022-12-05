@@ -43,6 +43,9 @@ typedef struct LDKCResult_NoneNoneZ {
  * A trait to sign lightning channel transactions as described in BOLT 3.
  */
 typedef struct LDKBaseSign {
+   struct LDKPublicKey (*lambda_name_foo)(const void *this_arg, const uint8_t (*argument_name_bar)[32], uint64_t idx);
+   void (*set_pubkeys)(const struct LDKBaseSign*NONNULL_PTR );
+
 
    void *this_arg;
 
@@ -52,11 +55,11 @@ typedef struct LDKBaseSign {
 
    struct LDKPublicKey pubkeys;
 
-   void (*set_pubkeys)(const struct LDKBaseSign*NONNULL_PTR );
+
 
    struct LDKPublicKey (*channel_keys_id)(const void *this_arg);
 
-   struct LDKPublicKey (*validate_counterparty_revocation)(const void *this_arg, uint64_t idx, const uint8_t (*secret)[32]);
+
 
    void (*free)(void *this_arg);
 } LDKBaseSign;

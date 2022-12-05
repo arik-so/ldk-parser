@@ -123,6 +123,9 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		if(type instanceof RustArray){
 			if(type.iteratee instanceof RustPrimitive && Number.isFinite(type.length)){
+				// inlining a really long tuple would be rather ugly, so instead we're gonna
+				// declare a type for it and generate some auxiliary conversion and typealiasing
+				// artifacts
 				this.auxiliaryArtifacts.addTuple(type.iteratee.swiftRawSignature, type.length);
 				return `${type.iteratee.swiftRawSignature}Tuple${type.length}`
 			}

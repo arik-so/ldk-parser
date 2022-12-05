@@ -50,7 +50,8 @@ export class RustStruct extends RustType {
 	fields: { [name: string]: RustStructField } = {};
 }
 
-export class RustTuple extends RustStruct {}
+export class RustTuple extends RustStruct {
+}
 
 export class RustVector extends RustStruct {
 	iterateeField: ContextualRustType;
@@ -59,6 +60,12 @@ export class RustVector extends RustStruct {
 
 export class RustTrait extends RustStruct {
 	identifierField: ContextualRustType;
+
+	/**
+	 * To initialize a trait, all its fields must be provided in the order of their declaration
+	 */
+	orderedFields: (RustStructField | RustLambda)[] = [];
+
 	lambdas: RustLambda[] = [];
 }
 
@@ -66,6 +73,11 @@ export class RustPrimitiveWrapper extends RustStruct {
 	dataField: RustStructField;
 	lengthField: RustStructField | null;
 	ownershipField: RustStructField | null;
+
+	/**
+	 * To initialize a wrapper, all its fields must be provided in the order of their declaration
+	 */
+	orderedFields: RustStructField[] = [];
 }
 
 export class RustPrimitiveEnum extends RustType {
@@ -117,6 +129,7 @@ export class RustFunction extends RustType {
 }
 
 export class RustLambda extends RustType {
+	thisArgument: RustFunctionArgument | null;
 	arguments: RustFunctionArgument[] = [];
 	returnValue: ContextualRustType;
 }
