@@ -1,55 +1,76 @@
-import {RustPrimitiveEnum, RustType} from '../rust_types.mjs';
+import {RustPrimitiveEnum} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 
 export default class PrimitiveEnumGenerator extends BaseTypeGenerator<RustPrimitiveEnum> {
 
 	generateFileContents(type: RustPrimitiveEnum): string {
+		if (type.parentType) {
+			throw new Error(`Only orphan primitive enums may be generated. ${type.name} belongs to ${type.parentType.name}`);
+		}
+
 		const swiftTypeName = this.swiftTypeName(type);
 
-		let fieldAccessors = '';
-		let generatedMethods = '';
+		let enumVariants = '';
+		let rustValueAccessor = '';
+		let swiftValueInitializer = '';
 
-		for (const currentMethod of type.methods) {
-			generatedMethods += this.generateMethod(currentMethod, type);
+		// no reason in particular we're picking the last one and not any other
+		// picking the first one would merely require an additional check inside the loop
+		let lastSwiftVariantName = '';
+
+		for (const currentVariant of type.variants) {
+
+			const currentVariantSwiftName = currentVariant.name.replace(type.name + '_', '');
+
+			enumVariants += `
+					${this.renderDocComment(currentVariant.documentation, 5)}
+					case ${currentVariantSwiftName}
+			`;
+
+			rustValueAccessor += `
+							case .${currentVariantSwiftName}:
+								return ${currentVariant.name}
+			`;
+
+			swiftValueInitializer += `
+						if value == ${currentVariant.name} {
+							self = .${currentVariantSwiftName}
+						}
+			`;
+
+			lastSwiftVariantName = currentVariantSwiftName;
 		}
 
 		return `
 			#if SWIFT_PACKAGE
 			import LDKHeaders
 			#endif
-			
+
 			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}
-			
+
 			extension Bindings {
-				
+
 				${this.renderDocComment(type.documentation, 4)}
-				public class ${swiftTypeName}: NativeTypeWrapper {
-			
-					private static var instanceCounter: UInt = 0
-					internal let instanceNumber: UInt
-			
-					internal var cType: ${type.name}?
-					
-					${generatedMethods}
-					
-					${fieldAccessors}
-					
-					internal func dangle() -> ${swiftTypeName} {
-        				self.dangling = true
-						return self
+				public enum ${swiftTypeName} {
+
+					${enumVariants}
+
+					internal init (value: ${type.name}) {
+
+						// TODO: remove this initial assumption somehow
+						self = .${lastSwiftVariantName}
+
+						${swiftValueInitializer}
 					}
 
-					deinit {
-						if !self.dangling {
-							Bindings.print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
-							self.free()
-						} else {
-							Bindings.print("Not freeing ${swiftTypeName} \\(self.instanceNumber) due to dangle.")
+					internal func getCValue() -> ${type.name} {
+						switch self {
+							${rustValueAccessor}
 						}
 					}
-					
+
 				}
-				
+
 			}
 		`;
 	}

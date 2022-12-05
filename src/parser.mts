@@ -248,11 +248,14 @@ export default class Parser {
 							const variantBName = enumVariants[1].name;
 							if ((variantAName.endsWith('_Some') && variantBName.endsWith('_None')) || (variantAName.endsWith('_None') && variantBName.endsWith('_Some'))) {
 								descriptor = new RustNullableOption();
+								primitiveEnum.parentType = descriptor;
 							}
 						}
 
 					} else if (hypotheticalResultEnumName in this.typeGlossary && this.typeGlossary[hypotheticalResultEnumName] instanceof RustResultValueEnum) {
+						const resultValueEnum = this.typeGlossary[hypotheticalResultEnumName];
 						descriptor = new RustResult();
+						resultValueEnum.parentType = descriptor;
 					} else if (this.containsLambdas(objectLines)) {
 						descriptor = new RustTrait();
 					} else if (name.startsWith('LDKCVec_')) {
@@ -380,7 +383,6 @@ export default class Parser {
 							 * but the type name is LDKPaymentSendFailure_LDKPartialFailure_Body
 							 * (note the "LDK" infix)
 							 */
-							//
 							descriptor.variantTag = tagField;
 
 							for (const currentPrimitiveVariant of (tagField.type as RustPrimitiveEnum).variants) {
@@ -398,7 +400,6 @@ export default class Parser {
 							currentVariant.documentation = currentEnumLine.comments;
 
 							// the actual variant accessors are just named variant_name (no type prefix, and snake case)
-
 							if (descriptor instanceof RustNullableOption) {
 								if (currentVariant.contextualName !== 'some') {
 									console.error(`Unexpected variant name inside binary option: ${currentVariant.contextualName}\n>`, currentEnumLine.code);
