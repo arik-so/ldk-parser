@@ -31,7 +31,7 @@ const LAMBDA_REGEX = /^(struct |enum |union )?([A-Za-z_0-9]* \*?)\(\*([A-Za-z_0-
 
 export default class Parser {
 
-	private config: Config;
+	private _config: Config;
 	private headerFile: string;
 	/**
 	 * All the types
@@ -46,7 +46,7 @@ export default class Parser {
 	private kindsWithMethodAssociations = new Set();
 
 	constructor(config: Config) {
-		this.config = config;
+		this._config = config;
 	}
 
 	get glossary() {
@@ -55,6 +55,10 @@ export default class Parser {
 
 	get functions() {
 		return this.floatingFunctions;
+	}
+
+	get config() {
+		return this._config
 	}
 
 	parse() {

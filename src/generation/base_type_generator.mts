@@ -7,6 +7,7 @@ import {
 	RustLambda,
 	RustNullableOption,
 	RustPrimitive,
+	RustPrimitiveEnum,
 	RustPrimitiveWrapper,
 	RustResult,
 	RustStruct,
@@ -154,9 +155,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		}
 
 		let methodDeclarationKeywords = `${visibility} ${staticInfix}func`;
+		let returnCommand = 'return returnValue';
 		if (swiftMethodName === 'init') {
 			// it's a constructor
 			methodDeclarationKeywords = visibility;
+			returnCommand = 'self.cType = nativeCallResult';
 		}
 
 		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue, containerType);
@@ -176,7 +179,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						// return value (do some wrapping)
 						let returnValue = ${preparedReturnValue.wrapperPrefix}nativeCallResult${preparedReturnValue.wrapperSuffix}
 
-						return returnValue;
+						${returnCommand}
 					}
 		`;
 	}
@@ -263,7 +266,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					if (type.name === 'LDKStr') {
 						return 'String';
 					} else {
-						throw new Error(`Unmapped primitive wrapper with \`const *\` data field: ${type.name}`);
+						// throw new Error(`Unmapped primitive wrapper with \`const *\` data field: ${type.name}`);
+						return `[${type.dataField.type.swiftRawSignature}]`;
 					}
 				} else if (type.dataField.isAsteriskPointer) {
 					return `[${type.dataField.type.swiftRawSignature}]`;
@@ -384,6 +388,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		} else if (returnType.type instanceof RustPrimitive) {
 			// nothing to do here
 			return preparedReturnValue;
+		} else if (returnType.type instanceof RustPrimitiveEnum) {
+			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(value: `;
+			preparedReturnValue.wrapperSuffix += `)`;
 		} else {
 			throw new Error(`Unsupported return type ${returnType.type.name} of kind ${returnType.type.constructor.name}`);
 		}

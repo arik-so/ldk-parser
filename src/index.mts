@@ -8,6 +8,5 @@ let config = new Config();
 const parser = new Parser(config);
 parser.parse();
 
-// const generator = new Generator(parser);
-// generator.generateTypes();
-debugger
+const generator = new Generator(parser);
+generator.generateTypes();
