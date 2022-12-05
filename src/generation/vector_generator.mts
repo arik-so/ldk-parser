@@ -16,6 +16,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		const iterateeRustTypeName = type.iterateeField.type.name;
 		let bracketedIterateeTypeName = '<' + iterateeRustTypeName + '>';
 
+		// teas
 		let dataContainerInitializationArgumentName = 'rustArray';
 		let dimensionalityReduction = '';
 
@@ -71,54 +72,54 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			#if SWIFT_PACKAGE
 			import LDKHeaders
 			#endif
-			
+
 			internal typealias ${swiftTypeName} = Bindings.${swiftTypeName}
-			
+
 			extension Bindings {
-				
+
 				${this.renderDocComment(type.documentation, 4)}
 				internal class ${swiftTypeName}: NativeTypeWrapper {
-			
+
 					${this.inheritedInits(type)}
-					
+
 					public init(array: ${swiftPublicType}) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						
+
 						${rustUnwrapper}
-						
+
 						${dimensionalityReduction}
-						
+
 						let dataContainer = UnsafeMutablePointer${bracketedIterateeTypeName}.allocate(capacity: array.count)
 						dataContainer.initialize(from: ${dataContainerInitializationArgumentName}, count: array.count)
 
         				let vector = ${type.name}(data: dataContainer, datalen: UInt(array.count))
         				self.cType = vector
-						
+
 						super.init(conflictAvoidingVariableName: 0)
 					}
-					
+
 					public func getValue() -> ${swiftPublicType} {
-					
+
 						var array = ${this.getRustArrayTypeSignature(type)}()
-						
+
 						${this.valueAccessCode(type)}
-						
+
 						${swiftUnwrapper}
 						return swiftArray
 					}
-					
+
 					${generatedMethods}
-					
+
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true
 						return self
 					}
 
 					${this.deinitCode(type)}
-					
+
 				}
-				
+
 			}
 		`;
 	}
@@ -144,9 +145,9 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			// it's nested
 			termination = `
 							${additionalIndentation}var convertedEntry${depth} = ${this.getRustArrayTypeSignature(type.iterateeField.type)}()
-				
+
 							${this.valueAccessCode(type.iterateeField.type, depth + 1)}
-				
+
 							${additionalIndentation}${higherLevelArrayName}.append(convertedEntry${depth})
 			`;
 		}

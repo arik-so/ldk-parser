@@ -1,5 +1,4 @@
 import Parser from '../parser.mjs';
-import StructGenerator from './struct_generator.mjs';
 import {
 	RustNullableOption,
 	RustPrimitiveEnum,
@@ -10,13 +9,6 @@ import {
 	RustTrait,
 	RustVector
 } from '../rust_types.mjs';
-import VectorGenerator from './vector_generator.mjs';
-import ComplexEnumGenerator from './complex_enum_generator.mjs';
-import PrimitiveEnumGenerator from './primitive_enum_generator.mjs';
-import PrimitiveWrapperGenerator from './primitive_wrapper_generator.mjs';
-import ResultGenerator from './result_generator.mjs';
-import NullableOptionGenerator from './nullable_option_generator.mjs';
-import TraitGenerator from './trait_generator.mjs';
 
 export default class Generator {
 	private parser: Parser;
@@ -56,7 +48,16 @@ export default class Generator {
 
 	}
 
-	generateTypes() {
+	async generateTypes() {
+		const {default: StructGenerator} = await import('./struct_generator.mjs');
+		const {default: VectorGenerator} = await import('./vector_generator.mjs');
+		const {default: ComplexEnumGenerator} = await import('./complex_enum_generator.mjs');
+		const {default: PrimitiveEnumGenerator} = await import('./primitive_enum_generator.mjs');
+		const {default: PrimitiveWrapperGenerator} = await import('./primitive_wrapper_generator.mjs');
+		const {default: ResultGenerator} = await import('./result_generator.mjs');
+		const {default: NullableOptionGenerator} = await import('./nullable_option_generator.mjs');
+		const {default: TraitGenerator} = await import('./trait_generator.mjs');
+
 		const glossary = this.parser.glossary;
 		const config = this.parser.config;
 

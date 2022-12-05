@@ -9,7 +9,7 @@ import {
 	RustPrimitiveWrapper,
 	RustResult,
 	RustStruct,
-	RustTaggedValueEnum,
+	RustTaggedValueEnum, RustTrait,
 	RustVector
 } from '../src/rust_types.mjs';
 import NullableOptionGenerator from '../src/generation/nullable_option_generator.mjs';
@@ -20,6 +20,7 @@ import PrimitiveWrapperGenerator from '../src/generation/primitive_wrapper_gener
 import * as chai from 'chai';
 import PrimitiveEnumGenerator from '../src/generation/primitive_enum_generator.mjs';
 import Generator from '../src/generation/index.mjs';
+import TraitGenerator from '../src/generation/trait_generator.mjs';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -217,7 +218,7 @@ describe('Generator Tests', () => {
 			const paymentSendFailure = <RustTaggedValueEnum>parser.glossary['LDKPaymentSendFailure'];
 			const generator = new ComplexEnumGenerator(config);
 			const output = generator.generateFileContents(paymentSendFailure);
-			debugger
+			// debugger
 		});
 	});
 
@@ -279,6 +280,20 @@ describe('Generator Tests', () => {
 			chai.expect(u5Output).includes('public func getValue() -> UInt8 {');
 			chai.expect(u5Output).includes('self.cType = LDKu5(_0: value)');
 			chai.expect(u5Output).includes('return self.cType!._0');
+		});
+	});
+
+	describe('Trait Generation Tests', () => {
+		it('should generate BaseSign completely', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/../res/lightning_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+
+			const generator = new TraitGenerator(config);
+			const baseSign = <RustTrait>parser.glossary['LDKBaseSign'];
+			const output = generator.generateFileContents(baseSign);
+			debugger
 		});
 	});
 
