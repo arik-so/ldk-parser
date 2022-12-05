@@ -18,7 +18,7 @@ import {
 } from '../rust_types.mjs';
 import * as path from 'path';
 import * as fs from 'fs';
-import Generator from './index.mjs';
+import Generator, {AuxiliaryArtifacts} from './index.mjs';
 
 /**
  * Generates just one individual type. Each kind has its own implementation.
@@ -26,9 +26,11 @@ import Generator from './index.mjs';
 export abstract class BaseTypeGenerator<Type extends RustType> {
 
 	protected config: Config;
+	protected auxiliaryArtifacts: AuxiliaryArtifacts;
 
-	constructor(config: Config) {
+	constructor(config: Config, auxiliaryArtifacts: AuxiliaryArtifacts) {
 		this.config = config;
+		this.auxiliaryArtifacts = auxiliaryArtifacts;
 	}
 
 	/**

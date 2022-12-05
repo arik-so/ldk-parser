@@ -1,5 +1,5 @@
 import {
-	ContextualRustType,
+	ContextualRustType, RustArray,
 	RustLambda,
 	RustPrimitive,
 	RustPrimitiveWrapper,
@@ -119,6 +119,13 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		if (type instanceof RustPrimitiveWrapper) {
 			return type.name;
+		}
+
+		if(type instanceof RustArray){
+			if(type.iteratee instanceof RustPrimitive && Number.isFinite(type.length)){
+				this.auxiliaryArtifacts.addTuple(type.iteratee.swiftRawSignature, type.length);
+				return `${type.iteratee.swiftRawSignature}Tuple${type.length}`
+			}
 		}
 	}
 

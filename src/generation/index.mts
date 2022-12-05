@@ -12,9 +12,11 @@ import {
 
 export default class Generator {
 	private parser: Parser;
+	private auxiliaryArtifacts: AuxiliaryArtifacts;
 
 	constructor(parser: Parser) {
 		this.parser = parser;
+		this.auxiliaryArtifacts = new AuxiliaryArtifacts();
 	}
 
 	static snakeCaseToCamelCase(input: string, capitalizeFirst: boolean = false): string {
@@ -61,14 +63,14 @@ export default class Generator {
 		const glossary = this.parser.glossary;
 		const config = this.parser.config;
 
-		const structGenerator = new StructGenerator(config);
-		const wrapperGenerator = new PrimitiveWrapperGenerator(config);
-		const vectorGenerator = new VectorGenerator(config);
-		const primitiveEnumGenerator = new PrimitiveEnumGenerator(config);
-		const complexEnumGenerator = new ComplexEnumGenerator(config);
-		const nullableOptionGenerator = new NullableOptionGenerator(config);
-		const resultGenerator = new ResultGenerator(config);
-		const traitGenerator = new TraitGenerator(config);
+		const structGenerator = new StructGenerator(config, this.auxiliaryArtifacts);
+		const wrapperGenerator = new PrimitiveWrapperGenerator(config, this.auxiliaryArtifacts);
+		const vectorGenerator = new VectorGenerator(config, this.auxiliaryArtifacts);
+		const primitiveEnumGenerator = new PrimitiveEnumGenerator(config, this.auxiliaryArtifacts);
+		const complexEnumGenerator = new ComplexEnumGenerator(config, this.auxiliaryArtifacts);
+		const nullableOptionGenerator = new NullableOptionGenerator(config, this.auxiliaryArtifacts);
+		const resultGenerator = new ResultGenerator(config, this.auxiliaryArtifacts);
+		const traitGenerator = new TraitGenerator(config, this.auxiliaryArtifacts);
 
 		for (const [_, currentType] of Object.entries(glossary)) {
 			if (currentType.parentType) {
@@ -94,4 +96,18 @@ export default class Generator {
 			}
 		}
 	}
+}
+
+export class AuxiliaryArtifacts {
+
+	private tuples: { [swiftRawType: string]: Set<number> };
+
+	public addTuple(swiftTypeName: string, size: number) {
+		if (!this.tuples[swiftTypeName]) {
+			this.tuples[swiftTypeName] = new Set<number>();
+		}
+
+		this.tuples[swiftTypeName].add(size);
+	}
+
 }
