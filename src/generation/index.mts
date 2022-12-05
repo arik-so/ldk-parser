@@ -10,25 +10,6 @@ export default class Generator {
 		this.parser = parser;
 	}
 
-	generateFunctions() {
-
-	}
-
-	generateTypes() {
-		const glossary = this.parser.glossary;
-
-		const structGenerator = new StructGenerator(new Config());
-		for (const [_, currentType] of Object.entries(glossary)){
-			if (currentType instanceof RustTrait){
-
-			} else if(currentType instanceof RustVector) {
-
-			} else if (currentType instanceof RustStruct) {
-				structGenerator.generate(currentType);
-			}
-		}
-	}
-
 	static snakeCaseToCamelCase(input: string, capitalizeFirst: boolean = false): string {
 		let output = input.replace(/([_][a-zA-Z])/g, group =>
 			group
@@ -39,5 +20,39 @@ export default class Generator {
 			output = output.charAt(0).toUpperCase() + output.substring(1);
 		}
 		return output;
+	}
+
+	static shallowMostIndentationDepth(input: string): number {
+		const regex = /^(\t*)[\S]/m;
+		const matches = regex.exec(input);
+		if (Array.isArray(matches)) {
+			return matches[1].length;
+		}
+		return 0;
+	}
+
+	static reindentCode(input: string, newDepth: number) {
+		const oldDepth = Generator.shallowMostIndentationDepth(input);
+		const searchString = new RegExp(`^\t{${oldDepth}}`, 'gm');
+		return input.replaceAll(searchString, '\t'.repeat(newDepth));
+	}
+
+	generateFunctions() {
+
+	}
+
+	generateTypes() {
+		const glossary = this.parser.glossary;
+
+		const structGenerator = new StructGenerator(new Config());
+		for (const [_, currentType] of Object.entries(glossary)) {
+			if (currentType instanceof RustTrait) {
+
+			} else if (currentType instanceof RustVector) {
+
+			} else if (currentType instanceof RustStruct) {
+				structGenerator.generate(currentType);
+			}
+		}
 	}
 }

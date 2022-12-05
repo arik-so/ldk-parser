@@ -106,7 +106,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					public func ${accessorName}() -> ${swiftReturnType} {
 						// return value (do some wrapping)
 						let returnValue = ${preparedReturnValue.wrapperPrefix}${fieldAccessor}${preparedReturnValue.wrapperSuffix}
-						
+
 						return returnValue;
 					}
 		`;
@@ -166,16 +166,16 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					${methodDeclarationKeywords} ${swiftMethodName}(${swiftMethodArguments.join(', ')}) ${returnTypeInfix}{
 						// native call variable prep
 						${nativeCallPrefix}
-						
+
 						// native method call
 						let nativeCallResult = ${nativeCallWrapperPrefix}${method.name}(${nativeCallValueAccessors.join(', ')})${nativeCallWrapperSuffix}
-						
+
 						// cleanup
 						${nativeCallSuffix}
-						
+
 						// return value (do some wrapping)
 						let returnValue = ${preparedReturnValue.wrapperPrefix}nativeCallResult${preparedReturnValue.wrapperSuffix}
-						
+
 						return returnValue;
 					}
 		`;
@@ -231,8 +231,21 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 		let isTypeMercurial = this.isElidedType(type);
 		const isTypeCurrentContainerType = (type === containerType);
-		if (!isTypeMercurial || isTypeCurrentContainerType) {
+		if (isTypeCurrentContainerType) {
 			// even if the type is elided, it isn't within the context of its own internals
+			return this.swiftTypeName(type);
+		}
+
+		if (!isTypeMercurial) {
+			if (type.parentType && type.parentType === containerType) {
+				if (type instanceof RustStruct && containerType instanceof RustTaggedValueEnum) {
+					const regex = new RegExp(`^${containerType.name}_LDK(.*)_Body$`);
+					const matches = regex.exec(type.name);
+					if (Array.isArray(matches)) {
+						return matches[1];
+					}
+				}
+			}
 			return this.swiftTypeName(type);
 		}
 
@@ -381,16 +394,16 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return `
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
-			
+
 					internal var cType: ${type.name}?
-					
+
 					public init(pointer: ${type.name}) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = pointer
 						super.init(conflictAvoidingVariableName: 0)
 					}
-			
+
 					public init(pointer: ${type.name}, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter

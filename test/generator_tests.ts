@@ -19,6 +19,7 @@ import ResultGenerator from '../src/generation/result_generator.mjs';
 import PrimitiveWrapperGenerator from '../src/generation/primitive_wrapper_generator.mjs';
 import * as chai from 'chai';
 import PrimitiveEnumGenerator from '../src/generation/primitive_enum_generator.mjs';
+import Generator from '../src/generation/index.mjs';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -216,6 +217,7 @@ describe('Generator Tests', () => {
 			const paymentSendFailure = <RustTaggedValueEnum>parser.glossary['LDKPaymentSendFailure'];
 			const generator = new ComplexEnumGenerator(config);
 			const output = generator.generateFileContents(paymentSendFailure);
+			debugger
 		});
 	});
 

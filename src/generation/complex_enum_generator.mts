@@ -1,6 +1,7 @@
-import {RustPrimitiveEnum, RustTaggedValueEnum} from '../rust_types.mjs';
+import {RustPrimitiveEnum, RustStruct, RustTaggedValueEnum} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 import Generator from './index.mjs';
+import StructGenerator from './struct_generator.mjs';
 
 export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedValueEnum> {
 
@@ -12,6 +13,8 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 		for (const currentMethod of type.methods) {
 			generatedMethods += this.generateMethod(currentMethod, type);
 		}
+
+		let childStructs: RustStruct[] = [];
 
 		const tagType = type.variantTag.type as RustPrimitiveEnum;
 
@@ -39,7 +42,14 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 		for (const [_, currentVariant] of Object.entries(type.variants)) {
 			const currentPublicType = this.getPublicTypeSignature(currentVariant.type, type);
 			const camelCasedVariantName = Generator.snakeCaseToCamelCase(currentVariant.contextualName, true);
-			const currentSwiftTypeName = camelCasedVariantName
+			const currentSwiftTypeName = camelCasedVariantName;
+
+			if (currentVariant.type.parentType === type) {
+				if (!(currentVariant.type instanceof RustStruct)) {
+					throw new Error('Complex enum with odd child type: ' + currentVariant.type.name);
+				}
+				childStructs.push(currentVariant.type as RustStruct);
+			}
 
 			const preparedReturnValue = this.prepareRustReturnValueForSwift(currentVariant, type);
 
@@ -48,47 +58,61 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 						if self.cType?.tag != ${type.name}_${camelCasedVariantName} {
 							return nil
 						}
-						
+
 						return ${preparedReturnValue.wrapperPrefix}self.cType!.${currentVariant.contextualName}${preparedReturnValue.wrapperSuffix}
 					}
 			`;
+		}
+
+		let renderedChildStructs = '';
+
+		if (childStructs.length > 0) {
+			const childStructGenerator = new StructGenerator(this.config);
+			for (const currentChildStruct of childStructs) {
+				let currentStructRendering = childStructGenerator.generateFileContents(currentChildStruct, type);
+				// embedded structs have no business being publicly initializeable
+				currentStructRendering = currentStructRendering.replaceAll('public init(', 'fileprivate init(')
+				renderedChildStructs += Generator.reindentCode(currentStructRendering, 5);
+			}
 		}
 
 		return `
 			#if SWIFT_PACKAGE
 			import LDKHeaders
 			#endif
-			
+
 			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}
-			
+
 			extension Bindings {
-				
+
 				${this.renderDocComment(type.variantTag.type.documentation, 4)}
 				public class ${swiftTypeName}: NativeTypeWrapper {
-			
+
 					${this.inheritedInits(type)}
-					
+
 					public enum ${swiftTypeName}Type {
 						${tagEnumVariants}
 					}
-					
+
 					public func getValueType() -> ${swiftTypeName}Type? {
 						${valueTypeDetector}
 					}
-					
+
 					${generatedMethods}
-					
+
 					${polymorphicAccessors}
-					
+
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true
 						return self
 					}
 
 					${this.deinitCode(type)}
-					
+
+					${renderedChildStructs}
+
 				}
-				
+
 			}
 		`;
 	}
