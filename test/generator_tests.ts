@@ -2,7 +2,6 @@ import url from 'url';
 import Parser from '../src/parser.mjs';
 import Config from '../src/config.mjs';
 import StructGenerator from '../src/generation/struct_generator.mjs';
-import {expect} from 'chai';
 import {describe} from 'mocha';
 import {
 	RustNullableOption,
@@ -17,6 +16,7 @@ import VectorGenerator from '../src/generation/vector_generator.mjs';
 import ComplexEnumGenerator from '../src/generation/complex_enum_generator.mjs';
 import ResultGenerator from '../src/generation/result_generator.mjs';
 import PrimitiveWrapperGenerator from '../src/generation/primitive_wrapper_generator.mjs';
+import * as chai from 'chai';
 
 class TestConfig extends Config {
 	private headerPath: string;
@@ -46,14 +46,14 @@ describe('Generator Tests', () => {
 			const generator = new StructGenerator(config);
 			const output = generator.generateFileContents(chainMonitor);
 
-			expect(output).contains('public typealias ChainMonitor = Bindings.ChainMonitor');
-			expect(output).contains('internal var cType: LDKChainMonitor?');
-			expect(output).contains('public init(chainSource: Filter?) {');
-			expect(output).contains('public func getClaimableBalances() -> [UInt8] {');
-			expect(output).contains('internal func free() {');
+			chai.expect(output).contains('public typealias ChainMonitor = Bindings.ChainMonitor');
+			chai.expect(output).contains('internal var cType: LDKChainMonitor?');
+			chai.expect(output).contains('public init(chainSource: Filter?) {');
+			chai.expect(output).contains('public func getClaimableBalances() -> [UInt8] {');
+			chai.expect(output).contains('internal func free() {');
 
-			expect(output).contains('let chainSourceOption = Option_FilterZ(value: chainSource)');
-			expect(output).contains('let nativeCallResult = ChainMonitor_free(self.cType!)');
+			chai.expect(output).contains('let chainSourceOption = Option_FilterZ(value: chainSource)');
+			chai.expect(output).contains('let nativeCallResult = ChainMonitor_free(self.cType!)');
 		});
 
 		it('should generate ChainMonitor completely', () => {
@@ -150,11 +150,31 @@ describe('Generator Tests', () => {
 			const ldku5 = <RustPrimitiveWrapper>parser.glossary['LDKu5'];
 			const ldkStr = <RustPrimitiveWrapper>parser.glossary['LDKStr'];
 			const thirtyTwoBytes = <RustPrimitiveWrapper>parser.glossary['LDKThirtyTwoBytes'];
+			const transaction = <RustPrimitiveWrapper>parser.glossary['LDKTransaction'];
 
+			const transactionOutput = generator.generateFileContents(transaction);
 			const thirtyTwoBytesOutput = generator.generateFileContents(thirtyTwoBytes);
 			const strOutput = generator.generateFileContents(ldkStr);
 			const u5Output = generator.generateFileContents(ldku5);
-			debugger
+
+			chai.expect(transactionOutput).includes('public init(value: [UInt8]) {')
+			chai.expect(transactionOutput).includes('public func getValue() -> [UInt8] {')
+			chai.expect(transactionOutput).includes('self.cType = LDKTransaction(data: dataContainer, datalen: UInt(value.count), data_is_owned: false)')
+
+			chai.expect(thirtyTwoBytesOutput).includes('public init(value: [UInt8]) {');
+			chai.expect(thirtyTwoBytesOutput).includes('public func getValue() -> [UInt8] {');
+			chai.expect(thirtyTwoBytesOutput).includes('self.cType = LDKThirtyTwoBytes(data: (value[0], value[1], value[2], value[3], value[4], value[5], value[6], value[7], value[8], value[9], value[10], value[11], value[12], value[13], value[14], value[15], value[16], value[17], value[18], value[19], value[20], value[21], value[22], value[23], value[24], value[25], value[26], value[27], value[28], value[29], value[30], value[31]))');
+			chai.expect(thirtyTwoBytesOutput).includes('return [self.cType!.data.0, self.cType!.data.1, self.cType!.data.2, self.cType!.data.3, self.cType!.data.4, self.cType!.data.5, self.cType!.data.6, self.cType!.data.7, self.cType!.data.8, self.cType!.data.9, self.cType!.data.10, self.cType!.data.11, self.cType!.data.12, self.cType!.data.13, self.cType!.data.14, self.cType!.data.15, self.cType!.data.16, self.cType!.data.17, self.cType!.data.18, self.cType!.data.19, self.cType!.data.20, self.cType!.data.21, self.cType!.data.22, self.cType!.data.23, self.cType!.data.24, self.cType!.data.25, self.cType!.data.26, self.cType!.data.27, self.cType!.data.28, self.cType!.data.29, self.cType!.data.30, self.cType!.data.31]');
+
+			chai.expect(strOutput).includes('public init(value: String) {');
+			chai.expect(strOutput).includes('public func getValue() -> String {');
+			chai.expect(strOutput).includes('self.cType = LDKStr(chars: Bindings.string_to_unsafe_uint8_pointer(string: value), len: UInt(value.count), chars_is_owned: false)');
+			chai.expect(strOutput).includes('return String(data: data, encoding: .utf8)!');
+
+			chai.expect(u5Output).includes('public init(value: UInt8) {')
+			chai.expect(u5Output).includes('public func getValue() -> UInt8 {')
+			chai.expect(u5Output).includes('self.cType = LDKu5(_0: value)')
+			chai.expect(u5Output).includes('return self.cType!._0')
 		})
 	})
 

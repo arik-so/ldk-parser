@@ -252,6 +252,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					} else {
 						throw new Error(`Unmapped primitive wrapper with \`const *\` data field: ${type.name}`);
 					}
+				} else if (type.dataField.isAsteriskPointer) {
+					return `[${type.dataField.type.swiftRawSignature}]`;
 				}
 				return type.dataField.type.swiftRawSignature;
 			} else if (type.dataField.type instanceof RustArray) {
