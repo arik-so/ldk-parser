@@ -428,6 +428,9 @@ export default class Parser {
 		if (descriptor instanceof RustTuple) {
 			return false;
 		}
+		if (descriptor instanceof RustTrait) {
+			return false;
+		}
 
 		const fieldNames = Object.keys(descriptor.fields);
 		if (fieldNames.length < 1 || fieldNames.length > 3) {

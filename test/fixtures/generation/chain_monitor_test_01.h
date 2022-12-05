@@ -42,6 +42,11 @@ typedef struct LDKFilter {
     * This has no meaning in the LDK, and can be NULL or any other value.
     */
    void *this_arg;
+   /**
+    * Frees any resources associated with this object given its this_arg pointer.
+    * Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
+    */
+   void (*free)(void *this_arg);
 } LDKFilter;
 
 /**

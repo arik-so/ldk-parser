@@ -6,7 +6,9 @@ import {
 	RustFunction,
 	RustLambda,
 	RustNullableOption,
-	RustPrimitive, RustResult,
+	RustPrimitive,
+	RustPrimitiveWrapper,
+	RustResult,
 	RustStruct,
 	RustTaggedValueEnum,
 	RustTrait,
@@ -147,7 +149,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 		const staticInfix = isInstanceMethod ? '' : 'class ';
 		let visibility = 'public';
-		if (swiftMethodName === 'free' || swiftMethodName === 'clone'){
+		if (swiftMethodName === 'free' || swiftMethodName === 'clone') {
 			visibility = 'internal';
 		}
 
@@ -212,8 +214,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 	 * @param type
 	 * @protected
 	 */
-	protected isMercurialType(type: RustType): boolean {
-		if (type instanceof RustNullableOption) {
+	protected isElidedType(type: RustType): boolean {
+		if (type instanceof RustNullableOption || type instanceof RustPrimitiveWrapper || type instanceof RustVector) {
 			return true;
 		}
 		if (type instanceof RustArray) {
@@ -222,21 +224,15 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 		}
 
-		if (type instanceof RustVector) {
-			return true;
-		}
-
-		// TODO: add support for fixed-length arrays and LDKTransaction and stuff like that
-
 		return false;
 	}
 
 	protected getPublicTypeSignature(type: RustType, containerType?: RustType): string {
 
-		let isTypeMercurial = this.isMercurialType(type);
+		let isTypeMercurial = this.isElidedType(type);
 		const isTypeCurrentContainerType = (type === containerType);
 		if (!isTypeMercurial || isTypeCurrentContainerType) {
-			// even if the type is mercurial, it isn't within the context of its own internals
+			// even if the type is elided, it isn't within the context of its own internals
 			return this.swiftTypeName(type);
 		}
 
@@ -246,6 +242,22 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			const someVariantTypeName = this.getPublicTypeSignature(type.someVariant.type);
 			// TODO: if outer context already implies a Nullable, find way to avoid `??`
 			return someVariantTypeName + '?';
+		}
+
+		if (type instanceof RustPrimitiveWrapper) {
+			if (type.dataField.type instanceof RustPrimitive) {
+				if (type.dataField.isConstant && type.dataField.isAsteriskPointer) {
+					if (type.name === 'LDKStr') {
+						return 'String';
+					} else {
+						throw new Error(`Unmapped primitive wrapper with \`const *\` data field: ${type.name}`);
+					}
+				}
+				return type.dataField.type.swiftRawSignature;
+			} else if (type.dataField.type instanceof RustArray) {
+				const iteratee = type.dataField.type.iteratee as RustPrimitive;
+				return `[${iteratee.swiftRawSignature}]`;
+			}
 		}
 
 		if (type instanceof RustArray) {
