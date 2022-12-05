@@ -98,11 +98,64 @@ describe('Generator Tests', () => {
 
 			const routeVectorVector = <RustVector>glossary['LDKCVec_CVec_RouteHopZZ'];
 			const generator = new VectorGenerator(config);
-			const output = generator.generateFileContents(routeVectorVector);
+			const vectorVectorOutput = generator.generateFileContents(routeVectorVector);
+
+			chai.expect(vectorVectorOutput).includes('public init(array: [[RouteHop]]) {')
+			chai.expect(vectorVectorOutput).includes('let rustArray = array.map { (currentValueDepth1) in')
+			chai.expect(vectorVectorOutput).includes('currentValueDepth1.map { (currentValueDepth2) in')
+			chai.expect(vectorVectorOutput).includes('currentValueDepth2.danglingClone().cType!')
+			chai.expect(vectorVectorOutput).includes('let dataContainer = UnsafeMutablePointer<LDKCVec_RouteHopZ>.allocate(capacity: array.count)')
+			chai.expect(vectorVectorOutput).includes('dataContainer.initialize(from: lowerDimension, count: array.count)')
+			chai.expect(vectorVectorOutput).includes('let vector = LDKCVec_CVec_RouteHopZZ(data: dataContainer, datalen: UInt(array.count))')
+			chai.expect(vectorVectorOutput).includes('self.cType = vector')
+
+			chai.expect(vectorVectorOutput).includes('public func getValue() -> [[RouteHop]] {')
+			chai.expect(vectorVectorOutput).includes('var array = [[LDKRouteHop]]()')
+			chai.expect(vectorVectorOutput).includes('let currentEntry1 = self.cType!.data[index1]')
+			chai.expect(vectorVectorOutput).includes('var convertedEntry1 = [LDKRouteHop]()')
+			chai.expect(vectorVectorOutput).includes('let currentEntry2 = currentEntry1.data[index2]')
+			chai.expect(vectorVectorOutput).includes('convertedEntry1.append(currentEntry2)')
+			chai.expect(vectorVectorOutput).includes('let swiftArray = array.map { (currentCType) in')
+			chai.expect(vectorVectorOutput).includes('currentCType.map { (currentCType) in')
+			chai.expect(vectorVectorOutput).includes('RouteHop(pointer: currentCType)')
 
 			const routeVector = <RustVector>glossary['LDKCVec_RouteHopZ'];
-			const subOutput = generator.generateFileContents(routeVector);
-			const aggregateOutput = subOutput + output;
+			const vectorOutput = generator.generateFileContents(routeVector);
+			chai.expect(vectorOutput).includes('public init(array: [RouteHop]) {')
+			chai.expect(vectorOutput).includes('let rustArray = array.map { (currentValueDepth1) in')
+			chai.expect(vectorOutput).includes('currentValueDepth1.danglingClone().cType!')
+			chai.expect(vectorOutput).includes('let dataContainer = UnsafeMutablePointer<LDKRouteHop>.allocate(capacity: array.count)')
+			chai.expect(vectorOutput).includes('let vector = LDKCVec_RouteHopZ(data: dataContainer, datalen: UInt(array.count))')
+
+			chai.expect(vectorOutput).includes('public func getValue() -> [RouteHop] {')
+			chai.expect(vectorOutput).includes('var array = [LDKRouteHop]()')
+			chai.expect(vectorOutput).includes('let swiftArray = array.map { (currentCType) in')
+			chai.expect(vectorOutput).includes('RouteHop(pointer: currentCType)')
+		});
+
+		it('should generate Vec<u8>', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/fixtures/generation/vec_u8_test.h`);
+			const parser = new Parser(config);
+			parser.parse();
+			const glossary = parser.glossary;
+			const glossaryKeys = Object.keys(glossary);
+
+			const routeVectorVector = <RustVector>glossary['LDKCVec_u8Z'];
+			const generator = new VectorGenerator(config);
+			const output = generator.generateFileContents(routeVectorVector);
+
+			chai.expect(output).includes('public init(array: [UInt8]) {');
+			chai.expect(output).includes('let dataContainer = UnsafeMutablePointer<UInt8>.allocate(capacity: array.count)');
+			chai.expect(output).includes('dataContainer.initialize(from: array, count: array.count)');
+			chai.expect(output).includes('let vector = LDKCVec_u8Z(data: dataContainer, datalen: UInt(array.count))');
+			chai.expect(output).includes('self.cType = vector');
+
+			chai.expect(output).includes('public func getValue() -> [UInt8] {');
+			chai.expect(output).includes('var array = [UInt8]()');
+			chai.expect(output).includes('let currentEntry1 = self.cType!.data[index1]');
+			chai.expect(output).includes('let swiftArray = array');
+			chai.expect(output).includes('return swiftArray');
 		});
 	});
 

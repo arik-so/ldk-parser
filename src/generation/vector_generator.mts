@@ -1,4 +1,4 @@
-import {RustType, RustVector} from '../rust_types.mjs';
+import {RustPrimitive, RustType, RustVector} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 
 export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
@@ -14,7 +14,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		// this type is elided
 		const swiftPublicType = this.getPublicTypeSignature(type);
 		const iterateeRustTypeName = type.iterateeField.type.name;
-		const bracketedIterateeTypeName = '<' + iterateeRustTypeName + '>';
+		let bracketedIterateeTypeName = '<' + iterateeRustTypeName + '>';
 
 		let dataContainerInitializationArgumentName = 'rustArray';
 		let dimensionalityReduction = '';
@@ -60,6 +60,11 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 						}
 			`;
 			dataContainerInitializationArgumentName = 'lowerDimension';
+		} else if (type.iterateeField.type instanceof RustPrimitive) {
+			bracketedIterateeTypeName = `<${type.iterateeField.type.swiftRawSignature}>`
+			dataContainerInitializationArgumentName = 'array'
+			rustUnwrapper = ''
+			swiftUnwrapper = 'let swiftArray = array'
 		}
 
 		return `
@@ -157,6 +162,8 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 	private getRustArrayTypeSignature(type: RustType) {
 		if (type instanceof RustVector) {
 			return `[${this.getRustArrayTypeSignature(type.iterateeField.type)}]`;
+		} else if (type instanceof RustPrimitive) {
+			return type.swiftRawSignature
 		}
 		return type.name;
 	}
