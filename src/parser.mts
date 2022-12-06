@@ -315,7 +315,7 @@ export default class Parser {
 						if (currentField.contextualName === 'this_arg') {
 							descriptor.identifierField = currentField;
 						} else {
-							debug('Trait %s has transparent field %s:\n> %s', descriptor.name, currentField.contextualName, currentLambdaLine.code);
+							debug('Trait `%s` has transparent field `%s: %s`', descriptor.name, currentField.contextualName, currentField.type.getName());
 							descriptor.fields[currentField.contextualName] = currentField;
 						}
 						descriptor.orderedFields.push(currentField);
@@ -342,7 +342,7 @@ export default class Parser {
 				}
 				if (this.isPrimitiveWrapper(descriptor)) {
 					// try to detect if this is a primitive wrapping struct
-					debug('Potential primitive wrapper: %s', descriptor.name);
+					debug('Primitive wrapper detected: `%s`', descriptor.name);
 
 					// DANGER ZONE! Overwrite the glossary entry with the newly parsed descriptor
 					// TODO: figure out a way to detect wrapper type before object lines are parsed
@@ -724,7 +724,7 @@ export default class Parser {
 					rustType.name = typeName;
 					this.typeGlossary[typeName] = rustType;
 					typelessLineRemainder = variableName;
-					debug('New opaque type detected: %s\n> %s', typeName, typeLine);
+					debug('Opaque type detected: `%s` (`%s`)', typeName, typelessLineRemainder);
 				} else {
 					console.error(`Unknown non-primitive type: ${typeName}\n>`, typeLine);
 					process.exit(1);
@@ -948,10 +948,7 @@ export default class Parser {
 
 				// this is purely for curiosity
 				let typeKind = currentType.constructor.name;
-				if (!this.kindsWithMethodAssociations.has(typeKind)) {
-					debug('Kind using methods: %s (first instance: %s)', typeKind, typeName);
-					this.kindsWithMethodAssociations.add(typeKind);
-				}
+				this.kindsWithMethodAssociations.add(typeKind);
 
 				const methodsArray = currentType['methods'];
 				if (!Array.isArray(methodsArray)) {
