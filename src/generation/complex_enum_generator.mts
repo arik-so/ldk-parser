@@ -67,7 +67,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 		let renderedChildStructs = '';
 
 		if (childStructs.length > 0) {
-			const childStructGenerator = new StructGenerator(this.config);
+			const childStructGenerator = new StructGenerator(this.config, this.auxiliaryArtifacts);
 			for (const currentChildStruct of childStructs) {
 				let currentStructRendering = childStructGenerator.generateFileContents(currentChildStruct, type);
 				// embedded structs have no business being publicly initializeable
