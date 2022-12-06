@@ -89,10 +89,10 @@ export default class Generator {
 				vectorGenerator.generate(currentType);
 			} else if (currentType instanceof RustPrimitiveEnum) {
 				primitiveEnumGenerator.generate(currentType);
-			} else if (currentType instanceof RustTaggedValueEnum) {
-				complexEnumGenerator.generate(currentType);
 			} else if (currentType instanceof RustNullableOption) {
 				nullableOptionGenerator.generate(currentType);
+			} else if (currentType instanceof RustTaggedValueEnum) {
+				complexEnumGenerator.generate(currentType);
 			} else if (currentType instanceof RustResult) {
 				resultGenerator.generate(currentType);
 			} else if (currentType instanceof RustStruct) {
