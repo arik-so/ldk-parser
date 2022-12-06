@@ -295,6 +295,33 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		throw new Error(`Unmapped mercurial type: ${type.name}`);
 	}
 
+	/**
+	 * The type name that the Swift compiler natively maps C types into.
+	 * For some repeated types like tuples we add aliasing, and register the tuple
+	 * as needing conversion in the auxiliary artifact tracker.
+	 * @param type
+	 * @protected
+	 */
+	protected getRawTypeName(type: RustType) {
+		if (type instanceof RustPrimitive) {
+			return type.swiftRawSignature;
+		}
+
+		if (type instanceof RustArray) {
+			if (type.iteratee instanceof RustPrimitive && Number.isFinite(type.length)) {
+				// inlining a really long tuple would be rather ugly, so instead we're gonna
+				// declare a type for it and generate some auxiliary conversion and typealiasing
+				// artifacts
+				this.auxiliaryArtifacts.addTuple(type.iteratee.swiftRawSignature, type.length);
+				return `${type.iteratee.swiftRawSignature}Tuple${type.length}`;
+			}
+
+			throw new Error(`Unnamed raw type: ${type.name}`);
+		}
+
+		return type.name;
+	}
+
 	protected prepareSwiftArgumentForRust(argument: ContextualRustType, containerType?: RustType): PreparedArgument {
 		// this is the name of the variable that the method receives
 		const publicName = Generator.snakeCaseToCamelCase(argument.contextualName);
@@ -342,10 +369,26 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedArgument.accessor = preparedArgument.name + '.activate().cType!';
 			} else if (argument.type instanceof RustStruct || argument.type instanceof RustTaggedValueEnum) {
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
-			} else if(argument.type instanceof RustPrimitive) {
+			} else if (argument.type instanceof RustPrimitiveEnum) {
+				preparedArgument.accessor = preparedArgument.name + '.getCValue()';
+			} else if(argument.type instanceof RustArray) {
+				const iteratee = argument.type.iteratee;
+				if (iteratee instanceof RustPrimitive && Number.isFinite(argument.type.length)) {
+					// inlining a really long tuple would be rather ugly, so instead we're gonna
+					// declare a type for it and generate some auxiliary conversion and typealiasing
+					// artifacts
+					const tupleTypeName = this.getRawTypeName(argument.type);
+					preparedArgument.name = `tupled${Generator.snakeCaseToCamelCase(preparedArgument.name, true)}`;
+					this.auxiliaryArtifacts.addTuple(iteratee.swiftRawSignature, argument.type.length);
+					preparedArgument.conversion += `
+						let ${preparedArgument.name} = Bindings.arrayTo${tupleTypeName}(tuple: ${preparedArgument.accessor})
+					`;
+					preparedArgument.accessor = preparedArgument.name;
+				}
+			} else if (argument.type instanceof RustPrimitive) {
 				// nothing to do here
 			} else {
-				throw new Error(`Unsupported native argument type: ${argument.type} (${argument.type.constructor.name})`);
+				throw new Error(`Unsupported native argument type: ${argument.type.name} (${argument.type.constructor.name})`);
 			}
 		}
 

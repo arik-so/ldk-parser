@@ -21,9 +21,10 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 	generateFileContents(type: RustTrait): string {
 		const swiftTypeName = this.swiftTypeName(type);
 
-		let fieldAccessors = '';
 		let generatedLambdas = '';
+		let generatedCallbacks = ''
 		let generatedMethods = '';
+		let fieldAccessors = '';
 
 		let constructorArguments = [];
 		let constructorPrep = '';
@@ -38,6 +39,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 					const currentLambdaSwiftName = Generator.snakeCaseToCamelCase(currentField.name) + 'Lambda';
 					traitInitializationArguments.push(`${currentField.name}: ${currentLambdaSwiftName}`);
+
+					generatedCallbacks += this.generateCallbackStub(currentField, type);
 				} else {
 					// don't push weird lambdas
 					traitInitializationArguments.push(`${currentField.name}: nil`);
@@ -55,6 +58,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					constructorPrep += preparedArgument.conversion;
 
 					initializationValue = `${preparedArgument.methodCallWrapperPrefix}${preparedArgument.accessor}${preparedArgument.methodCallWrapperSuffix}`;
+
+					fieldAccessors += this.generateAccessor(currentField, type);
 				}
 
 				traitInitializationArguments.push(`${currentField.contextualName}: ${initializationValue}`);
@@ -103,11 +108,11 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					{generatedCallbacks}
+					${generatedCallbacks}
 
-					{generatedMethods}
+					${generatedMethods}
 
-					{fieldAccessors}
+					${fieldAccessors}
 
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true
@@ -139,6 +144,9 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 	/**
 	 * This is the Swift type that the Swift compiler natively maps C types into
 	 * For instance, C's uint64_t[3] would become a Swift tuple: (UInt64, UInt64, UInt64)
+	 *
+	 * The difference between this method and getRawTypeName is that this one is context-aware,
+	 * and can handle the raw type wrapped in pointers and optionals.
 	 * @param contextualType
 	 * @protected
 	 */
@@ -162,14 +170,38 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 				return `Unsafe${mutabilityInfix}RawPointer${nullabilitySuffix}`;
 			}
 
-			if (contextualType.isConstant) {
-				// this is gonna be an unsafe pointer, dawg
-				return `Unsafe${mutabilityInfix}Pointer<${rawTypeName}>${nullabilitySuffix}`;
-			}
+			return `Unsafe${mutabilityInfix}Pointer<${rawTypeName}>${nullabilitySuffix}`;
 
 		}
 
 		throw new Error(`Unmapped raw type: ${type.name}`);
+	}
+
+	protected generateCallbackStub(lambda: RustLambda, type: RustTrait): string {
+
+		const swiftTypeName = this.swiftTypeName(type);
+		const swiftMethodName = Generator.snakeCaseToCamelCase(lambda.name);
+		let swiftMethodArguments = [];
+
+		for (const currentArgument of lambda.arguments) {
+			if (currentArgument === lambda.thisArgument) {
+				continue;
+			}
+
+			const swiftArgumentName = Generator.snakeCaseToCamelCase(currentArgument.contextualName);
+			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type);
+			swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
+		}
+
+		const swiftReturnType = this.getPublicTypeSignature(lambda.returnValue.type);
+
+		return `
+					${this.renderDocComment(lambda.documentation, 5)}
+					open func ${swiftMethodName}(${swiftMethodArguments.join(', ')}) -> ${swiftReturnType} {
+						Bindings.print("Error: ${swiftTypeName}::${swiftMethodName} MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
+						abort()
+					}
+		`;
 	}
 
 	/**
@@ -273,42 +305,24 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		let type = returnType.type;
 		if (type instanceof RustNullableOption || type instanceof RustVector || type instanceof RustTaggedValueEnum || type instanceof RustResult) {
-			preparedReturnValue.wrapperSuffix = '.cType!'
+			preparedReturnValue.wrapperSuffix = '.cType!';
 		} else if (type instanceof RustTrait) {
-			preparedReturnValue.wrapperSuffix = '.activate().cType!'
+			preparedReturnValue.wrapperSuffix = '.activate().cType!';
 		} else if (type instanceof RustStruct) {
-			preparedReturnValue.wrapperSuffix = '.cType!'
-		} else if(type instanceof RustPrimitive) {
+			preparedReturnValue.wrapperSuffix = '.cType!';
+		} else if (type instanceof RustPrimitive) {
 			// nothing to do here
+		} else if(type instanceof RustPrimitiveEnum) {
+			preparedReturnValue.wrapperSuffix = '.getCValue()'
 		} else {
-			throw new Error(`Unsupported native return type: ${returnType.type} (${returnType.type.constructor.name})`);
+			throw new Error(`Unsupported native return type: ${returnType.type.name} (${returnType.type.constructor.name})`);
 		}
 
 		if (returnType.isAsteriskPointer) {
-			throw new Error(`Unsupported native pointer return type: ${returnType.type} (${returnType.type.constructor.name})`);
+			throw new Error(`Unsupported native pointer return type: ${returnType.type.name} (${returnType.type.constructor.name})`);
 		}
 
 		return preparedReturnValue;
-	}
-
-	private getRawTypeName(type: RustType) {
-		if (type instanceof RustPrimitive) {
-			return type.swiftRawSignature;
-		}
-
-		if (type instanceof RustArray) {
-			if (type.iteratee instanceof RustPrimitive && Number.isFinite(type.length)) {
-				// inlining a really long tuple would be rather ugly, so instead we're gonna
-				// declare a type for it and generate some auxiliary conversion and typealiasing
-				// artifacts
-				this.auxiliaryArtifacts.addTuple(type.iteratee.swiftRawSignature, type.length);
-				return `${type.iteratee.swiftRawSignature}Tuple${type.length}`;
-			}
-
-			throw new Error(`Unnamed raw type: ${type.name}`);
-		}
-
-		return type.name;
 	}
 
 	/**
@@ -327,6 +341,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		const swiftTypeName = this.swiftTypeName(type);
 		const swiftLambdaName = Generator.snakeCaseToCamelCase(lambda.name) + 'Lambda';
+
+		// should be equivalent to this.swiftMethodName() if lambda was a `RustFunction`
 		const swiftCallbackName = Generator.snakeCaseToCamelCase(lambda.name);
 
 		let rawLambdaArguments = [];
