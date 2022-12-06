@@ -128,7 +128,15 @@ export default class Parser {
 			if (aggregateBlockObject.length > 0) {
 				// we are in the midst of parsing a block object
 				if (currentLine.startsWith('} ')) {
-					// it's over. Now the block object has ended
+					/**
+					 * Tt's over. Now the block object has ended.
+					 *
+					 * Note that the reason we don't confuse it with an inner block termination
+					 * like the `union { struct {}; };` inside e. g. `LDKBech32Error` is because
+					 * all inner blocks end in '};' – i. e. no space, but a semicolon.
+					 *
+					 * Should that change, we'll need to add a scope depth tracker.
+					 */
 
 					const currentBlockObject = aggregateBlockObject;
 					aggregateBlockObject = '';
