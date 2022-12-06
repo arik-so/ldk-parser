@@ -1,6 +1,8 @@
 import {
 	ContextualRustType,
-	RustArray, RustFunctionArgument, RustFunctionReturnValue,
+	RustArray,
+	RustFunctionArgument,
+	RustFunctionReturnValue,
 	RustLambda,
 	RustNullableOption,
 	RustPrimitive,
@@ -217,7 +219,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		for (const currentArgument of lambda.arguments) {
 			if (currentArgument === lambda.thisArgument) {
-				nativeCallValueAccessors.push('self.cType!.this_arg')
+				nativeCallValueAccessors.push('self.cType!.this_arg');
 				continue;
 			}
 
@@ -295,23 +297,11 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		const type = argumentType.type;
 
-		// we're dealing with an UnsafePointer here
-		if (argumentType.isAsteriskPointer) {
+		let needsUnwrapping = argumentType.isAsteriskPointer && !argumentType.isNonnullablePointer;
 
-			// this thing is nullable, we must unwrap it
-			if (!argumentType.isNonnullablePointer) {
-				preparedArgument.conversion += `
-					var ${preparedArgument.name}Pointee: ${this.getRawTypeName(type)}? = nil
-					if let ${preparedArgument.name}Unwrapped = ${preparedArgument.accessor} {
-						${preparedArgument.name}Pointee = ${preparedArgument.name}Unwrapped.pointee
-					}
-				`;
-				preparedArgument.name += 'Pointee';
-				preparedArgument.accessor = preparedArgument.name;
-			} else {
-				// we can simply refer to the pointee without unwrapping it
-				preparedArgument.accessor += '.pointee';
-			}
+		if (argumentType.isAsteriskPointer && argumentType.isNonnullablePointer) {
+			// we can simply refer to the pointee without unwrapping it
+			preparedArgument.accessor += '.pointee';
 		}
 
 		if (type instanceof RustVector || type instanceof RustPrimitiveWrapper || type instanceof RustNullableOption) {
@@ -325,20 +315,16 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 			preparedArgument.methodCallWrapperSuffix += `)`;
 		} else if (type instanceof RustPrimitive) {
 			// nothing to do here
-			return preparedArgument;
 		} else if (type instanceof RustArray) {
+			// CAUTION: REQUIRES SPECIAL HANDLING IF UNWRAPPING IS NECESSARY
 			const iteratee = type.iteratee;
 			if (iteratee instanceof RustPrimitive && Number.isFinite(type.length)) {
 				// inlining a really long tuple would be rather ugly, so instead we're gonna
 				// declare a type for it and generate some auxiliary conversion and typealiasing
 				// artifacts
 				const tupleTypeName = this.getRawTypeName(type);
-				preparedArgument.name = `detupled${Generator.snakeCaseToCamelCase(preparedArgument.name, true)}`;
-				this.auxiliaryArtifacts.addTuple(iteratee.swiftRawSignature, type.length!);
-				preparedArgument.conversion += `
-					let ${preparedArgument.name} = Bindings.${tupleTypeName}ToArray(tuple: ${preparedArgument.accessor})
-				`;
-				preparedArgument.accessor = preparedArgument.name;
+				preparedArgument.methodCallWrapperPrefix = `Bindings.${tupleTypeName}ToArray(tuple: `
+				preparedArgument.methodCallWrapperSuffix = `)`
 			}
 		} else if (type instanceof RustPrimitiveEnum) {
 			preparedArgument.methodCallWrapperPrefix += `${this.swiftTypeName(type)}(value: `;
@@ -346,6 +332,31 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		} else {
 			throw new Error(`Unsupported return type ${type.getName()} of kind ${type.constructor.name}`);
 		}
+
+		// we're dealing with a nullable UnsafePointer here
+		// because this thing is nullable, we must unwrap it
+		if (needsUnwrapping) {
+			/**
+			 * If a pointer is non-nullable, the any conversion and elision handling must happen
+			 * inside the unwrapping context
+			 */
+			if (preparedArgument.conversion) {
+				throw new Error('Prepared nullable pointer type has conversion block constructed prior to the unwrapper construction.');
+			}
+
+			preparedArgument.conversion += `
+				var ${preparedArgument.name}Pointee: ${this.getRawTypeName(type)}? = nil
+				if let ${preparedArgument.name}Unwrapped = ${preparedArgument.accessor} {
+					${preparedArgument.name}Pointee = ${preparedArgument.methodCallWrapperPrefix}${preparedArgument.name}Unwrapped.pointee${preparedArgument.methodCallWrapperSuffix}
+				}
+			`;
+
+			preparedArgument.methodCallWrapperPrefix = '';
+			preparedArgument.methodCallWrapperSuffix = '';
+			preparedArgument.name += 'Pointee';
+			preparedArgument.accessor = preparedArgument.name;
+		}
+
 		return preparedArgument;
 	}
 
