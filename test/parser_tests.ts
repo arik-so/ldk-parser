@@ -349,8 +349,6 @@ describe('Parser Tests', () => {
 			parser.parse();
 			const glossary = parser.glossary;
 			const glossaryKeys = Object.keys(glossary);
-
-			debugger
 		});
 	});
 

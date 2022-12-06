@@ -13,10 +13,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 
 		// this type is elided
 		const swiftPublicType = this.getPublicTypeSignature(type);
-		const iterateeRustTypeName = type.iterateeField.type.name;
-		let bracketedIterateeTypeName = '<' + iterateeRustTypeName + '>';
 
-		// teas
 		let dataContainerInitializationArgumentName = 'rustArray';
 		let dimensionalityReduction = '';
 
@@ -46,8 +43,11 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		// TODO: fix value access if it's an array of nullable options
 		swiftUnwrapper += `${indentation}${this.swiftTypeName(currentIteratee)}(pointer: currentCType)${unwrapperSuffix}`;
 
+
+		let bracketedIterateeTypeName = null;
 		if (type.iterateeField.type instanceof RustVector) {
-			// const iterateeSwiftTypeName = this.getPublicTypeSignature(type.iterateeField.type);
+			const iterateeRustTypeName = type.iterateeField.type.name;
+			bracketedIterateeTypeName = '<' + iterateeRustTypeName + '>';
 
 			// avoid elision
 			const iterateeSwiftTypeName = this.getPublicTypeSignature(type.iterateeField.type, type.iterateeField.type);
@@ -62,10 +62,10 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			`;
 			dataContainerInitializationArgumentName = 'lowerDimension';
 		} else if (type.iterateeField.type instanceof RustPrimitive) {
-			bracketedIterateeTypeName = `<${type.iterateeField.type.swiftRawSignature}>`
-			dataContainerInitializationArgumentName = 'array'
-			rustUnwrapper = ''
-			swiftUnwrapper = 'let swiftArray = array'
+			bracketedIterateeTypeName = `<${type.iterateeField.type.swiftRawSignature}>`;
+			dataContainerInitializationArgumentName = 'array';
+			rustUnwrapper = '';
+			swiftUnwrapper = 'let swiftArray = array';
 		}
 
 		return `
@@ -160,13 +160,17 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		`;
 	}
 
-	private getRustArrayTypeSignature(type: RustType) {
+	private getRustArrayTypeSignature(type: RustType): string {
 		if (type instanceof RustVector) {
 			return `[${this.getRustArrayTypeSignature(type.iterateeField.type)}]`;
 		} else if (type instanceof RustPrimitive) {
-			return type.swiftRawSignature
+			return type.swiftRawSignature;
 		}
-		return type.name;
+		const typeName = type.getName();
+		if (!typeName) {
+			throw new Error('Unnamed type of kind ' + type.constructor.name);
+		}
+		return typeName;
 	}
 
 }

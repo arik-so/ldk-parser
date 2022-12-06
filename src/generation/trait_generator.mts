@@ -1,6 +1,6 @@
 import {
 	ContextualRustType,
-	RustArray,
+	RustArray, RustFunctionArgument, RustFunctionReturnValue,
 	RustLambda,
 	RustNullableOption,
 	RustPrimitive,
@@ -176,7 +176,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		}
 
-		throw new Error(`Unmapped raw type: ${type.name}`);
+		throw new Error(`Unmapped raw type: ${type.getName()} (${type.constructor.name})`);
 	}
 
 	protected generateCallbackStub(lambda: RustLambda, type: RustTrait): string {
@@ -274,7 +274,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 	 * @param argumentType
 	 * @protected
 	 */
-	private prepareRustArgumentForSwift(argumentType: ContextualRustType): PreparedSwiftArgument {
+	private prepareRustArgumentForSwift(argumentType: RustFunctionArgument): PreparedSwiftArgument {
 
 		const labelName = Generator.snakeCaseToCamelCase(argumentType.contextualName);
 
@@ -334,7 +334,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 				// artifacts
 				const tupleTypeName = this.getRawTypeName(type);
 				preparedArgument.name = `detupled${Generator.snakeCaseToCamelCase(preparedArgument.name, true)}`;
-				this.auxiliaryArtifacts.addTuple(iteratee.swiftRawSignature, type.length);
+				this.auxiliaryArtifacts.addTuple(iteratee.swiftRawSignature, type.length!);
 				preparedArgument.conversion += `
 					let ${preparedArgument.name} = Bindings.${tupleTypeName}ToArray(tuple: ${preparedArgument.accessor})
 				`;
@@ -344,12 +344,12 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 			preparedArgument.methodCallWrapperPrefix += `${this.swiftTypeName(type)}(value: `;
 			preparedArgument.methodCallWrapperSuffix += `)`;
 		} else {
-			throw new Error(`Unsupported return type ${type.name} of kind ${type.constructor.name}`);
+			throw new Error(`Unsupported return type ${type.getName()} of kind ${type.constructor.name}`);
 		}
 		return preparedArgument;
 	}
 
-	private prepareSwiftReturnValueForRust(returnType: ContextualRustType): PreparedReturnValue {
+	private prepareSwiftReturnValueForRust(returnType: RustFunctionReturnValue): PreparedReturnValue {
 		const preparedReturnValue: PreparedReturnValue = {
 			wrapperPrefix: '',
 			wrapperSuffix: ''
@@ -369,11 +369,11 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		} else if (type instanceof RustPrimitiveEnum) {
 			preparedReturnValue.wrapperSuffix = '.getCValue()';
 		} else {
-			throw new Error(`Unsupported native return type: ${returnType.type.name} (${returnType.type.constructor.name})`);
+			throw new Error(`Unsupported native return type: ${returnType.type.getName()} (${returnType.type.constructor.name})`);
 		}
 
 		if (returnType.isAsteriskPointer) {
-			throw new Error(`Unsupported native pointer return type: ${returnType.type.name} (${returnType.type.constructor.name})`);
+			throw new Error(`Unsupported native pointer return type: ${returnType.type.getName()} (${returnType.type.constructor.name})`);
 		}
 
 		return preparedReturnValue;

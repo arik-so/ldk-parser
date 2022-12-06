@@ -5,7 +5,9 @@ import {
 	ContextualRustType,
 	OpaqueRustStruct,
 	RustArray,
-	RustFunction, RustFunctionArgument,
+	RustFunction,
+	RustFunctionArgument,
+	RustFunctionReturnValue,
 	RustKind,
 	RustLambda,
 	RustNullableOption,
@@ -286,7 +288,7 @@ export default class Parser {
 					}
 				}
 			}
-			descriptor.name = name;
+			descriptor.setName(name);
 			descriptor.documentation = docComment;
 			this.typeGlossary[name] = descriptor;
 
@@ -341,8 +343,7 @@ export default class Parser {
 				}
 			} else if (descriptor instanceof RustResultValueEnum) {
 				for (const currentEnumLine of objectLines) {
-					const currentVariant = this.parseTypeInformation(currentEnumLine.code);
-					currentVariant.documentation = currentEnumLine.comments;
+					const currentVariant = this.parseStructField(currentEnumLine);
 					if (currentVariant.contextualName === 'result') {
 						descriptor.resultVariant = currentVariant;
 					} else if (currentVariant.contextualName === 'err') {
@@ -409,7 +410,7 @@ export default class Parser {
 							}
 
 						} else {
-							const currentVariant = this.parseTypeInformation(currentEnumLine.code);
+							const currentVariant = this.parseStructField(currentEnumLine);
 							currentVariant.documentation = currentEnumLine.comments;
 
 							// the actual variant accessors are just named variant_name (no type prefix, and snake case)
@@ -570,7 +571,7 @@ export default class Parser {
 		return false;
 	}
 
-	private parseEnumValue(objectLine: ObjectLine): RustPrimitiveEnumVariant {
+	private parseEnumValue(objectLine: ObjectLine): RustPrimitiveEnumVariant | null {
 		const value = new RustPrimitiveEnumVariant();
 		value.kind = RustKind.EnumValue;
 		value.name = objectLine.code.trim();
@@ -626,7 +627,7 @@ export default class Parser {
 			relevantTypeLine = relevantTypeLine.replace('NONNULL_PTR ', '');
 		}
 
-		let typelessLineRemainder = relevantTypeLine;
+		let typelessLineRemainder: string | null = relevantTypeLine;
 		if (relevantTypeLine.startsWith('uint8_t')) {
 			rustType = new RustPrimitive();
 			typelessLineRemainder = relevantTypeLine.substring('uint8_t'.length).trim();
@@ -710,7 +711,7 @@ export default class Parser {
 				if (typeName in this.typeGlossary) {
 					rustType = this.typeGlossary[typeName];
 					typelessLineRemainder = variableName;
-				} else if (typeName.startsWith('LDKnative') && variableName.endsWith('inner')) {
+				} else if (typeName.startsWith('LDKnative') && variableName && variableName.endsWith('inner')) {
 					rustType = new OpaqueRustStruct();
 					rustType.name = typeName;
 					this.typeGlossary[typeName] = rustType;
@@ -737,6 +738,11 @@ export default class Parser {
 			const arrayPointerRegex = /^\(\*(.+)\)\[(\d+)\]$/;
 			const matches = arrayPointerRegex.exec(typelessLineRemainder);
 			if (Array.isArray(matches)) {
+				if (!rustType) {
+					console.error('Empty array pointer iteratee type:\n>', typeLine);
+					process.exit(1);
+				}
+
 				isAsteriskPointer = true;
 				const name = matches[1];
 				const length = parseInt(matches[2]);
@@ -746,7 +752,7 @@ export default class Parser {
 				actualType.kind = RustKind.Array;
 
 				if (!(rustType instanceof RustPrimitive)) {
-					debug('Non-primitive fixed-length-array pointer: %s\n> %s', rustType.name, typeLine);
+					debug('Non-primitive fixed-length-array pointer: %s\n> %s', rustType.getName(), typeLine);
 				}
 
 				rustType = actualType;
@@ -760,6 +766,10 @@ export default class Parser {
 		const FIXED_LENGTH_ARRAY_REGEX = /[a-zA-Z0-9_]+ ([a-zA-Z0-9_]+)\[([1-9][0-9]*)\]/;
 		const arrayMatch = FIXED_LENGTH_ARRAY_REGEX.exec(relevantTypeLine);
 		if (arrayMatch && arrayMatch.length > 0) {
+			if (!rustType) {
+				console.error('Empty array pointer iteratee type:\n>', typeLine);
+				process.exit(1);
+			}
 			const name = arrayMatch[1];
 			const length = parseInt(arrayMatch[2]);
 			const actualType = new RustArray();
@@ -768,7 +778,7 @@ export default class Parser {
 			actualType.kind = RustKind.Array;
 
 			if (!(rustType instanceof RustPrimitive)) {
-				debug('Non-primitive fixed-length-array: %s\n> %s', rustType.name, typeLine);
+				debug('Non-primitive fixed-length-array: %s\n> %s', rustType.getName(), typeLine);
 			}
 
 			rustType = actualType;
@@ -780,7 +790,12 @@ export default class Parser {
 
 		const returnedType = new ContextualRustType();
 		returnedType.type = rustType;
-		returnedType.contextualName = contextualName;
+
+		if (contextualName) {
+			returnedType.setContextualName(contextualName);
+		} else {
+			// this is likely a return value
+		}
 
 		returnedType.isConstant = isConstant;
 		returnedType.isNonnullablePointer = nonNullablePointer;
@@ -791,6 +806,11 @@ export default class Parser {
 
 	private parseLambda(objectLine: ObjectLine): RustLambda {
 		const matches = LAMBDA_REGEX.exec(objectLine.code);
+
+		if (!Array.isArray(matches)) {
+			console.error('Failed to parse lambda:\n>', objectLine.code);
+			process.exit(1);
+		}
 
 		const returnType = matches[2];
 		const name = matches[3];
@@ -804,7 +824,12 @@ export default class Parser {
 		const lambda = new RustLambda();
 		lambda.name = name;
 		lambda.documentation = objectLine.comments;
-		lambda.returnValue = this.parseTypeInformation(returnType.trim());
+
+		const returnValue = this.parseTypeInformation(returnType.trim());
+		const typedReturnValue = new RustFunctionReturnValue();
+		Object.assign(typedReturnValue, returnValue);
+
+		lambda.returnValue = typedReturnValue;
 		lambda.returnValue.isReturnValue = true;
 
 		if (hasThisArg) {
@@ -848,6 +873,10 @@ export default class Parser {
 	 */
 	private parseMethod(methodLine: string, docComment: string) {
 		const matches = FUNCTION_REGEX.exec(methodLine);
+		if (!Array.isArray(matches)) {
+			console.error('Failed to parse method:\n>', methodLine);
+			process.exit(1);
+		}
 
 		const returnType = matches[1];
 		const name = matches[2];
@@ -855,7 +884,12 @@ export default class Parser {
 		const argumentStrings = argumentLine.split(', ');
 
 		const method = new RustFunction();
-		method.returnValue = this.parseTypeInformation(returnType.trim());
+
+		const returnValue = this.parseTypeInformation(returnType.trim());
+		const typedReturnValue = new RustFunctionReturnValue();
+		Object.assign(typedReturnValue, returnValue);
+
+		method.returnValue = typedReturnValue;
 		method.returnValue.isReturnValue = true;
 		method.name = name;
 		method.documentation = docComment;

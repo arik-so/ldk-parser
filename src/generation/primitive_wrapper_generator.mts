@@ -24,7 +24,7 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 		const dataFieldName = type.dataField.contextualName;
 		if (type.dataField.type instanceof RustPrimitive) {
 			if (swiftReturnType === 'String') {
-				const lengthFieldName = type.lengthField.contextualName;
+				const lengthFieldName = type.lengthField!.contextualName;
 
 				initializer = `self.cType = ${type.name}(${dataFieldName}: Bindings.string_to_unsafe_uint8_pointer(string: value), ${lengthFieldName}: UInt(value.count)${ownershipInfix})`;
 				valueAccessor = `
@@ -60,7 +60,7 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 			if (Number.isFinite(type.dataField.type.length)) {
 				let dataAssignment = [];
 				let dataAccess = [];
-				for (let i = 0; i < type.dataField.type.length; i++) {
+				for (let i = 0; i < type.dataField.type.length!; i++) {
 					dataAssignment.push(`value[${i}]`);
 					dataAccess.push(`self.cType!.${dataFieldName}.${i}`);
 				}
@@ -73,40 +73,40 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 			#if SWIFT_PACKAGE
 			import LDKHeaders
 			#endif
-			
+
 			internal typealias ${swiftTypeName} = Bindings.${swiftTypeName}
-			
+
 			extension Bindings {
-				
+
 				${this.renderDocComment(type.documentation, 4)}
 				internal class ${swiftTypeName}: NativeTypeWrapper {
-			
+
 					${this.inheritedInits(type)}
-					
+
 					public init(value: ${swiftReturnType}) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						
+
 						${initializer}
-						
+
 						super.init(conflictAvoidingVariableName: 0)
 					}
-					
+
 					${generatedMethods}
-					
+
 					public func getValue() -> ${swiftReturnType} {
 						${valueAccessor}
 					}
-					
+
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true
 						return self
 					}
 
 					${this.deinitCode(type)}
-					
+
 				}
-				
+
 			}
 		`;
 	}

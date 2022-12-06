@@ -20,7 +20,6 @@
 		"typescript": "^4.5.4"
 	},
 	"dependencies": {
-		"debug": "^4.3.3",
-		"lightningdevkit": "^0.0.10-4.0alpha1"
+		"debug": "^4.3.3"
 	}
 }

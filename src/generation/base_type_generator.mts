@@ -1,9 +1,10 @@
 import Config from '../config.mjs';
 import {
-	ContextualRustType,
 	OpaqueRustStruct,
 	RustArray,
 	RustFunction,
+	RustFunctionArgument,
+	RustFunctionReturnValue,
 	RustLambda,
 	RustNullableOption,
 	RustPrimitive,
@@ -11,6 +12,7 @@ import {
 	RustPrimitiveWrapper,
 	RustResult,
 	RustStruct,
+	RustStructField,
 	RustTaggedValueEnum,
 	RustTrait,
 	RustType,
@@ -54,8 +56,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (type instanceof RustPrimitive) {
 			return type.swiftRawSignature;
 		}
-		if (type.name.startsWith('LDK')) {
-			const ldkLessTypeName = type.name.substring('LDK'.length);
+		const typeName = type.getName();
+		if (typeName && typeName.startsWith('LDK')) {
+			const ldkLessTypeName = typeName.substring('LDK'.length);
 			if (ldkLessTypeName.charAt(0) === 'C') {
 				if (ldkLessTypeName.startsWith('C2Tuple_') || ldkLessTypeName.startsWith('C3Tuple_')) {
 					return ldkLessTypeName.substring(2);
@@ -88,7 +91,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		fs.writeFileSync(outputPath, fileContents, {});
 	}
 
-	protected generateAccessor(field: ContextualRustType, containerType: RustType): string {
+	protected generateAccessor(field: RustStructField, containerType: RustType): string {
 		if (field.type instanceof OpaqueRustStruct) {
 			// this should not be exposed
 			return '';
@@ -127,6 +130,14 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		let nativeCallSuffix = '';
 
 		for (const currentArgument of method.arguments) {
+			if (currentArgument.type instanceof RustPrimitive) {
+				if (currentArgument.type.swiftRawSignature === 'Void' && !currentArgument.contextualName) {
+					// this is an absolutely wild exception where an argument is unnamed
+					// it's not supposed to happen, but if it's void, for some reason it somehow does
+					continue;
+				}
+			}
+
 			let isInstanceArgument = false;
 			if (currentArgument.type === containerType) {
 				isInstanceMethod = true;
@@ -187,16 +198,16 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 	}
 
 	protected standaloneMethodName(method: RustFunction, containerType: RustType): string {
-		let typeNamePrefix = containerType.name;
-		if (typeNamePrefix.startsWith('LDK')) {
+		let typeNamePrefix = containerType.getName();
+		if (typeNamePrefix && typeNamePrefix.startsWith('LDK')) {
 			typeNamePrefix = typeNamePrefix.substring('LDK'.length);
 		}
 		return method.name.replace(typeNamePrefix + '_', '');
 	}
 
 	protected standaloneLambdaName(lambda: RustLambda, containerType: RustType): string {
-		let typeNamePrefix = containerType.name;
-		if (typeNamePrefix.startsWith('LDK')) {
+		let typeNamePrefix = containerType.getName();
+		if (typeNamePrefix && typeNamePrefix.startsWith('LDK')) {
 			typeNamePrefix = typeNamePrefix.substring('LDK'.length);
 		}
 		return lambda.name.replace(typeNamePrefix + '_', '');
@@ -292,7 +303,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			return `[${iterateeTypeName}]`;
 		}
 
-		throw new Error(`Unmapped mercurial type: ${type.name}`);
+		throw new Error(`Unmapped mercurial type: ${type.getName()} (${type.constructor.name})`);
 	}
 
 	/**
@@ -312,17 +323,21 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				// inlining a really long tuple would be rather ugly, so instead we're gonna
 				// declare a type for it and generate some auxiliary conversion and typealiasing
 				// artifacts
-				this.auxiliaryArtifacts.addTuple(type.iteratee.swiftRawSignature, type.length);
+				this.auxiliaryArtifacts.addTuple(type.iteratee.swiftRawSignature, type.length!);
 				return `${type.iteratee.swiftRawSignature}Tuple${type.length}`;
 			}
 
-			throw new Error(`Unnamed raw type: ${type.name}`);
+			throw new Error(`Unnamed raw type: ${type.getName()} (${type.constructor.name})`);
 		}
 
-		return type.name;
+		const typeName = type.getName();
+		if (!typeName) {
+			throw new Error('Unnamed type of kind ' + type.constructor.name);
+		}
+		return typeName;
 	}
 
-	protected prepareSwiftArgumentForRust(argument: ContextualRustType, containerType?: RustType): PreparedArgument {
+	protected prepareSwiftArgumentForRust(argument: RustFunctionArgument, containerType?: RustType): PreparedArgument {
 		// this is the name of the variable that the method receives
 		const publicName = Generator.snakeCaseToCamelCase(argument.contextualName);
 		const preparedArgument: PreparedArgument = {
@@ -371,7 +386,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustPrimitiveEnum) {
 				preparedArgument.accessor = preparedArgument.name + '.getCValue()';
-			} else if(argument.type instanceof RustArray) {
+			} else if (argument.type instanceof RustArray) {
 				const iteratee = argument.type.iteratee;
 				if (iteratee instanceof RustPrimitive && Number.isFinite(argument.type.length)) {
 					// inlining a really long tuple would be rather ugly, so instead we're gonna
@@ -379,7 +394,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					// artifacts
 					const tupleTypeName = this.getRawTypeName(argument.type);
 					preparedArgument.name = `tupled${Generator.snakeCaseToCamelCase(preparedArgument.name, true)}`;
-					this.auxiliaryArtifacts.addTuple(iteratee.swiftRawSignature, argument.type.length);
+					this.auxiliaryArtifacts.addTuple(iteratee.swiftRawSignature, argument.type.length!);
 					preparedArgument.conversion += `
 						let ${preparedArgument.name} = Bindings.arrayTo${tupleTypeName}(tuple: ${preparedArgument.accessor})
 					`;
@@ -388,7 +403,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else if (argument.type instanceof RustPrimitive) {
 				// nothing to do here
 			} else {
-				throw new Error(`Unsupported native argument type: ${argument.type.name} (${argument.type.constructor.name})`);
+				throw new Error(`Unsupported native argument type: ${argument.type.getName()} (${argument.type.constructor.name})`);
 			}
 		}
 
@@ -411,7 +426,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return preparedArgument;
 	}
 
-	protected prepareRustReturnValueForSwift(returnType: ContextualRustType, containerType?: RustType): PreparedReturnValue {
+	protected prepareRustReturnValueForSwift(returnType: RustFunctionReturnValue, containerType?: RustType): PreparedReturnValue {
 		const preparedReturnValue: PreparedReturnValue = {
 			wrapperPrefix: '',
 			wrapperSuffix: ''
@@ -441,26 +456,31 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(value: `;
 			preparedReturnValue.wrapperSuffix += `)`;
 		} else {
-			throw new Error(`Unsupported return type ${returnType.type.name} of kind ${returnType.type.constructor.name}`);
+			throw new Error(`Unsupported return type ${returnType.type.getName()} of kind ${returnType.type.constructor.name}`);
 		}
 		return preparedReturnValue;
 	}
 
 	protected inheritedInits(type: RustType): string {
+		const typeName = type.getName();
+		if (!typeName) {
+			throw new Error('Unnamed type of kind ' + type.constructor.name);
+		}
+
 		return `
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
 
-					internal var cType: ${type.name}?
+					internal var cType: ${typeName}?
 
-					public init(pointer: ${type.name}) {
+					public init(pointer: ${typeName}) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = pointer
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: ${type.name}, anchor: NativeTypeWrapper) {
+					public init(pointer: ${typeName}, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = pointer

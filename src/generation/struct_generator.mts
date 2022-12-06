@@ -3,7 +3,7 @@ import {BaseTypeGenerator} from './base_type_generator.mjs';
 
 export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
 
-	generateFileContents(type: RustStruct, containerType: RustType = null): string {
+	generateFileContents(type: RustStruct, containerType?: RustType): string {
 		let swiftTypeName = this.swiftTypeName(type);
 
 		let containerLessPrefix = `
@@ -20,7 +20,7 @@ export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
 		`;
 
 		if (type.parentType && type.parentType !== containerType) {
-			throw new Error(`Only orphan structs may be generated. ${type.name} belongs to ${type.parentType.name}`);
+			throw new Error(`Only orphan structs may be generated. ${type.name} belongs to ${type.parentType.getName()} (${type.parentType.constructor.name})`);
 		} else if (type.parentType) {
 			swiftTypeName = this.getPublicTypeSignature(type, containerType);
 			containerLessPrefix = '';

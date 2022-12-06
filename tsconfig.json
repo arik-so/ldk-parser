@@ -6,11 +6,18 @@
 		"sourceMap": true,
 		"esModuleInterop": false,
 		"allowSyntheticDefaultImports": true,
-		"rootDir": "src",
-//		"resolveJsonModule": true
+
+		"strictNullChecks": true,
+		"noImplicitAny": true,
+		// "rootDir": "src",
+		// "resolveJsonModule": true
 	},
 	"compileOnSave": true,
+	"include": [
+		"src",
+		"test"
+	],
 	"exclude": [
-		"node_modules"
+		"node_modules",
 	]
 }

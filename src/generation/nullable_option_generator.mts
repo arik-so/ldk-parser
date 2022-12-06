@@ -11,10 +11,10 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 		let someTag = '';
 		let noneTag = '';
 
-		let someInitializerMethod: RustFunction = null;
-		let noneInitializerMethod: RustFunction = null;
+		let someInitializerMethod: RustFunction;
+		let noneInitializerMethod: RustFunction;
 
-		const tagEnumType = type.variantTag.type as RustPrimitiveEnum;
+		const tagEnumType = type.variantTag!.type as RustPrimitiveEnum;
 		for (const currentTag of tagEnumType.variants) {
 			if (currentTag.name.endsWith('_Some')) {
 				someTag = currentTag.name;
@@ -48,31 +48,31 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 			#if SWIFT_PACKAGE
 			import LDKHeaders
 			#endif
-			
+
 			internal typealias ${swiftTypeName} = Bindings.${swiftTypeName}
-			
+
 			extension Bindings {
-				
-				${this.renderDocComment(type.variantTag.type.documentation, 4)}
+
+				${this.renderDocComment(type.variantTag!.type.documentation, 4)}
 				internal class ${swiftTypeName}: NativeTypeWrapper {
-			
+
 					${this.inheritedInits(type)}
-					
+
 					public init(${valueArgumentName}: ${swiftReturnType}?) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						
+
 						if let value = value {
-							self.cType = ${someInitializerMethod.name}(${preparedArgument.accessor})
+							self.cType = ${someInitializerMethod!.name}(${preparedArgument.accessor})
 						} else {
-							self.cType = ${noneInitializerMethod.name}()
+							self.cType = ${noneInitializerMethod!.name}()
 						}
-						
+
 						super.init(conflictAvoidingVariableName: 0)
 					}
-					
+
 					${generatedMethods}
-					
+
 					public func getValue() -> ${swiftReturnType}? {
 						if self.cType!.tag == ${noneTag} {
 							return nil
@@ -83,16 +83,16 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 						assert(false, "invalid option enum value")
 						return nil
 					}
-					
+
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true
 						return self
 					}
 
 					${this.deinitCode(type)}
-					
+
 				}
-				
+
 			}
 		`;
 	}

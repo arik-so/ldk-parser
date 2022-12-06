@@ -16,7 +16,8 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 
 		let childStructs: RustStruct[] = [];
 
-		const tagType = type.variantTag.type as RustPrimitiveEnum;
+		// the variant tag is definitely set
+		const tagType = type.variantTag!.type as RustPrimitiveEnum;
 
 		let tagEnumVariants = '';
 		let valueTypeDetector = 'switch self.cType!.tag {';
@@ -46,7 +47,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 
 			if (currentVariant.type.parentType === type) {
 				if (!(currentVariant.type instanceof RustStruct)) {
-					throw new Error('Complex enum with odd child type: ' + currentVariant.type.name);
+					throw new Error(`Complex enum with odd child type: ${currentVariant.type.getName()} (${currentVariant.type.constructor.name})`);
 				}
 				childStructs.push(currentVariant.type as RustStruct);
 			}
@@ -85,7 +86,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 
 			extension Bindings {
 
-				${this.renderDocComment(type.variantTag.type.documentation, 4)}
+				${this.renderDocComment(type.variantTag!.type.documentation, 4)}
 				public class ${swiftTypeName}: NativeTypeWrapper {
 
 					${this.inheritedInits(type)}
