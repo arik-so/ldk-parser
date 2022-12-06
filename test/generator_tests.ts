@@ -293,7 +293,17 @@ describe('Generator Tests', () => {
 			const generator = new TraitGenerator(config, new AuxiliaryArtifacts());
 			const baseSign = <RustTrait>parser.glossary['LDKBaseSign'];
 			const output = generator.generateFileContents(baseSign);
-			debugger
+		});
+
+		it('should generate Router completely', () => {
+			const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+			const config = new TestConfig(`${__dirname}/../res/lightning_01.h`);
+			const parser = new Parser(config);
+			parser.parse();
+
+			const generator = new TraitGenerator(config, new AuxiliaryArtifacts());
+			const router = <RustTrait>parser.glossary['LDKRouter'];
+			const output = generator.generateFileContents(router);
 		});
 	});
 
