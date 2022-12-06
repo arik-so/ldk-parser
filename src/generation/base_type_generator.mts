@@ -326,18 +326,18 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedArgument.name += 'Option';
 				preparedArgument.conversion += `
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})
-			`;
+				`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustVector) {
 				preparedArgument.name += 'Vector';
 				preparedArgument.conversion += `
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(array: ${publicName})
-			`;
+				`;
 				// figure out when it needs to be dangled
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 				preparedArgument.deferredCleanup += `
 						${preparedArgument.name}.noOpRetain()
-			`;
+				`;
 			} else if (argument.type instanceof RustTrait) {
 				preparedArgument.accessor = preparedArgument.name + '.activate().cType!';
 			} else if (argument.type instanceof RustStruct || argument.type instanceof RustTaggedValueEnum) {
@@ -349,7 +349,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 		}
 
-		if (argument.isConstant) {
+		if (argument.isAsteriskPointer) {
 			// we must wrap the native call in a withUnsafePointer component
 			preparedArgument.name += 'Pointer';
 			preparedArgument.methodCallWrapperPrefix += `
@@ -512,7 +512,7 @@ export interface PreparedArgument {
 	deferredCleanup: string
 }
 
-interface PreparedReturnValue {
+export interface PreparedReturnValue {
 	wrapperPrefix: string;
 	wrapperSuffix: string;
 }

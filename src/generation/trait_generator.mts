@@ -13,7 +13,7 @@ import {
 	RustType,
 	RustVector
 } from '../rust_types.mjs';
-import {BaseTypeGenerator, PreparedArgument} from './base_type_generator.mjs';
+import {BaseTypeGenerator, PreparedArgument, PreparedReturnValue} from './base_type_generator.mjs';
 import Generator from './index.mjs';
 
 export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
@@ -32,10 +32,10 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		for (const currentField of type.orderedFields) {
 			if (currentField instanceof RustLambda) {
-				generatedLambdas += Generator.reindentCode(this.generateLambda(currentField, type), 6);
-
 				// todo: canonicalize argument lambda name determination
 				if (currentField.thisArgument) {
+					generatedLambdas += Generator.reindentCode(this.generateLambda(currentField, type), 6);
+
 					const currentLambdaSwiftName = Generator.snakeCaseToCamelCase(currentField.name) + 'Lambda';
 					traitInitializationArguments.push(`${currentField.name}: ${currentLambdaSwiftName}`);
 				} else {
@@ -188,7 +188,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 	 * @param argumentType
 	 * @protected
 	 */
-	protected prepareRustArgumentForSwift(argumentType: ContextualRustType): PreparedSwiftArgument {
+	private prepareRustArgumentForSwift(argumentType: ContextualRustType): PreparedSwiftArgument {
 
 		const labelName = Generator.snakeCaseToCamelCase(argumentType.contextualName);
 
@@ -263,6 +263,34 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		return preparedArgument;
 	}
 
+	private prepareSwiftReturnValueForRust(returnType: ContextualRustType): PreparedReturnValue {
+		const preparedReturnValue: PreparedReturnValue = {
+			wrapperPrefix: '',
+			wrapperSuffix: ''
+		};
+
+		// these type elision helpers only apply outside the context of the very eliding type
+
+		let type = returnType.type;
+		if (type instanceof RustNullableOption || type instanceof RustVector || type instanceof RustTaggedValueEnum || type instanceof RustResult) {
+			preparedReturnValue.wrapperSuffix = '.cType!'
+		} else if (type instanceof RustTrait) {
+			preparedReturnValue.wrapperSuffix = '.activate().cType!'
+		} else if (type instanceof RustStruct) {
+			preparedReturnValue.wrapperSuffix = '.cType!'
+		} else if(type instanceof RustPrimitive) {
+			// nothing to do here
+		} else {
+			throw new Error(`Unsupported native return type: ${returnType.type} (${returnType.type.constructor.name})`);
+		}
+
+		if (returnType.isAsteriskPointer) {
+			throw new Error(`Unsupported native pointer return type: ${returnType.type} (${returnType.type.constructor.name})`);
+		}
+
+		return preparedReturnValue;
+	}
+
 	private getRawTypeName(type: RustType) {
 		if (type instanceof RustPrimitive) {
 			return type.swiftRawSignature;
@@ -304,6 +332,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		let rawLambdaArguments = [];
 		let swiftCallbackArguments = [];
 		let swiftCallPrefix = '';
+		let swiftCallSuffix = '';
 
 		for (const currentArgument of lambda.arguments) {
 			const rawTypeName = this.getRawTypeSignature(currentArgument);
@@ -314,10 +343,12 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 			}
 			const preparedArgument = this.prepareRustArgumentForSwift(currentArgument);
 			swiftCallPrefix += preparedArgument.conversion;
+			swiftCallSuffix += preparedArgument.deferredCleanup;
 			swiftCallbackArguments.push(`${preparedArgument.label}: ${preparedArgument.methodCallWrapperPrefix}${preparedArgument.accessor}${preparedArgument.methodCallWrapperSuffix}`);
 		}
 
 		const rawReturnType = this.getRawTypeSignature(lambda.returnValue);
+		const preparedReturnValue = this.prepareSwiftReturnValueForRust(lambda.returnValue);
 
 		return `
 			func ${swiftLambdaName}(${rawLambdaArguments.join(', ')}) -> ${rawReturnType} {
@@ -330,10 +361,10 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 				let swiftCallbackResult = instance.${swiftCallbackName}(${swiftCallbackArguments.join(', ')})
 
 				// cleanup
-				{swiftCallSuffix}
+				${swiftCallSuffix}
 
 				// return value (do some wrapping)
-				let returnValue = {rustPrepPrefix}swiftCallbackResult{rustPrepSuffix}
+				let returnValue = ${preparedReturnValue.wrapperPrefix}swiftCallbackResult${preparedReturnValue.wrapperSuffix}
 
 				return returnValue
 			}
