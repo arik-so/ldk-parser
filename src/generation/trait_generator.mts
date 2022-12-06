@@ -222,7 +222,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 			}
 
 			const swiftArgumentName = Generator.snakeCaseToCamelCase(currentArgument.contextualName);
-			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, type);
+			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, type, currentArgument);
 			swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
 
 			const preparedArgument = this.prepareSwiftArgumentForRust(currentArgument, type);

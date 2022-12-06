@@ -1,5 +1,6 @@
 import Config from '../config.mjs';
 import {
+	ContextualRustType,
 	OpaqueRustStruct,
 	RustArray,
 	RustFunction,
@@ -157,7 +158,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			nativeCallValueAccessors.push(preparedArgument.accessor);
 			nativeCallSuffix += preparedArgument.deferredCleanup;
 		}
-
+		// don't mark return types from C as optional because they will be automatically force-unwrapped
+		// for some inexplicable reason
 		const swiftReturnType = this.getPublicTypeSignature(method.returnValue.type, containerType);
 		const returnTypeInfix = (swiftReturnType === 'Void' || swiftMethodName === 'init') ? '' : `-> ${swiftReturnType} `;
 
@@ -235,6 +237,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			return true;
 		}
 		if (type instanceof RustArray) {
+			// these are all the tuples
 			if (type.iteratee instanceof RustPrimitive) {
 				return true;
 			}
@@ -243,13 +246,29 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return false;
 	}
 
-	protected getPublicTypeSignature(type: RustType, containerType?: RustType): string {
-
+	/**
+	 *
+	 * @param type
+	 * @param containerType
+	 * @param context Pretty much never needs to be passed in except for trait Swift callback arguments
+	 * @protected
+	 */
+	protected getPublicTypeSignature(type: RustType, containerType?: RustType, context?: ContextualRustType): string {
 		let isTypeMercurial = this.isElidedType(type);
 		const isTypeCurrentContainerType = (type === containerType);
 		if (isTypeCurrentContainerType) {
 			// even if the type is elided, it isn't within the context of its own internals
 			return this.swiftTypeName(type);
+		}
+
+		let nullabilitySuffix = '';
+		if (context && context.isAsteriskPointer) {
+			// we're dealing with a pointer here, which means nullability is possible
+			// however, if it's just a vector's field or a string's field, it doesn't mean
+			// it should be nullable
+			if (!context.isNonnullablePointer) {
+				nullabilitySuffix = '?';
+			}
 		}
 
 		if (!isTypeMercurial) {
@@ -268,6 +287,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (type instanceof RustNullableOption) {
 			// this becomes a native Swift nullable that we're gonna unwrap or construct,
 			// depending on the context
+			nullabilitySuffix = '?';
+
 			const someVariantTypeName = this.getPublicTypeSignature(type.someVariant.type);
 			// TODO: if outer context already implies a Nullable, find way to avoid `??`
 			return someVariantTypeName + '?';
@@ -277,30 +298,30 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			if (type.dataField.type instanceof RustPrimitive) {
 				if (type.dataField.isConstant && type.dataField.isAsteriskPointer) {
 					if (type.name === 'LDKStr') {
-						return 'String';
+						return 'String' + nullabilitySuffix;
 					} else {
 						// throw new Error(`Unmapped primitive wrapper with \`const *\` data field: ${type.name}`);
-						return `[${type.dataField.type.swiftRawSignature}]`;
+						return `[${type.dataField.type.swiftRawSignature}]${nullabilitySuffix}`;
 					}
 				} else if (type.dataField.isAsteriskPointer) {
-					return `[${type.dataField.type.swiftRawSignature}]`;
+					return `[${type.dataField.type.swiftRawSignature}]${nullabilitySuffix}`;
 				}
 				return type.dataField.type.swiftRawSignature;
 			} else if (type.dataField.type instanceof RustArray) {
 				const iteratee = type.dataField.type.iteratee as RustPrimitive;
-				return `[${iteratee.swiftRawSignature}]`;
+				return `[${iteratee.swiftRawSignature}]${nullabilitySuffix}`;
 			}
 		}
 
 		if (type instanceof RustArray) {
 			if (type.iteratee instanceof RustPrimitive) {
-				return `[${type.iteratee.swiftRawSignature}]`;
+				return `[${type.iteratee.swiftRawSignature}]${nullabilitySuffix}`;
 			}
 		}
 
 		if (type instanceof RustVector) {
 			const iterateeTypeName = this.getPublicTypeSignature(type.iterateeField.type);
-			return `[${iterateeTypeName}]`;
+			return `[${iterateeTypeName}]${nullabilitySuffix}`;
 		}
 
 		throw new Error(`Unmapped mercurial type: ${type.getName()} (${type.constructor.name})`);

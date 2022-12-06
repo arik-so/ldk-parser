@@ -20,45 +20,45 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 			#if SWIFT_PACKAGE
 			import LDKHeaders
 			#endif
-			
+
 			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}
-			
+
 			extension Bindings {
-				
+
 				${this.renderDocComment(type.documentation, 4)}
 				public class ${swiftTypeName}: NativeTypeWrapper {
-			
+
 					${this.inheritedInits(type)}
-					
+
 					${generatedMethods}
-					
+
 					public func isOk() -> Bool {
 						return self.cOpaqueStruct?.result_ok == true
 					}
-			
+
 					public func getError() -> ${this.getPublicTypeSignature(valueEnum.errorVariant.type)}? {
 						if self.cType?.result_ok == false {
 							return ${preparedErrorReturnValue.wrapperPrefix}self.cType!.contents.err.pointee${preparedErrorReturnValue.wrapperSuffix}
 						}
 						return nil
 					}
-					
+
 					public func getValue() -> ${this.getPublicTypeSignature(valueEnum.resultVariant.type)}? {
 						if self.cType?.result_ok == true {
 							return ${preparedSuccessReturnValue.wrapperPrefix}self.cType!.contents.result.pointee${preparedSuccessReturnValue.wrapperSuffix}
 						}
 						return nil
 					}
-					
+
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true
 						return self
 					}
 
 					${this.deinitCode(type)}
-					
+
 				}
-				
+
 			}
 		`;
 	}
