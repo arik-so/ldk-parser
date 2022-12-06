@@ -141,8 +141,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 			const preparedArgument = this.prepareSwiftArgumentForRust(currentArgument, containerType);
 			nativeCallPrefix += preparedArgument.conversion;
-			nativeCallWrapperPrefix += preparedArgument.nativeCallWrapperPrefix;
-			nativeCallWrapperSuffix += preparedArgument.nativeCallWrapperSuffix;
+			nativeCallWrapperPrefix += preparedArgument.methodCallWrapperPrefix;
+			nativeCallWrapperSuffix += preparedArgument.methodCallWrapperSuffix;
 			nativeCallValueAccessors.push(preparedArgument.accessor);
 			nativeCallSuffix += preparedArgument.deferredCleanup;
 		}
@@ -309,8 +309,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 			conversion: '',
 
-			nativeCallWrapperPrefix: '',
-			nativeCallWrapperSuffix: '',
+			methodCallWrapperPrefix: '',
+			methodCallWrapperSuffix: '',
 
 			deferredCleanup: ''
 		};
@@ -328,9 +328,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})
 			`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
-			}
-
-			if (argument.type instanceof RustVector) {
+			} else if (argument.type instanceof RustVector) {
 				preparedArgument.name += 'Vector';
 				preparedArgument.conversion += `
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(array: ${publicName})
@@ -340,20 +338,24 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedArgument.deferredCleanup += `
 						${preparedArgument.name}.noOpRetain()
 			`;
-			}
-
-			if (argument.type instanceof RustTrait) {
+			} else if (argument.type instanceof RustTrait) {
 				preparedArgument.accessor = preparedArgument.name + '.activate().cType!';
+			} else if (argument.type instanceof RustStruct || argument.type instanceof RustTaggedValueEnum) {
+				preparedArgument.accessor = preparedArgument.name + '.cType!';
+			} else if(argument.type instanceof RustPrimitive) {
+				// nothing to do here
+			} else {
+				throw new Error(`Unsupported native argument type: ${argument.type} (${argument.type.constructor.name})`);
 			}
 		}
 
 		if (argument.isConstant) {
 			// we must wrap the native call in a withUnsafePointer component
 			preparedArgument.name += 'Pointer';
-			preparedArgument.nativeCallWrapperPrefix += `
+			preparedArgument.methodCallWrapperPrefix += `
 						withUnsafePointer(to: ${preparedArgument.accessor}) { (${preparedArgument.name}: UnsafePointer<${argument.type.name}>) in
 			`;
-			preparedArgument.nativeCallWrapperSuffix += `
+			preparedArgument.methodCallWrapperSuffix += `
 						}
 			`;
 
@@ -364,7 +366,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return preparedArgument;
 	}
 
-	protected prepareRustReturnValueForSwift(returnType: ContextualRustType, containerType?: RustType) {
+	protected prepareRustReturnValueForSwift(returnType: ContextualRustType, containerType?: RustType): PreparedReturnValue {
 		const preparedReturnValue: PreparedReturnValue = {
 			wrapperPrefix: '',
 			wrapperSuffix: ''
@@ -482,7 +484,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 }
 
-interface PreparedArgument {
+export interface PreparedArgument {
 	/**
 	 * This is the name of the variable that we end up passing to Rust
 	 * In the simplest scenario, it's the public argument name
@@ -500,8 +502,8 @@ interface PreparedArgument {
 	 */
 	conversion: string,
 
-	nativeCallWrapperPrefix: string;
-	nativeCallWrapperSuffix: string;
+	methodCallWrapperPrefix: string;
+	methodCallWrapperSuffix: string;
 
 	/**
 	 * This is code that is executed after the return value is constructed. Usually for either

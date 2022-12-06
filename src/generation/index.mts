@@ -31,7 +31,11 @@ export default class Generator {
 		return output;
 	}
 
-	static shallowMostIndentationDepth(input: string): number {
+	/**
+	 * Gets the indentation depth of the first line that contains non-whitespace characters
+	 * @param input
+	 */
+	static firstIndentationDepth(input: string): number {
 		const regex = /^(\t*)[\S]/m;
 		const matches = regex.exec(input);
 		if (Array.isArray(matches)) {
@@ -41,7 +45,7 @@ export default class Generator {
 	}
 
 	static reindentCode(input: string, newDepth: number) {
-		const oldDepth = Generator.shallowMostIndentationDepth(input);
+		const oldDepth = Generator.firstIndentationDepth(input);
 		const searchString = new RegExp(`^\t{${oldDepth}}`, 'gm');
 		return input.replaceAll(searchString, '\t'.repeat(newDepth));
 	}
@@ -100,7 +104,7 @@ export default class Generator {
 
 export class AuxiliaryArtifacts {
 
-	private tuples: { [swiftRawType: string]: Set<number> };
+	private tuples: { [swiftRawType: string]: Set<number> } = {};
 
 	public addTuple(swiftTypeName: string, size: number) {
 		if (!this.tuples[swiftTypeName]) {

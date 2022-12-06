@@ -19,7 +19,7 @@ import ResultGenerator from '../src/generation/result_generator.mjs';
 import PrimitiveWrapperGenerator from '../src/generation/primitive_wrapper_generator.mjs';
 import * as chai from 'chai';
 import PrimitiveEnumGenerator from '../src/generation/primitive_enum_generator.mjs';
-import Generator from '../src/generation/index.mjs';
+import Generator, {AuxiliaryArtifacts} from '../src/generation/index.mjs';
 import TraitGenerator from '../src/generation/trait_generator.mjs';
 
 class TestConfig extends Config {
@@ -47,7 +47,7 @@ describe('Generator Tests', () => {
 			parser.parse();
 
 			const chainMonitor = <RustStruct>parser.glossary['LDKChainMonitor'];
-			const generator = new StructGenerator(config);
+			const generator = new StructGenerator(config, new AuxiliaryArtifacts());
 			const output = generator.generateFileContents(chainMonitor);
 
 			chai.expect(output).contains('public typealias ChainMonitor = Bindings.ChainMonitor');
@@ -69,7 +69,7 @@ describe('Generator Tests', () => {
 			parser.parse();
 
 			const chainMonitor = <RustStruct>parser.glossary['LDKChainMonitor'];
-			const generator = new StructGenerator(config);
+			const generator = new StructGenerator(config, new AuxiliaryArtifacts());
 			const output = generator.generateFileContents(chainMonitor);
 			// debugger
 		});
@@ -85,7 +85,7 @@ describe('Generator Tests', () => {
 			const glossaryKeys = Object.keys(glossary);
 
 			const option = <RustNullableOption>glossary['LDKCOption_u32Z'];
-			const generator = new NullableOptionGenerator(config);
+			const generator = new NullableOptionGenerator(config, new AuxiliaryArtifacts());
 			const output = generator.generateFileContents(option);
 			// debugger
 		});
@@ -101,7 +101,7 @@ describe('Generator Tests', () => {
 			const glossaryKeys = Object.keys(glossary);
 
 			const routeVectorVector = <RustVector>glossary['LDKCVec_CVec_RouteHopZZ'];
-			const generator = new VectorGenerator(config);
+			const generator = new VectorGenerator(config, new AuxiliaryArtifacts());
 			const vectorVectorOutput = generator.generateFileContents(routeVectorVector);
 
 			chai.expect(vectorVectorOutput).includes('public init(array: [[RouteHop]]) {');
@@ -151,7 +151,7 @@ describe('Generator Tests', () => {
 			const glossaryKeys = Object.keys(glossary);
 
 			const routeVectorVector = <RustVector>glossary['LDKCVec_u8Z'];
-			const generator = new VectorGenerator(config);
+			const generator = new VectorGenerator(config, new AuxiliaryArtifacts());
 			const output = generator.generateFileContents(routeVectorVector);
 
 			chai.expect(output).includes('public init(array: [UInt8]) {');
@@ -178,7 +178,7 @@ describe('Generator Tests', () => {
 			const parser = new Parser(config);
 			parser.parse();
 
-			const generator = new PrimitiveEnumGenerator(config);
+			const generator = new PrimitiveEnumGenerator(config, new AuxiliaryArtifacts());
 
 			const optionTag = <RustPrimitiveEnum>parser.glossary['LDKCOption_u32Z_Tag'];
 			const accessError = <RustPrimitiveEnum>parser.glossary['LDKAccessError'];
@@ -216,7 +216,7 @@ describe('Generator Tests', () => {
 			parser.parse();
 
 			const paymentSendFailure = <RustTaggedValueEnum>parser.glossary['LDKPaymentSendFailure'];
-			const generator = new ComplexEnumGenerator(config);
+			const generator = new ComplexEnumGenerator(config, new AuxiliaryArtifacts());
 			const output = generator.generateFileContents(paymentSendFailure);
 			// debugger
 		});
@@ -232,7 +232,7 @@ describe('Generator Tests', () => {
 			parser.parse();
 
 			const channelConfigDecodeError = <RustResult>parser.glossary['LDKCResult_ChannelConfigDecodeErrorZ'];
-			const generator = new ResultGenerator(config);
+			const generator = new ResultGenerator(config, new AuxiliaryArtifacts());
 			const output = generator.generateFileContents(channelConfigDecodeError);
 		});
 	});
@@ -246,7 +246,7 @@ describe('Generator Tests', () => {
 			const parser = new Parser(config);
 			parser.parse();
 
-			const generator = new PrimitiveWrapperGenerator(config);
+			const generator = new PrimitiveWrapperGenerator(config, new AuxiliaryArtifacts());
 
 			const ldku5 = <RustPrimitiveWrapper>parser.glossary['LDKu5'];
 			const ldkStr = <RustPrimitiveWrapper>parser.glossary['LDKStr'];
@@ -290,7 +290,7 @@ describe('Generator Tests', () => {
 			const parser = new Parser(config);
 			parser.parse();
 
-			const generator = new TraitGenerator(config);
+			const generator = new TraitGenerator(config, new AuxiliaryArtifacts());
 			const baseSign = <RustTrait>parser.glossary['LDKBaseSign'];
 			const output = generator.generateFileContents(baseSign);
 			debugger
