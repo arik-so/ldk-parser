@@ -10,7 +10,6 @@ import {
 	RustStruct,
 	RustTaggedValueEnum,
 	RustTrait,
-	RustType,
 	RustVector
 } from '../rust_types.mjs';
 import {BaseTypeGenerator, PreparedArgument, PreparedReturnValue} from './base_type_generator.mjs';
@@ -22,12 +21,14 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		const swiftTypeName = this.swiftTypeName(type);
 
 		let generatedLambdas = '';
-		let generatedCallbacks = ''
+		let generatedCallbacks = '';
 		let generatedMethods = '';
 		let fieldAccessors = '';
 
 		let constructorArguments = [];
 		let constructorPrep = '';
+
+		let nativelyImplementedCallbacks = '';
 
 		let traitInitializationArguments = [];
 
@@ -41,6 +42,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					traitInitializationArguments.push(`${currentField.name}: ${currentLambdaSwiftName}`);
 
 					generatedCallbacks += this.generateCallbackStub(currentField, type);
+					nativelyImplementedCallbacks += this.generateNativelyImplementedCallback(currentField, type);
 				} else {
 					// don't push weird lambdas
 					traitInitializationArguments.push(`${currentField.name}: nil`);
@@ -130,7 +132,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 				}
 
 				public class NativelyImplemented${swiftTypeName}: ${swiftTypeName} {
-					{nativelyImplementedCallbacks}
+					${nativelyImplementedCallbacks}
 				}
 
 			}
@@ -178,7 +180,6 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 	}
 
 	protected generateCallbackStub(lambda: RustLambda, type: RustTrait): string {
-
 		const swiftTypeName = this.swiftTypeName(type);
 		const swiftMethodName = Generator.snakeCaseToCamelCase(lambda.name);
 		let swiftMethodArguments = [];
@@ -200,6 +201,59 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					open func ${swiftMethodName}(${swiftMethodArguments.join(', ')}) -> ${swiftReturnType} {
 						Bindings.print("Error: ${swiftTypeName}::${swiftMethodName} MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
+					}
+		`;
+	}
+
+	// TODO: this looks almost identical to generateMethod(). Figure out a way to DRY
+	protected generateNativelyImplementedCallback(lambda: RustLambda, type: RustTrait): string {
+		const swiftMethodName = Generator.snakeCaseToCamelCase(lambda.name);
+		let swiftMethodArguments = [];
+		let nativeCallValueAccessors = [];
+
+		let nativeCallPrefix = '';
+		let nativeCallWrapperPrefix = '', nativeCallWrapperSuffix = '';
+		let nativeCallSuffix = '';
+
+		for (const currentArgument of lambda.arguments) {
+			if (currentArgument === lambda.thisArgument) {
+				nativeCallValueAccessors.push('self.cType!.this_arg')
+				continue;
+			}
+
+			const swiftArgumentName = Generator.snakeCaseToCamelCase(currentArgument.contextualName);
+			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, type);
+			swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
+
+			const preparedArgument = this.prepareSwiftArgumentForRust(currentArgument, type);
+			nativeCallPrefix += preparedArgument.conversion;
+			nativeCallWrapperPrefix += preparedArgument.methodCallWrapperPrefix;
+			nativeCallWrapperSuffix += preparedArgument.methodCallWrapperSuffix;
+			nativeCallValueAccessors.push(preparedArgument.accessor);
+			nativeCallSuffix += preparedArgument.deferredCleanup;
+		}
+
+		const swiftReturnType = this.getPublicTypeSignature(lambda.returnValue.type, type);
+		const returnTypeInfix = (swiftReturnType === 'Void' || swiftMethodName === 'init') ? '' : `-> ${swiftReturnType} `;
+
+		const preparedReturnValue = this.prepareRustReturnValueForSwift(lambda.returnValue, type);
+
+		return `
+					${this.renderDocComment(lambda.documentation, 5)}
+					public func ${swiftMethodName}(${swiftMethodArguments.join(', ')}) ${returnTypeInfix}{
+						// native call variable prep
+						${nativeCallPrefix}
+
+						// native method call
+						let nativeCallResult = ${nativeCallWrapperPrefix}self.cType!.${lambda.name}(${nativeCallValueAccessors.join(', ')})${nativeCallWrapperSuffix}
+
+						// cleanup
+						${nativeCallSuffix}
+
+						// return value (do some wrapping)
+						let returnValue = ${preparedReturnValue.wrapperPrefix}nativeCallResult${preparedReturnValue.wrapperSuffix}
+
+						return returnValue
 					}
 		`;
 	}
@@ -312,8 +366,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 			preparedReturnValue.wrapperSuffix = '.cType!';
 		} else if (type instanceof RustPrimitive) {
 			// nothing to do here
-		} else if(type instanceof RustPrimitiveEnum) {
-			preparedReturnValue.wrapperSuffix = '.getCValue()'
+		} else if (type instanceof RustPrimitiveEnum) {
+			preparedReturnValue.wrapperSuffix = '.getCValue()';
 		} else {
 			throw new Error(`Unsupported native return type: ${returnType.type.name} (${returnType.type.constructor.name})`);
 		}

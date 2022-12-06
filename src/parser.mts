@@ -5,7 +5,7 @@ import {
 	ContextualRustType,
 	OpaqueRustStruct,
 	RustArray,
-	RustFunction,
+	RustFunction, RustFunctionArgument,
 	RustKind,
 	RustLambda,
 	RustNullableOption,
@@ -589,7 +589,11 @@ export default class Parser {
 	private parseStructField(objectLine: ObjectLine): RustStructField {
 		const rustType = this.parseTypeInformation(objectLine.code);
 		rustType.documentation = objectLine.comments;
-		return rustType;
+
+		// to help with inheritance
+		const structField = new RustStructField();
+		Object.assign(structField, rustType);
+		return structField;
 	}
 
 	/**
@@ -805,8 +809,12 @@ export default class Parser {
 
 		if (hasThisArg) {
 			const thisArgument = this.parseTypeInformation(thisArgLine);
-			lambda.thisArgument = thisArgument;
-			lambda.arguments.push(thisArgument);
+
+			const thisArgumentTyped = new RustFunctionArgument();
+			Object.assign(thisArgumentTyped, thisArgument);
+
+			lambda.thisArgument = thisArgumentTyped;
+			lambda.arguments.push(thisArgumentTyped);
 		} else {
 			// TODO: figure out a way to parse nameless lambda arguments
 			// disregard all the other arguments; this lambda won't be initialized anyway
@@ -822,7 +830,11 @@ export default class Parser {
 				continue;
 			}
 			const currentArgument = this.parseTypeInformation(currentArgumentLine);
-			lambda.arguments.push(currentArgument);
+
+			// this doesn't really do much except help with instanceof calls
+			const currentArgumentTyped = new RustFunctionArgument();
+			Object.assign(currentArgumentTyped, currentArgument);
+			lambda.arguments.push(currentArgumentTyped);
 		}
 
 		return lambda;
@@ -854,7 +866,10 @@ export default class Parser {
 				continue;
 			}
 			const currentArgument = this.parseTypeInformation(currentArgumentLine.trim());
-			method.arguments.push(currentArgument);
+
+			const typedArgument = new RustFunctionArgument();
+			Object.assign(typedArgument, currentArgument);
+			method.arguments.push(typedArgument);
 		}
 
 		/**
