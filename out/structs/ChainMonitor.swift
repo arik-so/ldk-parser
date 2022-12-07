@@ -71,7 +71,7 @@
 					public init(chainSource: Filter?, broadcaster: BroadcasterInterface, logger: Logger, feeest: FeeEstimator, persister: Persist) {
 						// native call variable prep
 						
-						let chainSourceOption = Option_FilterZ(value: chainSource)
+						let chainSourceOption = Option_FilterZ(some: chainSource)
 				
 
 						// native method call

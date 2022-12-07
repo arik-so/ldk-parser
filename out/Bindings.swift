@@ -426,7 +426,7 @@
 				public class func swiftCreate(keys: ExpandedKey, minValueMsat: UInt64?, invoiceExpiryDeltaSecs: UInt32, keysManager: KeysInterface, currentTime: UInt64) -> Result_C2Tuple_PaymentHashPaymentSecretZNoneZ {
 					// native call variable prep
 					
-					let minValueMsatOption = Option_u64Z(value: minValueMsat)
+					let minValueMsatOption = Option_u64Z(some: minValueMsat)
 				
 
 					// native method call
@@ -459,7 +459,7 @@
 				public class func swiftCreateFromHash(keys: ExpandedKey, minValueMsat: UInt64?, paymentHash: [UInt8], invoiceExpiryDeltaSecs: UInt32, currentTime: UInt64) -> Result_PaymentSecretNoneZ {
 					// native call variable prep
 					
-					let minValueMsatOption = Option_u64Z(value: minValueMsat)
+					let minValueMsatOption = Option_u64Z(some: minValueMsat)
 				
 					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
@@ -992,7 +992,7 @@
 				public class func swiftCreatePhantomInvoice(amtMsat: UInt64?, paymentHash: [UInt8], description: String, invoiceExpiryDeltaSecs: UInt32, phantomRouteHints: [PhantomRouteHints], keysManager: KeysInterface, logger: Logger, network: Currency) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(value: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat)
 				
 					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
@@ -1051,7 +1051,7 @@
 				public class func swiftCreatePhantomInvoiceWithDescriptionHash(amtMsat: UInt64?, paymentHash: [UInt8], invoiceExpiryDeltaSecs: UInt32, descriptionHash: Sha256, phantomRouteHints: [PhantomRouteHints], keysManager: KeysInterface, logger: Logger, network: Currency) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(value: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat)
 				
 					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
@@ -1083,7 +1083,7 @@
 				public class func swiftCreateInvoiceFromChannelmanager(channelmanager: ChannelManager, keysManager: KeysInterface, logger: Logger, network: Currency, amtMsat: UInt64?, description: String, invoiceExpiryDeltaSecs: UInt32) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(value: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat)
 				
 					let descriptionPrimitiveWrapper = Str(value: description)
 				
@@ -1116,7 +1116,7 @@
 				public class func swiftCreateInvoiceFromChannelmanagerWithDescriptionHash(channelmanager: ChannelManager, keysManager: KeysInterface, logger: Logger, network: Currency, amtMsat: UInt64?, descriptionHash: Sha256, invoiceExpiryDeltaSecs: UInt32) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(value: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat)
 				
 
 					// native method call
@@ -1141,7 +1141,7 @@
 				public class func swiftCreateInvoiceFromChannelmanagerWithDescriptionHashAndDurationSinceEpoch(channelmanager: ChannelManager, keysManager: KeysInterface, logger: Logger, network: Currency, amtMsat: UInt64?, descriptionHash: Sha256, durationSinceEpoch: UInt64, invoiceExpiryDeltaSecs: UInt32) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(value: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat)
 				
 
 					// native method call
@@ -1166,7 +1166,7 @@
 				public class func swiftCreateInvoiceFromChannelmanagerAndDurationSinceEpoch(channelmanager: ChannelManager, keysManager: KeysInterface, logger: Logger, network: Currency, amtMsat: UInt64?, description: String, durationSinceEpoch: UInt64, invoiceExpiryDeltaSecs: UInt32) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(value: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat)
 				
 					let descriptionPrimitiveWrapper = Str(value: description)
 				

@@ -124,7 +124,7 @@
 					public init(persister: Persister, eventHandler: EventHandler, chainMonitor: ChainMonitor, channelManager: ChannelManager, gossipSync: GossipSync, peerManager: PeerManager, logger: Logger, scorer: WriteableScore?) {
 						// native call variable prep
 						
-						let scorerOption = Option_WriteableScoreZ(value: scorer)
+						let scorerOption = Option_WriteableScoreZ(some: scorer)
 				
 
 						// native method call

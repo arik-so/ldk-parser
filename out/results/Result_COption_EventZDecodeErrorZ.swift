@@ -40,7 +40,7 @@
 					public init(o: Event?) {
 						// native call variable prep
 						
-						let oOption = Option_EventZ(value: o)
+						let oOption = Option_EventZ(some: o)
 				
 
 						// native method call

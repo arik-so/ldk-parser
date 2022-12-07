@@ -40,7 +40,7 @@
 					public init(o: CustomOnionMessageContents?) {
 						// native call variable prep
 						
-						let oOption = Option_CustomOnionMessageContentsZ(value: o)
+						let oOption = Option_CustomOnionMessageContentsZ(some: o)
 				
 
 						// native method call

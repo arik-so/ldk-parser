@@ -1034,7 +1034,7 @@
 					public func createInboundPayment(minValueMsat: UInt64?, invoiceExpiryDeltaSecs: UInt32) -> Result_C2Tuple_PaymentHashPaymentSecretZNoneZ {
 						// native call variable prep
 						
-						let minValueMsatOption = Option_u64Z(value: minValueMsat)
+						let minValueMsatOption = Option_u64Z(some: minValueMsat)
 				
 
 						// native method call
@@ -1065,7 +1065,7 @@
 					public func createInboundPaymentLegacy(minValueMsat: UInt64?, invoiceExpiryDeltaSecs: UInt32) -> Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ {
 						// native call variable prep
 						
-						let minValueMsatOption = Option_u64Z(value: minValueMsat)
+						let minValueMsatOption = Option_u64Z(some: minValueMsat)
 				
 
 						// native method call
@@ -1132,7 +1132,7 @@
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let minValueMsatOption = Option_u64Z(value: minValueMsat)
+						let minValueMsatOption = Option_u64Z(some: minValueMsat)
 				
 
 						// native method call
@@ -1165,7 +1165,7 @@
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let minValueMsatOption = Option_u64Z(value: minValueMsat)
+						let minValueMsatOption = Option_u64Z(some: minValueMsat)
 				
 
 						// native method call

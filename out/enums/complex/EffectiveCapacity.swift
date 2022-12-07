@@ -158,7 +158,7 @@
 					public init(capacityMsat: UInt64, htlcMaximumMsat: UInt64?) {
 						// native call variable prep
 						
-						let htlcMaximumMsatOption = Option_u64Z(value: htlcMaximumMsat)
+						let htlcMaximumMsatOption = Option_u64Z(some: htlcMaximumMsat)
 				
 
 						// native method call

@@ -148,7 +148,7 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
-						let remoteNetworkAddressOption = Option_NetAddressZ(value: remoteNetworkAddress)
+						let remoteNetworkAddressOption = Option_NetAddressZ(some: remoteNetworkAddress)
 				
 
 						// native method call
@@ -185,7 +185,7 @@
 					public func newInboundConnection(descriptor: SocketDescriptor, remoteNetworkAddress: NetAddress?) -> Result_NonePeerHandleErrorZ {
 						// native call variable prep
 						
-						let remoteNetworkAddressOption = Option_NetAddressZ(value: remoteNetworkAddress)
+						let remoteNetworkAddressOption = Option_NetAddressZ(some: remoteNetworkAddress)
 				
 
 						// native method call

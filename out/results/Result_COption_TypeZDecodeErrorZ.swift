@@ -40,7 +40,7 @@
 					public init(o: BindingsType?) {
 						// native call variable prep
 						
-						let oOption = Option_TypeZ(value: o)
+						let oOption = Option_TypeZ(some: o)
 				
 
 						// native method call

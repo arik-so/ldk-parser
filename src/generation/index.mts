@@ -162,13 +162,13 @@ export default class Generator {
 			#endif
 
 			extension Bindings {
-				public class func getLDKSwiftBindingsSerializationHash(): String {
+				public class func getLDKSwiftBindingsSerializationHash() -> String {
 					return "${serializationHash}"
 				}
-				public class func getLDKSwiftBindingsVersion(): String {
+				public class func getLDKSwiftBindingsVersion() -> String {
 					return "${gitDirtyTagDescription}"
 				}
-				public class func getLDKSwiftBindingsCommitHash(): String {
+				public class func getLDKSwiftBindingsCommitHash() -> String {
 					return "${gitCommitHash}"
 				}
 			}

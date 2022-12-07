@@ -302,7 +302,7 @@
 					public func setShortChannelId(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(value: val)
+						let valOption = Option_u64Z(some: val)
 				
 
 						// native method call
@@ -362,7 +362,7 @@
 					public func setOutboundScidAlias(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(value: val)
+						let valOption = Option_u64Z(some: val)
 				
 
 						// native method call
@@ -422,7 +422,7 @@
 					public func setInboundScidAlias(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(value: val)
+						let valOption = Option_u64Z(some: val)
 				
 
 						// native method call
@@ -524,7 +524,7 @@
 					public func setUnspendablePunishmentReserve(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(value: val)
+						let valOption = Option_u64Z(some: val)
 				
 
 						// native method call
@@ -860,7 +860,7 @@
 					public func setConfirmationsRequired(val: UInt32?) {
 						// native call variable prep
 						
-						let valOption = Option_u32Z(value: val)
+						let valOption = Option_u32Z(some: val)
 				
 
 						// native method call
@@ -916,7 +916,7 @@
 					public func setForceCloseSpendDelay(val: UInt16?) {
 						// native call variable prep
 						
-						let valOption = Option_u16Z(value: val)
+						let valOption = Option_u16Z(some: val)
 				
 
 						// native method call
@@ -1148,7 +1148,7 @@
 					public func setInboundHtlcMinimumMsat(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(value: val)
+						let valOption = Option_u64Z(some: val)
 				
 
 						// native method call
@@ -1192,7 +1192,7 @@
 					public func setInboundHtlcMaximumMsat(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(value: val)
+						let valOption = Option_u64Z(some: val)
 				
 
 						// native method call
@@ -1280,21 +1280,21 @@
 						
 						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
 				
-						let shortChannelIdArgOption = Option_u64Z(value: shortChannelIdArg)
+						let shortChannelIdArgOption = Option_u64Z(some: shortChannelIdArg)
 				
-						let outboundScidAliasArgOption = Option_u64Z(value: outboundScidAliasArg)
+						let outboundScidAliasArgOption = Option_u64Z(some: outboundScidAliasArg)
 				
-						let inboundScidAliasArgOption = Option_u64Z(value: inboundScidAliasArg)
+						let inboundScidAliasArgOption = Option_u64Z(some: inboundScidAliasArg)
 				
-						let unspendablePunishmentReserveArgOption = Option_u64Z(value: unspendablePunishmentReserveArg)
+						let unspendablePunishmentReserveArgOption = Option_u64Z(some: unspendablePunishmentReserveArg)
 				
-						let confirmationsRequiredArgOption = Option_u32Z(value: confirmationsRequiredArg)
+						let confirmationsRequiredArgOption = Option_u32Z(some: confirmationsRequiredArg)
 				
-						let forceCloseSpendDelayArgOption = Option_u16Z(value: forceCloseSpendDelayArg)
+						let forceCloseSpendDelayArgOption = Option_u16Z(some: forceCloseSpendDelayArg)
 				
-						let inboundHtlcMinimumMsatArgOption = Option_u64Z(value: inboundHtlcMinimumMsatArg)
+						let inboundHtlcMinimumMsatArgOption = Option_u64Z(some: inboundHtlcMinimumMsatArg)
 				
-						let inboundHtlcMaximumMsatArgOption = Option_u64Z(value: inboundHtlcMaximumMsatArg)
+						let inboundHtlcMaximumMsatArgOption = Option_u64Z(some: inboundHtlcMaximumMsatArg)
 				
 
 						// native method call

@@ -482,7 +482,7 @@
 						
 						let otherKeyPrimitiveWrapper = PublicKey(value: otherKey)
 				
-						let tweakOption = Option_ScalarZ(value: tweak)
+						let tweakOption = Option_ScalarZ(some: tweak)
 				
 
 						// native method call

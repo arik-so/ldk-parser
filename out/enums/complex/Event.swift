@@ -343,7 +343,7 @@
 				
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let feePaidMsatOption = Option_u64Z(value: feePaidMsat)
+						let feePaidMsatOption = Option_u64Z(some: feePaidMsat)
 				
 
 						// native method call
@@ -412,11 +412,11 @@
 				
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let networkUpdateOption = Option_NetworkUpdateZ(value: networkUpdate)
+						let networkUpdateOption = Option_NetworkUpdateZ(some: networkUpdate)
 				
 						let pathVector = Vec_RouteHopZ(array: path)
 				
-						let shortChannelIdOption = Option_u64Z(value: shortChannelId)
+						let shortChannelIdOption = Option_u64Z(some: shortChannelId)
 				
 
 						// native method call
@@ -468,7 +468,7 @@
 				
 						let pathVector = Vec_RouteHopZ(array: path)
 				
-						let shortChannelIdOption = Option_u64Z(value: shortChannelId)
+						let shortChannelIdOption = Option_u64Z(some: shortChannelId)
 				
 
 						// native method call
@@ -531,7 +531,7 @@
 				
 						let nextChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: nextChannelId)
 				
-						let feeEarnedMsatOption = Option_u64Z(value: feeEarnedMsat)
+						let feeEarnedMsatOption = Option_u64Z(some: feeEarnedMsat)
 				
 
 						// native method call

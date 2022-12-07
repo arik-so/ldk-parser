@@ -147,7 +147,7 @@
 					public func setShortChannelIdAlias(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(value: val)
+						let valOption = Option_u64Z(some: val)
 				
 
 						// native method call
@@ -174,7 +174,7 @@
 				
 						let nextPerCommitmentPointArgPrimitiveWrapper = PublicKey(value: nextPerCommitmentPointArg)
 				
-						let shortChannelIdAliasArgOption = Option_u64Z(value: shortChannelIdAliasArg)
+						let shortChannelIdAliasArgOption = Option_u64Z(some: shortChannelIdAliasArg)
 				
 
 						// native method call

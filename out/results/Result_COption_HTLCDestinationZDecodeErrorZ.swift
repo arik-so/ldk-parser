@@ -40,7 +40,7 @@
 					public init(o: HTLCDestination?) {
 						// native call variable prep
 						
-						let oOption = Option_HTLCDestinationZ(value: o)
+						let oOption = Option_HTLCDestinationZ(some: o)
 				
 
 						// native method call

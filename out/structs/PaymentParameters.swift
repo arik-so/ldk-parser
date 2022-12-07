@@ -237,7 +237,7 @@
 					public func setExpiryTime(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(value: val)
+						let valOption = Option_u64Z(some: val)
 				
 
 						// native method call
@@ -470,7 +470,7 @@
 				
 						let routeHintsArgVector = Vec_RouteHintZ(array: routeHintsArg)
 				
-						let expiryTimeArgOption = Option_u64Z(value: expiryTimeArg)
+						let expiryTimeArgOption = Option_u64Z(some: expiryTimeArg)
 				
 						let previouslyFailedChannelsArgVector = Vec_u64Z(array: previouslyFailedChannelsArg)
 				

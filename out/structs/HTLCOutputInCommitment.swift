@@ -239,7 +239,7 @@
 					public func setTransactionOutputIndex(val: UInt32?) {
 						// native call variable prep
 						
-						let valOption = Option_u32Z(value: val)
+						let valOption = Option_u32Z(some: val)
 				
 
 						// native method call
@@ -264,7 +264,7 @@
 						
 						let paymentHashArgPrimitiveWrapper = ThirtyTwoBytes(value: paymentHashArg)
 				
-						let transactionOutputIndexArgOption = Option_u32Z(value: transactionOutputIndexArg)
+						let transactionOutputIndexArgOption = Option_u32Z(some: transactionOutputIndexArg)
 				
 
 						// native method call

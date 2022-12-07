@@ -40,7 +40,7 @@
 					public init(o: MonitorEvent?) {
 						// native call variable prep
 						
-						let oOption = Option_MonitorEventZ(value: o)
+						let oOption = Option_MonitorEventZ(some: o)
 				
 
 						// native method call

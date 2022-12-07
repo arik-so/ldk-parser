@@ -40,7 +40,7 @@
 					public init(o: NetworkUpdate?) {
 						// native call variable prep
 						
-						let oOption = Option_NetworkUpdateZ(value: o)
+						let oOption = Option_NetworkUpdateZ(some: o)
 				
 
 						// native method call

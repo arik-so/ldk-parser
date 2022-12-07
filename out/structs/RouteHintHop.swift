@@ -248,7 +248,7 @@
 					public func setHtlcMinimumMsat(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(value: val)
+						let valOption = Option_u64Z(some: val)
 				
 
 						// native method call
@@ -292,7 +292,7 @@
 					public func setHtlcMaximumMsat(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(value: val)
+						let valOption = Option_u64Z(some: val)
 				
 
 						// native method call
@@ -317,9 +317,9 @@
 						
 						let srcNodeIdArgPrimitiveWrapper = PublicKey(value: srcNodeIdArg)
 				
-						let htlcMinimumMsatArgOption = Option_u64Z(value: htlcMinimumMsatArg)
+						let htlcMinimumMsatArgOption = Option_u64Z(some: htlcMinimumMsatArg)
 				
-						let htlcMaximumMsatArgOption = Option_u64Z(value: htlcMaximumMsatArg)
+						let htlcMaximumMsatArgOption = Option_u64Z(some: htlcMaximumMsatArg)
 				
 
 						// native method call

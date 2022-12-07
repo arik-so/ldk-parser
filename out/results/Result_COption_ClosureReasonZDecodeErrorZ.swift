@@ -40,7 +40,7 @@
 					public init(o: ClosureReason?) {
 						// native call variable prep
 						
-						let oOption = Option_ClosureReasonZ(value: o)
+						let oOption = Option_ClosureReasonZ(some: o)
 				
 
 						// native method call

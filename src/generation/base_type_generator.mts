@@ -454,7 +454,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedArgument.name += 'Option';
 				// TODO: figure out when label should be `some: `
 				preparedArgument.conversion += `
-						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(some: ${publicName})
 				`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustTuple) {
