@@ -52,7 +52,7 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 					${generatedMethods}
 
 					public func isOk() -> Bool {
-						return self.cOpaqueStruct?.result_ok == true
+						return self.cType?.result_ok == true
 					}
 
 					public func getError() -> ${errorTypeSignature} {

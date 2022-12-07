@@ -1,4 +1,11 @@
-import {RustPrimitive, RustPrimitiveWrapper, RustType, RustVector} from '../rust_types.mjs';
+import {
+	RustPrimitive,
+	RustPrimitiveWrapper, RustResult,
+	RustStruct,
+	RustTaggedValueEnum,
+	RustType,
+	RustVector
+} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 
 export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
@@ -59,7 +66,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 						var lowerDimension = [${iterateeRustTypeName}]()
 						for currentEntry in rustArray {
 							let convertedEntry = ${iterateeSwiftTypeName}(array: currentEntry)
-							lowerDimension.append(convertedEntry.cOpaqueStruct!)
+							lowerDimension.append(convertedEntry.cType!)
 							self.addAnchor(anchor: convertedEntry)
 						}
 			`;
@@ -69,6 +76,10 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			dataContainerInitializationArgumentName = 'array';
 			rustUnwrapper = '';
 			swiftUnwrapper = 'let swiftArray = array';
+		} else if (type.iterateeField.type instanceof RustPrimitiveWrapper || type.iterateeField.type instanceof RustTaggedValueEnum || type.iterateeField.type instanceof RustResult || type.iterateeField.type instanceof RustStruct ) {
+			// NO OP
+		} else {
+			throw new Error(`Unsupported vector iteratee type in ${type.name}: ${type.iterateeField.type.getName()} (${type.iterateeField.type.constructor.name})`)
 		}
 
 		return `
