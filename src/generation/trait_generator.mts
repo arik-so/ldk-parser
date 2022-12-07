@@ -305,13 +305,13 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		}
 
 		if (type instanceof RustVector || type instanceof RustPrimitiveWrapper || type instanceof RustNullableOption) {
-			preparedArgument.methodCallWrapperPrefix += `${this.swiftTypeName(type)}(pointer: `;
+			preparedArgument.methodCallWrapperPrefix += `${this.swiftTypeName(type)}(cType: `;
 			preparedArgument.methodCallWrapperSuffix += `).getValue()`;
 		} else if (type instanceof RustTrait) {
-			preparedArgument.methodCallWrapperPrefix += `NativelyImplemented${this.swiftTypeName(type)}(pointer: `;
+			preparedArgument.methodCallWrapperPrefix += `NativelyImplemented${this.swiftTypeName(type)}(cType: `;
 			preparedArgument.methodCallWrapperSuffix += `)`;
 		} else if (type instanceof RustStruct || type instanceof RustResult || type instanceof RustTaggedValueEnum) {
-			preparedArgument.methodCallWrapperPrefix += `${this.swiftTypeName(type)}(pointer: `;
+			preparedArgument.methodCallWrapperPrefix += `${this.swiftTypeName(type)}(cType: `;
 			preparedArgument.methodCallWrapperSuffix += `)`;
 		} else if (type instanceof RustPrimitive) {
 			// nothing to do here

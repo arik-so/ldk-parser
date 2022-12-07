@@ -520,21 +520,21 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes
 		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple) {
-			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
+			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
 			preparedReturnValue.wrapperSuffix += `).getValue()`;
 		} else if (returnType.type instanceof RustTrait) {
-			preparedReturnValue.wrapperPrefix += `NativelyImplemented${this.swiftTypeName(returnType.type)}(pointer: `;
+			preparedReturnValue.wrapperPrefix += `NativelyImplemented${this.swiftTypeName(returnType.type)}(cType: `;
 			preparedReturnValue.wrapperSuffix += `, anchor: self)`;
 		} else if (returnType.type instanceof RustNullableOption) {
 			// nullable option must come BEFORE tagged value enum, because it's a subclass
-			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
+			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
 			preparedReturnValue.wrapperSuffix += `)`;
 			if (returnType.type !== containerType) {
 				// it's an elided type, so we pass it through
 				preparedReturnValue.wrapperSuffix += '.getValue()';
 			}
 		} else if (returnType.type instanceof RustStruct || returnType.type instanceof RustResult || returnType.type instanceof RustTaggedValueEnum) {
-			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
+			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
 			preparedReturnValue.wrapperSuffix += `)`;
 		} else if (returnType.type instanceof RustPrimitive) {
 			// nothing to do here
@@ -560,17 +560,17 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 					internal var cType: ${typeName}?
 
-					public init(pointer: ${typeName}) {
+					public init(cType: ${typeName}) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: ${typeName}, anchor: NativeTypeWrapper) {
+					public init(cType: ${typeName}, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
