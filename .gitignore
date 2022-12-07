@@ -6,3 +6,5 @@ src/**/*.mjs
 src/**/*.mjs.map
 test/**/*.js
 test/**/*.js.map
+
+ci/LDKSwift/Sources/LDKHeaders

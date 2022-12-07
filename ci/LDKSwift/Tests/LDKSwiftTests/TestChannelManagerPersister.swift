@@ -1,0 +1,52 @@
+//
+//  MyChannelManagerPersister.swift
+//  LDKSwiftARC
+//
+//  Created by Arik Sosman on 5/27/21.
+//
+
+#if SWIFT_PACKAGE
+import LDKSwift
+import LDKHeaders
+#endif
+
+class TestChannelManagerPersister : Persister, ExtendedChannelManagerPersister {
+
+	private let channelManager: ChannelManager?
+
+	init(channelManager: ChannelManager? = nil) {
+		self.channelManager = channelManager
+		super.init()
+	}
+
+    func handle_event(event: Event) {
+        // privateHandleEvent(event: event)
+    }
+
+    override func persist_manager(channel_manager: ChannelManager) -> Result_NoneErrorZ {
+        return Result_NoneErrorZ()
+    }
+    
+    override func persist_scorer(scorer: Bindings.WriteableScore) -> Bindings.Result_NoneErrorZ {
+        Result_NoneErrorZ()
+    }
+}
+
+class FloatingChannelManagerPersister : Persister{
+
+	private let channelManager: ChannelManager?
+
+	init(channelManager: ChannelManager? = nil) {
+		self.channelManager = channelManager
+		super.init()
+	}
+	/*
+    func handle_event(event: Event) {
+        // privateHandleEvent(event: event)
+    }
+
+    override func persist_manager(channel_manager: ChannelManager) -> Result_NoneErrorZ {
+        return Result_NoneErrorZ()
+    }
+    */
+}
