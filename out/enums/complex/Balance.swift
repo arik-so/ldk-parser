@@ -343,6 +343,8 @@
 
 					
 					
+					internal typealias Balance_LDKClaimableOnChannelClose_Body = Self.ClaimableOnChannelClose
+			
 
 					/// 
 					public class ClaimableOnChannelClose: NativeTypeWrapper {
@@ -395,6 +397,8 @@
 					
 		
 					
+					internal typealias Balance_LDKClaimableAwaitingConfirmations_Body = Self.ClaimableAwaitingConfirmations
+			
 
 					/// 
 					public class ClaimableAwaitingConfirmations: NativeTypeWrapper {
@@ -456,6 +460,8 @@
 					
 		
 					
+					internal typealias Balance_LDKContentiousClaimable_Body = Self.ContentiousClaimable
+			
 
 					/// 
 					public class ContentiousClaimable: NativeTypeWrapper {
@@ -517,6 +523,8 @@
 					
 		
 					
+					internal typealias Balance_LDKMaybeTimeoutClaimableHTLC_Body = Self.MaybeTimeoutClaimableHTLC
+			
 
 					/// 
 					public class MaybeTimeoutClaimableHTLC: NativeTypeWrapper {
@@ -578,6 +586,8 @@
 					
 		
 					
+					internal typealias Balance_LDKMaybePreimageClaimableHTLC_Body = Self.MaybePreimageClaimableHTLC
+			
 
 					/// 
 					public class MaybePreimageClaimableHTLC: NativeTypeWrapper {
@@ -639,6 +649,8 @@
 					
 		
 					
+					internal typealias Balance_LDKCounterpartyRevokedOutputClaimable_Body = Self.CounterpartyRevokedOutputClaimable
+			
 
 					/// 
 					public class CounterpartyRevokedOutputClaimable: NativeTypeWrapper {

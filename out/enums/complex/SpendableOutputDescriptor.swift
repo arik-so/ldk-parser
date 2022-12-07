@@ -311,6 +311,8 @@
 
 					
 					
+					internal typealias SpendableOutputDescriptor_LDKStaticOutput_Body = Self.StaticOutput
+			
 
 					/// 
 					public class StaticOutput: NativeTypeWrapper {

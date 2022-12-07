@@ -345,6 +345,8 @@
 
 					
 					
+					internal typealias NetAddress_LDKIPv4_Body = Self.IPv4
+			
 
 					/// 
 					public class IPv4: NativeTypeWrapper {
@@ -404,6 +406,8 @@
 					
 		
 					
+					internal typealias NetAddress_LDKIPv6_Body = Self.IPv6
+			
 
 					/// 
 					public class IPv6: NativeTypeWrapper {
@@ -463,6 +467,8 @@
 					
 		
 					
+					internal typealias NetAddress_LDKOnionV3_Body = Self.OnionV3
+			
 
 					/// 
 					public class OnionV3: NativeTypeWrapper {
@@ -538,6 +544,8 @@
 					
 		
 					
+					internal typealias NetAddress_LDKHostname_Body = Self.Hostname
+			
 
 					/// 
 					public class Hostname: NativeTypeWrapper {

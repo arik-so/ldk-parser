@@ -283,6 +283,8 @@
 
 					
 					
+					internal typealias HTLCDestination_LDKNextHopChannel_Body = Self.NextHopChannel
+			
 
 					/// 
 					public class NextHopChannel: NativeTypeWrapper {
@@ -346,6 +348,8 @@
 					
 		
 					
+					internal typealias HTLCDestination_LDKUnknownNextHop_Body = Self.UnknownNextHop
+			
 
 					/// 
 					public class UnknownNextHop: NativeTypeWrapper {
@@ -397,6 +401,8 @@
 					
 		
 					
+					internal typealias HTLCDestination_LDKFailedPayment_Body = Self.FailedPayment
+			
 
 					/// 
 					public class FailedPayment: NativeTypeWrapper {

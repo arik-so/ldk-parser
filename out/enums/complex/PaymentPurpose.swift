@@ -221,6 +221,8 @@
 
 					
 					
+					internal typealias PaymentPurpose_LDKInvoicePayment_Body = Self.InvoicePayment
+			
 
 					/// 
 					public class InvoicePayment: NativeTypeWrapper {

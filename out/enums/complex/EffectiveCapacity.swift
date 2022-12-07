@@ -279,6 +279,8 @@
 
 					
 					
+					internal typealias EffectiveCapacity_LDKExactLiquidity_Body = Self.ExactLiquidity
+			
 
 					/// 
 					public class ExactLiquidity: NativeTypeWrapper {
@@ -331,6 +333,8 @@
 					
 		
 					
+					internal typealias EffectiveCapacity_LDKMaximumHTLC_Body = Self.MaximumHTLC
+			
 
 					/// 
 					public class MaximumHTLC: NativeTypeWrapper {
@@ -382,6 +386,8 @@
 					
 		
 					
+					internal typealias EffectiveCapacity_LDKTotal_Body = Self.Total
+			
 
 					/// 
 					public class Total: NativeTypeWrapper {

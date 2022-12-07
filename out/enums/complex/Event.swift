@@ -821,6 +821,8 @@
 
 					
 					
+					internal typealias Event_LDKFundingGenerationReady_Body = Self.FundingGenerationReady
+			
 
 					/// 
 					public class FundingGenerationReady: NativeTypeWrapper {
@@ -913,6 +915,8 @@
 					
 		
 					
+					internal typealias Event_LDKPaymentReceived_Body = Self.PaymentReceived
+			
 
 					/// 
 					public class PaymentReceived: NativeTypeWrapper {
@@ -982,6 +986,8 @@
 					
 		
 					
+					internal typealias Event_LDKPaymentClaimed_Body = Self.PaymentClaimed
+			
 
 					/// 
 					public class PaymentClaimed: NativeTypeWrapper {
@@ -1051,6 +1057,8 @@
 					
 		
 					
+					internal typealias Event_LDKPaymentSent_Body = Self.PaymentSent
+			
 
 					/// 
 					public class PaymentSent: NativeTypeWrapper {
@@ -1144,6 +1152,8 @@
 					
 		
 					
+					internal typealias Event_LDKPaymentFailed_Body = Self.PaymentFailed
+			
 
 					/// 
 					public class PaymentFailed: NativeTypeWrapper {
@@ -1210,6 +1220,8 @@
 					
 		
 					
+					internal typealias Event_LDKPaymentPathSuccessful_Body = Self.PaymentPathSuccessful
+			
 
 					/// 
 					public class PaymentPathSuccessful: NativeTypeWrapper {
@@ -1287,6 +1299,8 @@
 					
 		
 					
+					internal typealias Event_LDKPaymentPathFailed_Body = Self.PaymentPathFailed
+			
 
 					/// 
 					public class PaymentPathFailed: NativeTypeWrapper {
@@ -1441,6 +1455,8 @@
 					
 		
 					
+					internal typealias Event_LDKProbeSuccessful_Body = Self.ProbeSuccessful
+			
 
 					/// 
 					public class ProbeSuccessful: NativeTypeWrapper {
@@ -1512,6 +1528,8 @@
 					
 		
 					
+					internal typealias Event_LDKProbeFailed_Body = Self.ProbeFailed
+			
 
 					/// 
 					public class ProbeFailed: NativeTypeWrapper {
@@ -1595,6 +1613,8 @@
 					
 		
 					
+					internal typealias Event_LDKPendingHTLCsForwardable_Body = Self.PendingHTLCsForwardable
+			
 
 					/// 
 					public class PendingHTLCsForwardable: NativeTypeWrapper {
@@ -1649,6 +1669,8 @@
 					
 		
 					
+					internal typealias Event_LDKSpendableOutputs_Body = Self.SpendableOutputs
+			
 
 					/// 
 					public class SpendableOutputs: NativeTypeWrapper {
@@ -1700,6 +1722,8 @@
 					
 		
 					
+					internal typealias Event_LDKPaymentForwarded_Body = Self.PaymentForwarded
+			
 
 					/// 
 					public class PaymentForwarded: NativeTypeWrapper {
@@ -1794,6 +1818,8 @@
 					
 		
 					
+					internal typealias Event_LDKChannelClosed_Body = Self.ChannelClosed
+			
 
 					/// 
 					public class ChannelClosed: NativeTypeWrapper {
@@ -1870,6 +1896,8 @@
 					
 		
 					
+					internal typealias Event_LDKDiscardFunding_Body = Self.DiscardFunding
+			
 
 					/// 
 					public class DiscardFunding: NativeTypeWrapper {
@@ -1929,6 +1957,8 @@
 					
 		
 					
+					internal typealias Event_LDKOpenChannelRequest_Body = Self.OpenChannelRequest
+			
 
 					/// 
 					public class OpenChannelRequest: NativeTypeWrapper {
@@ -2041,6 +2071,8 @@
 					
 		
 					
+					internal typealias Event_LDKHTLCHandlingFailed_Body = Self.HTLCHandlingFailed
+			
 
 					/// 
 					public class HTLCHandlingFailed: NativeTypeWrapper {

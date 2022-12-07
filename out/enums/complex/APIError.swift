@@ -344,6 +344,8 @@
 
 					
 					
+					internal typealias APIError_LDKAPIMisuseError_Body = Self.APIMisuseError
+			
 
 					/// 
 					public class APIMisuseError: NativeTypeWrapper {
@@ -395,6 +397,8 @@
 					
 		
 					
+					internal typealias APIError_LDKFeeRateTooHigh_Body = Self.FeeRateTooHigh
+			
 
 					/// 
 					public class FeeRateTooHigh: NativeTypeWrapper {
@@ -454,6 +458,8 @@
 					
 		
 					
+					internal typealias APIError_LDKRouteError_Body = Self.RouteError
+			
 
 					/// 
 					public class RouteError: NativeTypeWrapper {
@@ -505,6 +511,8 @@
 					
 		
 					
+					internal typealias APIError_LDKChannelUnavailable_Body = Self.ChannelUnavailable
+			
 
 					/// 
 					public class ChannelUnavailable: NativeTypeWrapper {
@@ -556,6 +564,8 @@
 					
 		
 					
+					internal typealias APIError_LDKIncompatibleShutdownScript_Body = Self.IncompatibleShutdownScript
+			
 
 					/// 
 					public class IncompatibleShutdownScript: NativeTypeWrapper {

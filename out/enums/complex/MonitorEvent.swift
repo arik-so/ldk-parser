@@ -307,6 +307,8 @@
 
 					
 					
+					internal typealias MonitorEvent_LDKCompleted_Body = Self.Completed
+			
 
 					/// 
 					public class Completed: NativeTypeWrapper {

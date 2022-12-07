@@ -261,6 +261,8 @@
 
 					
 					
+					internal typealias Fallback_LDKSegWitProgram_Body = Self.SegWitProgram
+			
 
 					/// 
 					public class SegWitProgram: NativeTypeWrapper {

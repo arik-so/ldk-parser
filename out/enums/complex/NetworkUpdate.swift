@@ -278,6 +278,8 @@
 
 					
 					
+					internal typealias NetworkUpdate_LDKChannelUpdateMessage_Body = Self.ChannelUpdateMessage
+			
 
 					/// 
 					public class ChannelUpdateMessage: NativeTypeWrapper {
@@ -329,6 +331,8 @@
 					
 		
 					
+					internal typealias NetworkUpdate_LDKChannelFailure_Body = Self.ChannelFailure
+			
 
 					/// 
 					public class ChannelFailure: NativeTypeWrapper {
@@ -389,6 +393,8 @@
 					
 		
 					
+					internal typealias NetworkUpdate_LDKNodeFailure_Body = Self.NodeFailure
+			
 
 					/// 
 					public class NodeFailure: NativeTypeWrapper {

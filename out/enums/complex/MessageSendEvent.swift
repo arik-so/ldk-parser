@@ -787,6 +787,8 @@
 
 					
 					
+					internal typealias MessageSendEvent_LDKSendAcceptChannel_Body = Self.SendAcceptChannel
+			
 
 					/// 
 					public class SendAcceptChannel: NativeTypeWrapper {
@@ -846,6 +848,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendOpenChannel_Body = Self.SendOpenChannel
+			
 
 					/// 
 					public class SendOpenChannel: NativeTypeWrapper {
@@ -905,6 +909,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendFundingCreated_Body = Self.SendFundingCreated
+			
 
 					/// 
 					public class SendFundingCreated: NativeTypeWrapper {
@@ -964,6 +970,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendFundingSigned_Body = Self.SendFundingSigned
+			
 
 					/// 
 					public class SendFundingSigned: NativeTypeWrapper {
@@ -1023,6 +1031,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendChannelReady_Body = Self.SendChannelReady
+			
 
 					/// 
 					public class SendChannelReady: NativeTypeWrapper {
@@ -1082,6 +1092,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendAnnouncementSignatures_Body = Self.SendAnnouncementSignatures
+			
 
 					/// 
 					public class SendAnnouncementSignatures: NativeTypeWrapper {
@@ -1141,6 +1153,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKUpdateHTLCs_Body = Self.UpdateHTLCs
+			
 
 					/// 
 					public class UpdateHTLCs: NativeTypeWrapper {
@@ -1200,6 +1214,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendRevokeAndACK_Body = Self.SendRevokeAndACK
+			
 
 					/// 
 					public class SendRevokeAndACK: NativeTypeWrapper {
@@ -1259,6 +1275,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendClosingSigned_Body = Self.SendClosingSigned
+			
 
 					/// 
 					public class SendClosingSigned: NativeTypeWrapper {
@@ -1318,6 +1336,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendShutdown_Body = Self.SendShutdown
+			
 
 					/// 
 					public class SendShutdown: NativeTypeWrapper {
@@ -1377,6 +1397,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendChannelReestablish_Body = Self.SendChannelReestablish
+			
 
 					/// 
 					public class SendChannelReestablish: NativeTypeWrapper {
@@ -1436,6 +1458,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendChannelAnnouncement_Body = Self.SendChannelAnnouncement
+			
 
 					/// 
 					public class SendChannelAnnouncement: NativeTypeWrapper {
@@ -1503,6 +1527,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKBroadcastChannelAnnouncement_Body = Self.BroadcastChannelAnnouncement
+			
 
 					/// 
 					public class BroadcastChannelAnnouncement: NativeTypeWrapper {
@@ -1562,6 +1588,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKBroadcastChannelUpdate_Body = Self.BroadcastChannelUpdate
+			
 
 					/// 
 					public class BroadcastChannelUpdate: NativeTypeWrapper {
@@ -1613,6 +1641,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendChannelUpdate_Body = Self.SendChannelUpdate
+			
 
 					/// 
 					public class SendChannelUpdate: NativeTypeWrapper {
@@ -1672,6 +1702,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKHandleError_Body = Self.HandleError
+			
 
 					/// 
 					public class HandleError: NativeTypeWrapper {
@@ -1731,6 +1763,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendChannelRangeQuery_Body = Self.SendChannelRangeQuery
+			
 
 					/// 
 					public class SendChannelRangeQuery: NativeTypeWrapper {
@@ -1790,6 +1824,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendShortIdsQuery_Body = Self.SendShortIdsQuery
+			
 
 					/// 
 					public class SendShortIdsQuery: NativeTypeWrapper {
@@ -1849,6 +1885,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendReplyChannelRange_Body = Self.SendReplyChannelRange
+			
 
 					/// 
 					public class SendReplyChannelRange: NativeTypeWrapper {
@@ -1908,6 +1946,8 @@
 					
 		
 					
+					internal typealias MessageSendEvent_LDKSendGossipTimestampFilter_Body = Self.SendGossipTimestampFilter
+			
 
 					/// 
 					public class SendGossipTimestampFilter: NativeTypeWrapper {

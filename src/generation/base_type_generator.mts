@@ -452,6 +452,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 			if (argument.type instanceof RustNullableOption) {
 				preparedArgument.name += 'Option';
+				// TODO: figure out when label should be `some: `
 				preparedArgument.conversion += `
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})
 				`;

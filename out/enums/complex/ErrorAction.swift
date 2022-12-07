@@ -284,6 +284,8 @@
 
 					
 					
+					internal typealias ErrorAction_LDKDisconnectPeer_Body = Self.DisconnectPeer
+			
 
 					/// 
 					public class DisconnectPeer: NativeTypeWrapper {
@@ -337,6 +339,8 @@
 					
 		
 					
+					internal typealias ErrorAction_LDKSendErrorMessage_Body = Self.SendErrorMessage
+			
 
 					/// 
 					public class SendErrorMessage: NativeTypeWrapper {
@@ -388,6 +392,8 @@
 					
 		
 					
+					internal typealias ErrorAction_LDKSendWarningMessage_Body = Self.SendWarningMessage
+			
 
 					/// 
 					public class SendWarningMessage: NativeTypeWrapper {

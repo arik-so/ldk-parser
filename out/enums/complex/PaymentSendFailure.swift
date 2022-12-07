@@ -272,6 +272,8 @@
 
 					
 					
+					internal typealias PaymentSendFailure_LDKPartialFailure_Body = Self.PartialFailure
+			
 
 					/// 
 					public class PartialFailure: NativeTypeWrapper {
