@@ -82,6 +82,7 @@ export class RustStruct extends RustType {
 }
 
 export class RustTuple extends RustStruct {
+	orderedFields: RustStructField[] = [];
 }
 
 export class RustVector extends RustStruct {

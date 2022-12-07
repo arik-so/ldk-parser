@@ -337,6 +337,9 @@ export default class Parser {
 							console.error(`Unexpected field name inside vector ${descriptor.name}: ${currentField.contextualName}\n>`, currentFieldLine.code);
 							process.exit(1);
 						}
+					} else if (descriptor instanceof RustTuple) {
+						// tuples need a sequential representation of their fields
+						descriptor.orderedFields.push(currentField);
 					}
 					descriptor.fields[currentField.contextualName] = currentField;
 				}

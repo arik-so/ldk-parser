@@ -16,6 +16,7 @@ import {
 	RustStructField,
 	RustTaggedValueEnum,
 	RustTrait,
+	RustTuple,
 	RustType,
 	RustVector
 } from '../rust_types.mjs';
@@ -295,6 +296,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				return true;
 			}
 		}
+		if (type instanceof RustTuple) {
+			return true;
+		}
 
 		return false;
 	}
@@ -307,7 +311,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 	 * @protected
 	 */
 	protected getPublicTypeSignature(type: RustType, containerType?: RustType, context?: ContextualRustType): string {
-		let isTypeMercurial = this.isElidedType(type);
+		let isTypeElided = this.isElidedType(type);
 		const isTypeCurrentContainerType = (type === containerType);
 		if (isTypeCurrentContainerType) {
 			// even if the type is elided, it isn't within the context of its own internals
@@ -324,7 +328,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 		}
 
-		if (!isTypeMercurial) {
+		if (!isTypeElided) {
 			if (type.parentType && type.parentType === containerType) {
 				if (type instanceof RustStruct && containerType instanceof RustTaggedValueEnum) {
 					const regex = new RegExp(`^${containerType.name}_LDK(.*)_Body$`);
@@ -377,7 +381,15 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			return `[${iterateeTypeName}]${nullabilitySuffix}`;
 		}
 
-		throw new Error(`Unmapped mercurial type: ${type.getName()} (${type.constructor.name})`);
+		if (type instanceof RustTuple) {
+			let subTypes = [];
+			for (const currentField of type.orderedFields) {
+				subTypes.push(this.getPublicTypeSignature(currentField.type));
+			}
+			return `(${subTypes.join(', ')})`;
+		}
+
+		throw new Error(`Unmapped elided type: ${type.getName()} (${type.constructor.name})`);
 	}
 
 	/**
@@ -507,7 +519,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		};
 
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes
-		if (returnType.type instanceof RustVector) {
+		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple) {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
 			preparedReturnValue.wrapperSuffix += `).getValue()`;
 		} else if (returnType.type instanceof RustTrait) {
@@ -518,7 +530,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(pointer: `;
 			preparedReturnValue.wrapperSuffix += `)`;
 			if (returnType.type !== containerType) {
-				// it's a mercurial type, so we pass it through
+				// it's an elided type, so we pass it through
 				preparedReturnValue.wrapperSuffix += '.getValue()';
 			}
 		} else if (returnType.type instanceof RustStruct || returnType.type instanceof RustResult || returnType.type instanceof RustTaggedValueEnum) {

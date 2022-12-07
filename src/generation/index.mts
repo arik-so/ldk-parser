@@ -6,7 +6,7 @@ import {
 	RustResult,
 	RustStruct,
 	RustTaggedValueEnum,
-	RustTrait,
+	RustTrait, RustTuple,
 	RustVector
 } from '../rust_types.mjs';
 
@@ -59,6 +59,7 @@ export default class Generator {
 		const {default: ResultGenerator} = await import('./result_generator.mjs');
 		const {default: NullableOptionGenerator} = await import('./nullable_option_generator.mjs');
 		const {default: TraitGenerator} = await import('./trait_generator.mjs');
+		const {default: TupleGenerator} = await import('./tuple_generator.mjs');
 
 		const glossary = this.parser.glossary;
 		const config = this.parser.config;
@@ -70,6 +71,7 @@ export default class Generator {
 		const complexEnumGenerator = new ComplexEnumGenerator(config, this.auxiliaryArtifacts);
 		const nullableOptionGenerator = new NullableOptionGenerator(config, this.auxiliaryArtifacts);
 		const resultGenerator = new ResultGenerator(config, this.auxiliaryArtifacts);
+		const tupleGenerator = new TupleGenerator(config, this.auxiliaryArtifacts);
 		const traitGenerator = new TraitGenerator(config, this.auxiliaryArtifacts);
 
 		for (const [_, currentType] of Object.entries(glossary)) {
@@ -91,6 +93,8 @@ export default class Generator {
 				complexEnumGenerator.generate(currentType);
 			} else if (currentType instanceof RustResult) {
 				resultGenerator.generate(currentType);
+			} else if(currentType instanceof RustTuple) {
+				tupleGenerator.generate(currentType);
 			} else if (currentType instanceof RustStruct) {
 				structGenerator.generate(currentType);
 			}

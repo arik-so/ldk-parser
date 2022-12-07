@@ -1,0 +1,73 @@
+import {RustStruct, RustTuple, RustType} from '../rust_types.mjs';
+import {BaseTypeGenerator} from './base_type_generator.mjs';
+import Generator from './index.mjs';
+
+export default class TupleGenerator extends BaseTypeGenerator<RustTuple> {
+
+	generateFileContents(type: RustTuple, containerType?: RustType): string {
+		const swiftTypeName = this.swiftTypeName(type);
+		const swiftReturnType = this.getPublicTypeSignature(type);
+
+		let fieldAccessors = '';
+		let generatedMethods = '';
+
+		for (const [_, currentField] of Object.entries(type.fields)) {
+			fieldAccessors += this.generateAccessor(currentField, type);
+		}
+
+		for (const currentMethod of type.methods) {
+			generatedMethods += this.generateMethod(currentMethod, type);
+		}
+
+		let initializer = [];
+		let valueAccessor = [];
+
+		for (const [fieldIndex, currentField] of type.orderedFields.entries()){
+			let fieldAccessorName = Generator.snakeCaseToCamelCase(currentField.contextualName, true);
+			initializer.push(`${currentField.contextualName}: tuple.${fieldIndex}`)
+			valueAccessor.push(`self.get${fieldAccessorName}()`)
+		}
+
+		return `
+			#if SWIFT_PACKAGE
+			import LDKHeaders
+			#endif
+
+			internal typealias ${swiftTypeName} = Bindings.${swiftTypeName}
+
+			extension Bindings {
+
+				${this.renderDocComment(type.documentation, 4)}
+				internal class ${swiftTypeName}: NativeTypeWrapper {
+
+					${this.inheritedInits(type)}
+
+					internal convenience init(tuple: ${swiftReturnType}) {
+						self.init(${initializer.join(', ')})
+					}
+
+					${generatedMethods}
+
+					public func getValue() -> ${swiftReturnType} {
+						return (${valueAccessor.join(', ')})
+					}
+
+					${fieldAccessors}
+
+					internal func dangle() -> ${swiftTypeName} {
+						self.dangling = true
+						return self
+					}
+
+					${this.renderDanglingCloneAndDeinitMethods(type)}
+
+				}
+			}
+		`;
+	}
+
+	outputDirectorySuffix(): string {
+		return 'tuples';
+	}
+
+}
