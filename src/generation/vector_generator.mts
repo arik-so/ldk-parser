@@ -1,4 +1,4 @@
-import {RustPrimitive, RustType, RustVector} from '../rust_types.mjs';
+import {RustPrimitive, RustPrimitiveWrapper, RustType, RustVector} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 
 export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
@@ -23,6 +23,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		let unwrapperSuffix = '';
 		let depth = 1;
 		let currentIteratee: RustType = type.iterateeField.type;
+		let deepestIterateeContext = type.iterateeField;
 		while (currentIteratee instanceof RustVector) {
 			const indentationDepth = 6 + depth;
 			const indentation = `\t`.repeat(indentationDepth);
@@ -31,6 +32,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			swiftUnwrapper += `${indentation}currentCType.map { (currentCType) in\n`;
 			unwrapperSuffix += `\n${indentation}}`;
 
+			deepestIterateeContext = currentIteratee.iterateeField;
 			currentIteratee = currentIteratee.iterateeField.type;
 			depth++;
 		}
@@ -40,8 +42,9 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		const indentation = `\t`.repeat(indentationDepth);
 		rustUnwrapper += `${indentation}currentValueDepth${depth}.danglingClone().cType!${unwrapperSuffix}`;
 
-		// TODO: fix value access if it's an array of nullable options
-		swiftUnwrapper += `${indentation}${this.swiftTypeName(currentIteratee)}(pointer: currentCType)${unwrapperSuffix}`;
+		const deepestWrapper = this.prepareRustReturnValueForSwift(deepestIterateeContext, type);
+		let deepestConstructor = `${deepestWrapper.wrapperPrefix}currentCType${deepestWrapper.wrapperSuffix}`;
+		swiftUnwrapper += `${indentation}${deepestConstructor}${unwrapperSuffix}`;
 
 
 		let bracketedIterateeTypeName = null;
