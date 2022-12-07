@@ -206,6 +206,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			if (returnType instanceof RustPrimitiveWrapper) {
 				const dataField = returnType.dataField;
 				if (dataField.type instanceof RustArray && dataField.type.iteratee instanceof RustPrimitive && Number.isFinite(dataField.type.length)) {
+					this.auxiliaryArtifacts.addTuple(dataField.type.iteratee.swiftRawSignature, dataField.type.length!);
 					const tupleTypeName = this.getRawTypeName(dataField.type);
 					nativeCallSuffix += `
 						if nativeCallResult.${dataField.contextualName} == Bindings.arrayTo${tupleTypeName}(array: [${dataField.type.iteratee.swiftRawSignature}](repeating: 0, count: ${dataField.type.length})) {
