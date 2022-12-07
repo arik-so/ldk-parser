@@ -103,6 +103,10 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 					return false
 				}
 
+				internal func noOpRetain() {
+					/* there to make sure object gets retained until after this call */
+				}
+
 				public static func == (lhs: NativeTypeWrapper, rhs: NativeTypeWrapper) -> Bool {
 					return (lhs.globalInstanceNumber == rhs.globalInstanceNumber)
 				}
