@@ -47,12 +47,12 @@
 
 							// Swift callback variable prep
 							
-							var payment_hashPointee: UInt8Tuple32? = nil
+							var payment_hashPointee: [UInt8]? = nil
 							if let payment_hashUnwrapped = payment_hash {
 								payment_hashPointee = Bindings.UInt8Tuple32ToArray(tuple: payment_hashUnwrapped.pointee)
 							}
 						
-							var first_hopsPointee: LDKCVec_ChannelDetailsZ? = nil
+							var first_hopsPointee: [ChannelDetails]? = nil
 							if let first_hopsUnwrapped = first_hops {
 								first_hopsPointee = Vec_ChannelDetailsZ(cType: first_hopsUnwrapped.pointee).getValue()
 							}

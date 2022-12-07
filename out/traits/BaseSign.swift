@@ -153,7 +153,7 @@
 
 							// Swift callback variable prep
 							
-							var secretPointee: UInt8Tuple32? = nil
+							var secretPointee: [UInt8]? = nil
 							if let secretUnwrapped = secret {
 								secretPointee = Bindings.UInt8Tuple32ToArray(tuple: secretUnwrapped.pointee)
 							}
@@ -194,7 +194,7 @@
 
 							// Swift callback variable prep
 							
-							var per_commitment_keyPointee: UInt8Tuple32? = nil
+							var per_commitment_keyPointee: [UInt8]? = nil
 							if let per_commitment_keyUnwrapped = per_commitment_key {
 								per_commitment_keyPointee = Bindings.UInt8Tuple32ToArray(tuple: per_commitment_keyUnwrapped.pointee)
 							}
@@ -217,7 +217,7 @@
 
 							// Swift callback variable prep
 							
-							var per_commitment_keyPointee: UInt8Tuple32? = nil
+							var per_commitment_keyPointee: [UInt8]? = nil
 							if let per_commitment_keyUnwrapped = per_commitment_key {
 								per_commitment_keyPointee = Bindings.UInt8Tuple32ToArray(tuple: per_commitment_keyUnwrapped.pointee)
 							}

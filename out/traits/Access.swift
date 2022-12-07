@@ -48,7 +48,7 @@
 
 							// Swift callback variable prep
 							
-							var genesis_hashPointee: UInt8Tuple32? = nil
+							var genesis_hashPointee: [UInt8]? = nil
 							if let genesis_hashUnwrapped = genesis_hash {
 								genesis_hashPointee = Bindings.UInt8Tuple32ToArray(tuple: genesis_hashUnwrapped.pointee)
 							}

@@ -66,7 +66,7 @@
 
 							// Swift callback variable prep
 							
-							var txidPointee: UInt8Tuple32? = nil
+							var txidPointee: [UInt8]? = nil
 							if let txidUnwrapped = txid {
 								txidPointee = Bindings.UInt8Tuple32ToArray(tuple: txidUnwrapped.pointee)
 							}

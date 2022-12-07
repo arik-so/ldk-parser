@@ -357,7 +357,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 			}
 
 			preparedArgument.conversion += `
-				var ${preparedArgument.name}Pointee: ${this.getRawTypeName(type)}? = nil
+				var ${preparedArgument.name}Pointee: ${this.getPublicTypeSignature(type)}? = nil
 				if let ${preparedArgument.name}Unwrapped = ${preparedArgument.accessor} {
 					${preparedArgument.name}Pointee = ${preparedArgument.methodCallWrapperPrefix}${preparedArgument.name}Unwrapped.pointee${preparedArgument.methodCallWrapperSuffix}
 				}

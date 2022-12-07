@@ -57,7 +57,7 @@
 
 							// Swift callback variable prep
 							
-							var headerPointee: UInt8Tuple80? = nil
+							var headerPointee: [UInt8]? = nil
 							if let headerUnwrapped = header {
 								headerPointee = Bindings.UInt8Tuple80ToArray(tuple: headerUnwrapped.pointee)
 							}
@@ -98,7 +98,7 @@
 
 							// Swift callback variable prep
 							
-							var headerPointee: UInt8Tuple80? = nil
+							var headerPointee: [UInt8]? = nil
 							if let headerUnwrapped = header {
 								headerPointee = Bindings.UInt8Tuple80ToArray(tuple: headerUnwrapped.pointee)
 							}
