@@ -37,7 +37,10 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 
-						if let value = value {
+						if let some = some {
+							
+							let someVector = Vec_NetAddressZ(array: some)
+				
 							self.cType = COption_CVec_NetAddressZZ_some(someVector.cType!)
 						} else {
 							self.cType = COption_CVec_NetAddressZZ_none()

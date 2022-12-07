@@ -62,8 +62,9 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 
-						if let value = value {
-							self.cType = ${someInitializerMethod!.name}(${preparedArgument.accessor})
+						if let some = some {
+							${Generator.reindentCode(preparedArgument.conversion, 7)}
+							self.cType = ${preparedArgument.methodCallWrapperPrefix}${someInitializerMethod!.name}(${preparedArgument.accessor})${preparedArgument.methodCallWrapperSuffix}
 						} else {
 							self.cType = ${noneInitializerMethod!.name}()
 						}

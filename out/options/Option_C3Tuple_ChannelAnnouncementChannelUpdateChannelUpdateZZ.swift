@@ -37,7 +37,10 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 
-						if let value = value {
+						if let some = some {
+							
+							let someTuple = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(tuple: some)
+				
 							self.cType = COption_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ_some(someTuple.cType!)
 						} else {
 							self.cType = COption_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ_none()

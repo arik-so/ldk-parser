@@ -13,7 +13,7 @@ struct DirectlyLinkedBindingsAppApp: App {
     init() {
         print("Directly linked bindings app is initialized")
         
-        let compiledVersion = Bindings.swift_ldk_get_compiled_version()
+        let compiledVersion = Bindings.getLDKSwiftBindingsSerializationHash()
         print("Compiled version: \(compiledVersion)")
     }
     

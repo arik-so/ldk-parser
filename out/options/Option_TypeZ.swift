@@ -37,7 +37,8 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 
-						if let value = value {
+						if let some = some {
+														
 							self.cType = COption_TypeZ_some(some.activate().cType!)
 						} else {
 							self.cType = COption_TypeZ_none()

@@ -37,7 +37,10 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 
-						if let value = value {
+						if let some = some {
+							
+							let somePrimitiveWrapper = BigEndianScalar(value: some)
+				
 							self.cType = COption_ScalarZ_some(somePrimitiveWrapper.cType!)
 						} else {
 							self.cType = COption_ScalarZ_none()
