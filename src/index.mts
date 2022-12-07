@@ -10,6 +10,10 @@ import Generator from './generation/index.mjs';
 	parser.parse();
 
 	const generator = new Generator(parser);
+
+	// optional, only if we wanna remove existing artifacts
+	// generator.initializeOutputDirectory();
+
 	await generator.generateTypes();
 	await generator.generateFunctions();
 })();

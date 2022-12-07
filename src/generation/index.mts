@@ -6,9 +6,12 @@ import {
 	RustResult,
 	RustStruct,
 	RustTaggedValueEnum,
-	RustTrait, RustTuple,
+	RustTrait,
+	RustTuple,
 	RustVector
 } from '../rust_types.mjs';
+import * as fs from 'fs';
+import * as path from 'path';
 
 export default class Generator {
 	private parser: Parser;
@@ -48,6 +51,30 @@ export default class Generator {
 		const oldDepth = Generator.firstIndentationDepth(input);
 		const searchString = new RegExp(`^\t{${oldDepth}}`, 'gm');
 		return input.replaceAll(searchString, '\t'.repeat(newDepth));
+	}
+
+	/**
+	 * Make sure the directory exists, and remove its contents if it's not empty.
+	 * This will not remove symbolic links.
+	 */
+	initializeOutputDirectory() {
+		const outputDirectory = this.parser.config.getOutputBaseDirectoryPath();
+		const contents = fs.readdirSync(outputDirectory);
+		for (const currentPathComponentName of contents) {
+			const currentPath = path.join(outputDirectory, currentPathComponentName);
+			const stat = fs.statSync(currentPath);
+			if (stat.isDirectory()) {
+				fs.rmSync(currentPath, {recursive: true});
+				continue;
+			}
+			if (!stat.isFile()) {
+				continue;
+			}
+			if (!currentPath.endsWith('.swift')) {
+				continue;
+			}
+			fs.rmSync(currentPath);
+		}
 	}
 
 	async generateTypes() {
@@ -93,7 +120,7 @@ export default class Generator {
 				complexEnumGenerator.generate(currentType);
 			} else if (currentType instanceof RustResult) {
 				resultGenerator.generate(currentType);
-			} else if(currentType instanceof RustTuple) {
+			} else if (currentType instanceof RustTuple) {
 				tupleGenerator.generate(currentType);
 			} else if (currentType instanceof RustStruct) {
 				structGenerator.generate(currentType);
