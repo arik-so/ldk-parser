@@ -34,6 +34,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		let traitInitializationArguments = [];
 
+		let hasFreeLambda = false;
+
 		for (const currentField of type.orderedFields) {
 			if (currentField instanceof RustLambda) {
 				// todo: canonicalize argument lambda name determination
@@ -42,6 +44,10 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 					const currentLambdaSwiftName = Generator.snakeCaseToCamelCase(currentField.name) + 'Lambda';
 					traitInitializationArguments.push(`${currentField.name}: ${currentLambdaSwiftName}`);
+
+					if (currentField.name === 'free') {
+						hasFreeLambda = true;
+					}
 
 					generatedCallbacks += this.generateCallbackStub(currentField, type);
 					nativelyImplementedCallbacks += this.generateNativelyImplementedCallback(currentField, type);
@@ -80,6 +86,12 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		}
 
 		for (const currentMethod of type.methods) {
+			const currentMethodName = this.swiftMethodName(currentMethod, type);
+			if (hasFreeLambda && currentMethodName === 'free') {
+				// the native detour value checker is more circuitous
+				continue;
+			}
+
 			generatedMethods += this.generateMethod(currentMethod, type);
 		}
 

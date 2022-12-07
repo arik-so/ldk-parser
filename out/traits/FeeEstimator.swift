@@ -115,23 +115,6 @@
 		
 
 					
-					/// Calls the free function if one is set
-					internal func free() {
-						// native call variable prep
-						
-
-						// native method call
-						let nativeCallResult = FeeEstimator_free(self.cType!)
-
-						// cleanup
-						
-
-						// return value (do some wrapping)
-						let returnValue = nativeCallResult
-
-						return returnValue
-					}
-		
 
 					
 
