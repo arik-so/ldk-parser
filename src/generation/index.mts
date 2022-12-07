@@ -9,6 +9,7 @@ import {
 	RustTrait,
 	RustVector
 } from '../rust_types.mjs';
+import {GlobalBindingsStruct} from './bindings_file_generator.mjs';
 
 export default class Generator {
 	private parser: Parser;
@@ -48,10 +49,6 @@ export default class Generator {
 		const oldDepth = Generator.firstIndentationDepth(input);
 		const searchString = new RegExp(`^\t{${oldDepth}}`, 'gm');
 		return input.replaceAll(searchString, '\t'.repeat(newDepth));
-	}
-
-	generateFunctions() {
-
 	}
 
 	async generateTypes() {
@@ -99,6 +96,16 @@ export default class Generator {
 				structGenerator.generate(currentType);
 			}
 		}
+	}
+
+	async generateFunctions() {
+		const {default: BindingsFileGenerator, GlobalBindingsStruct} = await import('./bindings_file_generator.mjs');
+		const bindingsStruct = new GlobalBindingsStruct();
+		bindingsStruct.methods = this.parser.functions;
+
+		const bindingsFileGenerator = new BindingsFileGenerator(this.parser.config, this.auxiliaryArtifacts);
+		bindingsFileGenerator.generate(bindingsStruct);
+
 	}
 }
 
