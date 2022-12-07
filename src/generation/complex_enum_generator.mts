@@ -108,7 +108,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 						return self
 					}
 
-					${this.deinitCode(type)}
+					${this.renderDanglingCloneAndDeinitMethods(type)}
 
 					${renderedChildStructs}
 

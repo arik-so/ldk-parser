@@ -89,7 +89,7 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 						return self
 					}
 
-					${this.deinitCode(type)}
+					${this.renderDanglingCloneAndDeinitMethods(type)}
 
 				}
 

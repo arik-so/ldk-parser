@@ -116,7 +116,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 						return self
 					}
 
-					${this.deinitCode(type)}
+					${this.renderDanglingCloneAndDeinitMethods(type)}
 
 				}
 

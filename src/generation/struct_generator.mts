@@ -56,7 +56,7 @@ export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
 						return self
 					}
 
-					${this.deinitCode(type)}
+					${this.renderDanglingCloneAndDeinitMethods(type)}
 
 				}
 

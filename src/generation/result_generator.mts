@@ -9,6 +9,12 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 		let generatedMethods = '';
 
 		for (const currentMethod of type.methods) {
+			const currentMethodName = this.swiftMethodName(currentMethod, type);
+			if (currentMethodName === 'isOk') {
+				// the native detour value checker is more circuitous
+				continue;
+			}
+
 			generatedMethods += this.generateMethod(currentMethod, type);
 		}
 
@@ -68,7 +74,7 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 						return self
 					}
 
-					${this.deinitCode(type)}
+					${this.renderDanglingCloneAndDeinitMethods(type)}
 
 				}
 

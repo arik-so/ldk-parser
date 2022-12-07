@@ -566,22 +566,37 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		`;
 	}
 
-	protected deinitCode(type: RustType): string {
-		const hasFreeMethod = this.hasFreeMethod(type);
-		if (!hasFreeMethod) {
-			return '';
-		}
+	protected renderDanglingCloneAndDeinitMethods(type: RustType): string {
+		let danglingCloneCode = '';
+		let freeCode = '';
 
 		const swiftTypeName = this.swiftTypeName(type);
-		return `deinit {
-						if !self.dangling {
-							Bindings.print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
-							self.free()
-						} else {
-							Bindings.print("Not freeing ${swiftTypeName} \\(self.instanceNumber) due to dangle.")
-						}
+
+		if (this.hasCloneMethod(type)) {
+			danglingCloneCode = `
+				internal func danglingClone() -> ${swiftTypeName} {
+					let dangledClone = self.clone()
+					dangledClone.dangling = true
+					return dangledClone
+				}
+			`;
+		}
+
+		if (this.hasFreeMethod(type)) {
+			freeCode = `
+				deinit {
+					if !self.dangling {
+						Bindings.print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
+						self.free()
+					} else {
+						Bindings.print("Not freeing ${swiftTypeName} \\(self.instanceNumber) due to dangle.")
 					}
-		`;
+				}
+			`;
+		}
+
+		return Generator.reindentCode(danglingCloneCode + freeCode, 5);
+
 	}
 
 	protected renderDocComment(comment: string, indentationDepth: number = 0): string {

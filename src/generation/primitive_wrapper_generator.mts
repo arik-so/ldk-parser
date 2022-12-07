@@ -102,7 +102,7 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 						return self
 					}
 
-					${this.deinitCode(type)}
+					${this.renderDanglingCloneAndDeinitMethods(type)}
 
 				}
 
