@@ -248,7 +248,7 @@
 					/// 
 					/// [`ChannelManager`]: crate::ln::channelmanager::ChannelManager
 					/// [`Writeable::write`]: crate::util::ser::Writeable::write
-					override func persistNewChannel(channelId: OutPoint, data: ChannelMonitor, updateId: MonitorUpdateId) -> ChannelMonitorUpdateStatus {
+					public override func persistNewChannel(channelId: OutPoint, data: ChannelMonitor, updateId: MonitorUpdateId) -> ChannelMonitorUpdateStatus {
 						// native call variable prep
 						
 
@@ -303,7 +303,7 @@
 					/// [`Writeable::write`]: crate::util::ser::Writeable::write
 					/// 
 					/// Note that update (or a relevant inner pointer) may be NULL or all-0s to represent None
-					override func updatePersistedChannel(channelId: OutPoint, update: ChannelMonitorUpdate, data: ChannelMonitor, updateId: MonitorUpdateId) -> ChannelMonitorUpdateStatus {
+					public override func updatePersistedChannel(channelId: OutPoint, update: ChannelMonitorUpdate, data: ChannelMonitor, updateId: MonitorUpdateId) -> ChannelMonitorUpdateStatus {
 						// native call variable prep
 						
 
@@ -329,7 +329,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

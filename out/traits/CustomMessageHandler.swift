@@ -181,7 +181,7 @@
 					
 					/// Called with the message type that was received and the buffer to be read.
 					/// Can return a `MessageHandlingError` if the message could not be handled.
-					override func handleCustomMessage(msg: BindingsType, senderNodeId: [UInt8]) -> Result_NoneLightningErrorZ {
+					public override func handleCustomMessage(msg: BindingsType, senderNodeId: [UInt8]) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
 						let senderNodeIdPrimitiveWrapper = PublicKey(value: senderNodeId)
@@ -203,7 +203,7 @@
 					/// handler, clearing the list in the process. The first tuple element must
 					/// correspond to the intended recipients node ids. If no connection to one of the
 					/// specified node does not exist, the message is simply not sent to it.
-					override func getAndClearPendingMsg() -> [([UInt8], BindingsType)] {
+					public override func getAndClearPendingMsg() -> [([UInt8], BindingsType)] {
 						// native call variable prep
 						
 
@@ -221,7 +221,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

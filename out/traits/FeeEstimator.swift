@@ -160,7 +160,7 @@
 					/// The following unit conversions can be used to convert to sats/KW:
 					/// * satoshis-per-byte * 250
 					/// * satoshis-per-kbyte / 4
-					override func getEstSatPer_1000Weight(confirmationTarget: ConfirmationTarget) -> UInt32 {
+					public override func getEstSatPer_1000Weight(confirmationTarget: ConfirmationTarget) -> UInt32 {
 						// native call variable prep
 						
 
@@ -178,7 +178,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

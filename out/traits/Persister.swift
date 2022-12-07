@@ -192,7 +192,7 @@
 				public class NativelyImplementedPersister: Persister {
 					
 					/// Persist the given ['ChannelManager'] to disk, returning an error if persistence failed.
-					override func persistManager(channelManager: ChannelManager) -> Result_NoneErrorZ {
+					public override func persistManager(channelManager: ChannelManager) -> Result_NoneErrorZ {
 						// native call variable prep
 						
 
@@ -213,7 +213,7 @@
 					}
 		
 					/// Persist the given [`NetworkGraph`] to disk, returning an error if persistence failed.
-					override func persistGraph(networkGraph: NetworkGraph) -> Result_NoneErrorZ {
+					public override func persistGraph(networkGraph: NetworkGraph) -> Result_NoneErrorZ {
 						// native call variable prep
 						
 
@@ -234,7 +234,7 @@
 					}
 		
 					/// Persist the given [`WriteableScore`] to disk, returning an error if persistence failed.
-					override func persistScorer(scorer: WriteableScore) -> Result_NoneErrorZ {
+					public override func persistScorer(scorer: WriteableScore) -> Result_NoneErrorZ {
 						// native call variable prep
 						
 
@@ -256,7 +256,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

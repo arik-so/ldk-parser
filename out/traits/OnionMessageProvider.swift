@@ -146,7 +146,7 @@
 					/// Gets the next pending onion message for the peer with the given node id.
 					/// 
 					/// Note that the return value (or a relevant inner pointer) may be NULL or all-0s to represent None
-					override func nextOnionMessageForPeer(peerNodeId: [UInt8]) -> OnionMessage {
+					public override func nextOnionMessageForPeer(peerNodeId: [UInt8]) -> OnionMessage {
 						// native call variable prep
 						
 						let peerNodeIdPrimitiveWrapper = PublicKey(value: peerNodeId)
@@ -166,7 +166,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

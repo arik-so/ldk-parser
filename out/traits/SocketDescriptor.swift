@@ -286,7 +286,7 @@
 					/// (indicating that read events should be paused to prevent DoS in the send buffer),
 					/// `resume_read` may be set indicating that read events on this descriptor should resume. A
 					/// `resume_read` of false carries no meaning, and should not cause any action.
-					override func sendData(data: [UInt8], resumeRead: Bool) -> UInt {
+					public override func sendData(data: [UInt8], resumeRead: Bool) -> UInt {
 						// native call variable prep
 						
 						let dataPrimitiveWrapper = u8slice(value: data)
@@ -308,7 +308,7 @@
 					/// 
 					/// You do *not* need to call [`PeerManager::socket_disconnected`] with this socket after this
 					/// call (doing so is a noop).
-					override func disconnectSocket() {
+					public override func disconnectSocket() {
 						// native call variable prep
 						
 
@@ -325,7 +325,7 @@
 					}
 		
 					/// Checks if two objects are equal given this object's this_arg pointer and another object.
-					override func eq(otherArg: SocketDescriptor) -> Bool {
+					public override func eq(otherArg: SocketDescriptor) -> Bool {
 						// native call variable prep
 						
 
@@ -347,7 +347,7 @@
 		
 					/// Calculate a succinct non-cryptographic hash for an object given its this_arg pointer.
 					/// This is used, for example, for inclusion of this object in a hash map.
-					override func hash() -> UInt64 {
+					public override func hash() -> UInt64 {
 						// native call variable prep
 						
 
@@ -365,7 +365,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

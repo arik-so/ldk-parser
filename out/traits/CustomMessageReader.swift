@@ -149,7 +149,7 @@
 					/// implementation and the message could be decoded, must return `Ok(Some(message))`. If the
 					/// message type is unknown to the implementation, must return `Ok(None)`. If a decoding error
 					/// occur, must return `Err(DecodeError::X)` where `X` details the encountered error.
-					override func read(messageType: UInt16, buffer: [UInt8]) -> Result_COption_TypeZDecodeErrorZ {
+					public override func read(messageType: UInt16, buffer: [UInt8]) -> Result_COption_TypeZDecodeErrorZ {
 						// native call variable prep
 						
 						let bufferPrimitiveWrapper = u8slice(value: buffer)
@@ -169,7 +169,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

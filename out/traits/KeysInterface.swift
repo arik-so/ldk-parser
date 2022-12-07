@@ -429,7 +429,7 @@
 					/// parameter.
 					/// 
 					/// Errors if the `Recipient` variant is not supported by the implementation.
-					override func getNodeSecret(recipient: Recipient) -> Result_SecretKeyNoneZ {
+					public override func getNodeSecret(recipient: Recipient) -> Result_SecretKeyNoneZ {
 						// native call variable prep
 						
 
@@ -454,7 +454,7 @@
 					/// Errors if the `Recipient` variant is not supported by the implementation.
 					/// 
 					/// [`get_node_secret`]: KeysInterface::get_node_secret
-					override func getNodeId(recipient: Recipient) -> Result_PublicKeyNoneZ {
+					public override func getNodeId(recipient: Recipient) -> Result_PublicKeyNoneZ {
 						// native call variable prep
 						
 
@@ -477,7 +477,7 @@
 					/// Errors if the `Recipient` variant is not supported by the implementation.
 					/// 
 					/// [`node secret`]: Self::get_node_secret
-					override func ecdh(recipient: Recipient, otherKey: [UInt8], tweak: [UInt8]?) -> Result_SharedSecretNoneZ {
+					public override func ecdh(recipient: Recipient, otherKey: [UInt8], tweak: [UInt8]?) -> Result_SharedSecretNoneZ {
 						// native call variable prep
 						
 						let otherKeyPrimitiveWrapper = PublicKey(value: otherKey)
@@ -501,7 +501,7 @@
 					/// 
 					/// This method should return a different value each time it is called, to avoid linking
 					/// on-chain funds across channels as controlled to the same user.
-					override func getDestinationScript() -> [UInt8] {
+					public override func getDestinationScript() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -521,7 +521,7 @@
 					/// 
 					/// This method should return a different value each time it is called, to avoid linking
 					/// on-chain funds across channels as controlled to the same user.
-					override func getShutdownScriptpubkey() -> ShutdownScript {
+					public override func getShutdownScriptpubkey() -> ShutdownScript {
 						// native call variable prep
 						
 
@@ -541,7 +541,7 @@
 					/// restarted with some stale data!
 					/// 
 					/// This method must return a different value each time it is called.
-					override func getChannelSigner(inbound: Bool, channelValueSatoshis: UInt64) -> Sign {
+					public override func getChannelSigner(inbound: Bool, channelValueSatoshis: UInt64) -> Sign {
 						// native call variable prep
 						
 
@@ -562,7 +562,7 @@
 					/// persisted anywhere, though they must be unique across restarts.
 					/// 
 					/// This method must return a different value each time it is called.
-					override func getSecureRandomBytes() -> [UInt8] {
+					public override func getSecureRandomBytes() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -584,7 +584,7 @@
 					/// The bytes are exactly those which `<Self::Signer as Writeable>::write()` writes, and
 					/// contain no versioning scheme. You may wish to include your own version prefix and ensure
 					/// you've read all of the provided bytes to ensure no corruption occurred.
-					override func readChanSigner(reader: [UInt8]) -> Result_SignDecodeErrorZ {
+					public override func readChanSigner(reader: [UInt8]) -> Result_SignDecodeErrorZ {
 						// native call variable prep
 						
 						let readerPrimitiveWrapper = u8slice(value: reader)
@@ -611,7 +611,7 @@
 					/// The secret key used to sign the invoice is dependent on the [`Recipient`].
 					/// 
 					/// Errors if the `Recipient` variant is not supported by the implementation.
-					override func signInvoice(hrpBytes: [UInt8], invoiceData: [UInt8], receipient: Recipient) -> Result_RecoverableSignatureNoneZ {
+					public override func signInvoice(hrpBytes: [UInt8], invoiceData: [UInt8], receipient: Recipient) -> Result_RecoverableSignatureNoneZ {
 						// native call variable prep
 						
 						let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes)
@@ -642,7 +642,7 @@
 					/// This method must return the same value each time it is called.
 					/// 
 					/// [phantom node payments]: PhantomKeysManager
-					override func getInboundPaymentKeyMaterial() -> [UInt8] {
+					public override func getInboundPaymentKeyMaterial() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -660,7 +660,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

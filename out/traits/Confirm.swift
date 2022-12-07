@@ -309,7 +309,7 @@
 					/// 
 					/// [chain order]: Confirm#order
 					/// [`best_block_updated`]: Self::best_block_updated
-					override func transactionsConfirmed(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) {
+					public override func transactionsConfirmed(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) {
 						// native call variable prep
 						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
@@ -343,7 +343,7 @@
 					/// 
 					/// [`get_relevant_txids`]: Self::get_relevant_txids
 					/// [`transactions_confirmed`]: Self::transactions_confirmed
-					override func transactionUnconfirmed(txid: [UInt8]?) {
+					public override func transactionUnconfirmed(txid: [UInt8]?) {
 						// native call variable prep
 						
 						let tupledTxid = Bindings.arrayToUInt8Tuple32(array: txid)
@@ -369,7 +369,7 @@
 					/// 
 					/// Should be called when a new header is available but may be skipped for intermediary blocks
 					/// if they become available at the same time.
-					override func bestBlockUpdated(header: [UInt8]?, height: UInt32) {
+					public override func bestBlockUpdated(header: [UInt8]?, height: UInt32) {
 						// native call variable prep
 						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
@@ -404,7 +404,7 @@
 					/// 
 					/// [`transactions_confirmed`]: Self::transactions_confirmed
 					/// [`transaction_unconfirmed`]: Self::transaction_unconfirmed
-					override func getRelevantTxids() -> [[UInt8]] {
+					public override func getRelevantTxids() -> [[UInt8]] {
 						// native call variable prep
 						
 
@@ -422,7 +422,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

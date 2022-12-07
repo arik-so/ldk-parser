@@ -154,7 +154,7 @@
 				public class NativelyImplementedWriteableScore: WriteableScore {
 					
 					/// Serialize the object into a byte array
-					override func write() -> [UInt8] {
+					public override func write() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -172,7 +172,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

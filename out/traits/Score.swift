@@ -283,7 +283,7 @@
 					/// such as a chain data, network gossip, or invoice hints. For invoice hints, a capacity near
 					/// [`u64::max_value`] is given to indicate sufficient capacity for the invoice's full amount.
 					/// Thus, implementations should be overflow-safe.
-					override func channelPenaltyMsat(shortChannelId: UInt64, source: NodeId, target: NodeId, usage: ChannelUsage) -> UInt64 {
+					public override func channelPenaltyMsat(shortChannelId: UInt64, source: NodeId, target: NodeId, usage: ChannelUsage) -> UInt64 {
 						// native call variable prep
 						
 
@@ -308,7 +308,7 @@
 					}
 		
 					/// Handles updating channel penalties after failing to route through a channel.
-					override func paymentPathFailed(path: [RouteHop], shortChannelId: UInt64) {
+					public override func paymentPathFailed(path: [RouteHop], shortChannelId: UInt64) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -329,7 +329,7 @@
 					}
 		
 					/// Handles updating channel penalties after successfully routing along a path.
-					override func paymentPathSuccessful(path: [RouteHop]) {
+					public override func paymentPathSuccessful(path: [RouteHop]) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -350,7 +350,7 @@
 					}
 		
 					/// Handles updating channel penalties after a probe over the given path failed.
-					override func probeFailed(path: [RouteHop], shortChannelId: UInt64) {
+					public override func probeFailed(path: [RouteHop], shortChannelId: UInt64) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -371,7 +371,7 @@
 					}
 		
 					/// Handles updating channel penalties after a probe over the given path succeeded.
-					override func probeSuccessful(path: [RouteHop]) {
+					public override func probeSuccessful(path: [RouteHop]) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -392,7 +392,7 @@
 					}
 		
 					/// Serialize the object into a byte array
-					override func write() -> [UInt8] {
+					public override func write() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -410,7 +410,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

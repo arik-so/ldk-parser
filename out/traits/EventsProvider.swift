@@ -175,7 +175,7 @@
 					/// Processes any events generated since the last call using the given event handler.
 					/// 
 					/// See the trait-level documentation for requirements.
-					override func processPendingEvents(handler: EventHandler) {
+					public override func processPendingEvents(handler: EventHandler) {
 						// native call variable prep
 						
 
@@ -193,7 +193,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

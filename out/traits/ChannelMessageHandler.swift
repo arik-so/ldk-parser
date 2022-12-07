@@ -695,7 +695,7 @@
 				public class NativelyImplementedChannelMessageHandler: ChannelMessageHandler {
 					
 					/// Handle an incoming open_channel message from the given peer.
-					override func handleOpenChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: OpenChannel) {
+					public override func handleOpenChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: OpenChannel) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -718,7 +718,7 @@
 					}
 		
 					/// Handle an incoming accept_channel message from the given peer.
-					override func handleAcceptChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: AcceptChannel) {
+					public override func handleAcceptChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: AcceptChannel) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -741,7 +741,7 @@
 					}
 		
 					/// Handle an incoming funding_created message from the given peer.
-					override func handleFundingCreated(theirNodeId: [UInt8], msg: FundingCreated) {
+					public override func handleFundingCreated(theirNodeId: [UInt8], msg: FundingCreated) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -764,7 +764,7 @@
 					}
 		
 					/// Handle an incoming funding_signed message from the given peer.
-					override func handleFundingSigned(theirNodeId: [UInt8], msg: FundingSigned) {
+					public override func handleFundingSigned(theirNodeId: [UInt8], msg: FundingSigned) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -787,7 +787,7 @@
 					}
 		
 					/// Handle an incoming channel_ready message from the given peer.
-					override func handleChannelReady(theirNodeId: [UInt8], msg: ChannelReady) {
+					public override func handleChannelReady(theirNodeId: [UInt8], msg: ChannelReady) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -810,7 +810,7 @@
 					}
 		
 					/// Handle an incoming shutdown message from the given peer.
-					override func handleShutdown(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: Shutdown) {
+					public override func handleShutdown(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: Shutdown) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -837,7 +837,7 @@
 					}
 		
 					/// Handle an incoming closing_signed message from the given peer.
-					override func handleClosingSigned(theirNodeId: [UInt8], msg: ClosingSigned) {
+					public override func handleClosingSigned(theirNodeId: [UInt8], msg: ClosingSigned) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -860,7 +860,7 @@
 					}
 		
 					/// Handle an incoming update_add_htlc message from the given peer.
-					override func handleUpdateAddHtlc(theirNodeId: [UInt8], msg: UpdateAddHTLC) {
+					public override func handleUpdateAddHtlc(theirNodeId: [UInt8], msg: UpdateAddHTLC) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -883,7 +883,7 @@
 					}
 		
 					/// Handle an incoming update_fulfill_htlc message from the given peer.
-					override func handleUpdateFulfillHtlc(theirNodeId: [UInt8], msg: UpdateFulfillHTLC) {
+					public override func handleUpdateFulfillHtlc(theirNodeId: [UInt8], msg: UpdateFulfillHTLC) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -906,7 +906,7 @@
 					}
 		
 					/// Handle an incoming update_fail_htlc message from the given peer.
-					override func handleUpdateFailHtlc(theirNodeId: [UInt8], msg: UpdateFailHTLC) {
+					public override func handleUpdateFailHtlc(theirNodeId: [UInt8], msg: UpdateFailHTLC) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -929,7 +929,7 @@
 					}
 		
 					/// Handle an incoming update_fail_malformed_htlc message from the given peer.
-					override func handleUpdateFailMalformedHtlc(theirNodeId: [UInt8], msg: UpdateFailMalformedHTLC) {
+					public override func handleUpdateFailMalformedHtlc(theirNodeId: [UInt8], msg: UpdateFailMalformedHTLC) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -952,7 +952,7 @@
 					}
 		
 					/// Handle an incoming commitment_signed message from the given peer.
-					override func handleCommitmentSigned(theirNodeId: [UInt8], msg: CommitmentSigned) {
+					public override func handleCommitmentSigned(theirNodeId: [UInt8], msg: CommitmentSigned) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -975,7 +975,7 @@
 					}
 		
 					/// Handle an incoming revoke_and_ack message from the given peer.
-					override func handleRevokeAndAck(theirNodeId: [UInt8], msg: RevokeAndACK) {
+					public override func handleRevokeAndAck(theirNodeId: [UInt8], msg: RevokeAndACK) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -998,7 +998,7 @@
 					}
 		
 					/// Handle an incoming update_fee message from the given peer.
-					override func handleUpdateFee(theirNodeId: [UInt8], msg: UpdateFee) {
+					public override func handleUpdateFee(theirNodeId: [UInt8], msg: UpdateFee) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -1021,7 +1021,7 @@
 					}
 		
 					/// Handle an incoming announcement_signatures message from the given peer.
-					override func handleAnnouncementSignatures(theirNodeId: [UInt8], msg: AnnouncementSignatures) {
+					public override func handleAnnouncementSignatures(theirNodeId: [UInt8], msg: AnnouncementSignatures) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -1050,7 +1050,7 @@
 					/// 
 					/// Note that in some rare cases this may be called without a corresponding
 					/// [`Self::peer_connected`].
-					override func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) {
+					public override func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -1073,7 +1073,7 @@
 					/// May return an `Err(())` if the features the peer supports are not sufficient to communicate
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
-					override func peerConnected(theirNodeId: [UInt8], msg: Init) -> Result_NoneNoneZ {
+					public override func peerConnected(theirNodeId: [UInt8], msg: Init) -> Result_NoneNoneZ {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -1096,7 +1096,7 @@
 					}
 		
 					/// Handle an incoming channel_reestablish message from the given peer.
-					override func handleChannelReestablish(theirNodeId: [UInt8], msg: ChannelReestablish) {
+					public override func handleChannelReestablish(theirNodeId: [UInt8], msg: ChannelReestablish) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -1119,7 +1119,7 @@
 					}
 		
 					/// Handle an incoming channel update from the given peer.
-					override func handleChannelUpdate(theirNodeId: [UInt8], msg: ChannelUpdate) {
+					public override func handleChannelUpdate(theirNodeId: [UInt8], msg: ChannelUpdate) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -1142,7 +1142,7 @@
 					}
 		
 					/// Handle an incoming error message from the given peer.
-					override func handleError(theirNodeId: [UInt8], msg: ErrorMessage) {
+					public override func handleError(theirNodeId: [UInt8], msg: ErrorMessage) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -1167,7 +1167,7 @@
 					/// Gets the node feature flags which this handler itself supports. All available handlers are
 					/// queried similarly and their feature flags are OR'd together to form the [`NodeFeatures`]
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
-					override func providedNodeFeatures() -> NodeFeatures {
+					public override func providedNodeFeatures() -> NodeFeatures {
 						// native call variable prep
 						
 
@@ -1188,7 +1188,7 @@
 					/// which are sent in our [`Init`] message.
 					/// 
 					/// Note that this method is called before [`Self::peer_connected`].
-					override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
+					public override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -1208,7 +1208,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

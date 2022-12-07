@@ -269,7 +269,7 @@
 				public class NativelyImplementedPayer: Payer {
 					
 					/// Returns the payer's node id.
-					override func nodeId() -> [UInt8] {
+					public override func nodeId() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -286,7 +286,7 @@
 					}
 		
 					/// Returns the payer's channels.
-					override func firstHops() -> [ChannelDetails] {
+					public override func firstHops() -> [ChannelDetails] {
 						// native call variable prep
 						
 
@@ -305,7 +305,7 @@
 					/// Sends a payment over the Lightning Network using the given [`Route`].
 					/// 
 					/// Note that payment_secret (or a relevant inner pointer) may be NULL or all-0s to represent None
-					override func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
+					public override func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
 						// native call variable prep
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
@@ -330,7 +330,7 @@
 					}
 		
 					/// Sends a spontaneous payment over the Lightning Network using the given [`Route`].
-					override func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
+					public override func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
 						// native call variable prep
 						
 						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
@@ -353,7 +353,7 @@
 					}
 		
 					/// Retries a failed payment path for the [`PaymentId`] using the given [`Route`].
-					override func retryPayment(route: Route, paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
+					public override func retryPayment(route: Route, paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -376,7 +376,7 @@
 					}
 		
 					/// Signals that no further retries for the given payment will occur.
-					override func abandonPayment(paymentId: [UInt8]) {
+					public override func abandonPayment(paymentId: [UInt8]) {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -396,7 +396,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

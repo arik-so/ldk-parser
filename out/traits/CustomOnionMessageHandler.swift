@@ -177,7 +177,7 @@
 				public class NativelyImplementedCustomOnionMessageHandler: CustomOnionMessageHandler {
 					
 					/// Called with the custom message that was received.
-					override func handleCustomMessage(msg: CustomOnionMessageContents) {
+					public override func handleCustomMessage(msg: CustomOnionMessageContents) {
 						// native call variable prep
 						
 
@@ -195,7 +195,7 @@
 		
 					/// Read a custom message of type `message_type` from `buffer`, returning `Ok(None)` if the
 					/// message type is unknown.
-					override func readCustomMessage(messageType: UInt64, buffer: [UInt8]) -> Result_COption_CustomOnionMessageContentsZDecodeErrorZ {
+					public override func readCustomMessage(messageType: UInt64, buffer: [UInt8]) -> Result_COption_CustomOnionMessageContentsZDecodeErrorZ {
 						// native call variable prep
 						
 						let bufferPrimitiveWrapper = u8slice(value: buffer)
@@ -215,7 +215,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

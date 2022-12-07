@@ -142,7 +142,7 @@
 				public class NativelyImplementedBroadcasterInterface: BroadcasterInterface {
 					
 					/// Sends a transaction out to (hopefully) be mined.
-					override func broadcastTransaction(tx: [UInt8]) {
+					public override func broadcastTransaction(tx: [UInt8]) {
 						// native call variable prep
 						
 						let txPrimitiveWrapper = Transaction(value: tx)
@@ -162,7 +162,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

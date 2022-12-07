@@ -216,7 +216,7 @@
 				public class NativelyImplementedBindingsType: BindingsType {
 					
 					/// Returns the type identifying the message payload.
-					override func typeId() -> UInt16 {
+					public override func typeId() -> UInt16 {
 						// native call variable prep
 						
 
@@ -233,7 +233,7 @@
 					}
 		
 					/// Return a human-readable "debug" string describing this object
-					override func debugStr() -> String {
+					public override func debugStr() -> String {
 						// native call variable prep
 						
 
@@ -250,7 +250,7 @@
 					}
 		
 					/// Serialize the object into a byte array
-					override func write() -> [UInt8] {
+					public override func write() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -268,7 +268,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

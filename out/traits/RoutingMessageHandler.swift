@@ -463,7 +463,7 @@
 					
 					/// Handle an incoming node_announcement message, returning true if it should be forwarded on,
 					/// false or returning an Err otherwise.
-					override func handleNodeAnnouncement(msg: NodeAnnouncement) -> Result_boolLightningErrorZ {
+					public override func handleNodeAnnouncement(msg: NodeAnnouncement) -> Result_boolLightningErrorZ {
 						// native call variable prep
 						
 
@@ -485,7 +485,7 @@
 		
 					/// Handle a channel_announcement message, returning true if it should be forwarded on, false
 					/// or returning an Err otherwise.
-					override func handleChannelAnnouncement(msg: ChannelAnnouncement) -> Result_boolLightningErrorZ {
+					public override func handleChannelAnnouncement(msg: ChannelAnnouncement) -> Result_boolLightningErrorZ {
 						// native call variable prep
 						
 
@@ -507,7 +507,7 @@
 		
 					/// Handle an incoming channel_update message, returning true if it should be forwarded on,
 					/// false or returning an Err otherwise.
-					override func handleChannelUpdate(msg: ChannelUpdate) -> Result_boolLightningErrorZ {
+					public override func handleChannelUpdate(msg: ChannelUpdate) -> Result_boolLightningErrorZ {
 						// native call variable prep
 						
 
@@ -530,7 +530,7 @@
 					/// Gets channel announcements and updates required to dump our routing table to a remote node,
 					/// starting at the short_channel_id indicated by starting_point and including announcements
 					/// for a single channel.
-					override func getNextChannelAnnouncement(startingPoint: UInt64) -> (ChannelAnnouncement, ChannelUpdate, ChannelUpdate)? {
+					public override func getNextChannelAnnouncement(startingPoint: UInt64) -> (ChannelAnnouncement, ChannelUpdate, ChannelUpdate)? {
 						// native call variable prep
 						
 
@@ -553,7 +553,7 @@
 					/// 
 					/// Note that starting_point (or a relevant inner pointer) may be NULL or all-0s to represent None
 					/// Note that the return value (or a relevant inner pointer) may be NULL or all-0s to represent None
-					override func getNextNodeAnnouncement(startingPoint: [UInt8]) -> NodeAnnouncement {
+					public override func getNextNodeAnnouncement(startingPoint: [UInt8]) -> NodeAnnouncement {
 						// native call variable prep
 						
 						let startingPointPrimitiveWrapper = PublicKey(value: startingPoint)
@@ -578,7 +578,7 @@
 					/// May return an `Err(())` if the features the peer supports are not sufficient to communicate
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
-					override func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
+					public override func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -603,7 +603,7 @@
 					/// Handles the reply of a query we initiated to learn about channels
 					/// for a given range of blocks. We can expect to receive one or more
 					/// replies to a single query.
-					override func handleReplyChannelRange(theirNodeId: [UInt8], msg: ReplyChannelRange) -> Result_NoneLightningErrorZ {
+					public override func handleReplyChannelRange(theirNodeId: [UInt8], msg: ReplyChannelRange) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -625,7 +625,7 @@
 					/// messages for a list of channels. We should receive this message when
 					/// a node has completed its best effort to send us the pertaining routing
 					/// gossip messages.
-					override func handleReplyShortChannelIdsEnd(theirNodeId: [UInt8], msg: ReplyShortChannelIdsEnd) -> Result_NoneLightningErrorZ {
+					public override func handleReplyShortChannelIdsEnd(theirNodeId: [UInt8], msg: ReplyShortChannelIdsEnd) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -645,7 +645,7 @@
 		
 					/// Handles when a peer asks us to send a list of short_channel_ids
 					/// for the requested range of blocks.
-					override func handleQueryChannelRange(theirNodeId: [UInt8], msg: QueryChannelRange) -> Result_NoneLightningErrorZ {
+					public override func handleQueryChannelRange(theirNodeId: [UInt8], msg: QueryChannelRange) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -665,7 +665,7 @@
 		
 					/// Handles when a peer asks us to send routing gossip messages for a
 					/// list of short_channel_ids.
-					override func handleQueryShortChannelIds(theirNodeId: [UInt8], msg: QueryShortChannelIds) -> Result_NoneLightningErrorZ {
+					public override func handleQueryShortChannelIds(theirNodeId: [UInt8], msg: QueryShortChannelIds) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -686,7 +686,7 @@
 					/// Gets the node feature flags which this handler itself supports. All available handlers are
 					/// queried similarly and their feature flags are OR'd together to form the [`NodeFeatures`]
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
-					override func providedNodeFeatures() -> NodeFeatures {
+					public override func providedNodeFeatures() -> NodeFeatures {
 						// native call variable prep
 						
 
@@ -707,7 +707,7 @@
 					/// which are sent in our [`Init`] message.
 					/// 
 					/// Note that this method is called before [`Self::peer_connected`].
-					override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
+					public override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -727,7 +727,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

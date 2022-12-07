@@ -266,7 +266,7 @@
 				public class NativelyImplementedOnionMessageHandler: OnionMessageHandler {
 					
 					/// Handle an incoming onion_message message from the given peer.
-					override func handleOnionMessage(peerNodeId: [UInt8], msg: OnionMessage) {
+					public override func handleOnionMessage(peerNodeId: [UInt8], msg: OnionMessage) {
 						// native call variable prep
 						
 						let peerNodeIdPrimitiveWrapper = PublicKey(value: peerNodeId)
@@ -294,7 +294,7 @@
 					/// May return an `Err(())` if the features the peer supports are not sufficient to communicate
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
-					override func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
+					public override func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -321,7 +321,7 @@
 					/// 
 					/// Note that in some rare cases this may be called without a corresponding
 					/// [`Self::peer_connected`].
-					override func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) {
+					public override func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -342,7 +342,7 @@
 					/// Gets the node feature flags which this handler itself supports. All available handlers are
 					/// queried similarly and their feature flags are OR'd together to form the [`NodeFeatures`]
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
-					override func providedNodeFeatures() -> NodeFeatures {
+					public override func providedNodeFeatures() -> NodeFeatures {
 						// native call variable prep
 						
 
@@ -363,7 +363,7 @@
 					/// which are sent in our [`Init`] message.
 					/// 
 					/// Note that this method is called before [`Self::peer_connected`].
-					override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
+					public override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -383,7 +383,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

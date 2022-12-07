@@ -198,7 +198,7 @@
 					
 					/// Registers interest in a transaction with `txid` and having an output with `script_pubkey` as
 					/// a spending condition.
-					override func registerTx(txid: [UInt8]?, scriptPubkey: [UInt8]) {
+					public override func registerTx(txid: [UInt8]?, scriptPubkey: [UInt8]) {
 						// native call variable prep
 						
 						let tupledTxid = Bindings.arrayToUInt8Tuple32(array: txid)
@@ -228,7 +228,7 @@
 					/// to ensure that also dependent output spents within an already connected block are correctly
 					/// handled, e.g., by re-scanning the block in question whenever new outputs have been
 					/// registered mid-processing.
-					override func registerOutput(output: WatchedOutput) {
+					public override func registerOutput(output: WatchedOutput) {
 						// native call variable prep
 						
 
@@ -246,7 +246,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 

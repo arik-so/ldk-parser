@@ -214,7 +214,7 @@
 					
 					/// Notifies the listener that a block was added at the given height, with the transaction data
 					/// possibly filtered.
-					override func filteredBlockConnected(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) {
+					public override func filteredBlockConnected(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) {
 						// native call variable prep
 						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
@@ -241,7 +241,7 @@
 					}
 		
 					/// Notifies the listener that a block was added at the given height.
-					override func blockConnected(block: [UInt8], height: UInt32) {
+					public override func blockConnected(block: [UInt8], height: UInt32) {
 						// native call variable prep
 						
 						let blockPrimitiveWrapper = u8slice(value: block)
@@ -260,7 +260,7 @@
 					}
 		
 					/// Notifies the listener that a block was removed at the given height.
-					override func blockDisconnected(header: [UInt8]?, height: UInt32) {
+					public override func blockDisconnected(header: [UInt8]?, height: UInt32) {
 						// native call variable prep
 						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
@@ -284,7 +284,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					override func free() {
+					public override func free() {
 						// native call variable prep
 						
 
