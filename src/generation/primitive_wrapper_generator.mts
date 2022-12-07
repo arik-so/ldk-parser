@@ -58,14 +58,13 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 			}
 		} else if (type.dataField.type instanceof RustArray) {
 			if (Number.isFinite(type.dataField.type.length)) {
-				let dataAssignment = [];
-				let dataAccess = [];
-				for (let i = 0; i < type.dataField.type.length!; i++) {
-					dataAssignment.push(`value[${i}]`);
-					dataAccess.push(`self.cType!.${dataFieldName}.${i}`);
-				}
-				initializer = `self.cType = ${type.name}(${dataFieldName}: (${dataAssignment.join(', ')})${ownershipInfix})`;
-				valueAccessor = `return [${dataAccess.join(', ')}]`;
+
+				const iterateeTypeName = this.getRawTypeName(type.dataField.type.iteratee);
+				const tupleTypeName = this.getRawTypeName(type.dataField.type);
+				this.auxiliaryArtifacts.addTuple(iterateeTypeName, type.dataField.type.length!);
+
+				initializer = `self.cType = ${type.name}(${dataFieldName}: Bindings.arrayTo${tupleTypeName}(value)${ownershipInfix})`;
+				valueAccessor = `return Bindings.${tupleTypeName}ToArray(self.cType!)`;
 			}
 		}
 
