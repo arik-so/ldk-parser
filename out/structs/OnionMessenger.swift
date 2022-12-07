@@ -1,0 +1,251 @@
+
+				
+			#if SWIFT_PACKAGE
+			import LDKHeaders
+			#endif
+
+			public typealias OnionMessenger = Bindings.OnionMessenger
+
+			extension Bindings {
+		
+
+				/// A sender, receiver and forwarder of onion messages. In upcoming releases, this object will be
+				/// used to retrieve invoices and fulfill invoice requests from [offers]. Currently, only sending
+				/// and receiving custom onion messages is supported.
+				/// 
+				/// # Example
+				/// 
+				/// ```
+				/// # extern crate bitcoin;
+				/// # use bitcoin::hashes::_export::_core::time::Duration;
+				/// # use bitcoin::secp256k1::{PublicKey, Secp256k1, SecretKey};
+				/// # use lightning::chain::keysinterface::{InMemorySigner, KeysManager, KeysInterface};
+				/// # use lightning::ln::msgs::DecodeError;
+				/// # use lightning::ln::peer_handler::IgnoringMessageHandler;
+				/// # use lightning::onion_message::messenger::{Destination, OnionMessenger};
+				/// # use lightning::onion_message::packet::CustomOnionMessageContents;
+				/// # use lightning::onion_message::blinded_route::BlindedRoute;
+				/// # use lightning::util::logger::{Logger, Record};
+				/// # use lightning::util::ser::{Writeable, Writer};
+				/// # use lightning::io;
+				/// # use std::sync::Arc;
+				/// # struct FakeLogger {};
+				/// # impl Logger for FakeLogger {
+				/// #     fn log(&self, record: &Record) { unimplemented!() }
+				/// # }
+				/// # let seed = [42u8; 32];
+				/// # let time = Duration::from_secs(123456);
+				/// # let keys_manager = KeysManager::new(&seed, time.as_secs(), time.subsec_nanos());
+				/// # let logger = Arc::new(FakeLogger {});
+				/// # let node_secret = SecretKey::from_slice(&hex::decode(\"0101010101010101010101010101010101010101010101010101010101010101\").unwrap()[..]).unwrap();
+				/// # let secp_ctx = Secp256k1::new();
+				/// # let hop_node_id1 = PublicKey::from_secret_key(&secp_ctx, &node_secret);
+				/// # let (hop_node_id2, hop_node_id3, hop_node_id4) = (hop_node_id1, hop_node_id1, hop_node_id1);
+				/// # let destination_node_id = hop_node_id1;
+				/// # let your_custom_message_handler = IgnoringMessageHandler {};
+				/// // Create the onion messenger. This must use the same `keys_manager` as is passed to your
+				/// // ChannelManager.
+				/// let onion_messenger = OnionMessenger::new(&keys_manager, logger, your_custom_message_handler);
+				/// 
+				/// # #[derive(Clone)]
+				/// # struct YourCustomMessage {}
+				/// impl Writeable for YourCustomMessage {
+				/// \tfn write<W: Writer>(&self, w: &mut W) -> Result<(), io::Error> {
+				/// \t\t# Ok(())
+				/// \t\t// Write your custom onion message to `w`
+				/// \t}
+				/// }
+				/// impl CustomOnionMessageContents for YourCustomMessage {
+				/// \tfn tlv_type(&self) -> u64 {
+				/// \t\t# let your_custom_message_type = 42;
+				/// \t\tyour_custom_message_type
+				/// \t}
+				/// }
+				/// // Send a custom onion message to a node id.
+				/// let intermediate_hops = [hop_node_id1, hop_node_id2];
+				/// let reply_path = None;
+				/// # let your_custom_message = YourCustomMessage {};
+				/// onion_messenger.send_custom_onion_message(&intermediate_hops, Destination::Node(destination_node_id), your_custom_message, reply_path);
+				/// 
+				/// // Create a blinded route to yourself, for someone to send an onion message to.
+				/// # let your_node_id = hop_node_id1;
+				/// let hops = [hop_node_id3, hop_node_id4, your_node_id];
+				/// let blinded_route = BlindedRoute::new(&hops, &keys_manager, &secp_ctx).unwrap();
+				/// 
+				/// // Send a custom onion message to a blinded route.
+				/// # let intermediate_hops = [hop_node_id1, hop_node_id2];
+				/// let reply_path = None;
+				/// # let your_custom_message = YourCustomMessage {};
+				/// onion_messenger.send_custom_onion_message(&intermediate_hops, Destination::BlindedRoute(blinded_route), your_custom_message, reply_path);
+				/// ```
+				/// 
+				/// [offers]: <https://github.com/lightning/bolts/pull/798>
+				/// [`OnionMessenger`]: crate::onion_message::OnionMessenger
+				public class OnionMessenger: NativeTypeWrapper {
+
+					
+					private static var instanceCounter: UInt = 0
+					internal let instanceNumber: UInt
+
+					internal var cType: LDKOnionMessenger?
+
+					public init(pointer: LDKOnionMessenger) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+					}
+
+					public init(pointer: LDKOnionMessenger, anchor: NativeTypeWrapper) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+						self.dangling = true
+						try! self.addAnchor(anchor: anchor)
+					}
+		
+
+					
+					/// Frees any resources used by the OnionMessenger, if is_owned is set and inner is non-NULL.
+					internal func free() {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = OnionMessenger_free(self.cType!)
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Constructs a new `OnionMessenger` to send, forward, and delegate received onion messages to
+					/// their respective handlers.
+					public init(keysManager: KeysInterface, logger: Logger, customHandler: CustomOnionMessageHandler) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = OnionMessenger_new(keysManager.activate().cType!, logger.activate().cType!, customHandler.activate().cType!)
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = OnionMessenger(pointer: nativeCallResult)
+
+						self.cType = nativeCallResult
+					}
+		
+					/// Send an onion message with contents `message` to `destination`, routing it through `intermediate_nodes`.
+					/// See [`OnionMessenger`] for example usage.
+					/// 
+					/// Note that reply_path (or a relevant inner pointer) may be NULL or all-0s to represent None
+					public func sendCustomOnionMessage(intermediateNodes: [[UInt8]], destination: Destination, msg: CustomOnionMessageContents, replyPath: BlindedRoute) -> Result_NoneSendErrorZ {
+						// native call variable prep
+						
+						let intermediateNodesVector = Vec_PublicKeyZ(array: intermediateNodes)
+				
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKOnionMessenger>) in
+			OnionMessenger_send_custom_onion_message(thisArgPointer, intermediateNodesVector.cType!, destination.cType!, msg.activate().cType!, replyPath.cType!)
+						}
+			
+
+						// cleanup
+						
+						intermediateNodesVector.noOpRetain()
+				
+
+						// return value (do some wrapping)
+						let returnValue = Result_NoneSendErrorZ(pointer: nativeCallResult)
+
+						return returnValue
+					}
+		
+					/// Constructs a new OnionMessageHandler which calls the relevant methods on this_arg.
+					/// This copies the `inner` pointer in this_arg and thus the returned OnionMessageHandler must be freed before this_arg is
+					public func asOnionMessageHandler() -> OnionMessageHandler {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKOnionMessenger>) in
+			OnionMessenger_as_OnionMessageHandler(thisArgPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = NativelyImplementedOnionMessageHandler(pointer: nativeCallResult, anchor: self)
+
+						return returnValue
+					}
+		
+					/// Constructs a new OnionMessageProvider which calls the relevant methods on this_arg.
+					/// This copies the `inner` pointer in this_arg and thus the returned OnionMessageProvider must be freed before this_arg is
+					public func asOnionMessageProvider() -> OnionMessageProvider {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKOnionMessenger>) in
+			OnionMessenger_as_OnionMessageProvider(thisArgPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = NativelyImplementedOnionMessageProvider(pointer: nativeCallResult, anchor: self)
+
+						return returnValue
+					}
+		
+
+					
+					/// Indicates that this is the only struct which contains the same pointer.
+					/// Rust functions which take ownership of an object provided via an argument require
+					/// this to be true and invalidate the object pointed to by inner.
+					public func isOwned() -> Bool {
+						// return value (do some wrapping)
+						let returnValue = self.cType!.is_owned
+
+						return returnValue;
+					}
+		
+
+					internal func dangle() -> OnionMessenger {
+						self.dangling = true
+						return self
+					}
+
+					
+					deinit {
+						if !self.dangling {
+							Bindings.print("Freeing OnionMessenger \(self.instanceNumber).")
+							self.free()
+						} else {
+							Bindings.print("Not freeing OnionMessenger \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
+
+				}
+
+				
+			}
+		
+		

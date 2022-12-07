@@ -1,0 +1,462 @@
+
+				
+			#if SWIFT_PACKAGE
+			import LDKHeaders
+			#endif
+
+			public typealias UserConfig = Bindings.UserConfig
+
+			extension Bindings {
+		
+
+				/// Top-level config which holds ChannelHandshakeLimits and ChannelConfig.
+				/// 
+				/// Default::default() provides sane defaults for most configurations
+				/// (but currently with 0 relay fees!)
+				public class UserConfig: NativeTypeWrapper {
+
+					
+					private static var instanceCounter: UInt = 0
+					internal let instanceNumber: UInt
+
+					internal var cType: LDKUserConfig?
+
+					public init(pointer: LDKUserConfig) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+					}
+
+					public init(pointer: LDKUserConfig, anchor: NativeTypeWrapper) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+						self.dangling = true
+						try! self.addAnchor(anchor: anchor)
+					}
+		
+
+					
+					/// Frees any resources used by the UserConfig, if is_owned is set and inner is non-NULL.
+					internal func free() {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = UserConfig_free(self.cType!)
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Channel handshake config that we propose to our counterparty.
+					public func getChannelHandshakeConfig() -> ChannelHandshakeConfig {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_get_channel_handshake_config(thisPtrPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = ChannelHandshakeConfig(pointer: nativeCallResult)
+
+						return returnValue
+					}
+		
+					/// Channel handshake config that we propose to our counterparty.
+					public func setChannelHandshakeConfig(val: ChannelHandshakeConfig) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_set_channel_handshake_config(thisPtrPointer, val.cType!)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Limits applied to our counterparty's proposed channel handshake config settings.
+					public func getChannelHandshakeLimits() -> ChannelHandshakeLimits {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_get_channel_handshake_limits(thisPtrPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = ChannelHandshakeLimits(pointer: nativeCallResult)
+
+						return returnValue
+					}
+		
+					/// Limits applied to our counterparty's proposed channel handshake config settings.
+					public func setChannelHandshakeLimits(val: ChannelHandshakeLimits) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_set_channel_handshake_limits(thisPtrPointer, val.cType!)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Channel config which affects behavior during channel lifetime.
+					public func getChannelConfig() -> ChannelConfig {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_get_channel_config(thisPtrPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = ChannelConfig(pointer: nativeCallResult)
+
+						return returnValue
+					}
+		
+					/// Channel config which affects behavior during channel lifetime.
+					public func setChannelConfig(val: ChannelConfig) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_set_channel_config(thisPtrPointer, val.cType!)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// If this is set to false, we will reject any HTLCs which were to be forwarded over private
+					/// channels. This prevents us from taking on HTLC-forwarding risk when we intend to run as a
+					/// node which is not online reliably.
+					/// 
+					/// For nodes which are not online reliably, you should set all channels to *not* be announced
+					/// (using [`ChannelHandshakeConfig::announced_channel`] and
+					/// [`ChannelHandshakeLimits::force_announced_channel_preference`]) and set this to false to
+					/// ensure you are not exposed to any forwarding risk.
+					/// 
+					/// Note that because you cannot change a channel's announced state after creation, there is no
+					/// way to disable forwarding on public channels retroactively. Thus, in order to change a node
+					/// from a publicly-announced forwarding node to a private non-forwarding node you must close
+					/// all your channels and open new ones. For privacy, you should also change your node_id
+					/// (swapping all private and public key material for new ones) at that time.
+					/// 
+					/// Default value: false.
+					public func getAcceptForwardsToPrivChannels() -> Bool {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_get_accept_forwards_to_priv_channels(thisPtrPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// If this is set to false, we will reject any HTLCs which were to be forwarded over private
+					/// channels. This prevents us from taking on HTLC-forwarding risk when we intend to run as a
+					/// node which is not online reliably.
+					/// 
+					/// For nodes which are not online reliably, you should set all channels to *not* be announced
+					/// (using [`ChannelHandshakeConfig::announced_channel`] and
+					/// [`ChannelHandshakeLimits::force_announced_channel_preference`]) and set this to false to
+					/// ensure you are not exposed to any forwarding risk.
+					/// 
+					/// Note that because you cannot change a channel's announced state after creation, there is no
+					/// way to disable forwarding on public channels retroactively. Thus, in order to change a node
+					/// from a publicly-announced forwarding node to a private non-forwarding node you must close
+					/// all your channels and open new ones. For privacy, you should also change your node_id
+					/// (swapping all private and public key material for new ones) at that time.
+					/// 
+					/// Default value: false.
+					public func setAcceptForwardsToPrivChannels(val: Bool) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_set_accept_forwards_to_priv_channels(thisPtrPointer, val)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// If this is set to false, we do not accept inbound requests to open a new channel.
+					/// Default value: true.
+					public func getAcceptInboundChannels() -> Bool {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_get_accept_inbound_channels(thisPtrPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// If this is set to false, we do not accept inbound requests to open a new channel.
+					/// Default value: true.
+					public func setAcceptInboundChannels(val: Bool) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_set_accept_inbound_channels(thisPtrPointer, val)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// If this is set to true, the user needs to manually accept inbound requests to open a new
+					/// channel.
+					/// 
+					/// When set to true, [`Event::OpenChannelRequest`] will be triggered once a request to open a
+					/// new inbound channel is received through a [`msgs::OpenChannel`] message. In that case, a
+					/// [`msgs::AcceptChannel`] message will not be sent back to the counterparty node unless the
+					/// user explicitly chooses to accept the request.
+					/// 
+					/// Default value: false.
+					/// 
+					/// [`Event::OpenChannelRequest`]: crate::util::events::Event::OpenChannelRequest
+					/// [`msgs::OpenChannel`]: crate::ln::msgs::OpenChannel
+					/// [`msgs::AcceptChannel`]: crate::ln::msgs::AcceptChannel
+					public func getManuallyAcceptInboundChannels() -> Bool {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_get_manually_accept_inbound_channels(thisPtrPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// If this is set to true, the user needs to manually accept inbound requests to open a new
+					/// channel.
+					/// 
+					/// When set to true, [`Event::OpenChannelRequest`] will be triggered once a request to open a
+					/// new inbound channel is received through a [`msgs::OpenChannel`] message. In that case, a
+					/// [`msgs::AcceptChannel`] message will not be sent back to the counterparty node unless the
+					/// user explicitly chooses to accept the request.
+					/// 
+					/// Default value: false.
+					/// 
+					/// [`Event::OpenChannelRequest`]: crate::util::events::Event::OpenChannelRequest
+					/// [`msgs::OpenChannel`]: crate::ln::msgs::OpenChannel
+					/// [`msgs::AcceptChannel`]: crate::ln::msgs::AcceptChannel
+					public func setManuallyAcceptInboundChannels(val: Bool) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_set_manually_accept_inbound_channels(thisPtrPointer, val)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Constructs a new UserConfig given each field
+					public init(channelHandshakeConfigArg: ChannelHandshakeConfig, channelHandshakeLimitsArg: ChannelHandshakeLimits, channelConfigArg: ChannelConfig, acceptForwardsToPrivChannelsArg: Bool, acceptInboundChannelsArg: Bool, manuallyAcceptInboundChannelsArg: Bool) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = UserConfig_new(channelHandshakeConfigArg.cType!, channelHandshakeLimitsArg.cType!, channelConfigArg.cType!, acceptForwardsToPrivChannelsArg, acceptInboundChannelsArg, manuallyAcceptInboundChannelsArg)
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = UserConfig(pointer: nativeCallResult)
+
+						self.cType = nativeCallResult
+					}
+		
+					/// Creates a copy of the UserConfig
+					internal func clone() -> UserConfig {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKUserConfig>) in
+			UserConfig_clone(origPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = UserConfig(pointer: nativeCallResult)
+
+						return returnValue
+					}
+		
+					/// Creates a "default" UserConfig. See struct and individual field documentaiton for details on which values are used.
+					public init() {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = UserConfig_default()
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = UserConfig(pointer: nativeCallResult)
+
+						self.cType = nativeCallResult
+					}
+		
+
+					
+					/// Indicates that this is the only struct which contains the same pointer.
+					/// Rust functions which take ownership of an object provided via an argument require
+					/// this to be true and invalidate the object pointed to by inner.
+					public func isOwned() -> Bool {
+						// return value (do some wrapping)
+						let returnValue = self.cType!.is_owned
+
+						return returnValue;
+					}
+		
+
+					internal func dangle() -> UserConfig {
+						self.dangling = true
+						return self
+					}
+
+					
+					internal func danglingClone() -> UserConfig {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if !self.dangling {
+							Bindings.print("Freeing UserConfig \(self.instanceNumber).")
+							self.free()
+						} else {
+							Bindings.print("Not freeing UserConfig \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
+
+				}
+
+				
+			}
+		
+		

@@ -1,0 +1,256 @@
+
+				
+			#if SWIFT_PACKAGE
+			import LDKHeaders
+			#endif
+
+			public typealias CounterpartyChannelTransactionParameters = Bindings.CounterpartyChannelTransactionParameters
+
+			extension Bindings {
+		
+
+				/// Late-bound per-channel counterparty data used to build transactions.
+				public class CounterpartyChannelTransactionParameters: NativeTypeWrapper {
+
+					
+					private static var instanceCounter: UInt = 0
+					internal let instanceNumber: UInt
+
+					internal var cType: LDKCounterpartyChannelTransactionParameters?
+
+					public init(pointer: LDKCounterpartyChannelTransactionParameters) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+					}
+
+					public init(pointer: LDKCounterpartyChannelTransactionParameters, anchor: NativeTypeWrapper) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+						self.dangling = true
+						try! self.addAnchor(anchor: anchor)
+					}
+		
+
+					
+					/// Frees any resources used by the CounterpartyChannelTransactionParameters, if is_owned is set and inner is non-NULL.
+					internal func free() {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = CounterpartyChannelTransactionParameters_free(self.cType!)
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Counter-party public keys
+					public func getPubkeys() -> ChannelPublicKeys {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
+			CounterpartyChannelTransactionParameters_get_pubkeys(thisPtrPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = ChannelPublicKeys(pointer: nativeCallResult)
+
+						return returnValue
+					}
+		
+					/// Counter-party public keys
+					public func setPubkeys(val: ChannelPublicKeys) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
+			CounterpartyChannelTransactionParameters_set_pubkeys(thisPtrPointer, val.cType!)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// The contest delay selected by the counterparty, which applies to holder-broadcast transactions
+					public func getSelectedContestDelay() -> UInt16 {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
+			CounterpartyChannelTransactionParameters_get_selected_contest_delay(thisPtrPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// The contest delay selected by the counterparty, which applies to holder-broadcast transactions
+					public func setSelectedContestDelay(val: UInt16) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
+			CounterpartyChannelTransactionParameters_set_selected_contest_delay(thisPtrPointer, val)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Constructs a new CounterpartyChannelTransactionParameters given each field
+					public init(pubkeysArg: ChannelPublicKeys, selectedContestDelayArg: UInt16) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = CounterpartyChannelTransactionParameters_new(pubkeysArg.cType!, selectedContestDelayArg)
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = CounterpartyChannelTransactionParameters(pointer: nativeCallResult)
+
+						self.cType = nativeCallResult
+					}
+		
+					/// Creates a copy of the CounterpartyChannelTransactionParameters
+					internal func clone() -> CounterpartyChannelTransactionParameters {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
+			CounterpartyChannelTransactionParameters_clone(origPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = CounterpartyChannelTransactionParameters(pointer: nativeCallResult)
+
+						return returnValue
+					}
+		
+					/// Serialize the CounterpartyChannelTransactionParameters object into a byte array which can be read by CounterpartyChannelTransactionParameters_read
+					public func write() -> [UInt8] {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
+			CounterpartyChannelTransactionParameters_write(objPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+
+						return returnValue
+					}
+		
+					/// Read a CounterpartyChannelTransactionParameters from a byte array, created by CounterpartyChannelTransactionParameters_write
+					public class func read(ser: [UInt8]) -> Result_CounterpartyChannelTransactionParametersDecodeErrorZ {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = CounterpartyChannelTransactionParameters_read(ser.cType!)
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = Result_CounterpartyChannelTransactionParametersDecodeErrorZ(pointer: nativeCallResult)
+
+						return returnValue
+					}
+		
+
+					
+					/// Indicates that this is the only struct which contains the same pointer.
+					/// Rust functions which take ownership of an object provided via an argument require
+					/// this to be true and invalidate the object pointed to by inner.
+					public func isOwned() -> Bool {
+						// return value (do some wrapping)
+						let returnValue = self.cType!.is_owned
+
+						return returnValue;
+					}
+		
+
+					internal func dangle() -> CounterpartyChannelTransactionParameters {
+						self.dangling = true
+						return self
+					}
+
+					
+					internal func danglingClone() -> CounterpartyChannelTransactionParameters {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if !self.dangling {
+							Bindings.print("Freeing CounterpartyChannelTransactionParameters \(self.instanceNumber).")
+							self.free()
+						} else {
+							Bindings.print("Not freeing CounterpartyChannelTransactionParameters \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
+
+				}
+
+				
+			}
+		
+		

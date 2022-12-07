@@ -1,0 +1,152 @@
+
+			#if SWIFT_PACKAGE
+			import LDKHeaders
+			#endif
+
+			internal typealias Tuple_RawInvoice_u832InvoiceSignatureZ = Bindings.Tuple_RawInvoice_u832InvoiceSignatureZ
+
+			extension Bindings {
+
+				/// A tuple of 3 elements. See the individual fields for the types contained.
+				internal class Tuple_RawInvoice_u832InvoiceSignatureZ: NativeTypeWrapper {
+
+					
+					private static var instanceCounter: UInt = 0
+					internal let instanceNumber: UInt
+
+					internal var cType: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ?
+
+					public init(pointer: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+					}
+
+					public init(pointer: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ, anchor: NativeTypeWrapper) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+						self.dangling = true
+						try! self.addAnchor(anchor: anchor)
+					}
+		
+
+					internal convenience init(tuple: (RawInvoice, [UInt8], InvoiceSignature)) {
+						self.init(a: tuple.0, b: tuple.1, c: tuple.2)
+					}
+
+					
+					/// Creates a new tuple which has the same data as `orig`
+					/// but with all dynamically-allocated buffers duplicated in new buffers.
+					internal func clone() -> Tuple_RawInvoice_u832InvoiceSignatureZ {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ>) in
+			C3Tuple_RawInvoice_u832InvoiceSignatureZ_clone(origPointer)
+						}
+			
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(pointer: nativeCallResult).getValue()
+
+						return returnValue
+					}
+		
+					/// Creates a new C3Tuple_RawInvoice_u832InvoiceSignatureZ from the contained elements.
+					public init(a: RawInvoice, b: [UInt8], c: InvoiceSignature) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = C3Tuple_RawInvoice_u832InvoiceSignatureZ_new(a.cType!, b.cType!, c.cType!)
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(pointer: nativeCallResult).getValue()
+
+						self.cType = nativeCallResult
+					}
+		
+					/// Frees any resources used by the C3Tuple_RawInvoice_u832InvoiceSignatureZ.
+					internal func free() {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = C3Tuple_RawInvoice_u832InvoiceSignatureZ_free(self.cType!)
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+
+					public func getValue() -> (RawInvoice, [UInt8], InvoiceSignature) {
+						return (self.getA(), self.getB(), self.getC())
+					}
+
+					
+					/// The element at position 0
+					public func getA() -> RawInvoice {
+						// return value (do some wrapping)
+						let returnValue = RawInvoice(pointer: self.cType!.a)
+
+						return returnValue;
+					}
+		
+					/// The element at position 1
+					public func getB() -> [UInt8] {
+						// return value (do some wrapping)
+						let returnValue = ThirtyTwoBytes(pointer: self.cType!.b)
+
+						return returnValue;
+					}
+		
+					/// The element at position 2
+					public func getC() -> InvoiceSignature {
+						// return value (do some wrapping)
+						let returnValue = InvoiceSignature(pointer: self.cType!.c)
+
+						return returnValue;
+					}
+		
+
+					internal func dangle() -> Tuple_RawInvoice_u832InvoiceSignatureZ {
+						self.dangling = true
+						return self
+					}
+
+					
+					internal func danglingClone() -> Tuple_RawInvoice_u832InvoiceSignatureZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if !self.dangling {
+							Bindings.print("Freeing Tuple_RawInvoice_u832InvoiceSignatureZ \(self.instanceNumber).")
+							self.free()
+						} else {
+							Bindings.print("Not freeing Tuple_RawInvoice_u832InvoiceSignatureZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
+
+				}
+			}
+		

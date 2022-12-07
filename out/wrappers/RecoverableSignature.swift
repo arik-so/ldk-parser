@@ -1,0 +1,62 @@
+
+			#if SWIFT_PACKAGE
+			import LDKHeaders
+			#endif
+
+			internal typealias RecoverableSignature = Bindings.RecoverableSignature
+
+			extension Bindings {
+
+				/// Represents a secp256k1 signature serialized as two 32-byte numbers as well as a tag which
+				/// allows recovering the exact public key which created the signature given the message.
+				internal class RecoverableSignature: NativeTypeWrapper {
+
+					
+					private static var instanceCounter: UInt = 0
+					internal let instanceNumber: UInt
+
+					internal var cType: LDKRecoverableSignature?
+
+					public init(pointer: LDKRecoverableSignature) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+					}
+
+					public init(pointer: LDKRecoverableSignature, anchor: NativeTypeWrapper) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+						self.cType = pointer
+						super.init(conflictAvoidingVariableName: 0)
+						self.dangling = true
+						try! self.addAnchor(anchor: anchor)
+					}
+		
+
+					public init(value: [UInt8]) {
+						Self.instanceCounter += 1
+						self.instanceNumber = Self.instanceCounter
+
+						self.cType = LDKRecoverableSignature(serialized_form: Bindings.arrayToUInt8Tuple68(value))
+
+						super.init(conflictAvoidingVariableName: 0)
+					}
+
+					
+
+					public func getValue() -> [UInt8] {
+						return Bindings.UInt8Tuple68ToArray(self.cType!)
+					}
+
+					internal func dangle() -> RecoverableSignature {
+        				self.dangling = true
+						return self
+					}
+
+										
+
+				}
+
+			}
+		
