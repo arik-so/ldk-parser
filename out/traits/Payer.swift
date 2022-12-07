@@ -73,7 +73,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = swiftCallbackResult.cType!
+							let returnValue = Vec_ChannelDetailsZ(array: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}

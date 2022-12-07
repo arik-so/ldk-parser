@@ -323,8 +323,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 				// declare a type for it and generate some auxiliary conversion and typealiasing
 				// artifacts
 				const tupleTypeName = this.getRawTypeName(type);
-				preparedArgument.methodCallWrapperPrefix = `Bindings.${tupleTypeName}ToArray(tuple: `
-				preparedArgument.methodCallWrapperSuffix = `)`
+				preparedArgument.methodCallWrapperPrefix = `Bindings.${tupleTypeName}ToArray(tuple: `;
+				preparedArgument.methodCallWrapperSuffix = `)`;
 			}
 		} else if (type instanceof RustPrimitiveEnum) {
 			preparedArgument.methodCallWrapperPrefix += `${this.swiftTypeName(type)}(value: `;
@@ -369,7 +369,10 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		// these type elision helpers only apply outside the context of the very eliding type
 
 		let type = returnType.type;
-		if (type instanceof RustNullableOption || type instanceof RustVector || type instanceof RustTaggedValueEnum || type instanceof RustResult) {
+		if (type instanceof RustVector) {
+			preparedReturnValue.wrapperPrefix = `${this.swiftTypeName(type)}(array: `;
+			preparedReturnValue.wrapperSuffix = `).dangle().cType!`;
+		} else if (type instanceof RustNullableOption || type instanceof RustTaggedValueEnum || type instanceof RustResult) {
 			preparedReturnValue.wrapperSuffix = '.cType!';
 		} else if (type instanceof RustTrait) {
 			preparedReturnValue.wrapperSuffix = '.activate().cType!';

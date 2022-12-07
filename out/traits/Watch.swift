@@ -109,7 +109,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = swiftCallbackResult.cType!
+							let returnValue = Vec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ(array: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}

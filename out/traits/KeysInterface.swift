@@ -109,7 +109,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = swiftCallbackResult.cType!
+							let returnValue = Vec_u8Z(array: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}

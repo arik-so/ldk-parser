@@ -155,7 +155,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = swiftCallbackResult.cType!
+							let returnValue = Vec_TxidZ(array: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}

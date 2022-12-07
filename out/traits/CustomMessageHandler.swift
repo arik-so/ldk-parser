@@ -73,7 +73,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = swiftCallbackResult.cType!
+							let returnValue = Vec_C2Tuple_PublicKeyTypeZZ(array: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}
