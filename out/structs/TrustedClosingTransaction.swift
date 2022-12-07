@@ -23,17 +23,17 @@
 
 					internal var cType: LDKTrustedClosingTransaction?
 
-					public init(pointer: LDKTrustedClosingTransaction) {
+					public init(cType: LDKTrustedClosingTransaction) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKTrustedClosingTransaction, anchor: NativeTypeWrapper) {
+					public init(cType: LDKTrustedClosingTransaction, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -74,7 +74,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Transaction(pointer: nativeCallResult)
+						let returnValue = Transaction(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -97,7 +97,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -125,7 +125,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Signature(pointer: nativeCallResult)
+						let returnValue = Signature(cType: nativeCallResult)
 
 						return returnValue
 					}

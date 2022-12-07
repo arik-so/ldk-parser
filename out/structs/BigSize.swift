@@ -24,17 +24,17 @@
 
 					internal var cType: LDKBigSize?
 
-					public init(pointer: LDKBigSize) {
+					public init(cType: LDKBigSize) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKBigSize, anchor: NativeTypeWrapper) {
+					public init(cType: LDKBigSize, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -113,7 +113,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BigSize(pointer: nativeCallResult)
+						let returnValue = BigSize(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

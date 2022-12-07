@@ -35,17 +35,17 @@
 
 					internal var cType: LDKFilter?
 
-					public init(pointer: LDKFilter) {
+					public init(cType: LDKFilter) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKFilter, anchor: NativeTypeWrapper) {
+					public init(cType: LDKFilter, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -73,7 +73,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.registerTx(txid: txidPointee, scriptPubkey: u8slice(pointer: script_pubkey).getValue())
+							let swiftCallbackResult = instance.registerTx(txid: txidPointee, scriptPubkey: u8slice(cType: script_pubkey).getValue())
 
 							// cleanup
 							
@@ -91,7 +91,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.registerOutput(output: WatchedOutput(pointer: output))
+							let swiftCallbackResult = instance.registerOutput(output: WatchedOutput(cType: output))
 
 							// cleanup
 							
@@ -198,7 +198,7 @@
 					
 					/// Registers interest in a transaction with `txid` and having an output with `script_pubkey` as
 					/// a spending condition.
-					public func registerTx(txid: [UInt8]?, scriptPubkey: [UInt8]) {
+					override func registerTx(txid: [UInt8]?, scriptPubkey: [UInt8]) {
 						// native call variable prep
 						
 						let tupledTxid = Bindings.arrayToUInt8Tuple32(array: txid)
@@ -226,7 +226,7 @@
 					/// to ensure that also dependent output spents within an already connected block are correctly
 					/// handled, e.g., by re-scanning the block in question whenever new outputs have been
 					/// registered mid-processing.
-					public func registerOutput(output: WatchedOutput) {
+					override func registerOutput(output: WatchedOutput) {
 						// native call variable prep
 						
 
@@ -244,7 +244,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

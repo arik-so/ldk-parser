@@ -26,17 +26,17 @@
 
 					internal var cType: LDKChainMonitor?
 
-					public init(pointer: LDKChainMonitor) {
+					public init(cType: LDKChainMonitor) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChainMonitor, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChainMonitor, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -81,7 +81,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChainMonitor(pointer: nativeCallResult)
+						let returnValue = ChainMonitor(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -114,7 +114,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Vec_BalanceZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_BalanceZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -139,7 +139,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_LockedChannelMonitorNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_LockedChannelMonitorNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -163,7 +163,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_OutPointZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_OutPointZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -196,7 +196,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -218,7 +218,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedListen(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedListen(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -240,7 +240,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedConfirm(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedConfirm(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -262,7 +262,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedWatch(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedWatch(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -284,7 +284,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedEventsProvider(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedEventsProvider(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}

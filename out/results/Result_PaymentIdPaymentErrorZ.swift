@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_PaymentIdPaymentErrorZ?
 
-					public init(pointer: LDKCResult_PaymentIdPaymentErrorZ) {
+					public init(cType: LDKCResult_PaymentIdPaymentErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_PaymentIdPaymentErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_PaymentIdPaymentErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,14 +116,14 @@
 
 					public func getError() -> PaymentError? {
 						if self.cType?.result_ok == false {
-							return PaymentError(pointer: self.cType!.contents.err.pointee)
+							return PaymentError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
-							return ThirtyTwoBytes(pointer: self.cType!.contents.result.pointee)
+							return ThirtyTwoBytes(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

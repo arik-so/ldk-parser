@@ -19,17 +19,17 @@
 
 					internal var cType: LDKDirectedChannelInfo?
 
-					public init(pointer: LDKDirectedChannelInfo) {
+					public init(cType: LDKDirectedChannelInfo) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKDirectedChannelInfo, anchor: NativeTypeWrapper) {
+					public init(cType: LDKDirectedChannelInfo, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -70,7 +70,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = DirectedChannelInfo(pointer: nativeCallResult)
+						let returnValue = DirectedChannelInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -91,7 +91,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelInfo(pointer: nativeCallResult)
+						let returnValue = ChannelInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -127,7 +127,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdateInfo(pointer: nativeCallResult)
+						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -173,7 +173,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = EffectiveCapacity(pointer: nativeCallResult)
+						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
 						return returnValue
 					}

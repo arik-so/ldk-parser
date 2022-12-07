@@ -18,17 +18,17 @@
 
 					internal var cType: LDKPaymentSendFailure?
 
-					public init(pointer: LDKPaymentSendFailure) {
+					public init(cType: LDKPaymentSendFailure) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPaymentSendFailure, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPaymentSendFailure, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -126,7 +126,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PaymentSendFailure(pointer: nativeCallResult)
+						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -143,7 +143,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PaymentSendFailure(pointer: nativeCallResult)
+						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -164,7 +164,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = PaymentSendFailure(pointer: nativeCallResult)
+						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -185,7 +185,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = PaymentSendFailure(pointer: nativeCallResult)
+						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -206,7 +206,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = PaymentSendFailure(pointer: nativeCallResult)
+						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -218,7 +218,7 @@
 							return nil
 						}
 
-						return APIError(pointer: self.cType!.parameter_error)
+						return APIError(cType: self.cType!.parameter_error)
 					}
 			
 					public func getValueAsPathParameterError() -> [Result_NoneAPIErrorZ]? {
@@ -226,7 +226,7 @@
 							return nil
 						}
 
-						return Vec_CResult_NoneAPIErrorZZ(pointer: self.cType!.path_parameter_error).getValue()
+						return Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.path_parameter_error).getValue()
 					}
 			
 					public func getValueAsAllFailedRetrySafe() -> [APIError]? {
@@ -234,7 +234,7 @@
 							return nil
 						}
 
-						return Vec_APIErrorZ(pointer: self.cType!.all_failed_retry_safe).getValue()
+						return Vec_APIErrorZ(cType: self.cType!.all_failed_retry_safe).getValue()
 					}
 			
 					public func getValueAsPartialFailure() -> PartialFailure? {
@@ -242,7 +242,7 @@
 							return nil
 						}
 
-						return PaymentSendFailure_LDKPartialFailure_Body(pointer: self.cType!.partial_failure)
+						return PaymentSendFailure_LDKPartialFailure_Body(cType: self.cType!.partial_failure)
 					}
 			
 
@@ -280,17 +280,17 @@
 
 						internal var cType: LDKPaymentSendFailure_LDKPartialFailure_Body?
 
-						fileprivate init(pointer: LDKPaymentSendFailure_LDKPartialFailure_Body) {
+						fileprivate init(cType: LDKPaymentSendFailure_LDKPartialFailure_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKPaymentSendFailure_LDKPartialFailure_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKPaymentSendFailure_LDKPartialFailure_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -303,7 +303,7 @@
 						/// The errors themselves, in the same order as the route hops.
 						public func getResults() -> [Result_NoneAPIErrorZ] {
 							// return value (do some wrapping)
-							let returnValue = Vec_CResult_NoneAPIErrorZZ(pointer: self.cType!.results).getValue()
+							let returnValue = Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.results).getValue()
 
 							return returnValue;
 						}
@@ -315,7 +315,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getFailedPathsRetry() -> RouteParameters {
 							// return value (do some wrapping)
-							let returnValue = RouteParameters(pointer: self.cType!.failed_paths_retry)
+							let returnValue = RouteParameters(cType: self.cType!.failed_paths_retry)
 
 							return returnValue;
 						}
@@ -323,7 +323,7 @@
 						/// The payment id for the payment, which is now at least partially pending.
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id)
 
 							return returnValue;
 						}

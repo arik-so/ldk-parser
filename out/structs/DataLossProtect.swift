@@ -21,17 +21,17 @@
 
 					internal var cType: LDKDataLossProtect?
 
-					public init(pointer: LDKDataLossProtect) {
+					public init(cType: LDKDataLossProtect) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKDataLossProtect, anchor: NativeTypeWrapper) {
+					public init(cType: LDKDataLossProtect, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -94,7 +94,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -132,7 +132,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = DataLossProtect(pointer: nativeCallResult)
+						let returnValue = DataLossProtect(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -153,7 +153,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = DataLossProtect(pointer: nativeCallResult)
+						let returnValue = DataLossProtect(cType: nativeCallResult)
 
 						return returnValue
 					}

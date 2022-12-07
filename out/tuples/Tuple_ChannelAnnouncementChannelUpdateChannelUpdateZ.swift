@@ -16,17 +16,17 @@
 
 					internal var cType: LDKC3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ?
 
-					public init(pointer: LDKC3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ) {
+					public init(cType: LDKC3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKC3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKC3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(cType: nativeCallResult).getValue()
 
 						self.cType = nativeCallResult
 					}
@@ -103,7 +103,7 @@
 					/// The element at position 0
 					public func getA() -> ChannelAnnouncement {
 						// return value (do some wrapping)
-						let returnValue = ChannelAnnouncement(pointer: self.cType!.a)
+						let returnValue = ChannelAnnouncement(cType: self.cType!.a)
 
 						return returnValue;
 					}
@@ -111,7 +111,7 @@
 					/// The element at position 1
 					public func getB() -> ChannelUpdate {
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdate(pointer: self.cType!.b)
+						let returnValue = ChannelUpdate(cType: self.cType!.b)
 
 						return returnValue;
 					}
@@ -119,7 +119,7 @@
 					/// The element at position 2
 					public func getC() -> ChannelUpdate {
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdate(pointer: self.cType!.c)
+						let returnValue = ChannelUpdate(cType: self.cType!.c)
 
 						return returnValue;
 					}

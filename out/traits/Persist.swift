@@ -35,17 +35,17 @@
 
 					internal var cType: LDKPersist?
 
-					public init(pointer: LDKPersist) {
+					public init(cType: LDKPersist) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPersist, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPersist, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -68,7 +68,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.persistNewChannel(channelId: OutPoint(pointer: channel_id), data: ChannelMonitor(pointer: data.pointee), updateId: MonitorUpdateId(pointer: update_id))
+							let swiftCallbackResult = instance.persistNewChannel(channelId: OutPoint(cType: channel_id), data: ChannelMonitor(cType: data.pointee), updateId: MonitorUpdateId(cType: update_id))
 
 							// cleanup
 							
@@ -86,7 +86,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.updatePersistedChannel(channelId: OutPoint(pointer: channel_id), update: ChannelMonitorUpdate(pointer: update.pointee), data: ChannelMonitor(pointer: data.pointee), updateId: MonitorUpdateId(pointer: update_id))
+							let swiftCallbackResult = instance.updatePersistedChannel(channelId: OutPoint(cType: channel_id), update: ChannelMonitorUpdate(cType: update.pointee), data: ChannelMonitor(cType: data.pointee), updateId: MonitorUpdateId(cType: update_id))
 
 							// cleanup
 							
@@ -248,7 +248,7 @@
 					/// 
 					/// [`ChannelManager`]: crate::ln::channelmanager::ChannelManager
 					/// [`Writeable::write`]: crate::util::ser::Writeable::write
-					public func persistNewChannel(channelId: OutPoint, data: ChannelMonitor, updateId: MonitorUpdateId) -> ChannelMonitorUpdateStatus {
+					override func persistNewChannel(channelId: OutPoint, data: ChannelMonitor, updateId: MonitorUpdateId) -> ChannelMonitorUpdateStatus {
 						// native call variable prep
 						
 
@@ -303,7 +303,7 @@
 					/// [`Writeable::write`]: crate::util::ser::Writeable::write
 					/// 
 					/// Note that update (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public func updatePersistedChannel(channelId: OutPoint, update: ChannelMonitorUpdate, data: ChannelMonitor, updateId: MonitorUpdateId) -> ChannelMonitorUpdateStatus {
+					override func updatePersistedChannel(channelId: OutPoint, update: ChannelMonitorUpdate, data: ChannelMonitor, updateId: MonitorUpdateId) -> ChannelMonitorUpdateStatus {
 						// native call variable prep
 						
 
@@ -329,7 +329,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

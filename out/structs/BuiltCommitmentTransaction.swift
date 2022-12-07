@@ -18,17 +18,17 @@
 
 					internal var cType: LDKBuiltCommitmentTransaction?
 
-					public init(pointer: LDKBuiltCommitmentTransaction) {
+					public init(cType: LDKBuiltCommitmentTransaction) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKBuiltCommitmentTransaction, anchor: NativeTypeWrapper) {
+					public init(cType: LDKBuiltCommitmentTransaction, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Transaction(pointer: nativeCallResult)
+						let returnValue = Transaction(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -131,7 +131,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BuiltCommitmentTransaction(pointer: nativeCallResult)
+						let returnValue = BuiltCommitmentTransaction(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -152,7 +152,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BuiltCommitmentTransaction(pointer: nativeCallResult)
+						let returnValue = BuiltCommitmentTransaction(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -173,7 +173,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -190,7 +190,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_BuiltCommitmentTransactionDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_BuiltCommitmentTransactionDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -213,7 +213,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -241,7 +241,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Signature(pointer: nativeCallResult)
+						let returnValue = Signature(cType: nativeCallResult)
 
 						return returnValue
 					}

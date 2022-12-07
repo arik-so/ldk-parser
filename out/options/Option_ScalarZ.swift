@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCOption_ScalarZ?
 
-					public init(pointer: LDKCOption_ScalarZ) {
+					public init(cType: LDKCOption_ScalarZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCOption_ScalarZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCOption_ScalarZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -70,7 +70,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_ScalarZ_Some {
-							return BigEndianScalar(pointer: self.cType!.some)
+							return BigEndianScalar(cType: self.cType!.some)
 						}
 						assert(false, "invalid option enum value")
 						return nil

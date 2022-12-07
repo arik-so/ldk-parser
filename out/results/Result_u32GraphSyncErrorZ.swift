@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_u32GraphSyncErrorZ?
 
-					public init(pointer: LDKCResult_u32GraphSyncErrorZ) {
+					public init(cType: LDKCResult_u32GraphSyncErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_u32GraphSyncErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_u32GraphSyncErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_u32GraphSyncErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_u32GraphSyncErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_u32GraphSyncErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_u32GraphSyncErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -94,7 +94,7 @@
 
 					public func getError() -> GraphSyncError? {
 						if self.cType?.result_ok == false {
-							return GraphSyncError(pointer: self.cType!.contents.err.pointee)
+							return GraphSyncError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}

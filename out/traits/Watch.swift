@@ -34,17 +34,17 @@
 
 					internal var cType: LDKWatch?
 
-					public init(pointer: LDKWatch) {
+					public init(cType: LDKWatch) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKWatch, anchor: NativeTypeWrapper) {
+					public init(cType: LDKWatch, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -67,7 +67,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.watchChannel(fundingTxo: OutPoint(pointer: funding_txo), monitor: ChannelMonitor(pointer: monitor))
+							let swiftCallbackResult = instance.watchChannel(fundingTxo: OutPoint(cType: funding_txo), monitor: ChannelMonitor(cType: monitor))
 
 							// cleanup
 							
@@ -85,7 +85,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.updateChannel(fundingTxo: OutPoint(pointer: funding_txo), update: ChannelMonitorUpdate(pointer: update))
+							let swiftCallbackResult = instance.updateChannel(fundingTxo: OutPoint(cType: funding_txo), update: ChannelMonitorUpdate(cType: update))
 
 							// cleanup
 							
@@ -245,7 +245,7 @@
 					/// [`get_outputs_to_watch`]: channelmonitor::ChannelMonitor::get_outputs_to_watch
 					/// [`block_connected`]: channelmonitor::ChannelMonitor::block_connected
 					/// [`block_disconnected`]: channelmonitor::ChannelMonitor::block_disconnected
-					public func watchChannel(fundingTxo: OutPoint, monitor: ChannelMonitor) -> ChannelMonitorUpdateStatus {
+					override func watchChannel(fundingTxo: OutPoint, monitor: ChannelMonitor) -> ChannelMonitorUpdateStatus {
 						// native call variable prep
 						
 
@@ -267,7 +267,7 @@
 					/// [`ChannelMonitorUpdateStatus`] for invariants around returning an error.
 					/// 
 					/// [`update_monitor`]: channelmonitor::ChannelMonitor::update_monitor
-					public func updateChannel(fundingTxo: OutPoint, update: ChannelMonitorUpdate) -> ChannelMonitorUpdateStatus {
+					override func updateChannel(fundingTxo: OutPoint, update: ChannelMonitorUpdate) -> ChannelMonitorUpdateStatus {
 						// native call variable prep
 						
 
@@ -292,7 +292,7 @@
 					/// 
 					/// For details on asynchronous [`ChannelMonitor`] updating and returning
 					/// [`MonitorEvent::Completed`] here, see [`ChannelMonitorUpdateStatus::InProgress`].
-					public func releasePendingMonitorEvents() -> [(OutPoint, [MonitorEvent], [UInt8])] {
+					override func releasePendingMonitorEvents() -> [(OutPoint, [MonitorEvent], [UInt8])] {
 						// native call variable prep
 						
 
@@ -303,14 +303,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

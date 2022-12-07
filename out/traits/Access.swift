@@ -17,17 +17,17 @@
 
 					internal var cType: LDKAccess?
 
-					public init(pointer: LDKAccess) {
+					public init(cType: LDKAccess) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKAccess, anchor: NativeTypeWrapper) {
+					public init(cType: LDKAccess, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -156,7 +156,7 @@
 					/// is unknown.
 					/// 
 					/// [`short_channel_id`]: https://github.com/lightning/bolts/blob/master/07-routing-gossip.md#definition-of-short_channel_id
-					public func getUtxo(genesisHash: [UInt8]?, shortChannelId: UInt64) -> Result_TxOutAccessErrorZ {
+					override func getUtxo(genesisHash: [UInt8]?, shortChannelId: UInt64) -> Result_TxOutAccessErrorZ {
 						// native call variable prep
 						
 						let tupledGenesisHash = Bindings.arrayToUInt8Tuple32(array: genesisHash)
@@ -173,14 +173,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_TxOutAccessErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_TxOutAccessErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

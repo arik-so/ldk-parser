@@ -20,17 +20,17 @@
 
 					internal var cType: LDKSign?
 
-					public init(pointer: LDKSign) {
+					public init(cType: LDKSign) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKSign, anchor: NativeTypeWrapper) {
+					public init(cType: LDKSign, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -126,7 +126,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedSign(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedSign(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -153,7 +153,7 @@
 					/// Implementation of BaseSign for this object.
 					public func getBaseSign() -> BaseSign {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBaseSign(pointer: self.cType!.BaseSign, anchor: self)
+						let returnValue = NativelyImplementedBaseSign(cType: self.cType!.BaseSign, anchor: self)
 
 						return returnValue;
 					}
@@ -177,7 +177,7 @@
 				public class NativelyImplementedSign: Sign {
 					
 					/// Serialize the object into a byte array
-					public func write() -> [UInt8] {
+					override func write() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -188,14 +188,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

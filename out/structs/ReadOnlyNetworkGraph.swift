@@ -18,17 +18,17 @@
 
 					internal var cType: LDKReadOnlyNetworkGraph?
 
-					public init(pointer: LDKReadOnlyNetworkGraph) {
+					public init(cType: LDKReadOnlyNetworkGraph) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKReadOnlyNetworkGraph, anchor: NativeTypeWrapper) {
+					public init(cType: LDKReadOnlyNetworkGraph, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -84,7 +84,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ChannelInfo(pointer: nativeCallResult)
+						let returnValue = ChannelInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -105,7 +105,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u64Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u64Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -145,7 +145,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = NodeInfo(pointer: nativeCallResult)
+						let returnValue = NodeInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -166,7 +166,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_NodeIdZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_NodeIdZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -189,7 +189,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_CVec_NetAddressZZ(pointer: nativeCallResult).getValue()
+						let returnValue = Option_CVec_NetAddressZZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

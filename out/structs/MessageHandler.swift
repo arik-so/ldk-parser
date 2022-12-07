@@ -18,17 +18,17 @@
 
 					internal var cType: LDKMessageHandler?
 
-					public init(pointer: LDKMessageHandler) {
+					public init(cType: LDKMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKMessageHandler, anchor: NativeTypeWrapper) {
+					public init(cType: LDKMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedChannelMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -120,7 +120,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedRoutingMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -166,7 +166,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -205,7 +205,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageHandler(pointer: nativeCallResult)
+						let returnValue = MessageHandler(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

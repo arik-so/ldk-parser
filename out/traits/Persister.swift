@@ -16,17 +16,17 @@
 
 					internal var cType: LDKPersister?
 
-					public init(pointer: LDKPersister) {
+					public init(cType: LDKPersister) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPersister, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPersister, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -49,7 +49,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.persistManager(channelManager: ChannelManager(pointer: channel_manager.pointee))
+							let swiftCallbackResult = instance.persistManager(channelManager: ChannelManager(cType: channel_manager.pointee))
 
 							// cleanup
 							
@@ -67,7 +67,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.persistGraph(networkGraph: NetworkGraph(pointer: network_graph.pointee))
+							let swiftCallbackResult = instance.persistGraph(networkGraph: NetworkGraph(cType: network_graph.pointee))
 
 							// cleanup
 							
@@ -85,7 +85,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.persistScorer(scorer: NativelyImplementedWriteableScore(pointer: scorer.pointee))
+							let swiftCallbackResult = instance.persistScorer(scorer: NativelyImplementedWriteableScore(cType: scorer.pointee))
 
 							// cleanup
 							
@@ -192,7 +192,7 @@
 				public class NativelyImplementedPersister: Persister {
 					
 					/// Persist the given ['ChannelManager'] to disk, returning an error if persistence failed.
-					public func persistManager(channelManager: ChannelManager) -> Result_NoneErrorZ {
+					override func persistManager(channelManager: ChannelManager) -> Result_NoneErrorZ {
 						// native call variable prep
 						
 
@@ -207,13 +207,13 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Persist the given [`NetworkGraph`] to disk, returning an error if persistence failed.
-					public func persistGraph(networkGraph: NetworkGraph) -> Result_NoneErrorZ {
+					override func persistGraph(networkGraph: NetworkGraph) -> Result_NoneErrorZ {
 						// native call variable prep
 						
 
@@ -228,13 +228,13 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Persist the given [`WriteableScore`] to disk, returning an error if persistence failed.
-					public func persistScorer(scorer: WriteableScore) -> Result_NoneErrorZ {
+					override func persistScorer(scorer: WriteableScore) -> Result_NoneErrorZ {
 						// native call variable prep
 						
 
@@ -249,14 +249,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

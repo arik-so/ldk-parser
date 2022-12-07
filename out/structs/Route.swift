@@ -19,17 +19,17 @@
 
 					internal var cType: LDKRoute?
 
-					public init(pointer: LDKRoute) {
+					public init(cType: LDKRoute) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRoute, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRoute, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -74,7 +74,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_CVec_RouteHopZZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_CVec_RouteHopZZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -143,7 +143,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = PaymentParameters(pointer: nativeCallResult)
+						let returnValue = PaymentParameters(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -191,7 +191,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Route(pointer: nativeCallResult)
+						let returnValue = Route(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -212,7 +212,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Route(pointer: nativeCallResult)
+						let returnValue = Route(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -326,7 +326,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -343,7 +343,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_RouteDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_RouteDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

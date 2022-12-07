@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCustomOnionMessageContents?
 
-					public init(pointer: LDKCustomOnionMessageContents) {
+					public init(cType: LDKCustomOnionMessageContents) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCustomOnionMessageContents, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCustomOnionMessageContents, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -146,7 +146,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedCustomOnionMessageContents(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedCustomOnionMessageContents(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -189,7 +189,7 @@
 				public class NativelyImplementedCustomOnionMessageContents: CustomOnionMessageContents {
 					
 					/// Returns the TLV type identifying the message contents. MUST be >= 64.
-					public func tlvType() -> UInt64 {
+					override func tlvType() -> UInt64 {
 						// native call variable prep
 						
 
@@ -206,7 +206,7 @@
 					}
 		
 					/// Serialize the object into a byte array
-					public func write() -> [UInt8] {
+					override func write() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -217,14 +217,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

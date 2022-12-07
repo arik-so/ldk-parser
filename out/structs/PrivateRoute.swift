@@ -21,17 +21,17 @@
 
 					internal var cType: LDKPrivateRoute?
 
-					public init(pointer: LDKPrivateRoute) {
+					public init(cType: LDKPrivateRoute) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPrivateRoute, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPrivateRoute, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PrivateRoute(pointer: nativeCallResult)
+						let returnValue = PrivateRoute(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -137,7 +137,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PrivateRouteCreationErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PrivateRouteCreationErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -154,7 +154,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RouteHint(pointer: nativeCallResult)
+						let returnValue = RouteHint(cType: nativeCallResult)
 
 						return returnValue
 					}

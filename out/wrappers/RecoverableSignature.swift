@@ -17,17 +17,17 @@
 
 					internal var cType: LDKRecoverableSignature?
 
-					public init(pointer: LDKRecoverableSignature) {
+					public init(cType: LDKRecoverableSignature) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRecoverableSignature, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRecoverableSignature, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)

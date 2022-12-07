@@ -36,17 +36,17 @@
 
 					internal var cType: LDKPeerManager?
 
-					public init(pointer: LDKPeerManager) {
+					public init(cType: LDKPeerManager) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPeerManager, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPeerManager, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -96,7 +96,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PeerManager(pointer: nativeCallResult)
+						let returnValue = PeerManager(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -121,7 +121,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_PublicKeyZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_PublicKeyZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -158,7 +158,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -195,7 +195,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NonePeerHandleErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NonePeerHandleErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -231,7 +231,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NonePeerHandleErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NonePeerHandleErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -269,7 +269,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_boolPeerHandleErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_boolPeerHandleErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

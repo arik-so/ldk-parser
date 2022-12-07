@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCOption_WriteableScoreZ?
 
-					public init(pointer: LDKCOption_WriteableScoreZ) {
+					public init(cType: LDKCOption_WriteableScoreZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCOption_WriteableScoreZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCOption_WriteableScoreZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -70,7 +70,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_WriteableScoreZ_Some {
-							return NativelyImplementedWriteableScore(pointer: self.cType!.some, anchor: self)
+							return NativelyImplementedWriteableScore(cType: self.cType!.some, anchor: self)
 						}
 						assert(false, "invalid option enum value")
 						return nil

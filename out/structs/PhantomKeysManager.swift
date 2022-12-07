@@ -32,17 +32,17 @@
 
 					internal var cType: LDKPhantomKeysManager?
 
-					public init(pointer: LDKPhantomKeysManager) {
+					public init(cType: LDKPhantomKeysManager) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPhantomKeysManager, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPhantomKeysManager, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -84,7 +84,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedKeysInterface(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -122,7 +122,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PhantomKeysManager(pointer: nativeCallResult)
+						let returnValue = PhantomKeysManager(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -155,7 +155,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_TransactionNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_TransactionNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -182,7 +182,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = InMemorySigner(pointer: nativeCallResult)
+						let returnValue = InMemorySigner(cType: nativeCallResult)
 
 						return returnValue
 					}

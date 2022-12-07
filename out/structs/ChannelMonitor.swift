@@ -33,17 +33,17 @@
 
 					internal var cType: LDKChannelMonitor?
 
-					public init(pointer: LDKChannelMonitor) {
+					public init(cType: LDKChannelMonitor) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelMonitor, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelMonitor, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -84,7 +84,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelMonitor(pointer: nativeCallResult)
+						let returnValue = ChannelMonitor(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -105,7 +105,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -141,7 +141,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -184,7 +184,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_OutPointScriptZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_OutPointScriptZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -206,7 +206,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -255,7 +255,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_MonitorEventZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_MonitorEventZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -281,7 +281,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_EventZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_EventZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -315,7 +315,7 @@
 					
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -354,7 +354,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_TransactionZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_TransactionZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -395,7 +395,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Vec_TransactionOutputsZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_TransactionOutputsZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -460,7 +460,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Vec_TransactionOutputsZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_TransactionOutputsZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -525,7 +525,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_TransactionOutputsZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_TransactionOutputsZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -546,7 +546,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_TxidZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_TxidZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -568,7 +568,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BestBlock(pointer: nativeCallResult)
+						let returnValue = BestBlock(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -603,7 +603,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_BalanceZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_BalanceZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

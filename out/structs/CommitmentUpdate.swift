@@ -19,17 +19,17 @@
 
 					internal var cType: LDKCommitmentUpdate?
 
-					public init(pointer: LDKCommitmentUpdate) {
+					public init(cType: LDKCommitmentUpdate) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCommitmentUpdate, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCommitmentUpdate, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -70,7 +70,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_UpdateAddHTLCZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_UpdateAddHTLCZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -116,7 +116,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_UpdateFulfillHTLCZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_UpdateFulfillHTLCZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -162,7 +162,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_UpdateFailHTLCZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_UpdateFailHTLCZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -208,7 +208,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_UpdateFailMalformedHTLCZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_UpdateFailMalformedHTLCZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -269,7 +269,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = UpdateFee(pointer: nativeCallResult)
+						let returnValue = UpdateFee(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -313,7 +313,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = CommitmentSigned(pointer: nativeCallResult)
+						let returnValue = CommitmentSigned(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -367,7 +367,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = CommitmentUpdate(pointer: nativeCallResult)
+						let returnValue = CommitmentUpdate(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -388,7 +388,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = CommitmentUpdate(pointer: nativeCallResult)
+						let returnValue = CommitmentUpdate(cType: nativeCallResult)
 
 						return returnValue
 					}

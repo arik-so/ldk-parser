@@ -18,17 +18,17 @@
 
 					internal var cType: LDKLightningError?
 
-					public init(pointer: LDKLightningError) {
+					public init(cType: LDKLightningError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKLightningError, anchor: NativeTypeWrapper) {
+					public init(cType: LDKLightningError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(pointer: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -111,7 +111,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ErrorAction(pointer: nativeCallResult)
+						let returnValue = ErrorAction(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -149,7 +149,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = LightningError(pointer: nativeCallResult)
+						let returnValue = LightningError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -170,7 +170,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = LightningError(pointer: nativeCallResult)
+						let returnValue = LightningError(cType: nativeCallResult)
 
 						return returnValue
 					}

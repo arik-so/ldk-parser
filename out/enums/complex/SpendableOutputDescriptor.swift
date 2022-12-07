@@ -20,17 +20,17 @@
 
 					internal var cType: LDKSpendableOutputDescriptor?
 
-					public init(pointer: LDKSpendableOutputDescriptor) {
+					public init(cType: LDKSpendableOutputDescriptor) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKSpendableOutputDescriptor, anchor: NativeTypeWrapper) {
+					public init(cType: LDKSpendableOutputDescriptor, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -138,7 +138,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SpendableOutputDescriptor(pointer: nativeCallResult)
+						let returnValue = SpendableOutputDescriptor(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -155,7 +155,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SpendableOutputDescriptor(pointer: nativeCallResult)
+						let returnValue = SpendableOutputDescriptor(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -172,7 +172,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SpendableOutputDescriptor(pointer: nativeCallResult)
+						let returnValue = SpendableOutputDescriptor(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -189,7 +189,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SpendableOutputDescriptor(pointer: nativeCallResult)
+						let returnValue = SpendableOutputDescriptor(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -236,7 +236,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -253,7 +253,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SpendableOutputDescriptorDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_SpendableOutputDescriptorDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -265,7 +265,7 @@
 							return nil
 						}
 
-						return SpendableOutputDescriptor_LDKStaticOutput_Body(pointer: self.cType!.static_output)
+						return SpendableOutputDescriptor_LDKStaticOutput_Body(cType: self.cType!.static_output)
 					}
 			
 					public func getValueAsDelayedPaymentOutput() -> DelayedPaymentOutputDescriptor? {
@@ -273,7 +273,7 @@
 							return nil
 						}
 
-						return DelayedPaymentOutputDescriptor(pointer: self.cType!.delayed_payment_output)
+						return DelayedPaymentOutputDescriptor(cType: self.cType!.delayed_payment_output)
 					}
 			
 					public func getValueAsStaticPaymentOutput() -> StaticPaymentOutputDescriptor? {
@@ -281,7 +281,7 @@
 							return nil
 						}
 
-						return StaticPaymentOutputDescriptor(pointer: self.cType!.static_payment_output)
+						return StaticPaymentOutputDescriptor(cType: self.cType!.static_payment_output)
 					}
 			
 
@@ -319,17 +319,17 @@
 
 						internal var cType: LDKSpendableOutputDescriptor_LDKStaticOutput_Body?
 
-						fileprivate init(pointer: LDKSpendableOutputDescriptor_LDKStaticOutput_Body) {
+						fileprivate init(cType: LDKSpendableOutputDescriptor_LDKStaticOutput_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKSpendableOutputDescriptor_LDKStaticOutput_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKSpendableOutputDescriptor_LDKStaticOutput_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -342,7 +342,7 @@
 						/// The outpoint which is spendable
 						public func getOutpoint() -> OutPoint {
 							// return value (do some wrapping)
-							let returnValue = OutPoint(pointer: self.cType!.outpoint)
+							let returnValue = OutPoint(cType: self.cType!.outpoint)
 
 							return returnValue;
 						}
@@ -350,7 +350,7 @@
 						/// The output which is referenced by the given outpoint.
 						public func getOutput() -> TxOut {
 							// return value (do some wrapping)
-							let returnValue = TxOut(pointer: self.cType!.output)
+							let returnValue = TxOut(cType: self.cType!.output)
 
 							return returnValue;
 						}

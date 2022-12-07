@@ -18,17 +18,17 @@
 
 					internal var cType: LDKSendError?
 
-					public init(pointer: LDKSendError) {
+					public init(cType: LDKSendError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKSendError, anchor: NativeTypeWrapper) {
+					public init(cType: LDKSendError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -119,7 +119,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SendError(pointer: nativeCallResult)
+						let returnValue = SendError(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -136,7 +136,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SendError(pointer: nativeCallResult)
+						let returnValue = SendError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -153,7 +153,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SendError(pointer: nativeCallResult)
+						let returnValue = SendError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -170,7 +170,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SendError(pointer: nativeCallResult)
+						let returnValue = SendError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -187,7 +187,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SendError(pointer: nativeCallResult)
+						let returnValue = SendError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -204,7 +204,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SendError(pointer: nativeCallResult)
+						let returnValue = SendError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -221,7 +221,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SendError(pointer: nativeCallResult)
+						let returnValue = SendError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

@@ -22,17 +22,17 @@
 
 					internal var cType: LDKDirectedChannelTransactionParameters?
 
-					public init(pointer: LDKDirectedChannelTransactionParameters) {
+					public init(cType: LDKDirectedChannelTransactionParameters) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKDirectedChannelTransactionParameters, anchor: NativeTypeWrapper) {
+					public init(cType: LDKDirectedChannelTransactionParameters, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -73,7 +73,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(pointer: nativeCallResult)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -94,7 +94,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(pointer: nativeCallResult)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -161,7 +161,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = OutPoint(pointer: nativeCallResult)
+						let returnValue = OutPoint(cType: nativeCallResult)
 
 						return returnValue
 					}

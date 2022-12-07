@@ -18,17 +18,17 @@
 
 					internal var cType: LDKPong?
 
-					public init(pointer: LDKPong) {
+					public init(cType: LDKPong) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPong, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPong, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -109,7 +109,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Pong(pointer: nativeCallResult)
+						let returnValue = Pong(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -130,7 +130,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Pong(pointer: nativeCallResult)
+						let returnValue = Pong(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -178,7 +178,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -195,7 +195,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PongDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PongDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

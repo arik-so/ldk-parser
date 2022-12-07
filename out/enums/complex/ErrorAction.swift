@@ -16,17 +16,17 @@
 
 					internal var cType: LDKErrorAction?
 
-					public init(pointer: LDKErrorAction) {
+					public init(cType: LDKErrorAction) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKErrorAction, anchor: NativeTypeWrapper) {
+					public init(cType: LDKErrorAction, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -118,7 +118,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ErrorAction(pointer: nativeCallResult)
+						let returnValue = ErrorAction(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -135,7 +135,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ErrorAction(pointer: nativeCallResult)
+						let returnValue = ErrorAction(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -152,7 +152,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ErrorAction(pointer: nativeCallResult)
+						let returnValue = ErrorAction(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -169,7 +169,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ErrorAction(pointer: nativeCallResult)
+						let returnValue = ErrorAction(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -186,7 +186,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ErrorAction(pointer: nativeCallResult)
+						let returnValue = ErrorAction(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -203,7 +203,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ErrorAction(pointer: nativeCallResult)
+						let returnValue = ErrorAction(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -220,7 +220,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ErrorAction(pointer: nativeCallResult)
+						let returnValue = ErrorAction(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -232,7 +232,7 @@
 							return nil
 						}
 
-						return ErrorAction_LDKDisconnectPeer_Body(pointer: self.cType!.disconnect_peer)
+						return ErrorAction_LDKDisconnectPeer_Body(cType: self.cType!.disconnect_peer)
 					}
 			
 					public func getValueAsIgnoreAndLog() -> Level? {
@@ -248,7 +248,7 @@
 							return nil
 						}
 
-						return ErrorAction_LDKSendErrorMessage_Body(pointer: self.cType!.send_error_message)
+						return ErrorAction_LDKSendErrorMessage_Body(cType: self.cType!.send_error_message)
 					}
 			
 					public func getValueAsSendWarningMessage() -> SendWarningMessage? {
@@ -256,7 +256,7 @@
 							return nil
 						}
 
-						return ErrorAction_LDKSendWarningMessage_Body(pointer: self.cType!.send_warning_message)
+						return ErrorAction_LDKSendWarningMessage_Body(cType: self.cType!.send_warning_message)
 					}
 			
 
@@ -294,17 +294,17 @@
 
 						internal var cType: LDKErrorAction_LDKDisconnectPeer_Body?
 
-						fileprivate init(pointer: LDKErrorAction_LDKDisconnectPeer_Body) {
+						fileprivate init(cType: LDKErrorAction_LDKDisconnectPeer_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKErrorAction_LDKDisconnectPeer_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKErrorAction_LDKDisconnectPeer_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -319,7 +319,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getMsg() -> ErrorMessage {
 							// return value (do some wrapping)
-							let returnValue = ErrorMessage(pointer: self.cType!.msg)
+							let returnValue = ErrorMessage(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -347,17 +347,17 @@
 
 						internal var cType: LDKErrorAction_LDKSendErrorMessage_Body?
 
-						fileprivate init(pointer: LDKErrorAction_LDKSendErrorMessage_Body) {
+						fileprivate init(cType: LDKErrorAction_LDKSendErrorMessage_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKErrorAction_LDKSendErrorMessage_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKErrorAction_LDKSendErrorMessage_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -370,7 +370,7 @@
 						/// The message to send.
 						public func getMsg() -> ErrorMessage {
 							// return value (do some wrapping)
-							let returnValue = ErrorMessage(pointer: self.cType!.msg)
+							let returnValue = ErrorMessage(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -398,17 +398,17 @@
 
 						internal var cType: LDKErrorAction_LDKSendWarningMessage_Body?
 
-						fileprivate init(pointer: LDKErrorAction_LDKSendWarningMessage_Body) {
+						fileprivate init(cType: LDKErrorAction_LDKSendWarningMessage_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKErrorAction_LDKSendWarningMessage_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKErrorAction_LDKSendWarningMessage_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -421,7 +421,7 @@
 						/// The message to send.
 						public func getMsg() -> WarningMessage {
 							// return value (do some wrapping)
-							let returnValue = WarningMessage(pointer: self.cType!.msg)
+							let returnValue = WarningMessage(cType: self.cType!.msg)
 
 							return returnValue;
 						}

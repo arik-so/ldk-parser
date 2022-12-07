@@ -18,17 +18,17 @@
 
 					internal var cType: LDKFuture?
 
-					public init(pointer: LDKFuture) {
+					public init(cType: LDKFuture) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKFuture, anchor: NativeTypeWrapper) {
+					public init(cType: LDKFuture, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)

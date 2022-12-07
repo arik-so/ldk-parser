@@ -18,17 +18,17 @@
 
 					internal var cType: LDKInvalidShutdownScript?
 
-					public init(pointer: LDKInvalidShutdownScript) {
+					public init(cType: LDKInvalidShutdownScript) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKInvalidShutdownScript, anchor: NativeTypeWrapper) {
+					public init(cType: LDKInvalidShutdownScript, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -71,7 +71,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = u8slice(pointer: nativeCallResult)
+						let returnValue = u8slice(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -119,7 +119,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = InvalidShutdownScript(pointer: nativeCallResult)
+						let returnValue = InvalidShutdownScript(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -140,7 +140,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = InvalidShutdownScript(pointer: nativeCallResult)
+						let returnValue = InvalidShutdownScript(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -19,17 +19,17 @@
 
 					internal var cType: LDKNetworkUpdate?
 
-					public init(pointer: LDKNetworkUpdate) {
+					public init(cType: LDKNetworkUpdate) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKNetworkUpdate, anchor: NativeTypeWrapper) {
+					public init(cType: LDKNetworkUpdate, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -103,7 +103,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NetworkUpdate(pointer: nativeCallResult)
+						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -120,7 +120,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NetworkUpdate(pointer: nativeCallResult)
+						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -137,7 +137,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NetworkUpdate(pointer: nativeCallResult)
+						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -154,7 +154,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NetworkUpdate(pointer: nativeCallResult)
+						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -201,7 +201,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -218,7 +218,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_NetworkUpdateZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_NetworkUpdateZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -230,7 +230,7 @@
 							return nil
 						}
 
-						return NetworkUpdate_LDKChannelUpdateMessage_Body(pointer: self.cType!.channel_update_message)
+						return NetworkUpdate_LDKChannelUpdateMessage_Body(cType: self.cType!.channel_update_message)
 					}
 			
 					public func getValueAsChannelFailure() -> ChannelFailure? {
@@ -238,7 +238,7 @@
 							return nil
 						}
 
-						return NetworkUpdate_LDKChannelFailure_Body(pointer: self.cType!.channel_failure)
+						return NetworkUpdate_LDKChannelFailure_Body(cType: self.cType!.channel_failure)
 					}
 			
 					public func getValueAsNodeFailure() -> NodeFailure? {
@@ -246,7 +246,7 @@
 							return nil
 						}
 
-						return NetworkUpdate_LDKNodeFailure_Body(pointer: self.cType!.node_failure)
+						return NetworkUpdate_LDKNodeFailure_Body(cType: self.cType!.node_failure)
 					}
 			
 
@@ -284,17 +284,17 @@
 
 						internal var cType: LDKNetworkUpdate_LDKChannelUpdateMessage_Body?
 
-						fileprivate init(pointer: LDKNetworkUpdate_LDKChannelUpdateMessage_Body) {
+						fileprivate init(cType: LDKNetworkUpdate_LDKChannelUpdateMessage_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKNetworkUpdate_LDKChannelUpdateMessage_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKNetworkUpdate_LDKChannelUpdateMessage_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -307,7 +307,7 @@
 						/// The update to apply via [`NetworkGraph::update_channel`].
 						public func getMsg() -> ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = ChannelUpdate(pointer: self.cType!.msg)
+							let returnValue = ChannelUpdate(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -335,17 +335,17 @@
 
 						internal var cType: LDKNetworkUpdate_LDKChannelFailure_Body?
 
-						fileprivate init(pointer: LDKNetworkUpdate_LDKChannelFailure_Body) {
+						fileprivate init(cType: LDKNetworkUpdate_LDKChannelFailure_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKNetworkUpdate_LDKChannelFailure_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKNetworkUpdate_LDKChannelFailure_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -395,17 +395,17 @@
 
 						internal var cType: LDKNetworkUpdate_LDKNodeFailure_Body?
 
-						fileprivate init(pointer: LDKNetworkUpdate_LDKNodeFailure_Body) {
+						fileprivate init(cType: LDKNetworkUpdate_LDKNodeFailure_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKNetworkUpdate_LDKNodeFailure_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKNetworkUpdate_LDKNodeFailure_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -418,7 +418,7 @@
 						/// The node id of the failed node.
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}

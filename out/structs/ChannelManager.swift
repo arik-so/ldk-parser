@@ -53,17 +53,17 @@
 
 					internal var cType: LDKChannelManager?
 
-					public init(pointer: LDKChannelManager) {
+					public init(cType: LDKChannelManager) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelManager, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelManager, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -109,7 +109,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelManager(pointer: nativeCallResult)
+						let returnValue = ChannelManager(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -130,7 +130,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = UserConfig(pointer: nativeCallResult)
+						let returnValue = UserConfig(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -178,7 +178,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result__u832APIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result__u832APIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -200,7 +200,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_ChannelDetailsZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_ChannelDetailsZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -228,7 +228,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_ChannelDetailsZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_ChannelDetailsZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -271,7 +271,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -316,7 +316,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -346,7 +346,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -378,7 +378,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -487,7 +487,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentSendFailureZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -521,7 +521,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NonePaymentSendFailureZ(pointer: nativeCallResult)
+						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -595,7 +595,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -622,7 +622,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -678,7 +678,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -728,7 +728,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -882,7 +882,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -924,7 +924,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -968,7 +968,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1016,7 +1016,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1047,7 +1047,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1112,7 +1112,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentSecretNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentSecretNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1143,7 +1143,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentSecretAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentSecretAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1167,7 +1167,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentPreimageAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentPreimageAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1214,7 +1214,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PhantomRouteHints(pointer: nativeCallResult)
+						let returnValue = PhantomRouteHints(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1236,7 +1236,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedMessageSendEventsProvider(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -1258,7 +1258,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedEventsProvider(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedEventsProvider(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -1280,7 +1280,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedListen(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedListen(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -1302,7 +1302,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedConfirm(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedConfirm(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -1374,7 +1374,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Future(pointer: nativeCallResult)
+						let returnValue = Future(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1396,7 +1396,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BestBlock(pointer: nativeCallResult)
+						let returnValue = BestBlock(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1418,7 +1418,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedChannelMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -1439,7 +1439,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -1461,7 +1461,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedPayer(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedPayer(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}

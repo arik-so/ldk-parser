@@ -16,17 +16,17 @@
 
 					internal var cType: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ?
 
-					public init(pointer: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ) {
+					public init(cType: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(cType: nativeCallResult).getValue()
 
 						self.cType = nativeCallResult
 					}
@@ -103,7 +103,7 @@
 					/// The element at position 0
 					public func getA() -> RawInvoice {
 						// return value (do some wrapping)
-						let returnValue = RawInvoice(pointer: self.cType!.a)
+						let returnValue = RawInvoice(cType: self.cType!.a)
 
 						return returnValue;
 					}
@@ -111,7 +111,7 @@
 					/// The element at position 1
 					public func getB() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: self.cType!.b)
+						let returnValue = ThirtyTwoBytes(cType: self.cType!.b)
 
 						return returnValue;
 					}
@@ -119,7 +119,7 @@
 					/// The element at position 2
 					public func getC() -> InvoiceSignature {
 						// return value (do some wrapping)
-						let returnValue = InvoiceSignature(pointer: self.cType!.c)
+						let returnValue = InvoiceSignature(cType: self.cType!.c)
 
 						return returnValue;
 					}

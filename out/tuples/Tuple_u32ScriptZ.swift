@@ -16,17 +16,17 @@
 
 					internal var cType: LDKC2Tuple_u32ScriptZ?
 
-					public init(pointer: LDKC2Tuple_u32ScriptZ) {
+					public init(cType: LDKC2Tuple_u32ScriptZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKC2Tuple_u32ScriptZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKC2Tuple_u32ScriptZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_u32ScriptZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_u32ScriptZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -76,7 +76,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_u32ScriptZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_u32ScriptZ(cType: nativeCallResult).getValue()
 
 						self.cType = nativeCallResult
 					}
@@ -115,7 +115,7 @@
 					/// The element at position 1
 					public func getB() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: self.cType!.b).getValue()
+						let returnValue = Vec_u8Z(cType: self.cType!.b).getValue()
 
 						return returnValue;
 					}

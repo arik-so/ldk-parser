@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_ChannelReadyDecodeErrorZ?
 
-					public init(pointer: LDKCResult_ChannelReadyDecodeErrorZ) {
+					public init(cType: LDKCResult_ChannelReadyDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_ChannelReadyDecodeErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_ChannelReadyDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ChannelReadyDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ChannelReadyDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ChannelReadyDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ChannelReadyDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ChannelReadyDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ChannelReadyDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,14 +116,14 @@
 
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(pointer: self.cType!.contents.err.pointee)
+							return DecodeError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> ChannelReady? {
 						if self.cType?.result_ok == true {
-							return ChannelReady(pointer: self.cType!.contents.result.pointee)
+							return ChannelReady(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

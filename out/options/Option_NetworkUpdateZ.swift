@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCOption_NetworkUpdateZ?
 
-					public init(pointer: LDKCOption_NetworkUpdateZ) {
+					public init(cType: LDKCOption_NetworkUpdateZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCOption_NetworkUpdateZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCOption_NetworkUpdateZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -81,7 +81,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_NetworkUpdateZ(pointer: nativeCallResult)
+						let returnValue = Option_NetworkUpdateZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -92,7 +92,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_NetworkUpdateZ_Some {
-							return NetworkUpdate(pointer: self.cType!.some)
+							return NetworkUpdate(cType: self.cType!.some)
 						}
 						assert(false, "invalid option enum value")
 						return nil

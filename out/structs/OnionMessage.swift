@@ -18,17 +18,17 @@
 
 					internal var cType: LDKOnionMessage?
 
-					public init(pointer: LDKOnionMessage) {
+					public init(cType: LDKOnionMessage) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKOnionMessage, anchor: NativeTypeWrapper) {
+					public init(cType: LDKOnionMessage, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -111,7 +111,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = OnionMessage(pointer: nativeCallResult)
+						let returnValue = OnionMessage(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -155,7 +155,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_OnionMessageDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_OnionMessageDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -176,7 +176,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

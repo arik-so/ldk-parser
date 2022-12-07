@@ -17,17 +17,17 @@
 
 					internal var cType: LDKPaymentPurpose?
 
-					public init(pointer: LDKPaymentPurpose) {
+					public init(cType: LDKPaymentPurpose) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPaymentPurpose, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPaymentPurpose, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -93,7 +93,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PaymentPurpose(pointer: nativeCallResult)
+						let returnValue = PaymentPurpose(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -110,7 +110,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PaymentPurpose(pointer: nativeCallResult)
+						let returnValue = PaymentPurpose(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -127,7 +127,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PaymentPurpose(pointer: nativeCallResult)
+						let returnValue = PaymentPurpose(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -148,7 +148,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -165,7 +165,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentPurposeDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentPurposeDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -177,7 +177,7 @@
 							return nil
 						}
 
-						return PaymentPurpose_LDKInvoicePayment_Body(pointer: self.cType!.invoice_payment)
+						return PaymentPurpose_LDKInvoicePayment_Body(cType: self.cType!.invoice_payment)
 					}
 			
 					public func getValueAsSpontaneousPayment() -> [UInt8]? {
@@ -185,7 +185,7 @@
 							return nil
 						}
 
-						return ThirtyTwoBytes(pointer: self.cType!.spontaneous_payment)
+						return ThirtyTwoBytes(cType: self.cType!.spontaneous_payment)
 					}
 			
 
@@ -223,17 +223,17 @@
 
 						internal var cType: LDKPaymentPurpose_LDKInvoicePayment_Body?
 
-						fileprivate init(pointer: LDKPaymentPurpose_LDKInvoicePayment_Body) {
+						fileprivate init(cType: LDKPaymentPurpose_LDKInvoicePayment_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKPaymentPurpose_LDKInvoicePayment_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKPaymentPurpose_LDKInvoicePayment_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -253,7 +253,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getPaymentPreimage() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_preimage)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_preimage)
 
 							return returnValue;
 						}
@@ -270,7 +270,7 @@
 						/// [`ChannelManager::create_inbound_payment_for_hash`]: crate::ln::channelmanager::ChannelManager::create_inbound_payment_for_hash
 						public func getPaymentSecret() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_secret)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_secret)
 
 							return returnValue;
 						}

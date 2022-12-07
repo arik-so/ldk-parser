@@ -20,17 +20,17 @@
 
 					internal var cType: LDKChannelHandshakeConfig?
 
-					public init(pointer: LDKChannelHandshakeConfig) {
+					public init(cType: LDKChannelHandshakeConfig) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelHandshakeConfig, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelHandshakeConfig, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -633,7 +633,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelHandshakeConfig(pointer: nativeCallResult)
+						let returnValue = ChannelHandshakeConfig(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -654,7 +654,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelHandshakeConfig(pointer: nativeCallResult)
+						let returnValue = ChannelHandshakeConfig(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -671,7 +671,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelHandshakeConfig(pointer: nativeCallResult)
+						let returnValue = ChannelHandshakeConfig(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

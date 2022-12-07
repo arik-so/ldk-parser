@@ -47,17 +47,17 @@
 
 					internal var cType: LDKConfirm?
 
-					public init(pointer: LDKConfirm) {
+					public init(cType: LDKConfirm) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKConfirm, anchor: NativeTypeWrapper) {
+					public init(cType: LDKConfirm, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -85,7 +85,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.transactionsConfirmed(header: headerPointee, txdata: Vec_C2Tuple_usizeTransactionZZ(pointer: txdata).getValue(), height: height)
+							let swiftCallbackResult = instance.transactionsConfirmed(header: headerPointee, txdata: Vec_C2Tuple_usizeTransactionZZ(cType: txdata).getValue(), height: height)
 
 							// cleanup
 							
@@ -309,7 +309,7 @@
 					/// 
 					/// [chain order]: Confirm#order
 					/// [`best_block_updated`]: Self::best_block_updated
-					public func transactionsConfirmed(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) {
+					override func transactionsConfirmed(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) {
 						// native call variable prep
 						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
@@ -343,7 +343,7 @@
 					/// 
 					/// [`get_relevant_txids`]: Self::get_relevant_txids
 					/// [`transactions_confirmed`]: Self::transactions_confirmed
-					public func transactionUnconfirmed(txid: [UInt8]?) {
+					override func transactionUnconfirmed(txid: [UInt8]?) {
 						// native call variable prep
 						
 						let tupledTxid = Bindings.arrayToUInt8Tuple32(array: txid)
@@ -369,7 +369,7 @@
 					/// 
 					/// Should be called when a new header is available but may be skipped for intermediary blocks
 					/// if they become available at the same time.
-					public func bestBlockUpdated(header: [UInt8]?, height: UInt32) {
+					override func bestBlockUpdated(header: [UInt8]?, height: UInt32) {
 						// native call variable prep
 						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
@@ -404,7 +404,7 @@
 					/// 
 					/// [`transactions_confirmed`]: Self::transactions_confirmed
 					/// [`transaction_unconfirmed`]: Self::transaction_unconfirmed
-					public func getRelevantTxids() -> [[UInt8]] {
+					override func getRelevantTxids() -> [[UInt8]] {
 						// native call variable prep
 						
 
@@ -415,14 +415,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_TxidZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_TxidZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

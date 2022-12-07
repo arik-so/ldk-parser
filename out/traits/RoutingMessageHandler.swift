@@ -22,17 +22,17 @@
 
 					internal var cType: LDKRoutingMessageHandler?
 
-					public init(pointer: LDKRoutingMessageHandler) {
+					public init(cType: LDKRoutingMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRoutingMessageHandler, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRoutingMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleNodeAnnouncement(msg: NodeAnnouncement(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleNodeAnnouncement(msg: NodeAnnouncement(cType: msg.pointee))
 
 							// cleanup
 							
@@ -73,7 +73,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelAnnouncement(msg: ChannelAnnouncement(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleChannelAnnouncement(msg: ChannelAnnouncement(cType: msg.pointee))
 
 							// cleanup
 							
@@ -91,7 +91,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelUpdate(msg: ChannelUpdate(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleChannelUpdate(msg: ChannelUpdate(cType: msg.pointee))
 
 							// cleanup
 							
@@ -127,7 +127,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.getNextNodeAnnouncement(startingPoint: PublicKey(pointer: starting_point).getValue())
+							let swiftCallbackResult = instance.getNextNodeAnnouncement(startingPoint: PublicKey(cType: starting_point).getValue())
 
 							// cleanup
 							
@@ -145,7 +145,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(pointer: their_node_id).getValue(), init: Init(pointer: init.pointee))
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), init: Init(cType: init.pointee))
 
 							// cleanup
 							
@@ -163,7 +163,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleReplyChannelRange(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: ReplyChannelRange(pointer: msg))
+							let swiftCallbackResult = instance.handleReplyChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyChannelRange(cType: msg))
 
 							// cleanup
 							
@@ -181,7 +181,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleReplyShortChannelIdsEnd(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: ReplyShortChannelIdsEnd(pointer: msg))
+							let swiftCallbackResult = instance.handleReplyShortChannelIdsEnd(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyShortChannelIdsEnd(cType: msg))
 
 							// cleanup
 							
@@ -199,7 +199,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleQueryChannelRange(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: QueryChannelRange(pointer: msg))
+							let swiftCallbackResult = instance.handleQueryChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryChannelRange(cType: msg))
 
 							// cleanup
 							
@@ -217,7 +217,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleQueryShortChannelIds(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: QueryShortChannelIds(pointer: msg))
+							let swiftCallbackResult = instance.handleQueryShortChannelIds(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryShortChannelIds(cType: msg))
 
 							// cleanup
 							
@@ -253,7 +253,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.providedInitFeatures(theirNodeId: PublicKey(pointer: their_node_id).getValue())
+							let swiftCallbackResult = instance.providedInitFeatures(theirNodeId: PublicKey(cType: their_node_id).getValue())
 
 							// cleanup
 							
@@ -438,7 +438,7 @@
 					/// Implementation of MessageSendEventsProvider for this object.
 					public func getMessageSendEventsProvider() -> MessageSendEventsProvider {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedMessageSendEventsProvider(pointer: self.cType!.MessageSendEventsProvider, anchor: self)
+						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: self.cType!.MessageSendEventsProvider, anchor: self)
 
 						return returnValue;
 					}
@@ -463,7 +463,7 @@
 					
 					/// Handle an incoming node_announcement message, returning true if it should be forwarded on,
 					/// false or returning an Err otherwise.
-					public func handleNodeAnnouncement(msg: NodeAnnouncement) -> Result_boolLightningErrorZ {
+					override func handleNodeAnnouncement(msg: NodeAnnouncement) -> Result_boolLightningErrorZ {
 						// native call variable prep
 						
 
@@ -478,14 +478,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_boolLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_boolLightningErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Handle a channel_announcement message, returning true if it should be forwarded on, false
 					/// or returning an Err otherwise.
-					public func handleChannelAnnouncement(msg: ChannelAnnouncement) -> Result_boolLightningErrorZ {
+					override func handleChannelAnnouncement(msg: ChannelAnnouncement) -> Result_boolLightningErrorZ {
 						// native call variable prep
 						
 
@@ -500,14 +500,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_boolLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_boolLightningErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Handle an incoming channel_update message, returning true if it should be forwarded on,
 					/// false or returning an Err otherwise.
-					public func handleChannelUpdate(msg: ChannelUpdate) -> Result_boolLightningErrorZ {
+					override func handleChannelUpdate(msg: ChannelUpdate) -> Result_boolLightningErrorZ {
 						// native call variable prep
 						
 
@@ -522,7 +522,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_boolLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_boolLightningErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -530,7 +530,7 @@
 					/// Gets channel announcements and updates required to dump our routing table to a remote node,
 					/// starting at the short_channel_id indicated by starting_point and including announcements
 					/// for a single channel.
-					public func getNextChannelAnnouncement(startingPoint: UInt64) -> (ChannelAnnouncement, ChannelUpdate, ChannelUpdate)? {
+					override func getNextChannelAnnouncement(startingPoint: UInt64) -> (ChannelAnnouncement, ChannelUpdate, ChannelUpdate)? {
 						// native call variable prep
 						
 
@@ -541,7 +541,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ(pointer: nativeCallResult).getValue()
+						let returnValue = Option_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -553,7 +553,7 @@
 					/// 
 					/// Note that starting_point (or a relevant inner pointer) may be NULL or all-0s to represent None
 					/// Note that the return value (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public func getNextNodeAnnouncement(startingPoint: [UInt8]) -> NodeAnnouncement {
+					override func getNextNodeAnnouncement(startingPoint: [UInt8]) -> NodeAnnouncement {
 						// native call variable prep
 						
 
@@ -564,7 +564,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NodeAnnouncement(pointer: nativeCallResult)
+						let returnValue = NodeAnnouncement(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -576,7 +576,7 @@
 					/// May return an `Err(())` if the features the peer supports are not sufficient to communicate
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
-					public func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
+					override func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
 						// native call variable prep
 						
 
@@ -591,7 +591,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -599,7 +599,7 @@
 					/// Handles the reply of a query we initiated to learn about channels
 					/// for a given range of blocks. We can expect to receive one or more
 					/// replies to a single query.
-					public func handleReplyChannelRange(theirNodeId: [UInt8], msg: ReplyChannelRange) -> Result_NoneLightningErrorZ {
+					override func handleReplyChannelRange(theirNodeId: [UInt8], msg: ReplyChannelRange) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
 
@@ -610,7 +610,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -619,7 +619,7 @@
 					/// messages for a list of channels. We should receive this message when
 					/// a node has completed its best effort to send us the pertaining routing
 					/// gossip messages.
-					public func handleReplyShortChannelIdsEnd(theirNodeId: [UInt8], msg: ReplyShortChannelIdsEnd) -> Result_NoneLightningErrorZ {
+					override func handleReplyShortChannelIdsEnd(theirNodeId: [UInt8], msg: ReplyShortChannelIdsEnd) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
 
@@ -630,14 +630,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Handles when a peer asks us to send a list of short_channel_ids
 					/// for the requested range of blocks.
-					public func handleQueryChannelRange(theirNodeId: [UInt8], msg: QueryChannelRange) -> Result_NoneLightningErrorZ {
+					override func handleQueryChannelRange(theirNodeId: [UInt8], msg: QueryChannelRange) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
 
@@ -648,14 +648,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Handles when a peer asks us to send routing gossip messages for a
 					/// list of short_channel_ids.
-					public func handleQueryShortChannelIds(theirNodeId: [UInt8], msg: QueryShortChannelIds) -> Result_NoneLightningErrorZ {
+					override func handleQueryShortChannelIds(theirNodeId: [UInt8], msg: QueryShortChannelIds) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
 
@@ -666,7 +666,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -674,7 +674,7 @@
 					/// Gets the node feature flags which this handler itself supports. All available handlers are
 					/// queried similarly and their feature flags are OR'd together to form the [`NodeFeatures`]
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
-					public func providedNodeFeatures() -> NodeFeatures {
+					override func providedNodeFeatures() -> NodeFeatures {
 						// native call variable prep
 						
 
@@ -685,7 +685,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NodeFeatures(pointer: nativeCallResult)
+						let returnValue = NodeFeatures(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -695,7 +695,7 @@
 					/// which are sent in our [`Init`] message.
 					/// 
 					/// Note that this method is called before [`Self::peer_connected`].
-					public func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
+					override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
 						// native call variable prep
 						
 
@@ -706,14 +706,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = InitFeatures(pointer: nativeCallResult)
+						let returnValue = InitFeatures(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_PublicKeyNoneZ?
 
-					public init(pointer: LDKCResult_PublicKeyNoneZ) {
+					public init(cType: LDKCResult_PublicKeyNoneZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_PublicKeyNoneZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_PublicKeyNoneZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PublicKeyNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_PublicKeyNoneZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PublicKeyNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_PublicKeyNoneZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PublicKeyNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_PublicKeyNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -123,7 +123,7 @@
 
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
-							return PublicKey(pointer: self.cType!.contents.result.pointee)
+							return PublicKey(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

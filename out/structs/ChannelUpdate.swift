@@ -18,17 +18,17 @@
 
 					internal var cType: LDKChannelUpdate?
 
-					public init(pointer: LDKChannelUpdate) {
+					public init(cType: LDKChannelUpdate) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelUpdate, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelUpdate, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Signature(pointer: nativeCallResult)
+						let returnValue = Signature(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -111,7 +111,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = UnsignedChannelUpdate(pointer: nativeCallResult)
+						let returnValue = UnsignedChannelUpdate(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -149,7 +149,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdate(pointer: nativeCallResult)
+						let returnValue = ChannelUpdate(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -170,7 +170,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdate(pointer: nativeCallResult)
+						let returnValue = ChannelUpdate(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -218,7 +218,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -235,7 +235,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ChannelUpdateDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ChannelUpdateDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -23,17 +23,17 @@
 
 					internal var cType: LDKRouteParameters?
 
-					public init(pointer: LDKRouteParameters) {
+					public init(cType: LDKRouteParameters) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRouteParameters, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRouteParameters, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -74,7 +74,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PaymentParameters(pointer: nativeCallResult)
+						let returnValue = PaymentParameters(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -196,7 +196,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RouteParameters(pointer: nativeCallResult)
+						let returnValue = RouteParameters(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -217,7 +217,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RouteParameters(pointer: nativeCallResult)
+						let returnValue = RouteParameters(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -238,7 +238,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -255,7 +255,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_RouteParametersDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_RouteParametersDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

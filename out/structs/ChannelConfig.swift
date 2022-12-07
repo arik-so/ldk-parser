@@ -19,17 +19,17 @@
 
 					internal var cType: LDKChannelConfig?
 
-					public init(pointer: LDKChannelConfig) {
+					public init(cType: LDKChannelConfig) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelConfig, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelConfig, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -426,7 +426,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelConfig(pointer: nativeCallResult)
+						let returnValue = ChannelConfig(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -447,7 +447,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelConfig(pointer: nativeCallResult)
+						let returnValue = ChannelConfig(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -491,7 +491,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelConfig(pointer: nativeCallResult)
+						let returnValue = ChannelConfig(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -512,7 +512,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -529,7 +529,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ChannelConfigDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ChannelConfigDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

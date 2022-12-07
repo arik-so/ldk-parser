@@ -24,17 +24,17 @@
 
 					internal var cType: LDKChannelMonitorUpdate?
 
-					public init(pointer: LDKChannelMonitorUpdate) {
+					public init(cType: LDKChannelMonitorUpdate) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelMonitorUpdate, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelMonitorUpdate, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -141,7 +141,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelMonitorUpdate(pointer: nativeCallResult)
+						let returnValue = ChannelMonitorUpdate(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -162,7 +162,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -179,7 +179,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ChannelMonitorUpdateDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ChannelMonitorUpdateDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

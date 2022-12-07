@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_StringErrorZ?
 
-					public init(pointer: LDKCResult_StringErrorZ) {
+					public init(cType: LDKCResult_StringErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_StringErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_StringErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_StringErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_StringErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_StringErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_StringErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_StringErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_StringErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -123,7 +123,7 @@
 
 					public func getValue() -> String? {
 						if self.cType?.result_ok == true {
-							return Str(pointer: self.cType!.contents.result.pointee)
+							return Str(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

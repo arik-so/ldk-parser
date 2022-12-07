@@ -22,17 +22,17 @@
 
 					internal var cType: LDKInvoicePayer?
 
-					public init(pointer: LDKInvoicePayer) {
+					public init(cType: LDKInvoicePayer) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKInvoicePayer, anchor: NativeTypeWrapper) {
+					public init(cType: LDKInvoicePayer, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = InvoicePayer(pointer: nativeCallResult)
+						let returnValue = InvoicePayer(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -101,7 +101,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -131,7 +131,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -156,7 +156,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -208,7 +208,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedEventHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedEventHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}

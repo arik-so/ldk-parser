@@ -16,17 +16,17 @@
 
 					internal var cType: LDKDestination?
 
-					public init(pointer: LDKDestination) {
+					public init(cType: LDKDestination) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKDestination, anchor: NativeTypeWrapper) {
+					public init(cType: LDKDestination, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -87,7 +87,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Destination(pointer: nativeCallResult)
+						let returnValue = Destination(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Destination(pointer: nativeCallResult)
+						let returnValue = Destination(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -116,7 +116,7 @@
 							return nil
 						}
 
-						return PublicKey(pointer: self.cType!.node)
+						return PublicKey(cType: self.cType!.node)
 					}
 			
 					public func getValueAsBlindedRoute() -> BlindedRoute? {
@@ -124,7 +124,7 @@
 							return nil
 						}
 
-						return BlindedRoute(pointer: self.cType!.blinded_route)
+						return BlindedRoute(cType: self.cType!.blinded_route)
 					}
 			
 

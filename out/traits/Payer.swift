@@ -16,17 +16,17 @@
 
 					internal var cType: LDKPayer?
 
-					public init(pointer: LDKPayer) {
+					public init(cType: LDKPayer) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPayer, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPayer, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -85,7 +85,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.sendPayment(route: Route(pointer: route.pointee), paymentHash: ThirtyTwoBytes(pointer: payment_hash).getValue(), paymentSecret: ThirtyTwoBytes(pointer: payment_secret).getValue())
+							let swiftCallbackResult = instance.sendPayment(route: Route(cType: route.pointee), paymentHash: ThirtyTwoBytes(cType: payment_hash).getValue(), paymentSecret: ThirtyTwoBytes(cType: payment_secret).getValue())
 
 							// cleanup
 							
@@ -103,7 +103,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.sendSpontaneousPayment(route: Route(pointer: route.pointee), paymentPreimage: ThirtyTwoBytes(pointer: payment_preimage).getValue())
+							let swiftCallbackResult = instance.sendSpontaneousPayment(route: Route(cType: route.pointee), paymentPreimage: ThirtyTwoBytes(cType: payment_preimage).getValue())
 
 							// cleanup
 							
@@ -121,7 +121,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.retryPayment(route: Route(pointer: route.pointee), paymentId: ThirtyTwoBytes(pointer: payment_id).getValue())
+							let swiftCallbackResult = instance.retryPayment(route: Route(cType: route.pointee), paymentId: ThirtyTwoBytes(cType: payment_id).getValue())
 
 							// cleanup
 							
@@ -139,7 +139,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.abandonPayment(paymentId: ThirtyTwoBytes(pointer: payment_id).getValue())
+							let swiftCallbackResult = instance.abandonPayment(paymentId: ThirtyTwoBytes(cType: payment_id).getValue())
 
 							// cleanup
 							
@@ -269,7 +269,7 @@
 				public class NativelyImplementedPayer: Payer {
 					
 					/// Returns the payer's node id.
-					public func nodeId() -> [UInt8] {
+					override func nodeId() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -280,13 +280,13 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Returns the payer's channels.
-					public func firstHops() -> [ChannelDetails] {
+					override func firstHops() -> [ChannelDetails] {
 						// native call variable prep
 						
 
@@ -297,7 +297,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_ChannelDetailsZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_ChannelDetailsZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -305,7 +305,7 @@
 					/// Sends a payment over the Lightning Network using the given [`Route`].
 					/// 
 					/// Note that payment_secret (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
+					override func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
 						// native call variable prep
 						
 
@@ -320,13 +320,13 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentSendFailureZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Sends a spontaneous payment over the Lightning Network using the given [`Route`].
-					public func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
+					override func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
 						// native call variable prep
 						
 
@@ -341,13 +341,13 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentSendFailureZ(pointer: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Retries a failed payment path for the [`PaymentId`] using the given [`Route`].
-					public func retryPayment(route: Route, paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
+					override func retryPayment(route: Route, paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
 						// native call variable prep
 						
 
@@ -362,13 +362,13 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NonePaymentSendFailureZ(pointer: nativeCallResult)
+						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Signals that no further retries for the given payment will occur.
-					public func abandonPayment(paymentId: [UInt8]) {
+					override func abandonPayment(paymentId: [UInt8]) {
 						// native call variable prep
 						
 
@@ -386,7 +386,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

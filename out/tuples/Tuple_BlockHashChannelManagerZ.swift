@@ -16,17 +16,17 @@
 
 					internal var cType: LDKC2Tuple_BlockHashChannelManagerZ?
 
-					public init(pointer: LDKC2Tuple_BlockHashChannelManagerZ) {
+					public init(cType: LDKC2Tuple_BlockHashChannelManagerZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKC2Tuple_BlockHashChannelManagerZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKC2Tuple_BlockHashChannelManagerZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -50,7 +50,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_BlockHashChannelManagerZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_BlockHashChannelManagerZ(cType: nativeCallResult).getValue()
 
 						self.cType = nativeCallResult
 					}
@@ -84,7 +84,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -98,7 +98,7 @@
 					/// The element at position 0
 					public func getA() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: self.cType!.a)
+						let returnValue = ThirtyTwoBytes(cType: self.cType!.a)
 
 						return returnValue;
 					}
@@ -106,7 +106,7 @@
 					/// The element at position 1
 					public func getB() -> ChannelManager {
 						// return value (do some wrapping)
-						let returnValue = ChannelManager(pointer: self.cType!.b)
+						let returnValue = ChannelManager(cType: self.cType!.b)
 
 						return returnValue;
 					}

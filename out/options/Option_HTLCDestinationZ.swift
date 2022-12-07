@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCOption_HTLCDestinationZ?
 
-					public init(pointer: LDKCOption_HTLCDestinationZ) {
+					public init(cType: LDKCOption_HTLCDestinationZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCOption_HTLCDestinationZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCOption_HTLCDestinationZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -81,7 +81,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_HTLCDestinationZ(pointer: nativeCallResult)
+						let returnValue = Option_HTLCDestinationZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -92,7 +92,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_HTLCDestinationZ_Some {
-							return HTLCDestination(pointer: self.cType!.some)
+							return HTLCDestination(cType: self.cType!.some)
 						}
 						assert(false, "invalid option enum value")
 						return nil

@@ -18,17 +18,17 @@
 
 					internal var cType: LDKScore?
 
-					public init(pointer: LDKScore) {
+					public init(cType: LDKScore) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKScore, anchor: NativeTypeWrapper) {
+					public init(cType: LDKScore, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -51,7 +51,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.channelPenaltyMsat(shortChannelId: short_channel_id, source: NodeId(pointer: source.pointee), target: NodeId(pointer: target.pointee), usage: ChannelUsage(pointer: usage))
+							let swiftCallbackResult = instance.channelPenaltyMsat(shortChannelId: short_channel_id, source: NodeId(cType: source.pointee), target: NodeId(cType: target.pointee), usage: ChannelUsage(cType: usage))
 
 							// cleanup
 							
@@ -69,7 +69,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.paymentPathFailed(path: Vec_RouteHopZ(pointer: path).getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.paymentPathFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -87,7 +87,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.paymentPathSuccessful(path: Vec_RouteHopZ(pointer: path).getValue())
+							let swiftCallbackResult = instance.paymentPathSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
 
 							// cleanup
 							
@@ -105,7 +105,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.probeFailed(path: Vec_RouteHopZ(pointer: path).getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.probeFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -123,7 +123,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.probeSuccessful(path: Vec_RouteHopZ(pointer: path).getValue())
+							let swiftCallbackResult = instance.probeSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
 
 							// cleanup
 							
@@ -283,7 +283,7 @@
 					/// such as a chain data, network gossip, or invoice hints. For invoice hints, a capacity near
 					/// [`u64::max_value`] is given to indicate sufficient capacity for the invoice's full amount.
 					/// Thus, implementations should be overflow-safe.
-					public func channelPenaltyMsat(shortChannelId: UInt64, source: NodeId, target: NodeId, usage: ChannelUsage) -> UInt64 {
+					override func channelPenaltyMsat(shortChannelId: UInt64, source: NodeId, target: NodeId, usage: ChannelUsage) -> UInt64 {
 						// native call variable prep
 						
 
@@ -308,7 +308,7 @@
 					}
 		
 					/// Handles updating channel penalties after failing to route through a channel.
-					public func paymentPathFailed(path: [RouteHop], shortChannelId: UInt64) {
+					override func paymentPathFailed(path: [RouteHop], shortChannelId: UInt64) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -329,7 +329,7 @@
 					}
 		
 					/// Handles updating channel penalties after successfully routing along a path.
-					public func paymentPathSuccessful(path: [RouteHop]) {
+					override func paymentPathSuccessful(path: [RouteHop]) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -350,7 +350,7 @@
 					}
 		
 					/// Handles updating channel penalties after a probe over the given path failed.
-					public func probeFailed(path: [RouteHop], shortChannelId: UInt64) {
+					override func probeFailed(path: [RouteHop], shortChannelId: UInt64) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -371,7 +371,7 @@
 					}
 		
 					/// Handles updating channel penalties after a probe over the given path succeeded.
-					public func probeSuccessful(path: [RouteHop]) {
+					override func probeSuccessful(path: [RouteHop]) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -392,7 +392,7 @@
 					}
 		
 					/// Serialize the object into a byte array
-					public func write() -> [UInt8] {
+					override func write() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -403,14 +403,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

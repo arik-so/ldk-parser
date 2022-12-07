@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_RouteLightningErrorZ?
 
-					public init(pointer: LDKCResult_RouteLightningErrorZ) {
+					public init(cType: LDKCResult_RouteLightningErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_RouteLightningErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_RouteLightningErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_RouteLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_RouteLightningErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_RouteLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_RouteLightningErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_RouteLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_RouteLightningErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,14 +116,14 @@
 
 					public func getError() -> LightningError? {
 						if self.cType?.result_ok == false {
-							return LightningError(pointer: self.cType!.contents.err.pointee)
+							return LightningError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> Route? {
 						if self.cType?.result_ok == true {
-							return Route(pointer: self.cType!.contents.result.pointee)
+							return Route(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

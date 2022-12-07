@@ -19,17 +19,17 @@
 
 					internal var cType: LDKBlindedRoute?
 
-					public init(pointer: LDKBlindedRoute) {
+					public init(cType: LDKBlindedRoute) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKBlindedRoute, anchor: NativeTypeWrapper) {
+					public init(cType: LDKBlindedRoute, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -77,7 +77,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_BlindedRouteNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_BlindedRouteNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -98,7 +98,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -115,7 +115,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_BlindedRouteDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_BlindedRouteDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

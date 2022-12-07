@@ -23,17 +23,17 @@
 
 					internal var cType: LDKCommitmentTransaction?
 
-					public init(pointer: LDKCommitmentTransaction) {
+					public init(cType: LDKCommitmentTransaction) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCommitmentTransaction, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCommitmentTransaction, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -74,7 +74,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = CommitmentTransaction(pointer: nativeCallResult)
+						let returnValue = CommitmentTransaction(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -95,7 +95,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -112,7 +112,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CommitmentTransactionDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CommitmentTransactionDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -222,7 +222,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = TrustedCommitmentTransaction(pointer: nativeCallResult)
+						let returnValue = TrustedCommitmentTransaction(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -260,7 +260,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_TrustedCommitmentTransactionNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_TrustedCommitmentTransactionNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}

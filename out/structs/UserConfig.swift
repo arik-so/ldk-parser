@@ -21,17 +21,17 @@
 
 					internal var cType: LDKUserConfig?
 
-					public init(pointer: LDKUserConfig) {
+					public init(cType: LDKUserConfig) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKUserConfig, anchor: NativeTypeWrapper) {
+					public init(cType: LDKUserConfig, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelHandshakeConfig(pointer: nativeCallResult)
+						let returnValue = ChannelHandshakeConfig(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -114,7 +114,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelHandshakeLimits(pointer: nativeCallResult)
+						let returnValue = ChannelHandshakeLimits(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -156,7 +156,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelConfig(pointer: nativeCallResult)
+						let returnValue = ChannelConfig(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -376,7 +376,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = UserConfig(pointer: nativeCallResult)
+						let returnValue = UserConfig(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -397,7 +397,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = UserConfig(pointer: nativeCallResult)
+						let returnValue = UserConfig(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -414,7 +414,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = UserConfig(pointer: nativeCallResult)
+						let returnValue = UserConfig(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

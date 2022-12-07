@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_TrustedCommitmentTransactionNoneZ?
 
-					public init(pointer: LDKCResult_TrustedCommitmentTransactionNoneZ) {
+					public init(cType: LDKCResult_TrustedCommitmentTransactionNoneZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_TrustedCommitmentTransactionNoneZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_TrustedCommitmentTransactionNoneZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_TrustedCommitmentTransactionNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_TrustedCommitmentTransactionNoneZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_TrustedCommitmentTransactionNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_TrustedCommitmentTransactionNoneZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -101,7 +101,7 @@
 
 					public func getValue() -> TrustedCommitmentTransaction? {
 						if self.cType?.result_ok == true {
-							return TrustedCommitmentTransaction(pointer: self.cType!.contents.result.pointee)
+							return TrustedCommitmentTransaction(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

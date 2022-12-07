@@ -16,17 +16,17 @@
 
 					internal var cType: LDKRetry?
 
-					public init(pointer: LDKRetry) {
+					public init(cType: LDKRetry) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRetry, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRetry, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -95,7 +95,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Retry(pointer: nativeCallResult)
+						let returnValue = Retry(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -112,7 +112,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Retry(pointer: nativeCallResult)
+						let returnValue = Retry(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -129,7 +129,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Retry(pointer: nativeCallResult)
+						let returnValue = Retry(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

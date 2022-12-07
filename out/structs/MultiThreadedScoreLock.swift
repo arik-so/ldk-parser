@@ -18,17 +18,17 @@
 
 					internal var cType: LDKMultiThreadedScoreLock?
 
-					public init(pointer: LDKMultiThreadedScoreLock) {
+					public init(cType: LDKMultiThreadedScoreLock) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKMultiThreadedScoreLock, anchor: NativeTypeWrapper) {
+					public init(cType: LDKMultiThreadedScoreLock, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -70,7 +70,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedScore(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedScore(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -91,7 +91,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

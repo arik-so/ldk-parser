@@ -53,17 +53,17 @@
 
 					internal var cType: LDKProbabilisticScorer?
 
-					public init(pointer: LDKProbabilisticScorer) {
+					public init(cType: LDKProbabilisticScorer) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKProbabilisticScorer, anchor: NativeTypeWrapper) {
+					public init(cType: LDKProbabilisticScorer, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -105,7 +105,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ProbabilisticScorer(pointer: nativeCallResult)
+						let returnValue = ProbabilisticScorer(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -155,7 +155,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_C2Tuple_u64u64ZZ(pointer: nativeCallResult).getValue()
+						let returnValue = Option_C2Tuple_u64u64ZZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -299,7 +299,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedScore(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedScore(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -320,7 +320,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -341,7 +341,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ProbabilisticScorerDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ProbabilisticScorerDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

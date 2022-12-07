@@ -18,17 +18,17 @@
 
 					internal var cType: LDKChannelPublicKeys?
 
-					public init(pointer: LDKChannelPublicKeys) {
+					public init(cType: LDKChannelPublicKeys) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelPublicKeys, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelPublicKeys, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -70,7 +70,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,7 +116,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -163,7 +163,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -209,7 +209,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -254,7 +254,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -293,7 +293,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(pointer: nativeCallResult)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -314,7 +314,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(pointer: nativeCallResult)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -362,7 +362,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -379,7 +379,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ChannelPublicKeysDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ChannelPublicKeysDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

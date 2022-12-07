@@ -20,17 +20,17 @@
 
 					internal var cType: LDKFeeEstimator?
 
-					public init(pointer: LDKFeeEstimator) {
+					public init(cType: LDKFeeEstimator) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKFeeEstimator, anchor: NativeTypeWrapper) {
+					public init(cType: LDKFeeEstimator, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -160,7 +160,7 @@
 					/// The following unit conversions can be used to convert to sats/KW:
 					/// * satoshis-per-byte * 250
 					/// * satoshis-per-kbyte / 4
-					public func getEstSatPer_1000Weight(confirmationTarget: ConfirmationTarget) -> UInt32 {
+					override func getEstSatPer_1000Weight(confirmationTarget: ConfirmationTarget) -> UInt32 {
 						// native call variable prep
 						
 
@@ -178,7 +178,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

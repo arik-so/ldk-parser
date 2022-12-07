@@ -22,17 +22,17 @@
 
 					internal var cType: LDKChainParameters?
 
-					public init(pointer: LDKChainParameters) {
+					public init(cType: LDKChainParameters) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChainParameters, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChainParameters, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -117,7 +117,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BestBlock(pointer: nativeCallResult)
+						let returnValue = BestBlock(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -157,7 +157,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChainParameters(pointer: nativeCallResult)
+						let returnValue = ChainParameters(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -178,7 +178,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChainParameters(pointer: nativeCallResult)
+						let returnValue = ChainParameters(cType: nativeCallResult)
 
 						return returnValue
 					}

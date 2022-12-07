@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCOption_u32Z?
 
-					public init(pointer: LDKCOption_u32Z) {
+					public init(cType: LDKCOption_u32Z) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCOption_u32Z, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCOption_u32Z, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -81,7 +81,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_u32Z(pointer: nativeCallResult)
+						let returnValue = Option_u32Z(cType: nativeCallResult)
 
 						return returnValue
 					}

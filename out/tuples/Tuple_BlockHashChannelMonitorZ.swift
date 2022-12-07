@@ -16,17 +16,17 @@
 
 					internal var cType: LDKC2Tuple_BlockHashChannelMonitorZ?
 
-					public init(pointer: LDKC2Tuple_BlockHashChannelMonitorZ) {
+					public init(cType: LDKC2Tuple_BlockHashChannelMonitorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKC2Tuple_BlockHashChannelMonitorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKC2Tuple_BlockHashChannelMonitorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_BlockHashChannelMonitorZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_BlockHashChannelMonitorZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_BlockHashChannelMonitorZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_BlockHashChannelMonitorZ(cType: nativeCallResult).getValue()
 
 						self.cType = nativeCallResult
 					}
@@ -110,7 +110,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -124,7 +124,7 @@
 					/// The element at position 0
 					public func getA() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: self.cType!.a)
+						let returnValue = ThirtyTwoBytes(cType: self.cType!.a)
 
 						return returnValue;
 					}
@@ -132,7 +132,7 @@
 					/// The element at position 1
 					public func getB() -> ChannelMonitor {
 						// return value (do some wrapping)
-						let returnValue = ChannelMonitor(pointer: self.cType!.b)
+						let returnValue = ChannelMonitor(cType: self.cType!.b)
 
 						return returnValue;
 					}

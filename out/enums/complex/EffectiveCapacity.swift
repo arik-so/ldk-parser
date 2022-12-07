@@ -19,17 +19,17 @@
 
 					internal var cType: LDKEffectiveCapacity?
 
-					public init(pointer: LDKEffectiveCapacity) {
+					public init(cType: LDKEffectiveCapacity) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKEffectiveCapacity, anchor: NativeTypeWrapper) {
+					public init(cType: LDKEffectiveCapacity, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -115,7 +115,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = EffectiveCapacity(pointer: nativeCallResult)
+						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -132,7 +132,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = EffectiveCapacity(pointer: nativeCallResult)
+						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -149,7 +149,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = EffectiveCapacity(pointer: nativeCallResult)
+						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -168,7 +168,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = EffectiveCapacity(pointer: nativeCallResult)
+						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -185,7 +185,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = EffectiveCapacity(pointer: nativeCallResult)
+						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -202,7 +202,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = EffectiveCapacity(pointer: nativeCallResult)
+						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -235,7 +235,7 @@
 							return nil
 						}
 
-						return EffectiveCapacity_LDKExactLiquidity_Body(pointer: self.cType!.exact_liquidity)
+						return EffectiveCapacity_LDKExactLiquidity_Body(cType: self.cType!.exact_liquidity)
 					}
 			
 					public func getValueAsMaximumHtlc() -> MaximumHTLC? {
@@ -243,7 +243,7 @@
 							return nil
 						}
 
-						return EffectiveCapacity_LDKMaximumHTLC_Body(pointer: self.cType!.maximum_htlc)
+						return EffectiveCapacity_LDKMaximumHTLC_Body(cType: self.cType!.maximum_htlc)
 					}
 			
 					public func getValueAsTotal() -> Total? {
@@ -251,7 +251,7 @@
 							return nil
 						}
 
-						return EffectiveCapacity_LDKTotal_Body(pointer: self.cType!.total)
+						return EffectiveCapacity_LDKTotal_Body(cType: self.cType!.total)
 					}
 			
 
@@ -289,17 +289,17 @@
 
 						internal var cType: LDKEffectiveCapacity_LDKExactLiquidity_Body?
 
-						fileprivate init(pointer: LDKEffectiveCapacity_LDKExactLiquidity_Body) {
+						fileprivate init(cType: LDKEffectiveCapacity_LDKExactLiquidity_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEffectiveCapacity_LDKExactLiquidity_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEffectiveCapacity_LDKExactLiquidity_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -341,17 +341,17 @@
 
 						internal var cType: LDKEffectiveCapacity_LDKMaximumHTLC_Body?
 
-						fileprivate init(pointer: LDKEffectiveCapacity_LDKMaximumHTLC_Body) {
+						fileprivate init(cType: LDKEffectiveCapacity_LDKMaximumHTLC_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEffectiveCapacity_LDKMaximumHTLC_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEffectiveCapacity_LDKMaximumHTLC_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -392,17 +392,17 @@
 
 						internal var cType: LDKEffectiveCapacity_LDKTotal_Body?
 
-						fileprivate init(pointer: LDKEffectiveCapacity_LDKTotal_Body) {
+						fileprivate init(cType: LDKEffectiveCapacity_LDKTotal_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEffectiveCapacity_LDKTotal_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEffectiveCapacity_LDKTotal_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -423,7 +423,7 @@
 						/// The maximum HTLC amount denominated in millisatoshi.
 						public func getHtlcMaximumMsat() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(pointer: self.cType!.htlc_maximum_msat).getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.htlc_maximum_msat).getValue()
 
 							return returnValue;
 						}

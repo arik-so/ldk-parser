@@ -18,17 +18,17 @@
 
 					internal var cType: LDKRouteHintHop?
 
-					public init(pointer: LDKRouteHintHop) {
+					public init(cType: LDKRouteHintHop) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRouteHintHop, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRouteHintHop, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -153,7 +153,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RoutingFees(pointer: nativeCallResult)
+						let returnValue = RoutingFees(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -237,7 +237,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_u64Z(pointer: nativeCallResult).getValue()
+						let returnValue = Option_u64Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -281,7 +281,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_u64Z(pointer: nativeCallResult).getValue()
+						let returnValue = Option_u64Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -325,7 +325,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RouteHintHop(pointer: nativeCallResult)
+						let returnValue = RouteHintHop(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -346,7 +346,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RouteHintHop(pointer: nativeCallResult)
+						let returnValue = RouteHintHop(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -415,7 +415,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -432,7 +432,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_RouteHintHopDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_RouteHintHopDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

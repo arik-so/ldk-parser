@@ -21,17 +21,17 @@
 
 					internal var cType: LDKInFlightHtlcs?
 
-					public init(pointer: LDKInFlightHtlcs) {
+					public init(cType: LDKInFlightHtlcs) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKInFlightHtlcs, anchor: NativeTypeWrapper) {
+					public init(cType: LDKInFlightHtlcs, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -81,7 +81,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_u64Z(pointer: nativeCallResult).getValue()
+						let returnValue = Option_u64Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -102,7 +102,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -119,7 +119,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_InFlightHtlcsDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_InFlightHtlcsDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_ProbabilisticScorerDecodeErrorZ?
 
-					public init(pointer: LDKCResult_ProbabilisticScorerDecodeErrorZ) {
+					public init(cType: LDKCResult_ProbabilisticScorerDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_ProbabilisticScorerDecodeErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_ProbabilisticScorerDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ProbabilisticScorerDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ProbabilisticScorerDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ProbabilisticScorerDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ProbabilisticScorerDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -94,14 +94,14 @@
 
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(pointer: self.cType!.contents.err.pointee)
+							return DecodeError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> ProbabilisticScorer? {
 						if self.cType?.result_ok == true {
-							return ProbabilisticScorer(pointer: self.cType!.contents.result.pointee)
+							return ProbabilisticScorer(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

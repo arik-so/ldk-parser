@@ -17,17 +17,17 @@
 
 					internal var cType: LDKParseError?
 
-					public init(pointer: LDKParseError) {
+					public init(cType: LDKParseError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKParseError, anchor: NativeTypeWrapper) {
+					public init(cType: LDKParseError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -189,7 +189,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -206,7 +206,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -223,7 +223,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -240,7 +240,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -257,7 +257,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -274,7 +274,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -291,7 +291,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -308,7 +308,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -325,7 +325,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -342,7 +342,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -359,7 +359,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -376,7 +376,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -393,7 +393,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -410,7 +410,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -427,7 +427,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -444,7 +444,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -461,7 +461,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -478,7 +478,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -495,7 +495,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseError(pointer: nativeCallResult)
+						let returnValue = ParseError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -542,7 +542,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(pointer: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -554,7 +554,7 @@
 							return nil
 						}
 
-						return Bech32Error(pointer: self.cType!.bech32_error)
+						return Bech32Error(cType: self.cType!.bech32_error)
 					}
 			
 					public func getValueAsParseAmountError() -> BindingsError? {
@@ -562,7 +562,7 @@
 							return nil
 						}
 
-						return BindingsError(pointer: self.cType!.parse_amount_error)
+						return BindingsError(cType: self.cType!.parse_amount_error)
 					}
 			
 					public func getValueAsMalformedSignature() -> Secp256k1Error? {
@@ -578,7 +578,7 @@
 							return nil
 						}
 
-						return BindingsError(pointer: self.cType!.description_decode_error)
+						return BindingsError(cType: self.cType!.description_decode_error)
 					}
 			
 					public func getValueAsInvalidSliceLength() -> String? {
@@ -586,7 +586,7 @@
 							return nil
 						}
 
-						return Str(pointer: self.cType!.invalid_slice_length)
+						return Str(cType: self.cType!.invalid_slice_length)
 					}
 			
 

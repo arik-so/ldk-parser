@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_InvoiceSignOrCreationErrorZ?
 
-					public init(pointer: LDKCResult_InvoiceSignOrCreationErrorZ) {
+					public init(cType: LDKCResult_InvoiceSignOrCreationErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_InvoiceSignOrCreationErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_InvoiceSignOrCreationErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_InvoiceSignOrCreationErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_InvoiceSignOrCreationErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_InvoiceSignOrCreationErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_InvoiceSignOrCreationErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_InvoiceSignOrCreationErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_InvoiceSignOrCreationErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,14 +116,14 @@
 
 					public func getError() -> SignOrCreationError? {
 						if self.cType?.result_ok == false {
-							return SignOrCreationError(pointer: self.cType!.contents.err.pointee)
+							return SignOrCreationError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> Invoice? {
 						if self.cType?.result_ok == true {
-							return Invoice(pointer: self.cType!.contents.result.pointee)
+							return Invoice(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

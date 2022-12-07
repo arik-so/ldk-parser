@@ -18,17 +18,17 @@
 
 					internal var cType: LDKRawDataPart?
 
-					public init(pointer: LDKRawDataPart) {
+					public init(cType: LDKRawDataPart) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRawDataPart, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRawDataPart, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PositiveTimestamp(pointer: nativeCallResult)
+						let returnValue = PositiveTimestamp(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -138,7 +138,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RawDataPart(pointer: nativeCallResult)
+						let returnValue = RawDataPart(cType: nativeCallResult)
 
 						return returnValue
 					}

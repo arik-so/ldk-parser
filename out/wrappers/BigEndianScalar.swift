@@ -16,17 +16,17 @@
 
 					internal var cType: LDKBigEndianScalar?
 
-					public init(pointer: LDKBigEndianScalar) {
+					public init(cType: LDKBigEndianScalar) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKBigEndianScalar, anchor: NativeTypeWrapper) {
+					public init(cType: LDKBigEndianScalar, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BigEndianScalar(pointer: nativeCallResult)
+						let returnValue = BigEndianScalar(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

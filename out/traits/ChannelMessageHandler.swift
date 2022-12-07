@@ -19,17 +19,17 @@
 
 					internal var cType: LDKChannelMessageHandler?
 
-					public init(pointer: LDKChannelMessageHandler) {
+					public init(cType: LDKChannelMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelMessageHandler, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -52,7 +52,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleOpenChannel(theirNodeId: PublicKey(pointer: their_node_id).getValue(), theirFeatures: InitFeatures(pointer: their_features), msg: OpenChannel(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleOpenChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features), msg: OpenChannel(cType: msg.pointee))
 
 							// cleanup
 							
@@ -70,7 +70,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleAcceptChannel(theirNodeId: PublicKey(pointer: their_node_id).getValue(), theirFeatures: InitFeatures(pointer: their_features), msg: AcceptChannel(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleAcceptChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features), msg: AcceptChannel(cType: msg.pointee))
 
 							// cleanup
 							
@@ -88,7 +88,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleFundingCreated(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: FundingCreated(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleFundingCreated(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: FundingCreated(cType: msg.pointee))
 
 							// cleanup
 							
@@ -106,7 +106,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleFundingSigned(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: FundingSigned(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleFundingSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: FundingSigned(cType: msg.pointee))
 
 							// cleanup
 							
@@ -124,7 +124,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelReady(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: ChannelReady(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleChannelReady(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelReady(cType: msg.pointee))
 
 							// cleanup
 							
@@ -142,7 +142,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleShutdown(theirNodeId: PublicKey(pointer: their_node_id).getValue(), theirFeatures: InitFeatures(pointer: their_features.pointee), msg: Shutdown(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleShutdown(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features.pointee), msg: Shutdown(cType: msg.pointee))
 
 							// cleanup
 							
@@ -160,7 +160,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleClosingSigned(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: ClosingSigned(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleClosingSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ClosingSigned(cType: msg.pointee))
 
 							// cleanup
 							
@@ -178,7 +178,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateAddHtlc(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: UpdateAddHTLC(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleUpdateAddHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateAddHTLC(cType: msg.pointee))
 
 							// cleanup
 							
@@ -196,7 +196,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFulfillHtlc(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: UpdateFulfillHTLC(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleUpdateFulfillHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFulfillHTLC(cType: msg.pointee))
 
 							// cleanup
 							
@@ -214,7 +214,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFailHtlc(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: UpdateFailHTLC(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleUpdateFailHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFailHTLC(cType: msg.pointee))
 
 							// cleanup
 							
@@ -232,7 +232,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFailMalformedHtlc(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: UpdateFailMalformedHTLC(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleUpdateFailMalformedHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFailMalformedHTLC(cType: msg.pointee))
 
 							// cleanup
 							
@@ -250,7 +250,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleCommitmentSigned(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: CommitmentSigned(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleCommitmentSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: CommitmentSigned(cType: msg.pointee))
 
 							// cleanup
 							
@@ -268,7 +268,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleRevokeAndAck(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: RevokeAndACK(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleRevokeAndAck(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: RevokeAndACK(cType: msg.pointee))
 
 							// cleanup
 							
@@ -286,7 +286,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFee(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: UpdateFee(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleUpdateFee(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFee(cType: msg.pointee))
 
 							// cleanup
 							
@@ -304,7 +304,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleAnnouncementSignatures(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: AnnouncementSignatures(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleAnnouncementSignatures(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: AnnouncementSignatures(cType: msg.pointee))
 
 							// cleanup
 							
@@ -322,7 +322,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerDisconnected(theirNodeId: PublicKey(pointer: their_node_id).getValue(), noConnectionPossible: no_connection_possible)
+							let swiftCallbackResult = instance.peerDisconnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), noConnectionPossible: no_connection_possible)
 
 							// cleanup
 							
@@ -340,7 +340,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: Init(pointer: msg.pointee))
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: Init(cType: msg.pointee))
 
 							// cleanup
 							
@@ -358,7 +358,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelReestablish(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: ChannelReestablish(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleChannelReestablish(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelReestablish(cType: msg.pointee))
 
 							// cleanup
 							
@@ -376,7 +376,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelUpdate(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: ChannelUpdate(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleChannelUpdate(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelUpdate(cType: msg.pointee))
 
 							// cleanup
 							
@@ -394,7 +394,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleError(theirNodeId: PublicKey(pointer: their_node_id).getValue(), msg: ErrorMessage(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleError(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ErrorMessage(cType: msg.pointee))
 
 							// cleanup
 							
@@ -430,7 +430,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.providedInitFeatures(theirNodeId: PublicKey(pointer: their_node_id).getValue())
+							let swiftCallbackResult = instance.providedInitFeatures(theirNodeId: PublicKey(cType: their_node_id).getValue())
 
 							// cleanup
 							
@@ -671,7 +671,7 @@
 					/// Implementation of MessageSendEventsProvider for this object.
 					public func getMessageSendEventsProvider() -> MessageSendEventsProvider {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedMessageSendEventsProvider(pointer: self.cType!.MessageSendEventsProvider, anchor: self)
+						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: self.cType!.MessageSendEventsProvider, anchor: self)
 
 						return returnValue;
 					}
@@ -695,7 +695,7 @@
 				public class NativelyImplementedChannelMessageHandler: ChannelMessageHandler {
 					
 					/// Handle an incoming open_channel message from the given peer.
-					public func handleOpenChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: OpenChannel) {
+					override func handleOpenChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: OpenChannel) {
 						// native call variable prep
 						
 
@@ -716,7 +716,7 @@
 					}
 		
 					/// Handle an incoming accept_channel message from the given peer.
-					public func handleAcceptChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: AcceptChannel) {
+					override func handleAcceptChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: AcceptChannel) {
 						// native call variable prep
 						
 
@@ -737,7 +737,7 @@
 					}
 		
 					/// Handle an incoming funding_created message from the given peer.
-					public func handleFundingCreated(theirNodeId: [UInt8], msg: FundingCreated) {
+					override func handleFundingCreated(theirNodeId: [UInt8], msg: FundingCreated) {
 						// native call variable prep
 						
 
@@ -758,7 +758,7 @@
 					}
 		
 					/// Handle an incoming funding_signed message from the given peer.
-					public func handleFundingSigned(theirNodeId: [UInt8], msg: FundingSigned) {
+					override func handleFundingSigned(theirNodeId: [UInt8], msg: FundingSigned) {
 						// native call variable prep
 						
 
@@ -779,7 +779,7 @@
 					}
 		
 					/// Handle an incoming channel_ready message from the given peer.
-					public func handleChannelReady(theirNodeId: [UInt8], msg: ChannelReady) {
+					override func handleChannelReady(theirNodeId: [UInt8], msg: ChannelReady) {
 						// native call variable prep
 						
 
@@ -800,7 +800,7 @@
 					}
 		
 					/// Handle an incoming shutdown message from the given peer.
-					public func handleShutdown(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: Shutdown) {
+					override func handleShutdown(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: Shutdown) {
 						// native call variable prep
 						
 
@@ -825,7 +825,7 @@
 					}
 		
 					/// Handle an incoming closing_signed message from the given peer.
-					public func handleClosingSigned(theirNodeId: [UInt8], msg: ClosingSigned) {
+					override func handleClosingSigned(theirNodeId: [UInt8], msg: ClosingSigned) {
 						// native call variable prep
 						
 
@@ -846,7 +846,7 @@
 					}
 		
 					/// Handle an incoming update_add_htlc message from the given peer.
-					public func handleUpdateAddHtlc(theirNodeId: [UInt8], msg: UpdateAddHTLC) {
+					override func handleUpdateAddHtlc(theirNodeId: [UInt8], msg: UpdateAddHTLC) {
 						// native call variable prep
 						
 
@@ -867,7 +867,7 @@
 					}
 		
 					/// Handle an incoming update_fulfill_htlc message from the given peer.
-					public func handleUpdateFulfillHtlc(theirNodeId: [UInt8], msg: UpdateFulfillHTLC) {
+					override func handleUpdateFulfillHtlc(theirNodeId: [UInt8], msg: UpdateFulfillHTLC) {
 						// native call variable prep
 						
 
@@ -888,7 +888,7 @@
 					}
 		
 					/// Handle an incoming update_fail_htlc message from the given peer.
-					public func handleUpdateFailHtlc(theirNodeId: [UInt8], msg: UpdateFailHTLC) {
+					override func handleUpdateFailHtlc(theirNodeId: [UInt8], msg: UpdateFailHTLC) {
 						// native call variable prep
 						
 
@@ -909,7 +909,7 @@
 					}
 		
 					/// Handle an incoming update_fail_malformed_htlc message from the given peer.
-					public func handleUpdateFailMalformedHtlc(theirNodeId: [UInt8], msg: UpdateFailMalformedHTLC) {
+					override func handleUpdateFailMalformedHtlc(theirNodeId: [UInt8], msg: UpdateFailMalformedHTLC) {
 						// native call variable prep
 						
 
@@ -930,7 +930,7 @@
 					}
 		
 					/// Handle an incoming commitment_signed message from the given peer.
-					public func handleCommitmentSigned(theirNodeId: [UInt8], msg: CommitmentSigned) {
+					override func handleCommitmentSigned(theirNodeId: [UInt8], msg: CommitmentSigned) {
 						// native call variable prep
 						
 
@@ -951,7 +951,7 @@
 					}
 		
 					/// Handle an incoming revoke_and_ack message from the given peer.
-					public func handleRevokeAndAck(theirNodeId: [UInt8], msg: RevokeAndACK) {
+					override func handleRevokeAndAck(theirNodeId: [UInt8], msg: RevokeAndACK) {
 						// native call variable prep
 						
 
@@ -972,7 +972,7 @@
 					}
 		
 					/// Handle an incoming update_fee message from the given peer.
-					public func handleUpdateFee(theirNodeId: [UInt8], msg: UpdateFee) {
+					override func handleUpdateFee(theirNodeId: [UInt8], msg: UpdateFee) {
 						// native call variable prep
 						
 
@@ -993,7 +993,7 @@
 					}
 		
 					/// Handle an incoming announcement_signatures message from the given peer.
-					public func handleAnnouncementSignatures(theirNodeId: [UInt8], msg: AnnouncementSignatures) {
+					override func handleAnnouncementSignatures(theirNodeId: [UInt8], msg: AnnouncementSignatures) {
 						// native call variable prep
 						
 
@@ -1020,7 +1020,7 @@
 					/// 
 					/// Note that in some rare cases this may be called without a corresponding
 					/// [`Self::peer_connected`].
-					public func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) {
+					override func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) {
 						// native call variable prep
 						
 
@@ -1041,7 +1041,7 @@
 					/// May return an `Err(())` if the features the peer supports are not sufficient to communicate
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
-					public func peerConnected(theirNodeId: [UInt8], msg: Init) -> Result_NoneNoneZ {
+					override func peerConnected(theirNodeId: [UInt8], msg: Init) -> Result_NoneNoneZ {
 						// native call variable prep
 						
 
@@ -1056,13 +1056,13 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Handle an incoming channel_reestablish message from the given peer.
-					public func handleChannelReestablish(theirNodeId: [UInt8], msg: ChannelReestablish) {
+					override func handleChannelReestablish(theirNodeId: [UInt8], msg: ChannelReestablish) {
 						// native call variable prep
 						
 
@@ -1083,7 +1083,7 @@
 					}
 		
 					/// Handle an incoming channel update from the given peer.
-					public func handleChannelUpdate(theirNodeId: [UInt8], msg: ChannelUpdate) {
+					override func handleChannelUpdate(theirNodeId: [UInt8], msg: ChannelUpdate) {
 						// native call variable prep
 						
 
@@ -1104,7 +1104,7 @@
 					}
 		
 					/// Handle an incoming error message from the given peer.
-					public func handleError(theirNodeId: [UInt8], msg: ErrorMessage) {
+					override func handleError(theirNodeId: [UInt8], msg: ErrorMessage) {
 						// native call variable prep
 						
 
@@ -1127,7 +1127,7 @@
 					/// Gets the node feature flags which this handler itself supports. All available handlers are
 					/// queried similarly and their feature flags are OR'd together to form the [`NodeFeatures`]
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
-					public func providedNodeFeatures() -> NodeFeatures {
+					override func providedNodeFeatures() -> NodeFeatures {
 						// native call variable prep
 						
 
@@ -1138,7 +1138,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NodeFeatures(pointer: nativeCallResult)
+						let returnValue = NodeFeatures(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1148,7 +1148,7 @@
 					/// which are sent in our [`Init`] message.
 					/// 
 					/// Note that this method is called before [`Self::peer_connected`].
-					public func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
+					override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
 						// native call variable prep
 						
 
@@ -1159,14 +1159,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = InitFeatures(pointer: nativeCallResult)
+						let returnValue = InitFeatures(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

@@ -23,17 +23,17 @@
 
 					internal var cType: LDKPositiveTimestamp?
 
-					public init(pointer: LDKPositiveTimestamp) {
+					public init(cType: LDKPositiveTimestamp) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPositiveTimestamp, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPositiveTimestamp, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -101,7 +101,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PositiveTimestamp(pointer: nativeCallResult)
+						let returnValue = PositiveTimestamp(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -141,7 +141,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PositiveTimestampCreationErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PositiveTimestampCreationErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -163,7 +163,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PositiveTimestampCreationErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PositiveTimestampCreationErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -185,7 +185,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PositiveTimestampCreationErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PositiveTimestampCreationErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

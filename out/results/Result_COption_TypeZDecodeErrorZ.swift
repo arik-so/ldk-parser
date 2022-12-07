@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_COption_TypeZDecodeErrorZ?
 
-					public init(pointer: LDKCResult_COption_TypeZDecodeErrorZ) {
+					public init(cType: LDKCResult_COption_TypeZDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_COption_TypeZDecodeErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_COption_TypeZDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -50,7 +50,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_TypeZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_TypeZDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -67,7 +67,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_TypeZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_TypeZDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -106,7 +106,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_TypeZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_TypeZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -118,14 +118,14 @@
 
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(pointer: self.cType!.contents.err.pointee)
+							return DecodeError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> BindingsType? {
 						if self.cType?.result_ok == true {
-							return Option_TypeZ(pointer: self.cType!.contents.result.pointee).getValue()
+							return Option_TypeZ(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}

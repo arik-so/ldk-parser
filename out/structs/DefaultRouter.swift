@@ -18,17 +18,17 @@
 
 					internal var cType: LDKDefaultRouter?
 
-					public init(pointer: LDKDefaultRouter) {
+					public init(cType: LDKDefaultRouter) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKDefaultRouter, anchor: NativeTypeWrapper) {
+					public init(cType: LDKDefaultRouter, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -70,7 +70,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = DefaultRouter(pointer: nativeCallResult)
+						let returnValue = DefaultRouter(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -92,7 +92,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedRouter(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedRouter(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}

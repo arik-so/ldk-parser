@@ -18,17 +18,17 @@
 
 					internal var cType: LDKChannelUpdateInfo?
 
-					public init(pointer: LDKChannelUpdateInfo) {
+					public init(cType: LDKChannelUpdateInfo) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelUpdateInfo, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelUpdateInfo, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -281,7 +281,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RoutingFees(pointer: nativeCallResult)
+						let returnValue = RoutingFees(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -341,7 +341,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdate(pointer: nativeCallResult)
+						let returnValue = ChannelUpdate(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -384,7 +384,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdateInfo(pointer: nativeCallResult)
+						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -405,7 +405,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdateInfo(pointer: nativeCallResult)
+						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -453,7 +453,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -470,7 +470,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ChannelUpdateInfoDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ChannelUpdateInfoDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

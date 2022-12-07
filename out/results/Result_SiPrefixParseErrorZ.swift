@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_SiPrefixParseErrorZ?
 
-					public init(pointer: LDKCResult_SiPrefixParseErrorZ) {
+					public init(cType: LDKCResult_SiPrefixParseErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_SiPrefixParseErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_SiPrefixParseErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SiPrefixParseErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_SiPrefixParseErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SiPrefixParseErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_SiPrefixParseErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SiPrefixParseErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_SiPrefixParseErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,7 +116,7 @@
 
 					public func getError() -> ParseError? {
 						if self.cType?.result_ok == false {
-							return ParseError(pointer: self.cType!.contents.err.pointee)
+							return ParseError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}

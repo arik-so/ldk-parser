@@ -22,17 +22,17 @@
 
 					internal var cType: LDKRapidGossipSync?
 
-					public init(pointer: LDKRapidGossipSync) {
+					public init(cType: LDKRapidGossipSync) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRapidGossipSync, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRapidGossipSync, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -73,7 +73,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RapidGossipSync(pointer: nativeCallResult)
+						let returnValue = RapidGossipSync(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -99,7 +99,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_u32GraphSyncErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_u32GraphSyncErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

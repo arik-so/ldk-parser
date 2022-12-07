@@ -17,17 +17,17 @@
 
 					internal var cType: LDKCustomMessageReader?
 
-					public init(pointer: LDKCustomMessageReader) {
+					public init(cType: LDKCustomMessageReader) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCustomMessageReader, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCustomMessageReader, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -50,7 +50,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.read(messageType: message_type, buffer: u8slice(pointer: buffer).getValue())
+							let swiftCallbackResult = instance.read(messageType: message_type, buffer: u8slice(cType: buffer).getValue())
 
 							// cleanup
 							
@@ -149,7 +149,7 @@
 					/// implementation and the message could be decoded, must return `Ok(Some(message))`. If the
 					/// message type is unknown to the implementation, must return `Ok(None)`. If a decoding error
 					/// occur, must return `Err(DecodeError::X)` where `X` details the encountered error.
-					public func read(messageType: UInt16, buffer: [UInt8]) -> Result_COption_TypeZDecodeErrorZ {
+					override func read(messageType: UInt16, buffer: [UInt8]) -> Result_COption_TypeZDecodeErrorZ {
 						// native call variable prep
 						
 
@@ -160,14 +160,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_TypeZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_TypeZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

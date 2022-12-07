@@ -19,17 +19,17 @@
 
 					internal var cType: LDKTxOut?
 
-					public init(pointer: LDKTxOut) {
+					public init(cType: LDKTxOut) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKTxOut, anchor: NativeTypeWrapper) {
+					public init(cType: LDKTxOut, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -53,7 +53,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = TxOut(pointer: nativeCallResult)
+						let returnValue = TxOut(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -91,7 +91,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = TxOut(pointer: nativeCallResult)
+						let returnValue = TxOut(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -101,7 +101,7 @@
 					/// The script_pubkey in this output
 					public func getScriptPubkey() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: self.cType!.script_pubkey).getValue()
+						let returnValue = Vec_u8Z(cType: self.cType!.script_pubkey).getValue()
 
 						return returnValue;
 					}

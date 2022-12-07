@@ -17,17 +17,17 @@
 
 					internal var cType: LDKCVec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ?
 
-					public init(pointer: LDKCVec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ) {
+					public init(cType: LDKCVec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCVec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCVec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -65,7 +65,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(pointer: currentCType).getValue()
+							Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

@@ -18,17 +18,17 @@
 
 					internal var cType: LDKRouteHint?
 
-					public init(pointer: LDKRouteHint) {
+					public init(cType: LDKRouteHint) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRouteHint, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRouteHint, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_RouteHintHopZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_RouteHintHopZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -115,7 +115,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = RouteHint(pointer: nativeCallResult)
+						let returnValue = RouteHint(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -136,7 +136,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RouteHint(pointer: nativeCallResult)
+						let returnValue = RouteHint(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -205,7 +205,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -222,7 +222,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_RouteHintDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_RouteHintDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

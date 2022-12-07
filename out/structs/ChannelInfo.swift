@@ -19,17 +19,17 @@
 
 					internal var cType: LDKChannelInfo?
 
-					public init(pointer: LDKChannelInfo) {
+					public init(cType: LDKChannelInfo) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelInfo, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelInfo, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -70,7 +70,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelFeatures(pointer: nativeCallResult)
+						let returnValue = ChannelFeatures(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -112,7 +112,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NodeId(pointer: nativeCallResult)
+						let returnValue = NodeId(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -169,7 +169,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdateInfo(pointer: nativeCallResult)
+						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -213,7 +213,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NodeId(pointer: nativeCallResult)
+						let returnValue = NodeId(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -270,7 +270,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdateInfo(pointer: nativeCallResult)
+						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -314,7 +314,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_u64Z(pointer: nativeCallResult).getValue()
+						let returnValue = Option_u64Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -376,7 +376,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ChannelAnnouncement(pointer: nativeCallResult)
+						let returnValue = ChannelAnnouncement(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -423,7 +423,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelInfo(pointer: nativeCallResult)
+						let returnValue = ChannelInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -486,7 +486,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdateInfo(pointer: nativeCallResult)
+						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -507,7 +507,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -524,7 +524,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ChannelInfoDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ChannelInfoDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

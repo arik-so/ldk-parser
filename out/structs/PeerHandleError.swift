@@ -20,17 +20,17 @@
 
 					internal var cType: LDKPeerHandleError?
 
-					public init(pointer: LDKPeerHandleError) {
+					public init(cType: LDKPeerHandleError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPeerHandleError, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPeerHandleError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -121,7 +121,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PeerHandleError(pointer: nativeCallResult)
+						let returnValue = PeerHandleError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -142,7 +142,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PeerHandleError(pointer: nativeCallResult)
+						let returnValue = PeerHandleError(cType: nativeCallResult)
 
 						return returnValue
 					}

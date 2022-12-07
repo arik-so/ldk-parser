@@ -21,17 +21,17 @@
 
 					internal var cType: LDKInMemorySigner?
 
-					public init(pointer: LDKInMemorySigner) {
+					public init(cType: LDKInMemorySigner) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKInMemorySigner, anchor: NativeTypeWrapper) {
+					public init(cType: LDKInMemorySigner, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -198,7 +198,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = InMemorySigner(pointer: nativeCallResult)
+						let returnValue = InMemorySigner(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -215,7 +215,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = InMemorySigner(pointer: nativeCallResult)
+						let returnValue = InMemorySigner(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -237,7 +237,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(pointer: nativeCallResult)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -329,7 +329,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = OutPoint(pointer: nativeCallResult)
+						let returnValue = OutPoint(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -353,7 +353,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelTransactionParameters(pointer: nativeCallResult)
+						let returnValue = ChannelTransactionParameters(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -405,7 +405,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_CVec_u8ZZNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -436,7 +436,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_CVec_u8ZZNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -458,7 +458,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBaseSign(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedBaseSign(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -480,7 +480,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedSign(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedSign(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -501,7 +501,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -518,7 +518,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_InMemorySignerDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_InMemorySignerDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

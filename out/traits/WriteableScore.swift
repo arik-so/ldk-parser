@@ -19,17 +19,17 @@
 
 					internal var cType: LDKWriteableScore?
 
-					public init(pointer: LDKWriteableScore) {
+					public init(cType: LDKWriteableScore) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKWriteableScore, anchor: NativeTypeWrapper) {
+					public init(cType: LDKWriteableScore, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -130,7 +130,7 @@
 					/// Implementation of LockableScore for this object.
 					public func getLockableScore() -> LockableScore {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedLockableScore(pointer: self.cType!.LockableScore, anchor: self)
+						let returnValue = NativelyImplementedLockableScore(cType: self.cType!.LockableScore, anchor: self)
 
 						return returnValue;
 					}
@@ -154,7 +154,7 @@
 				public class NativelyImplementedWriteableScore: WriteableScore {
 					
 					/// Serialize the object into a byte array
-					public func write() -> [UInt8] {
+					override func write() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -165,14 +165,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

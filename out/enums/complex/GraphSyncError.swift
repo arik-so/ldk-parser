@@ -16,17 +16,17 @@
 
 					internal var cType: LDKGraphSyncError?
 
-					public init(pointer: LDKGraphSyncError) {
+					public init(cType: LDKGraphSyncError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKGraphSyncError, anchor: NativeTypeWrapper) {
+					public init(cType: LDKGraphSyncError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -93,7 +93,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = GraphSyncError(pointer: nativeCallResult)
+						let returnValue = GraphSyncError(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -110,7 +110,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = GraphSyncError(pointer: nativeCallResult)
+						let returnValue = GraphSyncError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -127,7 +127,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = GraphSyncError(pointer: nativeCallResult)
+						let returnValue = GraphSyncError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -139,7 +139,7 @@
 							return nil
 						}
 
-						return DecodeError(pointer: self.cType!.decode_error)
+						return DecodeError(cType: self.cType!.decode_error)
 					}
 			
 					public func getValueAsLightningError() -> LightningError? {
@@ -147,7 +147,7 @@
 							return nil
 						}
 
-						return LightningError(pointer: self.cType!.lightning_error)
+						return LightningError(cType: self.cType!.lightning_error)
 					}
 			
 

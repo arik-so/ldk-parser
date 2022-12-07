@@ -16,17 +16,17 @@
 
 					internal var cType: LDKOnionMessageHandler?
 
-					public init(pointer: LDKOnionMessageHandler) {
+					public init(cType: LDKOnionMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKOnionMessageHandler, anchor: NativeTypeWrapper) {
+					public init(cType: LDKOnionMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -49,7 +49,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleOnionMessage(peerNodeId: PublicKey(pointer: peer_node_id).getValue(), msg: OnionMessage(pointer: msg.pointee))
+							let swiftCallbackResult = instance.handleOnionMessage(peerNodeId: PublicKey(cType: peer_node_id).getValue(), msg: OnionMessage(cType: msg.pointee))
 
 							// cleanup
 							
@@ -67,7 +67,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(pointer: their_node_id).getValue(), init: Init(pointer: init.pointee))
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), init: Init(cType: init.pointee))
 
 							// cleanup
 							
@@ -85,7 +85,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerDisconnected(theirNodeId: PublicKey(pointer: their_node_id).getValue(), noConnectionPossible: no_connection_possible)
+							let swiftCallbackResult = instance.peerDisconnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), noConnectionPossible: no_connection_possible)
 
 							// cleanup
 							
@@ -121,7 +121,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.providedInitFeatures(theirNodeId: PublicKey(pointer: their_node_id).getValue())
+							let swiftCallbackResult = instance.providedInitFeatures(theirNodeId: PublicKey(cType: their_node_id).getValue())
 
 							// cleanup
 							
@@ -242,7 +242,7 @@
 					/// Implementation of OnionMessageProvider for this object.
 					public func getOnionMessageProvider() -> OnionMessageProvider {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageProvider(pointer: self.cType!.OnionMessageProvider, anchor: self)
+						let returnValue = NativelyImplementedOnionMessageProvider(cType: self.cType!.OnionMessageProvider, anchor: self)
 
 						return returnValue;
 					}
@@ -266,7 +266,7 @@
 				public class NativelyImplementedOnionMessageHandler: OnionMessageHandler {
 					
 					/// Handle an incoming onion_message message from the given peer.
-					public func handleOnionMessage(peerNodeId: [UInt8], msg: OnionMessage) {
+					override func handleOnionMessage(peerNodeId: [UInt8], msg: OnionMessage) {
 						// native call variable prep
 						
 
@@ -292,7 +292,7 @@
 					/// May return an `Err(())` if the features the peer supports are not sufficient to communicate
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
-					public func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
+					override func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
 						// native call variable prep
 						
 
@@ -307,7 +307,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -317,7 +317,7 @@
 					/// 
 					/// Note that in some rare cases this may be called without a corresponding
 					/// [`Self::peer_connected`].
-					public func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) {
+					override func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) {
 						// native call variable prep
 						
 
@@ -336,7 +336,7 @@
 					/// Gets the node feature flags which this handler itself supports. All available handlers are
 					/// queried similarly and their feature flags are OR'd together to form the [`NodeFeatures`]
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
-					public func providedNodeFeatures() -> NodeFeatures {
+					override func providedNodeFeatures() -> NodeFeatures {
 						// native call variable prep
 						
 
@@ -347,7 +347,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NodeFeatures(pointer: nativeCallResult)
+						let returnValue = NodeFeatures(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -357,7 +357,7 @@
 					/// which are sent in our [`Init`] message.
 					/// 
 					/// Note that this method is called before [`Self::peer_connected`].
-					public func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
+					override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
 						// native call variable prep
 						
 
@@ -368,14 +368,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = InitFeatures(pointer: nativeCallResult)
+						let returnValue = InitFeatures(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

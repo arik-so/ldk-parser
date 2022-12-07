@@ -22,17 +22,17 @@
 
 					internal var cType: LDKSignedRawInvoice?
 
-					public init(pointer: LDKSignedRawInvoice) {
+					public init(cType: LDKSignedRawInvoice) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKSignedRawInvoice, anchor: NativeTypeWrapper) {
+					public init(cType: LDKSignedRawInvoice, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -100,7 +100,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SignedRawInvoice(pointer: nativeCallResult)
+						let returnValue = SignedRawInvoice(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -141,7 +141,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -162,7 +162,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RawInvoice(pointer: nativeCallResult)
+						let returnValue = RawInvoice(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -183,7 +183,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = InvoiceSignature(pointer: nativeCallResult)
+						let returnValue = InvoiceSignature(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -204,7 +204,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PayeePubKeyErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PayeePubKeyErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -243,7 +243,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SignedRawInvoiceParseErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_SignedRawInvoiceParseErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -264,7 +264,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(pointer: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -21,17 +21,17 @@
 
 					internal var cType: LDKLockedChannelMonitor?
 
-					public init(pointer: LDKLockedChannelMonitor) {
+					public init(cType: LDKLockedChannelMonitor) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKLockedChannelMonitor, anchor: NativeTypeWrapper) {
+					public init(cType: LDKLockedChannelMonitor, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)

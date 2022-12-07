@@ -19,17 +19,17 @@
 
 					internal var cType: LDKDelayedPaymentOutputDescriptor?
 
-					public init(pointer: LDKDelayedPaymentOutputDescriptor) {
+					public init(cType: LDKDelayedPaymentOutputDescriptor) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKDelayedPaymentOutputDescriptor, anchor: NativeTypeWrapper) {
+					public init(cType: LDKDelayedPaymentOutputDescriptor, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -70,7 +70,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = OutPoint(pointer: nativeCallResult)
+						let returnValue = OutPoint(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -112,7 +112,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -200,7 +200,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = TxOut(pointer: nativeCallResult)
+						let returnValue = TxOut(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -243,7 +243,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -347,7 +347,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = DelayedPaymentOutputDescriptor(pointer: nativeCallResult)
+						let returnValue = DelayedPaymentOutputDescriptor(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -368,7 +368,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = DelayedPaymentOutputDescriptor(pointer: nativeCallResult)
+						let returnValue = DelayedPaymentOutputDescriptor(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -416,7 +416,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -433,7 +433,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_DelayedPaymentOutputDescriptorDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_DelayedPaymentOutputDescriptorDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

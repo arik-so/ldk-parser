@@ -16,17 +16,17 @@
 
 					internal var cType: LDKBroadcasterInterface?
 
-					public init(pointer: LDKBroadcasterInterface) {
+					public init(cType: LDKBroadcasterInterface) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKBroadcasterInterface, anchor: NativeTypeWrapper) {
+					public init(cType: LDKBroadcasterInterface, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -49,7 +49,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.broadcastTransaction(tx: Transaction(pointer: tx).getValue())
+							let swiftCallbackResult = instance.broadcastTransaction(tx: Transaction(cType: tx).getValue())
 
 							// cleanup
 							
@@ -142,7 +142,7 @@
 				public class NativelyImplementedBroadcasterInterface: BroadcasterInterface {
 					
 					/// Sends a transaction out to (hopefully) be mined.
-					public func broadcastTransaction(tx: [UInt8]) {
+					override func broadcastTransaction(tx: [UInt8]) {
 						// native call variable prep
 						
 
@@ -160,7 +160,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

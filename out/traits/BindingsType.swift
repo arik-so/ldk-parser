@@ -18,17 +18,17 @@
 
 					internal var cType: LDKType?
 
-					public init(pointer: LDKType) {
+					public init(cType: LDKType) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKType, anchor: NativeTypeWrapper) {
+					public init(cType: LDKType, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -173,7 +173,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBindingsType(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedBindingsType(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -216,7 +216,7 @@
 				public class NativelyImplementedBindingsType: BindingsType {
 					
 					/// Returns the type identifying the message payload.
-					public func typeId() -> UInt16 {
+					override func typeId() -> UInt16 {
 						// native call variable prep
 						
 
@@ -233,7 +233,7 @@
 					}
 		
 					/// Return a human-readable "debug" string describing this object
-					public func debugStr() -> String {
+					override func debugStr() -> String {
 						// native call variable prep
 						
 
@@ -244,13 +244,13 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(pointer: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Serialize the object into a byte array
-					public func write() -> [UInt8] {
+					override func write() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -261,14 +261,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

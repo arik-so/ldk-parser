@@ -16,17 +16,17 @@
 
 					internal var cType: LDKMonitorEvent?
 
-					public init(pointer: LDKMonitorEvent) {
+					public init(cType: LDKMonitorEvent) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKMonitorEvent, anchor: NativeTypeWrapper) {
+					public init(cType: LDKMonitorEvent, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -109,7 +109,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MonitorEvent(pointer: nativeCallResult)
+						let returnValue = MonitorEvent(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -126,7 +126,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MonitorEvent(pointer: nativeCallResult)
+						let returnValue = MonitorEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -143,7 +143,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MonitorEvent(pointer: nativeCallResult)
+						let returnValue = MonitorEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -160,7 +160,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MonitorEvent(pointer: nativeCallResult)
+						let returnValue = MonitorEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -177,7 +177,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MonitorEvent(pointer: nativeCallResult)
+						let returnValue = MonitorEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -224,7 +224,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -241,7 +241,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_MonitorEventZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_MonitorEventZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -253,7 +253,7 @@
 							return nil
 						}
 
-						return HTLCUpdate(pointer: self.cType!.htlc_event)
+						return HTLCUpdate(cType: self.cType!.htlc_event)
 					}
 			
 					public func getValueAsCommitmentTxConfirmed() -> OutPoint? {
@@ -261,7 +261,7 @@
 							return nil
 						}
 
-						return OutPoint(pointer: self.cType!.commitment_tx_confirmed)
+						return OutPoint(cType: self.cType!.commitment_tx_confirmed)
 					}
 			
 					public func getValueAsCompleted() -> Completed? {
@@ -269,7 +269,7 @@
 							return nil
 						}
 
-						return MonitorEvent_LDKCompleted_Body(pointer: self.cType!.completed)
+						return MonitorEvent_LDKCompleted_Body(cType: self.cType!.completed)
 					}
 			
 					public func getValueAsUpdateFailed() -> OutPoint? {
@@ -277,7 +277,7 @@
 							return nil
 						}
 
-						return OutPoint(pointer: self.cType!.update_failed)
+						return OutPoint(cType: self.cType!.update_failed)
 					}
 			
 
@@ -315,17 +315,17 @@
 
 						internal var cType: LDKMonitorEvent_LDKCompleted_Body?
 
-						fileprivate init(pointer: LDKMonitorEvent_LDKCompleted_Body) {
+						fileprivate init(cType: LDKMonitorEvent_LDKCompleted_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMonitorEvent_LDKCompleted_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMonitorEvent_LDKCompleted_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -338,7 +338,7 @@
 						/// The funding outpoint of the [`ChannelMonitor`] that was updated
 						public func getFundingTxo() -> OutPoint {
 							// return value (do some wrapping)
-							let returnValue = OutPoint(pointer: self.cType!.funding_txo)
+							let returnValue = OutPoint(cType: self.cType!.funding_txo)
 
 							return returnValue;
 						}

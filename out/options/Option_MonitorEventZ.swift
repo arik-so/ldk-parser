@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCOption_MonitorEventZ?
 
-					public init(pointer: LDKCOption_MonitorEventZ) {
+					public init(cType: LDKCOption_MonitorEventZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCOption_MonitorEventZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCOption_MonitorEventZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -81,7 +81,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_MonitorEventZ(pointer: nativeCallResult)
+						let returnValue = Option_MonitorEventZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -92,7 +92,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_MonitorEventZ_Some {
-							return MonitorEvent(pointer: self.cType!.some)
+							return MonitorEvent(cType: self.cType!.some)
 						}
 						assert(false, "invalid option enum value")
 						return nil

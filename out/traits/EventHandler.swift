@@ -16,17 +16,17 @@
 
 					internal var cType: LDKEventHandler?
 
-					public init(pointer: LDKEventHandler) {
+					public init(cType: LDKEventHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKEventHandler, anchor: NativeTypeWrapper) {
+					public init(cType: LDKEventHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -49,7 +49,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleEvent(event: Event(pointer: event.pointee))
+							let swiftCallbackResult = instance.handleEvent(event: Event(cType: event.pointee))
 
 							// cleanup
 							
@@ -146,7 +146,7 @@
 					/// Handles the given [`Event`].
 					/// 
 					/// See [`EventsProvider`] for details that must be considered when implementing this method.
-					public func handleEvent(event: Event) {
+					override func handleEvent(event: Event) {
 						// native call variable prep
 						
 
@@ -168,7 +168,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

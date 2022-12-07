@@ -29,17 +29,17 @@
 
 					internal var cType: LDKFilesystemPersister?
 
-					public init(pointer: LDKFilesystemPersister) {
+					public init(cType: LDKFilesystemPersister) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKFilesystemPersister, anchor: NativeTypeWrapper) {
+					public init(cType: LDKFilesystemPersister, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -77,7 +77,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = FilesystemPersister(pointer: nativeCallResult)
+						let returnValue = FilesystemPersister(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -98,7 +98,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(pointer: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -119,7 +119,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

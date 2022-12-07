@@ -18,17 +18,17 @@
 
 					internal var cType: LDKBestBlock?
 
-					public init(pointer: LDKBestBlock) {
+					public init(cType: LDKBestBlock) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKBestBlock, anchor: NativeTypeWrapper) {
+					public init(cType: LDKBestBlock, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BestBlock(pointer: nativeCallResult)
+						let returnValue = BestBlock(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -114,7 +114,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BestBlock(pointer: nativeCallResult)
+						let returnValue = BestBlock(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -131,7 +131,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BestBlock(pointer: nativeCallResult)
+						let returnValue = BestBlock(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -152,7 +152,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}

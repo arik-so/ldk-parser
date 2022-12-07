@@ -17,17 +17,17 @@
 
 					internal var cType: LDKCVec_PublicKeyZ?
 
-					public init(pointer: LDKCVec_PublicKeyZ) {
+					public init(cType: LDKCVec_PublicKeyZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCVec_PublicKeyZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCVec_PublicKeyZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -65,7 +65,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							PublicKey(pointer: currentCType)
+							PublicKey(cType: currentCType)
 						}
 						return swiftArray
 					}

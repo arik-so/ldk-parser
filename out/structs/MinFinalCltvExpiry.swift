@@ -18,17 +18,17 @@
 
 					internal var cType: LDKMinFinalCltvExpiry?
 
-					public init(pointer: LDKMinFinalCltvExpiry) {
+					public init(cType: LDKMinFinalCltvExpiry) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKMinFinalCltvExpiry, anchor: NativeTypeWrapper) {
+					public init(cType: LDKMinFinalCltvExpiry, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -107,7 +107,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MinFinalCltvExpiry(pointer: nativeCallResult)
+						let returnValue = MinFinalCltvExpiry(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -128,7 +128,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MinFinalCltvExpiry(pointer: nativeCallResult)
+						let returnValue = MinFinalCltvExpiry(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -17,17 +17,17 @@
 
 					internal var cType: LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ?
 
-					public init(pointer: LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ) {
+					public init(cType: LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -65,7 +65,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							Tuple_OutPointCVec_MonitorEventZPublicKeyZ(pointer: currentCType).getValue()
+							Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

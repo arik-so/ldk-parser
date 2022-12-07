@@ -24,17 +24,17 @@
 
 					internal var cType: LDKProbabilisticScoringParameters?
 
-					public init(pointer: LDKProbabilisticScoringParameters) {
+					public init(cType: LDKProbabilisticScoringParameters) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKProbabilisticScoringParameters, anchor: NativeTypeWrapper) {
+					public init(cType: LDKProbabilisticScoringParameters, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -737,7 +737,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ProbabilisticScoringParameters(pointer: nativeCallResult)
+						let returnValue = ProbabilisticScoringParameters(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -780,7 +780,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ProbabilisticScoringParameters(pointer: nativeCallResult)
+						let returnValue = ProbabilisticScoringParameters(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

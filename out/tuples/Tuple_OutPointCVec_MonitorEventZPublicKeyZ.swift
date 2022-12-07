@@ -16,17 +16,17 @@
 
 					internal var cType: LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ?
 
-					public init(pointer: LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ) {
+					public init(cType: LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -76,7 +76,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: nativeCallResult).getValue()
 
 						self.cType = nativeCallResult
 					}
@@ -107,7 +107,7 @@
 					/// The element at position 0
 					public func getA() -> OutPoint {
 						// return value (do some wrapping)
-						let returnValue = OutPoint(pointer: self.cType!.a)
+						let returnValue = OutPoint(cType: self.cType!.a)
 
 						return returnValue;
 					}
@@ -115,7 +115,7 @@
 					/// The element at position 1
 					public func getB() -> [MonitorEvent] {
 						// return value (do some wrapping)
-						let returnValue = Vec_MonitorEventZ(pointer: self.cType!.b).getValue()
+						let returnValue = Vec_MonitorEventZ(cType: self.cType!.b).getValue()
 
 						return returnValue;
 					}
@@ -123,7 +123,7 @@
 					/// The element at position 2
 					public func getC() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: self.cType!.c)
+						let returnValue = PublicKey(cType: self.cType!.c)
 
 						return returnValue;
 					}

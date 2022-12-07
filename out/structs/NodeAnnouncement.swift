@@ -18,17 +18,17 @@
 
 					internal var cType: LDKNodeAnnouncement?
 
-					public init(pointer: LDKNodeAnnouncement) {
+					public init(cType: LDKNodeAnnouncement) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKNodeAnnouncement, anchor: NativeTypeWrapper) {
+					public init(cType: LDKNodeAnnouncement, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Signature(pointer: nativeCallResult)
+						let returnValue = Signature(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -111,7 +111,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = UnsignedNodeAnnouncement(pointer: nativeCallResult)
+						let returnValue = UnsignedNodeAnnouncement(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -149,7 +149,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NodeAnnouncement(pointer: nativeCallResult)
+						let returnValue = NodeAnnouncement(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -170,7 +170,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NodeAnnouncement(pointer: nativeCallResult)
+						let returnValue = NodeAnnouncement(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -218,7 +218,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -235,7 +235,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NodeAnnouncementDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NodeAnnouncementDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

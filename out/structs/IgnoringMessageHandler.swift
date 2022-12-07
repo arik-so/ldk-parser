@@ -19,17 +19,17 @@
 
 					internal var cType: LDKIgnoringMessageHandler?
 
-					public init(pointer: LDKIgnoringMessageHandler) {
+					public init(cType: LDKIgnoringMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKIgnoringMessageHandler, anchor: NativeTypeWrapper) {
+					public init(cType: LDKIgnoringMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -66,7 +66,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = IgnoringMessageHandler(pointer: nativeCallResult)
+						let returnValue = IgnoringMessageHandler(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -88,7 +88,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedMessageSendEventsProvider(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -110,7 +110,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedRoutingMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -132,7 +132,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageProvider(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedOnionMessageProvider(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -154,7 +154,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -176,7 +176,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedCustomOnionMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedCustomOnionMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -198,7 +198,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedCustomMessageReader(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedCustomMessageReader(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -220,7 +220,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedCustomMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedCustomMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}

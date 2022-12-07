@@ -19,17 +19,17 @@
 
 					internal var cType: LDKBalance?
 
-					public init(pointer: LDKBalance) {
+					public init(cType: LDKBalance) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKBalance, anchor: NativeTypeWrapper) {
+					public init(cType: LDKBalance, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -135,7 +135,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Balance(pointer: nativeCallResult)
+						let returnValue = Balance(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -152,7 +152,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Balance(pointer: nativeCallResult)
+						let returnValue = Balance(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -169,7 +169,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Balance(pointer: nativeCallResult)
+						let returnValue = Balance(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -186,7 +186,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Balance(pointer: nativeCallResult)
+						let returnValue = Balance(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -203,7 +203,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Balance(pointer: nativeCallResult)
+						let returnValue = Balance(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -220,7 +220,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Balance(pointer: nativeCallResult)
+						let returnValue = Balance(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -237,7 +237,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Balance(pointer: nativeCallResult)
+						let returnValue = Balance(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -275,7 +275,7 @@
 							return nil
 						}
 
-						return Balance_LDKClaimableOnChannelClose_Body(pointer: self.cType!.claimable_on_channel_close)
+						return Balance_LDKClaimableOnChannelClose_Body(cType: self.cType!.claimable_on_channel_close)
 					}
 			
 					public func getValueAsClaimableAwaitingConfirmations() -> ClaimableAwaitingConfirmations? {
@@ -283,7 +283,7 @@
 							return nil
 						}
 
-						return Balance_LDKClaimableAwaitingConfirmations_Body(pointer: self.cType!.claimable_awaiting_confirmations)
+						return Balance_LDKClaimableAwaitingConfirmations_Body(cType: self.cType!.claimable_awaiting_confirmations)
 					}
 			
 					public func getValueAsContentiousClaimable() -> ContentiousClaimable? {
@@ -291,7 +291,7 @@
 							return nil
 						}
 
-						return Balance_LDKContentiousClaimable_Body(pointer: self.cType!.contentious_claimable)
+						return Balance_LDKContentiousClaimable_Body(cType: self.cType!.contentious_claimable)
 					}
 			
 					public func getValueAsMaybeTimeoutClaimableHtlc() -> MaybeTimeoutClaimableHTLC? {
@@ -299,7 +299,7 @@
 							return nil
 						}
 
-						return Balance_LDKMaybeTimeoutClaimableHTLC_Body(pointer: self.cType!.maybe_timeout_claimable_htlc)
+						return Balance_LDKMaybeTimeoutClaimableHTLC_Body(cType: self.cType!.maybe_timeout_claimable_htlc)
 					}
 			
 					public func getValueAsMaybePreimageClaimableHtlc() -> MaybePreimageClaimableHTLC? {
@@ -307,7 +307,7 @@
 							return nil
 						}
 
-						return Balance_LDKMaybePreimageClaimableHTLC_Body(pointer: self.cType!.maybe_preimage_claimable_htlc)
+						return Balance_LDKMaybePreimageClaimableHTLC_Body(cType: self.cType!.maybe_preimage_claimable_htlc)
 					}
 			
 					public func getValueAsCounterpartyRevokedOutputClaimable() -> CounterpartyRevokedOutputClaimable? {
@@ -315,7 +315,7 @@
 							return nil
 						}
 
-						return Balance_LDKCounterpartyRevokedOutputClaimable_Body(pointer: self.cType!.counterparty_revoked_output_claimable)
+						return Balance_LDKCounterpartyRevokedOutputClaimable_Body(cType: self.cType!.counterparty_revoked_output_claimable)
 					}
 			
 
@@ -353,17 +353,17 @@
 
 						internal var cType: LDKBalance_LDKClaimableOnChannelClose_Body?
 
-						fileprivate init(pointer: LDKBalance_LDKClaimableOnChannelClose_Body) {
+						fileprivate init(cType: LDKBalance_LDKClaimableOnChannelClose_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKBalance_LDKClaimableOnChannelClose_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKBalance_LDKClaimableOnChannelClose_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -405,17 +405,17 @@
 
 						internal var cType: LDKBalance_LDKClaimableAwaitingConfirmations_Body?
 
-						fileprivate init(pointer: LDKBalance_LDKClaimableAwaitingConfirmations_Body) {
+						fileprivate init(cType: LDKBalance_LDKClaimableAwaitingConfirmations_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKBalance_LDKClaimableAwaitingConfirmations_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKBalance_LDKClaimableAwaitingConfirmations_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -466,17 +466,17 @@
 
 						internal var cType: LDKBalance_LDKContentiousClaimable_Body?
 
-						fileprivate init(pointer: LDKBalance_LDKContentiousClaimable_Body) {
+						fileprivate init(cType: LDKBalance_LDKContentiousClaimable_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKBalance_LDKContentiousClaimable_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKBalance_LDKContentiousClaimable_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -527,17 +527,17 @@
 
 						internal var cType: LDKBalance_LDKMaybeTimeoutClaimableHTLC_Body?
 
-						fileprivate init(pointer: LDKBalance_LDKMaybeTimeoutClaimableHTLC_Body) {
+						fileprivate init(cType: LDKBalance_LDKMaybeTimeoutClaimableHTLC_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKBalance_LDKMaybeTimeoutClaimableHTLC_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKBalance_LDKMaybeTimeoutClaimableHTLC_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -588,17 +588,17 @@
 
 						internal var cType: LDKBalance_LDKMaybePreimageClaimableHTLC_Body?
 
-						fileprivate init(pointer: LDKBalance_LDKMaybePreimageClaimableHTLC_Body) {
+						fileprivate init(cType: LDKBalance_LDKMaybePreimageClaimableHTLC_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKBalance_LDKMaybePreimageClaimableHTLC_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKBalance_LDKMaybePreimageClaimableHTLC_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -649,17 +649,17 @@
 
 						internal var cType: LDKBalance_LDKCounterpartyRevokedOutputClaimable_Body?
 
-						fileprivate init(pointer: LDKBalance_LDKCounterpartyRevokedOutputClaimable_Body) {
+						fileprivate init(cType: LDKBalance_LDKCounterpartyRevokedOutputClaimable_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKBalance_LDKCounterpartyRevokedOutputClaimable_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKBalance_LDKCounterpartyRevokedOutputClaimable_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)

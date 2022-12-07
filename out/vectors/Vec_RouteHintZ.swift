@@ -17,17 +17,17 @@
 
 					internal var cType: LDKCVec_RouteHintZ?
 
-					public init(pointer: LDKCVec_RouteHintZ) {
+					public init(cType: LDKCVec_RouteHintZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCVec_RouteHintZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCVec_RouteHintZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -65,7 +65,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							RouteHint(pointer: currentCType)
+							RouteHint(cType: currentCType)
 						}
 						return swiftArray
 					}

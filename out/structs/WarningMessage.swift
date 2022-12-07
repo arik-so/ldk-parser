@@ -18,17 +18,17 @@
 
 					internal var cType: LDKWarningMessage?
 
-					public init(pointer: LDKWarningMessage) {
+					public init(cType: LDKWarningMessage) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKWarningMessage, anchor: NativeTypeWrapper) {
+					public init(cType: LDKWarningMessage, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -95,7 +95,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(pointer: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -136,7 +136,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = WarningMessage(pointer: nativeCallResult)
+						let returnValue = WarningMessage(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -157,7 +157,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = WarningMessage(pointer: nativeCallResult)
+						let returnValue = WarningMessage(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -205,7 +205,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -222,7 +222,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_WarningMessageDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_WarningMessageDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

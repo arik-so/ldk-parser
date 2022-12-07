@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_PrivateRouteCreationErrorZ?
 
-					public init(pointer: LDKCResult_PrivateRouteCreationErrorZ) {
+					public init(cType: LDKCResult_PrivateRouteCreationErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_PrivateRouteCreationErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_PrivateRouteCreationErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PrivateRouteCreationErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PrivateRouteCreationErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PrivateRouteCreationErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PrivateRouteCreationErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PrivateRouteCreationErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_PrivateRouteCreationErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -123,7 +123,7 @@
 
 					public func getValue() -> PrivateRoute? {
 						if self.cType?.result_ok == true {
-							return PrivateRoute(pointer: self.cType!.contents.result.pointee)
+							return PrivateRoute(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

@@ -237,7 +237,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Str(pointer: nativeCallResult)
+					let returnValue = Str(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -254,7 +254,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Str(pointer: nativeCallResult)
+					let returnValue = Str(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -279,7 +279,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_StringErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_StringErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -296,7 +296,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_PublicKeyErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_PublicKeyErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -335,7 +335,7 @@
 				
 
 					// return value (do some wrapping)
-					let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+					let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 					return returnValue
 				}
@@ -353,7 +353,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = NodeFeatures(pointer: nativeCallResult)
+					let returnValue = NodeFeatures(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -371,7 +371,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = ChannelFeatures(pointer: nativeCallResult)
+					let returnValue = ChannelFeatures(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -389,7 +389,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = InitFeatures(pointer: nativeCallResult)
+					let returnValue = InitFeatures(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -426,7 +426,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZNoneZ(pointer: nativeCallResult)
+					let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZNoneZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -455,7 +455,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_PaymentSecretNoneZ(pointer: nativeCallResult)
+					let returnValue = Result_PaymentSecretNoneZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -512,7 +512,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+					let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -537,7 +537,7 @@
 				
 
 					// return value (do some wrapping)
-					let returnValue = Transaction(pointer: nativeCallResult)
+					let returnValue = Transaction(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -564,7 +564,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_SecretKeyErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_SecretKeyErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -586,7 +586,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_PublicKeyErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_PublicKeyErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -623,7 +623,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_SecretKeyErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_SecretKeyErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -650,7 +650,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_PublicKeyErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_PublicKeyErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -669,7 +669,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+					let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 					return returnValue
 				}
@@ -695,7 +695,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+					let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 					return returnValue
 				}
@@ -713,7 +713,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+					let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 					return returnValue
 				}
@@ -746,7 +746,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Transaction(pointer: nativeCallResult)
+					let returnValue = Transaction(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -768,7 +768,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+					let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 					return returnValue
 				}
@@ -863,7 +863,7 @@
 				
 
 					// return value (do some wrapping)
-					let returnValue = Result_RouteLightningErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_RouteLightningErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -901,7 +901,7 @@
 				
 
 					// return value (do some wrapping)
-					let returnValue = Result_RouteLightningErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_RouteLightningErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -954,7 +954,7 @@
 				
 
 					// return value (do some wrapping)
-					let returnValue = Result_InvoiceSignOrCreationErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_InvoiceSignOrCreationErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -1009,7 +1009,7 @@
 				
 
 					// return value (do some wrapping)
-					let returnValue = Result_InvoiceSignOrCreationErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_InvoiceSignOrCreationErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -1039,7 +1039,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_InvoiceSignOrCreationErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_InvoiceSignOrCreationErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -1070,7 +1070,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_InvoiceSignOrCreationErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_InvoiceSignOrCreationErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -1095,7 +1095,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_InvoiceSignOrCreationErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_InvoiceSignOrCreationErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}
@@ -1120,7 +1120,7 @@
 					
 
 					// return value (do some wrapping)
-					let returnValue = Result_InvoiceSignOrCreationErrorZ(pointer: nativeCallResult)
+					let returnValue = Result_InvoiceSignOrCreationErrorZ(cType: nativeCallResult)
 
 					return returnValue
 				}

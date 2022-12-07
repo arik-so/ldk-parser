@@ -5,13 +5,13 @@
 
 			extension Bindings {
 				public class func getLDKSwiftBindingsSerializationHash(): String {
-					return "017149b46e05bc598a6e835f95a07299f1196d5a4dca635a22e9f6bc5398b3f8"
+					return "e29f1da70ac7bf223a9e0c2d33511bd64dcc8b948dce935c91c1717c2a67aa5c"
 				}
 				public class func getLDKSwiftBindingsVersion(): String {
-					return "9152d63-dirty"
+					return "0d18cf2-dirty"
 				}
 				public class func getLDKSwiftBindingsCommitHash(): String {
-					return "9152d63f9a3e77e63a1d952e19fd57da743cd48d"
+					return "0d18cf20e026de7b45df4533f1d1580a9f778a9c"
 				}
 			}
 		

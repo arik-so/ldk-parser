@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ?
 
-					public init(pointer: LDKCResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ) {
+					public init(cType: LDKCResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -52,7 +52,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -108,7 +108,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -127,7 +127,7 @@
 
 					public func getValue() -> [([UInt8], ChannelMonitor)]? {
 						if self.cType?.result_ok == true {
-							return Vec_C2Tuple_BlockHashChannelMonitorZZ(pointer: self.cType!.contents.result.pointee).getValue()
+							return Vec_C2Tuple_BlockHashChannelMonitorZZ(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}

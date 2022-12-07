@@ -26,17 +26,17 @@
 
 					internal var cType: LDKListen?
 
-					public init(pointer: LDKListen) {
+					public init(cType: LDKListen) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKListen, anchor: NativeTypeWrapper) {
+					public init(cType: LDKListen, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -64,7 +64,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.filteredBlockConnected(header: headerPointee, txdata: Vec_C2Tuple_usizeTransactionZZ(pointer: txdata).getValue(), height: height)
+							let swiftCallbackResult = instance.filteredBlockConnected(header: headerPointee, txdata: Vec_C2Tuple_usizeTransactionZZ(cType: txdata).getValue(), height: height)
 
 							// cleanup
 							
@@ -82,7 +82,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.blockConnected(block: u8slice(pointer: block).getValue(), height: height)
+							let swiftCallbackResult = instance.blockConnected(block: u8slice(cType: block).getValue(), height: height)
 
 							// cleanup
 							
@@ -214,7 +214,7 @@
 					
 					/// Notifies the listener that a block was added at the given height, with the transaction data
 					/// possibly filtered.
-					public func filteredBlockConnected(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) {
+					override func filteredBlockConnected(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) {
 						// native call variable prep
 						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
@@ -241,7 +241,7 @@
 					}
 		
 					/// Notifies the listener that a block was added at the given height.
-					public func blockConnected(block: [UInt8], height: UInt32) {
+					override func blockConnected(block: [UInt8], height: UInt32) {
 						// native call variable prep
 						
 
@@ -258,7 +258,7 @@
 					}
 		
 					/// Notifies the listener that a block was removed at the given height.
-					public func blockDisconnected(header: [UInt8]?, height: UInt32) {
+					override func blockDisconnected(header: [UInt8]?, height: UInt32) {
 						// native call variable prep
 						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
@@ -282,7 +282,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

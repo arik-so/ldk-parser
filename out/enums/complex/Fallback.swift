@@ -16,17 +16,17 @@
 
 					internal var cType: LDKFallback?
 
-					public init(pointer: LDKFallback) {
+					public init(cType: LDKFallback) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKFallback, anchor: NativeTypeWrapper) {
+					public init(cType: LDKFallback, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -97,7 +97,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Fallback(pointer: nativeCallResult)
+						let returnValue = Fallback(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -118,7 +118,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Fallback(pointer: nativeCallResult)
+						let returnValue = Fallback(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -135,7 +135,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Fallback(pointer: nativeCallResult)
+						let returnValue = Fallback(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -152,7 +152,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Fallback(pointer: nativeCallResult)
+						let returnValue = Fallback(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -211,7 +211,7 @@
 							return nil
 						}
 
-						return Fallback_LDKSegWitProgram_Body(pointer: self.cType!.seg_wit_program)
+						return Fallback_LDKSegWitProgram_Body(cType: self.cType!.seg_wit_program)
 					}
 			
 					public func getValueAsPubKeyHash() -> [UInt8]? {
@@ -219,7 +219,7 @@
 							return nil
 						}
 
-						return TwentyBytes(pointer: self.cType!.pub_key_hash)
+						return TwentyBytes(cType: self.cType!.pub_key_hash)
 					}
 			
 					public func getValueAsScriptHash() -> [UInt8]? {
@@ -227,7 +227,7 @@
 							return nil
 						}
 
-						return TwentyBytes(pointer: self.cType!.script_hash)
+						return TwentyBytes(cType: self.cType!.script_hash)
 					}
 			
 
@@ -265,17 +265,17 @@
 
 						internal var cType: LDKFallback_LDKSegWitProgram_Body?
 
-						fileprivate init(pointer: LDKFallback_LDKSegWitProgram_Body) {
+						fileprivate init(cType: LDKFallback_LDKSegWitProgram_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKFallback_LDKSegWitProgram_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKFallback_LDKSegWitProgram_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -288,7 +288,7 @@
 						/// 
 						public func getVersion() -> UInt8 {
 							// return value (do some wrapping)
-							let returnValue = u5(pointer: self.cType!.version)
+							let returnValue = u5(cType: self.cType!.version)
 
 							return returnValue;
 						}
@@ -296,7 +296,7 @@
 						/// 
 						public func getProgram() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = Vec_u8Z(pointer: self.cType!.program).getValue()
+							let returnValue = Vec_u8Z(cType: self.cType!.program).getValue()
 
 							return returnValue;
 						}

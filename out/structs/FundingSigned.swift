@@ -18,17 +18,17 @@
 
 					internal var cType: LDKFundingSigned?
 
-					public init(pointer: LDKFundingSigned) {
+					public init(cType: LDKFundingSigned) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKFundingSigned, anchor: NativeTypeWrapper) {
+					public init(cType: LDKFundingSigned, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -90,7 +90,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Signature(pointer: nativeCallResult)
+						let returnValue = Signature(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -128,7 +128,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = FundingSigned(pointer: nativeCallResult)
+						let returnValue = FundingSigned(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -149,7 +149,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = FundingSigned(pointer: nativeCallResult)
+						let returnValue = FundingSigned(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -197,7 +197,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -214,7 +214,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_FundingSignedDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_FundingSignedDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

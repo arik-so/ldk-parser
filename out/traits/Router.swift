@@ -16,17 +16,17 @@
 
 					internal var cType: LDKRouter?
 
-					public init(pointer: LDKRouter) {
+					public init(cType: LDKRouter) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRouter, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRouter, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -54,12 +54,12 @@
 						
 							var first_hopsPointee: LDKCVec_ChannelDetailsZ? = nil
 							if let first_hopsUnwrapped = first_hops {
-								first_hopsPointee = Vec_ChannelDetailsZ(pointer: first_hopsUnwrapped.pointee).getValue()
+								first_hopsPointee = Vec_ChannelDetailsZ(cType: first_hopsUnwrapped.pointee).getValue()
 							}
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.findRoute(payer: PublicKey(pointer: payer).getValue(), routeParams: RouteParameters(pointer: route_params.pointee), paymentHash: payment_hashPointee, firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(pointer: inflight_htlcs))
+							let swiftCallbackResult = instance.findRoute(payer: PublicKey(cType: payer).getValue(), routeParams: RouteParameters(cType: route_params.pointee), paymentHash: payment_hashPointee, firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(cType: inflight_htlcs))
 
 							// cleanup
 							
@@ -77,7 +77,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentPathFailed(path: Vec_RouteHopZ(pointer: path).getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.notifyPaymentPathFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -95,7 +95,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentPathSuccessful(path: Vec_RouteHopZ(pointer: path).getValue())
+							let swiftCallbackResult = instance.notifyPaymentPathSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
 
 							// cleanup
 							
@@ -113,7 +113,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentProbeSuccessful(path: Vec_RouteHopZ(pointer: path).getValue())
+							let swiftCallbackResult = instance.notifyPaymentProbeSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
 
 							// cleanup
 							
@@ -131,7 +131,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentProbeFailed(path: Vec_RouteHopZ(pointer: path).getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.notifyPaymentProbeFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -256,7 +256,7 @@
 					/// Finds a [`Route`] between `payer` and `payee` for a payment with the given values.
 					/// 
 					/// Note that first_hops (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public func findRoute(payer: [UInt8], routeParams: RouteParameters, paymentHash: [UInt8]?, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs) -> Result_RouteLightningErrorZ {
+					override func findRoute(payer: [UInt8], routeParams: RouteParameters, paymentHash: [UInt8]?, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs) -> Result_RouteLightningErrorZ {
 						// native call variable prep
 						
 						let tupledPaymentHash = Bindings.arrayToUInt8Tuple32(array: paymentHash)
@@ -285,13 +285,13 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_RouteLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_RouteLightningErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Lets the router know that payment through a specific path has failed.
-					public func notifyPaymentPathFailed(path: [RouteHop], shortChannelId: UInt64) {
+					override func notifyPaymentPathFailed(path: [RouteHop], shortChannelId: UInt64) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -312,7 +312,7 @@
 					}
 		
 					/// Lets the router know that payment through a specific path was successful.
-					public func notifyPaymentPathSuccessful(path: [RouteHop]) {
+					override func notifyPaymentPathSuccessful(path: [RouteHop]) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -333,7 +333,7 @@
 					}
 		
 					/// Lets the router know that a payment probe was successful.
-					public func notifyPaymentProbeSuccessful(path: [RouteHop]) {
+					override func notifyPaymentProbeSuccessful(path: [RouteHop]) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -354,7 +354,7 @@
 					}
 		
 					/// Lets the router know that a payment probe failed.
-					public func notifyPaymentProbeFailed(path: [RouteHop], shortChannelId: UInt64) {
+					override func notifyPaymentProbeFailed(path: [RouteHop], shortChannelId: UInt64) {
 						// native call variable prep
 						
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -376,7 +376,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

@@ -28,17 +28,17 @@
 
 					internal var cType: LDKTxCreationKeys?
 
-					public init(pointer: LDKTxCreationKeys) {
+					public init(cType: LDKTxCreationKeys) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKTxCreationKeys, anchor: NativeTypeWrapper) {
+					public init(cType: LDKTxCreationKeys, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -79,7 +79,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -123,7 +123,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -167,7 +167,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -209,7 +209,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -251,7 +251,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -289,7 +289,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = TxCreationKeys(pointer: nativeCallResult)
+						let returnValue = TxCreationKeys(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -337,7 +337,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = TxCreationKeys(pointer: nativeCallResult)
+						let returnValue = TxCreationKeys(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -358,7 +358,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -375,7 +375,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_TxCreationKeysDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_TxCreationKeysDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -393,7 +393,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_TxCreationKeysErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_TxCreationKeysErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -419,7 +419,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_TxCreationKeysErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_TxCreationKeysErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

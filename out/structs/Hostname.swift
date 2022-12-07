@@ -22,17 +22,17 @@
 
 					internal var cType: LDKHostname?
 
-					public init(pointer: LDKHostname) {
+					public init(cType: LDKHostname) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKHostname, anchor: NativeTypeWrapper) {
+					public init(cType: LDKHostname, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -73,7 +73,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Hostname(pointer: nativeCallResult)
+						let returnValue = Hostname(cType: nativeCallResult)
 
 						return returnValue
 					}

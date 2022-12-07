@@ -28,17 +28,17 @@
 
 					internal var cType: LDKTransaction?
 
-					public init(pointer: LDKTransaction) {
+					public init(cType: LDKTransaction) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKTransaction, anchor: NativeTypeWrapper) {
+					public init(cType: LDKTransaction, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)

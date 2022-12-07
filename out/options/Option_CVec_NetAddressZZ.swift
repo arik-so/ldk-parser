@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCOption_CVec_NetAddressZZ?
 
-					public init(pointer: LDKCOption_CVec_NetAddressZZ) {
+					public init(cType: LDKCOption_CVec_NetAddressZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCOption_CVec_NetAddressZZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCOption_CVec_NetAddressZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -81,7 +81,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_CVec_NetAddressZZ(pointer: nativeCallResult)
+						let returnValue = Option_CVec_NetAddressZZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -92,7 +92,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_CVec_NetAddressZZ_Some {
-							return Vec_NetAddressZ(pointer: self.cType!.some).getValue()
+							return Vec_NetAddressZ(cType: self.cType!.some).getValue()
 						}
 						assert(false, "invalid option enum value")
 						return nil

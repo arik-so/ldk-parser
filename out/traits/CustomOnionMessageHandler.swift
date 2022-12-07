@@ -25,17 +25,17 @@
 
 					internal var cType: LDKCustomOnionMessageHandler?
 
-					public init(pointer: LDKCustomOnionMessageHandler) {
+					public init(cType: LDKCustomOnionMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCustomOnionMessageHandler, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCustomOnionMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -58,7 +58,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleCustomMessage(msg: NativelyImplementedCustomOnionMessageContents(pointer: msg))
+							let swiftCallbackResult = instance.handleCustomMessage(msg: NativelyImplementedCustomOnionMessageContents(cType: msg))
 
 							// cleanup
 							
@@ -76,7 +76,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.readCustomMessage(messageType: message_type, buffer: u8slice(pointer: buffer).getValue())
+							let swiftCallbackResult = instance.readCustomMessage(messageType: message_type, buffer: u8slice(cType: buffer).getValue())
 
 							// cleanup
 							
@@ -177,7 +177,7 @@
 				public class NativelyImplementedCustomOnionMessageHandler: CustomOnionMessageHandler {
 					
 					/// Called with the custom message that was received.
-					public func handleCustomMessage(msg: CustomOnionMessageContents) {
+					override func handleCustomMessage(msg: CustomOnionMessageContents) {
 						// native call variable prep
 						
 
@@ -195,7 +195,7 @@
 		
 					/// Read a custom message of type `message_type` from `buffer`, returning `Ok(None)` if the
 					/// message type is unknown.
-					public func readCustomMessage(messageType: UInt64, buffer: [UInt8]) -> Result_COption_CustomOnionMessageContentsZDecodeErrorZ {
+					override func readCustomMessage(messageType: UInt64, buffer: [UInt8]) -> Result_COption_CustomOnionMessageContentsZDecodeErrorZ {
 						// native call variable prep
 						
 
@@ -206,14 +206,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_CustomOnionMessageContentsZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_CustomOnionMessageContentsZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

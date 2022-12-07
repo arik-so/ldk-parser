@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_NetworkGraphDecodeErrorZ?
 
-					public init(pointer: LDKCResult_NetworkGraphDecodeErrorZ) {
+					public init(cType: LDKCResult_NetworkGraphDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_NetworkGraphDecodeErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_NetworkGraphDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NetworkGraphDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NetworkGraphDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NetworkGraphDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NetworkGraphDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -94,14 +94,14 @@
 
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(pointer: self.cType!.contents.err.pointee)
+							return DecodeError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> NetworkGraph? {
 						if self.cType?.result_ok == true {
-							return NetworkGraph(pointer: self.cType!.contents.result.pointee)
+							return NetworkGraph(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

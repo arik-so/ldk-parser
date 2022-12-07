@@ -18,17 +18,17 @@
 
 					internal var cType: LDKMonitorUpdateId?
 
-					public init(pointer: LDKMonitorUpdateId) {
+					public init(cType: LDKMonitorUpdateId) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKMonitorUpdateId, anchor: NativeTypeWrapper) {
+					public init(cType: LDKMonitorUpdateId, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MonitorUpdateId(pointer: nativeCallResult)
+						let returnValue = MonitorUpdateId(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -18,17 +18,17 @@
 
 					internal var cType: LDKClosingSigned?
 
-					public init(pointer: LDKClosingSigned) {
+					public init(cType: LDKClosingSigned) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKClosingSigned, anchor: NativeTypeWrapper) {
+					public init(cType: LDKClosingSigned, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -132,7 +132,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Signature(pointer: nativeCallResult)
+						let returnValue = Signature(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -190,7 +190,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ClosingSignedFeeRange(pointer: nativeCallResult)
+						let returnValue = ClosingSignedFeeRange(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -231,7 +231,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosingSigned(pointer: nativeCallResult)
+						let returnValue = ClosingSigned(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -252,7 +252,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosingSigned(pointer: nativeCallResult)
+						let returnValue = ClosingSigned(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -300,7 +300,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -317,7 +317,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ClosingSignedDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ClosingSignedDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

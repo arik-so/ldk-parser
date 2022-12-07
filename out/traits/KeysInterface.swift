@@ -16,17 +16,17 @@
 
 					internal var cType: LDKKeysInterface?
 
-					public init(pointer: LDKKeysInterface) {
+					public init(cType: LDKKeysInterface) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKKeysInterface, anchor: NativeTypeWrapper) {
+					public init(cType: LDKKeysInterface, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -85,7 +85,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.ecdh(recipient: Recipient(value: recipient), otherKey: PublicKey(pointer: other_key).getValue(), tweak: Option_ScalarZ(pointer: tweak).getValue())
+							let swiftCallbackResult = instance.ecdh(recipient: Recipient(value: recipient), otherKey: PublicKey(cType: other_key).getValue(), tweak: Option_ScalarZ(cType: tweak).getValue())
 
 							// cleanup
 							
@@ -175,7 +175,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.readChanSigner(reader: u8slice(pointer: reader).getValue())
+							let swiftCallbackResult = instance.readChanSigner(reader: u8slice(cType: reader).getValue())
 
 							// cleanup
 							
@@ -193,7 +193,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signInvoice(hrpBytes: u8slice(pointer: hrp_bytes).getValue(), invoiceData: Vec_u5Z(pointer: invoice_data).getValue(), receipient: Recipient(value: receipient))
+							let swiftCallbackResult = instance.signInvoice(hrpBytes: u8slice(cType: hrp_bytes).getValue(), invoiceData: Vec_u5Z(cType: invoice_data).getValue(), receipient: Recipient(value: receipient))
 
 							// cleanup
 							
@@ -429,7 +429,7 @@
 					/// parameter.
 					/// 
 					/// Errors if the `Recipient` variant is not supported by the implementation.
-					public func getNodeSecret(recipient: Recipient) -> Result_SecretKeyNoneZ {
+					override func getNodeSecret(recipient: Recipient) -> Result_SecretKeyNoneZ {
 						// native call variable prep
 						
 
@@ -440,7 +440,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SecretKeyNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_SecretKeyNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -454,7 +454,7 @@
 					/// Errors if the `Recipient` variant is not supported by the implementation.
 					/// 
 					/// [`get_node_secret`]: KeysInterface::get_node_secret
-					public func getNodeId(recipient: Recipient) -> Result_PublicKeyNoneZ {
+					override func getNodeId(recipient: Recipient) -> Result_PublicKeyNoneZ {
 						// native call variable prep
 						
 
@@ -465,7 +465,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PublicKeyNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_PublicKeyNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -477,7 +477,7 @@
 					/// Errors if the `Recipient` variant is not supported by the implementation.
 					/// 
 					/// [`node secret`]: Self::get_node_secret
-					public func ecdh(recipient: Recipient, otherKey: [UInt8], tweak: [UInt8]?) -> Result_SharedSecretNoneZ {
+					override func ecdh(recipient: Recipient, otherKey: [UInt8], tweak: [UInt8]?) -> Result_SharedSecretNoneZ {
 						// native call variable prep
 						
 						let tweakOption = Option_ScalarZ(value: tweak)
@@ -490,7 +490,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SharedSecretNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_SharedSecretNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -499,7 +499,7 @@
 					/// 
 					/// This method should return a different value each time it is called, to avoid linking
 					/// on-chain funds across channels as controlled to the same user.
-					public func getDestinationScript() -> [UInt8] {
+					override func getDestinationScript() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -510,7 +510,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -519,7 +519,7 @@
 					/// 
 					/// This method should return a different value each time it is called, to avoid linking
 					/// on-chain funds across channels as controlled to the same user.
-					public func getShutdownScriptpubkey() -> ShutdownScript {
+					override func getShutdownScriptpubkey() -> ShutdownScript {
 						// native call variable prep
 						
 
@@ -530,7 +530,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ShutdownScript(pointer: nativeCallResult)
+						let returnValue = ShutdownScript(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -539,7 +539,7 @@
 					/// restarted with some stale data!
 					/// 
 					/// This method must return a different value each time it is called.
-					public func getChannelSigner(inbound: Bool, channelValueSatoshis: UInt64) -> Sign {
+					override func getChannelSigner(inbound: Bool, channelValueSatoshis: UInt64) -> Sign {
 						// native call variable prep
 						
 
@@ -550,7 +550,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedSign(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedSign(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -560,7 +560,7 @@
 					/// persisted anywhere, though they must be unique across restarts.
 					/// 
 					/// This method must return a different value each time it is called.
-					public func getSecureRandomBytes() -> [UInt8] {
+					override func getSecureRandomBytes() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -571,7 +571,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -582,7 +582,7 @@
 					/// The bytes are exactly those which `<Self::Signer as Writeable>::write()` writes, and
 					/// contain no versioning scheme. You may wish to include your own version prefix and ensure
 					/// you've read all of the provided bytes to ensure no corruption occurred.
-					public func readChanSigner(reader: [UInt8]) -> Result_SignDecodeErrorZ {
+					override func readChanSigner(reader: [UInt8]) -> Result_SignDecodeErrorZ {
 						// native call variable prep
 						
 
@@ -593,7 +593,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SignDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_SignDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -607,7 +607,7 @@
 					/// The secret key used to sign the invoice is dependent on the [`Recipient`].
 					/// 
 					/// Errors if the `Recipient` variant is not supported by the implementation.
-					public func signInvoice(hrpBytes: [UInt8], invoiceData: [UInt8], receipient: Recipient) -> Result_RecoverableSignatureNoneZ {
+					override func signInvoice(hrpBytes: [UInt8], invoiceData: [UInt8], receipient: Recipient) -> Result_RecoverableSignatureNoneZ {
 						// native call variable prep
 						
 						let invoiceDataVector = Vec_u5Z(array: invoiceData)
@@ -622,7 +622,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_RecoverableSignatureNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_RecoverableSignatureNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -636,7 +636,7 @@
 					/// This method must return the same value each time it is called.
 					/// 
 					/// [phantom node payments]: PhantomKeysManager
-					public func getInboundPaymentKeyMaterial() -> [UInt8] {
+					override func getInboundPaymentKeyMaterial() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -647,14 +647,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

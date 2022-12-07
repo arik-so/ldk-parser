@@ -17,17 +17,17 @@
 
 					internal var cType: LDKCVec_C2Tuple_u32ScriptZZ?
 
-					public init(pointer: LDKCVec_C2Tuple_u32ScriptZZ) {
+					public init(cType: LDKCVec_C2Tuple_u32ScriptZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCVec_C2Tuple_u32ScriptZZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCVec_C2Tuple_u32ScriptZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -65,7 +65,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							Tuple_u32ScriptZ(pointer: currentCType).getValue()
+							Tuple_u32ScriptZ(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

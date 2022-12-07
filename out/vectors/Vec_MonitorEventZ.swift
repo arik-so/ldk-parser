@@ -17,17 +17,17 @@
 
 					internal var cType: LDKCVec_MonitorEventZ?
 
-					public init(pointer: LDKCVec_MonitorEventZ) {
+					public init(cType: LDKCVec_MonitorEventZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCVec_MonitorEventZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCVec_MonitorEventZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -65,7 +65,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							MonitorEvent(pointer: currentCType)
+							MonitorEvent(cType: currentCType)
 						}
 						return swiftArray
 					}

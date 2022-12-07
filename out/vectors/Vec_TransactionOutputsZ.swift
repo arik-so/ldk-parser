@@ -17,17 +17,17 @@
 
 					internal var cType: LDKCVec_TransactionOutputsZ?
 
-					public init(pointer: LDKCVec_TransactionOutputsZ) {
+					public init(cType: LDKCVec_TransactionOutputsZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCVec_TransactionOutputsZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCVec_TransactionOutputsZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -65,7 +65,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(pointer: currentCType).getValue()
+							Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

@@ -16,17 +16,17 @@
 
 					internal var cType: LDKC2Tuple_PaymentHashPaymentIdZ?
 
-					public init(pointer: LDKC2Tuple_PaymentHashPaymentIdZ) {
+					public init(cType: LDKC2Tuple_PaymentHashPaymentIdZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKC2Tuple_PaymentHashPaymentIdZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKC2Tuple_PaymentHashPaymentIdZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_PaymentHashPaymentIdZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_PaymentHashPaymentIdZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_PaymentHashPaymentIdZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_PaymentHashPaymentIdZ(cType: nativeCallResult).getValue()
 
 						self.cType = nativeCallResult
 					}
@@ -103,7 +103,7 @@
 					/// The element at position 0
 					public func getA() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: self.cType!.a)
+						let returnValue = ThirtyTwoBytes(cType: self.cType!.a)
 
 						return returnValue;
 					}
@@ -111,7 +111,7 @@
 					/// The element at position 1
 					public func getB() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: self.cType!.b)
+						let returnValue = ThirtyTwoBytes(cType: self.cType!.b)
 
 						return returnValue;
 					}

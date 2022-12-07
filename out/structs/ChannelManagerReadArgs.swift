@@ -49,17 +49,17 @@
 
 					internal var cType: LDKChannelManagerReadArgs?
 
-					public init(pointer: LDKChannelManagerReadArgs) {
+					public init(cType: LDKChannelManagerReadArgs) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelManagerReadArgs, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelManagerReadArgs, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -102,7 +102,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedKeysInterface(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -148,7 +148,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedFeeEstimator(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedFeeEstimator(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -196,7 +196,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedWatch(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedWatch(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -244,7 +244,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBroadcasterInterface(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedBroadcasterInterface(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -289,7 +289,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedLogger(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedLogger(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -333,7 +333,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = UserConfig(pointer: nativeCallResult)
+						let returnValue = UserConfig(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -378,7 +378,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ChannelManagerReadArgs(pointer: nativeCallResult)
+						let returnValue = ChannelManagerReadArgs(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

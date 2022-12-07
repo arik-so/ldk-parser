@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_COption_NetworkUpdateZDecodeErrorZ?
 
-					public init(pointer: LDKCResult_COption_NetworkUpdateZDecodeErrorZ) {
+					public init(cType: LDKCResult_COption_NetworkUpdateZDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_COption_NetworkUpdateZDecodeErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_COption_NetworkUpdateZDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -50,7 +50,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_NetworkUpdateZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_NetworkUpdateZDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -67,7 +67,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_NetworkUpdateZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_NetworkUpdateZDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -106,7 +106,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_NetworkUpdateZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_NetworkUpdateZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -118,14 +118,14 @@
 
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(pointer: self.cType!.contents.err.pointee)
+							return DecodeError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> NetworkUpdate? {
 						if self.cType?.result_ok == true {
-							return Option_NetworkUpdateZ(pointer: self.cType!.contents.result.pointee).getValue()
+							return Option_NetworkUpdateZ(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}

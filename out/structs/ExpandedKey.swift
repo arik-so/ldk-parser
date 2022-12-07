@@ -21,17 +21,17 @@
 
 					internal var cType: LDKExpandedKey?
 
-					public init(pointer: LDKExpandedKey) {
+					public init(cType: LDKExpandedKey) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKExpandedKey, anchor: NativeTypeWrapper) {
+					public init(cType: LDKExpandedKey, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -76,7 +76,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ExpandedKey(pointer: nativeCallResult)
+						let returnValue = ExpandedKey(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

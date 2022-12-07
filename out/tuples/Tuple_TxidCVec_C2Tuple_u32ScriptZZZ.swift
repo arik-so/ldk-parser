@@ -16,17 +16,17 @@
 
 					internal var cType: LDKC2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ?
 
-					public init(pointer: LDKC2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ) {
+					public init(cType: LDKC2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKC2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKC2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -76,7 +76,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(cType: nativeCallResult).getValue()
 
 						self.cType = nativeCallResult
 					}
@@ -107,7 +107,7 @@
 					/// The element at position 0
 					public func getA() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: self.cType!.a)
+						let returnValue = ThirtyTwoBytes(cType: self.cType!.a)
 
 						return returnValue;
 					}
@@ -115,7 +115,7 @@
 					/// The element at position 1
 					public func getB() -> [(UInt32, [UInt8])] {
 						// return value (do some wrapping)
-						let returnValue = Vec_C2Tuple_u32ScriptZZ(pointer: self.cType!.b).getValue()
+						let returnValue = Vec_C2Tuple_u32ScriptZZ(cType: self.cType!.b).getValue()
 
 						return returnValue;
 					}

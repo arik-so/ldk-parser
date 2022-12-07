@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_ReplyShortChannelIdsEndDecodeErrorZ?
 
-					public init(pointer: LDKCResult_ReplyShortChannelIdsEndDecodeErrorZ) {
+					public init(cType: LDKCResult_ReplyShortChannelIdsEndDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_ReplyShortChannelIdsEndDecodeErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_ReplyShortChannelIdsEndDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ReplyShortChannelIdsEndDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ReplyShortChannelIdsEndDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ReplyShortChannelIdsEndDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ReplyShortChannelIdsEndDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ReplyShortChannelIdsEndDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ReplyShortChannelIdsEndDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,14 +116,14 @@
 
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(pointer: self.cType!.contents.err.pointee)
+							return DecodeError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> ReplyShortChannelIdsEnd? {
 						if self.cType?.result_ok == true {
-							return ReplyShortChannelIdsEnd(pointer: self.cType!.contents.result.pointee)
+							return ReplyShortChannelIdsEnd(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

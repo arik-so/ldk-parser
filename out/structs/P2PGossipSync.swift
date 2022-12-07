@@ -25,17 +25,17 @@
 
 					internal var cType: LDKP2PGossipSync?
 
-					public init(pointer: LDKP2PGossipSync) {
+					public init(cType: LDKP2PGossipSync) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKP2PGossipSync, anchor: NativeTypeWrapper) {
+					public init(cType: LDKP2PGossipSync, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -82,7 +82,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = P2PGossipSync(pointer: nativeCallResult)
+						let returnValue = P2PGossipSync(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -129,7 +129,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedRoutingMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -151,7 +151,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedMessageSendEventsProvider(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}

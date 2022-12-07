@@ -22,17 +22,17 @@
 
 					internal var cType: LDKRawInvoice?
 
-					public init(pointer: LDKRawInvoice) {
+					public init(cType: LDKRawInvoice) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRawInvoice, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRawInvoice, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -73,7 +73,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RawDataPart(pointer: nativeCallResult)
+						let returnValue = RawDataPart(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -142,7 +142,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RawInvoice(pointer: nativeCallResult)
+						let returnValue = RawInvoice(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -184,7 +184,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -218,7 +218,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Sha256(pointer: nativeCallResult)
+						let returnValue = Sha256(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -252,7 +252,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Description(pointer: nativeCallResult)
+						let returnValue = Description(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -286,7 +286,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = PayeePubKey(pointer: nativeCallResult)
+						let returnValue = PayeePubKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -320,7 +320,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Sha256(pointer: nativeCallResult)
+						let returnValue = Sha256(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -354,7 +354,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ExpiryTime(pointer: nativeCallResult)
+						let returnValue = ExpiryTime(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -388,7 +388,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = MinFinalCltvExpiry(pointer: nativeCallResult)
+						let returnValue = MinFinalCltvExpiry(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -417,7 +417,7 @@
 					
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -451,7 +451,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = InvoiceFeatures(pointer: nativeCallResult)
+						let returnValue = InvoiceFeatures(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -472,7 +472,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_PrivateRouteZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_PrivateRouteZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -493,7 +493,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_u64Z(pointer: nativeCallResult).getValue()
+						let returnValue = Option_u64Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

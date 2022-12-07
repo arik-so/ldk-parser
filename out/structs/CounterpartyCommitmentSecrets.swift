@@ -22,17 +22,17 @@
 
 					internal var cType: LDKCounterpartyCommitmentSecrets?
 
-					public init(pointer: LDKCounterpartyCommitmentSecrets) {
+					public init(cType: LDKCounterpartyCommitmentSecrets) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCounterpartyCommitmentSecrets, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCounterpartyCommitmentSecrets, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -73,7 +73,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = CounterpartyCommitmentSecrets(pointer: nativeCallResult)
+						let returnValue = CounterpartyCommitmentSecrets(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -90,7 +90,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = CounterpartyCommitmentSecrets(pointer: nativeCallResult)
+						let returnValue = CounterpartyCommitmentSecrets(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -134,7 +134,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -166,7 +166,7 @@
 					
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -187,7 +187,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -204,7 +204,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CounterpartyCommitmentSecretsDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CounterpartyCommitmentSecretsDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -16,17 +16,17 @@
 
 					internal var cType: LDKGossipSync?
 
-					public init(pointer: LDKGossipSync) {
+					public init(cType: LDKGossipSync) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKGossipSync, anchor: NativeTypeWrapper) {
+					public init(cType: LDKGossipSync, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -97,7 +97,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = GossipSync(pointer: nativeCallResult)
+						let returnValue = GossipSync(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -118,7 +118,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = GossipSync(pointer: nativeCallResult)
+						let returnValue = GossipSync(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -135,7 +135,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = GossipSync(pointer: nativeCallResult)
+						let returnValue = GossipSync(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -147,7 +147,7 @@
 							return nil
 						}
 
-						return P2PGossipSync(pointer: self.cType!.p2p)
+						return P2PGossipSync(cType: self.cType!.p2p)
 					}
 			
 					public func getValueAsRapid() -> RapidGossipSync? {
@@ -155,7 +155,7 @@
 							return nil
 						}
 
-						return RapidGossipSync(pointer: self.cType!.rapid)
+						return RapidGossipSync(cType: self.cType!.rapid)
 					}
 			
 

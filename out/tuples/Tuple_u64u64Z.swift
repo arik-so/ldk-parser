@@ -16,17 +16,17 @@
 
 					internal var cType: LDKC2Tuple_u64u64Z?
 
-					public init(pointer: LDKC2Tuple_u64u64Z) {
+					public init(cType: LDKC2Tuple_u64u64Z) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKC2Tuple_u64u64Z, anchor: NativeTypeWrapper) {
+					public init(cType: LDKC2Tuple_u64u64Z, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_u64u64Z(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_u64u64Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_u64u64Z(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_u64u64Z(cType: nativeCallResult).getValue()
 
 						self.cType = nativeCallResult
 					}

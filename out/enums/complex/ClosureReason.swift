@@ -16,17 +16,17 @@
 
 					internal var cType: LDKClosureReason?
 
-					public init(pointer: LDKClosureReason) {
+					public init(cType: LDKClosureReason) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKClosureReason, anchor: NativeTypeWrapper) {
+					public init(cType: LDKClosureReason, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -148,7 +148,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosureReason(pointer: nativeCallResult)
+						let returnValue = ClosureReason(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -165,7 +165,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosureReason(pointer: nativeCallResult)
+						let returnValue = ClosureReason(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -182,7 +182,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosureReason(pointer: nativeCallResult)
+						let returnValue = ClosureReason(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -199,7 +199,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosureReason(pointer: nativeCallResult)
+						let returnValue = ClosureReason(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -216,7 +216,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosureReason(pointer: nativeCallResult)
+						let returnValue = ClosureReason(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -233,7 +233,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosureReason(pointer: nativeCallResult)
+						let returnValue = ClosureReason(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -250,7 +250,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosureReason(pointer: nativeCallResult)
+						let returnValue = ClosureReason(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -267,7 +267,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosureReason(pointer: nativeCallResult)
+						let returnValue = ClosureReason(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -284,7 +284,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosureReason(pointer: nativeCallResult)
+						let returnValue = ClosureReason(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -331,7 +331,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -348,7 +348,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_ClosureReasonZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_ClosureReasonZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -360,7 +360,7 @@
 							return nil
 						}
 
-						return ClosureReason_LDKCounterpartyForceClosed_Body(pointer: self.cType!.counterparty_force_closed)
+						return ClosureReason_LDKCounterpartyForceClosed_Body(cType: self.cType!.counterparty_force_closed)
 					}
 			
 					public func getValueAsProcessingError() -> ProcessingError? {
@@ -368,7 +368,7 @@
 							return nil
 						}
 
-						return ClosureReason_LDKProcessingError_Body(pointer: self.cType!.processing_error)
+						return ClosureReason_LDKProcessingError_Body(cType: self.cType!.processing_error)
 					}
 			
 
@@ -406,17 +406,17 @@
 
 						internal var cType: LDKClosureReason_LDKCounterpartyForceClosed_Body?
 
-						fileprivate init(pointer: LDKClosureReason_LDKCounterpartyForceClosed_Body) {
+						fileprivate init(cType: LDKClosureReason_LDKCounterpartyForceClosed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKClosureReason_LDKCounterpartyForceClosed_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKClosureReason_LDKCounterpartyForceClosed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -433,7 +433,7 @@
 						/// a security vulnerability in the terminal emulator or the logging subsystem.
 						public func getPeerMsg() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(pointer: self.cType!.peer_msg)
+							let returnValue = Str(cType: self.cType!.peer_msg)
 
 							return returnValue;
 						}
@@ -461,17 +461,17 @@
 
 						internal var cType: LDKClosureReason_LDKProcessingError_Body?
 
-						fileprivate init(pointer: LDKClosureReason_LDKProcessingError_Body) {
+						fileprivate init(cType: LDKClosureReason_LDKProcessingError_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKClosureReason_LDKProcessingError_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKClosureReason_LDKProcessingError_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -484,7 +484,7 @@
 						/// A developer-readable error message which we generated.
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(pointer: self.cType!.err)
+							let returnValue = Str(cType: self.cType!.err)
 
 							return returnValue;
 						}

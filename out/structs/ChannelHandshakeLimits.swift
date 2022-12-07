@@ -28,17 +28,17 @@
 
 					internal var cType: LDKChannelHandshakeLimits?
 
-					public init(pointer: LDKChannelHandshakeLimits) {
+					public init(cType: LDKChannelHandshakeLimits) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelHandshakeLimits, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelHandshakeLimits, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -601,7 +601,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelHandshakeLimits(pointer: nativeCallResult)
+						let returnValue = ChannelHandshakeLimits(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -622,7 +622,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelHandshakeLimits(pointer: nativeCallResult)
+						let returnValue = ChannelHandshakeLimits(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -639,7 +639,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelHandshakeLimits(pointer: nativeCallResult)
+						let returnValue = ChannelHandshakeLimits(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

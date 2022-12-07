@@ -18,17 +18,17 @@
 
 					internal var cType: LDKInit?
 
-					public init(pointer: LDKInit) {
+					public init(cType: LDKInit) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKInit, anchor: NativeTypeWrapper) {
+					public init(cType: LDKInit, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = InitFeatures(pointer: nativeCallResult)
+						let returnValue = InitFeatures(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -114,7 +114,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_NetAddressZ(pointer: nativeCallResult).getValue()
+						let returnValue = Option_NetAddressZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -159,7 +159,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Init(pointer: nativeCallResult)
+						let returnValue = Init(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -180,7 +180,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Init(pointer: nativeCallResult)
+						let returnValue = Init(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -228,7 +228,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -245,7 +245,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_InitDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_InitDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -20,17 +20,17 @@
 
 					internal var cType: LDKHTLCUpdate?
 
-					public init(pointer: LDKHTLCUpdate) {
+					public init(cType: LDKHTLCUpdate) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKHTLCUpdate, anchor: NativeTypeWrapper) {
+					public init(cType: LDKHTLCUpdate, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -71,7 +71,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = HTLCUpdate(pointer: nativeCallResult)
+						let returnValue = HTLCUpdate(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -119,7 +119,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -136,7 +136,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_HTLCUpdateDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_HTLCUpdateDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

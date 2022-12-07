@@ -16,17 +16,17 @@
 
 					internal var cType: LDKHTLCDestination?
 
-					public init(pointer: LDKHTLCDestination) {
+					public init(cType: LDKHTLCDestination) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKHTLCDestination, anchor: NativeTypeWrapper) {
+					public init(cType: LDKHTLCDestination, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = HTLCDestination(pointer: nativeCallResult)
+						let returnValue = HTLCDestination(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -121,7 +121,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = HTLCDestination(pointer: nativeCallResult)
+						let returnValue = HTLCDestination(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -138,7 +138,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = HTLCDestination(pointer: nativeCallResult)
+						let returnValue = HTLCDestination(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -155,7 +155,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = HTLCDestination(pointer: nativeCallResult)
+						let returnValue = HTLCDestination(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -202,7 +202,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -219,7 +219,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_HTLCDestinationZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_HTLCDestinationZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -231,7 +231,7 @@
 							return nil
 						}
 
-						return HTLCDestination_LDKNextHopChannel_Body(pointer: self.cType!.next_hop_channel)
+						return HTLCDestination_LDKNextHopChannel_Body(cType: self.cType!.next_hop_channel)
 					}
 			
 					public func getValueAsUnknownNextHop() -> UnknownNextHop? {
@@ -239,7 +239,7 @@
 							return nil
 						}
 
-						return HTLCDestination_LDKUnknownNextHop_Body(pointer: self.cType!.unknown_next_hop)
+						return HTLCDestination_LDKUnknownNextHop_Body(cType: self.cType!.unknown_next_hop)
 					}
 			
 					public func getValueAsFailedPayment() -> FailedPayment? {
@@ -247,7 +247,7 @@
 							return nil
 						}
 
-						return HTLCDestination_LDKFailedPayment_Body(pointer: self.cType!.failed_payment)
+						return HTLCDestination_LDKFailedPayment_Body(cType: self.cType!.failed_payment)
 					}
 			
 
@@ -285,17 +285,17 @@
 
 						internal var cType: LDKHTLCDestination_LDKNextHopChannel_Body?
 
-						fileprivate init(pointer: LDKHTLCDestination_LDKNextHopChannel_Body) {
+						fileprivate init(cType: LDKHTLCDestination_LDKNextHopChannel_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKHTLCDestination_LDKNextHopChannel_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKHTLCDestination_LDKNextHopChannel_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -312,7 +312,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -320,7 +320,7 @@
 						/// The outgoing `channel_id` between us and the next node.
 						public func getChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.channel_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id)
 
 							return returnValue;
 						}
@@ -348,17 +348,17 @@
 
 						internal var cType: LDKHTLCDestination_LDKUnknownNextHop_Body?
 
-						fileprivate init(pointer: LDKHTLCDestination_LDKUnknownNextHop_Body) {
+						fileprivate init(cType: LDKHTLCDestination_LDKUnknownNextHop_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKHTLCDestination_LDKUnknownNextHop_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKHTLCDestination_LDKUnknownNextHop_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -399,17 +399,17 @@
 
 						internal var cType: LDKHTLCDestination_LDKFailedPayment_Body?
 
-						fileprivate init(pointer: LDKHTLCDestination_LDKFailedPayment_Body) {
+						fileprivate init(cType: LDKHTLCDestination_LDKFailedPayment_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKHTLCDestination_LDKFailedPayment_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKHTLCDestination_LDKFailedPayment_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -422,7 +422,7 @@
 						/// The payment hash of the payment we attempted to process.
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_hash)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash)
 
 							return returnValue;
 						}

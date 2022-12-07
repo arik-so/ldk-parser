@@ -18,17 +18,17 @@
 
 					internal var cType: LDKMessageSendEvent?
 
-					public init(pointer: LDKMessageSendEvent) {
+					public init(cType: LDKMessageSendEvent) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKMessageSendEvent, anchor: NativeTypeWrapper) {
+					public init(cType: LDKMessageSendEvent, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -219,7 +219,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -236,7 +236,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -253,7 +253,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -270,7 +270,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -287,7 +287,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -304,7 +304,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -321,7 +321,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -338,7 +338,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -355,7 +355,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -372,7 +372,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -389,7 +389,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -406,7 +406,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -423,7 +423,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -440,7 +440,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -457,7 +457,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -474,7 +474,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -491,7 +491,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -508,7 +508,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -525,7 +525,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -542,7 +542,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -559,7 +559,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MessageSendEvent(pointer: nativeCallResult)
+						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -571,7 +571,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendAcceptChannel_Body(pointer: self.cType!.send_accept_channel)
+						return MessageSendEvent_LDKSendAcceptChannel_Body(cType: self.cType!.send_accept_channel)
 					}
 			
 					public func getValueAsSendOpenChannel() -> SendOpenChannel? {
@@ -579,7 +579,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendOpenChannel_Body(pointer: self.cType!.send_open_channel)
+						return MessageSendEvent_LDKSendOpenChannel_Body(cType: self.cType!.send_open_channel)
 					}
 			
 					public func getValueAsSendFundingCreated() -> SendFundingCreated? {
@@ -587,7 +587,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendFundingCreated_Body(pointer: self.cType!.send_funding_created)
+						return MessageSendEvent_LDKSendFundingCreated_Body(cType: self.cType!.send_funding_created)
 					}
 			
 					public func getValueAsSendFundingSigned() -> SendFundingSigned? {
@@ -595,7 +595,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendFundingSigned_Body(pointer: self.cType!.send_funding_signed)
+						return MessageSendEvent_LDKSendFundingSigned_Body(cType: self.cType!.send_funding_signed)
 					}
 			
 					public func getValueAsSendChannelReady() -> SendChannelReady? {
@@ -603,7 +603,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendChannelReady_Body(pointer: self.cType!.send_channel_ready)
+						return MessageSendEvent_LDKSendChannelReady_Body(cType: self.cType!.send_channel_ready)
 					}
 			
 					public func getValueAsSendAnnouncementSignatures() -> SendAnnouncementSignatures? {
@@ -611,7 +611,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendAnnouncementSignatures_Body(pointer: self.cType!.send_announcement_signatures)
+						return MessageSendEvent_LDKSendAnnouncementSignatures_Body(cType: self.cType!.send_announcement_signatures)
 					}
 			
 					public func getValueAsUpdateHtlCs() -> UpdateHTLCs? {
@@ -619,7 +619,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKUpdateHTLCs_Body(pointer: self.cType!.update_htl_cs)
+						return MessageSendEvent_LDKUpdateHTLCs_Body(cType: self.cType!.update_htl_cs)
 					}
 			
 					public func getValueAsSendRevokeAndAck() -> SendRevokeAndACK? {
@@ -627,7 +627,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendRevokeAndACK_Body(pointer: self.cType!.send_revoke_and_ack)
+						return MessageSendEvent_LDKSendRevokeAndACK_Body(cType: self.cType!.send_revoke_and_ack)
 					}
 			
 					public func getValueAsSendClosingSigned() -> SendClosingSigned? {
@@ -635,7 +635,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendClosingSigned_Body(pointer: self.cType!.send_closing_signed)
+						return MessageSendEvent_LDKSendClosingSigned_Body(cType: self.cType!.send_closing_signed)
 					}
 			
 					public func getValueAsSendShutdown() -> SendShutdown? {
@@ -643,7 +643,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendShutdown_Body(pointer: self.cType!.send_shutdown)
+						return MessageSendEvent_LDKSendShutdown_Body(cType: self.cType!.send_shutdown)
 					}
 			
 					public func getValueAsSendChannelReestablish() -> SendChannelReestablish? {
@@ -651,7 +651,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendChannelReestablish_Body(pointer: self.cType!.send_channel_reestablish)
+						return MessageSendEvent_LDKSendChannelReestablish_Body(cType: self.cType!.send_channel_reestablish)
 					}
 			
 					public func getValueAsSendChannelAnnouncement() -> SendChannelAnnouncement? {
@@ -659,7 +659,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendChannelAnnouncement_Body(pointer: self.cType!.send_channel_announcement)
+						return MessageSendEvent_LDKSendChannelAnnouncement_Body(cType: self.cType!.send_channel_announcement)
 					}
 			
 					public func getValueAsBroadcastChannelAnnouncement() -> BroadcastChannelAnnouncement? {
@@ -667,7 +667,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKBroadcastChannelAnnouncement_Body(pointer: self.cType!.broadcast_channel_announcement)
+						return MessageSendEvent_LDKBroadcastChannelAnnouncement_Body(cType: self.cType!.broadcast_channel_announcement)
 					}
 			
 					public func getValueAsBroadcastChannelUpdate() -> BroadcastChannelUpdate? {
@@ -675,7 +675,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKBroadcastChannelUpdate_Body(pointer: self.cType!.broadcast_channel_update)
+						return MessageSendEvent_LDKBroadcastChannelUpdate_Body(cType: self.cType!.broadcast_channel_update)
 					}
 			
 					public func getValueAsSendChannelUpdate() -> SendChannelUpdate? {
@@ -683,7 +683,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendChannelUpdate_Body(pointer: self.cType!.send_channel_update)
+						return MessageSendEvent_LDKSendChannelUpdate_Body(cType: self.cType!.send_channel_update)
 					}
 			
 					public func getValueAsHandleError() -> HandleError? {
@@ -691,7 +691,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKHandleError_Body(pointer: self.cType!.handle_error)
+						return MessageSendEvent_LDKHandleError_Body(cType: self.cType!.handle_error)
 					}
 			
 					public func getValueAsSendChannelRangeQuery() -> SendChannelRangeQuery? {
@@ -699,7 +699,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendChannelRangeQuery_Body(pointer: self.cType!.send_channel_range_query)
+						return MessageSendEvent_LDKSendChannelRangeQuery_Body(cType: self.cType!.send_channel_range_query)
 					}
 			
 					public func getValueAsSendShortIdsQuery() -> SendShortIdsQuery? {
@@ -707,7 +707,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendShortIdsQuery_Body(pointer: self.cType!.send_short_ids_query)
+						return MessageSendEvent_LDKSendShortIdsQuery_Body(cType: self.cType!.send_short_ids_query)
 					}
 			
 					public func getValueAsSendReplyChannelRange() -> SendReplyChannelRange? {
@@ -715,7 +715,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendReplyChannelRange_Body(pointer: self.cType!.send_reply_channel_range)
+						return MessageSendEvent_LDKSendReplyChannelRange_Body(cType: self.cType!.send_reply_channel_range)
 					}
 			
 					public func getValueAsSendGossipTimestampFilter() -> SendGossipTimestampFilter? {
@@ -723,7 +723,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendGossipTimestampFilter_Body(pointer: self.cType!.send_gossip_timestamp_filter)
+						return MessageSendEvent_LDKSendGossipTimestampFilter_Body(cType: self.cType!.send_gossip_timestamp_filter)
 					}
 			
 
@@ -761,17 +761,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendAcceptChannel_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendAcceptChannel_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendAcceptChannel_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendAcceptChannel_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendAcceptChannel_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -784,7 +784,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -792,7 +792,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> AcceptChannel {
 							// return value (do some wrapping)
-							let returnValue = AcceptChannel(pointer: self.cType!.msg)
+							let returnValue = AcceptChannel(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -820,17 +820,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendOpenChannel_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendOpenChannel_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendOpenChannel_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendOpenChannel_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendOpenChannel_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -843,7 +843,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -851,7 +851,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> OpenChannel {
 							// return value (do some wrapping)
-							let returnValue = OpenChannel(pointer: self.cType!.msg)
+							let returnValue = OpenChannel(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -879,17 +879,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendFundingCreated_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendFundingCreated_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendFundingCreated_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendFundingCreated_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendFundingCreated_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -902,7 +902,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -910,7 +910,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> FundingCreated {
 							// return value (do some wrapping)
-							let returnValue = FundingCreated(pointer: self.cType!.msg)
+							let returnValue = FundingCreated(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -938,17 +938,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendFundingSigned_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendFundingSigned_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendFundingSigned_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendFundingSigned_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendFundingSigned_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -961,7 +961,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -969,7 +969,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> FundingSigned {
 							// return value (do some wrapping)
-							let returnValue = FundingSigned(pointer: self.cType!.msg)
+							let returnValue = FundingSigned(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -997,17 +997,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendChannelReady_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendChannelReady_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelReady_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendChannelReady_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelReady_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1020,7 +1020,7 @@
 						/// The node_id of the node which should receive these message(s)
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1028,7 +1028,7 @@
 						/// The channel_ready message which should be sent.
 						public func getMsg() -> ChannelReady {
 							// return value (do some wrapping)
-							let returnValue = ChannelReady(pointer: self.cType!.msg)
+							let returnValue = ChannelReady(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1056,17 +1056,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendAnnouncementSignatures_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendAnnouncementSignatures_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendAnnouncementSignatures_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendAnnouncementSignatures_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendAnnouncementSignatures_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1079,7 +1079,7 @@
 						/// The node_id of the node which should receive these message(s)
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1087,7 +1087,7 @@
 						/// The announcement_signatures message which should be sent.
 						public func getMsg() -> AnnouncementSignatures {
 							// return value (do some wrapping)
-							let returnValue = AnnouncementSignatures(pointer: self.cType!.msg)
+							let returnValue = AnnouncementSignatures(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1115,17 +1115,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKUpdateHTLCs_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKUpdateHTLCs_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKUpdateHTLCs_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKUpdateHTLCs_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKUpdateHTLCs_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1138,7 +1138,7 @@
 						/// The node_id of the node which should receive these message(s)
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1146,7 +1146,7 @@
 						/// The update messages which should be sent. ALL messages in the struct should be sent!
 						public func getUpdates() -> CommitmentUpdate {
 							// return value (do some wrapping)
-							let returnValue = CommitmentUpdate(pointer: self.cType!.updates)
+							let returnValue = CommitmentUpdate(cType: self.cType!.updates)
 
 							return returnValue;
 						}
@@ -1174,17 +1174,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendRevokeAndACK_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendRevokeAndACK_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendRevokeAndACK_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendRevokeAndACK_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendRevokeAndACK_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1197,7 +1197,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1205,7 +1205,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> RevokeAndACK {
 							// return value (do some wrapping)
-							let returnValue = RevokeAndACK(pointer: self.cType!.msg)
+							let returnValue = RevokeAndACK(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1233,17 +1233,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendClosingSigned_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendClosingSigned_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendClosingSigned_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendClosingSigned_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendClosingSigned_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1256,7 +1256,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1264,7 +1264,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> ClosingSigned {
 							// return value (do some wrapping)
-							let returnValue = ClosingSigned(pointer: self.cType!.msg)
+							let returnValue = ClosingSigned(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1292,17 +1292,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendShutdown_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendShutdown_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendShutdown_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendShutdown_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendShutdown_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1315,7 +1315,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1323,7 +1323,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> Shutdown {
 							// return value (do some wrapping)
-							let returnValue = Shutdown(pointer: self.cType!.msg)
+							let returnValue = Shutdown(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1351,17 +1351,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendChannelReestablish_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendChannelReestablish_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelReestablish_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendChannelReestablish_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelReestablish_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1374,7 +1374,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1382,7 +1382,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> ChannelReestablish {
 							// return value (do some wrapping)
-							let returnValue = ChannelReestablish(pointer: self.cType!.msg)
+							let returnValue = ChannelReestablish(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1410,17 +1410,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendChannelAnnouncement_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendChannelAnnouncement_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelAnnouncement_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendChannelAnnouncement_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelAnnouncement_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1433,7 +1433,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1441,7 +1441,7 @@
 						/// The channel_announcement which should be sent.
 						public func getMsg() -> ChannelAnnouncement {
 							// return value (do some wrapping)
-							let returnValue = ChannelAnnouncement(pointer: self.cType!.msg)
+							let returnValue = ChannelAnnouncement(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1449,7 +1449,7 @@
 						/// The followup channel_update which should be sent.
 						public func getUpdateMsg() -> ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = ChannelUpdate(pointer: self.cType!.update_msg)
+							let returnValue = ChannelUpdate(cType: self.cType!.update_msg)
 
 							return returnValue;
 						}
@@ -1477,17 +1477,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKBroadcastChannelAnnouncement_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKBroadcastChannelAnnouncement_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKBroadcastChannelAnnouncement_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKBroadcastChannelAnnouncement_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKBroadcastChannelAnnouncement_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1500,7 +1500,7 @@
 						/// The channel_announcement which should be sent.
 						public func getMsg() -> ChannelAnnouncement {
 							// return value (do some wrapping)
-							let returnValue = ChannelAnnouncement(pointer: self.cType!.msg)
+							let returnValue = ChannelAnnouncement(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1508,7 +1508,7 @@
 						/// The followup channel_update which should be sent.
 						public func getUpdateMsg() -> ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = ChannelUpdate(pointer: self.cType!.update_msg)
+							let returnValue = ChannelUpdate(cType: self.cType!.update_msg)
 
 							return returnValue;
 						}
@@ -1536,17 +1536,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKBroadcastChannelUpdate_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKBroadcastChannelUpdate_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKBroadcastChannelUpdate_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKBroadcastChannelUpdate_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKBroadcastChannelUpdate_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1559,7 +1559,7 @@
 						/// The channel_update which should be sent.
 						public func getMsg() -> ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = ChannelUpdate(pointer: self.cType!.msg)
+							let returnValue = ChannelUpdate(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1587,17 +1587,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendChannelUpdate_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendChannelUpdate_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelUpdate_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendChannelUpdate_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelUpdate_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1610,7 +1610,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1618,7 +1618,7 @@
 						/// The channel_update which should be sent.
 						public func getMsg() -> ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = ChannelUpdate(pointer: self.cType!.msg)
+							let returnValue = ChannelUpdate(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1646,17 +1646,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKHandleError_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKHandleError_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKHandleError_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKHandleError_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKHandleError_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1669,7 +1669,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1677,7 +1677,7 @@
 						/// The action which should be taken.
 						public func getAction() -> ErrorAction {
 							// return value (do some wrapping)
-							let returnValue = ErrorAction(pointer: self.cType!.action)
+							let returnValue = ErrorAction(cType: self.cType!.action)
 
 							return returnValue;
 						}
@@ -1705,17 +1705,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendChannelRangeQuery_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendChannelRangeQuery_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelRangeQuery_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendChannelRangeQuery_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelRangeQuery_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1728,7 +1728,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1736,7 +1736,7 @@
 						/// The query_channel_range which should be sent.
 						public func getMsg() -> QueryChannelRange {
 							// return value (do some wrapping)
-							let returnValue = QueryChannelRange(pointer: self.cType!.msg)
+							let returnValue = QueryChannelRange(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1764,17 +1764,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendShortIdsQuery_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendShortIdsQuery_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendShortIdsQuery_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendShortIdsQuery_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendShortIdsQuery_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1787,7 +1787,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1795,7 +1795,7 @@
 						/// The query_short_channel_ids which should be sent.
 						public func getMsg() -> QueryShortChannelIds {
 							// return value (do some wrapping)
-							let returnValue = QueryShortChannelIds(pointer: self.cType!.msg)
+							let returnValue = QueryShortChannelIds(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1823,17 +1823,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendReplyChannelRange_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendReplyChannelRange_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendReplyChannelRange_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendReplyChannelRange_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendReplyChannelRange_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1846,7 +1846,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1854,7 +1854,7 @@
 						/// The reply_channel_range which should be sent.
 						public func getMsg() -> ReplyChannelRange {
 							// return value (do some wrapping)
-							let returnValue = ReplyChannelRange(pointer: self.cType!.msg)
+							let returnValue = ReplyChannelRange(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1882,17 +1882,17 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendGossipTimestampFilter_Body?
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendGossipTimestampFilter_Body) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendGossipTimestampFilter_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKMessageSendEvent_LDKSendGossipTimestampFilter_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKMessageSendEvent_LDKSendGossipTimestampFilter_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1905,7 +1905,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id)
 
 							return returnValue;
 						}
@@ -1913,7 +1913,7 @@
 						/// The gossip_timestamp_filter which should be sent.
 						public func getMsg() -> GossipTimestampFilter {
 							// return value (do some wrapping)
-							let returnValue = GossipTimestampFilter(pointer: self.cType!.msg)
+							let returnValue = GossipTimestampFilter(cType: self.cType!.msg)
 
 							return returnValue;
 						}

@@ -16,17 +16,17 @@
 
 					internal var cType: LDKOnionMessageProvider?
 
-					public init(pointer: LDKOnionMessageProvider) {
+					public init(cType: LDKOnionMessageProvider) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKOnionMessageProvider, anchor: NativeTypeWrapper) {
+					public init(cType: LDKOnionMessageProvider, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -49,7 +49,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.nextOnionMessageForPeer(peerNodeId: PublicKey(pointer: peer_node_id).getValue())
+							let swiftCallbackResult = instance.nextOnionMessageForPeer(peerNodeId: PublicKey(cType: peer_node_id).getValue())
 
 							// cleanup
 							
@@ -146,7 +146,7 @@
 					/// Gets the next pending onion message for the peer with the given node id.
 					/// 
 					/// Note that the return value (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public func nextOnionMessageForPeer(peerNodeId: [UInt8]) -> OnionMessage {
+					override func nextOnionMessageForPeer(peerNodeId: [UInt8]) -> OnionMessage {
 						// native call variable prep
 						
 
@@ -157,14 +157,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = OnionMessage(pointer: nativeCallResult)
+						let returnValue = OnionMessage(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

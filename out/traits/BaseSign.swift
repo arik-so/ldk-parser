@@ -32,17 +32,17 @@
 
 					internal var cType: LDKBaseSign?
 
-					public init(pointer: LDKBaseSign) {
+					public init(cType: LDKBaseSign) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKBaseSign, anchor: NativeTypeWrapper) {
+					public init(cType: LDKBaseSign, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -101,7 +101,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.validateHolderCommitment(holderTx: HolderCommitmentTransaction(pointer: holder_tx.pointee), preimages: Vec_PaymentPreimageZ(pointer: preimages).getValue())
+							let swiftCallbackResult = instance.validateHolderCommitment(holderTx: HolderCommitmentTransaction(cType: holder_tx.pointee), preimages: Vec_PaymentPreimageZ(cType: preimages).getValue())
 
 							// cleanup
 							
@@ -137,7 +137,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signCounterpartyCommitment(commitmentTx: CommitmentTransaction(pointer: commitment_tx.pointee), preimages: Vec_PaymentPreimageZ(pointer: preimages).getValue())
+							let swiftCallbackResult = instance.signCounterpartyCommitment(commitmentTx: CommitmentTransaction(cType: commitment_tx.pointee), preimages: Vec_PaymentPreimageZ(cType: preimages).getValue())
 
 							// cleanup
 							
@@ -178,7 +178,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction(pointer: commitment_tx.pointee))
+							let swiftCallbackResult = instance.signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction(cType: commitment_tx.pointee))
 
 							// cleanup
 							
@@ -201,7 +201,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signJusticeRevokedOutput(justiceTx: Transaction(pointer: justice_tx).getValue(), input: input, amount: amount, perCommitmentKey: per_commitment_keyPointee)
+							let swiftCallbackResult = instance.signJusticeRevokedOutput(justiceTx: Transaction(cType: justice_tx).getValue(), input: input, amount: amount, perCommitmentKey: per_commitment_keyPointee)
 
 							// cleanup
 							
@@ -224,7 +224,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signJusticeRevokedHtlc(justiceTx: Transaction(pointer: justice_tx).getValue(), input: input, amount: amount, perCommitmentKey: per_commitment_keyPointee, htlc: HTLCOutputInCommitment(pointer: htlc.pointee))
+							let swiftCallbackResult = instance.signJusticeRevokedHtlc(justiceTx: Transaction(cType: justice_tx).getValue(), input: input, amount: amount, perCommitmentKey: per_commitment_keyPointee, htlc: HTLCOutputInCommitment(cType: htlc.pointee))
 
 							// cleanup
 							
@@ -242,7 +242,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signCounterpartyHtlcTransaction(htlcTx: Transaction(pointer: htlc_tx).getValue(), input: input, amount: amount, perCommitmentPoint: PublicKey(pointer: per_commitment_point).getValue(), htlc: HTLCOutputInCommitment(pointer: htlc.pointee))
+							let swiftCallbackResult = instance.signCounterpartyHtlcTransaction(htlcTx: Transaction(cType: htlc_tx).getValue(), input: input, amount: amount, perCommitmentPoint: PublicKey(cType: per_commitment_point).getValue(), htlc: HTLCOutputInCommitment(cType: htlc.pointee))
 
 							// cleanup
 							
@@ -260,7 +260,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signClosingTransaction(closingTx: ClosingTransaction(pointer: closing_tx.pointee))
+							let swiftCallbackResult = instance.signClosingTransaction(closingTx: ClosingTransaction(cType: closing_tx.pointee))
 
 							// cleanup
 							
@@ -278,7 +278,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signHolderAnchorInput(anchorTx: Transaction(pointer: anchor_tx).getValue(), input: input)
+							let swiftCallbackResult = instance.signHolderAnchorInput(anchorTx: Transaction(cType: anchor_tx).getValue(), input: input)
 
 							// cleanup
 							
@@ -296,7 +296,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signChannelAnnouncement(msg: UnsignedChannelAnnouncement(pointer: msg.pointee))
+							let swiftCallbackResult = instance.signChannelAnnouncement(msg: UnsignedChannelAnnouncement(cType: msg.pointee))
 
 							// cleanup
 							
@@ -314,7 +314,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.readyChannel(channelParameters: ChannelTransactionParameters(pointer: channel_parameters.pointee))
+							let swiftCallbackResult = instance.readyChannel(channelParameters: ChannelTransactionParameters(cType: channel_parameters.pointee))
 
 							// cleanup
 							
@@ -598,7 +598,7 @@
 					/// Gets the holder's channel public keys and basepoints
 					public func getPubkeys() -> ChannelPublicKeys {
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(pointer: self.cType!.pubkeys)
+						let returnValue = ChannelPublicKeys(cType: self.cType!.pubkeys)
 
 						return returnValue;
 					}
@@ -624,7 +624,7 @@
 					/// Gets the per-commitment point for a specific commitment number
 					/// 
 					/// Note that the commitment number starts at (1 << 48) - 1 and counts backwards.
-					public func getPerCommitmentPoint(idx: UInt64) -> [UInt8] {
+					override func getPerCommitmentPoint(idx: UInt64) -> [UInt8] {
 						// native call variable prep
 						
 
@@ -635,7 +635,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -648,7 +648,7 @@
 					/// May be called more than once for the same index.
 					/// 
 					/// Note that the commitment number starts at (1 << 48) - 1 and counts backwards.
-					public func releaseCommitmentSecret(idx: UInt64) -> [UInt8] {
+					override func releaseCommitmentSecret(idx: UInt64) -> [UInt8] {
 						// native call variable prep
 						
 
@@ -659,7 +659,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -677,7 +677,7 @@
 					/// 
 					/// NOTE: all the relevant preimages will be provided, but there may also be additional
 					/// irrelevant or duplicate preimages.
-					public func validateHolderCommitment(holderTx: HolderCommitmentTransaction, preimages: [[UInt8]]) -> Result_NoneNoneZ {
+					override func validateHolderCommitment(holderTx: HolderCommitmentTransaction, preimages: [[UInt8]]) -> Result_NoneNoneZ {
 						// native call variable prep
 						
 						let preimagesVector = Vec_PaymentPreimageZ(array: preimages)
@@ -696,7 +696,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -704,7 +704,7 @@
 					/// Gets an arbitrary identifier describing the set of keys which are provided back to you in
 					/// some SpendableOutputDescriptor types. This should be sufficient to identify this
 					/// Sign object uniquely and lookup or re-derive its keys.
-					public func channelKeysId() -> [UInt8] {
+					override func channelKeysId() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -715,7 +715,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -733,7 +733,7 @@
 					/// 
 					/// NOTE: all the relevant preimages will be provided, but there may also be additional
 					/// irrelevant or duplicate preimages.
-					public func signCounterpartyCommitment(commitmentTx: CommitmentTransaction, preimages: [[UInt8]]) -> Result_C2Tuple_SignatureCVec_SignatureZZNoneZ {
+					override func signCounterpartyCommitment(commitmentTx: CommitmentTransaction, preimages: [[UInt8]]) -> Result_C2Tuple_SignatureCVec_SignatureZZNoneZ {
 						// native call variable prep
 						
 						let preimagesVector = Vec_PaymentPreimageZ(array: preimages)
@@ -752,7 +752,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_SignatureCVec_SignatureZZNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_SignatureCVec_SignatureZZNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -761,7 +761,7 @@
 					/// 
 					/// This is required in order for the signer to make sure that the state has moved
 					/// forward and it is safe to sign the next counterparty commitment.
-					public func validateCounterpartyRevocation(idx: UInt64, secret: [UInt8]?) -> Result_NoneNoneZ {
+					override func validateCounterpartyRevocation(idx: UInt64, secret: [UInt8]?) -> Result_NoneNoneZ {
 						// native call variable prep
 						
 						let tupledSecret = Bindings.arrayToUInt8Tuple32(array: secret)
@@ -778,7 +778,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -794,7 +794,7 @@
 					/// An external signer implementation should check that the commitment has not been revoked.
 					/// 
 					/// May return Err if key derivation fails.  Callers, such as ChannelMonitor, will panic in such a case.
-					public func signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction) -> Result_C2Tuple_SignatureCVec_SignatureZZNoneZ {
+					override func signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction) -> Result_C2Tuple_SignatureCVec_SignatureZZNoneZ {
 						// native call variable prep
 						
 
@@ -809,7 +809,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_SignatureCVec_SignatureZZNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_SignatureCVec_SignatureZZNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -828,7 +828,7 @@
 					/// revoked the state which they eventually broadcast. It's not a _holder_ secret key and does
 					/// not allow the spending of any funds by itself (you need our holder revocation_secret to do
 					/// so).
-					public func signJusticeRevokedOutput(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?) -> Result_SignatureNoneZ {
+					override func signJusticeRevokedOutput(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
 						let tupledPerCommitmentKey = Bindings.arrayToUInt8Tuple32(array: perCommitmentKey)
@@ -845,7 +845,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SignatureNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_SignatureNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -867,7 +867,7 @@
 					/// 
 					/// htlc holds HTLC elements (hash, timelock), thus changing the format of the witness script
 					/// (which is committed to in the BIP 143 signatures).
-					public func signJusticeRevokedHtlc(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?, htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
+					override func signJusticeRevokedHtlc(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?, htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
 						let tupledPerCommitmentKey = Bindings.arrayToUInt8Tuple32(array: perCommitmentKey)
@@ -888,7 +888,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SignatureNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_SignatureNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -910,7 +910,7 @@
 					/// detected onchain. It has been generated by our counterparty and is used to derive
 					/// channel state keys, which are then included in the witness script and committed to in the
 					/// BIP 143 signature.
-					public func signCounterpartyHtlcTransaction(htlcTx: [UInt8], input: UInt, amount: UInt64, perCommitmentPoint: [UInt8], htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
+					override func signCounterpartyHtlcTransaction(htlcTx: [UInt8], input: UInt, amount: UInt64, perCommitmentPoint: [UInt8], htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
 
@@ -925,7 +925,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SignatureNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_SignatureNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -934,7 +934,7 @@
 					/// 
 					/// Note that, due to rounding, there may be one \"missing\" satoshi, and either party may have
 					/// chosen to forgo their output as dust.
-					public func signClosingTransaction(closingTx: ClosingTransaction) -> Result_SignatureNoneZ {
+					override func signClosingTransaction(closingTx: ClosingTransaction) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
 
@@ -949,14 +949,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SignatureNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_SignatureNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Computes the signature for a commitment transaction's anchor output used as an
 					/// input within `anchor_tx`, which spends the commitment transaction, at index `input`.
-					public func signHolderAnchorInput(anchorTx: [UInt8], input: UInt) -> Result_SignatureNoneZ {
+					override func signHolderAnchorInput(anchorTx: [UInt8], input: UInt) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
 
@@ -967,7 +967,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SignatureNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_SignatureNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -981,7 +981,7 @@
 					/// Note that if this fails or is rejected, the channel will not be publicly announced and
 					/// our counterparty may (though likely will not) close the channel on us for violating the
 					/// protocol.
-					public func signChannelAnnouncement(msg: UnsignedChannelAnnouncement) -> Result_C2Tuple_SignatureSignatureZNoneZ {
+					override func signChannelAnnouncement(msg: UnsignedChannelAnnouncement) -> Result_C2Tuple_SignatureSignatureZNoneZ {
 						// native call variable prep
 						
 
@@ -996,7 +996,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_SignatureSignatureZNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_SignatureSignatureZNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -1011,7 +1011,7 @@
 					/// We bind holder_selected_contest_delay late here for API convenience.
 					/// 
 					/// Will be called before any signatures are applied.
-					public func readyChannel(channelParameters: ChannelTransactionParameters) {
+					override func readyChannel(channelParameters: ChannelTransactionParameters) {
 						// native call variable prep
 						
 
@@ -1033,7 +1033,7 @@
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

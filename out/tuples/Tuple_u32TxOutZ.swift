@@ -16,17 +16,17 @@
 
 					internal var cType: LDKC2Tuple_u32TxOutZ?
 
-					public init(pointer: LDKC2Tuple_u32TxOutZ) {
+					public init(cType: LDKC2Tuple_u32TxOutZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKC2Tuple_u32TxOutZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKC2Tuple_u32TxOutZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_u32TxOutZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_u32TxOutZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_u32TxOutZ(pointer: nativeCallResult).getValue()
+						let returnValue = Tuple_u32TxOutZ(cType: nativeCallResult).getValue()
 
 						self.cType = nativeCallResult
 					}
@@ -111,7 +111,7 @@
 					/// The element at position 1
 					public func getB() -> TxOut {
 						// return value (do some wrapping)
-						let returnValue = TxOut(pointer: self.cType!.b)
+						let returnValue = TxOut(cType: self.cType!.b)
 
 						return returnValue;
 					}

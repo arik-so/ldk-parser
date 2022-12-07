@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCOption_ClosureReasonZ?
 
-					public init(pointer: LDKCOption_ClosureReasonZ) {
+					public init(cType: LDKCOption_ClosureReasonZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCOption_ClosureReasonZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCOption_ClosureReasonZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -81,7 +81,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_ClosureReasonZ(pointer: nativeCallResult)
+						let returnValue = Option_ClosureReasonZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -92,7 +92,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_ClosureReasonZ_Some {
-							return ClosureReason(pointer: self.cType!.some)
+							return ClosureReason(cType: self.cType!.some)
 						}
 						assert(false, "invalid option enum value")
 						return nil

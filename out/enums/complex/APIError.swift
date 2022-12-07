@@ -17,17 +17,17 @@
 
 					internal var cType: LDKAPIError?
 
-					public init(pointer: LDKAPIError) {
+					public init(cType: LDKAPIError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKAPIError, anchor: NativeTypeWrapper) {
+					public init(cType: LDKAPIError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -136,7 +136,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = APIError(pointer: nativeCallResult)
+						let returnValue = APIError(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -153,7 +153,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = APIError(pointer: nativeCallResult)
+						let returnValue = APIError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -170,7 +170,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = APIError(pointer: nativeCallResult)
+						let returnValue = APIError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -187,7 +187,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = APIError(pointer: nativeCallResult)
+						let returnValue = APIError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -204,7 +204,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = APIError(pointer: nativeCallResult)
+						let returnValue = APIError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -221,7 +221,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = APIError(pointer: nativeCallResult)
+						let returnValue = APIError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -238,7 +238,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = APIError(pointer: nativeCallResult)
+						let returnValue = APIError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -276,7 +276,7 @@
 							return nil
 						}
 
-						return APIError_LDKAPIMisuseError_Body(pointer: self.cType!.api_misuse_error)
+						return APIError_LDKAPIMisuseError_Body(cType: self.cType!.api_misuse_error)
 					}
 			
 					public func getValueAsFeeRateTooHigh() -> FeeRateTooHigh? {
@@ -284,7 +284,7 @@
 							return nil
 						}
 
-						return APIError_LDKFeeRateTooHigh_Body(pointer: self.cType!.fee_rate_too_high)
+						return APIError_LDKFeeRateTooHigh_Body(cType: self.cType!.fee_rate_too_high)
 					}
 			
 					public func getValueAsRouteError() -> RouteError? {
@@ -292,7 +292,7 @@
 							return nil
 						}
 
-						return APIError_LDKRouteError_Body(pointer: self.cType!.route_error)
+						return APIError_LDKRouteError_Body(cType: self.cType!.route_error)
 					}
 			
 					public func getValueAsChannelUnavailable() -> ChannelUnavailable? {
@@ -300,7 +300,7 @@
 							return nil
 						}
 
-						return APIError_LDKChannelUnavailable_Body(pointer: self.cType!.channel_unavailable)
+						return APIError_LDKChannelUnavailable_Body(cType: self.cType!.channel_unavailable)
 					}
 			
 					public func getValueAsIncompatibleShutdownScript() -> IncompatibleShutdownScript? {
@@ -308,7 +308,7 @@
 							return nil
 						}
 
-						return APIError_LDKIncompatibleShutdownScript_Body(pointer: self.cType!.incompatible_shutdown_script)
+						return APIError_LDKIncompatibleShutdownScript_Body(cType: self.cType!.incompatible_shutdown_script)
 					}
 			
 
@@ -346,17 +346,17 @@
 
 						internal var cType: LDKAPIError_LDKAPIMisuseError_Body?
 
-						fileprivate init(pointer: LDKAPIError_LDKAPIMisuseError_Body) {
+						fileprivate init(cType: LDKAPIError_LDKAPIMisuseError_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKAPIError_LDKAPIMisuseError_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKAPIError_LDKAPIMisuseError_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -369,7 +369,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(pointer: self.cType!.err)
+							let returnValue = Str(cType: self.cType!.err)
 
 							return returnValue;
 						}
@@ -397,17 +397,17 @@
 
 						internal var cType: LDKAPIError_LDKFeeRateTooHigh_Body?
 
-						fileprivate init(pointer: LDKAPIError_LDKFeeRateTooHigh_Body) {
+						fileprivate init(cType: LDKAPIError_LDKFeeRateTooHigh_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKAPIError_LDKFeeRateTooHigh_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKAPIError_LDKFeeRateTooHigh_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -420,7 +420,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(pointer: self.cType!.err)
+							let returnValue = Str(cType: self.cType!.err)
 
 							return returnValue;
 						}
@@ -456,17 +456,17 @@
 
 						internal var cType: LDKAPIError_LDKRouteError_Body?
 
-						fileprivate init(pointer: LDKAPIError_LDKRouteError_Body) {
+						fileprivate init(cType: LDKAPIError_LDKRouteError_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKAPIError_LDKRouteError_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKAPIError_LDKRouteError_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -479,7 +479,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(pointer: self.cType!.err)
+							let returnValue = Str(cType: self.cType!.err)
 
 							return returnValue;
 						}
@@ -507,17 +507,17 @@
 
 						internal var cType: LDKAPIError_LDKChannelUnavailable_Body?
 
-						fileprivate init(pointer: LDKAPIError_LDKChannelUnavailable_Body) {
+						fileprivate init(cType: LDKAPIError_LDKChannelUnavailable_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKAPIError_LDKChannelUnavailable_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKAPIError_LDKChannelUnavailable_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -530,7 +530,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(pointer: self.cType!.err)
+							let returnValue = Str(cType: self.cType!.err)
 
 							return returnValue;
 						}
@@ -558,17 +558,17 @@
 
 						internal var cType: LDKAPIError_LDKIncompatibleShutdownScript_Body?
 
-						fileprivate init(pointer: LDKAPIError_LDKIncompatibleShutdownScript_Body) {
+						fileprivate init(cType: LDKAPIError_LDKIncompatibleShutdownScript_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKAPIError_LDKIncompatibleShutdownScript_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKAPIError_LDKIncompatibleShutdownScript_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -581,7 +581,7 @@
 						/// The incompatible shutdown script.
 						public func getScript() -> ShutdownScript {
 							// return value (do some wrapping)
-							let returnValue = ShutdownScript(pointer: self.cType!.script)
+							let returnValue = ShutdownScript(cType: self.cType!.script)
 
 							return returnValue;
 						}

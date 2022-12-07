@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_NoneSendErrorZ?
 
-					public init(pointer: LDKCResult_NoneSendErrorZ) {
+					public init(cType: LDKCResult_NoneSendErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_NoneSendErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_NoneSendErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneSendErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneSendErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneSendErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneSendErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -94,7 +94,7 @@
 
 					public func getError() -> SendError? {
 						if self.cType?.result_ok == false {
-							return SendError(pointer: self.cType!.contents.err.pointee)
+							return SendError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}

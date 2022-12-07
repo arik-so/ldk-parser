@@ -23,17 +23,17 @@
 
 					internal var cType: LDKLockableScore?
 
-					public init(pointer: LDKLockableScore) {
+					public init(cType: LDKLockableScore) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKLockableScore, anchor: NativeTypeWrapper) {
+					public init(cType: LDKLockableScore, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -149,7 +149,7 @@
 				public class NativelyImplementedLockableScore: LockableScore {
 					
 					/// Returns the locked scorer.
-					public func lock() -> Score {
+					override func lock() -> Score {
 						// native call variable prep
 						
 
@@ -160,14 +160,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedScore(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedScore(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

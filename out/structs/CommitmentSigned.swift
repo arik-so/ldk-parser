@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCommitmentSigned?
 
-					public init(pointer: LDKCommitmentSigned) {
+					public init(cType: LDKCommitmentSigned) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCommitmentSigned, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCommitmentSigned, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -90,7 +90,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Signature(pointer: nativeCallResult)
+						let returnValue = Signature(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -134,7 +134,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_SignatureZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_SignatureZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -180,7 +180,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = CommitmentSigned(pointer: nativeCallResult)
+						let returnValue = CommitmentSigned(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -201,7 +201,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = CommitmentSigned(pointer: nativeCallResult)
+						let returnValue = CommitmentSigned(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -249,7 +249,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -266,7 +266,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CommitmentSignedDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CommitmentSignedDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -18,17 +18,17 @@
 
 					internal var cType: LDKMultiThreadedLockableScore?
 
-					public init(pointer: LDKMultiThreadedLockableScore) {
+					public init(cType: LDKMultiThreadedLockableScore) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKMultiThreadedLockableScore, anchor: NativeTypeWrapper) {
+					public init(cType: LDKMultiThreadedLockableScore, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -70,7 +70,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedLockableScore(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedLockableScore(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -91,7 +91,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -113,7 +113,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedWriteableScore(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedWriteableScore(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -130,7 +130,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = MultiThreadedLockableScore(pointer: nativeCallResult)
+						let returnValue = MultiThreadedLockableScore(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

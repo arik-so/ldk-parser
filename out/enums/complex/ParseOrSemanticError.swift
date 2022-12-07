@@ -18,17 +18,17 @@
 
 					internal var cType: LDKParseOrSemanticError?
 
-					public init(pointer: LDKParseOrSemanticError) {
+					public init(cType: LDKParseOrSemanticError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKParseOrSemanticError, anchor: NativeTypeWrapper) {
+					public init(cType: LDKParseOrSemanticError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -93,7 +93,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseOrSemanticError(pointer: nativeCallResult)
+						let returnValue = ParseOrSemanticError(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -110,7 +110,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseOrSemanticError(pointer: nativeCallResult)
+						let returnValue = ParseOrSemanticError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -127,7 +127,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ParseOrSemanticError(pointer: nativeCallResult)
+						let returnValue = ParseOrSemanticError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -174,7 +174,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(pointer: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -186,7 +186,7 @@
 							return nil
 						}
 
-						return ParseError(pointer: self.cType!.parse_error)
+						return ParseError(cType: self.cType!.parse_error)
 					}
 			
 					public func getValueAsSemanticError() -> SemanticError? {

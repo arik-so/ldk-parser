@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ?
 
-					public init(pointer: LDKCResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ) {
+					public init(cType: LDKCResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,14 +116,14 @@
 
 					public func getError() -> APIError? {
 						if self.cType?.result_ok == false {
-							return APIError(pointer: self.cType!.contents.err.pointee)
+							return APIError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> ([UInt8], [UInt8])? {
 						if self.cType?.result_ok == true {
-							return Tuple_PaymentHashPaymentSecretZ(pointer: self.cType!.contents.result.pointee).getValue()
+							return Tuple_PaymentHashPaymentSecretZ(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}

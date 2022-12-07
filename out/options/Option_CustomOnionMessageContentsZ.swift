@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCOption_CustomOnionMessageContentsZ?
 
-					public init(pointer: LDKCOption_CustomOnionMessageContentsZ) {
+					public init(cType: LDKCOption_CustomOnionMessageContentsZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCOption_CustomOnionMessageContentsZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCOption_CustomOnionMessageContentsZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -81,7 +81,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_CustomOnionMessageContentsZ(pointer: nativeCallResult)
+						let returnValue = Option_CustomOnionMessageContentsZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -92,7 +92,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_CustomOnionMessageContentsZ_Some {
-							return NativelyImplementedCustomOnionMessageContents(pointer: self.cType!.some, anchor: self)
+							return NativelyImplementedCustomOnionMessageContents(cType: self.cType!.some, anchor: self)
 						}
 						assert(false, "invalid option enum value")
 						return nil

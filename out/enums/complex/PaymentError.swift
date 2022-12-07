@@ -16,17 +16,17 @@
 
 					internal var cType: LDKPaymentError?
 
-					public init(pointer: LDKPaymentError) {
+					public init(cType: LDKPaymentError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKPaymentError, anchor: NativeTypeWrapper) {
+					public init(cType: LDKPaymentError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -97,7 +97,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PaymentError(pointer: nativeCallResult)
+						let returnValue = PaymentError(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -114,7 +114,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PaymentError(pointer: nativeCallResult)
+						let returnValue = PaymentError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -131,7 +131,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PaymentError(pointer: nativeCallResult)
+						let returnValue = PaymentError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -148,7 +148,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PaymentError(pointer: nativeCallResult)
+						let returnValue = PaymentError(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -160,7 +160,7 @@
 							return nil
 						}
 
-						return Str(pointer: self.cType!.invoice)
+						return Str(cType: self.cType!.invoice)
 					}
 			
 					public func getValueAsRouting() -> LightningError? {
@@ -168,7 +168,7 @@
 							return nil
 						}
 
-						return LightningError(pointer: self.cType!.routing)
+						return LightningError(cType: self.cType!.routing)
 					}
 			
 					public func getValueAsSending() -> PaymentSendFailure? {
@@ -176,7 +176,7 @@
 							return nil
 						}
 
-						return PaymentSendFailure(pointer: self.cType!.sending)
+						return PaymentSendFailure(cType: self.cType!.sending)
 					}
 			
 

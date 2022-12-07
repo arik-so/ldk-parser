@@ -18,17 +18,17 @@
 
 					internal var cType: LDKSha256?
 
-					public init(pointer: LDKSha256) {
+					public init(cType: LDKSha256) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKSha256, anchor: NativeTypeWrapper) {
+					public init(cType: LDKSha256, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Sha256(pointer: nativeCallResult)
+						let returnValue = Sha256(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCustomMessageHandler?
 
-					public init(pointer: LDKCustomMessageHandler) {
+					public init(cType: LDKCustomMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCustomMessageHandler, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCustomMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -49,7 +49,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleCustomMessage(msg: NativelyImplementedBindingsType(pointer: msg), senderNodeId: PublicKey(pointer: sender_node_id).getValue())
+							let swiftCallbackResult = instance.handleCustomMessage(msg: NativelyImplementedBindingsType(cType: msg), senderNodeId: PublicKey(cType: sender_node_id).getValue())
 
 							// cleanup
 							
@@ -156,7 +156,7 @@
 					/// Implementation of CustomMessageReader for this object.
 					public func getCustomMessageReader() -> CustomMessageReader {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedCustomMessageReader(pointer: self.cType!.CustomMessageReader, anchor: self)
+						let returnValue = NativelyImplementedCustomMessageReader(cType: self.cType!.CustomMessageReader, anchor: self)
 
 						return returnValue;
 					}
@@ -181,7 +181,7 @@
 					
 					/// Called with the message type that was received and the buffer to be read.
 					/// Can return a `MessageHandlingError` if the message could not be handled.
-					public func handleCustomMessage(msg: BindingsType, senderNodeId: [UInt8]) -> Result_NoneLightningErrorZ {
+					override func handleCustomMessage(msg: BindingsType, senderNodeId: [UInt8]) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
 
@@ -192,7 +192,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -201,7 +201,7 @@
 					/// handler, clearing the list in the process. The first tuple element must
 					/// correspond to the intended recipients node ids. If no connection to one of the
 					/// specified node does not exist, the message is simply not sent to it.
-					public func getAndClearPendingMsg() -> [([UInt8], BindingsType)] {
+					override func getAndClearPendingMsg() -> [([UInt8], BindingsType)] {
 						// native call variable prep
 						
 
@@ -212,14 +212,14 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_C2Tuple_PublicKeyTypeZZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_C2Tuple_PublicKeyTypeZZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					public func free() {
+					override func free() {
 						// native call variable prep
 						
 

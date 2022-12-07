@@ -23,17 +23,17 @@
 
 					internal var cType: LDKInvoice?
 
-					public init(pointer: LDKInvoice) {
+					public init(cType: LDKInvoice) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKInvoice, anchor: NativeTypeWrapper) {
+					public init(cType: LDKInvoice, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -101,7 +101,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Invoice(pointer: nativeCallResult)
+						let returnValue = Invoice(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -139,7 +139,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = SignedRawInvoice(pointer: nativeCallResult)
+						let returnValue = SignedRawInvoice(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -160,7 +160,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneSemanticErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneSemanticErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -196,7 +196,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_InvoiceSemanticErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_InvoiceSemanticErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -269,7 +269,7 @@
 					
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -305,7 +305,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = InvoiceFeatures(pointer: nativeCallResult)
+						let returnValue = InvoiceFeatures(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -326,7 +326,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -433,7 +433,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_PrivateRouteZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_PrivateRouteZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -454,7 +454,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_RouteHintZ(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_RouteHintZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -496,7 +496,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_u64Z(pointer: nativeCallResult).getValue()
+						let returnValue = Option_u64Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -513,7 +513,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_InvoiceParseOrSemanticErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_InvoiceParseOrSemanticErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -534,7 +534,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(pointer: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult)
 
 						return returnValue
 					}

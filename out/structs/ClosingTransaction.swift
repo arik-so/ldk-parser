@@ -22,17 +22,17 @@
 
 					internal var cType: LDKClosingTransaction?
 
-					public init(pointer: LDKClosingTransaction) {
+					public init(cType: LDKClosingTransaction) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKClosingTransaction, anchor: NativeTypeWrapper) {
+					public init(cType: LDKClosingTransaction, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -73,7 +73,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ClosingTransaction(pointer: nativeCallResult)
+						let returnValue = ClosingTransaction(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -146,7 +146,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = ClosingTransaction(pointer: nativeCallResult)
+						let returnValue = ClosingTransaction(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -172,7 +172,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = TrustedClosingTransaction(pointer: nativeCallResult)
+						let returnValue = TrustedClosingTransaction(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -198,7 +198,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_TrustedClosingTransactionNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_TrustedClosingTransactionNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -261,7 +261,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = u8slice(pointer: nativeCallResult)
+						let returnValue = u8slice(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -282,7 +282,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = u8slice(pointer: nativeCallResult)
+						let returnValue = u8slice(cType: nativeCallResult)
 
 						return returnValue
 					}

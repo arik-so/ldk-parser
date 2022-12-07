@@ -22,17 +22,17 @@
 
 					internal var cType: LDKChannelTransactionParameters?
 
-					public init(pointer: LDKChannelTransactionParameters) {
+					public init(cType: LDKChannelTransactionParameters) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKChannelTransactionParameters, anchor: NativeTypeWrapper) {
+					public init(cType: LDKChannelTransactionParameters, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -73,7 +73,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(pointer: nativeCallResult)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -217,7 +217,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = CounterpartyChannelTransactionParameters(pointer: nativeCallResult)
+						let returnValue = CounterpartyChannelTransactionParameters(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -277,7 +277,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = OutPoint(pointer: nativeCallResult)
+						let returnValue = OutPoint(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -361,7 +361,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelTransactionParameters(pointer: nativeCallResult)
+						let returnValue = ChannelTransactionParameters(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -382,7 +382,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ChannelTransactionParameters(pointer: nativeCallResult)
+						let returnValue = ChannelTransactionParameters(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -427,7 +427,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = DirectedChannelTransactionParameters(pointer: nativeCallResult)
+						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -451,7 +451,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = DirectedChannelTransactionParameters(pointer: nativeCallResult)
+						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -472,7 +472,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -489,7 +489,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ChannelTransactionParametersDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_ChannelTransactionParametersDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

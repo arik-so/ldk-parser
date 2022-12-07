@@ -18,17 +18,17 @@
 
 					internal var cType: LDKNodeInfo?
 
-					public init(pointer: LDKNodeInfo) {
+					public init(cType: LDKNodeInfo) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKNodeInfo, anchor: NativeTypeWrapper) {
+					public init(cType: LDKNodeInfo, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -71,7 +71,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u64Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u64Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -134,7 +134,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = RoutingFees(pointer: nativeCallResult)
+						let returnValue = RoutingFees(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -197,7 +197,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = NodeAnnouncementInfo(pointer: nativeCallResult)
+						let returnValue = NodeAnnouncementInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -243,7 +243,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = NodeInfo(pointer: nativeCallResult)
+						let returnValue = NodeInfo(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -264,7 +264,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NodeInfo(pointer: nativeCallResult)
+						let returnValue = NodeInfo(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -312,7 +312,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -329,7 +329,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NodeInfoDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NodeInfoDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

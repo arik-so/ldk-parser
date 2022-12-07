@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_NonePaymentSendFailureZ?
 
-					public init(pointer: LDKCResult_NonePaymentSendFailureZ) {
+					public init(cType: LDKCResult_NonePaymentSendFailureZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_NonePaymentSendFailureZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_NonePaymentSendFailureZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NonePaymentSendFailureZ(pointer: nativeCallResult)
+						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NonePaymentSendFailureZ(pointer: nativeCallResult)
+						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NonePaymentSendFailureZ(pointer: nativeCallResult)
+						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,7 +116,7 @@
 
 					public func getError() -> PaymentSendFailure? {
 						if self.cType?.result_ok == false {
-							return PaymentSendFailure(pointer: self.cType!.contents.err.pointee)
+							return PaymentSendFailure(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}

@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_C2Tuple_BlockHashChannelManagerZDecodeErrorZ?
 
-					public init(pointer: LDKCResult_C2Tuple_BlockHashChannelManagerZDecodeErrorZ) {
+					public init(cType: LDKCResult_C2Tuple_BlockHashChannelManagerZDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_C2Tuple_BlockHashChannelManagerZDecodeErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_C2Tuple_BlockHashChannelManagerZDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -94,14 +94,14 @@
 
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(pointer: self.cType!.contents.err.pointee)
+							return DecodeError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> ([UInt8], ChannelManager)? {
 						if self.cType?.result_ok == true {
-							return Tuple_BlockHashChannelManagerZ(pointer: self.cType!.contents.result.pointee).getValue()
+							return Tuple_BlockHashChannelManagerZ(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}

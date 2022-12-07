@@ -19,17 +19,17 @@
 
 					internal var cType: LDKErroringMessageHandler?
 
-					public init(pointer: LDKErroringMessageHandler) {
+					public init(cType: LDKErroringMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKErroringMessageHandler, anchor: NativeTypeWrapper) {
+					public init(cType: LDKErroringMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -66,7 +66,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ErroringMessageHandler(pointer: nativeCallResult)
+						let returnValue = ErroringMessageHandler(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -88,7 +88,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedMessageSendEventsProvider(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -110,7 +110,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedChannelMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}

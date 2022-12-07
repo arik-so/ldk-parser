@@ -23,17 +23,17 @@
 
 					internal var cType: LDKTrustedCommitmentTransaction?
 
-					public init(pointer: LDKTrustedCommitmentTransaction) {
+					public init(cType: LDKTrustedCommitmentTransaction) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKTrustedCommitmentTransaction, anchor: NativeTypeWrapper) {
+					public init(cType: LDKTrustedCommitmentTransaction, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -74,7 +74,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -95,7 +95,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = BuiltCommitmentTransaction(pointer: nativeCallResult)
+						let returnValue = BuiltCommitmentTransaction(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,7 +116,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = TxCreationKeys(pointer: nativeCallResult)
+						let returnValue = TxCreationKeys(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -173,7 +173,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_SignatureZNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_SignatureZNoneZ(cType: nativeCallResult)
 
 						return returnValue
 					}

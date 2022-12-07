@@ -18,17 +18,17 @@
 
 					internal var cType: LDKUpdateFulfillHTLC?
 
-					public init(pointer: LDKUpdateFulfillHTLC) {
+					public init(cType: LDKUpdateFulfillHTLC) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKUpdateFulfillHTLC, anchor: NativeTypeWrapper) {
+					public init(cType: LDKUpdateFulfillHTLC, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -149,7 +149,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = UpdateFulfillHTLC(pointer: nativeCallResult)
+						let returnValue = UpdateFulfillHTLC(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -170,7 +170,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = UpdateFulfillHTLC(pointer: nativeCallResult)
+						let returnValue = UpdateFulfillHTLC(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -218,7 +218,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -235,7 +235,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_UpdateFulfillHTLCDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_UpdateFulfillHTLCDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

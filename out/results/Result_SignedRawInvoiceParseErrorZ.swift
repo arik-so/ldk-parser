@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_SignedRawInvoiceParseErrorZ?
 
-					public init(pointer: LDKCResult_SignedRawInvoiceParseErrorZ) {
+					public init(cType: LDKCResult_SignedRawInvoiceParseErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_SignedRawInvoiceParseErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_SignedRawInvoiceParseErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SignedRawInvoiceParseErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_SignedRawInvoiceParseErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SignedRawInvoiceParseErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_SignedRawInvoiceParseErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SignedRawInvoiceParseErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_SignedRawInvoiceParseErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,14 +116,14 @@
 
 					public func getError() -> ParseError? {
 						if self.cType?.result_ok == false {
-							return ParseError(pointer: self.cType!.contents.err.pointee)
+							return ParseError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> SignedRawInvoice? {
 						if self.cType?.result_ok == true {
-							return SignedRawInvoice(pointer: self.cType!.contents.result.pointee)
+							return SignedRawInvoice(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

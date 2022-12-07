@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_ShutdownScriptInvalidShutdownScriptZ?
 
-					public init(pointer: LDKCResult_ShutdownScriptInvalidShutdownScriptZ) {
+					public init(cType: LDKCResult_ShutdownScriptInvalidShutdownScriptZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_ShutdownScriptInvalidShutdownScriptZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_ShutdownScriptInvalidShutdownScriptZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ShutdownScriptInvalidShutdownScriptZ(pointer: nativeCallResult)
+						let returnValue = Result_ShutdownScriptInvalidShutdownScriptZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ShutdownScriptInvalidShutdownScriptZ(pointer: nativeCallResult)
+						let returnValue = Result_ShutdownScriptInvalidShutdownScriptZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -104,7 +104,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_ShutdownScriptInvalidShutdownScriptZ(pointer: nativeCallResult)
+						let returnValue = Result_ShutdownScriptInvalidShutdownScriptZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -116,14 +116,14 @@
 
 					public func getError() -> InvalidShutdownScript? {
 						if self.cType?.result_ok == false {
-							return InvalidShutdownScript(pointer: self.cType!.contents.err.pointee)
+							return InvalidShutdownScript(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> ShutdownScript? {
 						if self.cType?.result_ok == true {
-							return ShutdownScript(pointer: self.cType!.contents.result.pointee)
+							return ShutdownScript(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

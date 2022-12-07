@@ -89,17 +89,17 @@
 
 					internal var cType: LDKOnionMessenger?
 
-					public init(pointer: LDKOnionMessenger) {
+					public init(cType: LDKOnionMessenger) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKOnionMessenger, anchor: NativeTypeWrapper) {
+					public init(cType: LDKOnionMessenger, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -137,7 +137,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = OnionMessenger(pointer: nativeCallResult)
+						let returnValue = OnionMessenger(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -165,7 +165,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_NoneSendErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NoneSendErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -187,7 +187,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageHandler(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}
@@ -209,7 +209,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageProvider(pointer: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedOnionMessageProvider(cType: nativeCallResult, anchor: self)
 
 						return returnValue
 					}

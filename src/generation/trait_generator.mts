@@ -242,7 +242,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		return `
 					${this.renderDocComment(lambda.documentation, 5)}
-					public func ${swiftMethodName}(${swiftMethodArguments.join(', ')}) ${returnTypeInfix}{
+					override func ${swiftMethodName}(${swiftMethodArguments.join(', ')}) ${returnTypeInfix}{
 						// native call variable prep
 						${nativeCallPrefix}
 

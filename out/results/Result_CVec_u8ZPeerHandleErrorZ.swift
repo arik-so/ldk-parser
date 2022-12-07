@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_CVec_u8ZPeerHandleErrorZ?
 
-					public init(pointer: LDKCResult_CVec_u8ZPeerHandleErrorZ) {
+					public init(cType: LDKCResult_CVec_u8ZPeerHandleErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_CVec_u8ZPeerHandleErrorZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_CVec_u8ZPeerHandleErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -52,7 +52,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -108,7 +108,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -120,14 +120,14 @@
 
 					public func getError() -> PeerHandleError? {
 						if self.cType?.result_ok == false {
-							return PeerHandleError(pointer: self.cType!.contents.err.pointee)
+							return PeerHandleError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
 
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
-							return Vec_u8Z(pointer: self.cType!.contents.result.pointee).getValue()
+							return Vec_u8Z(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}

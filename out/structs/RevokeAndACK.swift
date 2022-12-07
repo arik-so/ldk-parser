@@ -18,17 +18,17 @@
 
 					internal var cType: LDKRevokeAndACK?
 
-					public init(pointer: LDKRevokeAndACK) {
+					public init(cType: LDKRevokeAndACK) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKRevokeAndACK, anchor: NativeTypeWrapper) {
+					public init(cType: LDKRevokeAndACK, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -111,7 +111,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(pointer: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -149,7 +149,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RevokeAndACK(pointer: nativeCallResult)
+						let returnValue = RevokeAndACK(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -170,7 +170,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = RevokeAndACK(pointer: nativeCallResult)
+						let returnValue = RevokeAndACK(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -218,7 +218,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -235,7 +235,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_RevokeAndACKDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_RevokeAndACKDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

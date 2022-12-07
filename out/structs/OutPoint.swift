@@ -21,17 +21,17 @@
 
 					internal var cType: LDKOutPoint?
 
-					public init(pointer: LDKOutPoint) {
+					public init(cType: LDKOutPoint) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKOutPoint, anchor: NativeTypeWrapper) {
+					public init(cType: LDKOutPoint, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -131,7 +131,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = OutPoint(pointer: nativeCallResult)
+						let returnValue = OutPoint(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -152,7 +152,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = OutPoint(pointer: nativeCallResult)
+						let returnValue = OutPoint(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -221,7 +221,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(pointer: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -242,7 +242,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -259,7 +259,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_OutPointDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_OutPointDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

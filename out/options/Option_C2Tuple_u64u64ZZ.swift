@@ -16,17 +16,17 @@
 
 					internal var cType: LDKCOption_C2Tuple_u64u64ZZ?
 
-					public init(pointer: LDKCOption_C2Tuple_u64u64ZZ) {
+					public init(cType: LDKCOption_C2Tuple_u64u64ZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCOption_C2Tuple_u64u64ZZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCOption_C2Tuple_u64u64ZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -81,7 +81,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Option_C2Tuple_u64u64ZZ(pointer: nativeCallResult)
+						let returnValue = Option_C2Tuple_u64u64ZZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -92,7 +92,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_C2Tuple_u64u64ZZ_Some {
-							return Tuple_u64u64Z(pointer: self.cType!.some).getValue()
+							return Tuple_u64u64Z(cType: self.cType!.some).getValue()
 						}
 						assert(false, "invalid option enum value")
 						return nil

@@ -20,17 +20,17 @@
 
 					internal var cType: LDKEvent?
 
-					public init(pointer: LDKEvent) {
+					public init(cType: LDKEvent) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKEvent, anchor: NativeTypeWrapper) {
+					public init(cType: LDKEvent, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -265,7 +265,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -286,7 +286,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -303,7 +303,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -320,7 +320,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -339,7 +339,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -356,7 +356,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -377,7 +377,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -402,7 +402,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -423,7 +423,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -446,7 +446,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -463,7 +463,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -484,7 +484,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -503,7 +503,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -520,7 +520,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -537,7 +537,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -554,7 +554,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -571,7 +571,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Event(pointer: nativeCallResult)
+						let returnValue = Event(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -592,7 +592,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -609,7 +609,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_EventZDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_COption_EventZDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -621,7 +621,7 @@
 							return nil
 						}
 
-						return Event_LDKFundingGenerationReady_Body(pointer: self.cType!.funding_generation_ready)
+						return Event_LDKFundingGenerationReady_Body(cType: self.cType!.funding_generation_ready)
 					}
 			
 					public func getValueAsPaymentReceived() -> PaymentReceived? {
@@ -629,7 +629,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentReceived_Body(pointer: self.cType!.payment_received)
+						return Event_LDKPaymentReceived_Body(cType: self.cType!.payment_received)
 					}
 			
 					public func getValueAsPaymentClaimed() -> PaymentClaimed? {
@@ -637,7 +637,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentClaimed_Body(pointer: self.cType!.payment_claimed)
+						return Event_LDKPaymentClaimed_Body(cType: self.cType!.payment_claimed)
 					}
 			
 					public func getValueAsPaymentSent() -> PaymentSent? {
@@ -645,7 +645,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentSent_Body(pointer: self.cType!.payment_sent)
+						return Event_LDKPaymentSent_Body(cType: self.cType!.payment_sent)
 					}
 			
 					public func getValueAsPaymentFailed() -> PaymentFailed? {
@@ -653,7 +653,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentFailed_Body(pointer: self.cType!.payment_failed)
+						return Event_LDKPaymentFailed_Body(cType: self.cType!.payment_failed)
 					}
 			
 					public func getValueAsPaymentPathSuccessful() -> PaymentPathSuccessful? {
@@ -661,7 +661,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentPathSuccessful_Body(pointer: self.cType!.payment_path_successful)
+						return Event_LDKPaymentPathSuccessful_Body(cType: self.cType!.payment_path_successful)
 					}
 			
 					public func getValueAsPaymentPathFailed() -> PaymentPathFailed? {
@@ -669,7 +669,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentPathFailed_Body(pointer: self.cType!.payment_path_failed)
+						return Event_LDKPaymentPathFailed_Body(cType: self.cType!.payment_path_failed)
 					}
 			
 					public func getValueAsProbeSuccessful() -> ProbeSuccessful? {
@@ -677,7 +677,7 @@
 							return nil
 						}
 
-						return Event_LDKProbeSuccessful_Body(pointer: self.cType!.probe_successful)
+						return Event_LDKProbeSuccessful_Body(cType: self.cType!.probe_successful)
 					}
 			
 					public func getValueAsProbeFailed() -> ProbeFailed? {
@@ -685,7 +685,7 @@
 							return nil
 						}
 
-						return Event_LDKProbeFailed_Body(pointer: self.cType!.probe_failed)
+						return Event_LDKProbeFailed_Body(cType: self.cType!.probe_failed)
 					}
 			
 					public func getValueAsPendingHtlCsForwardable() -> PendingHTLCsForwardable? {
@@ -693,7 +693,7 @@
 							return nil
 						}
 
-						return Event_LDKPendingHTLCsForwardable_Body(pointer: self.cType!.pending_htl_cs_forwardable)
+						return Event_LDKPendingHTLCsForwardable_Body(cType: self.cType!.pending_htl_cs_forwardable)
 					}
 			
 					public func getValueAsSpendableOutputs() -> SpendableOutputs? {
@@ -701,7 +701,7 @@
 							return nil
 						}
 
-						return Event_LDKSpendableOutputs_Body(pointer: self.cType!.spendable_outputs)
+						return Event_LDKSpendableOutputs_Body(cType: self.cType!.spendable_outputs)
 					}
 			
 					public func getValueAsPaymentForwarded() -> PaymentForwarded? {
@@ -709,7 +709,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentForwarded_Body(pointer: self.cType!.payment_forwarded)
+						return Event_LDKPaymentForwarded_Body(cType: self.cType!.payment_forwarded)
 					}
 			
 					public func getValueAsChannelClosed() -> ChannelClosed? {
@@ -717,7 +717,7 @@
 							return nil
 						}
 
-						return Event_LDKChannelClosed_Body(pointer: self.cType!.channel_closed)
+						return Event_LDKChannelClosed_Body(cType: self.cType!.channel_closed)
 					}
 			
 					public func getValueAsDiscardFunding() -> DiscardFunding? {
@@ -725,7 +725,7 @@
 							return nil
 						}
 
-						return Event_LDKDiscardFunding_Body(pointer: self.cType!.discard_funding)
+						return Event_LDKDiscardFunding_Body(cType: self.cType!.discard_funding)
 					}
 			
 					public func getValueAsOpenChannelRequest() -> OpenChannelRequest? {
@@ -733,7 +733,7 @@
 							return nil
 						}
 
-						return Event_LDKOpenChannelRequest_Body(pointer: self.cType!.open_channel_request)
+						return Event_LDKOpenChannelRequest_Body(cType: self.cType!.open_channel_request)
 					}
 			
 					public func getValueAsHtlcHandlingFailed() -> HTLCHandlingFailed? {
@@ -741,7 +741,7 @@
 							return nil
 						}
 
-						return Event_LDKHTLCHandlingFailed_Body(pointer: self.cType!.htlc_handling_failed)
+						return Event_LDKHTLCHandlingFailed_Body(cType: self.cType!.htlc_handling_failed)
 					}
 			
 
@@ -779,17 +779,17 @@
 
 						internal var cType: LDKEvent_LDKFundingGenerationReady_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKFundingGenerationReady_Body) {
+						fileprivate init(cType: LDKEvent_LDKFundingGenerationReady_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKFundingGenerationReady_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKFundingGenerationReady_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -805,7 +805,7 @@
 						/// [`ChannelManager::funding_transaction_generated`]: crate::ln::channelmanager::ChannelManager::funding_transaction_generated
 						public func getTemporaryChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.temporary_channel_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.temporary_channel_id)
 
 							return returnValue;
 						}
@@ -816,7 +816,7 @@
 						/// [`ChannelManager::funding_transaction_generated`]: crate::ln::channelmanager::ChannelManager::funding_transaction_generated
 						public func getCounterpartyNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.counterparty_node_id)
+							let returnValue = PublicKey(cType: self.cType!.counterparty_node_id)
 
 							return returnValue;
 						}
@@ -832,7 +832,7 @@
 						/// The script which should be used in the transaction output.
 						public func getOutputScript() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = Vec_u8Z(pointer: self.cType!.output_script).getValue()
+							let returnValue = Vec_u8Z(cType: self.cType!.output_script).getValue()
 
 							return returnValue;
 						}
@@ -871,17 +871,17 @@
 
 						internal var cType: LDKEvent_LDKPaymentReceived_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentReceived_Body) {
+						fileprivate init(cType: LDKEvent_LDKPaymentReceived_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentReceived_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKPaymentReceived_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -895,7 +895,7 @@
 						/// not stop you from registering duplicate payment hashes for inbound payments.
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_hash)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash)
 
 							return returnValue;
 						}
@@ -912,7 +912,7 @@
 						/// payment is to pay an invoice or to send a spontaneous payment.
 						public func getPurpose() -> PaymentPurpose {
 							// return value (do some wrapping)
-							let returnValue = PaymentPurpose(pointer: self.cType!.purpose)
+							let returnValue = PaymentPurpose(cType: self.cType!.purpose)
 
 							return returnValue;
 						}
@@ -940,17 +940,17 @@
 
 						internal var cType: LDKEvent_LDKPaymentClaimed_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentClaimed_Body) {
+						fileprivate init(cType: LDKEvent_LDKPaymentClaimed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentClaimed_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKPaymentClaimed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -964,7 +964,7 @@
 						/// registering duplicate payment hashes for inbound payments.
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_hash)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash)
 
 							return returnValue;
 						}
@@ -981,7 +981,7 @@
 						/// spontaneous payment.
 						public func getPurpose() -> PaymentPurpose {
 							// return value (do some wrapping)
-							let returnValue = PaymentPurpose(pointer: self.cType!.purpose)
+							let returnValue = PaymentPurpose(cType: self.cType!.purpose)
 
 							return returnValue;
 						}
@@ -1009,17 +1009,17 @@
 
 						internal var cType: LDKEvent_LDKPaymentSent_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentSent_Body) {
+						fileprivate init(cType: LDKEvent_LDKPaymentSent_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentSent_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKPaymentSent_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1038,7 +1038,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id)
 
 							return returnValue;
 						}
@@ -1048,7 +1048,7 @@
 						/// store it somehow!
 						public func getPaymentPreimage() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_preimage)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_preimage)
 
 							return returnValue;
 						}
@@ -1058,7 +1058,7 @@
 						/// [`ChannelManager::send_payment`]: crate::ln::channelmanager::ChannelManager::send_payment
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_hash)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash)
 
 							return returnValue;
 						}
@@ -1074,7 +1074,7 @@
 						/// [`Route::get_total_fees`]: crate::routing::router::Route::get_total_fees
 						public func getFeePaidMsat() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(pointer: self.cType!.fee_paid_msat).getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.fee_paid_msat).getValue()
 
 							return returnValue;
 						}
@@ -1102,17 +1102,17 @@
 
 						internal var cType: LDKEvent_LDKPaymentFailed_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentFailed_Body) {
+						fileprivate init(cType: LDKEvent_LDKPaymentFailed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentFailed_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKPaymentFailed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1130,7 +1130,7 @@
 						/// [`ChannelManager::abandon_payment`]: crate::ln::channelmanager::ChannelManager::abandon_payment
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id)
 
 							return returnValue;
 						}
@@ -1140,7 +1140,7 @@
 						/// [`ChannelManager::send_payment`]: crate::ln::channelmanager::ChannelManager::send_payment
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_hash)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash)
 
 							return returnValue;
 						}
@@ -1168,17 +1168,17 @@
 
 						internal var cType: LDKEvent_LDKPaymentPathSuccessful_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentPathSuccessful_Body) {
+						fileprivate init(cType: LDKEvent_LDKPaymentPathSuccessful_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentPathSuccessful_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKPaymentPathSuccessful_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1195,7 +1195,7 @@
 						/// [`ChannelManager::retry_payment`]: crate::ln::channelmanager::ChannelManager::retry_payment
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id)
 
 							return returnValue;
 						}
@@ -1207,7 +1207,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_hash)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash)
 
 							return returnValue;
 						}
@@ -1217,7 +1217,7 @@
 						/// May contain a closed channel if the HTLC sent along the path was fulfilled on chain.
 						public func getPath() -> [RouteHop] {
 							// return value (do some wrapping)
-							let returnValue = Vec_RouteHopZ(pointer: self.cType!.path).getValue()
+							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).getValue()
 
 							return returnValue;
 						}
@@ -1245,17 +1245,17 @@
 
 						internal var cType: LDKEvent_LDKPaymentPathFailed_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentPathFailed_Body) {
+						fileprivate init(cType: LDKEvent_LDKPaymentPathFailed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentPathFailed_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKPaymentPathFailed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1275,7 +1275,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id)
 
 							return returnValue;
 						}
@@ -1285,7 +1285,7 @@
 						/// [`ChannelManager::send_payment`]: crate::ln::channelmanager::ChannelManager::send_payment
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_hash)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash)
 
 							return returnValue;
 						}
@@ -1309,7 +1309,7 @@
 						/// [`NetworkGraph`]: crate::routing::gossip::NetworkGraph
 						public func getNetworkUpdate() -> NetworkUpdate? {
 							// return value (do some wrapping)
-							let returnValue = Option_NetworkUpdateZ(pointer: self.cType!.network_update).getValue()
+							let returnValue = Option_NetworkUpdateZ(cType: self.cType!.network_update).getValue()
 
 							return returnValue;
 						}
@@ -1341,7 +1341,7 @@
 						/// The payment path that failed.
 						public func getPath() -> [RouteHop] {
 							// return value (do some wrapping)
-							let returnValue = Vec_RouteHopZ(pointer: self.cType!.path).getValue()
+							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).getValue()
 
 							return returnValue;
 						}
@@ -1356,7 +1356,7 @@
 						/// retried. May be `None` for older [`Event`] serializations.
 						public func getShortChannelId() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(pointer: self.cType!.short_channel_id).getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.short_channel_id).getValue()
 
 							return returnValue;
 						}
@@ -1371,7 +1371,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getRetry() -> RouteParameters {
 							// return value (do some wrapping)
-							let returnValue = RouteParameters(pointer: self.cType!.retry)
+							let returnValue = RouteParameters(cType: self.cType!.retry)
 
 							return returnValue;
 						}
@@ -1399,17 +1399,17 @@
 
 						internal var cType: LDKEvent_LDKProbeSuccessful_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKProbeSuccessful_Body) {
+						fileprivate init(cType: LDKEvent_LDKProbeSuccessful_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKProbeSuccessful_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKProbeSuccessful_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1424,7 +1424,7 @@
 						/// [`ChannelManager::send_probe`]: crate::ln::channelmanager::ChannelManager::send_probe
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id)
 
 							return returnValue;
 						}
@@ -1434,7 +1434,7 @@
 						/// [`ChannelManager::send_probe`]: crate::ln::channelmanager::ChannelManager::send_probe
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_hash)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash)
 
 							return returnValue;
 						}
@@ -1442,7 +1442,7 @@
 						/// The payment path that was successful.
 						public func getPath() -> [RouteHop] {
 							// return value (do some wrapping)
-							let returnValue = Vec_RouteHopZ(pointer: self.cType!.path).getValue()
+							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).getValue()
 
 							return returnValue;
 						}
@@ -1470,17 +1470,17 @@
 
 						internal var cType: LDKEvent_LDKProbeFailed_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKProbeFailed_Body) {
+						fileprivate init(cType: LDKEvent_LDKProbeFailed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKProbeFailed_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKProbeFailed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1495,7 +1495,7 @@
 						/// [`ChannelManager::send_probe`]: crate::ln::channelmanager::ChannelManager::send_probe
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id)
 
 							return returnValue;
 						}
@@ -1505,7 +1505,7 @@
 						/// [`ChannelManager::send_probe`]: crate::ln::channelmanager::ChannelManager::send_probe
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.payment_hash)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash)
 
 							return returnValue;
 						}
@@ -1513,7 +1513,7 @@
 						/// The payment path that failed.
 						public func getPath() -> [RouteHop] {
 							// return value (do some wrapping)
-							let returnValue = Vec_RouteHopZ(pointer: self.cType!.path).getValue()
+							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).getValue()
 
 							return returnValue;
 						}
@@ -1525,7 +1525,7 @@
 						/// with channels in the public network graph.
 						public func getShortChannelId() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(pointer: self.cType!.short_channel_id).getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.short_channel_id).getValue()
 
 							return returnValue;
 						}
@@ -1553,17 +1553,17 @@
 
 						internal var cType: LDKEvent_LDKPendingHTLCsForwardable_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKPendingHTLCsForwardable_Body) {
+						fileprivate init(cType: LDKEvent_LDKPendingHTLCsForwardable_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKPendingHTLCsForwardable_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKPendingHTLCsForwardable_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1607,17 +1607,17 @@
 
 						internal var cType: LDKEvent_LDKSpendableOutputs_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKSpendableOutputs_Body) {
+						fileprivate init(cType: LDKEvent_LDKSpendableOutputs_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKSpendableOutputs_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKSpendableOutputs_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1630,7 +1630,7 @@
 						/// The outputs which you should store as spendable by you.
 						public func getOutputs() -> [SpendableOutputDescriptor] {
 							// return value (do some wrapping)
-							let returnValue = Vec_SpendableOutputDescriptorZ(pointer: self.cType!.outputs).getValue()
+							let returnValue = Vec_SpendableOutputDescriptorZ(cType: self.cType!.outputs).getValue()
 
 							return returnValue;
 						}
@@ -1658,17 +1658,17 @@
 
 						internal var cType: LDKEvent_LDKPaymentForwarded_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentForwarded_Body) {
+						fileprivate init(cType: LDKEvent_LDKPaymentForwarded_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKPaymentForwarded_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKPaymentForwarded_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1684,7 +1684,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getPrevChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.prev_channel_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.prev_channel_id)
 
 							return returnValue;
 						}
@@ -1695,7 +1695,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getNextChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.next_channel_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.next_channel_id)
 
 							return returnValue;
 						}
@@ -1715,7 +1715,7 @@
 						/// `None`.
 						public func getFeeEarnedMsat() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(pointer: self.cType!.fee_earned_msat).getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.fee_earned_msat).getValue()
 
 							return returnValue;
 						}
@@ -1752,17 +1752,17 @@
 
 						internal var cType: LDKEvent_LDKChannelClosed_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKChannelClosed_Body) {
+						fileprivate init(cType: LDKEvent_LDKChannelClosed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKChannelClosed_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKChannelClosed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1776,7 +1776,7 @@
 						/// resolving the channel are likely still awaiting confirmation.
 						public func getChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.channel_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id)
 
 							return returnValue;
 						}
@@ -1800,7 +1800,7 @@
 						/// The reason the channel was closed.
 						public func getReason() -> ClosureReason {
 							// return value (do some wrapping)
-							let returnValue = ClosureReason(pointer: self.cType!.reason)
+							let returnValue = ClosureReason(cType: self.cType!.reason)
 
 							return returnValue;
 						}
@@ -1828,17 +1828,17 @@
 
 						internal var cType: LDKEvent_LDKDiscardFunding_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKDiscardFunding_Body) {
+						fileprivate init(cType: LDKEvent_LDKDiscardFunding_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKDiscardFunding_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKDiscardFunding_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1851,7 +1851,7 @@
 						/// The channel_id of the channel which has been closed.
 						public func getChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.channel_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id)
 
 							return returnValue;
 						}
@@ -1859,7 +1859,7 @@
 						/// The full transaction received from the user
 						public func getTransaction() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = Transaction(pointer: self.cType!.transaction)
+							let returnValue = Transaction(cType: self.cType!.transaction)
 
 							return returnValue;
 						}
@@ -1887,17 +1887,17 @@
 
 						internal var cType: LDKEvent_LDKOpenChannelRequest_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKOpenChannelRequest_Body) {
+						fileprivate init(cType: LDKEvent_LDKOpenChannelRequest_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKOpenChannelRequest_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKOpenChannelRequest_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -1917,7 +1917,7 @@
 						/// [`ChannelManager::force_close_without_broadcasting_txn`]: crate::ln::channelmanager::ChannelManager::force_close_without_broadcasting_txn
 						public func getTemporaryChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.temporary_channel_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.temporary_channel_id)
 
 							return returnValue;
 						}
@@ -1933,7 +1933,7 @@
 						/// [`ChannelManager::force_close_without_broadcasting_txn`]: crate::ln::channelmanager::ChannelManager::force_close_without_broadcasting_txn
 						public func getCounterpartyNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(pointer: self.cType!.counterparty_node_id)
+							let returnValue = PublicKey(cType: self.cType!.counterparty_node_id)
 
 							return returnValue;
 						}
@@ -1971,7 +1971,7 @@
 						/// [`ChannelManager`]: crate::ln::channelmanager::ChannelManager
 						public func getChannelType() -> ChannelTypeFeatures {
 							// return value (do some wrapping)
-							let returnValue = ChannelTypeFeatures(pointer: self.cType!.channel_type)
+							let returnValue = ChannelTypeFeatures(cType: self.cType!.channel_type)
 
 							return returnValue;
 						}
@@ -1999,17 +1999,17 @@
 
 						internal var cType: LDKEvent_LDKHTLCHandlingFailed_Body?
 
-						fileprivate init(pointer: LDKEvent_LDKHTLCHandlingFailed_Body) {
+						fileprivate init(cType: LDKEvent_LDKHTLCHandlingFailed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKEvent_LDKHTLCHandlingFailed_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKEvent_LDKHTLCHandlingFailed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -2022,7 +2022,7 @@
 						/// The channel over which the HTLC was received.
 						public func getPrevChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.prev_channel_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.prev_channel_id)
 
 							return returnValue;
 						}
@@ -2030,7 +2030,7 @@
 						/// Destination of the HTLC that failed to be processed.
 						public func getFailedNextDestination() -> HTLCDestination {
 							// return value (do some wrapping)
-							let returnValue = HTLCDestination(pointer: self.cType!.failed_next_destination)
+							let returnValue = HTLCDestination(cType: self.cType!.failed_next_destination)
 
 							return returnValue;
 						}

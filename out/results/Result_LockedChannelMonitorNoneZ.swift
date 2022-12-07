@@ -18,17 +18,17 @@
 
 					internal var cType: LDKCResult_LockedChannelMonitorNoneZ?
 
-					public init(pointer: LDKCResult_LockedChannelMonitorNoneZ) {
+					public init(cType: LDKCResult_LockedChannelMonitorNoneZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKCResult_LockedChannelMonitorNoneZ, anchor: NativeTypeWrapper) {
+					public init(cType: LDKCResult_LockedChannelMonitorNoneZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -48,7 +48,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_LockedChannelMonitorNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_LockedChannelMonitorNoneZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -65,7 +65,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_LockedChannelMonitorNoneZ(pointer: nativeCallResult)
+						let returnValue = Result_LockedChannelMonitorNoneZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -101,7 +101,7 @@
 
 					public func getValue() -> LockedChannelMonitor? {
 						if self.cType?.result_ok == true {
-							return LockedChannelMonitor(pointer: self.cType!.contents.result.pointee)
+							return LockedChannelMonitor(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}

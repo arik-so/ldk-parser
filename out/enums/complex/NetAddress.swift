@@ -16,17 +16,17 @@
 
 					internal var cType: LDKNetAddress?
 
-					public init(pointer: LDKNetAddress) {
+					public init(cType: LDKNetAddress) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(pointer: LDKNetAddress, anchor: NativeTypeWrapper) {
+					public init(cType: LDKNetAddress, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
-						self.cType = pointer
+						self.cType = cType
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -114,7 +114,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NetAddress(pointer: nativeCallResult)
+						let returnValue = NetAddress(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -131,7 +131,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NetAddress(pointer: nativeCallResult)
+						let returnValue = NetAddress(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -148,7 +148,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NetAddress(pointer: nativeCallResult)
+						let returnValue = NetAddress(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -165,7 +165,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NetAddress(pointer: nativeCallResult)
+						let returnValue = NetAddress(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -182,7 +182,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NetAddress(pointer: nativeCallResult)
+						let returnValue = NetAddress(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -199,7 +199,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NetAddress(pointer: nativeCallResult)
+						let returnValue = NetAddress(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
@@ -246,7 +246,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(pointer: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -263,7 +263,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NetAddressDecodeErrorZ(pointer: nativeCallResult)
+						let returnValue = Result_NetAddressDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -275,7 +275,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKIPv4_Body(pointer: self.cType!.i_pv4)
+						return NetAddress_LDKIPv4_Body(cType: self.cType!.i_pv4)
 					}
 			
 					public func getValueAsIPv6() -> IPv6? {
@@ -283,7 +283,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKIPv6_Body(pointer: self.cType!.i_pv6)
+						return NetAddress_LDKIPv6_Body(cType: self.cType!.i_pv6)
 					}
 			
 					public func getValueAsOnionV2() -> [UInt8]? {
@@ -291,7 +291,7 @@
 							return nil
 						}
 
-						return TwelveBytes(pointer: self.cType!.onion_v2)
+						return TwelveBytes(cType: self.cType!.onion_v2)
 					}
 			
 					public func getValueAsOnionV3() -> OnionV3? {
@@ -299,7 +299,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKOnionV3_Body(pointer: self.cType!.onion_v3)
+						return NetAddress_LDKOnionV3_Body(cType: self.cType!.onion_v3)
 					}
 			
 					public func getValueAsHostname() -> Hostname? {
@@ -307,7 +307,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKHostname_Body(pointer: self.cType!.hostname)
+						return NetAddress_LDKHostname_Body(cType: self.cType!.hostname)
 					}
 			
 
@@ -345,17 +345,17 @@
 
 						internal var cType: LDKNetAddress_LDKIPv4_Body?
 
-						fileprivate init(pointer: LDKNetAddress_LDKIPv4_Body) {
+						fileprivate init(cType: LDKNetAddress_LDKIPv4_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKNetAddress_LDKIPv4_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKNetAddress_LDKIPv4_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -368,7 +368,7 @@
 						/// The 4-byte IPv4 address
 						public func getAddr() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = FourBytes(pointer: self.cType!.addr)
+							let returnValue = FourBytes(cType: self.cType!.addr)
 
 							return returnValue;
 						}
@@ -404,17 +404,17 @@
 
 						internal var cType: LDKNetAddress_LDKIPv6_Body?
 
-						fileprivate init(pointer: LDKNetAddress_LDKIPv6_Body) {
+						fileprivate init(cType: LDKNetAddress_LDKIPv6_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKNetAddress_LDKIPv6_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKNetAddress_LDKIPv6_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -427,7 +427,7 @@
 						/// The 16-byte IPv6 address
 						public func getAddr() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = SixteenBytes(pointer: self.cType!.addr)
+							let returnValue = SixteenBytes(cType: self.cType!.addr)
 
 							return returnValue;
 						}
@@ -463,17 +463,17 @@
 
 						internal var cType: LDKNetAddress_LDKOnionV3_Body?
 
-						fileprivate init(pointer: LDKNetAddress_LDKOnionV3_Body) {
+						fileprivate init(cType: LDKNetAddress_LDKOnionV3_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKNetAddress_LDKOnionV3_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKNetAddress_LDKOnionV3_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -486,7 +486,7 @@
 						/// The ed25519 long-term public key of the peer
 						public func getEd25519Pubkey() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(pointer: self.cType!.ed25519_pubkey)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.ed25519_pubkey)
 
 							return returnValue;
 						}
@@ -538,17 +538,17 @@
 
 						internal var cType: LDKNetAddress_LDKHostname_Body?
 
-						fileprivate init(pointer: LDKNetAddress_LDKHostname_Body) {
+						fileprivate init(cType: LDKNetAddress_LDKHostname_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(pointer: LDKNetAddress_LDKHostname_Body, anchor: NativeTypeWrapper) {
+						fileprivate init(cType: LDKNetAddress_LDKHostname_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
-							self.cType = pointer
+							self.cType = cType
 							super.init(conflictAvoidingVariableName: 0)
 							self.dangling = true
 							try! self.addAnchor(anchor: anchor)
@@ -561,7 +561,7 @@
 						/// The hostname on which the node is listening.
 						public func getHostname() -> Hostname {
 							// return value (do some wrapping)
-							let returnValue = Hostname(pointer: self.cType!.hostname)
+							let returnValue = Hostname(cType: self.cType!.hostname)
 
 							return returnValue;
 						}
