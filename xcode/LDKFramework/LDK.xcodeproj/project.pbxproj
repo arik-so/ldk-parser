@@ -1934,6 +1934,7 @@
 		07DF1DFE29412B0D00531169 /* DelayedPaymentOutputDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF169C29412B0700531169 /* DelayedPaymentOutputDescriptor.swift */; };
 		07DF1DFF29412B0D00531169 /* DelayedPaymentOutputDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF169C29412B0700531169 /* DelayedPaymentOutputDescriptor.swift */; };
 		07DF1E0029412B0D00531169 /* DelayedPaymentOutputDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF169C29412B0700531169 /* DelayedPaymentOutputDescriptor.swift */; };
+		07DF1E032941318D00531169 /* Crypto in Frameworks */ = {isa = PBXBuildFile; productRef = 07DF1E022941318D00531169 /* Crypto */; };
 		07E0646C287CAD0600CFA8BF /* DirectlyLinkedBindingsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E0646B287CAD0600CFA8BF /* DirectlyLinkedBindingsAppApp.swift */; };
 		07E0646E287CAD0600CFA8BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E0646D287CAD0600CFA8BF /* ContentView.swift */; };
 		07E06470287CAD0700CFA8BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E0646F287CAD0700CFA8BF /* Assets.xcassets */; };
@@ -1941,7 +1942,6 @@
 		07E06495287CAE6800CFA8BF /* libldk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D3E7C5286C142F0095CCD8 /* libldk.a */; };
 		07E0674F287CAEC200CFA8BF /* ldk_net.c in Sources */ = {isa = PBXBuildFile; fileRef = 07012E9B287753D000148346 /* ldk_net.c */; };
 		07E06750287CAEC400CFA8BF /* ldk_net.c in Sources */ = {isa = PBXBuildFile; fileRef = 07012E9B287753D000148346 /* ldk_net.c */; };
-		07E06753287CAF2200CFA8BF /* Crypto in Frameworks */ = {isa = PBXBuildFile; productRef = 07E06752287CAF2200CFA8BF /* Crypto */; };
 		07E06763287CB0E200CFA8BF /* RegtestChannelManagerPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E06758287CB0E200CFA8BF /* RegtestChannelManagerPersister.swift */; };
 		07E06764287CB0E200CFA8BF /* RegtestChannelManagerPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E06758287CB0E200CFA8BF /* RegtestChannelManagerPersister.swift */; };
 		07E06767287CB0E200CFA8BF /* CombineUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E0675A287CB0E200CFA8BF /* CombineUtils.swift */; };
@@ -2505,6 +2505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D3E7C6286C14360095CCD8 /* libldk.a in Frameworks */,
+				07DF1E032941318D00531169 /* Crypto in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2521,7 +2522,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E06495287CAE6800CFA8BF /* libldk.a in Frameworks */,
-				07E06753287CAF2200CFA8BF /* Crypto in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3284,6 +3284,9 @@
 			dependencies = (
 			);
 			name = LightningDevKit;
+			packageProductDependencies = (
+				07DF1E022941318D00531169 /* Crypto */,
+			);
 			productName = LDKFramework;
 			productReference = 07344C54264277EC001CD90E /* LightningDevKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -3321,7 +3324,6 @@
 			);
 			name = DirectlyLinkedBindingsApp;
 			packageProductDependencies = (
-				07E06752287CAF2200CFA8BF /* Crypto */,
 			);
 			productName = DirectlyLinkedBindingsApp;
 			productReference = 07E06469287CAD0600CFA8BF /* DirectlyLinkedBindingsApp.app */;
@@ -3381,7 +3383,7 @@
 			);
 			mainGroup = 07344C4A264277EC001CD90E;
 			packageReferences = (
-				07E06751287CAF2200CFA8BF /* XCRemoteSwiftPackageReference "swift-crypto" */,
+				07DF1E012941318D00531169 /* XCRemoteSwiftPackageReference "swift-crypto" */,
 			);
 			productRefGroup = 07344C55264277EC001CD90E /* Products */;
 			projectDirPath = "";
@@ -3451,7 +3453,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nSCRIPT_PATH=\"${PROJECT_DIR}/../../src/scripts/prepare_xcode_project.py\"\n/usr/bin/python3 \"${SCRIPT_PATH}\"\n";
+			shellScript = "set -e\nSCRIPT_PATH=\"${PROJECT_DIR}/../../scripts/prepare_xcode_project.py\"\n/usr/bin/python3 \"${SCRIPT_PATH}\"\n";
 		};
 		07E06E52287CB2AB00CFA8BF /* Run Script: Copy Headers & Build Binary */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3470,7 +3472,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nset -e\nSCRIPT_PATH=\"${PROJECT_DIR}/../../src/scripts/prepare_xcode_project.py\"\n/usr/bin/python3 \"${SCRIPT_PATH}\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nset -e\nSCRIPT_PATH=\"${PROJECT_DIR}/../../scripts/prepare_xcode_project.py\"\n/usr/bin/python3 \"${SCRIPT_PATH}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -5889,7 +5891,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		07E06751287CAF2200CFA8BF /* XCRemoteSwiftPackageReference "swift-crypto" */ = {
+		07DF1E012941318D00531169 /* XCRemoteSwiftPackageReference "swift-crypto" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-crypto.git";
 			requirement = {
@@ -5900,9 +5902,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		07E06752287CAF2200CFA8BF /* Crypto */ = {
+		07DF1E022941318D00531169 /* Crypto */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 07E06751287CAF2200CFA8BF /* XCRemoteSwiftPackageReference "swift-crypto" */;
+			package = 07DF1E012941318D00531169 /* XCRemoteSwiftPackageReference "swift-crypto" */;
 			productName = Crypto;
 		};
 /* End XCSwiftPackageProductDependency section */
