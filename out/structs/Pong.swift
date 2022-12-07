@@ -83,7 +83,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPong>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPong>) in
 			Pong_set_byteslen(thisPtrPointer, val)
 						}
 			

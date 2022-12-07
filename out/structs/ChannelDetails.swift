@@ -63,7 +63,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_channel_id(thisPtrPointer, val.cType!)
 						}
 			
@@ -105,7 +105,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_counterparty(thisPtrPointer, val.cType!)
 						}
 			
@@ -172,7 +172,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_funding_txo(thisPtrPointer, val.cType!)
 						}
 			
@@ -235,7 +235,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_channel_type(thisPtrPointer, val.cType!)
 						}
 			
@@ -305,7 +305,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_short_channel_id(thisPtrPointer, valOption.cType!)
 						}
 			
@@ -365,7 +365,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_outbound_scid_alias(thisPtrPointer, valOption.cType!)
 						}
 			
@@ -425,7 +425,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_inbound_scid_alias(thisPtrPointer, valOption.cType!)
 						}
 			
@@ -467,7 +467,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_channel_value_satoshis(thisPtrPointer, val)
 						}
 			
@@ -527,7 +527,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_unspendable_punishment_reserve(thisPtrPointer, valOption.cType!)
 						}
 			
@@ -569,7 +569,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_user_channel_id(thisPtrPointer, val)
 						}
 			
@@ -629,7 +629,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_balance_msat(thisPtrPointer, val)
 						}
 			
@@ -689,7 +689,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_outbound_capacity_msat(thisPtrPointer, val)
 						}
 			
@@ -741,7 +741,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_next_outbound_htlc_limit_msat(thisPtrPointer, val)
 						}
 			
@@ -799,7 +799,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_inbound_capacity_msat(thisPtrPointer, val)
 						}
 			
@@ -863,7 +863,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_confirmations_required(thisPtrPointer, valOption.cType!)
 						}
 			
@@ -919,7 +919,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_force_close_spend_delay(thisPtrPointer, valOption.cType!)
 						}
 			
@@ -961,7 +961,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_is_outbound(thisPtrPointer, val)
 						}
 			
@@ -1015,7 +1015,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_is_channel_ready(thisPtrPointer, val)
 						}
 			
@@ -1063,7 +1063,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_is_usable(thisPtrPointer, val)
 						}
 			
@@ -1105,7 +1105,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_is_public(thisPtrPointer, val)
 						}
 			
@@ -1151,7 +1151,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_inbound_htlc_minimum_msat(thisPtrPointer, valOption.cType!)
 						}
 			
@@ -1195,7 +1195,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_inbound_htlc_maximum_msat(thisPtrPointer, valOption.cType!)
 						}
 			
@@ -1258,7 +1258,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 			ChannelDetails_set_config(thisPtrPointer, val.cType!)
 						}
 			

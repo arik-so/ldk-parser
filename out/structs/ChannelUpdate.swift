@@ -81,7 +81,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdate>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdate>) in
 			ChannelUpdate_set_signature(thisPtrPointer, val.cType!)
 						}
 			
@@ -123,7 +123,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdate>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdate>) in
 			ChannelUpdate_set_contents(thisPtrPointer, val.cType!)
 						}
 			

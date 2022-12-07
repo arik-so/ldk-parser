@@ -60,7 +60,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
 			RevokeAndACK_set_channel_id(thisPtrPointer, val.cType!)
 						}
 			
@@ -81,7 +81,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
 			RevokeAndACK_set_per_commitment_secret(thisPtrPointer, val.cType!)
 						}
 			
@@ -123,7 +123,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
 			RevokeAndACK_set_next_per_commitment_point(thisPtrPointer, val.cType!)
 						}
 			

@@ -85,7 +85,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeInfo>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
 			NodeInfo_set_channels(thisPtrPointer, valVector.cType!)
 						}
 			
@@ -150,7 +150,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeInfo>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
 			NodeInfo_set_lowest_inbound_channel_fees(thisPtrPointer, val.cType!)
 						}
 			
@@ -213,7 +213,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeInfo>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
 			NodeInfo_set_announcement_info(thisPtrPointer, val.cType!)
 						}
 			

@@ -60,7 +60,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReestablish>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReestablish>) in
 			ChannelReestablish_set_channel_id(thisPtrPointer, val.cType!)
 						}
 			
@@ -102,7 +102,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReestablish>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReestablish>) in
 			ChannelReestablish_set_next_local_commitment_number(thisPtrPointer, val)
 						}
 			
@@ -144,7 +144,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReestablish>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReestablish>) in
 			ChannelReestablish_set_next_remote_commitment_number(thisPtrPointer, val)
 						}
 			

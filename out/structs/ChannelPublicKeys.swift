@@ -83,7 +83,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
 			ChannelPublicKeys_set_funding_pubkey(thisPtrPointer, val.cType!)
 						}
 			
@@ -131,7 +131,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
 			ChannelPublicKeys_set_revocation_basepoint(thisPtrPointer, val.cType!)
 						}
 			
@@ -177,7 +177,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
 			ChannelPublicKeys_set_payment_point(thisPtrPointer, val.cType!)
 						}
 			
@@ -223,7 +223,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
 			ChannelPublicKeys_set_delayed_payment_basepoint(thisPtrPointer, val.cType!)
 						}
 			
@@ -267,7 +267,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
 			ChannelPublicKeys_set_htlc_basepoint(thisPtrPointer, val.cType!)
 						}
 			

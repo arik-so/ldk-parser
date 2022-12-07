@@ -97,7 +97,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeLimits>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeLimits>) in
 			ChannelHandshakeLimits_set_min_funding_satoshis(thisPtrPointer, val)
 						}
 			
@@ -145,7 +145,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeLimits>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeLimits>) in
 			ChannelHandshakeLimits_set_max_funding_satoshis(thisPtrPointer, val)
 						}
 			
@@ -193,7 +193,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeLimits>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeLimits>) in
 			ChannelHandshakeLimits_set_max_htlc_minimum_msat(thisPtrPointer, val)
 						}
 			
@@ -241,7 +241,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeLimits>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeLimits>) in
 			ChannelHandshakeLimits_set_min_max_htlc_value_in_flight_msat(thisPtrPointer, val)
 						}
 			
@@ -291,7 +291,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeLimits>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeLimits>) in
 			ChannelHandshakeLimits_set_max_channel_reserve_satoshis(thisPtrPointer, val)
 						}
 			
@@ -339,7 +339,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeLimits>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeLimits>) in
 			ChannelHandshakeLimits_set_min_max_accepted_htlcs(thisPtrPointer, val)
 						}
 			
@@ -391,7 +391,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeLimits>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeLimits>) in
 			ChannelHandshakeLimits_set_max_minimum_depth(thisPtrPointer, val)
 						}
 			
@@ -465,7 +465,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeLimits>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeLimits>) in
 			ChannelHandshakeLimits_set_trust_own_funding_0conf(thisPtrPointer, val)
 						}
 			
@@ -521,7 +521,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeLimits>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeLimits>) in
 			ChannelHandshakeLimits_set_force_announced_channel_preference(thisPtrPointer, val)
 						}
 			
@@ -575,7 +575,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeLimits>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeLimits>) in
 			ChannelHandshakeLimits_set_their_to_self_delay(thisPtrPointer, val)
 						}
 			

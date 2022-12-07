@@ -95,7 +95,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPeerHandleError>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPeerHandleError>) in
 			PeerHandleError_set_no_connection_possible(thisPtrPointer, val)
 						}
 			

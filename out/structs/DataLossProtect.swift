@@ -64,7 +64,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDataLossProtect>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDataLossProtect>) in
 			DataLossProtect_set_your_last_per_commitment_secret(thisPtrPointer, val.cType!)
 						}
 			
@@ -106,7 +106,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDataLossProtect>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDataLossProtect>) in
 			DataLossProtect_set_my_current_per_commitment_point(thisPtrPointer, val.cType!)
 						}
 			

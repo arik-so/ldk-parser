@@ -111,7 +111,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelMonitorUpdate>) in
 			ChannelMonitorUpdate_set_update_id(thisPtrPointer, val)
 						}
 			

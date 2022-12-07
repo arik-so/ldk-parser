@@ -270,7 +270,7 @@
 			
 						withUnsafePointer(to: tupledPaymentHash) { (tupledPaymentHashPointer: UnsafePointer<UInt8Tuple32>) in
 			
-						withUnsafePointer(to: firstHopsVector.cType!) { (firstHopsVectorPointer: UnsafePointer<LDKCVec_ChannelDetailsZ>) in
+						withUnsafeMutablePointer(to: firstHopsVector.cType!) { (firstHopsVectorPointer: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>) in
 			self.cType!.find_route(self.cType!.this_arg, payer.cType!, routeParamsPointer, tupledPaymentHashPointer, firstHopsVectorPointer, inflightHtlcs.cType!)
 						}
 			

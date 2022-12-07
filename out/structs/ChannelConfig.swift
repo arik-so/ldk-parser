@@ -92,7 +92,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelConfig>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelConfig>) in
 			ChannelConfig_set_forwarding_fee_proportional_millionths(thisPtrPointer, val)
 						}
 			
@@ -156,7 +156,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelConfig>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelConfig>) in
 			ChannelConfig_set_forwarding_fee_base_msat(thisPtrPointer, val)
 						}
 			
@@ -234,7 +234,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelConfig>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelConfig>) in
 			ChannelConfig_set_cltv_expiry_delta(thisPtrPointer, val)
 						}
 			
@@ -316,7 +316,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelConfig>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelConfig>) in
 			ChannelConfig_set_max_dust_htlc_exposure_msat(thisPtrPointer, val)
 						}
 			
@@ -400,7 +400,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelConfig>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelConfig>) in
 			ChannelConfig_set_force_close_avoidance_max_fee_satoshis(thisPtrPointer, val)
 						}
 			

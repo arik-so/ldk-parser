@@ -63,7 +63,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKQueryChannelRange>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryChannelRange>) in
 			QueryChannelRange_set_chain_hash(thisPtrPointer, val.cType!)
 						}
 			
@@ -105,7 +105,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKQueryChannelRange>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryChannelRange>) in
 			QueryChannelRange_set_first_blocknum(thisPtrPointer, val)
 						}
 			
@@ -147,7 +147,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKQueryChannelRange>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryChannelRange>) in
 			QueryChannelRange_set_number_of_blocks(thisPtrPointer, val)
 						}
 			

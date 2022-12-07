@@ -81,7 +81,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 			PaymentParameters_set_payee_pubkey(thisPtrPointer, val.cType!)
 						}
 			
@@ -150,7 +150,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 			PaymentParameters_set_features(thisPtrPointer, val.cType!)
 						}
 			
@@ -194,7 +194,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 			PaymentParameters_set_route_hints(thisPtrPointer, valVector.cType!)
 						}
 			
@@ -240,7 +240,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 			PaymentParameters_set_expiry_time(thisPtrPointer, valOption.cType!)
 						}
 			
@@ -284,7 +284,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 			PaymentParameters_set_max_total_cltv_expiry_delta(thisPtrPointer, val)
 						}
 			
@@ -328,7 +328,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 			PaymentParameters_set_max_path_count(thisPtrPointer, val)
 						}
 			
@@ -394,7 +394,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 			PaymentParameters_set_max_channel_saturation_power_of_half(thisPtrPointer, val)
 						}
 			
@@ -444,7 +444,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 			PaymentParameters_set_previously_failed_channels(thisPtrPointer, valVector.cType!)
 						}
 			

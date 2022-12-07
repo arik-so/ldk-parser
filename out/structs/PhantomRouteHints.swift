@@ -85,7 +85,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPhantomRouteHints>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPhantomRouteHints>) in
 			PhantomRouteHints_set_channels(thisPtrPointer, valVector.cType!)
 						}
 			
@@ -131,7 +131,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPhantomRouteHints>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPhantomRouteHints>) in
 			PhantomRouteHints_set_phantom_scid(thisPtrPointer, val)
 						}
 			
@@ -173,7 +173,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPhantomRouteHints>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPhantomRouteHints>) in
 			PhantomRouteHints_set_real_node_pubkey(thisPtrPointer, val.cType!)
 						}
 			

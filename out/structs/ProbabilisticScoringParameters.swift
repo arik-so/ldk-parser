@@ -91,7 +91,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_set_base_penalty_msat(thisPtrPointer, val)
 						}
 			
@@ -155,7 +155,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_set_base_penalty_amount_multiplier_msat(thisPtrPointer, val)
 						}
 			
@@ -227,7 +227,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_set_liquidity_penalty_multiplier_msat(thisPtrPointer, val)
 						}
 			
@@ -305,7 +305,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_set_liquidity_offset_half_life(thisPtrPointer, val)
 						}
 			
@@ -381,7 +381,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_set_liquidity_penalty_amount_multiplier_msat(thisPtrPointer, val)
 						}
 			
@@ -449,7 +449,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_set_historical_liquidity_penalty_multiplier_msat(thisPtrPointer, val)
 						}
 			
@@ -525,7 +525,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_set_historical_liquidity_penalty_amount_multiplier_msat(thisPtrPointer, val)
 						}
 			
@@ -581,7 +581,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_set_historical_no_updates_half_life(thisPtrPointer, val)
 						}
 			
@@ -633,7 +633,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_set_anti_probing_penalty_msat(thisPtrPointer, val)
 						}
 			
@@ -707,7 +707,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_set_considered_impossible_penalty_msat(thisPtrPointer, val)
 						}
 			
@@ -752,7 +752,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKProbabilisticScoringParameters>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScoringParameters>) in
 			ProbabilisticScoringParameters_add_banned_from_list(thisArgPointer, nodeIdsVector.cType!)
 						}
 			

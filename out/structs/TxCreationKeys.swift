@@ -91,7 +91,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
 			TxCreationKeys_set_per_commitment_point(thisPtrPointer, val.cType!)
 						}
 			
@@ -137,7 +137,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
 			TxCreationKeys_set_revocation_key(thisPtrPointer, val.cType!)
 						}
 			
@@ -179,7 +179,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
 			TxCreationKeys_set_broadcaster_htlc_key(thisPtrPointer, val.cType!)
 						}
 			
@@ -221,7 +221,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
 			TxCreationKeys_set_countersignatory_htlc_key(thisPtrPointer, val.cType!)
 						}
 			
@@ -263,7 +263,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
 			TxCreationKeys_set_broadcaster_delayed_payment_key(thisPtrPointer, val.cType!)
 						}
 			

@@ -87,7 +87,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInvalidShutdownScript>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInvalidShutdownScript>) in
 			InvalidShutdownScript_set_script(thisPtrPointer, valVector.cType!)
 						}
 			

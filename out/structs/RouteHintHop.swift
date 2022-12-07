@@ -81,7 +81,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
 			RouteHintHop_set_src_node_id(thisPtrPointer, val.cType!)
 						}
 			
@@ -123,7 +123,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
 			RouteHintHop_set_short_channel_id(thisPtrPointer, val)
 						}
 			
@@ -165,7 +165,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
 			RouteHintHop_set_fees(thisPtrPointer, val.cType!)
 						}
 			
@@ -207,7 +207,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
 			RouteHintHop_set_cltv_expiry_delta(thisPtrPointer, val)
 						}
 			
@@ -251,7 +251,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
 			RouteHintHop_set_htlc_minimum_msat(thisPtrPointer, valOption.cType!)
 						}
 			
@@ -295,7 +295,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
 			RouteHintHop_set_htlc_maximum_msat(thisPtrPointer, valOption.cType!)
 						}
 			

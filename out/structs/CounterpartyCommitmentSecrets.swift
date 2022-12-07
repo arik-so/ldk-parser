@@ -125,7 +125,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCounterpartyCommitmentSecrets>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKCounterpartyCommitmentSecrets>) in
 			CounterpartyCommitmentSecrets_provide_secret(thisArgPointer, idx, secret.cType!)
 						}
 			

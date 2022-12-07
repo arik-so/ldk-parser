@@ -87,7 +87,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
 			HTLCOutputInCommitment_set_offered(thisPtrPointer, val)
 						}
 			
@@ -131,7 +131,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
 			HTLCOutputInCommitment_set_amount_msat(thisPtrPointer, val)
 						}
 			
@@ -173,7 +173,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
 			HTLCOutputInCommitment_set_cltv_expiry(thisPtrPointer, val)
 						}
 			
@@ -194,7 +194,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
 			HTLCOutputInCommitment_set_payment_hash(thisPtrPointer, val.cType!)
 						}
 			
@@ -242,7 +242,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
 			HTLCOutputInCommitment_set_transaction_output_index(thisPtrPointer, valOption.cType!)
 						}
 			

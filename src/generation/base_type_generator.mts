@@ -496,10 +496,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (argument.isAsteriskPointer) {
 			// we must wrap the native call in a withUnsafePointer component
 			const typeName = this.getRawTypeName(argument.type);
+			const mutabilityInfix = argument.isConstant ? '' : 'Mutable';
 
 			preparedArgument.name += 'Pointer';
 			preparedArgument.methodCallWrapperPrefix += `
-						withUnsafePointer(to: ${preparedArgument.accessor}) { (${preparedArgument.name}: UnsafePointer<${typeName}>) in
+						withUnsafe${mutabilityInfix}Pointer(to: ${preparedArgument.accessor}) { (${preparedArgument.name}: Unsafe${mutabilityInfix}Pointer<${typeName}>) in
 			`;
 			preparedArgument.methodCallWrapperSuffix += `
 						}

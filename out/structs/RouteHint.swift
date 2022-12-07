@@ -83,7 +83,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHint>) in
+						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHint>) in
 			RouteHint_set_a(thisPtrPointer, valVector.cType!)
 						}
 			
