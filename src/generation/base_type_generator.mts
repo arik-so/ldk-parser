@@ -166,9 +166,18 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			nativeCallValueAccessors.push(preparedArgument.accessor);
 			nativeCallSuffix += preparedArgument.deferredCleanup;
 		}
+
 		// don't mark return types from C as optional because they will be automatically force-unwrapped
 		// for some inexplicable reason
-		const swiftReturnType = this.getPublicTypeSignature(method.returnValue.type, containerType);
+		const returnType = method.returnValue.type;
+		let swiftReturnType = this.getPublicTypeSignature(returnType, containerType);
+
+		// TODO: THIS IS ABSOLUTELY INSANE AND DANGEROUS! BUG MATT UNTIL IT'S A NULLABLE OPTION!
+		const isCommentDeducedNullablePointer = method.documentation.includes('Note that the return value (or a relevant inner pointer) may be NULL or all-0s to represent None');
+		if (isCommentDeducedNullablePointer && !swiftReturnType.endsWith('?')) {
+			swiftReturnType += '?';
+		}
+
 		const returnTypeInfix = (swiftReturnType === 'Void' || swiftMethodName === 'init') ? '' : `-> ${swiftReturnType} `;
 
 		const staticInfix = isInstanceMethod ? '' : 'class ';
@@ -186,6 +195,41 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		}
 
 		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue, containerType);
+
+		if (isCommentDeducedNullablePointer) {
+			nativeCallSuffix += `
+				// COMMENT-DEDUCED OPTIONAL INFERENCE AND HANDLING:
+				// Type group: ${returnType.constructor.name}
+				// Type: ${returnType.getName()}
+			`;
+
+			if (returnType instanceof RustPrimitiveWrapper) {
+				const dataField = returnType.dataField;
+				if (dataField.type instanceof RustArray && dataField.type.iteratee instanceof RustPrimitive && Number.isFinite(dataField.type.length)) {
+					const tupleTypeName = this.getRawTypeName(dataField.type);
+					nativeCallSuffix += `
+						if nativeCallResult.${dataField.contextualName} == Bindings.arrayTo${tupleTypeName}(array: [${dataField.type.iteratee.swiftRawSignature}](repeating: 0, count: ${dataField.type.length})) {
+							return nil
+            			}
+					`;
+				} else {
+					throw new Error(`Unhandled comment-deduced optional inference and handling: ${containerType?.getName()}::${swiftMethodName} -> ${returnType.getName()} (${returnType.constructor.name})`);
+				}
+			} else if (returnType instanceof RustStruct && returnType.fields['inner'] instanceof RustStructField) {
+				nativeCallSuffix += `
+					if nativeCallResult.inner == nil {
+						return nil
+					}
+
+					let pointerValue = UInt(bitPattern: nativeCallResult.inner)
+					if pointerValue == 0 {
+						return nil
+					}
+				`;
+			} else {
+				throw new Error(`Unhandled comment-deduced optional inference and handling: ${containerType?.getName()}::${swiftMethodName} -> ${returnType.getName()} (${returnType.constructor.name})`);
+			}
+		}
 
 		return `
 					${this.renderDocComment(method.documentation, 5)}
@@ -425,7 +469,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					preparedArgument.name = `tupled${Generator.snakeCaseToCamelCase(preparedArgument.name, true)}`;
 					this.auxiliaryArtifacts.addTuple(iteratee.swiftRawSignature, argument.type.length!);
 					preparedArgument.conversion += `
-						let ${preparedArgument.name} = Bindings.arrayTo${tupleTypeName}(tuple: ${preparedArgument.accessor})
+						let ${preparedArgument.name} = Bindings.arrayTo${tupleTypeName}(array: ${preparedArgument.accessor})
 					`;
 					preparedArgument.accessor = preparedArgument.name;
 				}
