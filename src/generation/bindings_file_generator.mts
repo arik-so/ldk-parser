@@ -254,10 +254,6 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 					return UnsafePointer<UInt8>(dataMutablePointer)
 				}
 
-				public class func get_ldk_swift_bindings_version() -> String {
-					return "/* SWIFT_BINDINGS_VERSION */"
-				}
-
 				${generatedMethods}
 
 				${Generator.reindentCode(generatedTupleConverters, 4)}

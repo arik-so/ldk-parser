@@ -12,6 +12,8 @@ import {
 } from '../rust_types.mjs';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as child_process from 'child_process';
+import * as crypto from 'crypto';
 
 export default class Generator {
 	private parser: Parser;
@@ -128,6 +130,13 @@ export default class Generator {
 		}
 	}
 
+	public calculateSerializationHash() {
+		const hashTree = this.generateSerializationHashTree();
+		const serialization = JSON.stringify(hashTree);
+		const hash = crypto.createHash('sha256').update(serialization).digest('hex');
+		return hash;
+	}
+
 	async generateFunctions() {
 		const {default: BindingsFileGenerator, GlobalBindingsStruct} = await import('./bindings_file_generator.mjs');
 		const bindingsStruct = new GlobalBindingsStruct();
@@ -136,6 +145,83 @@ export default class Generator {
 		const bindingsFileGenerator = new BindingsFileGenerator(this.parser.config, this.auxiliaryArtifacts);
 		bindingsFileGenerator.generate(bindingsStruct);
 
+		// after all is generated, we generate the version file
+		this.generateVersionFile();
+	}
+
+	private generateVersionFile() {
+
+		const serializationHash = this.calculateSerializationHash();
+		const gitDirtyTagDescription = child_process.execSync('git describe --tag --dirty --always').toString('utf-8')
+		.trim();
+		const gitCommitHash = child_process.execSync('git rev-parse HEAD').toString('utf-8').trim();
+
+		const versionFileContents = `
+			#if SWIFT_PACKAGE
+			import LDKHeaders
+			#endif
+
+			extension Bindings {
+				public class func getLDKSwiftBindingsSerializationHash(): String {
+					return "${serializationHash}"
+				}
+				public class func getLDKSwiftBindingsVersion(): String {
+					return "${gitDirtyTagDescription}"
+				}
+				public class func getLDKSwiftBindingsCommitHash(): String {
+					return "${gitCommitHash}"
+				}
+			}
+		`;
+
+		const outputPath = path.join(this.parser.config.getOutputBaseDirectoryPath(), 'VersionDescriptor.swift');
+		fs.writeFileSync(outputPath, versionFileContents);
+	}
+
+	private generateSerializationHashTree(directoryPath = this.parser.config.getOutputBaseDirectoryPath()): object[] {
+		const contents = fs.readdirSync(directoryPath);
+		const childDirectories = [];
+		const childSwiftFiles = [];
+		for (const currentPathComponentName of contents) {
+			const currentPath = path.join(directoryPath, currentPathComponentName);
+			const stat = fs.statSync(currentPath);
+			if (stat.isDirectory()) {
+				childDirectories.push(currentPathComponentName);
+			}
+			if (!stat.isFile()) {
+				continue;
+			}
+			if (!currentPath.endsWith('.swift')) {
+				continue;
+			}
+			if (currentPathComponentName === 'VersionDescriptor.swift') {
+				// do not incorporate the version descriptor file into the hash preimage
+				continue;
+			}
+			childSwiftFiles.push(currentPathComponentName);
+		}
+		const tree = [];
+
+		// make sure the directory and file names are sorted to make the hash deterministic
+		childDirectories.sort();
+		childSwiftFiles.sort();
+
+		for (const currentDirectoryName of childDirectories) {
+			const currentPath = path.join(directoryPath, currentDirectoryName);
+			tree.push([currentDirectoryName, this.generateSerializationHashTree(currentPath)]);
+		}
+
+		const whitespaceRegex = /\s+/gm;
+
+		for (const currentSwiftFileName of childSwiftFiles) {
+			const currentPath = path.join(directoryPath, currentSwiftFileName);
+			const fileContents = fs.readFileSync(currentPath).toString('utf-8');
+			// remove all whitespace so it produces the same output regardless of whether it got linted
+			const dewhitespacedContents = fileContents.replaceAll(whitespaceRegex, '');
+			const hash = crypto.createHash('sha256').update(dewhitespacedContents).digest('hex');
+			tree.push([currentSwiftFileName, hash]);
+		}
+		return tree;
 	}
 }
 

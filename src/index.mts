@@ -14,6 +14,8 @@ import Generator from './generation/index.mjs';
 	// optional, only if we wanna remove existing artifacts
 	// generator.initializeOutputDirectory();
 
+	const serializationHashTree = generator.calculateSerializationHash();
+
 	await generator.generateTypes();
 	await generator.generateFunctions();
 })();

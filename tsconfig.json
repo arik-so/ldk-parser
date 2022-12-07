@@ -8,6 +8,7 @@
 		"allowSyntheticDefaultImports": true,
 
 		"strictNullChecks": true,
+		"strictFunctionTypes": true,
 		"noImplicitAny": true,
 		// "rootDir": "src",
 		// "resolveJsonModule": true
