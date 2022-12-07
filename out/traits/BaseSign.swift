@@ -438,7 +438,7 @@
 					/// 
 					/// This is required in order for the signer to make sure that the state has moved
 					/// forward and it is safe to sign the next counterparty commitment.
-					open func validateCounterpartyRevocation(idx: UInt64, secret: [UInt8]) -> Result_NoneNoneZ {
+					open func validateCounterpartyRevocation(idx: UInt64, secret: [UInt8]?) -> Result_NoneNoneZ {
 						Bindings.print("Error: BaseSign::validateCounterpartyRevocation MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -473,7 +473,7 @@
 					/// revoked the state which they eventually broadcast. It's not a _holder_ secret key and does
 					/// not allow the spending of any funds by itself (you need our holder revocation_secret to do
 					/// so).
-					open func signJusticeRevokedOutput(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]) -> Result_SignatureNoneZ {
+					open func signJusticeRevokedOutput(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?) -> Result_SignatureNoneZ {
 						Bindings.print("Error: BaseSign::signJusticeRevokedOutput MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -495,7 +495,7 @@
 					/// 
 					/// htlc holds HTLC elements (hash, timelock), thus changing the format of the witness script
 					/// (which is committed to in the BIP 143 signatures).
-					open func signJusticeRevokedHtlc(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8], htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
+					open func signJusticeRevokedHtlc(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?, htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						Bindings.print("Error: BaseSign::signJusticeRevokedHtlc MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

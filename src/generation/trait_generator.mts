@@ -55,7 +55,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					// don't push weird lambdas
 					traitInitializationArguments.push(`${currentField.name}: nil`);
 				}
-			} else if (currentField instanceof ContextualRustType) {
+			} else {
+				// currentField is definitely instanceof ContextualRustType
 				const swiftArgumentName = Generator.snakeCaseToCamelCase(currentField.contextualName);
 				let initializationValue = swiftArgumentName;
 
@@ -204,7 +205,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 			}
 
 			const swiftArgumentName = Generator.snakeCaseToCamelCase(currentArgument.contextualName);
-			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type);
+			let swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, type, currentArgument);
+
 			swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
 		}
 

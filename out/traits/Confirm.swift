@@ -205,7 +205,7 @@
 					/// 
 					/// [chain order]: Confirm#order
 					/// [`best_block_updated`]: Self::best_block_updated
-					open func transactionsConfirmed(header: [UInt8], txdata: [(UInt, [UInt8])], height: UInt32) -> Void {
+					open func transactionsConfirmed(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) -> Void {
 						Bindings.print("Error: Confirm::transactionsConfirmed MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -218,7 +218,7 @@
 					/// 
 					/// [`get_relevant_txids`]: Self::get_relevant_txids
 					/// [`transactions_confirmed`]: Self::transactions_confirmed
-					open func transactionUnconfirmed(txid: [UInt8]) -> Void {
+					open func transactionUnconfirmed(txid: [UInt8]?) -> Void {
 						Bindings.print("Error: Confirm::transactionUnconfirmed MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -227,7 +227,7 @@
 					/// 
 					/// Should be called when a new header is available but may be skipped for intermediary blocks
 					/// if they become available at the same time.
-					open func bestBlockUpdated(header: [UInt8], height: UInt32) -> Void {
+					open func bestBlockUpdated(header: [UInt8]?, height: UInt32) -> Void {
 						Bindings.print("Error: Confirm::bestBlockUpdated MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

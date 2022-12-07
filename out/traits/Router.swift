@@ -178,7 +178,7 @@
 					/// Finds a [`Route`] between `payer` and `payee` for a payment with the given values.
 					/// 
 					/// Note that first_hops (or a relevant inner pointer) may be NULL or all-0s to represent None
-					open func findRoute(payer: [UInt8], routeParams: RouteParameters, paymentHash: [UInt8], firstHops: [ChannelDetails], inflightHtlcs: InFlightHtlcs) -> Result_RouteLightningErrorZ {
+					open func findRoute(payer: [UInt8], routeParams: RouteParameters, paymentHash: [UInt8]?, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs) -> Result_RouteLightningErrorZ {
 						Bindings.print("Error: Router::findRoute MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

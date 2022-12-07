@@ -149,7 +149,7 @@
 					
 					/// Notifies the listener that a block was added at the given height, with the transaction data
 					/// possibly filtered.
-					open func filteredBlockConnected(header: [UInt8], txdata: [(UInt, [UInt8])], height: UInt32) -> Void {
+					open func filteredBlockConnected(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) -> Void {
 						Bindings.print("Error: Listen::filteredBlockConnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -161,7 +161,7 @@
 					}
 		
 					/// Notifies the listener that a block was removed at the given height.
-					open func blockDisconnected(header: [UInt8], height: UInt32) -> Void {
+					open func blockDisconnected(header: [UInt8]?, height: UInt32) -> Void {
 						Bindings.print("Error: Listen::blockDisconnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

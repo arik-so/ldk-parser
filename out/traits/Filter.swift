@@ -134,7 +134,7 @@
 					
 					/// Registers interest in a transaction with `txid` and having an output with `script_pubkey` as
 					/// a spending condition.
-					open func registerTx(txid: [UInt8], scriptPubkey: [UInt8]) -> Void {
+					open func registerTx(txid: [UInt8]?, scriptPubkey: [UInt8]) -> Void {
 						Bindings.print("Error: Filter::registerTx MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

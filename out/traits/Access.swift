@@ -100,7 +100,7 @@
 					/// is unknown.
 					/// 
 					/// [`short_channel_id`]: https://github.com/lightning/bolts/blob/master/07-routing-gossip.md#definition-of-short_channel_id
-					open func getUtxo(genesisHash: [UInt8], shortChannelId: UInt64) -> Result_TxOutAccessErrorZ {
+					open func getUtxo(genesisHash: [UInt8]?, shortChannelId: UInt64) -> Result_TxOutAccessErrorZ {
 						Bindings.print("Error: Access::getUtxo MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
