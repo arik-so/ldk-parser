@@ -64,11 +64,13 @@
 					public init(a: [UInt8], b: [(UInt32, [UInt8])]) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = ThirtyTwoBytes(value: a)
+				
 						let bVector = Vec_C2Tuple_u32ScriptZZ(array: b)
 				
 
 						// native method call
-						let nativeCallResult = C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ_new(a.cType!, bVector.cType!)
+						let nativeCallResult = C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ_new(aPrimitiveWrapper.cType!, bVector.cType!)
 
 						// cleanup
 						

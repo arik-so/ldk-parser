@@ -78,11 +78,13 @@
 					public func setSignature(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Signature(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncement>) in
-			NodeAnnouncement_set_signature(thisPtrPointer, val.cType!)
+			NodeAnnouncement_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -141,9 +143,11 @@
 					public init(signatureArg: [UInt8], contentsArg: UnsignedNodeAnnouncement) {
 						// native call variable prep
 						
+						let signatureArgPrimitiveWrapper = Signature(value: signatureArg)
+				
 
 						// native method call
-						let nativeCallResult = NodeAnnouncement_new(signatureArg.cType!, contentsArg.cType!)
+						let nativeCallResult = NodeAnnouncement_new(signatureArgPrimitiveWrapper.cType!, contentsArg.cType!)
 
 						// cleanup
 						
@@ -227,9 +231,11 @@
 					public class func read(ser: [UInt8]) -> Result_NodeAnnouncementDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = NodeAnnouncement_read(ser.cType!)
+						let nativeCallResult = NodeAnnouncement_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

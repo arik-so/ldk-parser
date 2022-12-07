@@ -166,11 +166,13 @@
 					public func createChannel(theirNetworkKey: [UInt8], channelValueSatoshis: UInt64, pushMsat: UInt64, userChannelId: UInt64, overrideConfig: UserConfig) -> Result__u832APIErrorZ {
 						// native call variable prep
 						
+						let theirNetworkKeyPrimitiveWrapper = PublicKey(value: theirNetworkKey)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_create_channel(thisArgPointer, theirNetworkKey.cType!, channelValueSatoshis, pushMsat, userChannelId, overrideConfig.cType!)
+			ChannelManager_create_channel(thisArgPointer, theirNetworkKeyPrimitiveWrapper.cType!, channelValueSatoshis, pushMsat, userChannelId, overrideConfig.cType!)
 						}
 			
 
@@ -255,13 +257,15 @@
 						
 						let tupledChannelId = Bindings.arrayToUInt8Tuple32(array: channelId)
 					
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: tupledChannelId) { (tupledChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_close_channel(thisArgPointer, tupledChannelIdPointer, counterpartyNodeId.cType!)
+			ChannelManager_close_channel(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!)
 						}
 			
 						}
@@ -300,13 +304,15 @@
 						
 						let tupledChannelId = Bindings.arrayToUInt8Tuple32(array: channelId)
 					
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: tupledChannelId) { (tupledChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_close_channel_with_target_feerate(thisArgPointer, tupledChannelIdPointer, counterpartyNodeId.cType!, targetFeerateSatsPer_1000Weight)
+			ChannelManager_close_channel_with_target_feerate(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, targetFeerateSatsPer_1000Weight)
 						}
 			
 						}
@@ -330,13 +336,15 @@
 						
 						let tupledChannelId = Bindings.arrayToUInt8Tuple32(array: channelId)
 					
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: tupledChannelId) { (tupledChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_force_close_broadcasting_latest_txn(thisArgPointer, tupledChannelIdPointer, counterpartyNodeId.cType!)
+			ChannelManager_force_close_broadcasting_latest_txn(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!)
 						}
 			
 						}
@@ -362,13 +370,15 @@
 						
 						let tupledChannelId = Bindings.arrayToUInt8Tuple32(array: channelId)
 					
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: tupledChannelId) { (tupledChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_force_close_without_broadcasting_txn(thisArgPointer, tupledChannelIdPointer, counterpartyNodeId.cType!)
+			ChannelManager_force_close_without_broadcasting_txn(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!)
 						}
 			
 						}
@@ -471,13 +481,17 @@
 					public func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
 						// native call variable prep
 						
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
+						let paymentSecretPrimitiveWrapper = ThirtyTwoBytes(value: paymentSecret)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-			ChannelManager_send_payment(thisArgPointer, routePointer, paymentHash.cType!, paymentSecret.cType!)
+			ChannelManager_send_payment(thisArgPointer, routePointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
 						}
 			
 						}
@@ -505,13 +519,15 @@
 					public func retryPayment(route: Route, paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
 						// native call variable prep
 						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-			ChannelManager_retry_payment(thisArgPointer, routePointer, paymentId.cType!)
+			ChannelManager_retry_payment(thisArgPointer, routePointer, paymentIdPrimitiveWrapper.cType!)
 						}
 			
 						}
@@ -543,11 +559,13 @@
 					public func abandonPayment(paymentId: [UInt8]) {
 						// native call variable prep
 						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_abandon_payment(thisArgPointer, paymentId.cType!)
+			ChannelManager_abandon_payment(thisArgPointer, paymentIdPrimitiveWrapper.cType!)
 						}
 			
 
@@ -579,13 +597,15 @@
 					public func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8]) -> Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ {
 						// native call variable prep
 						
+						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-			ChannelManager_send_spontaneous_payment(thisArgPointer, routePointer, paymentPreimage.cType!)
+			ChannelManager_send_spontaneous_payment(thisArgPointer, routePointer, paymentPreimagePrimitiveWrapper.cType!)
 						}
 			
 						}
@@ -662,13 +682,17 @@
 						
 						let tupledTemporaryChannelId = Bindings.arrayToUInt8Tuple32(array: temporaryChannelId)
 					
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
+						let fundingTransactionPrimitiveWrapper = Transaction(value: fundingTransaction)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: tupledTemporaryChannelId) { (tupledTemporaryChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_funding_transaction_generated(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeId.cType!, fundingTransaction.cType!)
+			ChannelManager_funding_transaction_generated(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, fundingTransactionPrimitiveWrapper.cType!)
 						}
 			
 						}
@@ -708,6 +732,8 @@
 					public func updateChannelConfig(counterpartyNodeId: [UInt8], channelIds: [[UInt8]], config: ChannelConfig) -> Result_NoneAPIErrorZ {
 						// native call variable prep
 						
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
 						let channelIdsVector = Vec_ThirtyTwoBytesZ(array: channelIds)
 				
 
@@ -716,7 +742,7 @@
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: config.cType!) { (configPointer: UnsafePointer<LDKChannelConfig>) in
-			ChannelManager_update_channel_config(thisArgPointer, counterpartyNodeId.cType!, channelIdsVector.cType!, configPointer)
+			ChannelManager_update_channel_config(thisArgPointer, counterpartyNodeIdPrimitiveWrapper.cType!, channelIdsVector.cType!, configPointer)
 						}
 			
 						}
@@ -849,11 +875,13 @@
 					public func claimFunds(paymentPreimage: [UInt8]) {
 						// native call variable prep
 						
+						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_claim_funds(thisArgPointer, paymentPreimage.cType!)
+			ChannelManager_claim_funds(thisArgPointer, paymentPreimagePrimitiveWrapper.cType!)
 						}
 			
 
@@ -908,13 +936,15 @@
 						
 						let tupledTemporaryChannelId = Bindings.arrayToUInt8Tuple32(array: temporaryChannelId)
 					
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: tupledTemporaryChannelId) { (tupledTemporaryChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_accept_inbound_channel(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeId.cType!, userChannelId)
+			ChannelManager_accept_inbound_channel(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, userChannelId)
 						}
 			
 						}
@@ -952,13 +982,15 @@
 						
 						let tupledTemporaryChannelId = Bindings.arrayToUInt8Tuple32(array: temporaryChannelId)
 					
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 			
 						withUnsafePointer(to: tupledTemporaryChannelId) { (tupledTemporaryChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_accept_inbound_channel_from_trusted_peer_0conf(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeId.cType!, userChannelId)
+			ChannelManager_accept_inbound_channel_from_trusted_peer_0conf(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, userChannelId)
 						}
 			
 						}
@@ -1098,13 +1130,15 @@
 					public func createInboundPaymentForHash(paymentHash: [UInt8], minValueMsat: UInt64?, invoiceExpiryDeltaSecs: UInt32) -> Result_PaymentSecretNoneZ {
 						// native call variable prep
 						
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 						let minValueMsatOption = Option_u64Z(value: minValueMsat)
 				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_create_inbound_payment_for_hash(thisArgPointer, paymentHash.cType!, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
+			ChannelManager_create_inbound_payment_for_hash(thisArgPointer, paymentHashPrimitiveWrapper.cType!, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
 						}
 			
 
@@ -1129,13 +1163,15 @@
 					public func createInboundPaymentForHashLegacy(paymentHash: [UInt8], minValueMsat: UInt64?, invoiceExpiryDeltaSecs: UInt32) -> Result_PaymentSecretAPIErrorZ {
 						// native call variable prep
 						
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 						let minValueMsatOption = Option_u64Z(value: minValueMsat)
 				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_create_inbound_payment_for_hash_legacy(thisArgPointer, paymentHash.cType!, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
+			ChannelManager_create_inbound_payment_for_hash_legacy(thisArgPointer, paymentHashPrimitiveWrapper.cType!, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
 						}
 			
 
@@ -1155,11 +1191,15 @@
 					public func getPaymentPreimage(paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentPreimageAPIErrorZ {
 						// native call variable prep
 						
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
+						let paymentSecretPrimitiveWrapper = ThirtyTwoBytes(value: paymentSecret)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_get_payment_preimage(thisArgPointer, paymentHash.cType!, paymentSecret.cType!)
+			ChannelManager_get_payment_preimage(thisArgPointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
 						}
 			
 

@@ -152,9 +152,11 @@
 					override func read(messageType: UInt16, buffer: [UInt8]) -> Result_COption_TypeZDecodeErrorZ {
 						// native call variable prep
 						
+						let bufferPrimitiveWrapper = u8slice(value: buffer)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.read(self.cType!.this_arg, messageType, buffer.cType!)
+						let nativeCallResult = self.cType!.read(self.cType!.this_arg, messageType, bufferPrimitiveWrapper.cType!)
 
 						// cleanup
 						

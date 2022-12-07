@@ -64,9 +64,11 @@
 					public init(a: [UInt8], b: ChannelMonitor) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = ThirtyTwoBytes(value: a)
+				
 
 						// native method call
-						let nativeCallResult = C2Tuple_BlockHashChannelMonitorZ_new(a.cType!, b.cType!)
+						let nativeCallResult = C2Tuple_BlockHashChannelMonitorZ_new(aPrimitiveWrapper.cType!, b.cType!)
 
 						// cleanup
 						
@@ -98,11 +100,13 @@
 					public class func read(ser: [UInt8], arg: KeysInterface) -> Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: arg.activate().cType!) { (argPointer: UnsafePointer<LDKKeysInterface>) in
-			C2Tuple_BlockHashChannelMonitorZ_read(ser.cType!, argPointer)
+			C2Tuple_BlockHashChannelMonitorZ_read(serPrimitiveWrapper.cType!, argPointer)
 						}
 			
 

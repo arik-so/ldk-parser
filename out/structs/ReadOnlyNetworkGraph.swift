@@ -177,11 +177,13 @@
 					public func getAddresses(pubkey: [UInt8]) -> [NetAddress]? {
 						// native call variable prep
 						
+						let pubkeyPrimitiveWrapper = PublicKey(value: pubkey)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKReadOnlyNetworkGraph>) in
-			ReadOnlyNetworkGraph_get_addresses(thisArgPointer, pubkey.cType!)
+			ReadOnlyNetworkGraph_get_addresses(thisArgPointer, pubkeyPrimitiveWrapper.cType!)
 						}
 			
 

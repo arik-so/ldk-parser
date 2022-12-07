@@ -78,11 +78,13 @@
 					public func setTransaction(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Transaction(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKBuiltCommitmentTransaction>) in
-			BuiltCommitmentTransaction_set_transaction(thisPtrPointer, val.cType!)
+			BuiltCommitmentTransaction_set_transaction(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -102,11 +104,13 @@
 					public func setTxid(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKBuiltCommitmentTransaction>) in
-			BuiltCommitmentTransaction_set_txid(thisPtrPointer, val.cType!)
+			BuiltCommitmentTransaction_set_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -123,9 +127,13 @@
 					public init(transactionArg: [UInt8], txidArg: [UInt8]) {
 						// native call variable prep
 						
+						let transactionArgPrimitiveWrapper = Transaction(value: transactionArg)
+				
+						let txidArgPrimitiveWrapper = ThirtyTwoBytes(value: txidArg)
+				
 
 						// native method call
-						let nativeCallResult = BuiltCommitmentTransaction_new(transactionArg.cType!, txidArg.cType!)
+						let nativeCallResult = BuiltCommitmentTransaction_new(transactionArgPrimitiveWrapper.cType!, txidArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -182,9 +190,11 @@
 					public class func read(ser: [UInt8]) -> Result_BuiltCommitmentTransactionDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = BuiltCommitmentTransaction_read(ser.cType!)
+						let nativeCallResult = BuiltCommitmentTransaction_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -201,11 +211,13 @@
 					public func getSighashAll(fundingRedeemscript: [UInt8], channelValueSatoshis: UInt64) -> [UInt8] {
 						// native call variable prep
 						
+						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKBuiltCommitmentTransaction>) in
-			BuiltCommitmentTransaction_get_sighash_all(thisArgPointer, fundingRedeemscript.cType!, channelValueSatoshis)
+			BuiltCommitmentTransaction_get_sighash_all(thisArgPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
 						}
 			
 
@@ -225,13 +237,15 @@
 						
 						let tupledFundingKey = Bindings.arrayToUInt8Tuple32(array: fundingKey)
 					
+						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKBuiltCommitmentTransaction>) in
 			
 						withUnsafePointer(to: tupledFundingKey) { (tupledFundingKeyPointer: UnsafePointer<UInt8Tuple32>) in
-			BuiltCommitmentTransaction_sign(thisArgPointer, tupledFundingKeyPointer, fundingRedeemscript.cType!, channelValueSatoshis)
+			BuiltCommitmentTransaction_sign(thisArgPointer, tupledFundingKeyPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
 						}
 			
 						}

@@ -556,9 +556,11 @@
 					override func getNextNodeAnnouncement(startingPoint: [UInt8]) -> NodeAnnouncement {
 						// native call variable prep
 						
+						let startingPointPrimitiveWrapper = PublicKey(value: startingPoint)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.get_next_node_announcement(self.cType!.this_arg, startingPoint.cType!)
+						let nativeCallResult = self.cType!.get_next_node_announcement(self.cType!.this_arg, startingPointPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -579,11 +581,13 @@
 					override func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: init.cType!) { (initPointer: UnsafePointer<LDKInit>) in
-			self.cType!.peer_connected(self.cType!.this_arg, theirNodeId.cType!, initPointer)
+			self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, initPointer)
 						}
 			
 
@@ -602,9 +606,11 @@
 					override func handleReplyChannelRange(theirNodeId: [UInt8], msg: ReplyChannelRange) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_reply_channel_range(self.cType!.this_arg, theirNodeId.cType!, msg.cType!)
+						let nativeCallResult = self.cType!.handle_reply_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -622,9 +628,11 @@
 					override func handleReplyShortChannelIdsEnd(theirNodeId: [UInt8], msg: ReplyShortChannelIdsEnd) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_reply_short_channel_ids_end(self.cType!.this_arg, theirNodeId.cType!, msg.cType!)
+						let nativeCallResult = self.cType!.handle_reply_short_channel_ids_end(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -640,9 +648,11 @@
 					override func handleQueryChannelRange(theirNodeId: [UInt8], msg: QueryChannelRange) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_query_channel_range(self.cType!.this_arg, theirNodeId.cType!, msg.cType!)
+						let nativeCallResult = self.cType!.handle_query_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -658,9 +668,11 @@
 					override func handleQueryShortChannelIds(theirNodeId: [UInt8], msg: QueryShortChannelIds) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_query_short_channel_ids(self.cType!.this_arg, theirNodeId.cType!, msg.cType!)
+						let nativeCallResult = self.cType!.handle_query_short_channel_ids(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -698,9 +710,11 @@
 					override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.provided_init_features(self.cType!.this_arg, theirNodeId.cType!)
+						let nativeCallResult = self.cType!.provided_init_features(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						

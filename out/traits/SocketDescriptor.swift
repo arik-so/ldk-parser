@@ -289,9 +289,11 @@
 					override func sendData(data: [UInt8], resumeRead: Bool) -> UInt {
 						// native call variable prep
 						
+						let dataPrimitiveWrapper = u8slice(value: data)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.send_data(self.cType!.this_arg, data.cType!, resumeRead)
+						let nativeCallResult = self.cType!.send_data(self.cType!.this_arg, dataPrimitiveWrapper.cType!, resumeRead)
 
 						// cleanup
 						

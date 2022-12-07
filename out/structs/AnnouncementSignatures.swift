@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_set_channel_id(thisPtrPointer, val.cType!)
+			AnnouncementSignatures_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -141,11 +143,13 @@
 					public func setNodeSignature(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Signature(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_set_node_signature(thisPtrPointer, val.cType!)
+			AnnouncementSignatures_set_node_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -183,11 +187,13 @@
 					public func setBitcoinSignature(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Signature(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_set_bitcoin_signature(thisPtrPointer, val.cType!)
+			AnnouncementSignatures_set_bitcoin_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -204,9 +210,15 @@
 					public init(channelIdArg: [UInt8], shortChannelIdArg: UInt64, nodeSignatureArg: [UInt8], bitcoinSignatureArg: [UInt8]) {
 						// native call variable prep
 						
+						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
+				
+						let nodeSignatureArgPrimitiveWrapper = Signature(value: nodeSignatureArg)
+				
+						let bitcoinSignatureArgPrimitiveWrapper = Signature(value: bitcoinSignatureArg)
+				
 
 						// native method call
-						let nativeCallResult = AnnouncementSignatures_new(channelIdArg.cType!, shortChannelIdArg, nodeSignatureArg.cType!, bitcoinSignatureArg.cType!)
+						let nativeCallResult = AnnouncementSignatures_new(channelIdArgPrimitiveWrapper.cType!, shortChannelIdArg, nodeSignatureArgPrimitiveWrapper.cType!, bitcoinSignatureArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -290,9 +302,11 @@
 					public class func read(ser: [UInt8]) -> Result_AnnouncementSignaturesDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = AnnouncementSignatures_read(ser.cType!)
+						let nativeCallResult = AnnouncementSignatures_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateAddHTLC>) in
-			UpdateAddHTLC_set_channel_id(thisPtrPointer, val.cType!)
+			UpdateAddHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -162,11 +164,13 @@
 					public func setPaymentHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateAddHTLC>) in
-			UpdateAddHTLC_set_payment_hash(thisPtrPointer, val.cType!)
+			UpdateAddHTLC_set_payment_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -294,9 +298,11 @@
 					public class func read(ser: [UInt8]) -> Result_UpdateAddHTLCDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = UpdateAddHTLC_read(ser.cType!)
+						let nativeCallResult = UpdateAddHTLC_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

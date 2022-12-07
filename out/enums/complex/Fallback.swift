@@ -106,11 +106,13 @@
 					public init(version: UInt8, program: [UInt8]) {
 						// native call variable prep
 						
+						let versionPrimitiveWrapper = u5(value: version)
+				
 						let programVector = Vec_u8Z(array: program)
 				
 
 						// native method call
-						let nativeCallResult = Fallback_seg_wit_program(version.cType!, programVector.cType!)
+						let nativeCallResult = Fallback_seg_wit_program(versionPrimitiveWrapper.cType!, programVector.cType!)
 
 						// cleanup
 						
@@ -127,9 +129,11 @@
 					public init(a: [UInt8]) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = TwentyBytes(value: a)
+				
 
 						// native method call
-						let nativeCallResult = Fallback_pub_key_hash(a.cType!)
+						let nativeCallResult = Fallback_pub_key_hash(aPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -144,9 +148,11 @@
 					public init(a: [UInt8]) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = TwentyBytes(value: a)
+				
 
 						// native method call
-						let nativeCallResult = Fallback_script_hash(a.cType!)
+						let nativeCallResult = Fallback_script_hash(aPrimitiveWrapper.cType!)
 
 						// cleanup
 						

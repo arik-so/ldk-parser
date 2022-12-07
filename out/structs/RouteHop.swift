@@ -78,11 +78,13 @@
 					public func setPubkey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-			RouteHop_set_pubkey(thisPtrPointer, val.cType!)
+			RouteHop_set_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -319,9 +321,11 @@
 					public init(pubkeyArg: [UInt8], nodeFeaturesArg: NodeFeatures, shortChannelIdArg: UInt64, channelFeaturesArg: ChannelFeatures, feeMsatArg: UInt64, cltvExpiryDeltaArg: UInt32) {
 						// native call variable prep
 						
+						let pubkeyArgPrimitiveWrapper = PublicKey(value: pubkeyArg)
+				
 
 						// native method call
-						let nativeCallResult = RouteHop_new(pubkeyArg.cType!, nodeFeaturesArg.cType!, shortChannelIdArg, channelFeaturesArg.cType!, feeMsatArg, cltvExpiryDeltaArg)
+						let nativeCallResult = RouteHop_new(pubkeyArgPrimitiveWrapper.cType!, nodeFeaturesArg.cType!, shortChannelIdArg, channelFeaturesArg.cType!, feeMsatArg, cltvExpiryDeltaArg)
 
 						// cleanup
 						
@@ -426,9 +430,11 @@
 					public class func read(ser: [UInt8]) -> Result_RouteHopDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = RouteHop_read(ser.cType!)
+						let nativeCallResult = RouteHop_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

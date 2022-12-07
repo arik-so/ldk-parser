@@ -78,11 +78,13 @@
 					public func setSrcNodeId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
-			RouteHintHop_set_src_node_id(thisPtrPointer, val.cType!)
+			RouteHintHop_set_src_node_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -313,13 +315,15 @@
 					public init(srcNodeIdArg: [UInt8], shortChannelIdArg: UInt64, feesArg: RoutingFees, cltvExpiryDeltaArg: UInt16, htlcMinimumMsatArg: UInt64?, htlcMaximumMsatArg: UInt64?) {
 						// native call variable prep
 						
+						let srcNodeIdArgPrimitiveWrapper = PublicKey(value: srcNodeIdArg)
+				
 						let htlcMinimumMsatArgOption = Option_u64Z(value: htlcMinimumMsatArg)
 				
 						let htlcMaximumMsatArgOption = Option_u64Z(value: htlcMaximumMsatArg)
 				
 
 						// native method call
-						let nativeCallResult = RouteHintHop_new(srcNodeIdArg.cType!, shortChannelIdArg, feesArg.cType!, cltvExpiryDeltaArg, htlcMinimumMsatArgOption.cType!, htlcMaximumMsatArgOption.cType!)
+						let nativeCallResult = RouteHintHop_new(srcNodeIdArgPrimitiveWrapper.cType!, shortChannelIdArg, feesArg.cType!, cltvExpiryDeltaArg, htlcMinimumMsatArgOption.cType!, htlcMaximumMsatArgOption.cType!)
 
 						// cleanup
 						
@@ -424,9 +428,11 @@
 					public class func read(ser: [UInt8]) -> Result_RouteHintHopDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = RouteHintHop_read(ser.cType!)
+						let nativeCallResult = RouteHintHop_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

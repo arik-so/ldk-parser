@@ -64,9 +64,11 @@
 					public init(a: RawInvoice, b: [UInt8], c: InvoiceSignature) {
 						// native call variable prep
 						
+						let bPrimitiveWrapper = ThirtyTwoBytes(value: b)
+				
 
 						// native method call
-						let nativeCallResult = C3Tuple_RawInvoice_u832InvoiceSignatureZ_new(a.cType!, b.cType!, c.cType!)
+						let nativeCallResult = C3Tuple_RawInvoice_u832InvoiceSignatureZ_new(a.cType!, bPrimitiveWrapper.cType!, c.cType!)
 
 						// cleanup
 						

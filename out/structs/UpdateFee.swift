@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFee>) in
-			UpdateFee_set_channel_id(thisPtrPointer, val.cType!)
+			UpdateFee_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -120,9 +122,11 @@
 					public init(channelIdArg: [UInt8], feeratePerKwArg: UInt32) {
 						// native call variable prep
 						
+						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
+				
 
 						// native method call
-						let nativeCallResult = UpdateFee_new(channelIdArg.cType!, feeratePerKwArg)
+						let nativeCallResult = UpdateFee_new(channelIdArgPrimitiveWrapper.cType!, feeratePerKwArg)
 
 						// cleanup
 						
@@ -206,9 +210,11 @@
 					public class func read(ser: [UInt8]) -> Result_UpdateFeeDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = UpdateFee_read(ser.cType!)
+						let nativeCallResult = UpdateFee_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

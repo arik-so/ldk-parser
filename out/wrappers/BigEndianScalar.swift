@@ -47,9 +47,11 @@
 					public init(bigEndianBytes: [UInt8]) {
 						// native call variable prep
 						
+						let bigEndianBytesPrimitiveWrapper = ThirtyTwoBytes(value: bigEndianBytes)
+				
 
 						// native method call
-						let nativeCallResult = BigEndianScalar_new(bigEndianBytes.cType!)
+						let nativeCallResult = BigEndianScalar_new(bigEndianBytesPrimitiveWrapper.cType!)
 
 						// cleanup
 						

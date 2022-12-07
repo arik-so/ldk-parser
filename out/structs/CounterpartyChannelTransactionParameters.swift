@@ -200,9 +200,11 @@
 					public class func read(ser: [UInt8]) -> Result_CounterpartyChannelTransactionParametersDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = CounterpartyChannelTransactionParameters_read(ser.cType!)
+						let nativeCallResult = CounterpartyChannelTransactionParameters_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

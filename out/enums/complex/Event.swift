@@ -274,11 +274,15 @@
 					public init(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], channelValueSatoshis: UInt64, outputScript: [UInt8], userChannelId: UInt64) {
 						// native call variable prep
 						
+						let temporaryChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: temporaryChannelId)
+				
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
 						let outputScriptVector = Vec_u8Z(array: outputScript)
 				
 
 						// native method call
-						let nativeCallResult = Event_funding_generation_ready(temporaryChannelId.cType!, counterpartyNodeId.cType!, channelValueSatoshis, outputScriptVector.cType!, userChannelId)
+						let nativeCallResult = Event_funding_generation_ready(temporaryChannelIdPrimitiveWrapper.cType!, counterpartyNodeIdPrimitiveWrapper.cType!, channelValueSatoshis, outputScriptVector.cType!, userChannelId)
 
 						// cleanup
 						
@@ -295,9 +299,11 @@
 					public init(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) {
 						// native call variable prep
 						
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 
 						// native method call
-						let nativeCallResult = Event_payment_received(paymentHash.cType!, amountMsat, purpose.cType!)
+						let nativeCallResult = Event_payment_received(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.cType!)
 
 						// cleanup
 						
@@ -312,9 +318,11 @@
 					public init(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) {
 						// native call variable prep
 						
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 
 						// native method call
-						let nativeCallResult = Event_payment_claimed(paymentHash.cType!, amountMsat, purpose.cType!)
+						let nativeCallResult = Event_payment_claimed(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.cType!)
 
 						// cleanup
 						
@@ -329,11 +337,17 @@
 					public init(paymentId: [UInt8], paymentPreimage: [UInt8], paymentHash: [UInt8], feePaidMsat: UInt64?) {
 						// native call variable prep
 						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
+						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
+				
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 						let feePaidMsatOption = Option_u64Z(value: feePaidMsat)
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_sent(paymentId.cType!, paymentPreimage.cType!, paymentHash.cType!, feePaidMsatOption.cType!)
+						let nativeCallResult = Event_payment_sent(paymentIdPrimitiveWrapper.cType!, paymentPreimagePrimitiveWrapper.cType!, paymentHashPrimitiveWrapper.cType!, feePaidMsatOption.cType!)
 
 						// cleanup
 						
@@ -348,9 +362,13 @@
 					public init(paymentId: [UInt8], paymentHash: [UInt8]) {
 						// native call variable prep
 						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 
 						// native method call
-						let nativeCallResult = Event_payment_failed(paymentId.cType!, paymentHash.cType!)
+						let nativeCallResult = Event_payment_failed(paymentIdPrimitiveWrapper.cType!, paymentHashPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -365,11 +383,15 @@
 					public init(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop]) {
 						// native call variable prep
 						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 						let pathVector = Vec_RouteHopZ(array: path)
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_path_successful(paymentId.cType!, paymentHash.cType!, pathVector.cType!)
+						let nativeCallResult = Event_payment_path_successful(paymentIdPrimitiveWrapper.cType!, paymentHashPrimitiveWrapper.cType!, pathVector.cType!)
 
 						// cleanup
 						
@@ -386,6 +408,10 @@
 					public init(paymentId: [UInt8], paymentHash: [UInt8], paymentFailedPermanently: Bool, networkUpdate: NetworkUpdate?, allPathsFailed: Bool, path: [RouteHop], shortChannelId: UInt64?, retry: RouteParameters) {
 						// native call variable prep
 						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 						let networkUpdateOption = Option_NetworkUpdateZ(value: networkUpdate)
 				
 						let pathVector = Vec_RouteHopZ(array: path)
@@ -394,7 +420,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_path_failed(paymentId.cType!, paymentHash.cType!, paymentFailedPermanently, networkUpdateOption.cType!, allPathsFailed, pathVector.cType!, shortChannelIdOption.cType!, retry.cType!)
+						let nativeCallResult = Event_payment_path_failed(paymentIdPrimitiveWrapper.cType!, paymentHashPrimitiveWrapper.cType!, paymentFailedPermanently, networkUpdateOption.cType!, allPathsFailed, pathVector.cType!, shortChannelIdOption.cType!, retry.cType!)
 
 						// cleanup
 						
@@ -411,11 +437,15 @@
 					public init(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop]) {
 						// native call variable prep
 						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 						let pathVector = Vec_RouteHopZ(array: path)
 				
 
 						// native method call
-						let nativeCallResult = Event_probe_successful(paymentId.cType!, paymentHash.cType!, pathVector.cType!)
+						let nativeCallResult = Event_probe_successful(paymentIdPrimitiveWrapper.cType!, paymentHashPrimitiveWrapper.cType!, pathVector.cType!)
 
 						// cleanup
 						
@@ -432,13 +462,17 @@
 					public init(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop], shortChannelId: UInt64?) {
 						// native call variable prep
 						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 						let pathVector = Vec_RouteHopZ(array: path)
 				
 						let shortChannelIdOption = Option_u64Z(value: shortChannelId)
 				
 
 						// native method call
-						let nativeCallResult = Event_probe_failed(paymentId.cType!, paymentHash.cType!, pathVector.cType!, shortChannelIdOption.cType!)
+						let nativeCallResult = Event_probe_failed(paymentIdPrimitiveWrapper.cType!, paymentHashPrimitiveWrapper.cType!, pathVector.cType!, shortChannelIdOption.cType!)
 
 						// cleanup
 						
@@ -493,11 +527,15 @@
 					public init(prevChannelId: [UInt8], nextChannelId: [UInt8], feeEarnedMsat: UInt64?, claimFromOnchainTx: Bool) {
 						// native call variable prep
 						
+						let prevChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: prevChannelId)
+				
+						let nextChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: nextChannelId)
+				
 						let feeEarnedMsatOption = Option_u64Z(value: feeEarnedMsat)
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_forwarded(prevChannelId.cType!, nextChannelId.cType!, feeEarnedMsatOption.cType!, claimFromOnchainTx)
+						let nativeCallResult = Event_payment_forwarded(prevChannelIdPrimitiveWrapper.cType!, nextChannelIdPrimitiveWrapper.cType!, feeEarnedMsatOption.cType!, claimFromOnchainTx)
 
 						// cleanup
 						
@@ -512,9 +550,11 @@
 					public init(channelId: [UInt8], userChannelId: UInt64, reason: ClosureReason) {
 						// native call variable prep
 						
+						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
+				
 
 						// native method call
-						let nativeCallResult = Event_channel_closed(channelId.cType!, userChannelId, reason.cType!)
+						let nativeCallResult = Event_channel_closed(channelIdPrimitiveWrapper.cType!, userChannelId, reason.cType!)
 
 						// cleanup
 						
@@ -529,9 +569,13 @@
 					public init(channelId: [UInt8], transaction: [UInt8]) {
 						// native call variable prep
 						
+						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
+				
+						let transactionPrimitiveWrapper = Transaction(value: transaction)
+				
 
 						// native method call
-						let nativeCallResult = Event_discard_funding(channelId.cType!, transaction.cType!)
+						let nativeCallResult = Event_discard_funding(channelIdPrimitiveWrapper.cType!, transactionPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -546,9 +590,13 @@
 					public init(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], fundingSatoshis: UInt64, pushMsat: UInt64, channelType: ChannelTypeFeatures) {
 						// native call variable prep
 						
+						let temporaryChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: temporaryChannelId)
+				
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
 
 						// native method call
-						let nativeCallResult = Event_open_channel_request(temporaryChannelId.cType!, counterpartyNodeId.cType!, fundingSatoshis, pushMsat, channelType.cType!)
+						let nativeCallResult = Event_open_channel_request(temporaryChannelIdPrimitiveWrapper.cType!, counterpartyNodeIdPrimitiveWrapper.cType!, fundingSatoshis, pushMsat, channelType.cType!)
 
 						// cleanup
 						
@@ -563,9 +611,11 @@
 					public init(prevChannelId: [UInt8], failedNextDestination: HTLCDestination) {
 						// native call variable prep
 						
+						let prevChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: prevChannelId)
+				
 
 						// native method call
-						let nativeCallResult = Event_htlchandling_failed(prevChannelId.cType!, failedNextDestination.cType!)
+						let nativeCallResult = Event_htlchandling_failed(prevChannelIdPrimitiveWrapper.cType!, failedNextDestination.cType!)
 
 						// cleanup
 						
@@ -601,9 +651,11 @@
 					public class func read(ser: [UInt8]) -> Result_COption_EventZDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = Event_read(ser.cType!)
+						let nativeCallResult = Event_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

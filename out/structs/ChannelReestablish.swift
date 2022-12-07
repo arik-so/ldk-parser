@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReestablish>) in
-			ChannelReestablish_set_channel_id(thisPtrPointer, val.cType!)
+			ChannelReestablish_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -231,9 +233,11 @@
 					public class func read(ser: [UInt8]) -> Result_ChannelReestablishDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ChannelReestablish_read(ser.cType!)
+						let nativeCallResult = ChannelReestablish_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

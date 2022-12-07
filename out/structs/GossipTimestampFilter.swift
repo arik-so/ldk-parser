@@ -59,11 +59,13 @@
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKGossipTimestampFilter>) in
-			GossipTimestampFilter_set_chain_hash(thisPtrPointer, val.cType!)
+			GossipTimestampFilter_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -164,9 +166,11 @@
 					public init(chainHashArg: [UInt8], firstTimestampArg: UInt32, timestampRangeArg: UInt32) {
 						// native call variable prep
 						
+						let chainHashArgPrimitiveWrapper = ThirtyTwoBytes(value: chainHashArg)
+				
 
 						// native method call
-						let nativeCallResult = GossipTimestampFilter_new(chainHashArg.cType!, firstTimestampArg, timestampRangeArg)
+						let nativeCallResult = GossipTimestampFilter_new(chainHashArgPrimitiveWrapper.cType!, firstTimestampArg, timestampRangeArg)
 
 						// cleanup
 						
@@ -250,9 +254,11 @@
 					public class func read(ser: [UInt8]) -> Result_GossipTimestampFilterDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = GossipTimestampFilter_read(ser.cType!)
+						let nativeCallResult = GossipTimestampFilter_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

@@ -80,11 +80,13 @@
 					public func setCounterpartySig(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Signature(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHolderCommitmentTransaction>) in
-			HolderCommitmentTransaction_set_counterparty_sig(thisPtrPointer, val.cType!)
+			HolderCommitmentTransaction_set_counterparty_sig(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -191,9 +193,11 @@
 					public class func read(ser: [UInt8]) -> Result_HolderCommitmentTransactionDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = HolderCommitmentTransaction_read(ser.cType!)
+						let nativeCallResult = HolderCommitmentTransaction_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -209,11 +213,17 @@
 					public init(commitmentTx: CommitmentTransaction, counterpartySig: [UInt8], counterpartyHtlcSigs: [[UInt8]], holderFundingKey: [UInt8], counterpartyFundingKey: [UInt8]) {
 						// native call variable prep
 						
+						let counterpartySigPrimitiveWrapper = Signature(value: counterpartySig)
+				
 						let counterpartyHtlcSigsVector = Vec_SignatureZ(array: counterpartyHtlcSigs)
+				
+						let holderFundingKeyPrimitiveWrapper = PublicKey(value: holderFundingKey)
+				
+						let counterpartyFundingKeyPrimitiveWrapper = PublicKey(value: counterpartyFundingKey)
 				
 
 						// native method call
-						let nativeCallResult = HolderCommitmentTransaction_new(commitmentTx.cType!, counterpartySig.cType!, counterpartyHtlcSigsVector.cType!, holderFundingKey.cType!, counterpartyFundingKey.cType!)
+						let nativeCallResult = HolderCommitmentTransaction_new(commitmentTx.cType!, counterpartySigPrimitiveWrapper.cType!, counterpartyHtlcSigsVector.cType!, holderFundingKeyPrimitiveWrapper.cType!, counterpartyFundingKeyPrimitiveWrapper.cType!)
 
 						// cleanup
 						

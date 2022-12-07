@@ -60,11 +60,13 @@
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyShortChannelIdsEnd>) in
-			ReplyShortChannelIdsEnd_set_chain_hash(thisPtrPointer, val.cType!)
+			ReplyShortChannelIdsEnd_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -125,9 +127,11 @@
 					public init(chainHashArg: [UInt8], fullInformationArg: Bool) {
 						// native call variable prep
 						
+						let chainHashArgPrimitiveWrapper = ThirtyTwoBytes(value: chainHashArg)
+				
 
 						// native method call
-						let nativeCallResult = ReplyShortChannelIdsEnd_new(chainHashArg.cType!, fullInformationArg)
+						let nativeCallResult = ReplyShortChannelIdsEnd_new(chainHashArgPrimitiveWrapper.cType!, fullInformationArg)
 
 						// cleanup
 						
@@ -211,9 +215,11 @@
 					public class func read(ser: [UInt8]) -> Result_ReplyShortChannelIdsEndDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ReplyShortChannelIdsEnd_read(ser.cType!)
+						let nativeCallResult = ReplyShortChannelIdsEnd_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

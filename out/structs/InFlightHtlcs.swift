@@ -111,9 +111,11 @@
 					public class func read(ser: [UInt8]) -> Result_InFlightHtlcsDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = InFlightHtlcs_read(ser.cType!)
+						let nativeCallResult = InFlightHtlcs_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

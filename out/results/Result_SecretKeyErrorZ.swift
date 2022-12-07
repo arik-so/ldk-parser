@@ -40,9 +40,11 @@
 					public init(o: [UInt8]) {
 						// native call variable prep
 						
+						let oPrimitiveWrapper = SecretKey(value: o)
+				
 
 						// native method call
-						let nativeCallResult = CResult_SecretKeyErrorZ_ok(o.cType!)
+						let nativeCallResult = CResult_SecretKeyErrorZ_ok(oPrimitiveWrapper.cType!)
 
 						// cleanup
 						

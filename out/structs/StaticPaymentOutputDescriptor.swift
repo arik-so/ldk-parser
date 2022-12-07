@@ -146,11 +146,13 @@
 					public func setChannelKeysId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_set_channel_keys_id(thisPtrPointer, val.cType!)
+			StaticPaymentOutputDescriptor_set_channel_keys_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -209,9 +211,11 @@
 					public init(outpointArg: OutPoint, outputArg: TxOut, channelKeysIdArg: [UInt8], channelValueSatoshisArg: UInt64) {
 						// native call variable prep
 						
+						let channelKeysIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelKeysIdArg)
+				
 
 						// native method call
-						let nativeCallResult = StaticPaymentOutputDescriptor_new(outpointArg.cType!, outputArg.cType!, channelKeysIdArg.cType!, channelValueSatoshisArg)
+						let nativeCallResult = StaticPaymentOutputDescriptor_new(outpointArg.cType!, outputArg.cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
 
 						// cleanup
 						
@@ -295,9 +299,11 @@
 					public class func read(ser: [UInt8]) -> Result_StaticPaymentOutputDescriptorDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = StaticPaymentOutputDescriptor_read(ser.cType!)
+						let nativeCallResult = StaticPaymentOutputDescriptor_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

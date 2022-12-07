@@ -308,11 +308,15 @@
 					override func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
 						// native call variable prep
 						
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
+						let paymentSecretPrimitiveWrapper = ThirtyTwoBytes(value: paymentSecret)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-			self.cType!.send_payment(self.cType!.this_arg, routePointer, paymentHash.cType!, paymentSecret.cType!)
+			self.cType!.send_payment(self.cType!.this_arg, routePointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
 						}
 			
 
@@ -329,11 +333,13 @@
 					override func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
 						// native call variable prep
 						
+						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-			self.cType!.send_spontaneous_payment(self.cType!.this_arg, routePointer, paymentPreimage.cType!)
+			self.cType!.send_spontaneous_payment(self.cType!.this_arg, routePointer, paymentPreimagePrimitiveWrapper.cType!)
 						}
 			
 
@@ -350,11 +356,13 @@
 					override func retryPayment(route: Route, paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
 						// native call variable prep
 						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-			self.cType!.retry_payment(self.cType!.this_arg, routePointer, paymentId.cType!)
+			self.cType!.retry_payment(self.cType!.this_arg, routePointer, paymentIdPrimitiveWrapper.cType!)
 						}
 			
 
@@ -371,9 +379,11 @@
 					override func abandonPayment(paymentId: [UInt8]) {
 						// native call variable prep
 						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.abandon_payment(self.cType!.this_arg, paymentId.cType!)
+						let nativeCallResult = self.cType!.abandon_payment(self.cType!.this_arg, paymentIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						

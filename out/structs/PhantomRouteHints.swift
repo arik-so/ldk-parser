@@ -170,11 +170,13 @@
 					public func setRealNodePubkey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPhantomRouteHints>) in
-			PhantomRouteHints_set_real_node_pubkey(thisPtrPointer, val.cType!)
+			PhantomRouteHints_set_real_node_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -193,9 +195,11 @@
 						
 						let channelsArgVector = Vec_ChannelDetailsZ(array: channelsArg)
 				
+						let realNodePubkeyArgPrimitiveWrapper = PublicKey(value: realNodePubkeyArg)
+				
 
 						// native method call
-						let nativeCallResult = PhantomRouteHints_new(channelsArgVector.cType!, phantomScidArg, realNodePubkeyArg.cType!)
+						let nativeCallResult = PhantomRouteHints_new(channelsArgVector.cType!, phantomScidArg, realNodePubkeyArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -254,9 +258,11 @@
 					public class func read(ser: [UInt8]) -> Result_PhantomRouteHintsDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = PhantomRouteHints_read(ser.cType!)
+						let nativeCallResult = PhantomRouteHints_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

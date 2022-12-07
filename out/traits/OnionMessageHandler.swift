@@ -269,11 +269,13 @@
 					override func handleOnionMessage(peerNodeId: [UInt8], msg: OnionMessage) {
 						// native call variable prep
 						
+						let peerNodeIdPrimitiveWrapper = PublicKey(value: peerNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKOnionMessage>) in
-			self.cType!.handle_onion_message(self.cType!.this_arg, peerNodeId.cType!, msgPointer)
+			self.cType!.handle_onion_message(self.cType!.this_arg, peerNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -295,11 +297,13 @@
 					override func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: init.cType!) { (initPointer: UnsafePointer<LDKInit>) in
-			self.cType!.peer_connected(self.cType!.this_arg, theirNodeId.cType!, initPointer)
+			self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, initPointer)
 						}
 			
 
@@ -320,9 +324,11 @@
 					override func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.peer_disconnected(self.cType!.this_arg, theirNodeId.cType!, noConnectionPossible)
+						let nativeCallResult = self.cType!.peer_disconnected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, noConnectionPossible)
 
 						// cleanup
 						
@@ -360,9 +366,11 @@
 					override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.provided_init_features(self.cType!.this_arg, theirNodeId.cType!)
+						let nativeCallResult = self.cType!.provided_init_features(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						

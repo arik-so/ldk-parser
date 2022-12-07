@@ -57,11 +57,13 @@
 					public func setTemporaryChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_temporary_channel_id(thisPtrPointer, val.cType!)
+			AcceptChannel_set_temporary_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -393,11 +395,13 @@
 					public func setFundingPubkey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_funding_pubkey(thisPtrPointer, val.cType!)
+			AcceptChannel_set_funding_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -435,11 +439,13 @@
 					public func setRevocationBasepoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_revocation_basepoint(thisPtrPointer, val.cType!)
+			AcceptChannel_set_revocation_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -477,11 +483,13 @@
 					public func setPaymentPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_payment_point(thisPtrPointer, val.cType!)
+			AcceptChannel_set_payment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -519,11 +527,13 @@
 					public func setDelayedPaymentBasepoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_delayed_payment_basepoint(thisPtrPointer, val.cType!)
+			AcceptChannel_set_delayed_payment_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -561,11 +571,13 @@
 					public func setHtlcBasepoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_htlc_basepoint(thisPtrPointer, val.cType!)
+			AcceptChannel_set_htlc_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -603,11 +615,13 @@
 					public func setFirstPerCommitmentPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_first_per_commitment_point(thisPtrPointer, val.cType!)
+			AcceptChannel_set_first_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -760,9 +774,11 @@
 					public class func read(ser: [UInt8]) -> Result_AcceptChannelDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = AcceptChannel_read(ser.cType!)
+						let nativeCallResult = AcceptChannel_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

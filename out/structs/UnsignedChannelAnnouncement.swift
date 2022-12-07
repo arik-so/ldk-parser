@@ -99,11 +99,13 @@
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_chain_hash(thisPtrPointer, val.cType!)
+			UnsignedChannelAnnouncement_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -183,11 +185,13 @@
 					public func setNodeId_1(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_node_id_1(thisPtrPointer, val.cType!)
+			UnsignedChannelAnnouncement_set_node_id_1(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -225,11 +229,13 @@
 					public func setNodeId_2(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_node_id_2(thisPtrPointer, val.cType!)
+			UnsignedChannelAnnouncement_set_node_id_2(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -267,11 +273,13 @@
 					public func setBitcoinKey_1(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_bitcoin_key_1(thisPtrPointer, val.cType!)
+			UnsignedChannelAnnouncement_set_bitcoin_key_1(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -309,11 +317,13 @@
 					public func setBitcoinKey_2(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_bitcoin_key_2(thisPtrPointer, val.cType!)
+			UnsignedChannelAnnouncement_set_bitcoin_key_2(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -399,9 +409,11 @@
 					public class func read(ser: [UInt8]) -> Result_UnsignedChannelAnnouncementDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = UnsignedChannelAnnouncement_read(ser.cType!)
+						let nativeCallResult = UnsignedChannelAnnouncement_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

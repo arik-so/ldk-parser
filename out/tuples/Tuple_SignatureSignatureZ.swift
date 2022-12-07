@@ -64,9 +64,13 @@
 					public init(a: [UInt8], b: [UInt8]) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = Signature(value: a)
+				
+						let bPrimitiveWrapper = Signature(value: b)
+				
 
 						// native method call
-						let nativeCallResult = C2Tuple_SignatureSignatureZ_new(a.cType!, b.cType!)
+						let nativeCallResult = C2Tuple_SignatureSignatureZ_new(aPrimitiveWrapper.cType!, bPrimitiveWrapper.cType!)
 
 						// cleanup
 						

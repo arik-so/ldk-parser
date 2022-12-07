@@ -335,9 +335,11 @@
 					public class func read(ser: [UInt8]) -> Result_RouteDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = Route_read(ser.cType!)
+						let nativeCallResult = Route_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

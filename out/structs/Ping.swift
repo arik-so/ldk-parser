@@ -229,9 +229,11 @@
 					public class func read(ser: [UInt8]) -> Result_PingDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = Ping_read(ser.cType!)
+						let nativeCallResult = Ping_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

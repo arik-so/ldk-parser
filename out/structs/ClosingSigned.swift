@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSigned>) in
-			ClosingSigned_set_channel_id(thisPtrPointer, val.cType!)
+			ClosingSigned_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -141,11 +143,13 @@
 					public func setSignature(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Signature(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSigned>) in
-			ClosingSigned_set_signature(thisPtrPointer, val.cType!)
+			ClosingSigned_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -223,9 +227,13 @@
 					public init(channelIdArg: [UInt8], feeSatoshisArg: UInt64, signatureArg: [UInt8], feeRangeArg: ClosingSignedFeeRange) {
 						// native call variable prep
 						
+						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
+				
+						let signatureArgPrimitiveWrapper = Signature(value: signatureArg)
+				
 
 						// native method call
-						let nativeCallResult = ClosingSigned_new(channelIdArg.cType!, feeSatoshisArg, signatureArg.cType!, feeRangeArg.cType!)
+						let nativeCallResult = ClosingSigned_new(channelIdArgPrimitiveWrapper.cType!, feeSatoshisArg, signatureArgPrimitiveWrapper.cType!, feeRangeArg.cType!)
 
 						// cleanup
 						
@@ -309,9 +317,11 @@
 					public class func read(ser: [UInt8]) -> Result_ClosingSignedDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ClosingSigned_read(ser.cType!)
+						let nativeCallResult = ClosingSigned_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

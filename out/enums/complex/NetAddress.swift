@@ -123,9 +123,11 @@
 					public init(addr: [UInt8], port: UInt16) {
 						// native call variable prep
 						
+						let addrPrimitiveWrapper = FourBytes(value: addr)
+				
 
 						// native method call
-						let nativeCallResult = NetAddress_ipv4(addr.cType!, port)
+						let nativeCallResult = NetAddress_ipv4(addrPrimitiveWrapper.cType!, port)
 
 						// cleanup
 						
@@ -140,9 +142,11 @@
 					public init(addr: [UInt8], port: UInt16) {
 						// native call variable prep
 						
+						let addrPrimitiveWrapper = SixteenBytes(value: addr)
+				
 
 						// native method call
-						let nativeCallResult = NetAddress_ipv6(addr.cType!, port)
+						let nativeCallResult = NetAddress_ipv6(addrPrimitiveWrapper.cType!, port)
 
 						// cleanup
 						
@@ -157,9 +161,11 @@
 					public init(a: [UInt8]) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = TwelveBytes(value: a)
+				
 
 						// native method call
-						let nativeCallResult = NetAddress_onion_v2(a.cType!)
+						let nativeCallResult = NetAddress_onion_v2(aPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -174,9 +180,11 @@
 					public init(ed25519Pubkey: [UInt8], checksum: UInt16, version: UInt8, port: UInt16) {
 						// native call variable prep
 						
+						let ed25519PubkeyPrimitiveWrapper = ThirtyTwoBytes(value: ed25519Pubkey)
+				
 
 						// native method call
-						let nativeCallResult = NetAddress_onion_v3(ed25519Pubkey.cType!, checksum, version, port)
+						let nativeCallResult = NetAddress_onion_v3(ed25519PubkeyPrimitiveWrapper.cType!, checksum, version, port)
 
 						// cleanup
 						
@@ -255,9 +263,11 @@
 					public class func read(ser: [UInt8]) -> Result_NetAddressDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = NetAddress_read(ser.cType!)
+						let nativeCallResult = NetAddress_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

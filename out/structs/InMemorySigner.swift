@@ -60,11 +60,13 @@
 					public func setFundingKey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = SecretKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
-			InMemorySigner_set_funding_key(thisPtrPointer, val.cType!)
+			InMemorySigner_set_funding_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -81,11 +83,13 @@
 					public func setRevocationBaseKey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = SecretKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
-			InMemorySigner_set_revocation_base_key(thisPtrPointer, val.cType!)
+			InMemorySigner_set_revocation_base_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -102,11 +106,13 @@
 					public func setPaymentKey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = SecretKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
-			InMemorySigner_set_payment_key(thisPtrPointer, val.cType!)
+			InMemorySigner_set_payment_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -123,11 +129,13 @@
 					public func setDelayedPaymentBaseKey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = SecretKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
-			InMemorySigner_set_delayed_payment_base_key(thisPtrPointer, val.cType!)
+			InMemorySigner_set_delayed_payment_base_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -144,11 +152,13 @@
 					public func setHtlcBaseKey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = SecretKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
-			InMemorySigner_set_htlc_base_key(thisPtrPointer, val.cType!)
+			InMemorySigner_set_htlc_base_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -165,11 +175,13 @@
 					public func setCommitmentSeed(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
-			InMemorySigner_set_commitment_seed(thisPtrPointer, val.cType!)
+			InMemorySigner_set_commitment_seed(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -207,9 +219,25 @@
 					public init(nodeSecret: [UInt8], fundingKey: [UInt8], revocationBaseKey: [UInt8], paymentKey: [UInt8], delayedPaymentBaseKey: [UInt8], htlcBaseKey: [UInt8], commitmentSeed: [UInt8], channelValueSatoshis: UInt64, channelKeysId: [UInt8]) {
 						// native call variable prep
 						
+						let nodeSecretPrimitiveWrapper = SecretKey(value: nodeSecret)
+				
+						let fundingKeyPrimitiveWrapper = SecretKey(value: fundingKey)
+				
+						let revocationBaseKeyPrimitiveWrapper = SecretKey(value: revocationBaseKey)
+				
+						let paymentKeyPrimitiveWrapper = SecretKey(value: paymentKey)
+				
+						let delayedPaymentBaseKeyPrimitiveWrapper = SecretKey(value: delayedPaymentBaseKey)
+				
+						let htlcBaseKeyPrimitiveWrapper = SecretKey(value: htlcBaseKey)
+				
+						let commitmentSeedPrimitiveWrapper = ThirtyTwoBytes(value: commitmentSeed)
+				
+						let channelKeysIdPrimitiveWrapper = ThirtyTwoBytes(value: channelKeysId)
+				
 
 						// native method call
-						let nativeCallResult = InMemorySigner_new(nodeSecret.cType!, fundingKey.cType!, revocationBaseKey.cType!, paymentKey.cType!, delayedPaymentBaseKey.cType!, htlcBaseKey.cType!, commitmentSeed.cType!, channelValueSatoshis, channelKeysId.cType!)
+						let nativeCallResult = InMemorySigner_new(nodeSecretPrimitiveWrapper.cType!, fundingKeyPrimitiveWrapper.cType!, revocationBaseKeyPrimitiveWrapper.cType!, paymentKeyPrimitiveWrapper.cType!, delayedPaymentBaseKeyPrimitiveWrapper.cType!, htlcBaseKeyPrimitiveWrapper.cType!, commitmentSeedPrimitiveWrapper.cType!, channelValueSatoshis, channelKeysIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -389,13 +417,15 @@
 					public func signCounterpartyPaymentInput(spendTx: [UInt8], inputIdx: UInt, descriptor: StaticPaymentOutputDescriptor) -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						
+						let spendTxPrimitiveWrapper = Transaction(value: spendTx)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 			
 						withUnsafePointer(to: descriptor.cType!) { (descriptorPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
-			InMemorySigner_sign_counterparty_payment_input(thisArgPointer, spendTx.cType!, inputIdx, descriptorPointer)
+			InMemorySigner_sign_counterparty_payment_input(thisArgPointer, spendTxPrimitiveWrapper.cType!, inputIdx, descriptorPointer)
 						}
 			
 						}
@@ -420,13 +450,15 @@
 					public func signDynamicP2wshInput(spendTx: [UInt8], inputIdx: UInt, descriptor: DelayedPaymentOutputDescriptor) -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						
+						let spendTxPrimitiveWrapper = Transaction(value: spendTx)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 			
 						withUnsafePointer(to: descriptor.cType!) { (descriptorPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			InMemorySigner_sign_dynamic_p2wsh_input(thisArgPointer, spendTx.cType!, inputIdx, descriptorPointer)
+			InMemorySigner_sign_dynamic_p2wsh_input(thisArgPointer, spendTxPrimitiveWrapper.cType!, inputIdx, descriptorPointer)
 						}
 			
 						}
@@ -510,9 +542,13 @@
 					public class func read(ser: [UInt8], arg: [UInt8]) -> Result_InMemorySignerDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
+						let argPrimitiveWrapper = SecretKey(value: arg)
+				
 
 						// native method call
-						let nativeCallResult = InMemorySigner_read(ser.cType!, arg.cType!)
+						let nativeCallResult = InMemorySigner_read(serPrimitiveWrapper.cType!, argPrimitiveWrapper.cType!)
 
 						// cleanup
 						

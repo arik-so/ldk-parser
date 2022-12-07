@@ -505,9 +505,11 @@
 					public class func fromStr(s: String) -> Result_InvoiceParseOrSemanticErrorZ {
 						// native call variable prep
 						
+						let sPrimitiveWrapper = Str(value: s)
+				
 
 						// native method call
-						let nativeCallResult = Invoice_from_str(s.cType!)
+						let nativeCallResult = Invoice_from_str(sPrimitiveWrapper.cType!)
 
 						// cleanup
 						

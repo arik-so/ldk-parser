@@ -64,11 +64,13 @@
 					public init(a: [UInt8], b: [[UInt8]]) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = Signature(value: a)
+				
 						let bVector = Vec_SignatureZ(array: b)
 				
 
 						// native method call
-						let nativeCallResult = C2Tuple_SignatureCVec_SignatureZZ_new(a.cType!, bVector.cType!)
+						let nativeCallResult = C2Tuple_SignatureCVec_SignatureZZ_new(aPrimitiveWrapper.cType!, bVector.cType!)
 
 						// cleanup
 						

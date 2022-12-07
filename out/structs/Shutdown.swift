@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKShutdown>) in
-			Shutdown_set_channel_id(thisPtrPointer, val.cType!)
+			Shutdown_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -126,11 +128,13 @@
 					public init(channelIdArg: [UInt8], scriptpubkeyArg: [UInt8]) {
 						// native call variable prep
 						
+						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
+				
 						let scriptpubkeyArgVector = Vec_u8Z(array: scriptpubkeyArg)
 				
 
 						// native method call
-						let nativeCallResult = Shutdown_new(channelIdArg.cType!, scriptpubkeyArgVector.cType!)
+						let nativeCallResult = Shutdown_new(channelIdArgPrimitiveWrapper.cType!, scriptpubkeyArgVector.cType!)
 
 						// cleanup
 						
@@ -216,9 +220,11 @@
 					public class func read(ser: [UInt8]) -> Result_ShutdownDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = Shutdown_read(ser.cType!)
+						let nativeCallResult = Shutdown_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

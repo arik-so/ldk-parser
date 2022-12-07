@@ -57,11 +57,13 @@
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_chain_hash(thisPtrPointer, val.cType!)
+			UnsignedChannelUpdate_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -480,11 +482,13 @@
 					public init(chainHashArg: [UInt8], shortChannelIdArg: UInt64, timestampArg: UInt32, flagsArg: UInt8, cltvExpiryDeltaArg: UInt16, htlcMinimumMsatArg: UInt64, htlcMaximumMsatArg: UInt64, feeBaseMsatArg: UInt32, feeProportionalMillionthsArg: UInt32, excessDataArg: [UInt8]) {
 						// native call variable prep
 						
+						let chainHashArgPrimitiveWrapper = ThirtyTwoBytes(value: chainHashArg)
+				
 						let excessDataArgVector = Vec_u8Z(array: excessDataArg)
 				
 
 						// native method call
-						let nativeCallResult = UnsignedChannelUpdate_new(chainHashArg.cType!, shortChannelIdArg, timestampArg, flagsArg, cltvExpiryDeltaArg, htlcMinimumMsatArg, htlcMaximumMsatArg, feeBaseMsatArg, feeProportionalMillionthsArg, excessDataArgVector.cType!)
+						let nativeCallResult = UnsignedChannelUpdate_new(chainHashArgPrimitiveWrapper.cType!, shortChannelIdArg, timestampArg, flagsArg, cltvExpiryDeltaArg, htlcMinimumMsatArg, htlcMaximumMsatArg, feeBaseMsatArg, feeProportionalMillionthsArg, excessDataArgVector.cType!)
 
 						// cleanup
 						
@@ -570,9 +574,11 @@
 					public class func read(ser: [UInt8]) -> Result_UnsignedChannelUpdateDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = UnsignedChannelUpdate_read(ser.cType!)
+						let nativeCallResult = UnsignedChannelUpdate_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

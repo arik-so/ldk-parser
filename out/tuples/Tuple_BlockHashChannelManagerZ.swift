@@ -42,9 +42,11 @@
 					public init(a: [UInt8], b: ChannelManager) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = ThirtyTwoBytes(value: a)
+				
 
 						// native method call
-						let nativeCallResult = C2Tuple_BlockHashChannelManagerZ_new(a.cType!, b.cType!)
+						let nativeCallResult = C2Tuple_BlockHashChannelManagerZ_new(aPrimitiveWrapper.cType!, b.cType!)
 
 						// cleanup
 						
@@ -76,9 +78,11 @@
 					public class func read(ser: [UInt8], arg: ChannelManagerReadArgs) -> Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = C2Tuple_BlockHashChannelManagerZ_read(ser.cType!, arg.cType!)
+						let nativeCallResult = C2Tuple_BlockHashChannelManagerZ_read(serPrimitiveWrapper.cType!, arg.cType!)
 
 						// cleanup
 						

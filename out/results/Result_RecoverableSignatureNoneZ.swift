@@ -40,9 +40,11 @@
 					public init(o: [UInt8]) {
 						// native call variable prep
 						
+						let oPrimitiveWrapper = RecoverableSignature(value: o)
+				
 
 						// native method call
-						let nativeCallResult = CResult_RecoverableSignatureNoneZ_ok(o.cType!)
+						let nativeCallResult = CResult_RecoverableSignatureNoneZ_ok(oPrimitiveWrapper.cType!)
 
 						// cleanup
 						

@@ -149,9 +149,11 @@
 					override func nextOnionMessageForPeer(peerNodeId: [UInt8]) -> OnionMessage {
 						// native call variable prep
 						
+						let peerNodeIdPrimitiveWrapper = PublicKey(value: peerNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.next_onion_message_for_peer(self.cType!.this_arg, peerNodeId.cType!)
+						let nativeCallResult = self.cType!.next_onion_message_for_peer(self.cType!.this_arg, peerNodeIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						

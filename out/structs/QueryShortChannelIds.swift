@@ -64,11 +64,13 @@
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryShortChannelIds>) in
-			QueryShortChannelIds_set_chain_hash(thisPtrPointer, val.cType!)
+			QueryShortChannelIds_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -133,11 +135,13 @@
 					public init(chainHashArg: [UInt8], shortChannelIdsArg: [UInt64]) {
 						// native call variable prep
 						
+						let chainHashArgPrimitiveWrapper = ThirtyTwoBytes(value: chainHashArg)
+				
 						let shortChannelIdsArgVector = Vec_u64Z(array: shortChannelIdsArg)
 				
 
 						// native method call
-						let nativeCallResult = QueryShortChannelIds_new(chainHashArg.cType!, shortChannelIdsArgVector.cType!)
+						let nativeCallResult = QueryShortChannelIds_new(chainHashArgPrimitiveWrapper.cType!, shortChannelIdsArgVector.cType!)
 
 						// cleanup
 						
@@ -202,9 +206,11 @@
 					public class func read(ser: [UInt8]) -> Result_QueryShortChannelIdsDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = QueryShortChannelIds_read(ser.cType!)
+						let nativeCallResult = QueryShortChannelIds_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

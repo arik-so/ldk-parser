@@ -61,11 +61,13 @@
 					public func setYourLastPerCommitmentSecret(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDataLossProtect>) in
-			DataLossProtect_set_your_last_per_commitment_secret(thisPtrPointer, val.cType!)
+			DataLossProtect_set_your_last_per_commitment_secret(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -103,11 +105,13 @@
 					public func setMyCurrentPerCommitmentPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDataLossProtect>) in
-			DataLossProtect_set_my_current_per_commitment_point(thisPtrPointer, val.cType!)
+			DataLossProtect_set_my_current_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -124,9 +128,13 @@
 					public init(yourLastPerCommitmentSecretArg: [UInt8], myCurrentPerCommitmentPointArg: [UInt8]) {
 						// native call variable prep
 						
+						let yourLastPerCommitmentSecretArgPrimitiveWrapper = ThirtyTwoBytes(value: yourLastPerCommitmentSecretArg)
+				
+						let myCurrentPerCommitmentPointArgPrimitiveWrapper = PublicKey(value: myCurrentPerCommitmentPointArg)
+				
 
 						// native method call
-						let nativeCallResult = DataLossProtect_new(yourLastPerCommitmentSecretArg.cType!, myCurrentPerCommitmentPointArg.cType!)
+						let nativeCallResult = DataLossProtect_new(yourLastPerCommitmentSecretArgPrimitiveWrapper.cType!, myCurrentPerCommitmentPointArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						

@@ -233,9 +233,11 @@
 					public class func read(ser: [UInt8]) -> Result_COption_MonitorEventZDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = MonitorEvent_read(ser.cType!)
+						let nativeCallResult = MonitorEvent_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

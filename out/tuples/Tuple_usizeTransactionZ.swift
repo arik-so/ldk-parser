@@ -64,9 +64,11 @@
 					public init(a: UInt, b: [UInt8]) {
 						// native call variable prep
 						
+						let bPrimitiveWrapper = Transaction(value: b)
+				
 
 						// native method call
-						let nativeCallResult = C2Tuple_usizeTransactionZ_new(a, b.cType!)
+						let nativeCallResult = C2Tuple_usizeTransactionZ_new(a, bPrimitiveWrapper.cType!)
 
 						// cleanup
 						

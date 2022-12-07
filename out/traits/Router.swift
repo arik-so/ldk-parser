@@ -259,6 +259,8 @@
 					override func findRoute(payer: [UInt8], routeParams: RouteParameters, paymentHash: [UInt8]?, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs) -> Result_RouteLightningErrorZ {
 						// native call variable prep
 						
+						let payerPrimitiveWrapper = PublicKey(value: payer)
+				
 						let tupledPaymentHash = Bindings.arrayToUInt8Tuple32(array: paymentHash)
 					
 						let firstHopsVector = Vec_ChannelDetailsZ(array: firstHops)
@@ -271,7 +273,7 @@
 						withUnsafePointer(to: tupledPaymentHash) { (tupledPaymentHashPointer: UnsafePointer<UInt8Tuple32>) in
 			
 						withUnsafeMutablePointer(to: firstHopsVector.cType!) { (firstHopsVectorPointer: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>) in
-			self.cType!.find_route(self.cType!.this_arg, payer.cType!, routeParamsPointer, tupledPaymentHashPointer, firstHopsVectorPointer, inflightHtlcs.cType!)
+			self.cType!.find_route(self.cType!.this_arg, payerPrimitiveWrapper.cType!, routeParamsPointer, tupledPaymentHashPointer, firstHopsVectorPointer, inflightHtlcs.cType!)
 						}
 			
 						}

@@ -82,13 +82,15 @@
 					public init(messageHandler: MessageHandler, ourNodeSecret: [UInt8], currentTime: UInt32, ephemeralRandomData: [UInt8], logger: Logger, customMessageHandler: CustomMessageHandler) {
 						// native call variable prep
 						
+						let ourNodeSecretPrimitiveWrapper = SecretKey(value: ourNodeSecret)
+				
 						let tupledEphemeralRandomData = Bindings.arrayToUInt8Tuple32(array: ephemeralRandomData)
 					
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: tupledEphemeralRandomData) { (tupledEphemeralRandomDataPointer: UnsafePointer<UInt8Tuple32>) in
-			PeerManager_new(messageHandler.cType!, ourNodeSecret.cType!, currentTime, tupledEphemeralRandomDataPointer, logger.activate().cType!, customMessageHandler.activate().cType!)
+			PeerManager_new(messageHandler.cType!, ourNodeSecretPrimitiveWrapper.cType!, currentTime, tupledEphemeralRandomDataPointer, logger.activate().cType!, customMessageHandler.activate().cType!)
 						}
 			
 
@@ -144,13 +146,15 @@
 					public func newOutboundConnection(theirNodeId: [UInt8], descriptor: SocketDescriptor, remoteNetworkAddress: NetAddress?) -> Result_CVec_u8ZPeerHandleErrorZ {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 						let remoteNetworkAddressOption = Option_NetAddressZ(value: remoteNetworkAddress)
 				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_new_outbound_connection(thisArgPointer, theirNodeId.cType!, descriptor.activate().cType!, remoteNetworkAddressOption.cType!)
+			PeerManager_new_outbound_connection(thisArgPointer, theirNodeIdPrimitiveWrapper.cType!, descriptor.activate().cType!, remoteNetworkAddressOption.cType!)
 						}
 			
 
@@ -253,13 +257,15 @@
 					public func readEvent(peerDescriptor: SocketDescriptor, data: [UInt8]) -> Result_boolPeerHandleErrorZ {
 						// native call variable prep
 						
+						let dataPrimitiveWrapper = u8slice(value: data)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
 			
 						withUnsafeMutablePointer(to: peerDescriptor.activate().cType!) { (peerDescriptorPointer: UnsafeMutablePointer<LDKSocketDescriptor>) in
-			PeerManager_read_event(thisArgPointer, peerDescriptorPointer, data.cType!)
+			PeerManager_read_event(thisArgPointer, peerDescriptorPointer, dataPrimitiveWrapper.cType!)
 						}
 			
 						}
@@ -348,11 +354,13 @@
 					public func disconnectByNodeId(nodeId: [UInt8], noConnectionPossible: Bool) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_disconnect_by_node_id(thisArgPointer, nodeId.cType!, noConnectionPossible)
+			PeerManager_disconnect_by_node_id(thisArgPointer, nodeIdPrimitiveWrapper.cType!, noConnectionPossible)
 						}
 			
 
@@ -437,13 +445,17 @@
 					public func broadcastNodeAnnouncement(rgb: [UInt8], alias: [UInt8], addresses: [NetAddress]) {
 						// native call variable prep
 						
+						let rgbPrimitiveWrapper = ThreeBytes(value: rgb)
+				
+						let aliasPrimitiveWrapper = ThirtyTwoBytes(value: alias)
+				
 						let addressesVector = Vec_NetAddressZ(array: addresses)
 				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_broadcast_node_announcement(thisArgPointer, rgb.cType!, alias.cType!, addressesVector.cType!)
+			PeerManager_broadcast_node_announcement(thisArgPointer, rgbPrimitiveWrapper.cType!, aliasPrimitiveWrapper.cType!, addressesVector.cType!)
 						}
 			
 

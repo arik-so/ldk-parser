@@ -79,11 +79,13 @@
 					public func setNodeId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_set_node_id(thisPtrPointer, val.cType!)
+			ChannelCounterparty_set_node_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -353,13 +355,15 @@
 					public init(nodeIdArg: [UInt8], featuresArg: InitFeatures, unspendablePunishmentReserveArg: UInt64, forwardingInfoArg: CounterpartyForwardingInfo, outboundHtlcMinimumMsatArg: UInt64?, outboundHtlcMaximumMsatArg: UInt64?) {
 						// native call variable prep
 						
+						let nodeIdArgPrimitiveWrapper = PublicKey(value: nodeIdArg)
+				
 						let outboundHtlcMinimumMsatArgOption = Option_u64Z(value: outboundHtlcMinimumMsatArg)
 				
 						let outboundHtlcMaximumMsatArgOption = Option_u64Z(value: outboundHtlcMaximumMsatArg)
 				
 
 						// native method call
-						let nativeCallResult = ChannelCounterparty_new(nodeIdArg.cType!, featuresArg.cType!, unspendablePunishmentReserveArg, forwardingInfoArg.cType!, outboundHtlcMinimumMsatArgOption.cType!, outboundHtlcMaximumMsatArgOption.cType!)
+						let nativeCallResult = ChannelCounterparty_new(nodeIdArgPrimitiveWrapper.cType!, featuresArg.cType!, unspendablePunishmentReserveArg, forwardingInfoArg.cType!, outboundHtlcMinimumMsatArgOption.cType!, outboundHtlcMaximumMsatArgOption.cType!)
 
 						// cleanup
 						
@@ -416,9 +420,11 @@
 					public class func read(ser: [UInt8]) -> Result_ChannelCounterpartyDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ChannelCounterparty_read(ser.cType!)
+						let nativeCallResult = ChannelCounterparty_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

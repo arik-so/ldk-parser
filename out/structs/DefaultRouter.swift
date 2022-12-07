@@ -58,11 +58,13 @@
 					public init(networkGraph: NetworkGraph, logger: Logger, randomSeedBytes: [UInt8], scorer: LockableScore) {
 						// native call variable prep
 						
+						let randomSeedBytesPrimitiveWrapper = ThirtyTwoBytes(value: randomSeedBytes)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
-			DefaultRouter_new(networkGraphPointer, logger.activate().cType!, randomSeedBytes.cType!, scorer.activate().cType!)
+			DefaultRouter_new(networkGraphPointer, logger.activate().cType!, randomSeedBytesPrimitiveWrapper.cType!, scorer.activate().cType!)
 						}
 			
 

@@ -79,9 +79,11 @@
 					public init(a: [UInt8]) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = PublicKey(value: a)
+				
 
 						// native method call
-						let nativeCallResult = Destination_node(a.cType!)
+						let nativeCallResult = Destination_node(aPrimitiveWrapper.cType!)
 
 						// cleanup
 						

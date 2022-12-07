@@ -100,11 +100,13 @@
 					public func setBlockHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
-			WatchedOutput_set_block_hash(thisPtrPointer, val.cType!)
+			WatchedOutput_set_block_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -209,11 +211,13 @@
 					public init(blockHashArg: [UInt8], outpointArg: OutPoint, scriptPubkeyArg: [UInt8]) {
 						// native call variable prep
 						
+						let blockHashArgPrimitiveWrapper = ThirtyTwoBytes(value: blockHashArg)
+				
 						let scriptPubkeyArgVector = Vec_u8Z(array: scriptPubkeyArg)
 				
 
 						// native method call
-						let nativeCallResult = WatchedOutput_new(blockHashArg.cType!, outpointArg.cType!, scriptPubkeyArgVector.cType!)
+						let nativeCallResult = WatchedOutput_new(blockHashArgPrimitiveWrapper.cType!, outpointArg.cType!, scriptPubkeyArgVector.cType!)
 
 						// cleanup
 						

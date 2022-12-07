@@ -78,11 +78,13 @@
 					public func setA(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPayeePubKey>) in
-			PayeePubKey_set_a(thisPtrPointer, val.cType!)
+			PayeePubKey_set_a(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -99,9 +101,11 @@
 					public init(aArg: [UInt8]) {
 						// native call variable prep
 						
+						let aArgPrimitiveWrapper = PublicKey(value: aArg)
+				
 
 						// native method call
-						let nativeCallResult = PayeePubKey_new(aArg.cType!)
+						let nativeCallResult = PayeePubKey_new(aArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						

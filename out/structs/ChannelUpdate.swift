@@ -78,11 +78,13 @@
 					public func setSignature(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Signature(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdate>) in
-			ChannelUpdate_set_signature(thisPtrPointer, val.cType!)
+			ChannelUpdate_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -141,9 +143,11 @@
 					public init(signatureArg: [UInt8], contentsArg: UnsignedChannelUpdate) {
 						// native call variable prep
 						
+						let signatureArgPrimitiveWrapper = Signature(value: signatureArg)
+				
 
 						// native method call
-						let nativeCallResult = ChannelUpdate_new(signatureArg.cType!, contentsArg.cType!)
+						let nativeCallResult = ChannelUpdate_new(signatureArgPrimitiveWrapper.cType!, contentsArg.cType!)
 
 						// cleanup
 						
@@ -227,9 +231,11 @@
 					public class func read(ser: [UInt8]) -> Result_ChannelUpdateDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ChannelUpdate_read(ser.cType!)
+						let nativeCallResult = ChannelUpdate_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

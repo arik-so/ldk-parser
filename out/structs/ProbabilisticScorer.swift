@@ -329,11 +329,13 @@
 					public class func read(ser: [UInt8], argA: ProbabilisticScoringParameters, argB: NetworkGraph, argC: Logger) -> Result_ProbabilisticScorerDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: argB.cType!) { (argBPointer: UnsafePointer<LDKNetworkGraph>) in
-			ProbabilisticScorer_read(ser.cType!, argA.cType!, argBPointer, argC.activate().cType!)
+			ProbabilisticScorer_read(serPrimitiveWrapper.cType!, argA.cType!, argBPointer, argC.activate().cType!)
 						}
 			
 

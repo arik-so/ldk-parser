@@ -165,9 +165,11 @@
 					public class func read(ser: [UInt8]) -> Result_InvoiceFeaturesDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = InvoiceFeatures_read(ser.cType!)
+						let nativeCallResult = InvoiceFeatures_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

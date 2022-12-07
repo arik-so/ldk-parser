@@ -521,9 +521,11 @@
 					public class func read(ser: [UInt8]) -> Result_ChannelConfigDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ChannelConfig_read(ser.cType!)
+						let nativeCallResult = ChannelConfig_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

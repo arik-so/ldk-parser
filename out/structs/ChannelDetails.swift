@@ -60,11 +60,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
-			ChannelDetails_set_channel_id(thisPtrPointer, val.cType!)
+			ChannelDetails_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -1276,6 +1278,8 @@
 					public init(channelIdArg: [UInt8], counterpartyArg: ChannelCounterparty, fundingTxoArg: OutPoint, channelTypeArg: ChannelTypeFeatures, shortChannelIdArg: UInt64?, outboundScidAliasArg: UInt64?, inboundScidAliasArg: UInt64?, channelValueSatoshisArg: UInt64, unspendablePunishmentReserveArg: UInt64?, userChannelIdArg: UInt64, balanceMsatArg: UInt64, outboundCapacityMsatArg: UInt64, nextOutboundHtlcLimitMsatArg: UInt64, inboundCapacityMsatArg: UInt64, confirmationsRequiredArg: UInt32?, forceCloseSpendDelayArg: UInt16?, isOutboundArg: Bool, isChannelReadyArg: Bool, isUsableArg: Bool, isPublicArg: Bool, inboundHtlcMinimumMsatArg: UInt64?, inboundHtlcMaximumMsatArg: UInt64?, configArg: ChannelConfig) {
 						// native call variable prep
 						
+						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
+				
 						let shortChannelIdArgOption = Option_u64Z(value: shortChannelIdArg)
 				
 						let outboundScidAliasArgOption = Option_u64Z(value: outboundScidAliasArg)
@@ -1294,7 +1298,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelDetails_new(channelIdArg.cType!, counterpartyArg.cType!, fundingTxoArg.cType!, channelTypeArg.cType!, shortChannelIdArgOption.cType!, outboundScidAliasArgOption.cType!, inboundScidAliasArgOption.cType!, channelValueSatoshisArg, unspendablePunishmentReserveArgOption.cType!, userChannelIdArg, balanceMsatArg, outboundCapacityMsatArg, nextOutboundHtlcLimitMsatArg, inboundCapacityMsatArg, confirmationsRequiredArgOption.cType!, forceCloseSpendDelayArgOption.cType!, isOutboundArg, isChannelReadyArg, isUsableArg, isPublicArg, inboundHtlcMinimumMsatArgOption.cType!, inboundHtlcMaximumMsatArgOption.cType!, configArg.cType!)
+						let nativeCallResult = ChannelDetails_new(channelIdArgPrimitiveWrapper.cType!, counterpartyArg.cType!, fundingTxoArg.cType!, channelTypeArg.cType!, shortChannelIdArgOption.cType!, outboundScidAliasArgOption.cType!, inboundScidAliasArgOption.cType!, channelValueSatoshisArg, unspendablePunishmentReserveArgOption.cType!, userChannelIdArg, balanceMsatArg, outboundCapacityMsatArg, nextOutboundHtlcLimitMsatArg, inboundCapacityMsatArg, confirmationsRequiredArgOption.cType!, forceCloseSpendDelayArgOption.cType!, isOutboundArg, isChannelReadyArg, isUsableArg, isPublicArg, inboundHtlcMinimumMsatArgOption.cType!, inboundHtlcMaximumMsatArgOption.cType!, configArg.cType!)
 
 						// cleanup
 						
@@ -1403,9 +1407,11 @@
 					public class func read(ser: [UInt8]) -> Result_ChannelDetailsDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ChannelDetails_read(ser.cType!)
+						let nativeCallResult = ChannelDetails_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

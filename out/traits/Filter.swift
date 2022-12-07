@@ -203,11 +203,13 @@
 						
 						let tupledTxid = Bindings.arrayToUInt8Tuple32(array: txid)
 					
+						let scriptPubkeyPrimitiveWrapper = u8slice(value: scriptPubkey)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: tupledTxid) { (tupledTxidPointer: UnsafePointer<UInt8Tuple32>) in
-			self.cType!.register_tx(self.cType!.this_arg, tupledTxidPointer, scriptPubkey.cType!)
+			self.cType!.register_tx(self.cType!.this_arg, tupledTxidPointer, scriptPubkeyPrimitiveWrapper.cType!)
 						}
 			
 

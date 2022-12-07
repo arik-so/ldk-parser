@@ -60,11 +60,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKErrorMessage>) in
-			ErrorMessage_set_channel_id(thisPtrPointer, val.cType!)
+			ErrorMessage_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -108,11 +110,13 @@
 					public func setData(val: String) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Str(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKErrorMessage>) in
-			ErrorMessage_set_data(thisPtrPointer, val.cType!)
+			ErrorMessage_set_data(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -129,9 +133,13 @@
 					public init(channelIdArg: [UInt8], dataArg: String) {
 						// native call variable prep
 						
+						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
+				
+						let dataArgPrimitiveWrapper = Str(value: dataArg)
+				
 
 						// native method call
-						let nativeCallResult = ErrorMessage_new(channelIdArg.cType!, dataArg.cType!)
+						let nativeCallResult = ErrorMessage_new(channelIdArgPrimitiveWrapper.cType!, dataArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -215,9 +223,11 @@
 					public class func read(ser: [UInt8]) -> Result_ErrorMessageDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ErrorMessage_read(ser.cType!)
+						let nativeCallResult = ErrorMessage_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

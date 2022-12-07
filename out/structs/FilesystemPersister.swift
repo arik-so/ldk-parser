@@ -69,9 +69,11 @@
 					public init(pathToChannelData: String) {
 						// native call variable prep
 						
+						let pathToChannelDataPrimitiveWrapper = Str(value: pathToChannelData)
+				
 
 						// native method call
-						let nativeCallResult = FilesystemPersister_new(pathToChannelData.cType!)
+						let nativeCallResult = FilesystemPersister_new(pathToChannelDataPrimitiveWrapper.cType!)
 
 						// cleanup
 						

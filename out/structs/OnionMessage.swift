@@ -78,11 +78,13 @@
 					public func setBlindingPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOnionMessage>) in
-			OnionMessage_set_blinding_point(thisPtrPointer, val.cType!)
+			OnionMessage_set_blinding_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -147,9 +149,11 @@
 					public class func read(ser: [UInt8]) -> Result_OnionMessageDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = OnionMessage_read(ser.cType!)
+						let nativeCallResult = OnionMessage_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

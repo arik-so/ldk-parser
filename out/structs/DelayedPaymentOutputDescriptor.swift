@@ -121,11 +121,13 @@
 					public func setPerCommitmentPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_set_per_commitment_point(thisPtrPointer, val.cType!)
+			DelayedPaymentOutputDescriptor_set_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -253,11 +255,13 @@
 					public func setRevocationPubkey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_set_revocation_pubkey(thisPtrPointer, val.cType!)
+			DelayedPaymentOutputDescriptor_set_revocation_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -276,11 +280,13 @@
 					public func setChannelKeysId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_set_channel_keys_id(thisPtrPointer, val.cType!)
+			DelayedPaymentOutputDescriptor_set_channel_keys_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -339,9 +345,15 @@
 					public init(outpointArg: OutPoint, perCommitmentPointArg: [UInt8], toSelfDelayArg: UInt16, outputArg: TxOut, revocationPubkeyArg: [UInt8], channelKeysIdArg: [UInt8], channelValueSatoshisArg: UInt64) {
 						// native call variable prep
 						
+						let perCommitmentPointArgPrimitiveWrapper = PublicKey(value: perCommitmentPointArg)
+				
+						let revocationPubkeyArgPrimitiveWrapper = PublicKey(value: revocationPubkeyArg)
+				
+						let channelKeysIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelKeysIdArg)
+				
 
 						// native method call
-						let nativeCallResult = DelayedPaymentOutputDescriptor_new(outpointArg.cType!, perCommitmentPointArg.cType!, toSelfDelayArg, outputArg.cType!, revocationPubkeyArg.cType!, channelKeysIdArg.cType!, channelValueSatoshisArg)
+						let nativeCallResult = DelayedPaymentOutputDescriptor_new(outpointArg.cType!, perCommitmentPointArgPrimitiveWrapper.cType!, toSelfDelayArg, outputArg.cType!, revocationPubkeyArgPrimitiveWrapper.cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
 
 						// cleanup
 						
@@ -425,9 +437,11 @@
 					public class func read(ser: [UInt8]) -> Result_DelayedPaymentOutputDescriptorDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = DelayedPaymentOutputDescriptor_read(ser.cType!)
+						let nativeCallResult = DelayedPaymentOutputDescriptor_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

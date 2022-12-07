@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReady>) in
-			ChannelReady_set_channel_id(thisPtrPointer, val.cType!)
+			ChannelReady_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -99,11 +101,13 @@
 					public func setNextPerCommitmentPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReady>) in
-			ChannelReady_set_next_per_commitment_point(thisPtrPointer, val.cType!)
+			ChannelReady_set_next_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -166,11 +170,15 @@
 					public init(channelIdArg: [UInt8], nextPerCommitmentPointArg: [UInt8], shortChannelIdAliasArg: UInt64?) {
 						// native call variable prep
 						
+						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
+				
+						let nextPerCommitmentPointArgPrimitiveWrapper = PublicKey(value: nextPerCommitmentPointArg)
+				
 						let shortChannelIdAliasArgOption = Option_u64Z(value: shortChannelIdAliasArg)
 				
 
 						// native method call
-						let nativeCallResult = ChannelReady_new(channelIdArg.cType!, nextPerCommitmentPointArg.cType!, shortChannelIdAliasArgOption.cType!)
+						let nativeCallResult = ChannelReady_new(channelIdArgPrimitiveWrapper.cType!, nextPerCommitmentPointArgPrimitiveWrapper.cType!, shortChannelIdAliasArgOption.cType!)
 
 						// cleanup
 						
@@ -254,9 +262,11 @@
 					public class func read(ser: [UInt8]) -> Result_ChannelReadyDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ChannelReady_read(ser.cType!)
+						let nativeCallResult = ChannelReady_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

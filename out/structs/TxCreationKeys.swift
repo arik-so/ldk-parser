@@ -88,11 +88,13 @@
 					public func setPerCommitmentPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
-			TxCreationKeys_set_per_commitment_point(thisPtrPointer, val.cType!)
+			TxCreationKeys_set_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -134,11 +136,13 @@
 					public func setRevocationKey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
-			TxCreationKeys_set_revocation_key(thisPtrPointer, val.cType!)
+			TxCreationKeys_set_revocation_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -176,11 +180,13 @@
 					public func setBroadcasterHtlcKey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
-			TxCreationKeys_set_broadcaster_htlc_key(thisPtrPointer, val.cType!)
+			TxCreationKeys_set_broadcaster_htlc_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -218,11 +224,13 @@
 					public func setCountersignatoryHtlcKey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
-			TxCreationKeys_set_countersignatory_htlc_key(thisPtrPointer, val.cType!)
+			TxCreationKeys_set_countersignatory_htlc_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -260,11 +268,13 @@
 					public func setBroadcasterDelayedPaymentKey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
-			TxCreationKeys_set_broadcaster_delayed_payment_key(thisPtrPointer, val.cType!)
+			TxCreationKeys_set_broadcaster_delayed_payment_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -281,9 +291,19 @@
 					public init(perCommitmentPointArg: [UInt8], revocationKeyArg: [UInt8], broadcasterHtlcKeyArg: [UInt8], countersignatoryHtlcKeyArg: [UInt8], broadcasterDelayedPaymentKeyArg: [UInt8]) {
 						// native call variable prep
 						
+						let perCommitmentPointArgPrimitiveWrapper = PublicKey(value: perCommitmentPointArg)
+				
+						let revocationKeyArgPrimitiveWrapper = PublicKey(value: revocationKeyArg)
+				
+						let broadcasterHtlcKeyArgPrimitiveWrapper = PublicKey(value: broadcasterHtlcKeyArg)
+				
+						let countersignatoryHtlcKeyArgPrimitiveWrapper = PublicKey(value: countersignatoryHtlcKeyArg)
+				
+						let broadcasterDelayedPaymentKeyArgPrimitiveWrapper = PublicKey(value: broadcasterDelayedPaymentKeyArg)
+				
 
 						// native method call
-						let nativeCallResult = TxCreationKeys_new(perCommitmentPointArg.cType!, revocationKeyArg.cType!, broadcasterHtlcKeyArg.cType!, countersignatoryHtlcKeyArg.cType!, broadcasterDelayedPaymentKeyArg.cType!)
+						let nativeCallResult = TxCreationKeys_new(perCommitmentPointArgPrimitiveWrapper.cType!, revocationKeyArgPrimitiveWrapper.cType!, broadcasterHtlcKeyArgPrimitiveWrapper.cType!, countersignatoryHtlcKeyArgPrimitiveWrapper.cType!, broadcasterDelayedPaymentKeyArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -367,9 +387,11 @@
 					public class func read(ser: [UInt8]) -> Result_TxCreationKeysDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = TxCreationKeys_read(ser.cType!)
+						let nativeCallResult = TxCreationKeys_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -385,9 +407,19 @@
 					public class func deriveNew(perCommitmentPoint: [UInt8], broadcasterDelayedPaymentBase: [UInt8], broadcasterHtlcBase: [UInt8], countersignatoryRevocationBase: [UInt8], countersignatoryHtlcBase: [UInt8]) -> Result_TxCreationKeysErrorZ {
 						// native call variable prep
 						
+						let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
+				
+						let broadcasterDelayedPaymentBasePrimitiveWrapper = PublicKey(value: broadcasterDelayedPaymentBase)
+				
+						let broadcasterHtlcBasePrimitiveWrapper = PublicKey(value: broadcasterHtlcBase)
+				
+						let countersignatoryRevocationBasePrimitiveWrapper = PublicKey(value: countersignatoryRevocationBase)
+				
+						let countersignatoryHtlcBasePrimitiveWrapper = PublicKey(value: countersignatoryHtlcBase)
+				
 
 						// native method call
-						let nativeCallResult = TxCreationKeys_derive_new(perCommitmentPoint.cType!, broadcasterDelayedPaymentBase.cType!, broadcasterHtlcBase.cType!, countersignatoryRevocationBase.cType!, countersignatoryHtlcBase.cType!)
+						let nativeCallResult = TxCreationKeys_derive_new(perCommitmentPointPrimitiveWrapper.cType!, broadcasterDelayedPaymentBasePrimitiveWrapper.cType!, broadcasterHtlcBasePrimitiveWrapper.cType!, countersignatoryRevocationBasePrimitiveWrapper.cType!, countersignatoryHtlcBasePrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -403,13 +435,15 @@
 					public class func fromChannelStaticKeys(perCommitmentPoint: [UInt8], broadcasterKeys: ChannelPublicKeys, countersignatoryKeys: ChannelPublicKeys) -> Result_TxCreationKeysErrorZ {
 						// native call variable prep
 						
+						let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: broadcasterKeys.cType!) { (broadcasterKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
 			
 						withUnsafePointer(to: countersignatoryKeys.cType!) { (countersignatoryKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
-			TxCreationKeys_from_channel_static_keys(perCommitmentPoint.cType!, broadcasterKeysPointer, countersignatoryKeysPointer)
+			TxCreationKeys_from_channel_static_keys(perCommitmentPointPrimitiveWrapper.cType!, broadcasterKeysPointer, countersignatoryKeysPointer)
 						}
 			
 						}

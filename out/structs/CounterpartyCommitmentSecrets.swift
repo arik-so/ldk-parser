@@ -122,11 +122,13 @@
 					public func provideSecret(idx: UInt64, secret: [UInt8]) -> Result_NoneNoneZ {
 						// native call variable prep
 						
+						let secretPrimitiveWrapper = ThirtyTwoBytes(value: secret)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKCounterpartyCommitmentSecrets>) in
-			CounterpartyCommitmentSecrets_provide_secret(thisArgPointer, idx, secret.cType!)
+			CounterpartyCommitmentSecrets_provide_secret(thisArgPointer, idx, secretPrimitiveWrapper.cType!)
 						}
 			
 
@@ -196,9 +198,11 @@
 					public class func read(ser: [UInt8]) -> Result_CounterpartyCommitmentSecretsDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = CounterpartyCommitmentSecrets_read(ser.cType!)
+						let nativeCallResult = CounterpartyCommitmentSecrets_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

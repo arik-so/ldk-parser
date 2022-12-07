@@ -246,9 +246,11 @@
 					public class func read(ser: [UInt8]) -> Result_CounterpartyForwardingInfoDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = CounterpartyForwardingInfo_read(ser.cType!)
+						let nativeCallResult = CounterpartyForwardingInfo_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

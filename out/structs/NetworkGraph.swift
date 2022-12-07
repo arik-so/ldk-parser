@@ -100,9 +100,11 @@
 					public class func read(ser: [UInt8], arg: Logger) -> Result_NetworkGraphDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = NetworkGraph_read(ser.cType!, arg.activate().cType!)
+						let nativeCallResult = NetworkGraph_read(serPrimitiveWrapper.cType!, arg.activate().cType!)
 
 						// cleanup
 						
@@ -117,9 +119,11 @@
 					public init(genesisHash: [UInt8], logger: Logger) {
 						// native call variable prep
 						
+						let genesisHashPrimitiveWrapper = ThirtyTwoBytes(value: genesisHash)
+				
 
 						// native method call
-						let nativeCallResult = NetworkGraph_new(genesisHash.cType!, logger.activate().cType!)
+						let nativeCallResult = NetworkGraph_new(genesisHashPrimitiveWrapper.cType!, logger.activate().cType!)
 
 						// cleanup
 						
@@ -328,11 +332,15 @@
 					public func addChannelFromPartialAnnouncement(shortChannelId: UInt64, timestamp: UInt64, features: ChannelFeatures, nodeId_1: [UInt8], nodeId_2: [UInt8]) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
+						let nodeId_1PrimitiveWrapper = PublicKey(value: nodeId_1)
+				
+						let nodeId_2PrimitiveWrapper = PublicKey(value: nodeId_2)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_add_channel_from_partial_announcement(thisArgPointer, shortChannelId, timestamp, features.cType!, nodeId_1.cType!, nodeId_2.cType!)
+			NetworkGraph_add_channel_from_partial_announcement(thisArgPointer, shortChannelId, timestamp, features.cType!, nodeId_1PrimitiveWrapper.cType!, nodeId_2PrimitiveWrapper.cType!)
 						}
 			
 
@@ -374,11 +382,13 @@
 					public func nodeFailedPermanent(nodeId: [UInt8]) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_node_failed_permanent(thisArgPointer, nodeId.cType!)
+			NetworkGraph_node_failed_permanent(thisArgPointer, nodeIdPrimitiveWrapper.cType!)
 						}
 			
 

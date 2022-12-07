@@ -143,11 +143,13 @@
 					public func setRgb(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThreeBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_set_rgb(thisPtrPointer, val.cType!)
+			NodeAnnouncementInfo_set_rgb(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -323,11 +325,13 @@
 					public init(featuresArg: NodeFeatures, lastUpdateArg: UInt32, rgbArg: [UInt8], aliasArg: NodeAlias, addressesArg: [NetAddress], announcementMessageArg: NodeAnnouncement) {
 						// native call variable prep
 						
+						let rgbArgPrimitiveWrapper = ThreeBytes(value: rgbArg)
+				
 						let addressesArgVector = Vec_NetAddressZ(array: addressesArg)
 				
 
 						// native method call
-						let nativeCallResult = NodeAnnouncementInfo_new(featuresArg.cType!, lastUpdateArg, rgbArg.cType!, aliasArg.cType!, addressesArgVector.cType!, announcementMessageArg.cType!)
+						let nativeCallResult = NodeAnnouncementInfo_new(featuresArg.cType!, lastUpdateArg, rgbArgPrimitiveWrapper.cType!, aliasArg.cType!, addressesArgVector.cType!, announcementMessageArg.cType!)
 
 						// cleanup
 						
@@ -413,9 +417,11 @@
 					public class func read(ser: [UInt8]) -> Result_NodeAnnouncementInfoDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = NodeAnnouncementInfo_read(ser.cType!)
+						let nativeCallResult = NodeAnnouncementInfo_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

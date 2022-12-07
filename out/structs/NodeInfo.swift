@@ -321,9 +321,11 @@
 					public class func read(ser: [UInt8]) -> Result_NodeInfoDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = NodeInfo_read(ser.cType!)
+						let nativeCallResult = NodeInfo_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

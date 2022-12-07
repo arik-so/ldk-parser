@@ -104,9 +104,11 @@
 					public class func read(ser: [UInt8]) -> Result_CommitmentTransactionDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = CommitmentTransaction_read(ser.cType!)
+						let nativeCallResult = CommitmentTransaction_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

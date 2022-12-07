@@ -60,11 +60,13 @@
 					public func setTxid(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOutPoint>) in
-			OutPoint_set_txid(thisPtrPointer, val.cType!)
+			OutPoint_set_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -123,9 +125,11 @@
 					public init(txidArg: [UInt8], indexArg: UInt16) {
 						// native call variable prep
 						
+						let txidArgPrimitiveWrapper = ThirtyTwoBytes(value: txidArg)
+				
 
 						// native method call
-						let nativeCallResult = OutPoint_new(txidArg.cType!, indexArg)
+						let nativeCallResult = OutPoint_new(txidArgPrimitiveWrapper.cType!, indexArg)
 
 						// cleanup
 						
@@ -251,9 +255,11 @@
 					public class func read(ser: [UInt8]) -> Result_OutPointDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = OutPoint_read(ser.cType!)
+						let nativeCallResult = OutPoint_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

@@ -138,9 +138,11 @@
 					public class func read(ser: [UInt8], arg: UInt64) -> Result_FixedPenaltyScorerDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = FixedPenaltyScorer_read(ser.cType!, arg)
+						let nativeCallResult = FixedPenaltyScorer_read(serPrimitiveWrapper.cType!, arg)
 
 						// cleanup
 						

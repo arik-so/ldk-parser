@@ -145,9 +145,11 @@
 					override func broadcastTransaction(tx: [UInt8]) {
 						// native call variable prep
 						
+						let txPrimitiveWrapper = Transaction(value: tx)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.broadcast_transaction(self.cType!.this_arg, tx.cType!)
+						let nativeCallResult = self.cType!.broadcast_transaction(self.cType!.this_arg, txPrimitiveWrapper.cType!)
 
 						// cleanup
 						

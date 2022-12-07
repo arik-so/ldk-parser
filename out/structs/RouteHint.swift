@@ -214,9 +214,11 @@
 					public class func read(ser: [UInt8]) -> Result_RouteHintDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = RouteHint_read(ser.cType!)
+						let nativeCallResult = RouteHint_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

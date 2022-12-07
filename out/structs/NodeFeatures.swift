@@ -165,9 +165,11 @@
 					public class func read(ser: [UInt8]) -> Result_NodeFeaturesDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = NodeFeatures_read(ser.cType!)
+						let nativeCallResult = NodeFeatures_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

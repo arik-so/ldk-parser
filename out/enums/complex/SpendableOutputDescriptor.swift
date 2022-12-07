@@ -245,9 +245,11 @@
 					public class func read(ser: [UInt8]) -> Result_SpendableOutputDescriptorDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = SpendableOutputDescriptor_read(ser.cType!)
+						let nativeCallResult = SpendableOutputDescriptor_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

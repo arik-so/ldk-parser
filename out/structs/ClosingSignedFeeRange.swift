@@ -233,9 +233,11 @@
 					public class func read(ser: [UInt8]) -> Result_ClosingSignedFeeRangeDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ClosingSignedFeeRange_read(ser.cType!)
+						let nativeCallResult = ClosingSignedFeeRange_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

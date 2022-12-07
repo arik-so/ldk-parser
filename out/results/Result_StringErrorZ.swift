@@ -40,9 +40,11 @@
 					public init(o: String) {
 						// native call variable prep
 						
+						let oPrimitiveWrapper = Str(value: o)
+				
 
 						// native method call
-						let nativeCallResult = CResult_StringErrorZ_ok(o.cType!)
+						let nativeCallResult = CResult_StringErrorZ_ok(oPrimitiveWrapper.cType!)
 
 						// cleanup
 						

@@ -80,11 +80,13 @@
 					public func setFundingPubkey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
-			ChannelPublicKeys_set_funding_pubkey(thisPtrPointer, val.cType!)
+			ChannelPublicKeys_set_funding_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -128,11 +130,13 @@
 					public func setRevocationBasepoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
-			ChannelPublicKeys_set_revocation_basepoint(thisPtrPointer, val.cType!)
+			ChannelPublicKeys_set_revocation_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -174,11 +178,13 @@
 					public func setPaymentPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
-			ChannelPublicKeys_set_payment_point(thisPtrPointer, val.cType!)
+			ChannelPublicKeys_set_payment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -220,11 +226,13 @@
 					public func setDelayedPaymentBasepoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
-			ChannelPublicKeys_set_delayed_payment_basepoint(thisPtrPointer, val.cType!)
+			ChannelPublicKeys_set_delayed_payment_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -264,11 +272,13 @@
 					public func setHtlcBasepoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
-			ChannelPublicKeys_set_htlc_basepoint(thisPtrPointer, val.cType!)
+			ChannelPublicKeys_set_htlc_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -285,9 +295,19 @@
 					public init(fundingPubkeyArg: [UInt8], revocationBasepointArg: [UInt8], paymentPointArg: [UInt8], delayedPaymentBasepointArg: [UInt8], htlcBasepointArg: [UInt8]) {
 						// native call variable prep
 						
+						let fundingPubkeyArgPrimitiveWrapper = PublicKey(value: fundingPubkeyArg)
+				
+						let revocationBasepointArgPrimitiveWrapper = PublicKey(value: revocationBasepointArg)
+				
+						let paymentPointArgPrimitiveWrapper = PublicKey(value: paymentPointArg)
+				
+						let delayedPaymentBasepointArgPrimitiveWrapper = PublicKey(value: delayedPaymentBasepointArg)
+				
+						let htlcBasepointArgPrimitiveWrapper = PublicKey(value: htlcBasepointArg)
+				
 
 						// native method call
-						let nativeCallResult = ChannelPublicKeys_new(fundingPubkeyArg.cType!, revocationBasepointArg.cType!, paymentPointArg.cType!, delayedPaymentBasepointArg.cType!, htlcBasepointArg.cType!)
+						let nativeCallResult = ChannelPublicKeys_new(fundingPubkeyArgPrimitiveWrapper.cType!, revocationBasepointArgPrimitiveWrapper.cType!, paymentPointArgPrimitiveWrapper.cType!, delayedPaymentBasepointArgPrimitiveWrapper.cType!, htlcBasepointArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -371,9 +391,11 @@
 					public class func read(ser: [UInt8]) -> Result_ChannelPublicKeysDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ChannelPublicKeys_read(ser.cType!)
+						let nativeCallResult = ChannelPublicKeys_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

@@ -64,9 +64,11 @@
 					public init(a: [UInt8], b: BindingsType) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = PublicKey(value: a)
+				
 
 						// native method call
-						let nativeCallResult = C2Tuple_PublicKeyTypeZ_new(a.cType!, b.activate().cType!)
+						let nativeCallResult = C2Tuple_PublicKeyTypeZ_new(aPrimitiveWrapper.cType!, b.activate().cType!)
 
 						// cleanup
 						

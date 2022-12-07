@@ -146,9 +146,11 @@
 					public init(nodeId: [UInt8], isPermanent: Bool) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = NetworkUpdate_node_failure(nodeId.cType!, isPermanent)
+						let nativeCallResult = NetworkUpdate_node_failure(nodeIdPrimitiveWrapper.cType!, isPermanent)
 
 						// cleanup
 						
@@ -210,9 +212,11 @@
 					public class func read(ser: [UInt8]) -> Result_COption_NetworkUpdateZDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = NetworkUpdate_read(ser.cType!)
+						let nativeCallResult = NetworkUpdate_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

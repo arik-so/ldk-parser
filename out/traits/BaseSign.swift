@@ -831,13 +831,15 @@
 					override func signJusticeRevokedOutput(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
+						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx)
+				
 						let tupledPerCommitmentKey = Bindings.arrayToUInt8Tuple32(array: perCommitmentKey)
 					
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: tupledPerCommitmentKey) { (tupledPerCommitmentKeyPointer: UnsafePointer<UInt8Tuple32>) in
-			self.cType!.sign_justice_revoked_output(self.cType!.this_arg, justiceTx.cType!, input, amount, tupledPerCommitmentKeyPointer)
+			self.cType!.sign_justice_revoked_output(self.cType!.this_arg, justiceTxPrimitiveWrapper.cType!, input, amount, tupledPerCommitmentKeyPointer)
 						}
 			
 
@@ -870,6 +872,8 @@
 					override func signJusticeRevokedHtlc(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?, htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
+						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx)
+				
 						let tupledPerCommitmentKey = Bindings.arrayToUInt8Tuple32(array: perCommitmentKey)
 					
 
@@ -878,7 +882,7 @@
 						withUnsafePointer(to: tupledPerCommitmentKey) { (tupledPerCommitmentKeyPointer: UnsafePointer<UInt8Tuple32>) in
 			
 						withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
-			self.cType!.sign_justice_revoked_htlc(self.cType!.this_arg, justiceTx.cType!, input, amount, tupledPerCommitmentKeyPointer, htlcPointer)
+			self.cType!.sign_justice_revoked_htlc(self.cType!.this_arg, justiceTxPrimitiveWrapper.cType!, input, amount, tupledPerCommitmentKeyPointer, htlcPointer)
 						}
 			
 						}
@@ -913,11 +917,15 @@
 					override func signCounterpartyHtlcTransaction(htlcTx: [UInt8], input: UInt, amount: UInt64, perCommitmentPoint: [UInt8], htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
+						let htlcTxPrimitiveWrapper = Transaction(value: htlcTx)
+				
+						let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
-			self.cType!.sign_counterparty_htlc_transaction(self.cType!.this_arg, htlcTx.cType!, input, amount, perCommitmentPoint.cType!, htlcPointer)
+			self.cType!.sign_counterparty_htlc_transaction(self.cType!.this_arg, htlcTxPrimitiveWrapper.cType!, input, amount, perCommitmentPointPrimitiveWrapper.cType!, htlcPointer)
 						}
 			
 
@@ -959,9 +967,11 @@
 					override func signHolderAnchorInput(anchorTx: [UInt8], input: UInt) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
+						let anchorTxPrimitiveWrapper = Transaction(value: anchorTx)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.sign_holder_anchor_input(self.cType!.this_arg, anchorTx.cType!, input)
+						let nativeCallResult = self.cType!.sign_holder_anchor_input(self.cType!.this_arg, anchorTxPrimitiveWrapper.cType!, input)
 
 						// cleanup
 						

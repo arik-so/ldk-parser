@@ -66,9 +66,11 @@
 						
 						let bVector = Vec_MonitorEventZ(array: b)
 				
+						let cPrimitiveWrapper = PublicKey(value: c)
+				
 
 						// native method call
-						let nativeCallResult = C3Tuple_OutPointCVec_MonitorEventZPublicKeyZ_new(a.cType!, bVector.cType!, c.cType!)
+						let nativeCallResult = C3Tuple_OutPointCVec_MonitorEventZPublicKeyZ_new(a.cType!, bVector.cType!, cPrimitiveWrapper.cType!)
 
 						// cleanup
 						

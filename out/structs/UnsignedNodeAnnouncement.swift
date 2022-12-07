@@ -164,11 +164,13 @@
 					public func setNodeId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
-			UnsignedNodeAnnouncement_set_node_id(thisPtrPointer, val.cType!)
+			UnsignedNodeAnnouncement_set_node_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -185,11 +187,13 @@
 					public func setRgb(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThreeBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
-			UnsignedNodeAnnouncement_set_rgb(thisPtrPointer, val.cType!)
+			UnsignedNodeAnnouncement_set_rgb(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -207,11 +211,13 @@
 					public func setAlias(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
-			UnsignedNodeAnnouncement_set_alias(thisPtrPointer, val.cType!)
+			UnsignedNodeAnnouncement_set_alias(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -345,9 +351,11 @@
 					public class func read(ser: [UInt8]) -> Result_UnsignedNodeAnnouncementDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = UnsignedNodeAnnouncement_read(ser.cType!)
+						let nativeCallResult = UnsignedNodeAnnouncement_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

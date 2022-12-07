@@ -38,7 +38,7 @@
 						self.instanceNumber = Self.instanceCounter
 
 						if let value = value {
-							self.cType = COption_ScalarZ_some(some.cType!)
+							self.cType = COption_ScalarZ_some(somePrimitiveWrapper.cType!)
 						} else {
 							self.cType = COption_ScalarZ_none()
 						}

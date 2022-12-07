@@ -85,11 +85,13 @@
 					public func getSighashAll(fundingRedeemscript: [UInt8], channelValueSatoshis: UInt64) -> [UInt8] {
 						// native call variable prep
 						
+						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKTrustedClosingTransaction>) in
-			TrustedClosingTransaction_get_sighash_all(thisArgPointer, fundingRedeemscript.cType!, channelValueSatoshis)
+			TrustedClosingTransaction_get_sighash_all(thisArgPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
 						}
 			
 
@@ -109,13 +111,15 @@
 						
 						let tupledFundingKey = Bindings.arrayToUInt8Tuple32(array: fundingKey)
 					
+						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKTrustedClosingTransaction>) in
 			
 						withUnsafePointer(to: tupledFundingKey) { (tupledFundingKeyPointer: UnsafePointer<UInt8Tuple32>) in
-			TrustedClosingTransaction_sign(thisArgPointer, tupledFundingKeyPointer, fundingRedeemscript.cType!, channelValueSatoshis)
+			TrustedClosingTransaction_sign(thisArgPointer, tupledFundingKeyPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
 						}
 			
 						}

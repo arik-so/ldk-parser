@@ -87,11 +87,13 @@
 					public func updateNetworkGraph(updateData: [UInt8]) -> Result_u32GraphSyncErrorZ {
 						// native call variable prep
 						
+						let updateDataPrimitiveWrapper = u8slice(value: updateData)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRapidGossipSync>) in
-			RapidGossipSync_update_network_graph(thisArgPointer, updateData.cType!)
+			RapidGossipSync_update_network_graph(thisArgPointer, updateDataPrimitiveWrapper.cType!)
 						}
 			
 

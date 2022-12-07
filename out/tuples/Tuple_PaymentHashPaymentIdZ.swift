@@ -64,9 +64,13 @@
 					public init(a: [UInt8], b: [UInt8]) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = ThirtyTwoBytes(value: a)
+				
+						let bPrimitiveWrapper = ThirtyTwoBytes(value: b)
+				
 
 						// native method call
-						let nativeCallResult = C2Tuple_PaymentHashPaymentIdZ_new(a.cType!, b.cType!)
+						let nativeCallResult = C2Tuple_PaymentHashPaymentIdZ_new(aPrimitiveWrapper.cType!, bPrimitiveWrapper.cType!)
 
 						// cleanup
 						

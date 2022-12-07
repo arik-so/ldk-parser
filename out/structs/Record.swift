@@ -121,11 +121,13 @@
 					public func setArgs(val: String) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Str(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRecord>) in
-			Record_set_args(thisPtrPointer, val.cType!)
+			Record_set_args(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -163,11 +165,13 @@
 					public func setModulePath(val: String) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Str(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRecord>) in
-			Record_set_module_path(thisPtrPointer, val.cType!)
+			Record_set_module_path(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -205,11 +209,13 @@
 					public func setFile(val: String) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Str(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRecord>) in
-			Record_set_file(thisPtrPointer, val.cType!)
+			Record_set_file(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 

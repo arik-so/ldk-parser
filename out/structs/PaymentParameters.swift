@@ -78,11 +78,13 @@
 					public func setPayeePubkey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
-			PaymentParameters_set_payee_pubkey(thisPtrPointer, val.cType!)
+			PaymentParameters_set_payee_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -464,6 +466,8 @@
 					public init(payeePubkeyArg: [UInt8], featuresArg: InvoiceFeatures, routeHintsArg: [RouteHint], expiryTimeArg: UInt64?, maxTotalCltvExpiryDeltaArg: UInt32, maxPathCountArg: UInt8, maxChannelSaturationPowerOfHalfArg: UInt8, previouslyFailedChannelsArg: [UInt64]) {
 						// native call variable prep
 						
+						let payeePubkeyArgPrimitiveWrapper = PublicKey(value: payeePubkeyArg)
+				
 						let routeHintsArgVector = Vec_RouteHintZ(array: routeHintsArg)
 				
 						let expiryTimeArgOption = Option_u64Z(value: expiryTimeArg)
@@ -472,7 +476,7 @@
 				
 
 						// native method call
-						let nativeCallResult = PaymentParameters_new(payeePubkeyArg.cType!, featuresArg.cType!, routeHintsArgVector.cType!, expiryTimeArgOption.cType!, maxTotalCltvExpiryDeltaArg, maxPathCountArg, maxChannelSaturationPowerOfHalfArg, previouslyFailedChannelsArgVector.cType!)
+						let nativeCallResult = PaymentParameters_new(payeePubkeyArgPrimitiveWrapper.cType!, featuresArg.cType!, routeHintsArgVector.cType!, expiryTimeArgOption.cType!, maxTotalCltvExpiryDeltaArg, maxPathCountArg, maxChannelSaturationPowerOfHalfArg, previouslyFailedChannelsArgVector.cType!)
 
 						// cleanup
 						
@@ -581,9 +585,11 @@
 					public class func read(ser: [UInt8]) -> Result_PaymentParametersDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = PaymentParameters_read(ser.cType!)
+						let nativeCallResult = PaymentParameters_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -598,9 +604,11 @@
 					public init(payeePubkey: [UInt8]) {
 						// native call variable prep
 						
+						let payeePubkeyPrimitiveWrapper = PublicKey(value: payeePubkey)
+				
 
 						// native method call
-						let nativeCallResult = PaymentParameters_from_node_id(payeePubkey.cType!)
+						let nativeCallResult = PaymentParameters_from_node_id(payeePubkeyPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -615,9 +623,11 @@
 					public init(payeePubkey: [UInt8]) {
 						// native call variable prep
 						
+						let payeePubkeyPrimitiveWrapper = PublicKey(value: payeePubkey)
+				
 
 						// native method call
-						let nativeCallResult = PaymentParameters_for_keysend(payeePubkey.cType!)
+						let nativeCallResult = PaymentParameters_for_keysend(payeePubkeyPrimitiveWrapper.cType!)
 
 						// cleanup
 						

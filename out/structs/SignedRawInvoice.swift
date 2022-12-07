@@ -235,9 +235,11 @@
 					public class func fromStr(s: String) -> Result_SignedRawInvoiceParseErrorZ {
 						// native call variable prep
 						
+						let sPrimitiveWrapper = Str(value: s)
+				
 
 						// native method call
-						let nativeCallResult = SignedRawInvoice_from_str(s.cType!)
+						let nativeCallResult = SignedRawInvoice_from_str(sPrimitiveWrapper.cType!)
 
 						// cleanup
 						

@@ -60,11 +60,13 @@
 					public func setA(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAlias>) in
-			NodeAlias_set_a(thisPtrPointer, val.cType!)
+			NodeAlias_set_a(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -81,9 +83,11 @@
 					public init(aArg: [UInt8]) {
 						// native call variable prep
 						
+						let aArgPrimitiveWrapper = ThirtyTwoBytes(value: aArg)
+				
 
 						// native method call
-						let nativeCallResult = NodeAlias_new(aArg.cType!)
+						let nativeCallResult = NodeAlias_new(aArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -167,9 +171,11 @@
 					public class func read(ser: [UInt8]) -> Result_NodeAliasDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = NodeAlias_read(ser.cType!)
+						let nativeCallResult = NodeAlias_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

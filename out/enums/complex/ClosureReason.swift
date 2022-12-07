@@ -157,9 +157,11 @@
 					public init(peerMsg: String) {
 						// native call variable prep
 						
+						let peerMsgPrimitiveWrapper = Str(value: peerMsg)
+				
 
 						// native method call
-						let nativeCallResult = ClosureReason_counterparty_force_closed(peerMsg.cType!)
+						let nativeCallResult = ClosureReason_counterparty_force_closed(peerMsgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -242,9 +244,11 @@
 					public init(err: String) {
 						// native call variable prep
 						
+						let errPrimitiveWrapper = Str(value: err)
+				
 
 						// native method call
-						let nativeCallResult = ClosureReason_processing_error(err.cType!)
+						let nativeCallResult = ClosureReason_processing_error(errPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -340,9 +344,11 @@
 					public class func read(ser: [UInt8]) -> Result_COption_ClosureReasonZDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ClosureReason_read(ser.cType!)
+						let nativeCallResult = ClosureReason_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

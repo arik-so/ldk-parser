@@ -57,11 +57,13 @@
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOpenChannel>) in
-			OpenChannel_set_chain_hash(thisPtrPointer, val.cType!)
+			OpenChannel_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -78,11 +80,13 @@
 					public func setTemporaryChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOpenChannel>) in
-			OpenChannel_set_temporary_channel_id(thisPtrPointer, val.cType!)
+			OpenChannel_set_temporary_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -498,11 +502,13 @@
 					public func setFundingPubkey(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOpenChannel>) in
-			OpenChannel_set_funding_pubkey(thisPtrPointer, val.cType!)
+			OpenChannel_set_funding_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -540,11 +546,13 @@
 					public func setRevocationBasepoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOpenChannel>) in
-			OpenChannel_set_revocation_basepoint(thisPtrPointer, val.cType!)
+			OpenChannel_set_revocation_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -582,11 +590,13 @@
 					public func setPaymentPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOpenChannel>) in
-			OpenChannel_set_payment_point(thisPtrPointer, val.cType!)
+			OpenChannel_set_payment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -624,11 +634,13 @@
 					public func setDelayedPaymentBasepoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOpenChannel>) in
-			OpenChannel_set_delayed_payment_basepoint(thisPtrPointer, val.cType!)
+			OpenChannel_set_delayed_payment_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -666,11 +678,13 @@
 					public func setHtlcBasepoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOpenChannel>) in
-			OpenChannel_set_htlc_basepoint(thisPtrPointer, val.cType!)
+			OpenChannel_set_htlc_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -708,11 +722,13 @@
 					public func setFirstPerCommitmentPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOpenChannel>) in
-			OpenChannel_set_first_per_commitment_point(thisPtrPointer, val.cType!)
+			OpenChannel_set_first_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -903,9 +919,11 @@
 					public class func read(ser: [UInt8]) -> Result_OpenChannelDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = OpenChannel_read(ser.cType!)
+						let nativeCallResult = OpenChannel_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

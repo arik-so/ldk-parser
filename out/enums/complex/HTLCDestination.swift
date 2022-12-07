@@ -113,9 +113,13 @@
 					public init(nodeId: [UInt8], channelId: [UInt8]) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
+						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
+				
 
 						// native method call
-						let nativeCallResult = HTLCDestination_next_hop_channel(nodeId.cType!, channelId.cType!)
+						let nativeCallResult = HTLCDestination_next_hop_channel(nodeIdPrimitiveWrapper.cType!, channelIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -147,9 +151,11 @@
 					public init(paymentHash: [UInt8]) {
 						// native call variable prep
 						
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 
 						// native method call
-						let nativeCallResult = HTLCDestination_failed_payment(paymentHash.cType!)
+						let nativeCallResult = HTLCDestination_failed_payment(paymentHashPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -211,9 +217,11 @@
 					public class func read(ser: [UInt8]) -> Result_COption_HTLCDestinationZDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = HTLCDestination_read(ser.cType!)
+						let nativeCallResult = HTLCDestination_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

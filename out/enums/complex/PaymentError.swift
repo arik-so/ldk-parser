@@ -106,9 +106,11 @@
 					public init(a: String) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = Str(value: a)
+				
 
 						// native method call
-						let nativeCallResult = PaymentError_invoice(a.cType!)
+						let nativeCallResult = PaymentError_invoice(aPrimitiveWrapper.cType!)
 
 						// cleanup
 						

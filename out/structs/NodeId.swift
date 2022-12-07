@@ -78,9 +78,11 @@
 					public init(pubkey: [UInt8]) {
 						// native call variable prep
 						
+						let pubkeyPrimitiveWrapper = PublicKey(value: pubkey)
+				
 
 						// native method call
-						let nativeCallResult = NodeId_from_pubkey(pubkey.cType!)
+						let nativeCallResult = NodeId_from_pubkey(pubkeyPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -158,9 +160,11 @@
 					public class func read(ser: [UInt8]) -> Result_NodeIdDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = NodeId_read(ser.cType!)
+						let nativeCallResult = NodeId_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

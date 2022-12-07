@@ -480,11 +480,13 @@
 					override func ecdh(recipient: Recipient, otherKey: [UInt8], tweak: [UInt8]?) -> Result_SharedSecretNoneZ {
 						// native call variable prep
 						
+						let otherKeyPrimitiveWrapper = PublicKey(value: otherKey)
+				
 						let tweakOption = Option_ScalarZ(value: tweak)
 				
 
 						// native method call
-						let nativeCallResult = self.cType!.ecdh(self.cType!.this_arg, recipient.getCValue(), otherKey.cType!, tweakOption.cType!)
+						let nativeCallResult = self.cType!.ecdh(self.cType!.this_arg, recipient.getCValue(), otherKeyPrimitiveWrapper.cType!, tweakOption.cType!)
 
 						// cleanup
 						
@@ -585,9 +587,11 @@
 					override func readChanSigner(reader: [UInt8]) -> Result_SignDecodeErrorZ {
 						// native call variable prep
 						
+						let readerPrimitiveWrapper = u8slice(value: reader)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.read_chan_signer(self.cType!.this_arg, reader.cType!)
+						let nativeCallResult = self.cType!.read_chan_signer(self.cType!.this_arg, readerPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -610,11 +614,13 @@
 					override func signInvoice(hrpBytes: [UInt8], invoiceData: [UInt8], receipient: Recipient) -> Result_RecoverableSignatureNoneZ {
 						// native call variable prep
 						
+						let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes)
+				
 						let invoiceDataVector = Vec_u5Z(array: invoiceData)
 				
 
 						// native method call
-						let nativeCallResult = self.cType!.sign_invoice(self.cType!.this_arg, hrpBytes.cType!, invoiceDataVector.cType!, receipient.getCValue())
+						let nativeCallResult = self.cType!.sign_invoice(self.cType!.this_arg, hrpBytesPrimitiveWrapper.cType!, invoiceDataVector.cType!, receipient.getCValue())
 
 						// cleanup
 						

@@ -144,11 +144,15 @@
 					public func payPubkey(pubkey: [UInt8], paymentPreimage: [UInt8], amountMsats: UInt64, finalCltvExpiryDelta: UInt32) -> Result_PaymentIdPaymentErrorZ {
 						// native call variable prep
 						
+						let pubkeyPrimitiveWrapper = PublicKey(value: pubkey)
+				
+						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
-			InvoicePayer_pay_pubkey(thisArgPointer, pubkey.cType!, paymentPreimage.cType!, amountMsats, finalCltvExpiryDelta)
+			InvoicePayer_pay_pubkey(thisArgPointer, pubkeyPrimitiveWrapper.cType!, paymentPreimagePrimitiveWrapper.cType!, amountMsats, finalCltvExpiryDelta)
 						}
 			
 

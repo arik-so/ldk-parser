@@ -228,9 +228,11 @@
 					public init(nodeId: [UInt8], msg: AcceptChannel) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_accept_channel(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_accept_channel(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -245,9 +247,11 @@
 					public init(nodeId: [UInt8], msg: OpenChannel) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_open_channel(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_open_channel(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -262,9 +266,11 @@
 					public init(nodeId: [UInt8], msg: FundingCreated) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_funding_created(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_funding_created(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -279,9 +285,11 @@
 					public init(nodeId: [UInt8], msg: FundingSigned) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_funding_signed(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_funding_signed(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -296,9 +304,11 @@
 					public init(nodeId: [UInt8], msg: ChannelReady) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_channel_ready(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_channel_ready(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -313,9 +323,11 @@
 					public init(nodeId: [UInt8], msg: AnnouncementSignatures) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_announcement_signatures(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_announcement_signatures(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -330,9 +342,11 @@
 					public init(nodeId: [UInt8], updates: CommitmentUpdate) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_update_htlcs(nodeId.cType!, updates.cType!)
+						let nativeCallResult = MessageSendEvent_update_htlcs(nodeIdPrimitiveWrapper.cType!, updates.cType!)
 
 						// cleanup
 						
@@ -347,9 +361,11 @@
 					public init(nodeId: [UInt8], msg: RevokeAndACK) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_revoke_and_ack(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_revoke_and_ack(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -364,9 +380,11 @@
 					public init(nodeId: [UInt8], msg: ClosingSigned) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_closing_signed(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_closing_signed(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -381,9 +399,11 @@
 					public init(nodeId: [UInt8], msg: Shutdown) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_shutdown(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_shutdown(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -398,9 +418,11 @@
 					public init(nodeId: [UInt8], msg: ChannelReestablish) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_channel_reestablish(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_channel_reestablish(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -415,9 +437,11 @@
 					public init(nodeId: [UInt8], msg: ChannelAnnouncement, updateMsg: ChannelUpdate) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_channel_announcement(nodeId.cType!, msg.cType!, updateMsg.cType!)
+						let nativeCallResult = MessageSendEvent_send_channel_announcement(nodeIdPrimitiveWrapper.cType!, msg.cType!, updateMsg.cType!)
 
 						// cleanup
 						
@@ -466,9 +490,11 @@
 					public init(nodeId: [UInt8], msg: ChannelUpdate) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_channel_update(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_channel_update(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -483,9 +509,11 @@
 					public init(nodeId: [UInt8], action: ErrorAction) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_handle_error(nodeId.cType!, action.cType!)
+						let nativeCallResult = MessageSendEvent_handle_error(nodeIdPrimitiveWrapper.cType!, action.cType!)
 
 						// cleanup
 						
@@ -500,9 +528,11 @@
 					public init(nodeId: [UInt8], msg: QueryChannelRange) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_channel_range_query(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_channel_range_query(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -517,9 +547,11 @@
 					public init(nodeId: [UInt8], msg: QueryShortChannelIds) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_short_ids_query(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_short_ids_query(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -534,9 +566,11 @@
 					public init(nodeId: [UInt8], msg: ReplyChannelRange) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_reply_channel_range(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_reply_channel_range(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						
@@ -551,9 +585,11 @@
 					public init(nodeId: [UInt8], msg: GossipTimestampFilter) {
 						// native call variable prep
 						
+						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
+				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_gossip_timestamp_filter(nodeId.cType!, msg.cType!)
+						let nativeCallResult = MessageSendEvent_send_gossip_timestamp_filter(nodeIdPrimitiveWrapper.cType!, msg.cType!)
 
 						// cleanup
 						

@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFulfillHTLC>) in
-			UpdateFulfillHTLC_set_channel_id(thisPtrPointer, val.cType!)
+			UpdateFulfillHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -120,11 +122,13 @@
 					public func setPaymentPreimage(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFulfillHTLC>) in
-			UpdateFulfillHTLC_set_payment_preimage(thisPtrPointer, val.cType!)
+			UpdateFulfillHTLC_set_payment_preimage(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -141,9 +145,13 @@
 					public init(channelIdArg: [UInt8], htlcIdArg: UInt64, paymentPreimageArg: [UInt8]) {
 						// native call variable prep
 						
+						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
+				
+						let paymentPreimageArgPrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimageArg)
+				
 
 						// native method call
-						let nativeCallResult = UpdateFulfillHTLC_new(channelIdArg.cType!, htlcIdArg, paymentPreimageArg.cType!)
+						let nativeCallResult = UpdateFulfillHTLC_new(channelIdArgPrimitiveWrapper.cType!, htlcIdArg, paymentPreimageArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -227,9 +235,11 @@
 					public class func read(ser: [UInt8]) -> Result_UpdateFulfillHTLCDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = UpdateFulfillHTLC_read(ser.cType!)
+						let nativeCallResult = UpdateFulfillHTLC_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

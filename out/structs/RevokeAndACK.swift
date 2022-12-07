@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
-			RevokeAndACK_set_channel_id(thisPtrPointer, val.cType!)
+			RevokeAndACK_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -78,11 +80,13 @@
 					public func setPerCommitmentSecret(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
-			RevokeAndACK_set_per_commitment_secret(thisPtrPointer, val.cType!)
+			RevokeAndACK_set_per_commitment_secret(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -120,11 +124,13 @@
 					public func setNextPerCommitmentPoint(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = PublicKey(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
-			RevokeAndACK_set_next_per_commitment_point(thisPtrPointer, val.cType!)
+			RevokeAndACK_set_next_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -141,9 +147,15 @@
 					public init(channelIdArg: [UInt8], perCommitmentSecretArg: [UInt8], nextPerCommitmentPointArg: [UInt8]) {
 						// native call variable prep
 						
+						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
+				
+						let perCommitmentSecretArgPrimitiveWrapper = ThirtyTwoBytes(value: perCommitmentSecretArg)
+				
+						let nextPerCommitmentPointArgPrimitiveWrapper = PublicKey(value: nextPerCommitmentPointArg)
+				
 
 						// native method call
-						let nativeCallResult = RevokeAndACK_new(channelIdArg.cType!, perCommitmentSecretArg.cType!, nextPerCommitmentPointArg.cType!)
+						let nativeCallResult = RevokeAndACK_new(channelIdArgPrimitiveWrapper.cType!, perCommitmentSecretArgPrimitiveWrapper.cType!, nextPerCommitmentPointArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -227,9 +239,11 @@
 					public class func read(ser: [UInt8]) -> Result_RevokeAndACKDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = RevokeAndACK_read(ser.cType!)
+						let nativeCallResult = RevokeAndACK_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

@@ -456,6 +456,12 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})
 				`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
+			} else if (argument.type instanceof RustPrimitiveWrapper) {
+				preparedArgument.name += 'PrimitiveWrapper';
+				preparedArgument.conversion += `
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})
+				`;
+				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustVector) {
 				preparedArgument.name += 'Vector';
 				preparedArgument.conversion += `

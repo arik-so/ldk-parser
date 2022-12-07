@@ -184,9 +184,11 @@
 					override func handleCustomMessage(msg: BindingsType, senderNodeId: [UInt8]) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
+						let senderNodeIdPrimitiveWrapper = PublicKey(value: senderNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_custom_message(self.cType!.this_arg, msg.activate().cType!, senderNodeId.cType!)
+						let nativeCallResult = self.cType!.handle_custom_message(self.cType!.this_arg, msg.activate().cType!, senderNodeIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						

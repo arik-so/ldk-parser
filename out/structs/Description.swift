@@ -132,9 +132,11 @@
 					public class func new(description: String) -> Result_DescriptionCreationErrorZ {
 						// native call variable prep
 						
+						let descriptionPrimitiveWrapper = Str(value: description)
+				
 
 						// native method call
-						let nativeCallResult = Description_new(description.cType!)
+						let nativeCallResult = Description_new(descriptionPrimitiveWrapper.cType!)
 
 						// cleanup
 						

@@ -196,9 +196,11 @@
 						
 						let resultsVector = Vec_CResult_NoneAPIErrorZZ(array: results)
 				
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
 
 						// native method call
-						let nativeCallResult = PaymentSendFailure_partial_failure(resultsVector.cType!, failedPathsRetry.cType!, paymentId.cType!)
+						let nativeCallResult = PaymentSendFailure_partial_failure(resultsVector.cType!, failedPathsRetry.cType!, paymentIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						

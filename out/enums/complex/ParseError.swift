@@ -470,9 +470,11 @@
 					public init(a: String) {
 						// native call variable prep
 						
+						let aPrimitiveWrapper = Str(value: a)
+				
 
 						// native method call
-						let nativeCallResult = ParseError_invalid_slice_length(a.cType!)
+						let nativeCallResult = ParseError_invalid_slice_length(aPrimitiveWrapper.cType!)
 
 						// cleanup
 						

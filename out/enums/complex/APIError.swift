@@ -145,9 +145,11 @@
 					public init(err: String) {
 						// native call variable prep
 						
+						let errPrimitiveWrapper = Str(value: err)
+				
 
 						// native method call
-						let nativeCallResult = APIError_apimisuse_error(err.cType!)
+						let nativeCallResult = APIError_apimisuse_error(errPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -162,9 +164,11 @@
 					public init(err: String, feerate: UInt32) {
 						// native call variable prep
 						
+						let errPrimitiveWrapper = Str(value: err)
+				
 
 						// native method call
-						let nativeCallResult = APIError_fee_rate_too_high(err.cType!, feerate)
+						let nativeCallResult = APIError_fee_rate_too_high(errPrimitiveWrapper.cType!, feerate)
 
 						// cleanup
 						
@@ -179,9 +183,11 @@
 					public init(err: String) {
 						// native call variable prep
 						
+						let errPrimitiveWrapper = Str(value: err)
+				
 
 						// native method call
-						let nativeCallResult = APIError_route_error(err.cType!)
+						let nativeCallResult = APIError_route_error(errPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -196,9 +202,11 @@
 					public init(err: String) {
 						// native call variable prep
 						
+						let errPrimitiveWrapper = Str(value: err)
+				
 
 						// native method call
-						let nativeCallResult = APIError_channel_unavailable(err.cType!)
+						let nativeCallResult = APIError_channel_unavailable(errPrimitiveWrapper.cType!)
 
 						// cleanup
 						

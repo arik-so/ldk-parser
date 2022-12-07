@@ -698,11 +698,13 @@
 					override func handleOpenChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: OpenChannel) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKOpenChannel>) in
-			self.cType!.handle_open_channel(self.cType!.this_arg, theirNodeId.cType!, theirFeatures.cType!, msgPointer)
+			self.cType!.handle_open_channel(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, theirFeatures.cType!, msgPointer)
 						}
 			
 
@@ -719,11 +721,13 @@
 					override func handleAcceptChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: AcceptChannel) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKAcceptChannel>) in
-			self.cType!.handle_accept_channel(self.cType!.this_arg, theirNodeId.cType!, theirFeatures.cType!, msgPointer)
+			self.cType!.handle_accept_channel(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, theirFeatures.cType!, msgPointer)
 						}
 			
 
@@ -740,11 +744,13 @@
 					override func handleFundingCreated(theirNodeId: [UInt8], msg: FundingCreated) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKFundingCreated>) in
-			self.cType!.handle_funding_created(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_funding_created(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -761,11 +767,13 @@
 					override func handleFundingSigned(theirNodeId: [UInt8], msg: FundingSigned) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKFundingSigned>) in
-			self.cType!.handle_funding_signed(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_funding_signed(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -782,11 +790,13 @@
 					override func handleChannelReady(theirNodeId: [UInt8], msg: ChannelReady) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelReady>) in
-			self.cType!.handle_channel_ready(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_channel_ready(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -803,13 +813,15 @@
 					override func handleShutdown(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: Shutdown) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: theirFeatures.cType!) { (theirFeaturesPointer: UnsafePointer<LDKInitFeatures>) in
 			
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKShutdown>) in
-			self.cType!.handle_shutdown(self.cType!.this_arg, theirNodeId.cType!, theirFeaturesPointer, msgPointer)
+			self.cType!.handle_shutdown(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, theirFeaturesPointer, msgPointer)
 						}
 			
 						}
@@ -828,11 +840,13 @@
 					override func handleClosingSigned(theirNodeId: [UInt8], msg: ClosingSigned) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKClosingSigned>) in
-			self.cType!.handle_closing_signed(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_closing_signed(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -849,11 +863,13 @@
 					override func handleUpdateAddHtlc(theirNodeId: [UInt8], msg: UpdateAddHTLC) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUpdateAddHTLC>) in
-			self.cType!.handle_update_add_htlc(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_update_add_htlc(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -870,11 +886,13 @@
 					override func handleUpdateFulfillHtlc(theirNodeId: [UInt8], msg: UpdateFulfillHTLC) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUpdateFulfillHTLC>) in
-			self.cType!.handle_update_fulfill_htlc(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_update_fulfill_htlc(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -891,11 +909,13 @@
 					override func handleUpdateFailHtlc(theirNodeId: [UInt8], msg: UpdateFailHTLC) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUpdateFailHTLC>) in
-			self.cType!.handle_update_fail_htlc(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_update_fail_htlc(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -912,11 +932,13 @@
 					override func handleUpdateFailMalformedHtlc(theirNodeId: [UInt8], msg: UpdateFailMalformedHTLC) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
-			self.cType!.handle_update_fail_malformed_htlc(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_update_fail_malformed_htlc(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -933,11 +955,13 @@
 					override func handleCommitmentSigned(theirNodeId: [UInt8], msg: CommitmentSigned) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKCommitmentSigned>) in
-			self.cType!.handle_commitment_signed(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_commitment_signed(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -954,11 +978,13 @@
 					override func handleRevokeAndAck(theirNodeId: [UInt8], msg: RevokeAndACK) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKRevokeAndACK>) in
-			self.cType!.handle_revoke_and_ack(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_revoke_and_ack(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -975,11 +1001,13 @@
 					override func handleUpdateFee(theirNodeId: [UInt8], msg: UpdateFee) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUpdateFee>) in
-			self.cType!.handle_update_fee(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_update_fee(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -996,11 +1024,13 @@
 					override func handleAnnouncementSignatures(theirNodeId: [UInt8], msg: AnnouncementSignatures) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKAnnouncementSignatures>) in
-			self.cType!.handle_announcement_signatures(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_announcement_signatures(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -1023,9 +1053,11 @@
 					override func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.peer_disconnected(self.cType!.this_arg, theirNodeId.cType!, noConnectionPossible)
+						let nativeCallResult = self.cType!.peer_disconnected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, noConnectionPossible)
 
 						// cleanup
 						
@@ -1044,11 +1076,13 @@
 					override func peerConnected(theirNodeId: [UInt8], msg: Init) -> Result_NoneNoneZ {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKInit>) in
-			self.cType!.peer_connected(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -1065,11 +1099,13 @@
 					override func handleChannelReestablish(theirNodeId: [UInt8], msg: ChannelReestablish) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelReestablish>) in
-			self.cType!.handle_channel_reestablish(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_channel_reestablish(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -1086,11 +1122,13 @@
 					override func handleChannelUpdate(theirNodeId: [UInt8], msg: ChannelUpdate) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelUpdate>) in
-			self.cType!.handle_channel_update(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_channel_update(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -1107,11 +1145,13 @@
 					override func handleError(theirNodeId: [UInt8], msg: ErrorMessage) {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKErrorMessage>) in
-			self.cType!.handle_error(self.cType!.this_arg, theirNodeId.cType!, msgPointer)
+			self.cType!.handle_error(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 			
 
@@ -1151,9 +1191,11 @@
 					override func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
 						// native call variable prep
 						
+						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
+				
 
 						// native method call
-						let nativeCallResult = self.cType!.provided_init_features(self.cType!.this_arg, theirNodeId.cType!)
+						let nativeCallResult = self.cType!.provided_init_features(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						

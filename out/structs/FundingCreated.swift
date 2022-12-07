@@ -57,11 +57,13 @@
 					public func setTemporaryChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
-			FundingCreated_set_temporary_channel_id(thisPtrPointer, val.cType!)
+			FundingCreated_set_temporary_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -78,11 +80,13 @@
 					public func setFundingTxid(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
-			FundingCreated_set_funding_txid(thisPtrPointer, val.cType!)
+			FundingCreated_set_funding_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -162,11 +166,13 @@
 					public func setSignature(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Signature(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
-			FundingCreated_set_signature(thisPtrPointer, val.cType!)
+			FundingCreated_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -183,9 +189,15 @@
 					public init(temporaryChannelIdArg: [UInt8], fundingTxidArg: [UInt8], fundingOutputIndexArg: UInt16, signatureArg: [UInt8]) {
 						// native call variable prep
 						
+						let temporaryChannelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: temporaryChannelIdArg)
+				
+						let fundingTxidArgPrimitiveWrapper = ThirtyTwoBytes(value: fundingTxidArg)
+				
+						let signatureArgPrimitiveWrapper = Signature(value: signatureArg)
+				
 
 						// native method call
-						let nativeCallResult = FundingCreated_new(temporaryChannelIdArg.cType!, fundingTxidArg.cType!, fundingOutputIndexArg, signatureArg.cType!)
+						let nativeCallResult = FundingCreated_new(temporaryChannelIdArgPrimitiveWrapper.cType!, fundingTxidArgPrimitiveWrapper.cType!, fundingOutputIndexArg, signatureArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -269,9 +281,11 @@
 					public class func read(ser: [UInt8]) -> Result_FundingCreatedDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = FundingCreated_read(ser.cType!)
+						let nativeCallResult = FundingCreated_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

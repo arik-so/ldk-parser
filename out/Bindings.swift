@@ -265,13 +265,15 @@
 				public class func swiftSign(msg: [UInt8], sk: [UInt8]) -> Result_StringErrorZ {
 					// native call variable prep
 					
+					let msgPrimitiveWrapper = u8slice(value: msg)
+				
 					let tupledSk = Bindings.arrayToUInt8Tuple32(array: sk)
 				
 
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: tupledSk) { (tupledSkPointer: UnsafePointer<UInt8Tuple32>) in
-			sign(msg.cType!, tupledSkPointer)
+			sign(msgPrimitiveWrapper.cType!, tupledSkPointer)
 					}
 			
 
@@ -288,9 +290,13 @@
 				public class func swiftRecoverPk(msg: [UInt8], sig: String) -> Result_PublicKeyErrorZ {
 					// native call variable prep
 					
+					let msgPrimitiveWrapper = u8slice(value: msg)
+				
+					let sigPrimitiveWrapper = Str(value: sig)
+				
 
 					// native method call
-					let nativeCallResult = recover_pk(msg.cType!, sig.cType!)
+					let nativeCallResult = recover_pk(msgPrimitiveWrapper.cType!, sigPrimitiveWrapper.cType!)
 
 					// cleanup
 					
@@ -306,9 +312,15 @@
 				public class func swiftVerify(msg: [UInt8], sig: String, pk: [UInt8]) -> Bool {
 					// native call variable prep
 					
+					let msgPrimitiveWrapper = u8slice(value: msg)
+				
+					let sigPrimitiveWrapper = Str(value: sig)
+				
+					let pkPrimitiveWrapper = PublicKey(value: pk)
+				
 
 					// native method call
-					let nativeCallResult = verify(msg.cType!, sig.cType!, pk.cType!)
+					let nativeCallResult = verify(msgPrimitiveWrapper.cType!, sigPrimitiveWrapper.cType!, pkPrimitiveWrapper.cType!)
 
 					// cleanup
 					
@@ -323,11 +335,13 @@
 				public class func swiftConstructInvoicePreimage(hrpBytes: [UInt8], dataWithoutSignature: [UInt8]) -> [UInt8] {
 					// native call variable prep
 					
+					let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes)
+				
 					let dataWithoutSignatureVector = Vec_u5Z(array: dataWithoutSignature)
 				
 
 					// native method call
-					let nativeCallResult = construct_invoice_preimage(hrpBytes.cType!, dataWithoutSignatureVector.cType!)
+					let nativeCallResult = construct_invoice_preimage(hrpBytesPrimitiveWrapper.cType!, dataWithoutSignatureVector.cType!)
 
 					// cleanup
 					
@@ -443,11 +457,13 @@
 					
 					let minValueMsatOption = Option_u64Z(value: minValueMsat)
 				
+					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: keys.cType!) { (keysPointer: UnsafePointer<LDKExpandedKey>) in
-			create_from_hash(keysPointer, minValueMsatOption.cType!, paymentHash.cType!, invoiceExpiryDeltaSecs, currentTime)
+			create_from_hash(keysPointer, minValueMsatOption.cType!, paymentHashPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs, currentTime)
 					}
 			
 
@@ -550,13 +566,15 @@
 				public class func swiftDerivePrivateKey(perCommitmentPoint: [UInt8], baseSecret: [UInt8]) -> Result_SecretKeyErrorZ {
 					// native call variable prep
 					
+					let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
+				
 					let tupledBaseSecret = Bindings.arrayToUInt8Tuple32(array: baseSecret)
 				
 
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: tupledBaseSecret) { (tupledBaseSecretPointer: UnsafePointer<UInt8Tuple32>) in
-			derive_private_key(perCommitmentPoint.cType!, tupledBaseSecretPointer)
+			derive_private_key(perCommitmentPointPrimitiveWrapper.cType!, tupledBaseSecretPointer)
 					}
 			
 
@@ -578,9 +596,13 @@
 				public class func swiftDerivePublicKey(perCommitmentPoint: [UInt8], basePoint: [UInt8]) -> Result_PublicKeyErrorZ {
 					// native call variable prep
 					
+					let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
+				
+					let basePointPrimitiveWrapper = PublicKey(value: basePoint)
+				
 
 					// native method call
-					let nativeCallResult = derive_public_key(perCommitmentPoint.cType!, basePoint.cType!)
+					let nativeCallResult = derive_public_key(perCommitmentPointPrimitiveWrapper.cType!, basePointPrimitiveWrapper.cType!)
 
 					// cleanup
 					
@@ -642,9 +664,13 @@
 				public class func swiftDerivePublicRevocationKey(perCommitmentPoint: [UInt8], countersignatoryRevocationBasePoint: [UInt8]) -> Result_PublicKeyErrorZ {
 					// native call variable prep
 					
+					let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
+				
+					let countersignatoryRevocationBasePointPrimitiveWrapper = PublicKey(value: countersignatoryRevocationBasePoint)
+				
 
 					// native method call
-					let nativeCallResult = derive_public_revocation_key(perCommitmentPoint.cType!, countersignatoryRevocationBasePoint.cType!)
+					let nativeCallResult = derive_public_revocation_key(perCommitmentPointPrimitiveWrapper.cType!, countersignatoryRevocationBasePointPrimitiveWrapper.cType!)
 
 					// cleanup
 					
@@ -661,9 +687,13 @@
 				public class func swiftGetRevokeableRedeemscript(revocationKey: [UInt8], contestDelay: UInt16, broadcasterDelayedPaymentKey: [UInt8]) -> [UInt8] {
 					// native call variable prep
 					
+					let revocationKeyPrimitiveWrapper = PublicKey(value: revocationKey)
+				
+					let broadcasterDelayedPaymentKeyPrimitiveWrapper = PublicKey(value: broadcasterDelayedPaymentKey)
+				
 
 					// native method call
-					let nativeCallResult = get_revokeable_redeemscript(revocationKey.cType!, contestDelay, broadcasterDelayedPaymentKey.cType!)
+					let nativeCallResult = get_revokeable_redeemscript(revocationKeyPrimitiveWrapper.cType!, contestDelay, broadcasterDelayedPaymentKeyPrimitiveWrapper.cType!)
 
 					// cleanup
 					
@@ -705,9 +735,13 @@
 				public class func swiftMakeFundingRedeemscript(broadcaster: [UInt8], countersignatory: [UInt8]) -> [UInt8] {
 					// native call variable prep
 					
+					let broadcasterPrimitiveWrapper = PublicKey(value: broadcaster)
+				
+					let countersignatoryPrimitiveWrapper = PublicKey(value: countersignatory)
+				
 
 					// native method call
-					let nativeCallResult = make_funding_redeemscript(broadcaster.cType!, countersignatory.cType!)
+					let nativeCallResult = make_funding_redeemscript(broadcasterPrimitiveWrapper.cType!, countersignatoryPrimitiveWrapper.cType!)
 
 					// cleanup
 					
@@ -730,13 +764,17 @@
 					
 					let tupledCommitmentTxid = Bindings.arrayToUInt8Tuple32(array: commitmentTxid)
 				
+					let broadcasterDelayedPaymentKeyPrimitiveWrapper = PublicKey(value: broadcasterDelayedPaymentKey)
+				
+					let revocationKeyPrimitiveWrapper = PublicKey(value: revocationKey)
+				
 
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: tupledCommitmentTxid) { (tupledCommitmentTxidPointer: UnsafePointer<UInt8Tuple32>) in
 			
 					withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
-			build_htlc_transaction(tupledCommitmentTxidPointer, feeratePerKw, contestDelay, htlcPointer, optAnchors, broadcasterDelayedPaymentKey.cType!, revocationKey.cType!)
+			build_htlc_transaction(tupledCommitmentTxidPointer, feeratePerKw, contestDelay, htlcPointer, optAnchors, broadcasterDelayedPaymentKeyPrimitiveWrapper.cType!, revocationKeyPrimitiveWrapper.cType!)
 					}
 			
 					}
@@ -760,9 +798,11 @@
 				public class func swiftGetAnchorRedeemscript(fundingPubkey: [UInt8]) -> [UInt8] {
 					// native call variable prep
 					
+					let fundingPubkeyPrimitiveWrapper = PublicKey(value: fundingPubkey)
+				
 
 					// native method call
-					let nativeCallResult = get_anchor_redeemscript(fundingPubkey.cType!)
+					let nativeCallResult = get_anchor_redeemscript(fundingPubkeyPrimitiveWrapper.cType!)
 
 					// cleanup
 					
@@ -782,9 +822,13 @@
 				public class func swiftGetCommitmentTransactionNumberObscureFactor(broadcasterPaymentBasepoint: [UInt8], countersignatoryPaymentBasepoint: [UInt8], outboundFromBroadcaster: Bool) -> UInt64 {
 					// native call variable prep
 					
+					let broadcasterPaymentBasepointPrimitiveWrapper = PublicKey(value: broadcasterPaymentBasepoint)
+				
+					let countersignatoryPaymentBasepointPrimitiveWrapper = PublicKey(value: countersignatoryPaymentBasepoint)
+				
 
 					// native method call
-					let nativeCallResult = get_commitment_transaction_number_obscure_factor(broadcasterPaymentBasepoint.cType!, countersignatoryPaymentBasepoint.cType!, outboundFromBroadcaster)
+					let nativeCallResult = get_commitment_transaction_number_obscure_factor(broadcasterPaymentBasepointPrimitiveWrapper.cType!, countersignatoryPaymentBasepointPrimitiveWrapper.cType!, outboundFromBroadcaster)
 
 					// cleanup
 					
@@ -829,6 +873,8 @@
 				public class func swiftFindRoute(ourNodePubkey: [UInt8], routeParams: RouteParameters, networkGraph: NetworkGraph, firstHops: [ChannelDetails], logger: Logger, scorer: Score, randomSeedBytes: [UInt8]) -> Result_RouteLightningErrorZ {
 					// native call variable prep
 					
+					let ourNodePubkeyPrimitiveWrapper = PublicKey(value: ourNodePubkey)
+				
 					let firstHopsVector = Vec_ChannelDetailsZ(array: firstHops)
 				
 					let tupledRandomSeedBytes = Bindings.arrayToUInt8Tuple32(array: randomSeedBytes)
@@ -845,7 +891,7 @@
 					withUnsafePointer(to: scorer.activate().cType!) { (scorerPointer: UnsafePointer<LDKScore>) in
 			
 					withUnsafePointer(to: tupledRandomSeedBytes) { (tupledRandomSeedBytesPointer: UnsafePointer<UInt8Tuple32>) in
-			find_route(ourNodePubkey.cType!, routeParamsPointer, networkGraphPointer, firstHopsVectorPointer, logger.activate().cType!, scorerPointer, tupledRandomSeedBytesPointer)
+			find_route(ourNodePubkeyPrimitiveWrapper.cType!, routeParamsPointer, networkGraphPointer, firstHopsVectorPointer, logger.activate().cType!, scorerPointer, tupledRandomSeedBytesPointer)
 					}
 			
 					}
@@ -875,6 +921,8 @@
 				public class func swiftBuildRouteFromHops(ourNodePubkey: [UInt8], hops: [[UInt8]], routeParams: RouteParameters, networkGraph: NetworkGraph, logger: Logger, randomSeedBytes: [UInt8]) -> Result_RouteLightningErrorZ {
 					// native call variable prep
 					
+					let ourNodePubkeyPrimitiveWrapper = PublicKey(value: ourNodePubkey)
+				
 					let hopsVector = Vec_PublicKeyZ(array: hops)
 				
 					let tupledRandomSeedBytes = Bindings.arrayToUInt8Tuple32(array: randomSeedBytes)
@@ -887,7 +935,7 @@
 					withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
 			
 					withUnsafePointer(to: tupledRandomSeedBytes) { (tupledRandomSeedBytesPointer: UnsafePointer<UInt8Tuple32>) in
-			build_route_from_hops(ourNodePubkey.cType!, hopsVector.cType!, routeParamsPointer, networkGraphPointer, logger.activate().cType!, tupledRandomSeedBytesPointer)
+			build_route_from_hops(ourNodePubkeyPrimitiveWrapper.cType!, hopsVector.cType!, routeParamsPointer, networkGraphPointer, logger.activate().cType!, tupledRandomSeedBytesPointer)
 					}
 			
 					}
@@ -942,11 +990,15 @@
 					
 					let amtMsatOption = Option_u64Z(value: amtMsat)
 				
+					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
+					let descriptionPrimitiveWrapper = Str(value: description)
+				
 					let phantomRouteHintsVector = Vec_PhantomRouteHintsZ(array: phantomRouteHints)
 				
 
 					// native method call
-					let nativeCallResult = create_phantom_invoice(amtMsatOption.cType!, paymentHash.cType!, description.cType!, invoiceExpiryDeltaSecs, phantomRouteHintsVector.cType!, keysManager.activate().cType!, logger.activate().cType!, network.getCValue())
+					let nativeCallResult = create_phantom_invoice(amtMsatOption.cType!, paymentHashPrimitiveWrapper.cType!, descriptionPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs, phantomRouteHintsVector.cType!, keysManager.activate().cType!, logger.activate().cType!, network.getCValue())
 
 					// cleanup
 					
@@ -997,11 +1049,13 @@
 					
 					let amtMsatOption = Option_u64Z(value: amtMsat)
 				
+					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
 					let phantomRouteHintsVector = Vec_PhantomRouteHintsZ(array: phantomRouteHints)
 				
 
 					// native method call
-					let nativeCallResult = create_phantom_invoice_with_description_hash(amtMsatOption.cType!, paymentHash.cType!, invoiceExpiryDeltaSecs, descriptionHash.cType!, phantomRouteHintsVector.cType!, keysManager.activate().cType!, logger.activate().cType!, network.getCValue())
+					let nativeCallResult = create_phantom_invoice_with_description_hash(amtMsatOption.cType!, paymentHashPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs, descriptionHash.cType!, phantomRouteHintsVector.cType!, keysManager.activate().cType!, logger.activate().cType!, network.getCValue())
 
 					// cleanup
 					
@@ -1027,11 +1081,13 @@
 					
 					let amtMsatOption = Option_u64Z(value: amtMsat)
 				
+					let descriptionPrimitiveWrapper = Str(value: description)
+				
 
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
-			create_invoice_from_channelmanager(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, description.cType!, invoiceExpiryDeltaSecs)
+			create_invoice_from_channelmanager(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs)
 					}
 			
 
@@ -1108,11 +1164,13 @@
 					
 					let amtMsatOption = Option_u64Z(value: amtMsat)
 				
+					let descriptionPrimitiveWrapper = Str(value: description)
+				
 
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
-			create_invoice_from_channelmanager_and_duration_since_epoch(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, description.cType!, durationSinceEpoch, invoiceExpiryDeltaSecs)
+			create_invoice_from_channelmanager_and_duration_since_epoch(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionPrimitiveWrapper.cType!, durationSinceEpoch, invoiceExpiryDeltaSecs)
 					}
 			
 

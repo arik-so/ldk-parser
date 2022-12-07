@@ -40,9 +40,11 @@
 					public init(o: [UInt8]) {
 						// native call variable prep
 						
+						let oPrimitiveWrapper = ThirtyTwoBytes(value: o)
+				
 
 						// native method call
-						let nativeCallResult = CResult_PaymentSecretNoneZ_ok(o.cType!)
+						let nativeCallResult = CResult_PaymentSecretNoneZ_ok(oPrimitiveWrapper.cType!)
 
 						// cleanup
 						

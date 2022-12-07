@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailMalformedHTLC>) in
-			UpdateFailMalformedHTLC_set_channel_id(thisPtrPointer, val.cType!)
+			UpdateFailMalformedHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -231,9 +233,11 @@
 					public class func read(ser: [UInt8]) -> Result_UpdateFailMalformedHTLCDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = UpdateFailMalformedHTLC_read(ser.cType!)
+						let nativeCallResult = UpdateFailMalformedHTLC_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

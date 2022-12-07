@@ -123,9 +123,11 @@
 					public init(blockHash: [UInt8], height: UInt32) {
 						// native call variable prep
 						
+						let blockHashPrimitiveWrapper = ThirtyTwoBytes(value: blockHash)
+				
 
 						// native method call
-						let nativeCallResult = BestBlock_new(blockHash.cType!, height)
+						let nativeCallResult = BestBlock_new(blockHashPrimitiveWrapper.cType!, height)
 
 						// cleanup
 						

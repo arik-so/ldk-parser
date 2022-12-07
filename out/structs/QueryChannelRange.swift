@@ -60,11 +60,13 @@
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryChannelRange>) in
-			QueryChannelRange_set_chain_hash(thisPtrPointer, val.cType!)
+			QueryChannelRange_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -165,9 +167,11 @@
 					public init(chainHashArg: [UInt8], firstBlocknumArg: UInt32, numberOfBlocksArg: UInt32) {
 						// native call variable prep
 						
+						let chainHashArgPrimitiveWrapper = ThirtyTwoBytes(value: chainHashArg)
+				
 
 						// native method call
-						let nativeCallResult = QueryChannelRange_new(chainHashArg.cType!, firstBlocknumArg, numberOfBlocksArg)
+						let nativeCallResult = QueryChannelRange_new(chainHashArgPrimitiveWrapper.cType!, firstBlocknumArg, numberOfBlocksArg)
 
 						// cleanup
 						
@@ -272,9 +276,11 @@
 					public class func read(ser: [UInt8]) -> Result_QueryChannelRangeDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = QueryChannelRange_read(ser.cType!)
+						let nativeCallResult = QueryChannelRange_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

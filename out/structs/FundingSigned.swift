@@ -57,11 +57,13 @@
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingSigned>) in
-			FundingSigned_set_channel_id(thisPtrPointer, val.cType!)
+			FundingSigned_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -99,11 +101,13 @@
 					public func setSignature(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = Signature(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingSigned>) in
-			FundingSigned_set_signature(thisPtrPointer, val.cType!)
+			FundingSigned_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -120,9 +124,13 @@
 					public init(channelIdArg: [UInt8], signatureArg: [UInt8]) {
 						// native call variable prep
 						
+						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
+				
+						let signatureArgPrimitiveWrapper = Signature(value: signatureArg)
+				
 
 						// native method call
-						let nativeCallResult = FundingSigned_new(channelIdArg.cType!, signatureArg.cType!)
+						let nativeCallResult = FundingSigned_new(channelIdArgPrimitiveWrapper.cType!, signatureArgPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -206,9 +214,11 @@
 					public class func read(ser: [UInt8]) -> Result_FundingSignedDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = FundingSigned_read(ser.cType!)
+						let nativeCallResult = FundingSigned_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

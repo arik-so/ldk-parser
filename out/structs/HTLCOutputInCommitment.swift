@@ -191,11 +191,13 @@
 					public func setPaymentHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
-			HTLCOutputInCommitment_set_payment_hash(thisPtrPointer, val.cType!)
+			HTLCOutputInCommitment_set_payment_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -260,11 +262,13 @@
 					public init(offeredArg: Bool, amountMsatArg: UInt64, cltvExpiryArg: UInt32, paymentHashArg: [UInt8], transactionOutputIndexArg: UInt32?) {
 						// native call variable prep
 						
+						let paymentHashArgPrimitiveWrapper = ThirtyTwoBytes(value: paymentHashArg)
+				
 						let transactionOutputIndexArgOption = Option_u32Z(value: transactionOutputIndexArg)
 				
 
 						// native method call
-						let nativeCallResult = HTLCOutputInCommitment_new(offeredArg, amountMsatArg, cltvExpiryArg, paymentHashArg.cType!, transactionOutputIndexArgOption.cType!)
+						let nativeCallResult = HTLCOutputInCommitment_new(offeredArg, amountMsatArg, cltvExpiryArg, paymentHashArgPrimitiveWrapper.cType!, transactionOutputIndexArgOption.cType!)
 
 						// cleanup
 						
@@ -348,9 +352,11 @@
 					public class func read(ser: [UInt8]) -> Result_HTLCOutputInCommitmentDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = HTLCOutputInCommitment_read(ser.cType!)
+						let nativeCallResult = HTLCOutputInCommitment_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						

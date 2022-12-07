@@ -63,11 +63,13 @@
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = ThirtyTwoBytes(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_set_chain_hash(thisPtrPointer, val.cType!)
+			ReplyChannelRange_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
 
@@ -258,11 +260,13 @@
 					public init(chainHashArg: [UInt8], firstBlocknumArg: UInt32, numberOfBlocksArg: UInt32, syncCompleteArg: Bool, shortChannelIdsArg: [UInt64]) {
 						// native call variable prep
 						
+						let chainHashArgPrimitiveWrapper = ThirtyTwoBytes(value: chainHashArg)
+				
 						let shortChannelIdsArgVector = Vec_u64Z(array: shortChannelIdsArg)
 				
 
 						// native method call
-						let nativeCallResult = ReplyChannelRange_new(chainHashArg.cType!, firstBlocknumArg, numberOfBlocksArg, syncCompleteArg, shortChannelIdsArgVector.cType!)
+						let nativeCallResult = ReplyChannelRange_new(chainHashArgPrimitiveWrapper.cType!, firstBlocknumArg, numberOfBlocksArg, syncCompleteArg, shortChannelIdsArgVector.cType!)
 
 						// cleanup
 						
@@ -327,9 +331,11 @@
 					public class func read(ser: [UInt8]) -> Result_ReplyChannelRangeDecodeErrorZ {
 						// native call variable prep
 						
+						let serPrimitiveWrapper = u8slice(value: ser)
+				
 
 						// native method call
-						let nativeCallResult = ReplyChannelRange_read(ser.cType!)
+						let nativeCallResult = ReplyChannelRange_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						
