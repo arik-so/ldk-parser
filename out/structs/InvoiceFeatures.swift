@@ -187,7 +187,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 			InvoiceFeatures_set_variable_length_onion_optional(thisArgPointer)
 						}
 			
@@ -208,7 +208,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 			InvoiceFeatures_set_variable_length_onion_required(thisArgPointer)
 						}
 			
@@ -271,7 +271,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 			InvoiceFeatures_set_payment_secret_optional(thisArgPointer)
 						}
 			
@@ -292,7 +292,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 			InvoiceFeatures_set_payment_secret_required(thisArgPointer)
 						}
 			
@@ -355,7 +355,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 			InvoiceFeatures_set_basic_mpp_optional(thisArgPointer)
 						}
 			
@@ -376,7 +376,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 			InvoiceFeatures_set_basic_mpp_required(thisArgPointer)
 						}
 			

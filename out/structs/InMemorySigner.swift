@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 			InMemorySigner_set_funding_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 			InMemorySigner_set_revocation_base_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
@@ -111,7 +111,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 			InMemorySigner_set_payment_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
@@ -134,7 +134,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 			InMemorySigner_set_delayed_payment_base_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
@@ -157,7 +157,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 			InMemorySigner_set_htlc_base_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
@@ -180,7 +180,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 			InMemorySigner_set_commitment_seed(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			

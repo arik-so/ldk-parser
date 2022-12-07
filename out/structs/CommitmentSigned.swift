@@ -62,7 +62,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentSigned>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentSigned>) in
 			CommitmentSigned_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
@@ -106,7 +106,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentSigned>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentSigned>) in
 			CommitmentSigned_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
@@ -152,7 +152,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentSigned>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentSigned>) in
 			CommitmentSigned_set_htlc_signatures(thisPtrPointer, valVector.cType!)
 						}
 			

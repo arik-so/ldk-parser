@@ -64,7 +64,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWarningMessage>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWarningMessage>) in
 			WarningMessage_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
@@ -114,7 +114,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWarningMessage>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWarningMessage>) in
 			WarningMessage_set_data(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			

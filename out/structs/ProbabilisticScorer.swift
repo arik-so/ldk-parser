@@ -168,7 +168,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
 			
 						withUnsafePointer(to: nodeId.cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
 			ProbabilisticScorer_add_banned(thisArgPointer, nodeIdPointer)
@@ -193,7 +193,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
 			
 						withUnsafePointer(to: nodeId.cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
 			ProbabilisticScorer_remove_banned(thisArgPointer, nodeIdPointer)
@@ -218,7 +218,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
 			
 						withUnsafePointer(to: nodeId.cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
 			ProbabilisticScorer_set_manual_penalty(thisArgPointer, nodeIdPointer, penalty)
@@ -243,7 +243,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
 			
 						withUnsafePointer(to: nodeId.cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
 			ProbabilisticScorer_remove_manual_penalty(thisArgPointer, nodeIdPointer)
@@ -268,7 +268,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
 			ProbabilisticScorer_clear_manual_penalties(thisArgPointer)
 						}
 			

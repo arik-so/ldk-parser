@@ -504,9 +504,12 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			const typeName = this.getRawTypeName(argument.type);
 			const mutabilityInfix = argument.isConstant ? '' : 'Mutable';
 
+			// TODO: figure out when exactly this is necessary. Seems to be 1:1 with mutable, but not sure yet
+			const inoutAmpersandInfix = argument.isConstant ? '' : '&';
+
 			preparedArgument.name += 'Pointer';
 			preparedArgument.methodCallWrapperPrefix += `
-						withUnsafe${mutabilityInfix}Pointer(to: ${preparedArgument.accessor}) { (${preparedArgument.name}: Unsafe${mutabilityInfix}Pointer<${typeName}>) in
+						withUnsafe${mutabilityInfix}Pointer(to: ${inoutAmpersandInfix}${preparedArgument.accessor}) { (${preparedArgument.name}: Unsafe${mutabilityInfix}Pointer<${typeName}>) in
 			`;
 			preparedArgument.methodCallWrapperSuffix += `
 						}

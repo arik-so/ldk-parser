@@ -187,7 +187,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_data_loss_protect_optional(thisArgPointer)
 						}
 			
@@ -208,7 +208,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_data_loss_protect_required(thisArgPointer)
 						}
 			
@@ -271,7 +271,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_upfront_shutdown_script_optional(thisArgPointer)
 						}
 			
@@ -292,7 +292,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_upfront_shutdown_script_required(thisArgPointer)
 						}
 			
@@ -355,7 +355,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_gossip_queries_optional(thisArgPointer)
 						}
 			
@@ -376,7 +376,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_gossip_queries_required(thisArgPointer)
 						}
 			
@@ -439,7 +439,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_variable_length_onion_optional(thisArgPointer)
 						}
 			
@@ -460,7 +460,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_variable_length_onion_required(thisArgPointer)
 						}
 			
@@ -523,7 +523,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_static_remote_key_optional(thisArgPointer)
 						}
 			
@@ -544,7 +544,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_static_remote_key_required(thisArgPointer)
 						}
 			
@@ -607,7 +607,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_payment_secret_optional(thisArgPointer)
 						}
 			
@@ -628,7 +628,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_payment_secret_required(thisArgPointer)
 						}
 			
@@ -691,7 +691,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_basic_mpp_optional(thisArgPointer)
 						}
 			
@@ -712,7 +712,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_basic_mpp_required(thisArgPointer)
 						}
 			
@@ -775,7 +775,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_wumbo_optional(thisArgPointer)
 						}
 			
@@ -796,7 +796,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_wumbo_required(thisArgPointer)
 						}
 			
@@ -859,7 +859,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_shutdown_any_segwit_optional(thisArgPointer)
 						}
 			
@@ -880,7 +880,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_shutdown_any_segwit_required(thisArgPointer)
 						}
 			
@@ -943,7 +943,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_onion_messages_optional(thisArgPointer)
 						}
 			
@@ -964,7 +964,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_onion_messages_required(thisArgPointer)
 						}
 			
@@ -1027,7 +1027,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_channel_type_optional(thisArgPointer)
 						}
 			
@@ -1048,7 +1048,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_channel_type_required(thisArgPointer)
 						}
 			
@@ -1111,7 +1111,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_scid_privacy_optional(thisArgPointer)
 						}
 			
@@ -1132,7 +1132,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_scid_privacy_required(thisArgPointer)
 						}
 			
@@ -1195,7 +1195,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_zero_conf_optional(thisArgPointer)
 						}
 			
@@ -1216,7 +1216,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_zero_conf_required(thisArgPointer)
 						}
 			
@@ -1279,7 +1279,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_keysend_optional(thisArgPointer)
 						}
 			
@@ -1300,7 +1300,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKNodeFeatures>) in
 			NodeFeatures_set_keysend_required(thisArgPointer)
 						}
 			

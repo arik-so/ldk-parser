@@ -224,7 +224,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
 			
-						withUnsafeMutablePointer(to: descriptor.activate().cType!) { (descriptorPointer: UnsafeMutablePointer<LDKSocketDescriptor>) in
+						withUnsafeMutablePointer(to: &descriptor.activate().cType!) { (descriptorPointer: UnsafeMutablePointer<LDKSocketDescriptor>) in
 			PeerManager_write_buffer_space_avail(thisArgPointer, descriptorPointer)
 						}
 			
@@ -264,7 +264,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
 			
-						withUnsafeMutablePointer(to: peerDescriptor.activate().cType!) { (peerDescriptorPointer: UnsafeMutablePointer<LDKSocketDescriptor>) in
+						withUnsafeMutablePointer(to: &peerDescriptor.activate().cType!) { (peerDescriptorPointer: UnsafeMutablePointer<LDKSocketDescriptor>) in
 			PeerManager_read_event(thisArgPointer, peerDescriptorPointer, dataPrimitiveWrapper.cType!)
 						}
 			

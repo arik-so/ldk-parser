@@ -87,7 +87,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMessageHandler>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMessageHandler>) in
 			MessageHandler_set_chan_handler(thisPtrPointer, val.activate().cType!)
 						}
 			
@@ -135,7 +135,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMessageHandler>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMessageHandler>) in
 			MessageHandler_set_route_handler(thisPtrPointer, val.activate().cType!)
 						}
 			
@@ -179,7 +179,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMessageHandler>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMessageHandler>) in
 			MessageHandler_set_onion_message_handler(thisPtrPointer, val.activate().cType!)
 						}
 			

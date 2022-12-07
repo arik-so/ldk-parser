@@ -83,7 +83,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKBuiltCommitmentTransaction>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKBuiltCommitmentTransaction>) in
 			BuiltCommitmentTransaction_set_transaction(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
@@ -109,7 +109,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKBuiltCommitmentTransaction>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKBuiltCommitmentTransaction>) in
 			BuiltCommitmentTransaction_set_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 			
