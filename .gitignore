@@ -1,10 +1,20 @@
 .idea
-node_modules
+/node_modules
 
-src/lab/*
-src/**/*.mjs
-src/**/*.mjs.map
-test/**/*.js
-test/**/*.js.map
+/src/lab/*
+/src/**/*.mjs
+/src/**/*.mjs.map
+/test/**/*.js
+/test/**/*.js.map
 
-ci/LDKSwift/Sources/LDKHeaders
+/ci/LDKSwift/Sources/LDKHeaders
+
+/xcode/*/Build/
+/xcode/*/*.xcodeproj/project.xcworkspace/
+/xcode/*/*.xcodeproj/xcuserdata/
+/xcode/*/binary/*
+/xcode/*/headers/*
+/xcode/**/xcuserdata/*
+/xcode/build
+/xcuserdata/
+*.log
