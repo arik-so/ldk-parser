@@ -19,6 +19,35 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 			generatedMethods += Generator.reindentCode(this.generateMethod(currentMethod), 4);
 		}
 
+		let generatedTupleTypeAliases = '';
+		let generatedTupleConverters = '';
+
+		for (const [rawSwiftTypeSignature, tupleSizes] of Object.entries(this.auxiliaryArtifacts.tuples)) {
+			for (const currentTupleSize of tupleSizes) {
+				const tupleTypeName = `${rawSwiftTypeSignature}Tuple${currentTupleSize}`
+				generatedTupleTypeAliases += `
+					internal typealias ${tupleTypeName} = (${Array(currentTupleSize).fill(rawSwiftTypeSignature).join(', ')})
+				`;
+
+				let tupleResultComponents = [];
+				let arrayResultComponents = [];
+				for(let i = 0; i < currentTupleSize; i++){
+					tupleResultComponents.push(`array[${i}]`)
+					arrayResultComponents.push(`tuple.${i}`)
+				}
+
+				generatedTupleConverters += `
+					internal class func arrayTo${tupleTypeName}(array: [${rawSwiftTypeSignature}]) -> ${tupleTypeName} {
+						return (${tupleResultComponents.join(', ')})
+					}
+
+					internal class func ${tupleTypeName}ToArray(tuple: ${tupleTypeName}) -> [${rawSwiftTypeSignature}] {
+						return [${arrayResultComponents.join(', ')}]
+					}
+				`;
+			}
+		}
+
 		return `
 			import Foundation
 			// #if canImport(os)
@@ -34,12 +63,6 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 			#else
 				import Darwin.C
 			#endif
-
-			public typealias LDKTransactionOutputs = LDKC2Tuple_TxidCVec_C2Tuple_u32TxOutZZZ
-			public typealias TransactionOutputs = C2Tuple_TxidCVec_C2Tuple_u32TxOutZZZ
-			public typealias LDKTxid = LDKThirtyTwoBytes
-			// public typealias LDKPaymentPreimage = LDKThirtyTwoBytes
-			public typealias Txid = [UInt8]
 
 			open class NativeTypeWrapper: Hashable {
 
@@ -105,6 +128,8 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 			}
 
 			public class Bindings {
+
+				${Generator.reindentCode(generatedTupleTypeAliases, 4)}
 
 				internal static var minimumPrintSeverity: PrintSeverity = .WARNING
 				// #if canImport(os)
@@ -234,6 +259,8 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 				}
 
 				${generatedMethods}
+
+				${Generator.reindentCode(generatedTupleConverters, 4)}
 
 			}
 

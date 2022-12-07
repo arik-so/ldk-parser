@@ -9,7 +9,6 @@ import {
 	RustTrait,
 	RustVector
 } from '../rust_types.mjs';
-import {GlobalBindingsStruct} from './bindings_file_generator.mjs';
 
 export default class Generator {
 	private parser: Parser;
@@ -111,14 +110,18 @@ export default class Generator {
 
 export class AuxiliaryArtifacts {
 
-	private tuples: { [swiftRawType: string]: Set<number> } = {};
+	private _tuples: { [swiftRawType: string]: Set<number> } = {};
+
+	get tuples() {
+		return this._tuples;
+	}
 
 	public addTuple(swiftTypeName: string, size: number) {
-		if (!this.tuples[swiftTypeName]) {
-			this.tuples[swiftTypeName] = new Set<number>();
+		if (!this._tuples[swiftTypeName]) {
+			this._tuples[swiftTypeName] = new Set<number>();
 		}
 
-		this.tuples[swiftTypeName].add(size);
+		this._tuples[swiftTypeName].add(size);
 	}
 
 }
