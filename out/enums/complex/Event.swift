@@ -821,7 +821,7 @@
 
 					
 					
-					internal typealias Event_LDKFundingGenerationReady_Body = Self.FundingGenerationReady
+					internal typealias Event_LDKFundingGenerationReady_Body = FundingGenerationReady
 			
 
 					/// 
@@ -915,7 +915,7 @@
 					
 		
 					
-					internal typealias Event_LDKPaymentReceived_Body = Self.PaymentReceived
+					internal typealias Event_LDKPaymentReceived_Body = PaymentReceived
 			
 
 					/// 
@@ -986,7 +986,7 @@
 					
 		
 					
-					internal typealias Event_LDKPaymentClaimed_Body = Self.PaymentClaimed
+					internal typealias Event_LDKPaymentClaimed_Body = PaymentClaimed
 			
 
 					/// 
@@ -1057,7 +1057,7 @@
 					
 		
 					
-					internal typealias Event_LDKPaymentSent_Body = Self.PaymentSent
+					internal typealias Event_LDKPaymentSent_Body = PaymentSent
 			
 
 					/// 
@@ -1152,7 +1152,7 @@
 					
 		
 					
-					internal typealias Event_LDKPaymentFailed_Body = Self.PaymentFailed
+					internal typealias Event_LDKPaymentFailed_Body = PaymentFailed
 			
 
 					/// 
@@ -1220,7 +1220,7 @@
 					
 		
 					
-					internal typealias Event_LDKPaymentPathSuccessful_Body = Self.PaymentPathSuccessful
+					internal typealias Event_LDKPaymentPathSuccessful_Body = PaymentPathSuccessful
 			
 
 					/// 
@@ -1299,7 +1299,7 @@
 					
 		
 					
-					internal typealias Event_LDKPaymentPathFailed_Body = Self.PaymentPathFailed
+					internal typealias Event_LDKPaymentPathFailed_Body = PaymentPathFailed
 			
 
 					/// 
@@ -1455,7 +1455,7 @@
 					
 		
 					
-					internal typealias Event_LDKProbeSuccessful_Body = Self.ProbeSuccessful
+					internal typealias Event_LDKProbeSuccessful_Body = ProbeSuccessful
 			
 
 					/// 
@@ -1528,7 +1528,7 @@
 					
 		
 					
-					internal typealias Event_LDKProbeFailed_Body = Self.ProbeFailed
+					internal typealias Event_LDKProbeFailed_Body = ProbeFailed
 			
 
 					/// 
@@ -1613,7 +1613,7 @@
 					
 		
 					
-					internal typealias Event_LDKPendingHTLCsForwardable_Body = Self.PendingHTLCsForwardable
+					internal typealias Event_LDKPendingHTLCsForwardable_Body = PendingHTLCsForwardable
 			
 
 					/// 
@@ -1669,7 +1669,7 @@
 					
 		
 					
-					internal typealias Event_LDKSpendableOutputs_Body = Self.SpendableOutputs
+					internal typealias Event_LDKSpendableOutputs_Body = SpendableOutputs
 			
 
 					/// 
@@ -1722,7 +1722,7 @@
 					
 		
 					
-					internal typealias Event_LDKPaymentForwarded_Body = Self.PaymentForwarded
+					internal typealias Event_LDKPaymentForwarded_Body = PaymentForwarded
 			
 
 					/// 
@@ -1818,7 +1818,7 @@
 					
 		
 					
-					internal typealias Event_LDKChannelClosed_Body = Self.ChannelClosed
+					internal typealias Event_LDKChannelClosed_Body = ChannelClosed
 			
 
 					/// 
@@ -1896,7 +1896,7 @@
 					
 		
 					
-					internal typealias Event_LDKDiscardFunding_Body = Self.DiscardFunding
+					internal typealias Event_LDKDiscardFunding_Body = DiscardFunding
 			
 
 					/// 
@@ -1957,7 +1957,7 @@
 					
 		
 					
-					internal typealias Event_LDKOpenChannelRequest_Body = Self.OpenChannelRequest
+					internal typealias Event_LDKOpenChannelRequest_Body = OpenChannelRequest
 			
 
 					/// 
@@ -2071,7 +2071,7 @@
 					
 		
 					
-					internal typealias Event_LDKHTLCHandlingFailed_Body = Self.HTLCHandlingFailed
+					internal typealias Event_LDKHTLCHandlingFailed_Body = HTLCHandlingFailed
 			
 
 					/// 

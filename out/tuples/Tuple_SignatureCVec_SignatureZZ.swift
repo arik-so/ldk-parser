@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_SignatureCVec_SignatureZZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_SignatureCVec_SignatureZZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -78,7 +78,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_SignatureCVec_SignatureZZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_SignatureCVec_SignatureZZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

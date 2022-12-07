@@ -40,9 +40,11 @@
 					public init(o: ([UInt8], [UInt8])) {
 						// native call variable prep
 						
+						let oTuple = Tuple_PaymentHashPaymentIdZ(tuple: o)
+				
 
 						// native method call
-						let nativeCallResult = CResult_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ_ok(o.cType!)
+						let nativeCallResult = CResult_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ_ok(oTuple.cType!)
 
 						// cleanup
 						

@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_u32ScriptZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_u32ScriptZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -76,7 +76,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_u32ScriptZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_u32ScriptZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

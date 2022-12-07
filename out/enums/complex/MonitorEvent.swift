@@ -307,7 +307,7 @@
 
 					
 					
-					internal typealias MonitorEvent_LDKCompleted_Body = Self.Completed
+					internal typealias MonitorEvent_LDKCompleted_Body = Completed
 			
 
 					/// 

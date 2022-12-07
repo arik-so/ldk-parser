@@ -1,8 +1,11 @@
 import {
+	RustFunctionArgument,
 	RustPrimitive,
-	RustPrimitiveWrapper, RustResult,
+	RustPrimitiveWrapper,
+	RustResult,
 	RustStruct,
 	RustTaggedValueEnum,
+	RustTuple,
 	RustType,
 	RustVector
 } from '../rust_types.mjs';
@@ -47,7 +50,19 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 
 		const indentationDepth = 6 + depth;
 		const indentation = `\t`.repeat(indentationDepth);
-		rustUnwrapper += `${indentation}currentValueDepth${depth}.danglingClone().cType!${unwrapperSuffix}`;
+
+		{
+			const artificialDeepestContext = new RustFunctionArgument();
+			artificialDeepestContext.contextualName = 'currentValueDepth'+depth;
+			artificialDeepestContext.type = deepestIterateeContext.type;
+			const deepestRustUnwrapper = this.prepareSwiftArgumentForRust(artificialDeepestContext, type);
+			rustUnwrapper += `
+				${deepestRustUnwrapper.conversion}
+				return ${deepestRustUnwrapper.methodCallWrapperPrefix}${deepestRustUnwrapper.accessor}${deepestRustUnwrapper.methodCallWrapperSuffix}
+			${unwrapperSuffix}`;
+		}
+
+		// rustUnwrapper += `${indentation}currentValueDepth${depth}.danglingClone().cType!${unwrapperSuffix}`;
 
 		const deepestWrapper = this.prepareRustReturnValueForSwift(deepestIterateeContext, type);
 		let deepestConstructor = `${deepestWrapper.wrapperPrefix}currentCType${deepestWrapper.wrapperSuffix}`;
@@ -76,10 +91,14 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			dataContainerInitializationArgumentName = 'array';
 			rustUnwrapper = '';
 			swiftUnwrapper = 'let swiftArray = array';
-		} else if (type.iterateeField.type instanceof RustPrimitiveWrapper || type.iterateeField.type instanceof RustTaggedValueEnum || type.iterateeField.type instanceof RustResult || type.iterateeField.type instanceof RustStruct ) {
-			// NO OP
+		}else if (type.iterateeField.type instanceof RustTuple || type.iterateeField.type instanceof RustPrimitiveWrapper || type.iterateeField.type instanceof RustTaggedValueEnum || type.iterateeField.type instanceof RustResult || type.iterateeField.type instanceof RustStruct) {
+			bracketedIterateeTypeName = `<${type.iterateeField.type.name}>`;
 		} else {
-			throw new Error(`Unsupported vector iteratee type in ${type.name}: ${type.iterateeField.type.getName()} (${type.iterateeField.type.constructor.name})`)
+			throw new Error(`Unsupported vector iteratee type in ${type.name}: ${type.iterateeField.type.getName()} (${type.iterateeField.type.constructor.name})`);
+		}
+
+		if (!bracketedIterateeTypeName) {
+			throw new Error(`Undetected vector iteratee type name in ${type.name}: ${type.iterateeField.type.getName()} (${type.iterateeField.type.constructor.name})`);
 		}
 
 		return `

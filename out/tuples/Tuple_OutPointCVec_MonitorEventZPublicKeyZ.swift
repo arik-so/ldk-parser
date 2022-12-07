@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -78,7 +78,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

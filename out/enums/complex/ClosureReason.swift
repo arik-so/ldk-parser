@@ -402,7 +402,7 @@
 
 					
 					
-					internal typealias ClosureReason_LDKCounterpartyForceClosed_Body = Self.CounterpartyForceClosed
+					internal typealias ClosureReason_LDKCounterpartyForceClosed_Body = CounterpartyForceClosed
 			
 
 					/// 
@@ -459,7 +459,7 @@
 					
 		
 					
-					internal typealias ClosureReason_LDKProcessingError_Body = Self.ProcessingError
+					internal typealias ClosureReason_LDKProcessingError_Body = ProcessingError
 			
 
 					/// 

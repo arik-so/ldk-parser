@@ -278,7 +278,7 @@
 
 					
 					
-					internal typealias NetworkUpdate_LDKChannelUpdateMessage_Body = Self.ChannelUpdateMessage
+					internal typealias NetworkUpdate_LDKChannelUpdateMessage_Body = ChannelUpdateMessage
 			
 
 					/// 
@@ -331,7 +331,7 @@
 					
 		
 					
-					internal typealias NetworkUpdate_LDKChannelFailure_Body = Self.ChannelFailure
+					internal typealias NetworkUpdate_LDKChannelFailure_Body = ChannelFailure
 			
 
 					/// 
@@ -393,7 +393,7 @@
 					
 		
 					
-					internal typealias NetworkUpdate_LDKNodeFailure_Body = Self.NodeFailure
+					internal typealias NetworkUpdate_LDKNodeFailure_Body = NodeFailure
 			
 
 					/// 

@@ -39,12 +39,17 @@
 						self.instanceNumber = Self.instanceCounter
 
 						let rustArray = array.map { (currentValueDepth1) in
-							currentValueDepth1.danglingClone().cType!
+
+				
+						let currentValueDepth1Tuple = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(tuple: currentValueDepth1)
+				
+				return currentValueDepth1Tuple.cType!
+			
 						}
 
 						
 
-						let dataContainer = UnsafeMutablePointernull.allocate(capacity: array.count)
+						let dataContainer = UnsafeMutablePointer<LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ>.allocate(capacity: array.count)
 						dataContainer.initialize(from: rustArray, count: array.count)
 
         				let vector = LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ(data: dataContainer, datalen: UInt(array.count))

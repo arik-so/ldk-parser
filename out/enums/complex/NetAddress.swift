@@ -345,7 +345,7 @@
 
 					
 					
-					internal typealias NetAddress_LDKIPv4_Body = Self.IPv4
+					internal typealias NetAddress_LDKIPv4_Body = IPv4
 			
 
 					/// 
@@ -406,7 +406,7 @@
 					
 		
 					
-					internal typealias NetAddress_LDKIPv6_Body = Self.IPv6
+					internal typealias NetAddress_LDKIPv6_Body = IPv6
 			
 
 					/// 
@@ -467,7 +467,7 @@
 					
 		
 					
-					internal typealias NetAddress_LDKOnionV3_Body = Self.OnionV3
+					internal typealias NetAddress_LDKOnionV3_Body = OnionV3
 			
 
 					/// 
@@ -544,7 +544,7 @@
 					
 		
 					
-					internal typealias NetAddress_LDKHostname_Body = Self.Hostname
+					internal typealias NetAddress_LDKHostname_Body = Hostname
 			
 
 					/// 

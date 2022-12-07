@@ -283,7 +283,7 @@
 
 					
 					
-					internal typealias HTLCDestination_LDKNextHopChannel_Body = Self.NextHopChannel
+					internal typealias HTLCDestination_LDKNextHopChannel_Body = NextHopChannel
 			
 
 					/// 
@@ -348,7 +348,7 @@
 					
 		
 					
-					internal typealias HTLCDestination_LDKUnknownNextHop_Body = Self.UnknownNextHop
+					internal typealias HTLCDestination_LDKUnknownNextHop_Body = UnknownNextHop
 			
 
 					/// 
@@ -401,7 +401,7 @@
 					
 		
 					
-					internal typealias HTLCDestination_LDKFailedPayment_Body = Self.FailedPayment
+					internal typealias HTLCDestination_LDKFailedPayment_Body = FailedPayment
 			
 
 					/// 

@@ -343,7 +343,7 @@
 
 					
 					
-					internal typealias Balance_LDKClaimableOnChannelClose_Body = Self.ClaimableOnChannelClose
+					internal typealias Balance_LDKClaimableOnChannelClose_Body = ClaimableOnChannelClose
 			
 
 					/// 
@@ -397,7 +397,7 @@
 					
 		
 					
-					internal typealias Balance_LDKClaimableAwaitingConfirmations_Body = Self.ClaimableAwaitingConfirmations
+					internal typealias Balance_LDKClaimableAwaitingConfirmations_Body = ClaimableAwaitingConfirmations
 			
 
 					/// 
@@ -460,7 +460,7 @@
 					
 		
 					
-					internal typealias Balance_LDKContentiousClaimable_Body = Self.ContentiousClaimable
+					internal typealias Balance_LDKContentiousClaimable_Body = ContentiousClaimable
 			
 
 					/// 
@@ -523,7 +523,7 @@
 					
 		
 					
-					internal typealias Balance_LDKMaybeTimeoutClaimableHTLC_Body = Self.MaybeTimeoutClaimableHTLC
+					internal typealias Balance_LDKMaybeTimeoutClaimableHTLC_Body = MaybeTimeoutClaimableHTLC
 			
 
 					/// 
@@ -586,7 +586,7 @@
 					
 		
 					
-					internal typealias Balance_LDKMaybePreimageClaimableHTLC_Body = Self.MaybePreimageClaimableHTLC
+					internal typealias Balance_LDKMaybePreimageClaimableHTLC_Body = MaybePreimageClaimableHTLC
 			
 
 					/// 
@@ -649,7 +649,7 @@
 					
 		
 					
-					internal typealias Balance_LDKCounterpartyRevokedOutputClaimable_Body = Self.CounterpartyRevokedOutputClaimable
+					internal typealias Balance_LDKCounterpartyRevokedOutputClaimable_Body = CounterpartyRevokedOutputClaimable
 			
 
 					/// 

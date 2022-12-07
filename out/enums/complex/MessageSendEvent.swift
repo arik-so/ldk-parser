@@ -787,7 +787,7 @@
 
 					
 					
-					internal typealias MessageSendEvent_LDKSendAcceptChannel_Body = Self.SendAcceptChannel
+					internal typealias MessageSendEvent_LDKSendAcceptChannel_Body = SendAcceptChannel
 			
 
 					/// 
@@ -848,7 +848,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendOpenChannel_Body = Self.SendOpenChannel
+					internal typealias MessageSendEvent_LDKSendOpenChannel_Body = SendOpenChannel
 			
 
 					/// 
@@ -909,7 +909,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendFundingCreated_Body = Self.SendFundingCreated
+					internal typealias MessageSendEvent_LDKSendFundingCreated_Body = SendFundingCreated
 			
 
 					/// 
@@ -970,7 +970,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendFundingSigned_Body = Self.SendFundingSigned
+					internal typealias MessageSendEvent_LDKSendFundingSigned_Body = SendFundingSigned
 			
 
 					/// 
@@ -1031,7 +1031,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendChannelReady_Body = Self.SendChannelReady
+					internal typealias MessageSendEvent_LDKSendChannelReady_Body = SendChannelReady
 			
 
 					/// 
@@ -1092,7 +1092,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendAnnouncementSignatures_Body = Self.SendAnnouncementSignatures
+					internal typealias MessageSendEvent_LDKSendAnnouncementSignatures_Body = SendAnnouncementSignatures
 			
 
 					/// 
@@ -1153,7 +1153,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKUpdateHTLCs_Body = Self.UpdateHTLCs
+					internal typealias MessageSendEvent_LDKUpdateHTLCs_Body = UpdateHTLCs
 			
 
 					/// 
@@ -1214,7 +1214,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendRevokeAndACK_Body = Self.SendRevokeAndACK
+					internal typealias MessageSendEvent_LDKSendRevokeAndACK_Body = SendRevokeAndACK
 			
 
 					/// 
@@ -1275,7 +1275,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendClosingSigned_Body = Self.SendClosingSigned
+					internal typealias MessageSendEvent_LDKSendClosingSigned_Body = SendClosingSigned
 			
 
 					/// 
@@ -1336,7 +1336,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendShutdown_Body = Self.SendShutdown
+					internal typealias MessageSendEvent_LDKSendShutdown_Body = SendShutdown
 			
 
 					/// 
@@ -1397,7 +1397,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendChannelReestablish_Body = Self.SendChannelReestablish
+					internal typealias MessageSendEvent_LDKSendChannelReestablish_Body = SendChannelReestablish
 			
 
 					/// 
@@ -1458,7 +1458,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendChannelAnnouncement_Body = Self.SendChannelAnnouncement
+					internal typealias MessageSendEvent_LDKSendChannelAnnouncement_Body = SendChannelAnnouncement
 			
 
 					/// 
@@ -1527,7 +1527,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKBroadcastChannelAnnouncement_Body = Self.BroadcastChannelAnnouncement
+					internal typealias MessageSendEvent_LDKBroadcastChannelAnnouncement_Body = BroadcastChannelAnnouncement
 			
 
 					/// 
@@ -1588,7 +1588,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKBroadcastChannelUpdate_Body = Self.BroadcastChannelUpdate
+					internal typealias MessageSendEvent_LDKBroadcastChannelUpdate_Body = BroadcastChannelUpdate
 			
 
 					/// 
@@ -1641,7 +1641,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendChannelUpdate_Body = Self.SendChannelUpdate
+					internal typealias MessageSendEvent_LDKSendChannelUpdate_Body = SendChannelUpdate
 			
 
 					/// 
@@ -1702,7 +1702,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKHandleError_Body = Self.HandleError
+					internal typealias MessageSendEvent_LDKHandleError_Body = HandleError
 			
 
 					/// 
@@ -1763,7 +1763,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendChannelRangeQuery_Body = Self.SendChannelRangeQuery
+					internal typealias MessageSendEvent_LDKSendChannelRangeQuery_Body = SendChannelRangeQuery
 			
 
 					/// 
@@ -1824,7 +1824,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendShortIdsQuery_Body = Self.SendShortIdsQuery
+					internal typealias MessageSendEvent_LDKSendShortIdsQuery_Body = SendShortIdsQuery
 			
 
 					/// 
@@ -1885,7 +1885,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendReplyChannelRange_Body = Self.SendReplyChannelRange
+					internal typealias MessageSendEvent_LDKSendReplyChannelRange_Body = SendReplyChannelRange
 			
 
 					/// 
@@ -1946,7 +1946,7 @@
 					
 		
 					
-					internal typealias MessageSendEvent_LDKSendGossipTimestampFilter_Body = Self.SendGossipTimestampFilter
+					internal typealias MessageSendEvent_LDKSendGossipTimestampFilter_Body = SendGossipTimestampFilter
 			
 
 					/// 

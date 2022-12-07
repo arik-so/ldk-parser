@@ -39,12 +39,17 @@
 						self.instanceNumber = Self.instanceCounter
 
 						let rustArray = array.map { (currentValueDepth1) in
-							currentValueDepth1.danglingClone().cType!
+
+				
+						let currentValueDepth1PrimitiveWrapper = ThirtyTwoBytes(value: currentValueDepth1)
+				
+				return currentValueDepth1PrimitiveWrapper.cType!
+			
 						}
 
 						
 
-						let dataContainer = UnsafeMutablePointernull.allocate(capacity: array.count)
+						let dataContainer = UnsafeMutablePointer<LDKThirtyTwoBytes>.allocate(capacity: array.count)
 						dataContainer.initialize(from: rustArray, count: array.count)
 
         				let vector = LDKCVec_TxidZ(data: dataContainer, datalen: UInt(array.count))

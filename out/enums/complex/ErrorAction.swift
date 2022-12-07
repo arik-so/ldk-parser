@@ -284,7 +284,7 @@
 
 					
 					
-					internal typealias ErrorAction_LDKDisconnectPeer_Body = Self.DisconnectPeer
+					internal typealias ErrorAction_LDKDisconnectPeer_Body = DisconnectPeer
 			
 
 					/// 
@@ -339,7 +339,7 @@
 					
 		
 					
-					internal typealias ErrorAction_LDKSendErrorMessage_Body = Self.SendErrorMessage
+					internal typealias ErrorAction_LDKSendErrorMessage_Body = SendErrorMessage
 			
 
 					/// 
@@ -392,7 +392,7 @@
 					
 		
 					
-					internal typealias ErrorAction_LDKSendWarningMessage_Body = Self.SendWarningMessage
+					internal typealias ErrorAction_LDKSendWarningMessage_Body = SendWarningMessage
 			
 
 					/// 

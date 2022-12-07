@@ -39,12 +39,15 @@
 						self.instanceNumber = Self.instanceCounter
 
 						let rustArray = array.map { (currentValueDepth1) in
-							currentValueDepth1.danglingClone().cType!
+
+				
+				return currentValueDepth1.cType!
+			
 						}
 
 						
 
-						let dataContainer = UnsafeMutablePointernull.allocate(capacity: array.count)
+						let dataContainer = UnsafeMutablePointer<LDKMonitorEvent>.allocate(capacity: array.count)
 						dataContainer.initialize(from: rustArray, count: array.count)
 
         				let vector = LDKCVec_MonitorEventZ(data: dataContainer, datalen: UInt(array.count))

@@ -221,7 +221,7 @@
 
 					
 					
-					internal typealias PaymentPurpose_LDKInvoicePayment_Body = Self.InvoicePayment
+					internal typealias PaymentPurpose_LDKInvoicePayment_Body = InvoicePayment
 			
 
 					/// 

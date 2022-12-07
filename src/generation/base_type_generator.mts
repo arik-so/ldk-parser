@@ -457,6 +457,12 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})
 				`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
+			} else if (argument.type instanceof RustTuple) {
+				preparedArgument.name += 'Tuple';
+				preparedArgument.conversion += `
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(tuple: ${publicName})
+				`;
+				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustPrimitiveWrapper) {
 				preparedArgument.name += 'PrimitiveWrapper';
 				preparedArgument.conversion += `
@@ -475,7 +481,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				`;
 			} else if (argument.type instanceof RustTrait) {
 				preparedArgument.accessor = preparedArgument.name + '.activate().cType!';
-			} else if (argument.type instanceof RustStruct || argument.type instanceof RustTaggedValueEnum) {
+			} else if (argument.type instanceof RustStruct || argument.type instanceof RustTaggedValueEnum || argument.type instanceof RustResult) {
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustPrimitiveEnum) {
 				preparedArgument.accessor = preparedArgument.name + '.getCValue()';
@@ -532,7 +538,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes
 		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple) {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
-			preparedReturnValue.wrapperSuffix += `).getValue()`;
+			preparedReturnValue.wrapperSuffix += `)`;
+			if (returnType.type !== containerType) {
+				// it's an elided type, so we pass it through
+				preparedReturnValue.wrapperSuffix += '.getValue()';
+			}
 		} else if (returnType.type instanceof RustTrait) {
 			preparedReturnValue.wrapperPrefix += `NativelyImplemented${this.swiftTypeName(returnType.type)}(cType: `;
 			preparedReturnValue.wrapperSuffix += `, anchor: self)`;

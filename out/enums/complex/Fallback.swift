@@ -261,7 +261,7 @@
 
 					
 					
-					internal typealias Fallback_LDKSegWitProgram_Body = Self.SegWitProgram
+					internal typealias Fallback_LDKSegWitProgram_Body = SegWitProgram
 			
 
 					/// 

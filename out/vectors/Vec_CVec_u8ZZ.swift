@@ -40,7 +40,10 @@
 
 						let rustArray = array.map { (currentValueDepth1) in
 							currentValueDepth1.map { (currentValueDepth2) in
-								currentValueDepth2.danglingClone().cType!
+
+				
+				return currentValueDepth2
+			
 							}
 						}
 

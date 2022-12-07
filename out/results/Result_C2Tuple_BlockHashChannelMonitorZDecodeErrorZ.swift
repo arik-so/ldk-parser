@@ -40,9 +40,11 @@
 					public init(o: ([UInt8], ChannelMonitor)) {
 						// native call variable prep
 						
+						let oTuple = Tuple_BlockHashChannelMonitorZ(tuple: o)
+				
 
 						// native method call
-						let nativeCallResult = CResult_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ_ok(o.cType!)
+						let nativeCallResult = CResult_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ_ok(oTuple.cType!)
 
 						// cleanup
 						

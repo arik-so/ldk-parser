@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_BlockHashChannelMonitorZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_BlockHashChannelMonitorZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -74,7 +74,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_BlockHashChannelMonitorZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_BlockHashChannelMonitorZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

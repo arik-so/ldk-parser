@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -78,7 +78,7 @@
 				
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

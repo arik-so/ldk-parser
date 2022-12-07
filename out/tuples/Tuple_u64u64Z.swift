@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_u64u64Z(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_u64u64Z(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_u64u64Z(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_u64u64Z(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

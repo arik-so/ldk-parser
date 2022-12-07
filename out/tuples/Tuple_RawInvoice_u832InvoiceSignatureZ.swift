@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -74,7 +74,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

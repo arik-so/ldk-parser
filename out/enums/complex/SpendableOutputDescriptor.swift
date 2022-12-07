@@ -311,7 +311,7 @@
 
 					
 					
-					internal typealias SpendableOutputDescriptor_LDKStaticOutput_Body = Self.StaticOutput
+					internal typealias SpendableOutputDescriptor_LDKStaticOutput_Body = StaticOutput
 			
 
 					/// 

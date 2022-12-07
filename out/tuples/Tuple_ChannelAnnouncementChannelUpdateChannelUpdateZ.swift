@@ -55,7 +55,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -72,7 +72,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}

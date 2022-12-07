@@ -38,7 +38,7 @@
 						self.instanceNumber = Self.instanceCounter
 
 						if let value = value {
-							self.cType = COption_C2Tuple_u64u64ZZ_some(some.cType!)
+							self.cType = COption_C2Tuple_u64u64ZZ_some(someTuple.cType!)
 						} else {
 							self.cType = COption_C2Tuple_u64u64ZZ_none()
 						}

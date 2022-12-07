@@ -52,7 +52,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Tuple_BlockHashChannelManagerZ(cType: nativeCallResult).getValue()
+						let returnValue = Tuple_BlockHashChannelManagerZ(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
