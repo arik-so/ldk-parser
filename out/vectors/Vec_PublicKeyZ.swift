@@ -70,7 +70,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							PublicKey(cType: currentCType)
+							PublicKey(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

@@ -70,7 +70,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							u5(cType: currentCType)
+							u5(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

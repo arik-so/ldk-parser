@@ -102,7 +102,7 @@
 					/// The element at position 0
 					public func getA() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: self.cType!.a)
+						let returnValue = ThirtyTwoBytes(cType: self.cType!.a).getValue()
 
 						return returnValue;
 					}

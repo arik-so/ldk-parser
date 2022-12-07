@@ -125,7 +125,7 @@
 
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
-							return SecretKey(cType: self.cType!.contents.result.pointee)
+							return SecretKey(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}

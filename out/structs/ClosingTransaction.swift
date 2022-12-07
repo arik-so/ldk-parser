@@ -261,7 +261,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = u8slice(cType: nativeCallResult)
+						let returnValue = u8slice(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -282,7 +282,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = u8slice(cType: nativeCallResult)
+						let returnValue = u8slice(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

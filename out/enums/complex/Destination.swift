@@ -118,7 +118,7 @@
 							return nil
 						}
 
-						return PublicKey(cType: self.cType!.node)
+						return PublicKey(cType: self.cType!.node).getValue()
 					}
 			
 					public func getValueAsBlindedRoute() -> BlindedRoute? {

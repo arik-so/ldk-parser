@@ -112,7 +112,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -156,7 +156,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -200,7 +200,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

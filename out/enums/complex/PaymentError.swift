@@ -162,7 +162,7 @@
 							return nil
 						}
 
-						return Str(cType: self.cType!.invoice)
+						return Str(cType: self.cType!.invoice).getValue()
 					}
 			
 					public func getValueAsRouting() -> LightningError? {

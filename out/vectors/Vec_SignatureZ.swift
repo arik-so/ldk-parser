@@ -70,7 +70,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							Signature(cType: currentCType)
+							Signature(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

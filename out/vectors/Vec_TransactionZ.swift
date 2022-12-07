@@ -70,7 +70,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							Transaction(cType: currentCType)
+							Transaction(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

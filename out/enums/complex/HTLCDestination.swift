@@ -322,7 +322,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id)
+							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
 
 							return returnValue;
 						}
@@ -330,7 +330,7 @@
 						/// The outgoing `channel_id` between us and the next node.
 						public func getChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id).getValue()
 
 							return returnValue;
 						}
@@ -436,7 +436,7 @@
 						/// The payment hash of the payment we attempted to process.
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).getValue()
 
 							return returnValue;
 						}

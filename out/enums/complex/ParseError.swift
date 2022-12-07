@@ -544,7 +544,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult)
+						let returnValue = Str(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -588,7 +588,7 @@
 							return nil
 						}
 
-						return Str(cType: self.cType!.invalid_slice_length)
+						return Str(cType: self.cType!.invalid_slice_length).getValue()
 					}
 			
 

@@ -70,7 +70,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							ThirtyTwoBytes(cType: currentCType)
+							ThirtyTwoBytes(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

@@ -536,7 +536,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		};
 
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes
-		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple) {
+		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple || returnType.type instanceof RustPrimitiveWrapper) {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
 			preparedReturnValue.wrapperSuffix += `)`;
 			if (returnType.type !== containerType) {

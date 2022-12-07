@@ -70,7 +70,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_ScalarZ_Some {
-							return BigEndianScalar(cType: self.cType!.some)
+							return BigEndianScalar(cType: self.cType!.some).getValue()
 						}
 						assert(false, "invalid option enum value")
 						return nil

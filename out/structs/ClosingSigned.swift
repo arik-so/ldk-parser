@@ -134,7 +134,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Signature(cType: nativeCallResult)
+						let returnValue = Signature(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

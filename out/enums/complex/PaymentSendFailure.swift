@@ -327,7 +327,7 @@
 						/// The payment id for the payment, which is now at least partially pending.
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).getValue()
 
 							return returnValue;
 						}

@@ -635,7 +635,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: nativeCallResult)
+						let returnValue = PublicKey(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -659,7 +659,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -715,7 +715,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

@@ -69,7 +69,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Transaction(cType: nativeCallResult)
+						let returnValue = Transaction(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -225,7 +225,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: nativeCallResult)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -255,7 +255,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Signature(cType: nativeCallResult)
+						let returnValue = Signature(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

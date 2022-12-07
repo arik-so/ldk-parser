@@ -125,7 +125,7 @@
 					/// The element at position 2
 					public func getC() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: self.cType!.c)
+						let returnValue = PublicKey(cType: self.cType!.c).getValue()
 
 						return returnValue;
 					}
