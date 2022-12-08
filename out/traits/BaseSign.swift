@@ -71,7 +71,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = swiftCallbackResult.cType!
+							let returnValue = PublicKey(value: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}
@@ -89,7 +89,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = swiftCallbackResult.cType!
+							let returnValue = ThirtyTwoBytes(value: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}
@@ -125,7 +125,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = swiftCallbackResult.cType!
+							let returnValue = ThirtyTwoBytes(value: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}

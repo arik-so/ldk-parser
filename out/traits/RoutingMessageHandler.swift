@@ -115,7 +115,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = swiftCallbackResult.cType!
+							let returnValue = Option_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ(some: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}

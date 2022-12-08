@@ -407,7 +407,13 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		if (type instanceof RustVector) {
 			preparedReturnValue.wrapperPrefix = `${this.swiftTypeName(type)}(array: `;
 			preparedReturnValue.wrapperSuffix = `).dangle().cType!`;
-		} else if (type instanceof RustNullableOption || type instanceof RustTaggedValueEnum || type instanceof RustResult) {
+		} else if (type instanceof RustPrimitiveWrapper) {
+			preparedReturnValue.wrapperPrefix = `${this.swiftTypeName(type)}(value: `;
+			preparedReturnValue.wrapperSuffix = `).dangle().cType!`;
+		} else if (type instanceof RustNullableOption) {
+			preparedReturnValue.wrapperPrefix = `${this.swiftTypeName(type)}(some: `;
+			preparedReturnValue.wrapperSuffix = `).dangle().cType!`;
+		} else if (type instanceof RustTaggedValueEnum || type instanceof RustResult) {
 			preparedReturnValue.wrapperSuffix = '.cType!';
 		} else if (type instanceof RustTrait) {
 			preparedReturnValue.wrapperSuffix = '.activate().cType!';

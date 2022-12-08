@@ -75,7 +75,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = swiftCallbackResult.cType!
+							let returnValue = Str(value: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}
