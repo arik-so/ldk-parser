@@ -24,11 +24,13 @@
 						self = .UnknownTx
 
 						
-						if value == LDKAccessError_UnknownChain {
+						// LDKAccessError_UnknownChain
+						if value.rawValue == 0 {
 							self = .UnknownChain
 						}
 			
-						if value == LDKAccessError_UnknownTx {
+						// LDKAccessError_UnknownTx
+						if value.rawValue == 1 {
 							self = .UnknownTx
 						}
 			
@@ -38,10 +40,12 @@
 						switch self {
 							
 							case .UnknownChain:
-								return LDKAccessError_UnknownChain
+								// return LDKAccessError_UnknownChain
+								return LDKAccessError(0)
 			
 							case .UnknownTx:
-								return LDKAccessError_UnknownTx
+								// return LDKAccessError_UnknownTx
+								return LDKAccessError(1)
 			
 						}
 					}

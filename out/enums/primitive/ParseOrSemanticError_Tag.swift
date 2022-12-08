@@ -26,11 +26,13 @@
 						self = .LDKParseOrSemanticError_SemanticError
 
 						
-						if value == LDKParseOrSemanticError_ParseError {
+						// LDKParseOrSemanticError_ParseError
+						if value.rawValue == 0 {
 							self = .LDKParseOrSemanticError_ParseError
 						}
 			
-						if value == LDKParseOrSemanticError_SemanticError {
+						// LDKParseOrSemanticError_SemanticError
+						if value.rawValue == 1 {
 							self = .LDKParseOrSemanticError_SemanticError
 						}
 			
@@ -40,10 +42,12 @@
 						switch self {
 							
 							case .LDKParseOrSemanticError_ParseError:
-								return LDKParseOrSemanticError_ParseError
+								// return LDKParseOrSemanticError_ParseError
+								return LDKParseOrSemanticError_Tag(0)
 			
 							case .LDKParseOrSemanticError_SemanticError:
-								return LDKParseOrSemanticError_SemanticError
+								// return LDKParseOrSemanticError_SemanticError
+								return LDKParseOrSemanticError_Tag(1)
 			
 						}
 					}

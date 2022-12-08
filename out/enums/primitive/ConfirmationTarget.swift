@@ -28,15 +28,18 @@
 						self = .HighPriority
 
 						
-						if value == LDKConfirmationTarget_Background {
+						// LDKConfirmationTarget_Background
+						if value.rawValue == 0 {
 							self = .Background
 						}
 			
-						if value == LDKConfirmationTarget_Normal {
+						// LDKConfirmationTarget_Normal
+						if value.rawValue == 1 {
 							self = .Normal
 						}
 			
-						if value == LDKConfirmationTarget_HighPriority {
+						// LDKConfirmationTarget_HighPriority
+						if value.rawValue == 2 {
 							self = .HighPriority
 						}
 			
@@ -46,13 +49,16 @@
 						switch self {
 							
 							case .Background:
-								return LDKConfirmationTarget_Background
+								// return LDKConfirmationTarget_Background
+								return LDKConfirmationTarget(0)
 			
 							case .Normal:
-								return LDKConfirmationTarget_Normal
+								// return LDKConfirmationTarget_Normal
+								return LDKConfirmationTarget(1)
 			
 							case .HighPriority:
-								return LDKConfirmationTarget_HighPriority
+								// return LDKConfirmationTarget_HighPriority
+								return LDKConfirmationTarget(2)
 			
 						}
 					}

@@ -25,11 +25,13 @@
 						self = .LDKSignOrCreationError_CreationError
 
 						
-						if value == LDKSignOrCreationError_SignError {
+						// LDKSignOrCreationError_SignError
+						if value.rawValue == 0 {
 							self = .LDKSignOrCreationError_SignError
 						}
 			
-						if value == LDKSignOrCreationError_CreationError {
+						// LDKSignOrCreationError_CreationError
+						if value.rawValue == 1 {
 							self = .LDKSignOrCreationError_CreationError
 						}
 			
@@ -39,10 +41,12 @@
 						switch self {
 							
 							case .LDKSignOrCreationError_SignError:
-								return LDKSignOrCreationError_SignError
+								// return LDKSignOrCreationError_SignError
+								return LDKSignOrCreationError_Tag(0)
 			
 							case .LDKSignOrCreationError_CreationError:
-								return LDKSignOrCreationError_CreationError
+								// return LDKSignOrCreationError_CreationError
+								return LDKSignOrCreationError_Tag(1)
 			
 						}
 					}

@@ -42,31 +42,38 @@
 						self = .LDKDecodeError_UnsupportedCompression
 
 						
-						if value == LDKDecodeError_UnknownVersion {
+						// LDKDecodeError_UnknownVersion
+						if value.rawValue == 0 {
 							self = .LDKDecodeError_UnknownVersion
 						}
 			
-						if value == LDKDecodeError_UnknownRequiredFeature {
+						// LDKDecodeError_UnknownRequiredFeature
+						if value.rawValue == 1 {
 							self = .LDKDecodeError_UnknownRequiredFeature
 						}
 			
-						if value == LDKDecodeError_InvalidValue {
+						// LDKDecodeError_InvalidValue
+						if value.rawValue == 2 {
 							self = .LDKDecodeError_InvalidValue
 						}
 			
-						if value == LDKDecodeError_ShortRead {
+						// LDKDecodeError_ShortRead
+						if value.rawValue == 3 {
 							self = .LDKDecodeError_ShortRead
 						}
 			
-						if value == LDKDecodeError_BadLengthDescriptor {
+						// LDKDecodeError_BadLengthDescriptor
+						if value.rawValue == 4 {
 							self = .LDKDecodeError_BadLengthDescriptor
 						}
 			
-						if value == LDKDecodeError_Io {
+						// LDKDecodeError_Io
+						if value.rawValue == 5 {
 							self = .LDKDecodeError_Io
 						}
 			
-						if value == LDKDecodeError_UnsupportedCompression {
+						// LDKDecodeError_UnsupportedCompression
+						if value.rawValue == 6 {
 							self = .LDKDecodeError_UnsupportedCompression
 						}
 			
@@ -76,25 +83,32 @@
 						switch self {
 							
 							case .LDKDecodeError_UnknownVersion:
-								return LDKDecodeError_UnknownVersion
+								// return LDKDecodeError_UnknownVersion
+								return LDKDecodeError_Tag(0)
 			
 							case .LDKDecodeError_UnknownRequiredFeature:
-								return LDKDecodeError_UnknownRequiredFeature
+								// return LDKDecodeError_UnknownRequiredFeature
+								return LDKDecodeError_Tag(1)
 			
 							case .LDKDecodeError_InvalidValue:
-								return LDKDecodeError_InvalidValue
+								// return LDKDecodeError_InvalidValue
+								return LDKDecodeError_Tag(2)
 			
 							case .LDKDecodeError_ShortRead:
-								return LDKDecodeError_ShortRead
+								// return LDKDecodeError_ShortRead
+								return LDKDecodeError_Tag(3)
 			
 							case .LDKDecodeError_BadLengthDescriptor:
-								return LDKDecodeError_BadLengthDescriptor
+								// return LDKDecodeError_BadLengthDescriptor
+								return LDKDecodeError_Tag(4)
 			
 							case .LDKDecodeError_Io:
-								return LDKDecodeError_Io
+								// return LDKDecodeError_Io
+								return LDKDecodeError_Tag(5)
 			
 							case .LDKDecodeError_UnsupportedCompression:
-								return LDKDecodeError_UnsupportedCompression
+								// return LDKDecodeError_UnsupportedCompression
+								return LDKDecodeError_Tag(6)
 			
 						}
 					}

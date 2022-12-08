@@ -53,19 +53,23 @@
 						self = .LDKPaymentSendFailure_PartialFailure
 
 						
-						if value == LDKPaymentSendFailure_ParameterError {
+						// LDKPaymentSendFailure_ParameterError
+						if value.rawValue == 0 {
 							self = .LDKPaymentSendFailure_ParameterError
 						}
 			
-						if value == LDKPaymentSendFailure_PathParameterError {
+						// LDKPaymentSendFailure_PathParameterError
+						if value.rawValue == 1 {
 							self = .LDKPaymentSendFailure_PathParameterError
 						}
 			
-						if value == LDKPaymentSendFailure_AllFailedRetrySafe {
+						// LDKPaymentSendFailure_AllFailedRetrySafe
+						if value.rawValue == 2 {
 							self = .LDKPaymentSendFailure_AllFailedRetrySafe
 						}
 			
-						if value == LDKPaymentSendFailure_PartialFailure {
+						// LDKPaymentSendFailure_PartialFailure
+						if value.rawValue == 3 {
 							self = .LDKPaymentSendFailure_PartialFailure
 						}
 			
@@ -75,16 +79,20 @@
 						switch self {
 							
 							case .LDKPaymentSendFailure_ParameterError:
-								return LDKPaymentSendFailure_ParameterError
+								// return LDKPaymentSendFailure_ParameterError
+								return LDKPaymentSendFailure_Tag(0)
 			
 							case .LDKPaymentSendFailure_PathParameterError:
-								return LDKPaymentSendFailure_PathParameterError
+								// return LDKPaymentSendFailure_PathParameterError
+								return LDKPaymentSendFailure_Tag(1)
 			
 							case .LDKPaymentSendFailure_AllFailedRetrySafe:
-								return LDKPaymentSendFailure_AllFailedRetrySafe
+								// return LDKPaymentSendFailure_AllFailedRetrySafe
+								return LDKPaymentSendFailure_Tag(2)
 			
 							case .LDKPaymentSendFailure_PartialFailure:
-								return LDKPaymentSendFailure_PartialFailure
+								// return LDKPaymentSendFailure_PartialFailure
+								return LDKPaymentSendFailure_Tag(3)
 			
 						}
 					}

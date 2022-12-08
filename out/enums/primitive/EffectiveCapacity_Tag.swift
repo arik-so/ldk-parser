@@ -39,23 +39,28 @@
 						self = .LDKEffectiveCapacity_Unknown
 
 						
-						if value == LDKEffectiveCapacity_ExactLiquidity {
+						// LDKEffectiveCapacity_ExactLiquidity
+						if value.rawValue == 0 {
 							self = .LDKEffectiveCapacity_ExactLiquidity
 						}
 			
-						if value == LDKEffectiveCapacity_MaximumHTLC {
+						// LDKEffectiveCapacity_MaximumHTLC
+						if value.rawValue == 1 {
 							self = .LDKEffectiveCapacity_MaximumHTLC
 						}
 			
-						if value == LDKEffectiveCapacity_Total {
+						// LDKEffectiveCapacity_Total
+						if value.rawValue == 2 {
 							self = .LDKEffectiveCapacity_Total
 						}
 			
-						if value == LDKEffectiveCapacity_Infinite {
+						// LDKEffectiveCapacity_Infinite
+						if value.rawValue == 3 {
 							self = .LDKEffectiveCapacity_Infinite
 						}
 			
-						if value == LDKEffectiveCapacity_Unknown {
+						// LDKEffectiveCapacity_Unknown
+						if value.rawValue == 4 {
 							self = .LDKEffectiveCapacity_Unknown
 						}
 			
@@ -65,19 +70,24 @@
 						switch self {
 							
 							case .LDKEffectiveCapacity_ExactLiquidity:
-								return LDKEffectiveCapacity_ExactLiquidity
+								// return LDKEffectiveCapacity_ExactLiquidity
+								return LDKEffectiveCapacity_Tag(0)
 			
 							case .LDKEffectiveCapacity_MaximumHTLC:
-								return LDKEffectiveCapacity_MaximumHTLC
+								// return LDKEffectiveCapacity_MaximumHTLC
+								return LDKEffectiveCapacity_Tag(1)
 			
 							case .LDKEffectiveCapacity_Total:
-								return LDKEffectiveCapacity_Total
+								// return LDKEffectiveCapacity_Total
+								return LDKEffectiveCapacity_Tag(2)
 			
 							case .LDKEffectiveCapacity_Infinite:
-								return LDKEffectiveCapacity_Infinite
+								// return LDKEffectiveCapacity_Infinite
+								return LDKEffectiveCapacity_Tag(3)
 			
 							case .LDKEffectiveCapacity_Unknown:
-								return LDKEffectiveCapacity_Unknown
+								// return LDKEffectiveCapacity_Unknown
+								return LDKEffectiveCapacity_Tag(4)
 			
 						}
 					}

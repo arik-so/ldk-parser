@@ -33,23 +33,28 @@
 						self = .Signet
 
 						
-						if value == LDKCurrency_Bitcoin {
+						// LDKCurrency_Bitcoin
+						if value.rawValue == 0 {
 							self = .Bitcoin
 						}
 			
-						if value == LDKCurrency_BitcoinTestnet {
+						// LDKCurrency_BitcoinTestnet
+						if value.rawValue == 1 {
 							self = .BitcoinTestnet
 						}
 			
-						if value == LDKCurrency_Regtest {
+						// LDKCurrency_Regtest
+						if value.rawValue == 2 {
 							self = .Regtest
 						}
 			
-						if value == LDKCurrency_Simnet {
+						// LDKCurrency_Simnet
+						if value.rawValue == 3 {
 							self = .Simnet
 						}
 			
-						if value == LDKCurrency_Signet {
+						// LDKCurrency_Signet
+						if value.rawValue == 4 {
 							self = .Signet
 						}
 			
@@ -59,19 +64,24 @@
 						switch self {
 							
 							case .Bitcoin:
-								return LDKCurrency_Bitcoin
+								// return LDKCurrency_Bitcoin
+								return LDKCurrency(0)
 			
 							case .BitcoinTestnet:
-								return LDKCurrency_BitcoinTestnet
+								// return LDKCurrency_BitcoinTestnet
+								return LDKCurrency(1)
 			
 							case .Regtest:
-								return LDKCurrency_Regtest
+								// return LDKCurrency_Regtest
+								return LDKCurrency(2)
 			
 							case .Simnet:
-								return LDKCurrency_Simnet
+								// return LDKCurrency_Simnet
+								return LDKCurrency(3)
 			
 							case .Signet:
-								return LDKCurrency_Signet
+								// return LDKCurrency_Signet
+								return LDKCurrency(4)
 			
 						}
 					}

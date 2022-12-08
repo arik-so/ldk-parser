@@ -27,15 +27,18 @@
 						self = .LDKGossipSync_None
 
 						
-						if value == LDKGossipSync_P2P {
+						// LDKGossipSync_P2P
+						if value.rawValue == 0 {
 							self = .LDKGossipSync_P2P
 						}
 			
-						if value == LDKGossipSync_Rapid {
+						// LDKGossipSync_Rapid
+						if value.rawValue == 1 {
 							self = .LDKGossipSync_Rapid
 						}
 			
-						if value == LDKGossipSync_None {
+						// LDKGossipSync_None
+						if value.rawValue == 2 {
 							self = .LDKGossipSync_None
 						}
 			
@@ -45,13 +48,16 @@
 						switch self {
 							
 							case .LDKGossipSync_P2P:
-								return LDKGossipSync_P2P
+								// return LDKGossipSync_P2P
+								return LDKGossipSync_Tag(0)
 			
 							case .LDKGossipSync_Rapid:
-								return LDKGossipSync_Rapid
+								// return LDKGossipSync_Rapid
+								return LDKGossipSync_Tag(1)
 			
 							case .LDKGossipSync_None:
-								return LDKGossipSync_None
+								// return LDKGossipSync_None
+								return LDKGossipSync_Tag(2)
 			
 						}
 					}

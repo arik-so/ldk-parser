@@ -36,23 +36,28 @@
 						self = .MissingRouteHints
 
 						
-						if value == LDKCreationError_DescriptionTooLong {
+						// LDKCreationError_DescriptionTooLong
+						if value.rawValue == 0 {
 							self = .DescriptionTooLong
 						}
 			
-						if value == LDKCreationError_RouteTooLong {
+						// LDKCreationError_RouteTooLong
+						if value.rawValue == 1 {
 							self = .RouteTooLong
 						}
 			
-						if value == LDKCreationError_TimestampOutOfBounds {
+						// LDKCreationError_TimestampOutOfBounds
+						if value.rawValue == 2 {
 							self = .TimestampOutOfBounds
 						}
 			
-						if value == LDKCreationError_InvalidAmount {
+						// LDKCreationError_InvalidAmount
+						if value.rawValue == 3 {
 							self = .InvalidAmount
 						}
 			
-						if value == LDKCreationError_MissingRouteHints {
+						// LDKCreationError_MissingRouteHints
+						if value.rawValue == 4 {
 							self = .MissingRouteHints
 						}
 			
@@ -62,19 +67,24 @@
 						switch self {
 							
 							case .DescriptionTooLong:
-								return LDKCreationError_DescriptionTooLong
+								// return LDKCreationError_DescriptionTooLong
+								return LDKCreationError(0)
 			
 							case .RouteTooLong:
-								return LDKCreationError_RouteTooLong
+								// return LDKCreationError_RouteTooLong
+								return LDKCreationError(1)
 			
 							case .TimestampOutOfBounds:
-								return LDKCreationError_TimestampOutOfBounds
+								// return LDKCreationError_TimestampOutOfBounds
+								return LDKCreationError(2)
 			
 							case .InvalidAmount:
-								return LDKCreationError_InvalidAmount
+								// return LDKCreationError_InvalidAmount
+								return LDKCreationError(3)
 			
 							case .MissingRouteHints:
-								return LDKCreationError_MissingRouteHints
+								// return LDKCreationError_MissingRouteHints
+								return LDKCreationError(4)
 			
 						}
 					}

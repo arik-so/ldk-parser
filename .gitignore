@@ -1,6 +1,9 @@
 .idea
 /node_modules
 
+/out/production
+/out/test
+
 /src/lab/*
 /src/**/*.mjs
 /src/**/*.mjs.map
@@ -18,3 +21,6 @@
 /xcode/build
 /xcuserdata/
 *.log
+
+poetry.lock
+pyproject.toml

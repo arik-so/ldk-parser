@@ -72,75 +72,93 @@
 						self = .UnexpectedEof
 
 						
-						if value == LDKIOError_NotFound {
+						// LDKIOError_NotFound
+						if value.rawValue == 0 {
 							self = .NotFound
 						}
 			
-						if value == LDKIOError_PermissionDenied {
+						// LDKIOError_PermissionDenied
+						if value.rawValue == 1 {
 							self = .PermissionDenied
 						}
 			
-						if value == LDKIOError_ConnectionRefused {
+						// LDKIOError_ConnectionRefused
+						if value.rawValue == 2 {
 							self = .ConnectionRefused
 						}
 			
-						if value == LDKIOError_ConnectionReset {
+						// LDKIOError_ConnectionReset
+						if value.rawValue == 3 {
 							self = .ConnectionReset
 						}
 			
-						if value == LDKIOError_ConnectionAborted {
+						// LDKIOError_ConnectionAborted
+						if value.rawValue == 4 {
 							self = .ConnectionAborted
 						}
 			
-						if value == LDKIOError_NotConnected {
+						// LDKIOError_NotConnected
+						if value.rawValue == 5 {
 							self = .NotConnected
 						}
 			
-						if value == LDKIOError_AddrInUse {
+						// LDKIOError_AddrInUse
+						if value.rawValue == 6 {
 							self = .AddrInUse
 						}
 			
-						if value == LDKIOError_AddrNotAvailable {
+						// LDKIOError_AddrNotAvailable
+						if value.rawValue == 7 {
 							self = .AddrNotAvailable
 						}
 			
-						if value == LDKIOError_BrokenPipe {
+						// LDKIOError_BrokenPipe
+						if value.rawValue == 8 {
 							self = .BrokenPipe
 						}
 			
-						if value == LDKIOError_AlreadyExists {
+						// LDKIOError_AlreadyExists
+						if value.rawValue == 9 {
 							self = .AlreadyExists
 						}
 			
-						if value == LDKIOError_WouldBlock {
+						// LDKIOError_WouldBlock
+						if value.rawValue == 10 {
 							self = .WouldBlock
 						}
 			
-						if value == LDKIOError_InvalidInput {
+						// LDKIOError_InvalidInput
+						if value.rawValue == 11 {
 							self = .InvalidInput
 						}
 			
-						if value == LDKIOError_InvalidData {
+						// LDKIOError_InvalidData
+						if value.rawValue == 12 {
 							self = .InvalidData
 						}
 			
-						if value == LDKIOError_TimedOut {
+						// LDKIOError_TimedOut
+						if value.rawValue == 13 {
 							self = .TimedOut
 						}
 			
-						if value == LDKIOError_WriteZero {
+						// LDKIOError_WriteZero
+						if value.rawValue == 14 {
 							self = .WriteZero
 						}
 			
-						if value == LDKIOError_Interrupted {
+						// LDKIOError_Interrupted
+						if value.rawValue == 15 {
 							self = .Interrupted
 						}
 			
-						if value == LDKIOError_Other {
+						// LDKIOError_Other
+						if value.rawValue == 16 {
 							self = .Other
 						}
 			
-						if value == LDKIOError_UnexpectedEof {
+						// LDKIOError_UnexpectedEof
+						if value.rawValue == 17 {
 							self = .UnexpectedEof
 						}
 			
@@ -150,58 +168,76 @@
 						switch self {
 							
 							case .NotFound:
-								return LDKIOError_NotFound
+								// return LDKIOError_NotFound
+								return LDKIOError(0)
 			
 							case .PermissionDenied:
-								return LDKIOError_PermissionDenied
+								// return LDKIOError_PermissionDenied
+								return LDKIOError(1)
 			
 							case .ConnectionRefused:
-								return LDKIOError_ConnectionRefused
+								// return LDKIOError_ConnectionRefused
+								return LDKIOError(2)
 			
 							case .ConnectionReset:
-								return LDKIOError_ConnectionReset
+								// return LDKIOError_ConnectionReset
+								return LDKIOError(3)
 			
 							case .ConnectionAborted:
-								return LDKIOError_ConnectionAborted
+								// return LDKIOError_ConnectionAborted
+								return LDKIOError(4)
 			
 							case .NotConnected:
-								return LDKIOError_NotConnected
+								// return LDKIOError_NotConnected
+								return LDKIOError(5)
 			
 							case .AddrInUse:
-								return LDKIOError_AddrInUse
+								// return LDKIOError_AddrInUse
+								return LDKIOError(6)
 			
 							case .AddrNotAvailable:
-								return LDKIOError_AddrNotAvailable
+								// return LDKIOError_AddrNotAvailable
+								return LDKIOError(7)
 			
 							case .BrokenPipe:
-								return LDKIOError_BrokenPipe
+								// return LDKIOError_BrokenPipe
+								return LDKIOError(8)
 			
 							case .AlreadyExists:
-								return LDKIOError_AlreadyExists
+								// return LDKIOError_AlreadyExists
+								return LDKIOError(9)
 			
 							case .WouldBlock:
-								return LDKIOError_WouldBlock
+								// return LDKIOError_WouldBlock
+								return LDKIOError(10)
 			
 							case .InvalidInput:
-								return LDKIOError_InvalidInput
+								// return LDKIOError_InvalidInput
+								return LDKIOError(11)
 			
 							case .InvalidData:
-								return LDKIOError_InvalidData
+								// return LDKIOError_InvalidData
+								return LDKIOError(12)
 			
 							case .TimedOut:
-								return LDKIOError_TimedOut
+								// return LDKIOError_TimedOut
+								return LDKIOError(13)
 			
 							case .WriteZero:
-								return LDKIOError_WriteZero
+								// return LDKIOError_WriteZero
+								return LDKIOError(14)
 			
 							case .Interrupted:
-								return LDKIOError_Interrupted
+								// return LDKIOError_Interrupted
+								return LDKIOError(15)
 			
 							case .Other:
-								return LDKIOError_Other
+								// return LDKIOError_Other
+								return LDKIOError(16)
 			
 							case .UnexpectedEof:
-								return LDKIOError_UnexpectedEof
+								// return LDKIOError_UnexpectedEof
+								return LDKIOError(17)
 			
 						}
 					}

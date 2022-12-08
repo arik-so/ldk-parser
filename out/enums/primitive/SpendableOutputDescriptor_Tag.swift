@@ -68,15 +68,18 @@
 						self = .LDKSpendableOutputDescriptor_StaticPaymentOutput
 
 						
-						if value == LDKSpendableOutputDescriptor_StaticOutput {
+						// LDKSpendableOutputDescriptor_StaticOutput
+						if value.rawValue == 0 {
 							self = .LDKSpendableOutputDescriptor_StaticOutput
 						}
 			
-						if value == LDKSpendableOutputDescriptor_DelayedPaymentOutput {
+						// LDKSpendableOutputDescriptor_DelayedPaymentOutput
+						if value.rawValue == 1 {
 							self = .LDKSpendableOutputDescriptor_DelayedPaymentOutput
 						}
 			
-						if value == LDKSpendableOutputDescriptor_StaticPaymentOutput {
+						// LDKSpendableOutputDescriptor_StaticPaymentOutput
+						if value.rawValue == 2 {
 							self = .LDKSpendableOutputDescriptor_StaticPaymentOutput
 						}
 			
@@ -86,13 +89,16 @@
 						switch self {
 							
 							case .LDKSpendableOutputDescriptor_StaticOutput:
-								return LDKSpendableOutputDescriptor_StaticOutput
+								// return LDKSpendableOutputDescriptor_StaticOutput
+								return LDKSpendableOutputDescriptor_Tag(0)
 			
 							case .LDKSpendableOutputDescriptor_DelayedPaymentOutput:
-								return LDKSpendableOutputDescriptor_DelayedPaymentOutput
+								// return LDKSpendableOutputDescriptor_DelayedPaymentOutput
+								return LDKSpendableOutputDescriptor_Tag(1)
 			
 							case .LDKSpendableOutputDescriptor_StaticPaymentOutput:
-								return LDKSpendableOutputDescriptor_StaticPaymentOutput
+								// return LDKSpendableOutputDescriptor_StaticPaymentOutput
+								return LDKSpendableOutputDescriptor_Tag(2)
 			
 						}
 					}

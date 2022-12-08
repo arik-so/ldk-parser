@@ -33,15 +33,18 @@
 						self = .LDKNetworkUpdate_NodeFailure
 
 						
-						if value == LDKNetworkUpdate_ChannelUpdateMessage {
+						// LDKNetworkUpdate_ChannelUpdateMessage
+						if value.rawValue == 0 {
 							self = .LDKNetworkUpdate_ChannelUpdateMessage
 						}
 			
-						if value == LDKNetworkUpdate_ChannelFailure {
+						// LDKNetworkUpdate_ChannelFailure
+						if value.rawValue == 1 {
 							self = .LDKNetworkUpdate_ChannelFailure
 						}
 			
-						if value == LDKNetworkUpdate_NodeFailure {
+						// LDKNetworkUpdate_NodeFailure
+						if value.rawValue == 2 {
 							self = .LDKNetworkUpdate_NodeFailure
 						}
 			
@@ -51,13 +54,16 @@
 						switch self {
 							
 							case .LDKNetworkUpdate_ChannelUpdateMessage:
-								return LDKNetworkUpdate_ChannelUpdateMessage
+								// return LDKNetworkUpdate_ChannelUpdateMessage
+								return LDKNetworkUpdate_Tag(0)
 			
 							case .LDKNetworkUpdate_ChannelFailure:
-								return LDKNetworkUpdate_ChannelFailure
+								// return LDKNetworkUpdate_ChannelFailure
+								return LDKNetworkUpdate_Tag(1)
 			
 							case .LDKNetworkUpdate_NodeFailure:
-								return LDKNetworkUpdate_NodeFailure
+								// return LDKNetworkUpdate_NodeFailure
+								return LDKNetworkUpdate_Tag(2)
 			
 						}
 					}

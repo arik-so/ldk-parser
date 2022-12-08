@@ -98,83 +98,103 @@
 						self = .LDKMessageSendEvent_SendGossipTimestampFilter
 
 						
-						if value == LDKMessageSendEvent_SendAcceptChannel {
+						// LDKMessageSendEvent_SendAcceptChannel
+						if value.rawValue == 0 {
 							self = .LDKMessageSendEvent_SendAcceptChannel
 						}
 			
-						if value == LDKMessageSendEvent_SendOpenChannel {
+						// LDKMessageSendEvent_SendOpenChannel
+						if value.rawValue == 1 {
 							self = .LDKMessageSendEvent_SendOpenChannel
 						}
 			
-						if value == LDKMessageSendEvent_SendFundingCreated {
+						// LDKMessageSendEvent_SendFundingCreated
+						if value.rawValue == 2 {
 							self = .LDKMessageSendEvent_SendFundingCreated
 						}
 			
-						if value == LDKMessageSendEvent_SendFundingSigned {
+						// LDKMessageSendEvent_SendFundingSigned
+						if value.rawValue == 3 {
 							self = .LDKMessageSendEvent_SendFundingSigned
 						}
 			
-						if value == LDKMessageSendEvent_SendChannelReady {
+						// LDKMessageSendEvent_SendChannelReady
+						if value.rawValue == 4 {
 							self = .LDKMessageSendEvent_SendChannelReady
 						}
 			
-						if value == LDKMessageSendEvent_SendAnnouncementSignatures {
+						// LDKMessageSendEvent_SendAnnouncementSignatures
+						if value.rawValue == 5 {
 							self = .LDKMessageSendEvent_SendAnnouncementSignatures
 						}
 			
-						if value == LDKMessageSendEvent_UpdateHTLCs {
+						// LDKMessageSendEvent_UpdateHTLCs
+						if value.rawValue == 6 {
 							self = .LDKMessageSendEvent_UpdateHTLCs
 						}
 			
-						if value == LDKMessageSendEvent_SendRevokeAndACK {
+						// LDKMessageSendEvent_SendRevokeAndACK
+						if value.rawValue == 7 {
 							self = .LDKMessageSendEvent_SendRevokeAndACK
 						}
 			
-						if value == LDKMessageSendEvent_SendClosingSigned {
+						// LDKMessageSendEvent_SendClosingSigned
+						if value.rawValue == 8 {
 							self = .LDKMessageSendEvent_SendClosingSigned
 						}
 			
-						if value == LDKMessageSendEvent_SendShutdown {
+						// LDKMessageSendEvent_SendShutdown
+						if value.rawValue == 9 {
 							self = .LDKMessageSendEvent_SendShutdown
 						}
 			
-						if value == LDKMessageSendEvent_SendChannelReestablish {
+						// LDKMessageSendEvent_SendChannelReestablish
+						if value.rawValue == 10 {
 							self = .LDKMessageSendEvent_SendChannelReestablish
 						}
 			
-						if value == LDKMessageSendEvent_SendChannelAnnouncement {
+						// LDKMessageSendEvent_SendChannelAnnouncement
+						if value.rawValue == 11 {
 							self = .LDKMessageSendEvent_SendChannelAnnouncement
 						}
 			
-						if value == LDKMessageSendEvent_BroadcastChannelAnnouncement {
+						// LDKMessageSendEvent_BroadcastChannelAnnouncement
+						if value.rawValue == 12 {
 							self = .LDKMessageSendEvent_BroadcastChannelAnnouncement
 						}
 			
-						if value == LDKMessageSendEvent_BroadcastChannelUpdate {
+						// LDKMessageSendEvent_BroadcastChannelUpdate
+						if value.rawValue == 13 {
 							self = .LDKMessageSendEvent_BroadcastChannelUpdate
 						}
 			
-						if value == LDKMessageSendEvent_SendChannelUpdate {
+						// LDKMessageSendEvent_SendChannelUpdate
+						if value.rawValue == 14 {
 							self = .LDKMessageSendEvent_SendChannelUpdate
 						}
 			
-						if value == LDKMessageSendEvent_HandleError {
+						// LDKMessageSendEvent_HandleError
+						if value.rawValue == 15 {
 							self = .LDKMessageSendEvent_HandleError
 						}
 			
-						if value == LDKMessageSendEvent_SendChannelRangeQuery {
+						// LDKMessageSendEvent_SendChannelRangeQuery
+						if value.rawValue == 16 {
 							self = .LDKMessageSendEvent_SendChannelRangeQuery
 						}
 			
-						if value == LDKMessageSendEvent_SendShortIdsQuery {
+						// LDKMessageSendEvent_SendShortIdsQuery
+						if value.rawValue == 17 {
 							self = .LDKMessageSendEvent_SendShortIdsQuery
 						}
 			
-						if value == LDKMessageSendEvent_SendReplyChannelRange {
+						// LDKMessageSendEvent_SendReplyChannelRange
+						if value.rawValue == 18 {
 							self = .LDKMessageSendEvent_SendReplyChannelRange
 						}
 			
-						if value == LDKMessageSendEvent_SendGossipTimestampFilter {
+						// LDKMessageSendEvent_SendGossipTimestampFilter
+						if value.rawValue == 19 {
 							self = .LDKMessageSendEvent_SendGossipTimestampFilter
 						}
 			
@@ -184,64 +204,84 @@
 						switch self {
 							
 							case .LDKMessageSendEvent_SendAcceptChannel:
-								return LDKMessageSendEvent_SendAcceptChannel
+								// return LDKMessageSendEvent_SendAcceptChannel
+								return LDKMessageSendEvent_Tag(0)
 			
 							case .LDKMessageSendEvent_SendOpenChannel:
-								return LDKMessageSendEvent_SendOpenChannel
+								// return LDKMessageSendEvent_SendOpenChannel
+								return LDKMessageSendEvent_Tag(1)
 			
 							case .LDKMessageSendEvent_SendFundingCreated:
-								return LDKMessageSendEvent_SendFundingCreated
+								// return LDKMessageSendEvent_SendFundingCreated
+								return LDKMessageSendEvent_Tag(2)
 			
 							case .LDKMessageSendEvent_SendFundingSigned:
-								return LDKMessageSendEvent_SendFundingSigned
+								// return LDKMessageSendEvent_SendFundingSigned
+								return LDKMessageSendEvent_Tag(3)
 			
 							case .LDKMessageSendEvent_SendChannelReady:
-								return LDKMessageSendEvent_SendChannelReady
+								// return LDKMessageSendEvent_SendChannelReady
+								return LDKMessageSendEvent_Tag(4)
 			
 							case .LDKMessageSendEvent_SendAnnouncementSignatures:
-								return LDKMessageSendEvent_SendAnnouncementSignatures
+								// return LDKMessageSendEvent_SendAnnouncementSignatures
+								return LDKMessageSendEvent_Tag(5)
 			
 							case .LDKMessageSendEvent_UpdateHTLCs:
-								return LDKMessageSendEvent_UpdateHTLCs
+								// return LDKMessageSendEvent_UpdateHTLCs
+								return LDKMessageSendEvent_Tag(6)
 			
 							case .LDKMessageSendEvent_SendRevokeAndACK:
-								return LDKMessageSendEvent_SendRevokeAndACK
+								// return LDKMessageSendEvent_SendRevokeAndACK
+								return LDKMessageSendEvent_Tag(7)
 			
 							case .LDKMessageSendEvent_SendClosingSigned:
-								return LDKMessageSendEvent_SendClosingSigned
+								// return LDKMessageSendEvent_SendClosingSigned
+								return LDKMessageSendEvent_Tag(8)
 			
 							case .LDKMessageSendEvent_SendShutdown:
-								return LDKMessageSendEvent_SendShutdown
+								// return LDKMessageSendEvent_SendShutdown
+								return LDKMessageSendEvent_Tag(9)
 			
 							case .LDKMessageSendEvent_SendChannelReestablish:
-								return LDKMessageSendEvent_SendChannelReestablish
+								// return LDKMessageSendEvent_SendChannelReestablish
+								return LDKMessageSendEvent_Tag(10)
 			
 							case .LDKMessageSendEvent_SendChannelAnnouncement:
-								return LDKMessageSendEvent_SendChannelAnnouncement
+								// return LDKMessageSendEvent_SendChannelAnnouncement
+								return LDKMessageSendEvent_Tag(11)
 			
 							case .LDKMessageSendEvent_BroadcastChannelAnnouncement:
-								return LDKMessageSendEvent_BroadcastChannelAnnouncement
+								// return LDKMessageSendEvent_BroadcastChannelAnnouncement
+								return LDKMessageSendEvent_Tag(12)
 			
 							case .LDKMessageSendEvent_BroadcastChannelUpdate:
-								return LDKMessageSendEvent_BroadcastChannelUpdate
+								// return LDKMessageSendEvent_BroadcastChannelUpdate
+								return LDKMessageSendEvent_Tag(13)
 			
 							case .LDKMessageSendEvent_SendChannelUpdate:
-								return LDKMessageSendEvent_SendChannelUpdate
+								// return LDKMessageSendEvent_SendChannelUpdate
+								return LDKMessageSendEvent_Tag(14)
 			
 							case .LDKMessageSendEvent_HandleError:
-								return LDKMessageSendEvent_HandleError
+								// return LDKMessageSendEvent_HandleError
+								return LDKMessageSendEvent_Tag(15)
 			
 							case .LDKMessageSendEvent_SendChannelRangeQuery:
-								return LDKMessageSendEvent_SendChannelRangeQuery
+								// return LDKMessageSendEvent_SendChannelRangeQuery
+								return LDKMessageSendEvent_Tag(16)
 			
 							case .LDKMessageSendEvent_SendShortIdsQuery:
-								return LDKMessageSendEvent_SendShortIdsQuery
+								// return LDKMessageSendEvent_SendShortIdsQuery
+								return LDKMessageSendEvent_Tag(17)
 			
 							case .LDKMessageSendEvent_SendReplyChannelRange:
-								return LDKMessageSendEvent_SendReplyChannelRange
+								// return LDKMessageSendEvent_SendReplyChannelRange
+								return LDKMessageSendEvent_Tag(18)
 			
 							case .LDKMessageSendEvent_SendGossipTimestampFilter:
-								return LDKMessageSendEvent_SendGossipTimestampFilter
+								// return LDKMessageSendEvent_SendGossipTimestampFilter
+								return LDKMessageSendEvent_Tag(19)
 			
 						}
 					}

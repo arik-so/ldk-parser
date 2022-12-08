@@ -24,11 +24,13 @@
 						self = .None
 
 						
-						if value == LDKCOption_NoneZ_Some {
+						// LDKCOption_NoneZ_Some
+						if value.rawValue == 0 {
 							self = .Some
 						}
 			
-						if value == LDKCOption_NoneZ_None {
+						// LDKCOption_NoneZ_None
+						if value.rawValue == 1 {
 							self = .None
 						}
 			
@@ -38,10 +40,12 @@
 						switch self {
 							
 							case .Some:
-								return LDKCOption_NoneZ_Some
+								// return LDKCOption_NoneZ_Some
+								return LDKCOption_NoneZ(0)
 			
 							case .None:
-								return LDKCOption_NoneZ_None
+								// return LDKCOption_NoneZ_None
+								return LDKCOption_NoneZ(1)
 			
 						}
 					}

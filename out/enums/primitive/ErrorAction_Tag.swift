@@ -39,27 +39,33 @@
 						self = .LDKErrorAction_SendWarningMessage
 
 						
-						if value == LDKErrorAction_DisconnectPeer {
+						// LDKErrorAction_DisconnectPeer
+						if value.rawValue == 0 {
 							self = .LDKErrorAction_DisconnectPeer
 						}
 			
-						if value == LDKErrorAction_IgnoreError {
+						// LDKErrorAction_IgnoreError
+						if value.rawValue == 1 {
 							self = .LDKErrorAction_IgnoreError
 						}
 			
-						if value == LDKErrorAction_IgnoreAndLog {
+						// LDKErrorAction_IgnoreAndLog
+						if value.rawValue == 2 {
 							self = .LDKErrorAction_IgnoreAndLog
 						}
 			
-						if value == LDKErrorAction_IgnoreDuplicateGossip {
+						// LDKErrorAction_IgnoreDuplicateGossip
+						if value.rawValue == 3 {
 							self = .LDKErrorAction_IgnoreDuplicateGossip
 						}
 			
-						if value == LDKErrorAction_SendErrorMessage {
+						// LDKErrorAction_SendErrorMessage
+						if value.rawValue == 4 {
 							self = .LDKErrorAction_SendErrorMessage
 						}
 			
-						if value == LDKErrorAction_SendWarningMessage {
+						// LDKErrorAction_SendWarningMessage
+						if value.rawValue == 5 {
 							self = .LDKErrorAction_SendWarningMessage
 						}
 			
@@ -69,22 +75,28 @@
 						switch self {
 							
 							case .LDKErrorAction_DisconnectPeer:
-								return LDKErrorAction_DisconnectPeer
+								// return LDKErrorAction_DisconnectPeer
+								return LDKErrorAction_Tag(0)
 			
 							case .LDKErrorAction_IgnoreError:
-								return LDKErrorAction_IgnoreError
+								// return LDKErrorAction_IgnoreError
+								return LDKErrorAction_Tag(1)
 			
 							case .LDKErrorAction_IgnoreAndLog:
-								return LDKErrorAction_IgnoreAndLog
+								// return LDKErrorAction_IgnoreAndLog
+								return LDKErrorAction_Tag(2)
 			
 							case .LDKErrorAction_IgnoreDuplicateGossip:
-								return LDKErrorAction_IgnoreDuplicateGossip
+								// return LDKErrorAction_IgnoreDuplicateGossip
+								return LDKErrorAction_Tag(3)
 			
 							case .LDKErrorAction_SendErrorMessage:
-								return LDKErrorAction_SendErrorMessage
+								// return LDKErrorAction_SendErrorMessage
+								return LDKErrorAction_Tag(4)
 			
 							case .LDKErrorAction_SendWarningMessage:
-								return LDKErrorAction_SendWarningMessage
+								// return LDKErrorAction_SendWarningMessage
+								return LDKErrorAction_Tag(5)
 			
 						}
 					}

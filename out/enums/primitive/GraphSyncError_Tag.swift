@@ -26,11 +26,13 @@
 						self = .LDKGraphSyncError_LightningError
 
 						
-						if value == LDKGraphSyncError_DecodeError {
+						// LDKGraphSyncError_DecodeError
+						if value.rawValue == 0 {
 							self = .LDKGraphSyncError_DecodeError
 						}
 			
-						if value == LDKGraphSyncError_LightningError {
+						// LDKGraphSyncError_LightningError
+						if value.rawValue == 1 {
 							self = .LDKGraphSyncError_LightningError
 						}
 			
@@ -40,10 +42,12 @@
 						switch self {
 							
 							case .LDKGraphSyncError_DecodeError:
-								return LDKGraphSyncError_DecodeError
+								// return LDKGraphSyncError_DecodeError
+								return LDKGraphSyncError_Tag(0)
 			
 							case .LDKGraphSyncError_LightningError:
-								return LDKGraphSyncError_LightningError
+								// return LDKGraphSyncError_LightningError
+								return LDKGraphSyncError_Tag(1)
 			
 						}
 					}

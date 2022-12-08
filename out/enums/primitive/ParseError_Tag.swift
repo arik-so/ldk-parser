@@ -74,75 +74,93 @@
 						self = .LDKParseError_Skip
 
 						
-						if value == LDKParseError_Bech32Error {
+						// LDKParseError_Bech32Error
+						if value.rawValue == 0 {
 							self = .LDKParseError_Bech32Error
 						}
 			
-						if value == LDKParseError_ParseAmountError {
+						// LDKParseError_ParseAmountError
+						if value.rawValue == 1 {
 							self = .LDKParseError_ParseAmountError
 						}
 			
-						if value == LDKParseError_MalformedSignature {
+						// LDKParseError_MalformedSignature
+						if value.rawValue == 2 {
 							self = .LDKParseError_MalformedSignature
 						}
 			
-						if value == LDKParseError_BadPrefix {
+						// LDKParseError_BadPrefix
+						if value.rawValue == 3 {
 							self = .LDKParseError_BadPrefix
 						}
 			
-						if value == LDKParseError_UnknownCurrency {
+						// LDKParseError_UnknownCurrency
+						if value.rawValue == 4 {
 							self = .LDKParseError_UnknownCurrency
 						}
 			
-						if value == LDKParseError_UnknownSiPrefix {
+						// LDKParseError_UnknownSiPrefix
+						if value.rawValue == 5 {
 							self = .LDKParseError_UnknownSiPrefix
 						}
 			
-						if value == LDKParseError_MalformedHRP {
+						// LDKParseError_MalformedHRP
+						if value.rawValue == 6 {
 							self = .LDKParseError_MalformedHRP
 						}
 			
-						if value == LDKParseError_TooShortDataPart {
+						// LDKParseError_TooShortDataPart
+						if value.rawValue == 7 {
 							self = .LDKParseError_TooShortDataPart
 						}
 			
-						if value == LDKParseError_UnexpectedEndOfTaggedFields {
+						// LDKParseError_UnexpectedEndOfTaggedFields
+						if value.rawValue == 8 {
 							self = .LDKParseError_UnexpectedEndOfTaggedFields
 						}
 			
-						if value == LDKParseError_DescriptionDecodeError {
+						// LDKParseError_DescriptionDecodeError
+						if value.rawValue == 9 {
 							self = .LDKParseError_DescriptionDecodeError
 						}
 			
-						if value == LDKParseError_PaddingError {
+						// LDKParseError_PaddingError
+						if value.rawValue == 10 {
 							self = .LDKParseError_PaddingError
 						}
 			
-						if value == LDKParseError_IntegerOverflowError {
+						// LDKParseError_IntegerOverflowError
+						if value.rawValue == 11 {
 							self = .LDKParseError_IntegerOverflowError
 						}
 			
-						if value == LDKParseError_InvalidSegWitProgramLength {
+						// LDKParseError_InvalidSegWitProgramLength
+						if value.rawValue == 12 {
 							self = .LDKParseError_InvalidSegWitProgramLength
 						}
 			
-						if value == LDKParseError_InvalidPubKeyHashLength {
+						// LDKParseError_InvalidPubKeyHashLength
+						if value.rawValue == 13 {
 							self = .LDKParseError_InvalidPubKeyHashLength
 						}
 			
-						if value == LDKParseError_InvalidScriptHashLength {
+						// LDKParseError_InvalidScriptHashLength
+						if value.rawValue == 14 {
 							self = .LDKParseError_InvalidScriptHashLength
 						}
 			
-						if value == LDKParseError_InvalidRecoveryId {
+						// LDKParseError_InvalidRecoveryId
+						if value.rawValue == 15 {
 							self = .LDKParseError_InvalidRecoveryId
 						}
 			
-						if value == LDKParseError_InvalidSliceLength {
+						// LDKParseError_InvalidSliceLength
+						if value.rawValue == 16 {
 							self = .LDKParseError_InvalidSliceLength
 						}
 			
-						if value == LDKParseError_Skip {
+						// LDKParseError_Skip
+						if value.rawValue == 17 {
 							self = .LDKParseError_Skip
 						}
 			
@@ -152,58 +170,76 @@
 						switch self {
 							
 							case .LDKParseError_Bech32Error:
-								return LDKParseError_Bech32Error
+								// return LDKParseError_Bech32Error
+								return LDKParseError_Tag(0)
 			
 							case .LDKParseError_ParseAmountError:
-								return LDKParseError_ParseAmountError
+								// return LDKParseError_ParseAmountError
+								return LDKParseError_Tag(1)
 			
 							case .LDKParseError_MalformedSignature:
-								return LDKParseError_MalformedSignature
+								// return LDKParseError_MalformedSignature
+								return LDKParseError_Tag(2)
 			
 							case .LDKParseError_BadPrefix:
-								return LDKParseError_BadPrefix
+								// return LDKParseError_BadPrefix
+								return LDKParseError_Tag(3)
 			
 							case .LDKParseError_UnknownCurrency:
-								return LDKParseError_UnknownCurrency
+								// return LDKParseError_UnknownCurrency
+								return LDKParseError_Tag(4)
 			
 							case .LDKParseError_UnknownSiPrefix:
-								return LDKParseError_UnknownSiPrefix
+								// return LDKParseError_UnknownSiPrefix
+								return LDKParseError_Tag(5)
 			
 							case .LDKParseError_MalformedHRP:
-								return LDKParseError_MalformedHRP
+								// return LDKParseError_MalformedHRP
+								return LDKParseError_Tag(6)
 			
 							case .LDKParseError_TooShortDataPart:
-								return LDKParseError_TooShortDataPart
+								// return LDKParseError_TooShortDataPart
+								return LDKParseError_Tag(7)
 			
 							case .LDKParseError_UnexpectedEndOfTaggedFields:
-								return LDKParseError_UnexpectedEndOfTaggedFields
+								// return LDKParseError_UnexpectedEndOfTaggedFields
+								return LDKParseError_Tag(8)
 			
 							case .LDKParseError_DescriptionDecodeError:
-								return LDKParseError_DescriptionDecodeError
+								// return LDKParseError_DescriptionDecodeError
+								return LDKParseError_Tag(9)
 			
 							case .LDKParseError_PaddingError:
-								return LDKParseError_PaddingError
+								// return LDKParseError_PaddingError
+								return LDKParseError_Tag(10)
 			
 							case .LDKParseError_IntegerOverflowError:
-								return LDKParseError_IntegerOverflowError
+								// return LDKParseError_IntegerOverflowError
+								return LDKParseError_Tag(11)
 			
 							case .LDKParseError_InvalidSegWitProgramLength:
-								return LDKParseError_InvalidSegWitProgramLength
+								// return LDKParseError_InvalidSegWitProgramLength
+								return LDKParseError_Tag(12)
 			
 							case .LDKParseError_InvalidPubKeyHashLength:
-								return LDKParseError_InvalidPubKeyHashLength
+								// return LDKParseError_InvalidPubKeyHashLength
+								return LDKParseError_Tag(13)
 			
 							case .LDKParseError_InvalidScriptHashLength:
-								return LDKParseError_InvalidScriptHashLength
+								// return LDKParseError_InvalidScriptHashLength
+								return LDKParseError_Tag(14)
 			
 							case .LDKParseError_InvalidRecoveryId:
-								return LDKParseError_InvalidRecoveryId
+								// return LDKParseError_InvalidRecoveryId
+								return LDKParseError_Tag(15)
 			
 							case .LDKParseError_InvalidSliceLength:
-								return LDKParseError_InvalidSliceLength
+								// return LDKParseError_InvalidSliceLength
+								return LDKParseError_Tag(16)
 			
 							case .LDKParseError_Skip:
-								return LDKParseError_Skip
+								// return LDKParseError_Skip
+								return LDKParseError_Tag(17)
 			
 						}
 					}

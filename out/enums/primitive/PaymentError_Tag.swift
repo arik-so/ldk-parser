@@ -27,15 +27,18 @@
 						self = .LDKPaymentError_Sending
 
 						
-						if value == LDKPaymentError_Invoice {
+						// LDKPaymentError_Invoice
+						if value.rawValue == 0 {
 							self = .LDKPaymentError_Invoice
 						}
 			
-						if value == LDKPaymentError_Routing {
+						// LDKPaymentError_Routing
+						if value.rawValue == 1 {
 							self = .LDKPaymentError_Routing
 						}
 			
-						if value == LDKPaymentError_Sending {
+						// LDKPaymentError_Sending
+						if value.rawValue == 2 {
 							self = .LDKPaymentError_Sending
 						}
 			
@@ -45,13 +48,16 @@
 						switch self {
 							
 							case .LDKPaymentError_Invoice:
-								return LDKPaymentError_Invoice
+								// return LDKPaymentError_Invoice
+								return LDKPaymentError_Tag(0)
 			
 							case .LDKPaymentError_Routing:
-								return LDKPaymentError_Routing
+								// return LDKPaymentError_Routing
+								return LDKPaymentError_Tag(1)
 			
 							case .LDKPaymentError_Sending:
-								return LDKPaymentError_Sending
+								// return LDKPaymentError_Sending
+								return LDKPaymentError_Tag(2)
 			
 						}
 					}

@@ -28,11 +28,13 @@
 						self = .LDKRetry_Timeout
 
 						
-						if value == LDKRetry_Attempts {
+						// LDKRetry_Attempts
+						if value.rawValue == 0 {
 							self = .LDKRetry_Attempts
 						}
 			
-						if value == LDKRetry_Timeout {
+						// LDKRetry_Timeout
+						if value.rawValue == 1 {
 							self = .LDKRetry_Timeout
 						}
 			
@@ -42,10 +44,12 @@
 						switch self {
 							
 							case .LDKRetry_Attempts:
-								return LDKRetry_Attempts
+								// return LDKRetry_Attempts
+								return LDKRetry_Tag(0)
 			
 							case .LDKRetry_Timeout:
-								return LDKRetry_Timeout
+								// return LDKRetry_Timeout
+								return LDKRetry_Tag(1)
 			
 						}
 					}

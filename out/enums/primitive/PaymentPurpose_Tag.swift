@@ -26,11 +26,13 @@
 						self = .LDKPaymentPurpose_SpontaneousPayment
 
 						
-						if value == LDKPaymentPurpose_InvoicePayment {
+						// LDKPaymentPurpose_InvoicePayment
+						if value.rawValue == 0 {
 							self = .LDKPaymentPurpose_InvoicePayment
 						}
 			
-						if value == LDKPaymentPurpose_SpontaneousPayment {
+						// LDKPaymentPurpose_SpontaneousPayment
+						if value.rawValue == 1 {
 							self = .LDKPaymentPurpose_SpontaneousPayment
 						}
 			
@@ -40,10 +42,12 @@
 						switch self {
 							
 							case .LDKPaymentPurpose_InvoicePayment:
-								return LDKPaymentPurpose_InvoicePayment
+								// return LDKPaymentPurpose_InvoicePayment
+								return LDKPaymentPurpose_Tag(0)
 			
 							case .LDKPaymentPurpose_SpontaneousPayment:
-								return LDKPaymentPurpose_SpontaneousPayment
+								// return LDKPaymentPurpose_SpontaneousPayment
+								return LDKPaymentPurpose_Tag(1)
 			
 						}
 					}

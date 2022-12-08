@@ -40,27 +40,33 @@
 						self = .LDKSendError_BufferFull
 
 						
-						if value == LDKSendError_Secp256k1 {
+						// LDKSendError_Secp256k1
+						if value.rawValue == 0 {
 							self = .LDKSendError_Secp256k1
 						}
 			
-						if value == LDKSendError_TooBigPacket {
+						// LDKSendError_TooBigPacket
+						if value.rawValue == 1 {
 							self = .LDKSendError_TooBigPacket
 						}
 			
-						if value == LDKSendError_TooFewBlindedHops {
+						// LDKSendError_TooFewBlindedHops
+						if value.rawValue == 2 {
 							self = .LDKSendError_TooFewBlindedHops
 						}
 			
-						if value == LDKSendError_InvalidFirstHop {
+						// LDKSendError_InvalidFirstHop
+						if value.rawValue == 3 {
 							self = .LDKSendError_InvalidFirstHop
 						}
 			
-						if value == LDKSendError_InvalidMessage {
+						// LDKSendError_InvalidMessage
+						if value.rawValue == 4 {
 							self = .LDKSendError_InvalidMessage
 						}
 			
-						if value == LDKSendError_BufferFull {
+						// LDKSendError_BufferFull
+						if value.rawValue == 5 {
 							self = .LDKSendError_BufferFull
 						}
 			
@@ -70,22 +76,28 @@
 						switch self {
 							
 							case .LDKSendError_Secp256k1:
-								return LDKSendError_Secp256k1
+								// return LDKSendError_Secp256k1
+								return LDKSendError_Tag(0)
 			
 							case .LDKSendError_TooBigPacket:
-								return LDKSendError_TooBigPacket
+								// return LDKSendError_TooBigPacket
+								return LDKSendError_Tag(1)
 			
 							case .LDKSendError_TooFewBlindedHops:
-								return LDKSendError_TooFewBlindedHops
+								// return LDKSendError_TooFewBlindedHops
+								return LDKSendError_Tag(2)
 			
 							case .LDKSendError_InvalidFirstHop:
-								return LDKSendError_InvalidFirstHop
+								// return LDKSendError_InvalidFirstHop
+								return LDKSendError_Tag(3)
 			
 							case .LDKSendError_InvalidMessage:
-								return LDKSendError_InvalidMessage
+								// return LDKSendError_InvalidMessage
+								return LDKSendError_Tag(4)
 			
 							case .LDKSendError_BufferFull:
-								return LDKSendError_BufferFull
+								// return LDKSendError_BufferFull
+								return LDKSendError_Tag(5)
 			
 						}
 					}

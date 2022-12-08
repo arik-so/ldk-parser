@@ -34,15 +34,18 @@
 						self = .LDKHTLCDestination_FailedPayment
 
 						
-						if value == LDKHTLCDestination_NextHopChannel {
+						// LDKHTLCDestination_NextHopChannel
+						if value.rawValue == 0 {
 							self = .LDKHTLCDestination_NextHopChannel
 						}
 			
-						if value == LDKHTLCDestination_UnknownNextHop {
+						// LDKHTLCDestination_UnknownNextHop
+						if value.rawValue == 1 {
 							self = .LDKHTLCDestination_UnknownNextHop
 						}
 			
-						if value == LDKHTLCDestination_FailedPayment {
+						// LDKHTLCDestination_FailedPayment
+						if value.rawValue == 2 {
 							self = .LDKHTLCDestination_FailedPayment
 						}
 			
@@ -52,13 +55,16 @@
 						switch self {
 							
 							case .LDKHTLCDestination_NextHopChannel:
-								return LDKHTLCDestination_NextHopChannel
+								// return LDKHTLCDestination_NextHopChannel
+								return LDKHTLCDestination_Tag(0)
 			
 							case .LDKHTLCDestination_UnknownNextHop:
-								return LDKHTLCDestination_UnknownNextHop
+								// return LDKHTLCDestination_UnknownNextHop
+								return LDKHTLCDestination_Tag(1)
 			
 							case .LDKHTLCDestination_FailedPayment:
-								return LDKHTLCDestination_FailedPayment
+								// return LDKHTLCDestination_FailedPayment
+								return LDKHTLCDestination_Tag(2)
 			
 						}
 					}

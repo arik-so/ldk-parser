@@ -156,67 +156,83 @@
 						self = .LDKEvent_HTLCHandlingFailed
 
 						
-						if value == LDKEvent_FundingGenerationReady {
+						// LDKEvent_FundingGenerationReady
+						if value.rawValue == 0 {
 							self = .LDKEvent_FundingGenerationReady
 						}
 			
-						if value == LDKEvent_PaymentReceived {
+						// LDKEvent_PaymentReceived
+						if value.rawValue == 1 {
 							self = .LDKEvent_PaymentReceived
 						}
 			
-						if value == LDKEvent_PaymentClaimed {
+						// LDKEvent_PaymentClaimed
+						if value.rawValue == 2 {
 							self = .LDKEvent_PaymentClaimed
 						}
 			
-						if value == LDKEvent_PaymentSent {
+						// LDKEvent_PaymentSent
+						if value.rawValue == 3 {
 							self = .LDKEvent_PaymentSent
 						}
 			
-						if value == LDKEvent_PaymentFailed {
+						// LDKEvent_PaymentFailed
+						if value.rawValue == 4 {
 							self = .LDKEvent_PaymentFailed
 						}
 			
-						if value == LDKEvent_PaymentPathSuccessful {
+						// LDKEvent_PaymentPathSuccessful
+						if value.rawValue == 5 {
 							self = .LDKEvent_PaymentPathSuccessful
 						}
 			
-						if value == LDKEvent_PaymentPathFailed {
+						// LDKEvent_PaymentPathFailed
+						if value.rawValue == 6 {
 							self = .LDKEvent_PaymentPathFailed
 						}
 			
-						if value == LDKEvent_ProbeSuccessful {
+						// LDKEvent_ProbeSuccessful
+						if value.rawValue == 7 {
 							self = .LDKEvent_ProbeSuccessful
 						}
 			
-						if value == LDKEvent_ProbeFailed {
+						// LDKEvent_ProbeFailed
+						if value.rawValue == 8 {
 							self = .LDKEvent_ProbeFailed
 						}
 			
-						if value == LDKEvent_PendingHTLCsForwardable {
+						// LDKEvent_PendingHTLCsForwardable
+						if value.rawValue == 9 {
 							self = .LDKEvent_PendingHTLCsForwardable
 						}
 			
-						if value == LDKEvent_SpendableOutputs {
+						// LDKEvent_SpendableOutputs
+						if value.rawValue == 10 {
 							self = .LDKEvent_SpendableOutputs
 						}
 			
-						if value == LDKEvent_PaymentForwarded {
+						// LDKEvent_PaymentForwarded
+						if value.rawValue == 11 {
 							self = .LDKEvent_PaymentForwarded
 						}
 			
-						if value == LDKEvent_ChannelClosed {
+						// LDKEvent_ChannelClosed
+						if value.rawValue == 12 {
 							self = .LDKEvent_ChannelClosed
 						}
 			
-						if value == LDKEvent_DiscardFunding {
+						// LDKEvent_DiscardFunding
+						if value.rawValue == 13 {
 							self = .LDKEvent_DiscardFunding
 						}
 			
-						if value == LDKEvent_OpenChannelRequest {
+						// LDKEvent_OpenChannelRequest
+						if value.rawValue == 14 {
 							self = .LDKEvent_OpenChannelRequest
 						}
 			
-						if value == LDKEvent_HTLCHandlingFailed {
+						// LDKEvent_HTLCHandlingFailed
+						if value.rawValue == 15 {
 							self = .LDKEvent_HTLCHandlingFailed
 						}
 			
@@ -226,52 +242,68 @@
 						switch self {
 							
 							case .LDKEvent_FundingGenerationReady:
-								return LDKEvent_FundingGenerationReady
+								// return LDKEvent_FundingGenerationReady
+								return LDKEvent_Tag(0)
 			
 							case .LDKEvent_PaymentReceived:
-								return LDKEvent_PaymentReceived
+								// return LDKEvent_PaymentReceived
+								return LDKEvent_Tag(1)
 			
 							case .LDKEvent_PaymentClaimed:
-								return LDKEvent_PaymentClaimed
+								// return LDKEvent_PaymentClaimed
+								return LDKEvent_Tag(2)
 			
 							case .LDKEvent_PaymentSent:
-								return LDKEvent_PaymentSent
+								// return LDKEvent_PaymentSent
+								return LDKEvent_Tag(3)
 			
 							case .LDKEvent_PaymentFailed:
-								return LDKEvent_PaymentFailed
+								// return LDKEvent_PaymentFailed
+								return LDKEvent_Tag(4)
 			
 							case .LDKEvent_PaymentPathSuccessful:
-								return LDKEvent_PaymentPathSuccessful
+								// return LDKEvent_PaymentPathSuccessful
+								return LDKEvent_Tag(5)
 			
 							case .LDKEvent_PaymentPathFailed:
-								return LDKEvent_PaymentPathFailed
+								// return LDKEvent_PaymentPathFailed
+								return LDKEvent_Tag(6)
 			
 							case .LDKEvent_ProbeSuccessful:
-								return LDKEvent_ProbeSuccessful
+								// return LDKEvent_ProbeSuccessful
+								return LDKEvent_Tag(7)
 			
 							case .LDKEvent_ProbeFailed:
-								return LDKEvent_ProbeFailed
+								// return LDKEvent_ProbeFailed
+								return LDKEvent_Tag(8)
 			
 							case .LDKEvent_PendingHTLCsForwardable:
-								return LDKEvent_PendingHTLCsForwardable
+								// return LDKEvent_PendingHTLCsForwardable
+								return LDKEvent_Tag(9)
 			
 							case .LDKEvent_SpendableOutputs:
-								return LDKEvent_SpendableOutputs
+								// return LDKEvent_SpendableOutputs
+								return LDKEvent_Tag(10)
 			
 							case .LDKEvent_PaymentForwarded:
-								return LDKEvent_PaymentForwarded
+								// return LDKEvent_PaymentForwarded
+								return LDKEvent_Tag(11)
 			
 							case .LDKEvent_ChannelClosed:
-								return LDKEvent_ChannelClosed
+								// return LDKEvent_ChannelClosed
+								return LDKEvent_Tag(12)
 			
 							case .LDKEvent_DiscardFunding:
-								return LDKEvent_DiscardFunding
+								// return LDKEvent_DiscardFunding
+								return LDKEvent_Tag(13)
 			
 							case .LDKEvent_OpenChannelRequest:
-								return LDKEvent_OpenChannelRequest
+								// return LDKEvent_OpenChannelRequest
+								return LDKEvent_Tag(14)
 			
 							case .LDKEvent_HTLCHandlingFailed:
-								return LDKEvent_HTLCHandlingFailed
+								// return LDKEvent_HTLCHandlingFailed
+								return LDKEvent_Tag(15)
 			
 						}
 					}

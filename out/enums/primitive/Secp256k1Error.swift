@@ -51,47 +51,58 @@
 						self = .InvalidParityValue
 
 						
-						if value == LDKSecp256k1Error_IncorrectSignature {
+						// LDKSecp256k1Error_IncorrectSignature
+						if value.rawValue == 0 {
 							self = .IncorrectSignature
 						}
 			
-						if value == LDKSecp256k1Error_InvalidMessage {
+						// LDKSecp256k1Error_InvalidMessage
+						if value.rawValue == 1 {
 							self = .InvalidMessage
 						}
 			
-						if value == LDKSecp256k1Error_InvalidPublicKey {
+						// LDKSecp256k1Error_InvalidPublicKey
+						if value.rawValue == 2 {
 							self = .InvalidPublicKey
 						}
 			
-						if value == LDKSecp256k1Error_InvalidSignature {
+						// LDKSecp256k1Error_InvalidSignature
+						if value.rawValue == 3 {
 							self = .InvalidSignature
 						}
 			
-						if value == LDKSecp256k1Error_InvalidSecretKey {
+						// LDKSecp256k1Error_InvalidSecretKey
+						if value.rawValue == 4 {
 							self = .InvalidSecretKey
 						}
 			
-						if value == LDKSecp256k1Error_InvalidSharedSecret {
+						// LDKSecp256k1Error_InvalidSharedSecret
+						if value.rawValue == 5 {
 							self = .InvalidSharedSecret
 						}
 			
-						if value == LDKSecp256k1Error_InvalidRecoveryId {
+						// LDKSecp256k1Error_InvalidRecoveryId
+						if value.rawValue == 6 {
 							self = .InvalidRecoveryId
 						}
 			
-						if value == LDKSecp256k1Error_InvalidTweak {
+						// LDKSecp256k1Error_InvalidTweak
+						if value.rawValue == 7 {
 							self = .InvalidTweak
 						}
 			
-						if value == LDKSecp256k1Error_NotEnoughMemory {
+						// LDKSecp256k1Error_NotEnoughMemory
+						if value.rawValue == 8 {
 							self = .NotEnoughMemory
 						}
 			
-						if value == LDKSecp256k1Error_InvalidPublicKeySum {
+						// LDKSecp256k1Error_InvalidPublicKeySum
+						if value.rawValue == 9 {
 							self = .InvalidPublicKeySum
 						}
 			
-						if value == LDKSecp256k1Error_InvalidParityValue {
+						// LDKSecp256k1Error_InvalidParityValue
+						if value.rawValue == 10 {
 							self = .InvalidParityValue
 						}
 			
@@ -101,37 +112,48 @@
 						switch self {
 							
 							case .IncorrectSignature:
-								return LDKSecp256k1Error_IncorrectSignature
+								// return LDKSecp256k1Error_IncorrectSignature
+								return LDKSecp256k1Error(0)
 			
 							case .InvalidMessage:
-								return LDKSecp256k1Error_InvalidMessage
+								// return LDKSecp256k1Error_InvalidMessage
+								return LDKSecp256k1Error(1)
 			
 							case .InvalidPublicKey:
-								return LDKSecp256k1Error_InvalidPublicKey
+								// return LDKSecp256k1Error_InvalidPublicKey
+								return LDKSecp256k1Error(2)
 			
 							case .InvalidSignature:
-								return LDKSecp256k1Error_InvalidSignature
+								// return LDKSecp256k1Error_InvalidSignature
+								return LDKSecp256k1Error(3)
 			
 							case .InvalidSecretKey:
-								return LDKSecp256k1Error_InvalidSecretKey
+								// return LDKSecp256k1Error_InvalidSecretKey
+								return LDKSecp256k1Error(4)
 			
 							case .InvalidSharedSecret:
-								return LDKSecp256k1Error_InvalidSharedSecret
+								// return LDKSecp256k1Error_InvalidSharedSecret
+								return LDKSecp256k1Error(5)
 			
 							case .InvalidRecoveryId:
-								return LDKSecp256k1Error_InvalidRecoveryId
+								// return LDKSecp256k1Error_InvalidRecoveryId
+								return LDKSecp256k1Error(6)
 			
 							case .InvalidTweak:
-								return LDKSecp256k1Error_InvalidTweak
+								// return LDKSecp256k1Error_InvalidTweak
+								return LDKSecp256k1Error(7)
 			
 							case .NotEnoughMemory:
-								return LDKSecp256k1Error_NotEnoughMemory
+								// return LDKSecp256k1Error_NotEnoughMemory
+								return LDKSecp256k1Error(8)
 			
 							case .InvalidPublicKeySum:
-								return LDKSecp256k1Error_InvalidPublicKeySum
+								// return LDKSecp256k1Error_InvalidPublicKeySum
+								return LDKSecp256k1Error(9)
 			
 							case .InvalidParityValue:
-								return LDKSecp256k1Error_InvalidParityValue
+								// return LDKSecp256k1Error_InvalidParityValue
+								return LDKSecp256k1Error(10)
 			
 						}
 					}

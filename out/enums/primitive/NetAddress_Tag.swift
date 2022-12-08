@@ -38,23 +38,28 @@
 						self = .LDKNetAddress_Hostname
 
 						
-						if value == LDKNetAddress_IPv4 {
+						// LDKNetAddress_IPv4
+						if value.rawValue == 0 {
 							self = .LDKNetAddress_IPv4
 						}
 			
-						if value == LDKNetAddress_IPv6 {
+						// LDKNetAddress_IPv6
+						if value.rawValue == 1 {
 							self = .LDKNetAddress_IPv6
 						}
 			
-						if value == LDKNetAddress_OnionV2 {
+						// LDKNetAddress_OnionV2
+						if value.rawValue == 2 {
 							self = .LDKNetAddress_OnionV2
 						}
 			
-						if value == LDKNetAddress_OnionV3 {
+						// LDKNetAddress_OnionV3
+						if value.rawValue == 3 {
 							self = .LDKNetAddress_OnionV3
 						}
 			
-						if value == LDKNetAddress_Hostname {
+						// LDKNetAddress_Hostname
+						if value.rawValue == 4 {
 							self = .LDKNetAddress_Hostname
 						}
 			
@@ -64,19 +69,24 @@
 						switch self {
 							
 							case .LDKNetAddress_IPv4:
-								return LDKNetAddress_IPv4
+								// return LDKNetAddress_IPv4
+								return LDKNetAddress_Tag(0)
 			
 							case .LDKNetAddress_IPv6:
-								return LDKNetAddress_IPv6
+								// return LDKNetAddress_IPv6
+								return LDKNetAddress_Tag(1)
 			
 							case .LDKNetAddress_OnionV2:
-								return LDKNetAddress_OnionV2
+								// return LDKNetAddress_OnionV2
+								return LDKNetAddress_Tag(2)
 			
 							case .LDKNetAddress_OnionV3:
-								return LDKNetAddress_OnionV3
+								// return LDKNetAddress_OnionV3
+								return LDKNetAddress_Tag(3)
 			
 							case .LDKNetAddress_Hostname:
-								return LDKNetAddress_Hostname
+								// return LDKNetAddress_Hostname
+								return LDKNetAddress_Tag(4)
 			
 						}
 					}

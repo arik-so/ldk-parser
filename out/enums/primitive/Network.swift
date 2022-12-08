@@ -30,19 +30,23 @@
 						self = .Signet
 
 						
-						if value == LDKNetwork_Bitcoin {
+						// LDKNetwork_Bitcoin
+						if value.rawValue == 0 {
 							self = .Bitcoin
 						}
 			
-						if value == LDKNetwork_Testnet {
+						// LDKNetwork_Testnet
+						if value.rawValue == 1 {
 							self = .Testnet
 						}
 			
-						if value == LDKNetwork_Regtest {
+						// LDKNetwork_Regtest
+						if value.rawValue == 2 {
 							self = .Regtest
 						}
 			
-						if value == LDKNetwork_Signet {
+						// LDKNetwork_Signet
+						if value.rawValue == 3 {
 							self = .Signet
 						}
 			
@@ -52,16 +56,20 @@
 						switch self {
 							
 							case .Bitcoin:
-								return LDKNetwork_Bitcoin
+								// return LDKNetwork_Bitcoin
+								return LDKNetwork(0)
 			
 							case .Testnet:
-								return LDKNetwork_Testnet
+								// return LDKNetwork_Testnet
+								return LDKNetwork(1)
 			
 							case .Regtest:
-								return LDKNetwork_Regtest
+								// return LDKNetwork_Regtest
+								return LDKNetwork(2)
 			
 							case .Signet:
-								return LDKNetwork_Signet
+								// return LDKNetwork_Signet
+								return LDKNetwork(3)
 			
 						}
 					}

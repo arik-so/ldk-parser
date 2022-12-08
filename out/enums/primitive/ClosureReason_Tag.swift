@@ -63,35 +63,43 @@
 						self = .LDKClosureReason_OutdatedChannelManager
 
 						
-						if value == LDKClosureReason_CounterpartyForceClosed {
+						// LDKClosureReason_CounterpartyForceClosed
+						if value.rawValue == 0 {
 							self = .LDKClosureReason_CounterpartyForceClosed
 						}
 			
-						if value == LDKClosureReason_HolderForceClosed {
+						// LDKClosureReason_HolderForceClosed
+						if value.rawValue == 1 {
 							self = .LDKClosureReason_HolderForceClosed
 						}
 			
-						if value == LDKClosureReason_CooperativeClosure {
+						// LDKClosureReason_CooperativeClosure
+						if value.rawValue == 2 {
 							self = .LDKClosureReason_CooperativeClosure
 						}
 			
-						if value == LDKClosureReason_CommitmentTxConfirmed {
+						// LDKClosureReason_CommitmentTxConfirmed
+						if value.rawValue == 3 {
 							self = .LDKClosureReason_CommitmentTxConfirmed
 						}
 			
-						if value == LDKClosureReason_FundingTimedOut {
+						// LDKClosureReason_FundingTimedOut
+						if value.rawValue == 4 {
 							self = .LDKClosureReason_FundingTimedOut
 						}
 			
-						if value == LDKClosureReason_ProcessingError {
+						// LDKClosureReason_ProcessingError
+						if value.rawValue == 5 {
 							self = .LDKClosureReason_ProcessingError
 						}
 			
-						if value == LDKClosureReason_DisconnectedPeer {
+						// LDKClosureReason_DisconnectedPeer
+						if value.rawValue == 6 {
 							self = .LDKClosureReason_DisconnectedPeer
 						}
 			
-						if value == LDKClosureReason_OutdatedChannelManager {
+						// LDKClosureReason_OutdatedChannelManager
+						if value.rawValue == 7 {
 							self = .LDKClosureReason_OutdatedChannelManager
 						}
 			
@@ -101,28 +109,36 @@
 						switch self {
 							
 							case .LDKClosureReason_CounterpartyForceClosed:
-								return LDKClosureReason_CounterpartyForceClosed
+								// return LDKClosureReason_CounterpartyForceClosed
+								return LDKClosureReason_Tag(0)
 			
 							case .LDKClosureReason_HolderForceClosed:
-								return LDKClosureReason_HolderForceClosed
+								// return LDKClosureReason_HolderForceClosed
+								return LDKClosureReason_Tag(1)
 			
 							case .LDKClosureReason_CooperativeClosure:
-								return LDKClosureReason_CooperativeClosure
+								// return LDKClosureReason_CooperativeClosure
+								return LDKClosureReason_Tag(2)
 			
 							case .LDKClosureReason_CommitmentTxConfirmed:
-								return LDKClosureReason_CommitmentTxConfirmed
+								// return LDKClosureReason_CommitmentTxConfirmed
+								return LDKClosureReason_Tag(3)
 			
 							case .LDKClosureReason_FundingTimedOut:
-								return LDKClosureReason_FundingTimedOut
+								// return LDKClosureReason_FundingTimedOut
+								return LDKClosureReason_Tag(4)
 			
 							case .LDKClosureReason_ProcessingError:
-								return LDKClosureReason_ProcessingError
+								// return LDKClosureReason_ProcessingError
+								return LDKClosureReason_Tag(5)
 			
 							case .LDKClosureReason_DisconnectedPeer:
-								return LDKClosureReason_DisconnectedPeer
+								// return LDKClosureReason_DisconnectedPeer
+								return LDKClosureReason_Tag(6)
 			
 							case .LDKClosureReason_OutdatedChannelManager:
-								return LDKClosureReason_OutdatedChannelManager
+								// return LDKClosureReason_OutdatedChannelManager
+								return LDKClosureReason_Tag(7)
 			
 						}
 					}

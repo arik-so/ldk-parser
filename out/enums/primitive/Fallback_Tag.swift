@@ -27,15 +27,18 @@
 						self = .LDKFallback_ScriptHash
 
 						
-						if value == LDKFallback_SegWitProgram {
+						// LDKFallback_SegWitProgram
+						if value.rawValue == 0 {
 							self = .LDKFallback_SegWitProgram
 						}
 			
-						if value == LDKFallback_PubKeyHash {
+						// LDKFallback_PubKeyHash
+						if value.rawValue == 1 {
 							self = .LDKFallback_PubKeyHash
 						}
 			
-						if value == LDKFallback_ScriptHash {
+						// LDKFallback_ScriptHash
+						if value.rawValue == 2 {
 							self = .LDKFallback_ScriptHash
 						}
 			
@@ -45,13 +48,16 @@
 						switch self {
 							
 							case .LDKFallback_SegWitProgram:
-								return LDKFallback_SegWitProgram
+								// return LDKFallback_SegWitProgram
+								return LDKFallback_Tag(0)
 			
 							case .LDKFallback_PubKeyHash:
-								return LDKFallback_PubKeyHash
+								// return LDKFallback_PubKeyHash
+								return LDKFallback_Tag(1)
 			
 							case .LDKFallback_ScriptHash:
-								return LDKFallback_ScriptHash
+								// return LDKFallback_ScriptHash
+								return LDKFallback_Tag(2)
 			
 						}
 					}

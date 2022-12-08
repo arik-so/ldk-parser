@@ -36,27 +36,33 @@
 						self = .Error
 
 						
-						if value == LDKLevel_Gossip {
+						// LDKLevel_Gossip
+						if value.rawValue == 0 {
 							self = .Gossip
 						}
 			
-						if value == LDKLevel_Trace {
+						// LDKLevel_Trace
+						if value.rawValue == 1 {
 							self = .Trace
 						}
 			
-						if value == LDKLevel_Debug {
+						// LDKLevel_Debug
+						if value.rawValue == 2 {
 							self = .Debug
 						}
 			
-						if value == LDKLevel_Info {
+						// LDKLevel_Info
+						if value.rawValue == 3 {
 							self = .Info
 						}
 			
-						if value == LDKLevel_Warn {
+						// LDKLevel_Warn
+						if value.rawValue == 4 {
 							self = .Warn
 						}
 			
-						if value == LDKLevel_Error {
+						// LDKLevel_Error
+						if value.rawValue == 5 {
 							self = .Error
 						}
 			
@@ -66,22 +72,28 @@
 						switch self {
 							
 							case .Gossip:
-								return LDKLevel_Gossip
+								// return LDKLevel_Gossip
+								return LDKLevel(0)
 			
 							case .Trace:
-								return LDKLevel_Trace
+								// return LDKLevel_Trace
+								return LDKLevel(1)
 			
 							case .Debug:
-								return LDKLevel_Debug
+								// return LDKLevel_Debug
+								return LDKLevel(2)
 			
 							case .Info:
-								return LDKLevel_Info
+								// return LDKLevel_Info
+								return LDKLevel(3)
 			
 							case .Warn:
-								return LDKLevel_Warn
+								// return LDKLevel_Warn
+								return LDKLevel(4)
 			
 							case .Error:
-								return LDKLevel_Error
+								// return LDKLevel_Error
+								return LDKLevel(5)
 			
 						}
 					}

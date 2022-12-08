@@ -18,7 +18,7 @@ export default class PrimitiveEnumGenerator extends BaseTypeGenerator<RustPrimit
 		// picking the first one would merely require an additional check inside the loop
 		let lastSwiftVariantName = '';
 
-		for (const currentVariant of type.variants) {
+		for (const [index, currentVariant] of type.variants.entries()) {
 
 			const currentVariantSwiftName = currentVariant.name.replace(type.name + '_', '');
 
@@ -29,11 +29,13 @@ export default class PrimitiveEnumGenerator extends BaseTypeGenerator<RustPrimit
 
 			rustValueAccessor += `
 							case .${currentVariantSwiftName}:
-								return ${currentVariant.name}
+								// return ${currentVariant.name}
+								return ${type.name}(${index})
 			`;
 
 			swiftValueInitializer += `
-						if value == ${currentVariant.name} {
+						// ${currentVariant.name}
+						if value.rawValue == ${index} {
 							self = .${currentVariantSwiftName}
 						}
 			`;

@@ -28,11 +28,13 @@
 						self = .PhantomNode
 
 						
-						if value == LDKRecipient_Node {
+						// LDKRecipient_Node
+						if value.rawValue == 0 {
 							self = .Node
 						}
 			
-						if value == LDKRecipient_PhantomNode {
+						// LDKRecipient_PhantomNode
+						if value.rawValue == 1 {
 							self = .PhantomNode
 						}
 			
@@ -42,10 +44,12 @@
 						switch self {
 							
 							case .Node:
-								return LDKRecipient_Node
+								// return LDKRecipient_Node
+								return LDKRecipient(0)
 			
 							case .PhantomNode:
-								return LDKRecipient_PhantomNode
+								// return LDKRecipient_PhantomNode
+								return LDKRecipient(1)
 			
 						}
 					}

@@ -56,27 +56,33 @@
 						self = .LDKBalance_CounterpartyRevokedOutputClaimable
 
 						
-						if value == LDKBalance_ClaimableOnChannelClose {
+						// LDKBalance_ClaimableOnChannelClose
+						if value.rawValue == 0 {
 							self = .LDKBalance_ClaimableOnChannelClose
 						}
 			
-						if value == LDKBalance_ClaimableAwaitingConfirmations {
+						// LDKBalance_ClaimableAwaitingConfirmations
+						if value.rawValue == 1 {
 							self = .LDKBalance_ClaimableAwaitingConfirmations
 						}
 			
-						if value == LDKBalance_ContentiousClaimable {
+						// LDKBalance_ContentiousClaimable
+						if value.rawValue == 2 {
 							self = .LDKBalance_ContentiousClaimable
 						}
 			
-						if value == LDKBalance_MaybeTimeoutClaimableHTLC {
+						// LDKBalance_MaybeTimeoutClaimableHTLC
+						if value.rawValue == 3 {
 							self = .LDKBalance_MaybeTimeoutClaimableHTLC
 						}
 			
-						if value == LDKBalance_MaybePreimageClaimableHTLC {
+						// LDKBalance_MaybePreimageClaimableHTLC
+						if value.rawValue == 4 {
 							self = .LDKBalance_MaybePreimageClaimableHTLC
 						}
 			
-						if value == LDKBalance_CounterpartyRevokedOutputClaimable {
+						// LDKBalance_CounterpartyRevokedOutputClaimable
+						if value.rawValue == 5 {
 							self = .LDKBalance_CounterpartyRevokedOutputClaimable
 						}
 			
@@ -86,22 +92,28 @@
 						switch self {
 							
 							case .LDKBalance_ClaimableOnChannelClose:
-								return LDKBalance_ClaimableOnChannelClose
+								// return LDKBalance_ClaimableOnChannelClose
+								return LDKBalance_Tag(0)
 			
 							case .LDKBalance_ClaimableAwaitingConfirmations:
-								return LDKBalance_ClaimableAwaitingConfirmations
+								// return LDKBalance_ClaimableAwaitingConfirmations
+								return LDKBalance_Tag(1)
 			
 							case .LDKBalance_ContentiousClaimable:
-								return LDKBalance_ContentiousClaimable
+								// return LDKBalance_ContentiousClaimable
+								return LDKBalance_Tag(2)
 			
 							case .LDKBalance_MaybeTimeoutClaimableHTLC:
-								return LDKBalance_MaybeTimeoutClaimableHTLC
+								// return LDKBalance_MaybeTimeoutClaimableHTLC
+								return LDKBalance_Tag(3)
 			
 							case .LDKBalance_MaybePreimageClaimableHTLC:
-								return LDKBalance_MaybePreimageClaimableHTLC
+								// return LDKBalance_MaybePreimageClaimableHTLC
+								return LDKBalance_Tag(4)
 			
 							case .LDKBalance_CounterpartyRevokedOutputClaimable:
-								return LDKBalance_CounterpartyRevokedOutputClaimable
+								// return LDKBalance_CounterpartyRevokedOutputClaimable
+								return LDKBalance_Tag(5)
 			
 						}
 					}

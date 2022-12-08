@@ -30,19 +30,23 @@
 						self = .Pico
 
 						
-						if value == LDKSiPrefix_Milli {
+						// LDKSiPrefix_Milli
+						if value.rawValue == 0 {
 							self = .Milli
 						}
 			
-						if value == LDKSiPrefix_Micro {
+						// LDKSiPrefix_Micro
+						if value.rawValue == 1 {
 							self = .Micro
 						}
 			
-						if value == LDKSiPrefix_Nano {
+						// LDKSiPrefix_Nano
+						if value.rawValue == 2 {
 							self = .Nano
 						}
 			
-						if value == LDKSiPrefix_Pico {
+						// LDKSiPrefix_Pico
+						if value.rawValue == 3 {
 							self = .Pico
 						}
 			
@@ -52,16 +56,20 @@
 						switch self {
 							
 							case .Milli:
-								return LDKSiPrefix_Milli
+								// return LDKSiPrefix_Milli
+								return LDKSiPrefix(0)
 			
 							case .Micro:
-								return LDKSiPrefix_Micro
+								// return LDKSiPrefix_Micro
+								return LDKSiPrefix(1)
 			
 							case .Nano:
-								return LDKSiPrefix_Nano
+								// return LDKSiPrefix_Nano
+								return LDKSiPrefix(2)
 			
 							case .Pico:
-								return LDKSiPrefix_Pico
+								// return LDKSiPrefix_Pico
+								return LDKSiPrefix(3)
 			
 						}
 					}

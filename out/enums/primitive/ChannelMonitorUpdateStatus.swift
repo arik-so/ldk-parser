@@ -94,15 +94,18 @@
 						self = .PermanentFailure
 
 						
-						if value == LDKChannelMonitorUpdateStatus_Completed {
+						// LDKChannelMonitorUpdateStatus_Completed
+						if value.rawValue == 0 {
 							self = .Completed
 						}
 			
-						if value == LDKChannelMonitorUpdateStatus_InProgress {
+						// LDKChannelMonitorUpdateStatus_InProgress
+						if value.rawValue == 1 {
 							self = .InProgress
 						}
 			
-						if value == LDKChannelMonitorUpdateStatus_PermanentFailure {
+						// LDKChannelMonitorUpdateStatus_PermanentFailure
+						if value.rawValue == 2 {
 							self = .PermanentFailure
 						}
 			
@@ -112,13 +115,16 @@
 						switch self {
 							
 							case .Completed:
-								return LDKChannelMonitorUpdateStatus_Completed
+								// return LDKChannelMonitorUpdateStatus_Completed
+								return LDKChannelMonitorUpdateStatus(0)
 			
 							case .InProgress:
-								return LDKChannelMonitorUpdateStatus_InProgress
+								// return LDKChannelMonitorUpdateStatus_InProgress
+								return LDKChannelMonitorUpdateStatus(1)
 			
 							case .PermanentFailure:
-								return LDKChannelMonitorUpdateStatus_PermanentFailure
+								// return LDKChannelMonitorUpdateStatus_PermanentFailure
+								return LDKChannelMonitorUpdateStatus(2)
 			
 						}
 					}

@@ -50,43 +50,53 @@
 						self = .ImpreciseAmount
 
 						
-						if value == LDKSemanticError_NoPaymentHash {
+						// LDKSemanticError_NoPaymentHash
+						if value.rawValue == 0 {
 							self = .NoPaymentHash
 						}
 			
-						if value == LDKSemanticError_MultiplePaymentHashes {
+						// LDKSemanticError_MultiplePaymentHashes
+						if value.rawValue == 1 {
 							self = .MultiplePaymentHashes
 						}
 			
-						if value == LDKSemanticError_NoDescription {
+						// LDKSemanticError_NoDescription
+						if value.rawValue == 2 {
 							self = .NoDescription
 						}
 			
-						if value == LDKSemanticError_MultipleDescriptions {
+						// LDKSemanticError_MultipleDescriptions
+						if value.rawValue == 3 {
 							self = .MultipleDescriptions
 						}
 			
-						if value == LDKSemanticError_NoPaymentSecret {
+						// LDKSemanticError_NoPaymentSecret
+						if value.rawValue == 4 {
 							self = .NoPaymentSecret
 						}
 			
-						if value == LDKSemanticError_MultiplePaymentSecrets {
+						// LDKSemanticError_MultiplePaymentSecrets
+						if value.rawValue == 5 {
 							self = .MultiplePaymentSecrets
 						}
 			
-						if value == LDKSemanticError_InvalidFeatures {
+						// LDKSemanticError_InvalidFeatures
+						if value.rawValue == 6 {
 							self = .InvalidFeatures
 						}
 			
-						if value == LDKSemanticError_InvalidRecoveryId {
+						// LDKSemanticError_InvalidRecoveryId
+						if value.rawValue == 7 {
 							self = .InvalidRecoveryId
 						}
 			
-						if value == LDKSemanticError_InvalidSignature {
+						// LDKSemanticError_InvalidSignature
+						if value.rawValue == 8 {
 							self = .InvalidSignature
 						}
 			
-						if value == LDKSemanticError_ImpreciseAmount {
+						// LDKSemanticError_ImpreciseAmount
+						if value.rawValue == 9 {
 							self = .ImpreciseAmount
 						}
 			
@@ -96,34 +106,44 @@
 						switch self {
 							
 							case .NoPaymentHash:
-								return LDKSemanticError_NoPaymentHash
+								// return LDKSemanticError_NoPaymentHash
+								return LDKSemanticError(0)
 			
 							case .MultiplePaymentHashes:
-								return LDKSemanticError_MultiplePaymentHashes
+								// return LDKSemanticError_MultiplePaymentHashes
+								return LDKSemanticError(1)
 			
 							case .NoDescription:
-								return LDKSemanticError_NoDescription
+								// return LDKSemanticError_NoDescription
+								return LDKSemanticError(2)
 			
 							case .MultipleDescriptions:
-								return LDKSemanticError_MultipleDescriptions
+								// return LDKSemanticError_MultipleDescriptions
+								return LDKSemanticError(3)
 			
 							case .NoPaymentSecret:
-								return LDKSemanticError_NoPaymentSecret
+								// return LDKSemanticError_NoPaymentSecret
+								return LDKSemanticError(4)
 			
 							case .MultiplePaymentSecrets:
-								return LDKSemanticError_MultiplePaymentSecrets
+								// return LDKSemanticError_MultiplePaymentSecrets
+								return LDKSemanticError(5)
 			
 							case .InvalidFeatures:
-								return LDKSemanticError_InvalidFeatures
+								// return LDKSemanticError_InvalidFeatures
+								return LDKSemanticError(6)
 			
 							case .InvalidRecoveryId:
-								return LDKSemanticError_InvalidRecoveryId
+								// return LDKSemanticError_InvalidRecoveryId
+								return LDKSemanticError(7)
 			
 							case .InvalidSignature:
-								return LDKSemanticError_InvalidSignature
+								// return LDKSemanticError_InvalidSignature
+								return LDKSemanticError(8)
 			
 							case .ImpreciseAmount:
-								return LDKSemanticError_ImpreciseAmount
+								// return LDKSemanticError_ImpreciseAmount
+								return LDKSemanticError(9)
 			
 						}
 					}

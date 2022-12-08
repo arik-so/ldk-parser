@@ -36,19 +36,23 @@
 						self = .LDKMonitorEvent_UpdateFailed
 
 						
-						if value == LDKMonitorEvent_HTLCEvent {
+						// LDKMonitorEvent_HTLCEvent
+						if value.rawValue == 0 {
 							self = .LDKMonitorEvent_HTLCEvent
 						}
 			
-						if value == LDKMonitorEvent_CommitmentTxConfirmed {
+						// LDKMonitorEvent_CommitmentTxConfirmed
+						if value.rawValue == 1 {
 							self = .LDKMonitorEvent_CommitmentTxConfirmed
 						}
 			
-						if value == LDKMonitorEvent_Completed {
+						// LDKMonitorEvent_Completed
+						if value.rawValue == 2 {
 							self = .LDKMonitorEvent_Completed
 						}
 			
-						if value == LDKMonitorEvent_UpdateFailed {
+						// LDKMonitorEvent_UpdateFailed
+						if value.rawValue == 3 {
 							self = .LDKMonitorEvent_UpdateFailed
 						}
 			
@@ -58,16 +62,20 @@
 						switch self {
 							
 							case .LDKMonitorEvent_HTLCEvent:
-								return LDKMonitorEvent_HTLCEvent
+								// return LDKMonitorEvent_HTLCEvent
+								return LDKMonitorEvent_Tag(0)
 			
 							case .LDKMonitorEvent_CommitmentTxConfirmed:
-								return LDKMonitorEvent_CommitmentTxConfirmed
+								// return LDKMonitorEvent_CommitmentTxConfirmed
+								return LDKMonitorEvent_Tag(1)
 			
 							case .LDKMonitorEvent_Completed:
-								return LDKMonitorEvent_Completed
+								// return LDKMonitorEvent_Completed
+								return LDKMonitorEvent_Tag(2)
 			
 							case .LDKMonitorEvent_UpdateFailed:
-								return LDKMonitorEvent_UpdateFailed
+								// return LDKMonitorEvent_UpdateFailed
+								return LDKMonitorEvent_Tag(3)
 			
 						}
 					}

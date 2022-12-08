@@ -57,27 +57,33 @@
 						self = .LDKAPIError_IncompatibleShutdownScript
 
 						
-						if value == LDKAPIError_APIMisuseError {
+						// LDKAPIError_APIMisuseError
+						if value.rawValue == 0 {
 							self = .LDKAPIError_APIMisuseError
 						}
 			
-						if value == LDKAPIError_FeeRateTooHigh {
+						// LDKAPIError_FeeRateTooHigh
+						if value.rawValue == 1 {
 							self = .LDKAPIError_FeeRateTooHigh
 						}
 			
-						if value == LDKAPIError_RouteError {
+						// LDKAPIError_RouteError
+						if value.rawValue == 2 {
 							self = .LDKAPIError_RouteError
 						}
 			
-						if value == LDKAPIError_ChannelUnavailable {
+						// LDKAPIError_ChannelUnavailable
+						if value.rawValue == 3 {
 							self = .LDKAPIError_ChannelUnavailable
 						}
 			
-						if value == LDKAPIError_MonitorUpdateInProgress {
+						// LDKAPIError_MonitorUpdateInProgress
+						if value.rawValue == 4 {
 							self = .LDKAPIError_MonitorUpdateInProgress
 						}
 			
-						if value == LDKAPIError_IncompatibleShutdownScript {
+						// LDKAPIError_IncompatibleShutdownScript
+						if value.rawValue == 5 {
 							self = .LDKAPIError_IncompatibleShutdownScript
 						}
 			
@@ -87,22 +93,28 @@
 						switch self {
 							
 							case .LDKAPIError_APIMisuseError:
-								return LDKAPIError_APIMisuseError
+								// return LDKAPIError_APIMisuseError
+								return LDKAPIError_Tag(0)
 			
 							case .LDKAPIError_FeeRateTooHigh:
-								return LDKAPIError_FeeRateTooHigh
+								// return LDKAPIError_FeeRateTooHigh
+								return LDKAPIError_Tag(1)
 			
 							case .LDKAPIError_RouteError:
-								return LDKAPIError_RouteError
+								// return LDKAPIError_RouteError
+								return LDKAPIError_Tag(2)
 			
 							case .LDKAPIError_ChannelUnavailable:
-								return LDKAPIError_ChannelUnavailable
+								// return LDKAPIError_ChannelUnavailable
+								return LDKAPIError_Tag(3)
 			
 							case .LDKAPIError_MonitorUpdateInProgress:
-								return LDKAPIError_MonitorUpdateInProgress
+								// return LDKAPIError_MonitorUpdateInProgress
+								return LDKAPIError_Tag(4)
 			
 							case .LDKAPIError_IncompatibleShutdownScript:
-								return LDKAPIError_IncompatibleShutdownScript
+								// return LDKAPIError_IncompatibleShutdownScript
+								return LDKAPIError_Tag(5)
 			
 						}
 					}
