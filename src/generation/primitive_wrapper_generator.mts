@@ -64,8 +64,10 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 				this.auxiliaryArtifacts.addTuple(iterateeTypeName, type.dataField.type.length!);
 
 				initializer = `self.cType = ${type.name}(${dataFieldName}: Bindings.arrayTo${tupleTypeName}(array: value)${ownershipInfix})`;
-				valueAccessor = `return Bindings.${tupleTypeName}ToArray(tuple: self.cType!)`;
+				valueAccessor = `return Bindings.${tupleTypeName}ToArray(tuple: self.cType!.${dataFieldName})`;
 			}
+		} else {
+			throw new Error(`Unsupported primitive data type inside ${type.name}: ${type.dataField.type.getName()} (${type.dataField.type.constructor.name})`)
 		}
 
 		return `

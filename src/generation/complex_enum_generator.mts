@@ -61,7 +61,6 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 					matchingTagTypeVariant = currentTagVariant;
 					break;
 				}
-				debugger
 			}
 
 			if (!matchingTagTypeVariant) {

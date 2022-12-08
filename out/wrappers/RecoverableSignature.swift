@@ -46,7 +46,7 @@
 					
 
 					public func getValue() -> [UInt8] {
-						return Bindings.UInt8Tuple68ToArray(tuple: self.cType!)
+						return Bindings.UInt8Tuple68ToArray(tuple: self.cType!.serialized_form)
 					}
 
 					internal func dangle() -> RecoverableSignature {

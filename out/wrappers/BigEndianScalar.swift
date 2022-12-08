@@ -64,7 +64,7 @@
 		
 
 					public func getValue() -> [UInt8] {
-						return Bindings.UInt8Tuple32ToArray(tuple: self.cType!)
+						return Bindings.UInt8Tuple32ToArray(tuple: self.cType!.big_endian_bytes)
 					}
 
 					internal func dangle() -> BigEndianScalar {

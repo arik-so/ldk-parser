@@ -45,7 +45,7 @@
 					
 
 					public func getValue() -> [UInt8] {
-						return Bindings.UInt8Tuple64ToArray(tuple: self.cType!)
+						return Bindings.UInt8Tuple64ToArray(tuple: self.cType!.compact_form)
 					}
 
 					internal func dangle() -> Signature {
