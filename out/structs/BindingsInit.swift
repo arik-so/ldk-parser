@@ -4,13 +4,13 @@
 			import LDKHeaders
 			#endif
 
-			public typealias Init = Bindings.Init
+			public typealias BindingsInit = Bindings.BindingsInit
 
 			extension Bindings {
 		
 
 				/// An init message to be sent or received from a peer
-				public class Init: NativeTypeWrapper {
+				public class BindingsInit: NativeTypeWrapper {
 
 					
 					private static var instanceCounter: UInt = 0
@@ -159,13 +159,13 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Init(cType: nativeCallResult)
+						let returnValue = BindingsInit(cType: nativeCallResult)
 
 						self.cType = nativeCallResult
 					}
 		
 					/// Creates a copy of the Init
-					internal func clone() -> Init {
+					internal func clone() -> BindingsInit {
 						// native call variable prep
 						
 
@@ -180,7 +180,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Init(cType: nativeCallResult)
+						let returnValue = BindingsInit(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -265,13 +265,13 @@
 					}
 		
 
-					internal func dangle() -> Init {
+					internal func dangle() -> BindingsInit {
 						self.dangling = true
 						return self
 					}
 
 					
-					internal func danglingClone() -> Init {
+					internal func danglingClone() -> BindingsInit {
 						let dangledClone = self.clone()
 						dangledClone.dangling = true
 						return dangledClone
@@ -279,10 +279,10 @@
 			
 					deinit {
 						if !self.dangling {
-							Bindings.print("Freeing Init \(self.instanceNumber).")
+							Bindings.print("Freeing BindingsInit \(self.instanceNumber).")
 							self.free()
 						} else {
-							Bindings.print("Not freeing Init \(self.instanceNumber) due to dangle.")
+							Bindings.print("Not freeing BindingsInit \(self.instanceNumber) due to dangle.")
 						}
 					}
 			

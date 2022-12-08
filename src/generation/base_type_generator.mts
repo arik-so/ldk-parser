@@ -79,6 +79,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				return 'BindingsType';
 			} else if (ldkLessTypeName === 'Error') {
 				return 'BindingsError';
+			} else if (ldkLessTypeName === 'Init') {
+				return 'BindingsInit';
 			}
 
 			return ldkLessTypeName;

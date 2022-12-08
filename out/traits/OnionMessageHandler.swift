@@ -67,7 +67,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), init: Init(cType: init.pointee))
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), init: BindingsInit(cType: init.pointee))
 
 							// cleanup
 							
@@ -178,7 +178,7 @@
 					/// May return an `Err(())` if the features the peer supports are not sufficient to communicate
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
-					open func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
+					open func peerConnected(theirNodeId: [UInt8], init: BindingsInit) -> Result_NoneNoneZ {
 						Bindings.print("Error: OnionMessageHandler::peerConnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -277,7 +277,7 @@
 					/// May return an `Err(())` if the features the peer supports are not sufficient to communicate
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
-					public override func peerConnected(theirNodeId: [UInt8], init: Init) -> Result_NoneNoneZ {
+					public override func peerConnected(theirNodeId: [UInt8], init: BindingsInit) -> Result_NoneNoneZ {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)

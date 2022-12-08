@@ -37,7 +37,7 @@
 
 					
 					/// Creates a new CResult_InitDecodeErrorZ in the success state.
-					public init(o: Init) {
+					public init(o: BindingsInit) {
 						// native call variable prep
 						
 
@@ -121,9 +121,9 @@
 						return nil
 					}
 
-					public func getValue() -> Init? {
+					public func getValue() -> BindingsInit? {
 						if self.cType?.result_ok == true {
-							return Init(cType: self.cType!.contents.result.pointee)
+							return BindingsInit(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
