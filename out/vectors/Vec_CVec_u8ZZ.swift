@@ -37,6 +37,7 @@
 					public init(array: [[UInt8]]) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
+						super.init(conflictAvoidingVariableName: 0)
 
 						let rustArray = array.map { (currentValueDepth1) in
 							currentValueDepth1.map { (currentValueDepth2) in
@@ -61,8 +62,6 @@
 
         				let vector = LDKCVec_CVec_u8ZZ(data: dataContainer, datalen: UInt(array.count))
         				self.cType = vector
-
-						super.init(conflictAvoidingVariableName: 0)
 					}
 
 					public func getValue() -> [[UInt8]] {

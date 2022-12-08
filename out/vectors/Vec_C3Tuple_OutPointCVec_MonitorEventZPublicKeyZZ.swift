@@ -37,6 +37,7 @@
 					public init(array: [(OutPoint, [MonitorEvent], [UInt8])]) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
+						super.init(conflictAvoidingVariableName: 0)
 
 						let rustArray = array.map { (currentValueDepth1) in
 
@@ -54,8 +55,6 @@
 
         				let vector = LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ(data: dataContainer, datalen: UInt(array.count))
         				self.cType = vector
-
-						super.init(conflictAvoidingVariableName: 0)
 					}
 
 					public func getValue() -> [(OutPoint, [MonitorEvent], [UInt8])] {

@@ -115,6 +115,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 					public init(array: ${swiftPublicType}) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
+						super.init(conflictAvoidingVariableName: 0)
 
 						${rustUnwrapper}
 
@@ -125,8 +126,6 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 
         				let vector = ${type.name}(data: dataContainer, datalen: UInt(array.count))
         				self.cType = vector
-
-						super.init(conflictAvoidingVariableName: 0)
 					}
 
 					public func getValue() -> ${swiftPublicType} {

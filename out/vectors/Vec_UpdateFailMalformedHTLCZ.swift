@@ -37,6 +37,7 @@
 					public init(array: [UpdateFailMalformedHTLC]) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
+						super.init(conflictAvoidingVariableName: 0)
 
 						let rustArray = array.map { (currentValueDepth1) in
 
@@ -52,8 +53,6 @@
 
         				let vector = LDKCVec_UpdateFailMalformedHTLCZ(data: dataContainer, datalen: UInt(array.count))
         				self.cType = vector
-
-						super.init(conflictAvoidingVariableName: 0)
 					}
 
 					public func getValue() -> [UpdateFailMalformedHTLC] {
