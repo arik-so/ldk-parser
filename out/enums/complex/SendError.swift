@@ -148,7 +148,7 @@
 					}
 		
 					/// Utility method to constructs a new TooBigPacket-variant SendError
-					public class func TooBigPacket() -> SendError {
+					public class func initWithTooBigPacket() -> SendError {
 						// native call variable prep
 						
 
@@ -165,7 +165,7 @@
 					}
 		
 					/// Utility method to constructs a new TooFewBlindedHops-variant SendError
-					public class func TooFewBlindedHops() -> SendError {
+					public class func initWithTooFewBlindedHops() -> SendError {
 						// native call variable prep
 						
 
@@ -182,7 +182,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidFirstHop-variant SendError
-					public class func InvalidFirstHop() -> SendError {
+					public class func initWithInvalidFirstHop() -> SendError {
 						// native call variable prep
 						
 
@@ -199,7 +199,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidMessage-variant SendError
-					public class func InvalidMessage() -> SendError {
+					public class func initWithInvalidMessage() -> SendError {
 						// native call variable prep
 						
 
@@ -216,7 +216,7 @@
 					}
 		
 					/// Utility method to constructs a new BufferFull-variant SendError
-					public class func BufferFull() -> SendError {
+					public class func initWithBufferFull() -> SendError {
 						// native call variable prep
 						
 

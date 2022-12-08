@@ -130,7 +130,7 @@
 					}
 		
 					/// Utility method to constructs a new UnknownVersion-variant DecodeError
-					public class func UnknownVersion() -> DecodeError {
+					public class func initWithUnknownVersion() -> DecodeError {
 						// native call variable prep
 						
 
@@ -147,7 +147,7 @@
 					}
 		
 					/// Utility method to constructs a new UnknownRequiredFeature-variant DecodeError
-					public class func UnknownRequiredFeature() -> DecodeError {
+					public class func initWithUnknownRequiredFeature() -> DecodeError {
 						// native call variable prep
 						
 
@@ -164,7 +164,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidValue-variant DecodeError
-					public class func InvalidValue() -> DecodeError {
+					public class func initWithInvalidValue() -> DecodeError {
 						// native call variable prep
 						
 
@@ -181,7 +181,7 @@
 					}
 		
 					/// Utility method to constructs a new ShortRead-variant DecodeError
-					public class func ShortRead() -> DecodeError {
+					public class func initWithShortRead() -> DecodeError {
 						// native call variable prep
 						
 
@@ -198,7 +198,7 @@
 					}
 		
 					/// Utility method to constructs a new BadLengthDescriptor-variant DecodeError
-					public class func BadLengthDescriptor() -> DecodeError {
+					public class func initWithBadLengthDescriptor() -> DecodeError {
 						// native call variable prep
 						
 
@@ -238,7 +238,7 @@
 					}
 		
 					/// Utility method to constructs a new UnsupportedCompression-variant DecodeError
-					public class func UnsupportedCompression() -> DecodeError {
+					public class func initWithUnsupportedCompression() -> DecodeError {
 						// native call variable prep
 						
 

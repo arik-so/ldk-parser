@@ -218,7 +218,7 @@
 					}
 		
 					/// Utility method to constructs a new ParseAmountError-variant ParseError
-					public class func ParseAmountError(a: Bindings.BindingsError) -> ParseError {
+					public class func initWithParseAmountError(a: Bindings.BindingsError) -> ParseError {
 						// native call variable prep
 						
 
@@ -258,7 +258,7 @@
 					}
 		
 					/// Utility method to constructs a new BadPrefix-variant ParseError
-					public class func BadPrefix() -> ParseError {
+					public class func initWithBadPrefix() -> ParseError {
 						// native call variable prep
 						
 
@@ -275,7 +275,7 @@
 					}
 		
 					/// Utility method to constructs a new UnknownCurrency-variant ParseError
-					public class func UnknownCurrency() -> ParseError {
+					public class func initWithUnknownCurrency() -> ParseError {
 						// native call variable prep
 						
 
@@ -292,7 +292,7 @@
 					}
 		
 					/// Utility method to constructs a new UnknownSiPrefix-variant ParseError
-					public class func UnknownSiPrefix() -> ParseError {
+					public class func initWithUnknownSiPrefix() -> ParseError {
 						// native call variable prep
 						
 
@@ -309,7 +309,7 @@
 					}
 		
 					/// Utility method to constructs a new MalformedHRP-variant ParseError
-					public class func MalformedHrp() -> ParseError {
+					public class func initWithMalformedHrp() -> ParseError {
 						// native call variable prep
 						
 
@@ -326,7 +326,7 @@
 					}
 		
 					/// Utility method to constructs a new TooShortDataPart-variant ParseError
-					public class func TooShortDataPart() -> ParseError {
+					public class func initWithTooShortDataPart() -> ParseError {
 						// native call variable prep
 						
 
@@ -343,7 +343,7 @@
 					}
 		
 					/// Utility method to constructs a new UnexpectedEndOfTaggedFields-variant ParseError
-					public class func UnexpectedEndOfTaggedFields() -> ParseError {
+					public class func initWithUnexpectedEndOfTaggedFields() -> ParseError {
 						// native call variable prep
 						
 
@@ -360,7 +360,7 @@
 					}
 		
 					/// Utility method to constructs a new DescriptionDecodeError-variant ParseError
-					public class func DescriptionDecodeError(a: Bindings.BindingsError) -> ParseError {
+					public class func initWithDescriptionDecodeError(a: Bindings.BindingsError) -> ParseError {
 						// native call variable prep
 						
 
@@ -377,7 +377,7 @@
 					}
 		
 					/// Utility method to constructs a new PaddingError-variant ParseError
-					public class func PaddingError() -> ParseError {
+					public class func initWithPaddingError() -> ParseError {
 						// native call variable prep
 						
 
@@ -394,7 +394,7 @@
 					}
 		
 					/// Utility method to constructs a new IntegerOverflowError-variant ParseError
-					public class func IntegerOverflowError() -> ParseError {
+					public class func initWithIntegerOverflowError() -> ParseError {
 						// native call variable prep
 						
 
@@ -411,7 +411,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidSegWitProgramLength-variant ParseError
-					public class func InvalidSegWitProgramLength() -> ParseError {
+					public class func initWithInvalidSegWitProgramLength() -> ParseError {
 						// native call variable prep
 						
 
@@ -428,7 +428,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidPubKeyHashLength-variant ParseError
-					public class func InvalidPubKeyHashLength() -> ParseError {
+					public class func initWithInvalidPubKeyHashLength() -> ParseError {
 						// native call variable prep
 						
 
@@ -445,7 +445,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidScriptHashLength-variant ParseError
-					public class func InvalidScriptHashLength() -> ParseError {
+					public class func initWithInvalidScriptHashLength() -> ParseError {
 						// native call variable prep
 						
 
@@ -462,7 +462,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidRecoveryId-variant ParseError
-					public class func InvalidRecoveryId() -> ParseError {
+					public class func initWithInvalidRecoveryId() -> ParseError {
 						// native call variable prep
 						
 
@@ -504,7 +504,7 @@
 					}
 		
 					/// Utility method to constructs a new Skip-variant ParseError
-					public class func Skip() -> ParseError {
+					public class func initWithSkip() -> ParseError {
 						// native call variable prep
 						
 

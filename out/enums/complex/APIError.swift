@@ -142,7 +142,7 @@
 					}
 		
 					/// Utility method to constructs a new APIMisuseError-variant APIError
-					public class func ApimisuseError(err: String) -> APIError {
+					public class func initWithApimisuseError(err: String) -> APIError {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err)
@@ -186,7 +186,7 @@
 					}
 		
 					/// Utility method to constructs a new RouteError-variant APIError
-					public class func RouteError(err: String) -> APIError {
+					public class func initWithRouteError(err: String) -> APIError {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err)
@@ -205,7 +205,7 @@
 					}
 		
 					/// Utility method to constructs a new ChannelUnavailable-variant APIError
-					public class func ChannelUnavailable(err: String) -> APIError {
+					public class func initWithChannelUnavailable(err: String) -> APIError {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err)

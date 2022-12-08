@@ -144,7 +144,7 @@
 					}
 		
 					/// Generates a P2WPKH script pubkey from the given [`WPubkeyHash`].
-					public class func NewP2wpkh(pubkeyHash: [UInt8]) -> ShutdownScript {
+					public class func initWithP2wpkh(pubkeyHash: [UInt8]) -> ShutdownScript {
 						// native call variable prep
 						
 						let tupledPubkeyHash = Bindings.arrayToUInt8Tuple20(array: pubkeyHash)
@@ -167,7 +167,7 @@
 					}
 		
 					/// Generates a P2WSH script pubkey from the given [`WScriptHash`].
-					public class func NewP2wsh(scriptHash: [UInt8]) -> ShutdownScript {
+					public class func initWithP2wsh(scriptHash: [UInt8]) -> ShutdownScript {
 						// native call variable prep
 						
 						let tupledScriptHash = Bindings.arrayToUInt8Tuple32(array: scriptHash)

@@ -154,7 +154,7 @@
 					}
 		
 					/// Utility method to constructs a new CounterpartyForceClosed-variant ClosureReason
-					public class func CounterpartyForceClosed(peerMsg: String) -> ClosureReason {
+					public class func initWithCounterpartyForceClosed(peerMsg: String) -> ClosureReason {
 						// native call variable prep
 						
 						let peerMsgPrimitiveWrapper = Str(value: peerMsg)
@@ -173,7 +173,7 @@
 					}
 		
 					/// Utility method to constructs a new HolderForceClosed-variant ClosureReason
-					public class func HolderForceClosed() -> ClosureReason {
+					public class func initWithHolderForceClosed() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -190,7 +190,7 @@
 					}
 		
 					/// Utility method to constructs a new CooperativeClosure-variant ClosureReason
-					public class func CooperativeClosure() -> ClosureReason {
+					public class func initWithCooperativeClosure() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -207,7 +207,7 @@
 					}
 		
 					/// Utility method to constructs a new CommitmentTxConfirmed-variant ClosureReason
-					public class func CommitmentTxConfirmed() -> ClosureReason {
+					public class func initWithCommitmentTxConfirmed() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -224,7 +224,7 @@
 					}
 		
 					/// Utility method to constructs a new FundingTimedOut-variant ClosureReason
-					public class func FundingTimedOut() -> ClosureReason {
+					public class func initWithFundingTimedOut() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -241,7 +241,7 @@
 					}
 		
 					/// Utility method to constructs a new ProcessingError-variant ClosureReason
-					public class func ProcessingError(err: String) -> ClosureReason {
+					public class func initWithProcessingError(err: String) -> ClosureReason {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err)
@@ -260,7 +260,7 @@
 					}
 		
 					/// Utility method to constructs a new DisconnectedPeer-variant ClosureReason
-					public class func DisconnectedPeer() -> ClosureReason {
+					public class func initWithDisconnectedPeer() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -277,7 +277,7 @@
 					}
 		
 					/// Utility method to constructs a new OutdatedChannelManager-variant ClosureReason
-					public class func OutdatedChannelManager() -> ClosureReason {
+					public class func initWithOutdatedChannelManager() -> ClosureReason {
 						// native call variable prep
 						
 

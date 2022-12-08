@@ -124,7 +124,7 @@
 					}
 		
 					/// Construct an `ExpiryTime` from seconds.
-					public class func FromSeconds(seconds: UInt64) -> ExpiryTime {
+					public class func initFromSeconds(seconds: UInt64) -> ExpiryTime {
 						// native call variable prep
 						
 
@@ -141,7 +141,7 @@
 					}
 		
 					/// Construct an `ExpiryTime` from a `Duration`, dropping the sub-second part.
-					public class func FromDuration(duration: UInt64) -> ExpiryTime {
+					public class func initFromDuration(duration: UInt64) -> ExpiryTime {
 						// native call variable prep
 						
 

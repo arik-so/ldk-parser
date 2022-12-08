@@ -607,7 +607,7 @@
 					}
 		
 					/// Creates a payee with the node id of the given `pubkey`.
-					public class func FromNodeId(payeePubkey: [UInt8]) -> PaymentParameters {
+					public class func initFromNodeId(payeePubkey: [UInt8]) -> PaymentParameters {
 						// native call variable prep
 						
 						let payeePubkeyPrimitiveWrapper = PublicKey(value: payeePubkey)
@@ -626,7 +626,7 @@
 					}
 		
 					/// Creates a payee with the node id of the given `pubkey` to use for keysend payments.
-					public class func ForKeysend(payeePubkey: [UInt8]) -> PaymentParameters {
+					public class func initWithForKeysend(payeePubkey: [UInt8]) -> PaymentParameters {
 						// native call variable prep
 						
 						let payeePubkeyPrimitiveWrapper = PublicKey(value: payeePubkey)

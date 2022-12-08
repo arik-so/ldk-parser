@@ -132,7 +132,7 @@
 					}
 		
 					/// Utility method to constructs a new PubKeyHash-variant Fallback
-					public class func PubKeyHash(a: [UInt8]) -> Fallback {
+					public class func initWithPubKeyHash(a: [UInt8]) -> Fallback {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = TwentyBytes(value: a)
@@ -151,7 +151,7 @@
 					}
 		
 					/// Utility method to constructs a new ScriptHash-variant Fallback
-					public class func ScriptHash(a: [UInt8]) -> Fallback {
+					public class func initWithScriptHash(a: [UInt8]) -> Fallback {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = TwentyBytes(value: a)

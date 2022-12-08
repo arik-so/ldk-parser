@@ -138,7 +138,7 @@
 					}
 		
 					/// Utility method to constructs a new CommitmentTxConfirmed-variant MonitorEvent
-					public class func CommitmentTxConfirmed(a: Bindings.OutPoint) -> MonitorEvent {
+					public class func initWithCommitmentTxConfirmed(a: Bindings.OutPoint) -> MonitorEvent {
 						// native call variable prep
 						
 
@@ -178,7 +178,7 @@
 					}
 		
 					/// Utility method to constructs a new UpdateFailed-variant MonitorEvent
-					public class func UpdateFailed(a: Bindings.OutPoint) -> MonitorEvent {
+					public class func initWithUpdateFailed(a: Bindings.OutPoint) -> MonitorEvent {
 						// native call variable prep
 						
 

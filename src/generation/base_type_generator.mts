@@ -287,8 +287,15 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			standaloneMethodName = this.standaloneMethodName(method, containerType);
 			// complex enums may have multiple variants of the same type, so those initializers should be static
 			if (method.returnValue.type === containerType && !['clone', 'none'].includes(standaloneMethodName)) {
-				if(forceStaticConstructor){
-					return Generator.snakeCaseToCamelCase(standaloneMethodName, true);
+				if (forceStaticConstructor) {
+					const suffix = Generator.snakeCaseToCamelCase(standaloneMethodName, true);
+					if (suffix.startsWith('From')) {
+						return 'init' + suffix;
+					}
+					if (suffix.startsWith('New')) {
+						return 'initWith' + suffix.substring(3);
+					}
+					return 'initWith' + suffix;
 				}
 				return 'init';
 			}
@@ -392,14 +399,14 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						/**
 						 * BUT WAIT! Is there already a type with the same name? Stranger
 						 * things have happened!
- 						 */
+						 */
 						return matches[1];
 					}
 				}
 			}
 
-			if(containerType instanceof RustTaggedValueEnum && type instanceof RustStruct){
-				return `Bindings.${this.swiftTypeName(type)}`
+			if (containerType instanceof RustTaggedValueEnum && type instanceof RustStruct) {
+				return `Bindings.${this.swiftTypeName(type)}`;
 			}
 
 			return this.swiftTypeName(type);
@@ -613,8 +620,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			wrapperSuffix: ''
 		};
 
-		if(returnType.isAsteriskPointer){
-			preparedReturnValue.wrapperSuffix += '.pointee'
+		if (returnType.isAsteriskPointer) {
+			preparedReturnValue.wrapperSuffix += '.pointee';
 		}
 
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes

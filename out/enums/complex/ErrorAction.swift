@@ -124,7 +124,7 @@
 					}
 		
 					/// Utility method to constructs a new DisconnectPeer-variant ErrorAction
-					public class func DisconnectPeer(msg: Bindings.ErrorMessage) -> ErrorAction {
+					public class func initWithDisconnectPeer(msg: Bindings.ErrorMessage) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -141,7 +141,7 @@
 					}
 		
 					/// Utility method to constructs a new IgnoreError-variant ErrorAction
-					public class func IgnoreError() -> ErrorAction {
+					public class func initWithIgnoreError() -> ErrorAction {
 						// native call variable prep
 						
 
@@ -181,7 +181,7 @@
 					}
 		
 					/// Utility method to constructs a new IgnoreDuplicateGossip-variant ErrorAction
-					public class func IgnoreDuplicateGossip() -> ErrorAction {
+					public class func initWithIgnoreDuplicateGossip() -> ErrorAction {
 						// native call variable prep
 						
 
@@ -198,7 +198,7 @@
 					}
 		
 					/// Utility method to constructs a new SendErrorMessage-variant ErrorAction
-					public class func SendErrorMessage(msg: Bindings.ErrorMessage) -> ErrorAction {
+					public class func initWithSendErrorMessage(msg: Bindings.ErrorMessage) -> ErrorAction {
 						// native call variable prep
 						
 

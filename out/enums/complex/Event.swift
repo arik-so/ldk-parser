@@ -302,7 +302,7 @@
 					}
 		
 					/// Utility method to constructs a new PaymentReceived-variant Event
-					public class func PaymentReceived(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
+					public class func initWithPaymentReceived(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
 						// native call variable prep
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
@@ -321,7 +321,7 @@
 					}
 		
 					/// Utility method to constructs a new PaymentClaimed-variant Event
-					public class func PaymentClaimed(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
+					public class func initWithPaymentClaimed(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
 						// native call variable prep
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
@@ -371,7 +371,7 @@
 					}
 		
 					/// Utility method to constructs a new PaymentFailed-variant Event
-					public class func PaymentFailed(paymentId: [UInt8], paymentHash: [UInt8]) -> Event {
+					public class func initWithPaymentFailed(paymentId: [UInt8], paymentHash: [UInt8]) -> Event {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -392,7 +392,7 @@
 					}
 		
 					/// Utility method to constructs a new PaymentPathSuccessful-variant Event
-					public class func PaymentPathSuccessful(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop]) -> Event {
+					public class func initWithPaymentPathSuccessful(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop]) -> Event {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -452,7 +452,7 @@
 					}
 		
 					/// Utility method to constructs a new ProbeSuccessful-variant Event
-					public class func ProbeSuccessful(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop]) -> Event {
+					public class func initWithProbeSuccessful(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop]) -> Event {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -614,7 +614,7 @@
 					}
 		
 					/// Utility method to constructs a new DiscardFunding-variant Event
-					public class func DiscardFunding(channelId: [UInt8], transaction: [UInt8]) -> Event {
+					public class func initWithDiscardFunding(channelId: [UInt8], transaction: [UInt8]) -> Event {
 						// native call variable prep
 						
 						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)

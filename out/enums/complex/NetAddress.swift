@@ -120,7 +120,7 @@
 					}
 		
 					/// Utility method to constructs a new IPv4-variant NetAddress
-					public class func Ipv4(addr: [UInt8], port: UInt16) -> NetAddress {
+					public class func initWithIpv4(addr: [UInt8], port: UInt16) -> NetAddress {
 						// native call variable prep
 						
 						let addrPrimitiveWrapper = FourBytes(value: addr)
@@ -139,7 +139,7 @@
 					}
 		
 					/// Utility method to constructs a new IPv6-variant NetAddress
-					public class func Ipv6(addr: [UInt8], port: UInt16) -> NetAddress {
+					public class func initWithIpv6(addr: [UInt8], port: UInt16) -> NetAddress {
 						// native call variable prep
 						
 						let addrPrimitiveWrapper = SixteenBytes(value: addr)
