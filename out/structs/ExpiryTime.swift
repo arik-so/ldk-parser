@@ -124,7 +124,7 @@
 					}
 		
 					/// Construct an `ExpiryTime` from seconds.
-					public init(seconds: UInt64) {
+					public class func FromSeconds(seconds: UInt64) -> ExpiryTime {
 						// native call variable prep
 						
 
@@ -137,11 +137,11 @@
 						// return value (do some wrapping)
 						let returnValue = ExpiryTime(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Construct an `ExpiryTime` from a `Duration`, dropping the sub-second part.
-					public init(duration: UInt64) {
+					public class func FromDuration(duration: UInt64) -> ExpiryTime {
 						// native call variable prep
 						
 
@@ -154,7 +154,7 @@
 						// return value (do some wrapping)
 						let returnValue = ExpiryTime(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Returns the expiry time in seconds

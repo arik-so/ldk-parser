@@ -141,7 +141,7 @@
 					}
 		
 					/// Utility method to constructs a new ClaimableOnChannelClose-variant Balance
-					public class func claimableOnChannelClose(claimableAmountSatoshis: UInt64) -> Balance {
+					public class func ClaimableOnChannelClose(claimableAmountSatoshis: UInt64) -> Balance {
 						// native call variable prep
 						
 
@@ -158,7 +158,7 @@
 					}
 		
 					/// Utility method to constructs a new ClaimableAwaitingConfirmations-variant Balance
-					public class func claimableAwaitingConfirmations(claimableAmountSatoshis: UInt64, confirmationHeight: UInt32) -> Balance {
+					public class func ClaimableAwaitingConfirmations(claimableAmountSatoshis: UInt64, confirmationHeight: UInt32) -> Balance {
 						// native call variable prep
 						
 
@@ -175,7 +175,7 @@
 					}
 		
 					/// Utility method to constructs a new ContentiousClaimable-variant Balance
-					public class func contentiousClaimable(claimableAmountSatoshis: UInt64, timeoutHeight: UInt32) -> Balance {
+					public class func ContentiousClaimable(claimableAmountSatoshis: UInt64, timeoutHeight: UInt32) -> Balance {
 						// native call variable prep
 						
 
@@ -192,7 +192,7 @@
 					}
 		
 					/// Utility method to constructs a new MaybeTimeoutClaimableHTLC-variant Balance
-					public class func maybeTimeoutClaimableHtlc(claimableAmountSatoshis: UInt64, claimableHeight: UInt32) -> Balance {
+					public class func MaybeTimeoutClaimableHtlc(claimableAmountSatoshis: UInt64, claimableHeight: UInt32) -> Balance {
 						// native call variable prep
 						
 
@@ -209,7 +209,7 @@
 					}
 		
 					/// Utility method to constructs a new MaybePreimageClaimableHTLC-variant Balance
-					public class func maybePreimageClaimableHtlc(claimableAmountSatoshis: UInt64, expiryHeight: UInt32) -> Balance {
+					public class func MaybePreimageClaimableHtlc(claimableAmountSatoshis: UInt64, expiryHeight: UInt32) -> Balance {
 						// native call variable prep
 						
 
@@ -226,7 +226,7 @@
 					}
 		
 					/// Utility method to constructs a new CounterpartyRevokedOutputClaimable-variant Balance
-					public class func counterpartyRevokedOutputClaimable(claimableAmountSatoshis: UInt64) -> Balance {
+					public class func CounterpartyRevokedOutputClaimable(claimableAmountSatoshis: UInt64) -> Balance {
 						// native call variable prep
 						
 

@@ -225,7 +225,7 @@
 					}
 		
 					/// Utility method to constructs a new SendAcceptChannel-variant MessageSendEvent
-					public class func sendAcceptChannel(nodeId: [UInt8], msg: AcceptChannel) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: AcceptChannel) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -240,11 +240,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendOpenChannel-variant MessageSendEvent
-					public class func sendOpenChannel(nodeId: [UInt8], msg: OpenChannel) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: OpenChannel) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -259,11 +259,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendFundingCreated-variant MessageSendEvent
-					public class func sendFundingCreated(nodeId: [UInt8], msg: FundingCreated) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: FundingCreated) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -278,11 +278,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendFundingSigned-variant MessageSendEvent
-					public class func sendFundingSigned(nodeId: [UInt8], msg: FundingSigned) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: FundingSigned) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -297,11 +297,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendChannelReady-variant MessageSendEvent
-					public class func sendChannelReady(nodeId: [UInt8], msg: ChannelReady) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: ChannelReady) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -316,11 +316,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendAnnouncementSignatures-variant MessageSendEvent
-					public class func sendAnnouncementSignatures(nodeId: [UInt8], msg: AnnouncementSignatures) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: AnnouncementSignatures) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -335,11 +335,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new UpdateHTLCs-variant MessageSendEvent
-					public class func updateHtlcs(nodeId: [UInt8], updates: CommitmentUpdate) -> MessageSendEvent {
+					public init(nodeId: [UInt8], updates: CommitmentUpdate) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -354,11 +354,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendRevokeAndACK-variant MessageSendEvent
-					public class func sendRevokeAndAck(nodeId: [UInt8], msg: RevokeAndACK) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: RevokeAndACK) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -373,11 +373,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendClosingSigned-variant MessageSendEvent
-					public class func sendClosingSigned(nodeId: [UInt8], msg: ClosingSigned) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: ClosingSigned) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -392,11 +392,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendShutdown-variant MessageSendEvent
-					public class func sendShutdown(nodeId: [UInt8], msg: Shutdown) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: Shutdown) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -411,11 +411,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendChannelReestablish-variant MessageSendEvent
-					public class func sendChannelReestablish(nodeId: [UInt8], msg: ChannelReestablish) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: ChannelReestablish) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -430,11 +430,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendChannelAnnouncement-variant MessageSendEvent
-					public class func sendChannelAnnouncement(nodeId: [UInt8], msg: ChannelAnnouncement, updateMsg: ChannelUpdate) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: ChannelAnnouncement, updateMsg: ChannelUpdate) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -449,11 +449,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new BroadcastChannelAnnouncement-variant MessageSendEvent
-					public class func broadcastChannelAnnouncement(msg: ChannelAnnouncement, updateMsg: ChannelUpdate) -> MessageSendEvent {
+					public init(msg: ChannelAnnouncement, updateMsg: ChannelUpdate) {
 						// native call variable prep
 						
 
@@ -466,11 +466,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new BroadcastChannelUpdate-variant MessageSendEvent
-					public class func broadcastChannelUpdate(msg: ChannelUpdate) -> MessageSendEvent {
+					public init(msg: ChannelUpdate) {
 						// native call variable prep
 						
 
@@ -483,11 +483,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendChannelUpdate-variant MessageSendEvent
-					public class func sendChannelUpdate(nodeId: [UInt8], msg: ChannelUpdate) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: ChannelUpdate) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -502,11 +502,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new HandleError-variant MessageSendEvent
-					public class func handleError(nodeId: [UInt8], action: ErrorAction) -> MessageSendEvent {
+					public init(nodeId: [UInt8], action: ErrorAction) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -521,11 +521,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendChannelRangeQuery-variant MessageSendEvent
-					public class func sendChannelRangeQuery(nodeId: [UInt8], msg: QueryChannelRange) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: QueryChannelRange) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -540,11 +540,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendShortIdsQuery-variant MessageSendEvent
-					public class func sendShortIdsQuery(nodeId: [UInt8], msg: QueryShortChannelIds) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: QueryShortChannelIds) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -559,11 +559,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendReplyChannelRange-variant MessageSendEvent
-					public class func sendReplyChannelRange(nodeId: [UInt8], msg: ReplyChannelRange) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: ReplyChannelRange) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -578,11 +578,11 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SendGossipTimestampFilter-variant MessageSendEvent
-					public class func sendGossipTimestampFilter(nodeId: [UInt8], msg: GossipTimestampFilter) -> MessageSendEvent {
+					public init(nodeId: [UInt8], msg: GossipTimestampFilter) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -597,7 +597,7 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 

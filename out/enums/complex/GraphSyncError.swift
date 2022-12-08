@@ -99,7 +99,7 @@
 					}
 		
 					/// Utility method to constructs a new DecodeError-variant GraphSyncError
-					public class func decodeError(a: DecodeError) -> GraphSyncError {
+					public init(a: DecodeError) {
 						// native call variable prep
 						
 
@@ -112,11 +112,11 @@
 						// return value (do some wrapping)
 						let returnValue = GraphSyncError(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new LightningError-variant GraphSyncError
-					public class func lightningError(a: LightningError) -> GraphSyncError {
+					public init(a: LightningError) {
 						// native call variable prep
 						
 
@@ -129,7 +129,7 @@
 						// return value (do some wrapping)
 						let returnValue = GraphSyncError(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 

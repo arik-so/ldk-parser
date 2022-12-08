@@ -125,7 +125,7 @@
 					}
 		
 					/// Utility method to constructs a new Secp256k1-variant SendError
-					public class func secp256k1(a: Secp256k1Error) -> SendError {
+					public init(a: Secp256k1Error) {
 						// native call variable prep
 						
 
@@ -138,11 +138,11 @@
 						// return value (do some wrapping)
 						let returnValue = SendError(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new TooBigPacket-variant SendError
-					public class func tooBigPacket() -> SendError {
+					public class func TooBigPacket() -> SendError {
 						// native call variable prep
 						
 
@@ -159,7 +159,7 @@
 					}
 		
 					/// Utility method to constructs a new TooFewBlindedHops-variant SendError
-					public class func tooFewBlindedHops() -> SendError {
+					public class func TooFewBlindedHops() -> SendError {
 						// native call variable prep
 						
 
@@ -176,7 +176,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidFirstHop-variant SendError
-					public class func invalidFirstHop() -> SendError {
+					public class func InvalidFirstHop() -> SendError {
 						// native call variable prep
 						
 
@@ -193,7 +193,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidMessage-variant SendError
-					public class func invalidMessage() -> SendError {
+					public class func InvalidMessage() -> SendError {
 						// native call variable prep
 						
 
@@ -210,7 +210,7 @@
 					}
 		
 					/// Utility method to constructs a new BufferFull-variant SendError
-					public class func bufferFull() -> SendError {
+					public class func BufferFull() -> SendError {
 						// native call variable prep
 						
 

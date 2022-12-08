@@ -121,7 +121,7 @@
 					}
 		
 					/// Utility method to constructs a new ExactLiquidity-variant EffectiveCapacity
-					public class func exactLiquidity(liquidityMsat: UInt64) -> EffectiveCapacity {
+					public class func ExactLiquidity(liquidityMsat: UInt64) -> EffectiveCapacity {
 						// native call variable prep
 						
 
@@ -138,7 +138,7 @@
 					}
 		
 					/// Utility method to constructs a new MaximumHTLC-variant EffectiveCapacity
-					public class func maximumHtlc(amountMsat: UInt64) -> EffectiveCapacity {
+					public class func MaximumHtlc(amountMsat: UInt64) -> EffectiveCapacity {
 						// native call variable prep
 						
 
@@ -155,7 +155,7 @@
 					}
 		
 					/// Utility method to constructs a new Total-variant EffectiveCapacity
-					public class func total(capacityMsat: UInt64, htlcMaximumMsat: UInt64?) -> EffectiveCapacity {
+					public init(capacityMsat: UInt64, htlcMaximumMsat: UInt64?) {
 						// native call variable prep
 						
 						let htlcMaximumMsatOption = Option_u64Z(some: htlcMaximumMsat)
@@ -170,11 +170,11 @@
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new Infinite-variant EffectiveCapacity
-					public class func infinite() -> EffectiveCapacity {
+					public class func Infinite() -> EffectiveCapacity {
 						// native call variable prep
 						
 
@@ -191,7 +191,7 @@
 					}
 		
 					/// Utility method to constructs a new Unknown-variant EffectiveCapacity
-					public class func unknown() -> EffectiveCapacity {
+					public class func Unknown() -> EffectiveCapacity {
 						// native call variable prep
 						
 

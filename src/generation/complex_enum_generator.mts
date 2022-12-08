@@ -1,4 +1,10 @@
-import {RustPrimitiveEnum, RustPrimitiveEnumVariant, RustStruct, RustTaggedValueEnum} from '../rust_types.mjs';
+import {
+	RustFunction,
+	RustPrimitiveEnum,
+	RustPrimitiveEnumVariant,
+	RustStruct,
+	RustTaggedValueEnum
+} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 import Generator from './index.mjs';
 import StructGenerator from './struct_generator.mjs';
@@ -10,8 +16,12 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 
 		let generatedMethods = '';
 
+
+		const conflictingArgumentConstructors = this.collectConflictingConstructors(type);
+
 		for (const currentMethod of type.methods) {
-			generatedMethods += this.generateMethod(currentMethod, type);
+			const isConflictingConstructor = conflictingArgumentConstructors.has(currentMethod);
+			generatedMethods += this.generateMethod(currentMethod, type, isConflictingConstructor);
 		}
 
 		let childStructs: RustStruct[] = [];

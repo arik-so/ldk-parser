@@ -98,7 +98,7 @@
 					}
 		
 					/// Utility method to constructs a new SignError-variant SignOrCreationError
-					public class func signError() -> SignOrCreationError {
+					public init() {
 						// native call variable prep
 						
 
@@ -111,11 +111,11 @@
 						// return value (do some wrapping)
 						let returnValue = SignOrCreationError(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new CreationError-variant SignOrCreationError
-					public class func creationError(a: CreationError) -> SignOrCreationError {
+					public init(a: CreationError) {
 						// native call variable prep
 						
 
@@ -128,7 +128,7 @@
 						// return value (do some wrapping)
 						let returnValue = SignOrCreationError(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Checks if two SignOrCreationErrors contain equal inner contents.

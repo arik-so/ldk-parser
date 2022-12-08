@@ -99,7 +99,7 @@
 					}
 		
 					/// Utility method to constructs a new InvoicePayment-variant PaymentPurpose
-					public class func invoicePayment(paymentPreimage: [UInt8], paymentSecret: [UInt8]) -> PaymentPurpose {
+					public init(paymentPreimage: [UInt8], paymentSecret: [UInt8]) {
 						// native call variable prep
 						
 						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
@@ -116,11 +116,11 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentPurpose(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SpontaneousPayment-variant PaymentPurpose
-					public class func spontaneousPayment(a: [UInt8]) -> PaymentPurpose {
+					public init(a: [UInt8]) {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = ThirtyTwoBytes(value: a)
@@ -135,7 +135,7 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentPurpose(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Serialize the PaymentPurpose object into a byte array which can be read by PaymentPurpose_read

@@ -103,7 +103,7 @@
 					}
 		
 					/// Utility method to constructs a new SegWitProgram-variant Fallback
-					public class func segWitProgram(version: UInt8, program: [UInt8]) -> Fallback {
+					public init(version: UInt8, program: [UInt8]) {
 						// native call variable prep
 						
 						let versionPrimitiveWrapper = u5(value: version)
@@ -122,11 +122,11 @@
 						// return value (do some wrapping)
 						let returnValue = Fallback(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new PubKeyHash-variant Fallback
-					public class func pubKeyHash(a: [UInt8]) -> Fallback {
+					public class func PubKeyHash(a: [UInt8]) -> Fallback {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = TwentyBytes(value: a)
@@ -145,7 +145,7 @@
 					}
 		
 					/// Utility method to constructs a new ScriptHash-variant Fallback
-					public class func scriptHash(a: [UInt8]) -> Fallback {
+					public class func ScriptHash(a: [UInt8]) -> Fallback {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = TwentyBytes(value: a)

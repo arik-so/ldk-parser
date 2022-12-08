@@ -124,7 +124,7 @@
 					}
 		
 					/// Utility method to constructs a new DisconnectPeer-variant ErrorAction
-					public class func disconnectPeer(msg: ErrorMessage) -> ErrorAction {
+					public class func DisconnectPeer(msg: ErrorMessage) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -141,7 +141,7 @@
 					}
 		
 					/// Utility method to constructs a new IgnoreError-variant ErrorAction
-					public class func ignoreError() -> ErrorAction {
+					public class func IgnoreError() -> ErrorAction {
 						// native call variable prep
 						
 
@@ -158,7 +158,7 @@
 					}
 		
 					/// Utility method to constructs a new IgnoreAndLog-variant ErrorAction
-					public class func ignoreAndLog(a: Level) -> ErrorAction {
+					public init(a: Level) {
 						// native call variable prep
 						
 
@@ -171,11 +171,11 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new IgnoreDuplicateGossip-variant ErrorAction
-					public class func ignoreDuplicateGossip() -> ErrorAction {
+					public class func IgnoreDuplicateGossip() -> ErrorAction {
 						// native call variable prep
 						
 
@@ -192,7 +192,7 @@
 					}
 		
 					/// Utility method to constructs a new SendErrorMessage-variant ErrorAction
-					public class func sendErrorMessage(msg: ErrorMessage) -> ErrorAction {
+					public class func SendErrorMessage(msg: ErrorMessage) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -209,7 +209,7 @@
 					}
 		
 					/// Utility method to constructs a new SendWarningMessage-variant ErrorAction
-					public class func sendWarningMessage(msg: WarningMessage, logLevel: Level) -> ErrorAction {
+					public init(msg: WarningMessage, logLevel: Level) {
 						// native call variable prep
 						
 
@@ -222,7 +222,7 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 

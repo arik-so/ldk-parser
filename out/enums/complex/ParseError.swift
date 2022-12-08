@@ -195,7 +195,7 @@
 					}
 		
 					/// Utility method to constructs a new Bech32Error-variant ParseError
-					public class func bech32Error(a: Bech32Error) -> ParseError {
+					public init(a: Bech32Error) {
 						// native call variable prep
 						
 
@@ -208,11 +208,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new ParseAmountError-variant ParseError
-					public class func parseAmountError(a: BindingsError) -> ParseError {
+					public class func ParseAmountError(a: BindingsError) -> ParseError {
 						// native call variable prep
 						
 
@@ -229,7 +229,7 @@
 					}
 		
 					/// Utility method to constructs a new MalformedSignature-variant ParseError
-					public class func malformedSignature(a: Secp256k1Error) -> ParseError {
+					public init(a: Secp256k1Error) {
 						// native call variable prep
 						
 
@@ -242,11 +242,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new BadPrefix-variant ParseError
-					public class func badPrefix() -> ParseError {
+					public class func BadPrefix() -> ParseError {
 						// native call variable prep
 						
 
@@ -263,7 +263,7 @@
 					}
 		
 					/// Utility method to constructs a new UnknownCurrency-variant ParseError
-					public class func unknownCurrency() -> ParseError {
+					public class func UnknownCurrency() -> ParseError {
 						// native call variable prep
 						
 
@@ -280,7 +280,7 @@
 					}
 		
 					/// Utility method to constructs a new UnknownSiPrefix-variant ParseError
-					public class func unknownSiPrefix() -> ParseError {
+					public class func UnknownSiPrefix() -> ParseError {
 						// native call variable prep
 						
 
@@ -297,7 +297,7 @@
 					}
 		
 					/// Utility method to constructs a new MalformedHRP-variant ParseError
-					public class func malformedHrp() -> ParseError {
+					public class func MalformedHrp() -> ParseError {
 						// native call variable prep
 						
 
@@ -314,7 +314,7 @@
 					}
 		
 					/// Utility method to constructs a new TooShortDataPart-variant ParseError
-					public class func tooShortDataPart() -> ParseError {
+					public class func TooShortDataPart() -> ParseError {
 						// native call variable prep
 						
 
@@ -331,7 +331,7 @@
 					}
 		
 					/// Utility method to constructs a new UnexpectedEndOfTaggedFields-variant ParseError
-					public class func unexpectedEndOfTaggedFields() -> ParseError {
+					public class func UnexpectedEndOfTaggedFields() -> ParseError {
 						// native call variable prep
 						
 
@@ -348,7 +348,7 @@
 					}
 		
 					/// Utility method to constructs a new DescriptionDecodeError-variant ParseError
-					public class func descriptionDecodeError(a: BindingsError) -> ParseError {
+					public class func DescriptionDecodeError(a: BindingsError) -> ParseError {
 						// native call variable prep
 						
 
@@ -365,7 +365,7 @@
 					}
 		
 					/// Utility method to constructs a new PaddingError-variant ParseError
-					public class func paddingError() -> ParseError {
+					public class func PaddingError() -> ParseError {
 						// native call variable prep
 						
 
@@ -382,7 +382,7 @@
 					}
 		
 					/// Utility method to constructs a new IntegerOverflowError-variant ParseError
-					public class func integerOverflowError() -> ParseError {
+					public class func IntegerOverflowError() -> ParseError {
 						// native call variable prep
 						
 
@@ -399,7 +399,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidSegWitProgramLength-variant ParseError
-					public class func invalidSegWitProgramLength() -> ParseError {
+					public class func InvalidSegWitProgramLength() -> ParseError {
 						// native call variable prep
 						
 
@@ -416,7 +416,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidPubKeyHashLength-variant ParseError
-					public class func invalidPubKeyHashLength() -> ParseError {
+					public class func InvalidPubKeyHashLength() -> ParseError {
 						// native call variable prep
 						
 
@@ -433,7 +433,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidScriptHashLength-variant ParseError
-					public class func invalidScriptHashLength() -> ParseError {
+					public class func InvalidScriptHashLength() -> ParseError {
 						// native call variable prep
 						
 
@@ -450,7 +450,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidRecoveryId-variant ParseError
-					public class func invalidRecoveryId() -> ParseError {
+					public class func InvalidRecoveryId() -> ParseError {
 						// native call variable prep
 						
 
@@ -467,7 +467,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidSliceLength-variant ParseError
-					public class func invalidSliceLength(a: String) -> ParseError {
+					public init(a: String) {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = Str(value: a)
@@ -482,11 +482,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new Skip-variant ParseError
-					public class func skip() -> ParseError {
+					public class func Skip() -> ParseError {
 						// native call variable prep
 						
 

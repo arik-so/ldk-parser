@@ -1,4 +1,4 @@
-import {RustStruct, RustType} from '../rust_types.mjs';
+import {RustFunction, RustStruct, RustType} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 
 export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
@@ -36,8 +36,12 @@ export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
 			fieldAccessors += this.generateAccessor(currentField, type);
 		}
 
+
+		// THIS IS ALL CODE TO DETECT CONSTRUCTORS WITH DUPLICATE SIGNATURES
+		const conflictingArgumentConstructors = this.collectConflictingConstructors(type);
 		for (const currentMethod of type.methods) {
-			generatedMethods += this.generateMethod(currentMethod, type);
+			const isConflictingConstructor = conflictingArgumentConstructors.has(currentMethod);
+			generatedMethods += this.generateMethod(currentMethod, type, isConflictingConstructor);
 		}
 
 

@@ -130,7 +130,7 @@
 					}
 		
 					/// Utility method to constructs a new UnknownVersion-variant DecodeError
-					public class func unknownVersion() -> DecodeError {
+					public class func UnknownVersion() -> DecodeError {
 						// native call variable prep
 						
 
@@ -147,7 +147,7 @@
 					}
 		
 					/// Utility method to constructs a new UnknownRequiredFeature-variant DecodeError
-					public class func unknownRequiredFeature() -> DecodeError {
+					public class func UnknownRequiredFeature() -> DecodeError {
 						// native call variable prep
 						
 
@@ -164,7 +164,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidValue-variant DecodeError
-					public class func invalidValue() -> DecodeError {
+					public class func InvalidValue() -> DecodeError {
 						// native call variable prep
 						
 
@@ -181,7 +181,7 @@
 					}
 		
 					/// Utility method to constructs a new ShortRead-variant DecodeError
-					public class func shortRead() -> DecodeError {
+					public class func ShortRead() -> DecodeError {
 						// native call variable prep
 						
 
@@ -198,7 +198,7 @@
 					}
 		
 					/// Utility method to constructs a new BadLengthDescriptor-variant DecodeError
-					public class func badLengthDescriptor() -> DecodeError {
+					public class func BadLengthDescriptor() -> DecodeError {
 						// native call variable prep
 						
 
@@ -215,7 +215,7 @@
 					}
 		
 					/// Utility method to constructs a new Io-variant DecodeError
-					public class func io(a: IOError) -> DecodeError {
+					public init(a: IOError) {
 						// native call variable prep
 						
 
@@ -228,11 +228,11 @@
 						// return value (do some wrapping)
 						let returnValue = DecodeError(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new UnsupportedCompression-variant DecodeError
-					public class func unsupportedCompression() -> DecodeError {
+					public class func UnsupportedCompression() -> DecodeError {
 						// native call variable prep
 						
 

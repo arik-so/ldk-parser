@@ -120,7 +120,7 @@
 					}
 		
 					/// Utility method to constructs a new IPv4-variant NetAddress
-					public class func ipv4(addr: [UInt8], port: UInt16) -> NetAddress {
+					public class func Ipv4(addr: [UInt8], port: UInt16) -> NetAddress {
 						// native call variable prep
 						
 						let addrPrimitiveWrapper = FourBytes(value: addr)
@@ -139,7 +139,7 @@
 					}
 		
 					/// Utility method to constructs a new IPv6-variant NetAddress
-					public class func ipv6(addr: [UInt8], port: UInt16) -> NetAddress {
+					public class func Ipv6(addr: [UInt8], port: UInt16) -> NetAddress {
 						// native call variable prep
 						
 						let addrPrimitiveWrapper = SixteenBytes(value: addr)
@@ -158,7 +158,7 @@
 					}
 		
 					/// Utility method to constructs a new OnionV2-variant NetAddress
-					public class func onionV2(a: [UInt8]) -> NetAddress {
+					public init(a: [UInt8]) {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = TwelveBytes(value: a)
@@ -173,11 +173,11 @@
 						// return value (do some wrapping)
 						let returnValue = NetAddress(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new OnionV3-variant NetAddress
-					public class func onionV3(ed25519Pubkey: [UInt8], checksum: UInt16, version: UInt8, port: UInt16) -> NetAddress {
+					public init(ed25519Pubkey: [UInt8], checksum: UInt16, version: UInt8, port: UInt16) {
 						// native call variable prep
 						
 						let ed25519PubkeyPrimitiveWrapper = ThirtyTwoBytes(value: ed25519Pubkey)
@@ -192,11 +192,11 @@
 						// return value (do some wrapping)
 						let returnValue = NetAddress(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new Hostname-variant NetAddress
-					public class func hostname(hostname: Hostname, port: UInt16) -> NetAddress {
+					public init(hostname: Hostname, port: UInt16) {
 						// native call variable prep
 						
 
@@ -209,7 +209,7 @@
 						// return value (do some wrapping)
 						let returnValue = NetAddress(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Checks if two NetAddresss contain equal inner contents.

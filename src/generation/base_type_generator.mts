@@ -130,9 +130,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		`;
 	}
 
-	protected generateMethod(method: RustFunction, containerType?: RustType): string {
+	protected generateMethod(method: RustFunction, containerType?: RustType, forceStaticConstructor = false): string {
 
-		const swiftMethodName = this.swiftMethodName(method, containerType);
+		const swiftMethodName = this.swiftMethodName(method, containerType, forceStaticConstructor);
 		let swiftMethodArguments = [];
 		let nativeCallValueAccessors = [];
 		let isInstanceMethod = false;
@@ -275,12 +275,15 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return lambda.name.replace(typeNamePrefix + '_', '');
 	}
 
-	protected swiftMethodName(method: RustFunction, containerType?: RustType): string {
+	protected swiftMethodName(method: RustFunction, containerType?: RustType, forceStaticConstructor = false): string {
 		let standaloneMethodName = method.name;
 		if (containerType) {
 			standaloneMethodName = this.standaloneMethodName(method, containerType);
 			// complex enums may have multiple variants of the same type, so those initializers should be static
-			if (method.returnValue.type === containerType && !['clone', 'none'].includes(standaloneMethodName) && !(containerType instanceof RustTaggedValueEnum)) {
+			if (method.returnValue.type === containerType && !['clone', 'none'].includes(standaloneMethodName)) {
+				if(forceStaticConstructor){
+					return Generator.snakeCaseToCamelCase(standaloneMethodName, true);
+				}
 				return 'init';
 			}
 			return Generator.snakeCaseToCamelCase(standaloneMethodName);
@@ -308,6 +311,44 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		}
 
 		return false;
+	}
+
+	/**
+	 * Some types have multiple constructors but with the same argument types
+	 * We wanna allow init-based construction by default, but when the types conflict,
+	 * we'll use explicitly named static initializers instead
+	 * @param type
+	 * @protected
+	 */
+	protected collectConflictingConstructors(type: RustType): Set<RustFunction> {
+		const constructorArgumentSignatureCounter: { [signature: string]: RustFunction[] } = {};
+		const conflictingArgumentConstructors = new Set<RustFunction>();
+		for (const currentMethod of type.methods) {
+			// is it a constructor?
+
+			const standaloneMethodName = this.standaloneMethodName(currentMethod, type);
+			if (currentMethod.returnValue.type !== type || ['clone'].includes(standaloneMethodName)) {
+				// it's a constructor all right
+				continue;
+			}
+
+			let typeSignatures = [];
+			for (const currentArgument of currentMethod.arguments) {
+				typeSignatures.push(this.getPublicTypeSignature(currentArgument.type, type));
+			}
+
+			const typeSignature = typeSignatures.join(', ');
+
+			if (!constructorArgumentSignatureCounter[typeSignature]) {
+				constructorArgumentSignatureCounter[typeSignature] = [currentMethod];
+			} else {
+				conflictingArgumentConstructors.add(constructorArgumentSignatureCounter[typeSignature][0]);
+				conflictingArgumentConstructors.add(currentMethod);
+				constructorArgumentSignatureCounter[typeSignature].push(currentMethod);
+			}
+		}
+
+		return conflictingArgumentConstructors;
 	}
 
 	/**

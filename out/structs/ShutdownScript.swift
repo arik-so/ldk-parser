@@ -144,7 +144,7 @@
 					}
 		
 					/// Generates a P2WPKH script pubkey from the given [`WPubkeyHash`].
-					public init(pubkeyHash: [UInt8]) {
+					public class func NewP2wpkh(pubkeyHash: [UInt8]) -> ShutdownScript {
 						// native call variable prep
 						
 						let tupledPubkeyHash = Bindings.arrayToUInt8Tuple20(array: pubkeyHash)
@@ -163,11 +163,11 @@
 						// return value (do some wrapping)
 						let returnValue = ShutdownScript(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Generates a P2WSH script pubkey from the given [`WScriptHash`].
-					public init(scriptHash: [UInt8]) {
+					public class func NewP2wsh(scriptHash: [UInt8]) -> ShutdownScript {
 						// native call variable prep
 						
 						let tupledScriptHash = Bindings.arrayToUInt8Tuple32(array: scriptHash)
@@ -186,7 +186,7 @@
 						// return value (do some wrapping)
 						let returnValue = ShutdownScript(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Generates a witness script pubkey from the given segwit version and program.

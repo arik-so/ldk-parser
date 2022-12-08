@@ -115,7 +115,7 @@
 					}
 		
 					/// Utility method to constructs a new HTLCEvent-variant MonitorEvent
-					public class func htlcevent(a: HTLCUpdate) -> MonitorEvent {
+					public init(a: HTLCUpdate) {
 						// native call variable prep
 						
 
@@ -128,11 +128,11 @@
 						// return value (do some wrapping)
 						let returnValue = MonitorEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new CommitmentTxConfirmed-variant MonitorEvent
-					public class func commitmentTxConfirmed(a: OutPoint) -> MonitorEvent {
+					public class func CommitmentTxConfirmed(a: OutPoint) -> MonitorEvent {
 						// native call variable prep
 						
 
@@ -149,7 +149,7 @@
 					}
 		
 					/// Utility method to constructs a new Completed-variant MonitorEvent
-					public class func completed(fundingTxo: OutPoint, monitorUpdateId: UInt64) -> MonitorEvent {
+					public init(fundingTxo: OutPoint, monitorUpdateId: UInt64) {
 						// native call variable prep
 						
 
@@ -162,11 +162,11 @@
 						// return value (do some wrapping)
 						let returnValue = MonitorEvent(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new UpdateFailed-variant MonitorEvent
-					public class func updateFailed(a: OutPoint) -> MonitorEvent {
+					public class func UpdateFailed(a: OutPoint) -> MonitorEvent {
 						// native call variable prep
 						
 

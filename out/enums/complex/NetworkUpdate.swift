@@ -109,7 +109,7 @@
 					}
 		
 					/// Utility method to constructs a new ChannelUpdateMessage-variant NetworkUpdate
-					public class func channelUpdateMessage(msg: ChannelUpdate) -> NetworkUpdate {
+					public init(msg: ChannelUpdate) {
 						// native call variable prep
 						
 
@@ -122,11 +122,11 @@
 						// return value (do some wrapping)
 						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new ChannelFailure-variant NetworkUpdate
-					public class func channelFailure(shortChannelId: UInt64, isPermanent: Bool) -> NetworkUpdate {
+					public init(shortChannelId: UInt64, isPermanent: Bool) {
 						// native call variable prep
 						
 
@@ -139,11 +139,11 @@
 						// return value (do some wrapping)
 						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new NodeFailure-variant NetworkUpdate
-					public class func nodeFailure(nodeId: [UInt8], isPermanent: Bool) -> NetworkUpdate {
+					public init(nodeId: [UInt8], isPermanent: Bool) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -158,7 +158,7 @@
 						// return value (do some wrapping)
 						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Checks if two NetworkUpdates contain equal inner contents.

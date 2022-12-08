@@ -271,7 +271,7 @@
 					}
 		
 					/// Utility method to constructs a new FundingGenerationReady-variant Event
-					public class func fundingGenerationReady(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], channelValueSatoshis: UInt64, outputScript: [UInt8], userChannelId: UInt64) -> Event {
+					public init(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], channelValueSatoshis: UInt64, outputScript: [UInt8], userChannelId: UInt64) {
 						// native call variable prep
 						
 						let temporaryChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: temporaryChannelId)
@@ -292,11 +292,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new PaymentReceived-variant Event
-					public class func paymentReceived(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
+					public class func PaymentReceived(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
 						// native call variable prep
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
@@ -315,7 +315,7 @@
 					}
 		
 					/// Utility method to constructs a new PaymentClaimed-variant Event
-					public class func paymentClaimed(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
+					public class func PaymentClaimed(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
 						// native call variable prep
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
@@ -334,7 +334,7 @@
 					}
 		
 					/// Utility method to constructs a new PaymentSent-variant Event
-					public class func paymentSent(paymentId: [UInt8], paymentPreimage: [UInt8], paymentHash: [UInt8], feePaidMsat: UInt64?) -> Event {
+					public init(paymentId: [UInt8], paymentPreimage: [UInt8], paymentHash: [UInt8], feePaidMsat: UInt64?) {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -355,11 +355,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new PaymentFailed-variant Event
-					public class func paymentFailed(paymentId: [UInt8], paymentHash: [UInt8]) -> Event {
+					public class func PaymentFailed(paymentId: [UInt8], paymentHash: [UInt8]) -> Event {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -380,7 +380,7 @@
 					}
 		
 					/// Utility method to constructs a new PaymentPathSuccessful-variant Event
-					public class func paymentPathSuccessful(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop]) -> Event {
+					public class func PaymentPathSuccessful(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop]) -> Event {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -405,7 +405,7 @@
 					}
 		
 					/// Utility method to constructs a new PaymentPathFailed-variant Event
-					public class func paymentPathFailed(paymentId: [UInt8], paymentHash: [UInt8], paymentFailedPermanently: Bool, networkUpdate: NetworkUpdate?, allPathsFailed: Bool, path: [RouteHop], shortChannelId: UInt64?, retry: RouteParameters) -> Event {
+					public init(paymentId: [UInt8], paymentHash: [UInt8], paymentFailedPermanently: Bool, networkUpdate: NetworkUpdate?, allPathsFailed: Bool, path: [RouteHop], shortChannelId: UInt64?, retry: RouteParameters) {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -430,11 +430,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new ProbeSuccessful-variant Event
-					public class func probeSuccessful(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop]) -> Event {
+					public class func ProbeSuccessful(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop]) -> Event {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -459,7 +459,7 @@
 					}
 		
 					/// Utility method to constructs a new ProbeFailed-variant Event
-					public class func probeFailed(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop], shortChannelId: UInt64?) -> Event {
+					public init(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop], shortChannelId: UInt64?) {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -482,11 +482,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new PendingHTLCsForwardable-variant Event
-					public class func pendingHtlcsForwardable(timeForwardable: UInt64) -> Event {
+					public init(timeForwardable: UInt64) {
 						// native call variable prep
 						
 
@@ -499,11 +499,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new SpendableOutputs-variant Event
-					public class func spendableOutputs(outputs: [SpendableOutputDescriptor]) -> Event {
+					public init(outputs: [SpendableOutputDescriptor]) {
 						// native call variable prep
 						
 						let outputsVector = Vec_SpendableOutputDescriptorZ(array: outputs)
@@ -520,11 +520,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new PaymentForwarded-variant Event
-					public class func paymentForwarded(prevChannelId: [UInt8], nextChannelId: [UInt8], feeEarnedMsat: UInt64?, claimFromOnchainTx: Bool) -> Event {
+					public init(prevChannelId: [UInt8], nextChannelId: [UInt8], feeEarnedMsat: UInt64?, claimFromOnchainTx: Bool) {
 						// native call variable prep
 						
 						let prevChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: prevChannelId)
@@ -543,11 +543,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new ChannelClosed-variant Event
-					public class func channelClosed(channelId: [UInt8], userChannelId: UInt64, reason: ClosureReason) -> Event {
+					public init(channelId: [UInt8], userChannelId: UInt64, reason: ClosureReason) {
 						// native call variable prep
 						
 						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
@@ -562,11 +562,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new DiscardFunding-variant Event
-					public class func discardFunding(channelId: [UInt8], transaction: [UInt8]) -> Event {
+					public class func DiscardFunding(channelId: [UInt8], transaction: [UInt8]) -> Event {
 						// native call variable prep
 						
 						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
@@ -587,7 +587,7 @@
 					}
 		
 					/// Utility method to constructs a new OpenChannelRequest-variant Event
-					public class func openChannelRequest(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], fundingSatoshis: UInt64, pushMsat: UInt64, channelType: ChannelTypeFeatures) -> Event {
+					public init(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], fundingSatoshis: UInt64, pushMsat: UInt64, channelType: ChannelTypeFeatures) {
 						// native call variable prep
 						
 						let temporaryChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: temporaryChannelId)
@@ -604,11 +604,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Utility method to constructs a new HTLCHandlingFailed-variant Event
-					public class func htlchandlingFailed(prevChannelId: [UInt8], failedNextDestination: HTLCDestination) -> Event {
+					public init(prevChannelId: [UInt8], failedNextDestination: HTLCDestination) {
 						// native call variable prep
 						
 						let prevChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: prevChannelId)
@@ -623,7 +623,7 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						return returnValue
+						self.cType = nativeCallResult
 					}
 		
 					/// Serialize the Event object into a byte array which can be read by Event_read
