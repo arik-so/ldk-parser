@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-Tuple_PublicKeyTypeZ(cType: currentCType).getValue()
+Tuple_PublicKeyTypeZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-PublicKey(cType: currentCType).getValue()
+PublicKey(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

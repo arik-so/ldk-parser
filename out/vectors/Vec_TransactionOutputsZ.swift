@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(cType: currentCType).getValue()
+Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-Signature(cType: currentCType).getValue()
+Signature(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

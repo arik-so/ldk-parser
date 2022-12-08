@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-Tuple_BlockHashChannelMonitorZ(cType: currentCType).getValue()
+Tuple_BlockHashChannelMonitorZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

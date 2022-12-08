@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-Transaction(cType: currentCType).getValue()
+Transaction(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

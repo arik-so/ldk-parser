@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-u5(cType: currentCType).getValue()
+u5(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

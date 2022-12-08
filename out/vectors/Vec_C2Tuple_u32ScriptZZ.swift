@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-Tuple_u32ScriptZ(cType: currentCType).getValue()
+Tuple_u32ScriptZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

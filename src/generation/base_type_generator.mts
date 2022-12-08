@@ -150,7 +150,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					// it's not supposed to happen, but if it's void, for some reason it somehow does
 					continue;
 				}
-			} else if(!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && !(currentArgument.type instanceof RustArray) && swiftMethodName !== 'free' && !(currentArgument.type instanceof RustPrimitiveWrapper)){
+			} else if (!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && !(currentArgument.type instanceof RustArray) && swiftMethodName !== 'free' && !(currentArgument.type instanceof RustPrimitiveWrapper)) {
 				// TODO: figure out the exact condition
 				passesNonCloneableArgumentsByValue = true;
 			}
@@ -175,7 +175,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			nativeCallSuffix += preparedArgument.deferredCleanup;
 		}
 
-		if (passesNonCloneableArgumentsByValue){
+		if (passesNonCloneableArgumentsByValue) {
 			// not true yet
 			// console.log('Method passes non-cloneable arguments by value:', method.name);
 		}
@@ -225,7 +225,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						guard let nativeCallResult = nativeCallResult else {
 							return nil
 						}
-			`
+			`;
 		}
 
 		if (isCommentDeducedNullablePointer) {
@@ -650,10 +650,31 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			preparedReturnValue.wrapperSuffix += '.pointee';
 		}
 
+		/**
+		 * The returned object cannot live on its own. It needs the container to stick around.
+		 * Should not be used for elided types, however, because that will make even the Swift
+		 * object stick around forever. Instead, for elided types the object should merely be
+		 * dangled.
+		 */
+		let anchorInfix = '';
+
+		/**
+		 * The returned object must never be freed.
+		 * Usually the case iff the object has an anchor, because the anchor and the object refer
+		 * to shared memory, so only one of the two may be freed.
+		 */
+		let dangleSuffix = '';
+		if (containerType instanceof RustVector) {
+			if (!this.isElidedType(returnType.type)) {
+				anchorInfix = ', anchor: self';
+			}
+			dangleSuffix = '.dangle()';
+		}
+
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes
 		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple || returnType.type instanceof RustPrimitiveWrapper) {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
-			preparedReturnValue.wrapperSuffix += `)`;
+			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
 			if (returnType.type !== containerType) {
 				// it's an elided type, so we pass it through
 				preparedReturnValue.wrapperSuffix += '.getValue()';
@@ -688,8 +709,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				// artifacts
 				const tupleTypeName = this.getRawTypeName(returnType.type);
 				this.auxiliaryArtifacts.addTuple(returnType.type.iteratee.swiftRawSignature, returnType.type.length!);
-				preparedReturnValue.wrapperPrefix += `Bindings.${tupleTypeName}ToArray(tuple: `
-				preparedReturnValue.wrapperSuffix += `)`
+				preparedReturnValue.wrapperPrefix += `Bindings.${tupleTypeName}ToArray(tuple: `;
+				preparedReturnValue.wrapperSuffix += `)`;
 			}
 		} else {
 			throw new Error(`Unsupported return type ${returnType.type.getName()} of kind ${returnType.type.constructor.name}`);

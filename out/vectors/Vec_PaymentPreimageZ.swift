@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-ThirtyTwoBytes(cType: currentCType).getValue()
+ThirtyTwoBytes(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

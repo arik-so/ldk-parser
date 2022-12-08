@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-Tuple_usizeTransactionZ(cType: currentCType).getValue()
+Tuple_usizeTransactionZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

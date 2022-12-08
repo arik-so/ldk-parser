@@ -71,7 +71,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: currentCType).getValue()
+Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

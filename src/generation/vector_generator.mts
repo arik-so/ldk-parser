@@ -75,11 +75,20 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 				`;
 			}
 
+			unwrapperSuffix += '\n' + '\t'.repeat(6) + '}';
+
+			/**
+			 * This constructs the individual Swift objects that comprise the array we return.
+			 * Because these objects are reliant on the array's underlying cType not getting
+			 * freed, we need to register the array as an achor inside of them.
+			 *
+			 * Additionally, because now the potential for double-free arises due to the combination
+			 * of both the individual objects and the vector getting dereferenced, this individual
+			 * objects must be .dangled().
+ 			 */
 			artificialDeepestContext.contextualName = 'currentValueDepth'+depth;
 			const deepestSwiftReturnValueWrapper = this.prepareRustReturnValueForSwift(artificialDeepestContext, type);
 			let deepestConstructor = `${deepestSwiftReturnValueWrapper.wrapperPrefix}currentCType${deepestSwiftReturnValueWrapper.wrapperSuffix}`;
-
-			unwrapperSuffix += '\n' + '\t'.repeat(6) + '}';
 			rustArrayToSwiftArrayMapper += `${deepestConstructor}${unwrapperSuffix}`;
 		} else {
 			rustArrayToSwiftArrayMapper = 'let swiftArray = array'
