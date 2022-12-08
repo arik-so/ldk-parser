@@ -82,7 +82,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 						for currentEntry in rustArray {
 							let convertedEntry = ${iterateeSwiftTypeName}(array: currentEntry)
 							lowerDimension.append(convertedEntry.cType!)
-							self.addAnchor(anchor: convertedEntry)
+							try! self.addAnchor(anchor: convertedEntry)
 						}
 			`;
 			dataContainerInitializationArgumentName = 'lowerDimension';

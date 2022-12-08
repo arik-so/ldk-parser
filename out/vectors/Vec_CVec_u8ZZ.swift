@@ -52,7 +52,7 @@
 						for currentEntry in rustArray {
 							let convertedEntry = Vec_u8Z(array: currentEntry)
 							lowerDimension.append(convertedEntry.cType!)
-							self.addAnchor(anchor: convertedEntry)
+							try! self.addAnchor(anchor: convertedEntry)
 						}
 			
 
