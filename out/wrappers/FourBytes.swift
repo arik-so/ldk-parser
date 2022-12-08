@@ -45,7 +45,7 @@
 					
 
 					public func getValue() -> [UInt8] {
-						return Bindings.UInt8Tuple4ToArray(self.cType!)
+						return Bindings.UInt8Tuple4ToArray(tuple: self.cType!)
 					}
 
 					internal func dangle() -> FourBytes {
