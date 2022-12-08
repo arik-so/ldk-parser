@@ -184,6 +184,31 @@
 					}
 		
 					/// An RGB color for UI purposes
+					public func getRgb() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+				UnsignedNodeAnnouncement_get_rgb(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple3ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// An RGB color for UI purposes
 					public func setRgb(val: [UInt8]) {
 						// native call variable prep
 						
@@ -202,6 +227,32 @@
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// An alias, for UI purposes.  This should be sanitized before use.  There is no guarantee
+					/// of uniqueness.
+					public func getAlias() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+				UnsignedNodeAnnouncement_get_alias(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
 
 						return returnValue
 					}

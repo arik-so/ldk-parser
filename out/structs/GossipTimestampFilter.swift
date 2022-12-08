@@ -56,6 +56,31 @@
 					}
 		
 					/// The genesis hash of the blockchain for channel and node information
+					public func getChainHash() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKGossipTimestampFilter>) in
+				GossipTimestampFilter_get_chain_hash(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// The genesis hash of the blockchain for channel and node information
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						

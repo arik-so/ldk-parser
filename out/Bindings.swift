@@ -98,11 +98,11 @@
 				
 				internal typealias UInt8Tuple12 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
 				
+				internal typealias UInt8Tuple3 = (UInt8, UInt8, UInt8)
+				
 				internal typealias UInt8Tuple68 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
 				
 				internal typealias UInt8Tuple80 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
-				
-				internal typealias UInt8Tuple3 = (UInt8, UInt8, UInt8)
 				
 
 				internal static var minimumPrintSeverity: PrintSeverity = .WARNING
@@ -1287,6 +1287,14 @@
 					return [tuple.0, tuple.1, tuple.2, tuple.3, tuple.4, tuple.5, tuple.6, tuple.7, tuple.8, tuple.9, tuple.10, tuple.11]
 				}
 				
+				internal class func arrayToUInt8Tuple3(array: [UInt8]) -> UInt8Tuple3 {
+					return (array[0], array[1], array[2])
+				}
+
+				internal class func UInt8Tuple3ToArray(tuple: UInt8Tuple3) -> [UInt8] {
+					return [tuple.0, tuple.1, tuple.2]
+				}
+				
 				internal class func arrayToUInt8Tuple68(array: [UInt8]) -> UInt8Tuple68 {
 					return (array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12], array[13], array[14], array[15], array[16], array[17], array[18], array[19], array[20], array[21], array[22], array[23], array[24], array[25], array[26], array[27], array[28], array[29], array[30], array[31], array[32], array[33], array[34], array[35], array[36], array[37], array[38], array[39], array[40], array[41], array[42], array[43], array[44], array[45], array[46], array[47], array[48], array[49], array[50], array[51], array[52], array[53], array[54], array[55], array[56], array[57], array[58], array[59], array[60], array[61], array[62], array[63], array[64], array[65], array[66], array[67])
 				}
@@ -1301,14 +1309,6 @@
 
 				internal class func UInt8Tuple80ToArray(tuple: UInt8Tuple80) -> [UInt8] {
 					return [tuple.0, tuple.1, tuple.2, tuple.3, tuple.4, tuple.5, tuple.6, tuple.7, tuple.8, tuple.9, tuple.10, tuple.11, tuple.12, tuple.13, tuple.14, tuple.15, tuple.16, tuple.17, tuple.18, tuple.19, tuple.20, tuple.21, tuple.22, tuple.23, tuple.24, tuple.25, tuple.26, tuple.27, tuple.28, tuple.29, tuple.30, tuple.31, tuple.32, tuple.33, tuple.34, tuple.35, tuple.36, tuple.37, tuple.38, tuple.39, tuple.40, tuple.41, tuple.42, tuple.43, tuple.44, tuple.45, tuple.46, tuple.47, tuple.48, tuple.49, tuple.50, tuple.51, tuple.52, tuple.53, tuple.54, tuple.55, tuple.56, tuple.57, tuple.58, tuple.59, tuple.60, tuple.61, tuple.62, tuple.63, tuple.64, tuple.65, tuple.66, tuple.67, tuple.68, tuple.69, tuple.70, tuple.71, tuple.72, tuple.73, tuple.74, tuple.75, tuple.76, tuple.77, tuple.78, tuple.79]
-				}
-				
-				internal class func arrayToUInt8Tuple3(array: [UInt8]) -> UInt8Tuple3 {
-					return (array[0], array[1], array[2])
-				}
-
-				internal class func UInt8Tuple3ToArray(tuple: UInt8Tuple3) -> [UInt8] {
-					return [tuple.0, tuple.1, tuple.2]
 				}
 				
 

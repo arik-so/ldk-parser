@@ -143,6 +143,33 @@
 					/// Arbitrary identification information returned by a call to
 					/// `Sign::channel_keys_id()`. This may be useful in re-deriving keys used in
 					/// the channel to spend the output.
+					public func getChannelKeysId() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
+				StaticPaymentOutputDescriptor_get_channel_keys_id(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// Arbitrary identification information returned by a call to
+					/// `Sign::channel_keys_id()`. This may be useful in re-deriving keys used in
+					/// the channel to spend the output.
 					public func setChannelKeysId(val: [UInt8]) {
 						// native call variable prep
 						

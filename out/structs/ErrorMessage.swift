@@ -57,6 +57,34 @@
 					/// 
 					/// All-0s indicates a general error unrelated to a specific channel, after which all channels
 					/// with the sending peer should be closed.
+					public func getChannelId() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKErrorMessage>) in
+				ErrorMessage_get_channel_id(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// The channel ID involved in the error.
+					/// 
+					/// All-0s indicates a general error unrelated to a specific channel, after which all channels
+					/// with the sending peer should be closed.
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						

@@ -57,6 +57,31 @@
 					}
 		
 					/// Private key of anchor tx
+					public func getFundingKey() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+				InMemorySigner_get_funding_key(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// Private key of anchor tx
 					public func setFundingKey(val: [UInt8]) {
 						// native call variable prep
 						
@@ -75,6 +100,31 @@
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Holder secret key for blinded revocation pubkey
+					public func getRevocationBaseKey() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+				InMemorySigner_get_revocation_base_key(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
 
 						return returnValue
 					}
@@ -103,6 +153,31 @@
 					}
 		
 					/// Holder secret key used for our balance in counterparty-broadcasted commitment transactions
+					public func getPaymentKey() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+				InMemorySigner_get_payment_key(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// Holder secret key used for our balance in counterparty-broadcasted commitment transactions
 					public func setPaymentKey(val: [UInt8]) {
 						// native call variable prep
 						
@@ -121,6 +196,31 @@
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Holder secret key used in HTLC tx
+					public func getDelayedPaymentBaseKey() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+				InMemorySigner_get_delayed_payment_base_key(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
 
 						return returnValue
 					}
@@ -149,6 +249,31 @@
 					}
 		
 					/// Holder htlc secret key used in commitment tx htlc outputs
+					public func getHtlcBaseKey() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+				InMemorySigner_get_htlc_base_key(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// Holder htlc secret key used in commitment tx htlc outputs
 					public func setHtlcBaseKey(val: [UInt8]) {
 						// native call variable prep
 						
@@ -167,6 +292,31 @@
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Commitment seed
+					public func getCommitmentSeed() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+				InMemorySigner_get_commitment_seed(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
 
 						return returnValue
 					}

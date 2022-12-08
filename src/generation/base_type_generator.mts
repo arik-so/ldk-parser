@@ -670,6 +670,16 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		} else if (returnType.type instanceof RustPrimitiveEnum) {
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(value: `;
 			preparedReturnValue.wrapperSuffix += `)`;
+		} else if (returnType.type instanceof RustArray) {
+			if (returnType.type.iteratee instanceof RustPrimitive && Number.isFinite(returnType.type.length)) {
+				// inlining a really long tuple would be rather ugly, so instead we're gonna
+				// declare a type for it and generate some auxiliary conversion and typealiasing
+				// artifacts
+				const tupleTypeName = this.getRawTypeName(returnType.type);
+				this.auxiliaryArtifacts.addTuple(returnType.type.iteratee.swiftRawSignature, returnType.type.length!);
+				preparedReturnValue.wrapperPrefix += `Bindings.${tupleTypeName}ToArray(tuple: `
+				preparedReturnValue.wrapperSuffix += `)`
+			}
 		} else {
 			throw new Error(`Unsupported return type ${returnType.type.getName()} of kind ${returnType.type.constructor.name}`);
 		}

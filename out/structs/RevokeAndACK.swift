@@ -54,6 +54,31 @@
 					}
 		
 					/// The channel ID
+					public func getChannelId() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
+				RevokeAndACK_get_channel_id(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// The channel ID
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						
@@ -72,6 +97,31 @@
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// The secret corresponding to the per-commitment point
+					public func getPerCommitmentSecret() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
+				RevokeAndACK_get_per_commitment_secret(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
 
 						return returnValue
 					}

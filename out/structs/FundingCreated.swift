@@ -54,6 +54,31 @@
 					}
 		
 					/// A temporary channel ID, until the funding is established
+					public func getTemporaryChannelId() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
+				FundingCreated_get_temporary_channel_id(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// A temporary channel ID, until the funding is established
 					public func setTemporaryChannelId(val: [UInt8]) {
 						// native call variable prep
 						
@@ -72,6 +97,31 @@
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// The funding transaction ID
+					public func getFundingTxid() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
+				FundingCreated_get_funding_txid(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
 
 						return returnValue
 					}

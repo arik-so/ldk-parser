@@ -54,6 +54,31 @@
 					}
 		
 					/// The genesis hash of the blockchain where the channel is to be opened
+					public func getChainHash() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKOpenChannel>) in
+				OpenChannel_get_chain_hash(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// The genesis hash of the blockchain where the channel is to be opened
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						
@@ -72,6 +97,31 @@
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// A temporary channel ID, until the funding outpoint is announced
+					public func getTemporaryChannelId() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKOpenChannel>) in
+				OpenChannel_get_temporary_channel_id(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
 
 						return returnValue
 					}

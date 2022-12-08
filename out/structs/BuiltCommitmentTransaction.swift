@@ -101,6 +101,34 @@
 					/// 
 					/// This is provided as a performance optimization, instead of calling transaction.txid()
 					/// multiple times.
+					public func getTxid() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKBuiltCommitmentTransaction>) in
+				BuiltCommitmentTransaction_get_txid(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// The txid for the commitment transaction.
+					/// 
+					/// This is provided as a performance optimization, instead of calling transaction.txid()
+					/// multiple times.
 					public func setTxid(val: [UInt8]) {
 						// native call variable prep
 						

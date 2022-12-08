@@ -13,6 +13,8 @@
 		07012EA2287753D000148346 /* ldk_ver.h in Headers */ = {isa = PBXBuildFile; fileRef = 07012E9C287753D000148346 /* ldk_ver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07012EA3287753D000148346 /* ldk_rust_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 07012E9D287753D000148346 /* ldk_rust_types.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07012EA4287753D000148346 /* lightning.h in Headers */ = {isa = PBXBuildFile; fileRef = 07012E9E287753D000148346 /* lightning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		072B062B2941BEDC0007BC53 /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14B029412AF900531169 /* UtilMethods.swift */; };
+		072B062C2941C1C80007BC53 /* ChannelManagerConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14AF29412AF900531169 /* ChannelManagerConstructor.swift */; };
 		07344C5E264277ED001CD90E /* LightningDevKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07344C54264277EC001CD90E /* LightningDevKit.framework */; };
 		07344C63264277ED001CD90E /* FrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07344C62264277ED001CD90E /* FrameworkTests.swift */; };
 		07344C65264277ED001CD90E /* Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 07344C57264277ED001CD90E /* Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -4149,6 +4151,7 @@
 				07DF302E2941684F00531169 /* RouteHint.swift in Sources */,
 				07DF2F262941684E00531169 /* Result_NoneErrorZ.swift in Sources */,
 				07DF2AA82941684700531169 /* u5.swift in Sources */,
+				072B062C2941C1C80007BC53 /* ChannelManagerConstructor.swift in Sources */,
 				07DF2D222941684B00531169 /* Vec_ChannelMonitorZ.swift in Sources */,
 				07DF2D5E2941684B00531169 /* Vec_CVec_RouteHopZZ.swift in Sources */,
 				07DF2ED62941684D00531169 /* Result_GossipTimestampFilterDecodeErrorZ.swift in Sources */,
@@ -4189,6 +4192,7 @@
 				07DF31922941685200531169 /* ChannelUpdate.swift in Sources */,
 				07DF31522941685100531169 /* CommitmentUpdate.swift in Sources */,
 				07DF2FA22941684E00531169 /* Result_ChannelFeaturesDecodeErrorZ.swift in Sources */,
+				072B062B2941BEDC0007BC53 /* UtilMethods.swift in Sources */,
 				07DF30C22941685000531169 /* NodeAlias.swift in Sources */,
 				07DF2C222941684900531169 /* PaymentError.swift in Sources */,
 				07DF2F062941684D00531169 /* Result_InitFeaturesDecodeErrorZ.swift in Sources */,

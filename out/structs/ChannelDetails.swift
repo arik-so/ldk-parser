@@ -57,6 +57,34 @@
 					/// thereafter this is the txid of the funding transaction xor the funding transaction output).
 					/// Note that this means this value is *not* persistent - it can change once during the
 					/// lifetime of the channel.
+					public func getChannelId() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+				ChannelDetails_get_channel_id(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// The channel's ID (prior to funding transaction generation, this is a random 32 bytes,
+					/// thereafter this is the txid of the funding transaction xor the funding transaction output).
+					/// Note that this means this value is *not* persistent - it can change once during the
+					/// lifetime of the channel.
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						

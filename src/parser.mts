@@ -28,9 +28,11 @@ import {
 
 const debug = debugModule('ldk-parser:parser');
 
-const FUNCTION_REGEX = /([A-Za-z_0-9\* ]* \*?)([a-zA-Z_0-9]*)\((.*)\);$/;
+const STRICT_FUNCTION_REGEX = /([A-Za-z_0-9\* ]* \*?)([a-zA-Z_0-9]*)\((.*)\);$/;
+const FUNCTION_REGEX = /^([A-Za-z_0-9\* ]* \*?)(([a-zA-Z_0-9]*)\((.*)\)(\[\d+\])?);$/;
 const STRICT_LAMBDA_REGEX = /^(struct |enum |union )?([A-Za-z_0-9]* \*?)\(\*([A-Za-z_0-9]*)\)\((const )?void \*this_arg(.*)\);$/;
 const LAMBDA_REGEX = /^(struct |enum |union )?([A-Za-z_0-9]* \*?)\(\*([A-Za-z_0-9]*)\)\(((const )?void \*this_arg)?(.*)\);$/;
+const ARRAY_POINTER_REGEX = /^\(\*(.+)\)\[(\d+)\]$/;
 
 export default class Parser {
 
@@ -153,18 +155,7 @@ export default class Parser {
 					objectLines.push({code: currentLine, comments: aggregateComment.trim()});
 					aggregateComment = '';
 				}
-			} else if (FUNCTION_REGEX.test(currentLine)) {
-				const currentComment = aggregateComment.trim();
-				aggregateComment = '';
-
-				this.parseMethod(currentLine, currentComment);
-			}
-
-			if (currentLine.startsWith('#include <')) {
-				continue;
-			}
-
-			if (currentLine.startsWith('typedef')) {
+			} else if (currentLine.startsWith('typedef')) {
 				// memoize the completed comment for the block, because there are gonna be
 				// smaller comments inside the object
 				blockComment = aggregateComment;
@@ -174,7 +165,23 @@ export default class Parser {
 
 				// initialize for the next thing
 				aggregateComment = '';
+			} else if (FUNCTION_REGEX.test(currentLine)) {
+				const currentComment = aggregateComment.trim();
+				aggregateComment = '';
+
+				this.parseMethod(currentLine, currentComment);
+			} else {
+				/**
+				 * This is the tail end of what could happen on a line.
+				 * We're outside of a block object, we're not declaring one, nor have we just closed
+				 * one. All the functions should be here.
+				 */
+				if (currentLine.startsWith('#include <') || currentLine.startsWith('#include \"') || currentLine.startsWith('extern const') || currentLine.startsWith('#if') || currentLine.startsWith('#endif') || currentLine.startsWith('#define')) {
+					continue;
+				}
+				throw new Error('Unparsed line:\n' + currentLine);
 			}
+
 		}
 	}
 
@@ -746,8 +753,7 @@ export default class Parser {
 			}
 			isAsteriskPointer = true;
 		} else if (typelessLineRemainder && typelessLineRemainder.startsWith('(*')) {
-			const arrayPointerRegex = /^\(\*(.+)\)\[(\d+)\]$/;
-			const matches = arrayPointerRegex.exec(typelessLineRemainder);
+			const matches = ARRAY_POINTER_REGEX.exec(typelessLineRemainder);
 			if (Array.isArray(matches)) {
 				if (!rustType) {
 					console.error('Empty array pointer iteratee type:\n>', typeLine);
@@ -889,9 +895,28 @@ export default class Parser {
 			process.exit(1);
 		}
 
-		const returnType = matches[1];
-		const name = matches[2];
-		const argumentLine = matches[3];
+		let returnType = matches[1];
+		let name = matches[3];
+		let argumentLine = matches[4];
+
+		let arrayPointerMatches = ARRAY_POINTER_REGEX.exec(matches[2]);
+		if (Array.isArray(arrayPointerMatches)) {
+			// bellwether line:
+			// const uint8_t (*OutPoint_get_txid(const struct LDKOutPoint *NONNULL_PTR this_ptr))[32];
+			// the difficulty about this particular method is that it returns a pointer to a primitive
+			// of finite length
+			// additionally, it was not supported by the original regex
+			let artificialRegexInput = returnType + arrayPointerMatches[1] + ';';
+			const artificialMatches = STRICT_FUNCTION_REGEX.exec(artificialRegexInput);
+			if(!Array.isArray(artificialMatches)){
+				console.error('Failed to parse const pointer returning method:\n>', methodLine);
+				process.exit(1);
+			}
+			name = artificialMatches[2];
+			argumentLine = artificialMatches[3];
+			returnType = `${returnType}(*${name})[${arrayPointerMatches[2]}]`
+		}
+
 		const argumentStrings = argumentLine.split(', ');
 
 		const method = new RustFunction();
@@ -905,16 +930,18 @@ export default class Parser {
 		method.name = name;
 		method.documentation = docComment;
 
-		for (let currentArgumentLine of argumentStrings) {
-			currentArgumentLine = currentArgumentLine.trim();
-			if (currentArgumentLine.length < 1) {
-				continue;
-			}
-			const currentArgument = this.parseTypeInformation(currentArgumentLine.trim());
+		if (argumentLine !== 'void') {
+			for (let currentArgumentLine of argumentStrings) {
+				currentArgumentLine = currentArgumentLine.trim();
+				if (currentArgumentLine.length < 1) {
+					continue;
+				}
+				const currentArgument = this.parseTypeInformation(currentArgumentLine.trim());
 
-			const typedArgument = new RustFunctionArgument();
-			Object.assign(typedArgument, currentArgument);
-			method.arguments.push(typedArgument);
+				const typedArgument = new RustFunctionArgument();
+				Object.assign(typedArgument, currentArgument);
+				method.arguments.push(typedArgument);
+			}
 		}
 
 		/**

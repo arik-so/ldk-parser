@@ -58,6 +58,32 @@
 		
 					/// Proof that the sender knows the per-commitment secret of a specific commitment transaction
 					/// belonging to the recipient
+					public func getYourLastPerCommitmentSecret() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDataLossProtect>) in
+				DataLossProtect_get_your_last_per_commitment_secret(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// Proof that the sender knows the per-commitment secret of a specific commitment transaction
+					/// belonging to the recipient
 					public func setYourLastPerCommitmentSecret(val: [UInt8]) {
 						// native call variable prep
 						

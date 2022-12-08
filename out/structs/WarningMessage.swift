@@ -56,6 +56,33 @@
 					/// The channel ID involved in the warning.
 					/// 
 					/// All-0s indicates a warning unrelated to a specific channel.
+					public func getChannelId() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKWarningMessage>) in
+				WarningMessage_get_channel_id(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// The channel ID involved in the warning.
+					/// 
+					/// All-0s indicates a warning unrelated to a specific channel.
 					public func setChannelId(val: [UInt8]) {
 						// native call variable prep
 						

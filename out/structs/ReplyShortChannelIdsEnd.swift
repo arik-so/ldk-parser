@@ -57,6 +57,31 @@
 					}
 		
 					/// The genesis hash of the blockchain that was queried
+					public func getChainHash() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
+				ReplyShortChannelIdsEnd_get_chain_hash(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// The genesis hash of the blockchain that was queried
 					public func setChainHash(val: [UInt8]) {
 						// native call variable prep
 						

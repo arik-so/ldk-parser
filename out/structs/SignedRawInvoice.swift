@@ -167,6 +167,31 @@
 						return returnValue
 					}
 		
+					/// The hash of the `RawInvoice` that was signed.
+					public func signableHash() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
+				SignedRawInvoice_signable_hash(thisArgPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
 					/// InvoiceSignature for the invoice.
 					public func signature() -> InvoiceSignature {
 						// native call variable prep

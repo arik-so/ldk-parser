@@ -243,6 +243,31 @@
 						return returnValue
 					}
 		
+					/// Returns the hash to which we will receive the preimage on completion of the payment
+					public func paymentHash() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoice>) in
+				Invoice_payment_hash(thisArgPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
 					/// Get the payee's public key if one was included in the invoice
 					/// 
 					/// Note that the return value (or a relevant inner pointer) may be NULL or all-0s to represent None
@@ -270,6 +295,31 @@
 
 						// return value (do some wrapping)
 						let returnValue = PublicKey(cType: nativeCallResult).getValue()
+
+						return returnValue
+					}
+		
+					/// Get the payment secret if one was included in the invoice
+					public func paymentSecret() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoice>) in
+				Invoice_payment_secret(thisArgPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
 
 						return returnValue
 					}

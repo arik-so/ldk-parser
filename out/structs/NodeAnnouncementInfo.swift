@@ -140,6 +140,31 @@
 					}
 		
 					/// Color assigned to the node
+					public func getRgb() -> [UInt8]? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeAnnouncementInfo>) in
+				NodeAnnouncementInfo_get_rgb(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
+
+						// return value (do some wrapping)
+						let returnValue = Bindings.UInt8Tuple3ToArray(tuple: nativeCallResult.pointee)
+
+						return returnValue
+					}
+		
+					/// Color assigned to the node
 					public func setRgb(val: [UInt8]) {
 						// native call variable prep
 						
