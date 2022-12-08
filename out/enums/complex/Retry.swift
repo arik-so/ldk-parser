@@ -101,7 +101,7 @@
 					}
 		
 					/// Utility method to constructs a new Attempts-variant Retry
-					public init(a: UInt) {
+					public class func attempts(a: UInt) -> Retry {
 						// native call variable prep
 						
 
@@ -114,11 +114,11 @@
 						// return value (do some wrapping)
 						let returnValue = Retry(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Timeout-variant Retry
-					public init(a: UInt64) {
+					public class func timeout(a: UInt64) -> Retry {
 						// native call variable prep
 						
 
@@ -131,7 +131,7 @@
 						// return value (do some wrapping)
 						let returnValue = Retry(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two Retrys contain equal inner contents.

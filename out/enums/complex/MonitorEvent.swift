@@ -115,7 +115,7 @@
 					}
 		
 					/// Utility method to constructs a new HTLCEvent-variant MonitorEvent
-					public init(a: HTLCUpdate) {
+					public class func htlcevent(a: HTLCUpdate) -> MonitorEvent {
 						// native call variable prep
 						
 
@@ -128,11 +128,11 @@
 						// return value (do some wrapping)
 						let returnValue = MonitorEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new CommitmentTxConfirmed-variant MonitorEvent
-					public init(a: OutPoint) {
+					public class func commitmentTxConfirmed(a: OutPoint) -> MonitorEvent {
 						// native call variable prep
 						
 
@@ -145,11 +145,11 @@
 						// return value (do some wrapping)
 						let returnValue = MonitorEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Completed-variant MonitorEvent
-					public init(fundingTxo: OutPoint, monitorUpdateId: UInt64) {
+					public class func completed(fundingTxo: OutPoint, monitorUpdateId: UInt64) -> MonitorEvent {
 						// native call variable prep
 						
 
@@ -162,11 +162,11 @@
 						// return value (do some wrapping)
 						let returnValue = MonitorEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new UpdateFailed-variant MonitorEvent
-					public init(a: OutPoint) {
+					public class func updateFailed(a: OutPoint) -> MonitorEvent {
 						// native call variable prep
 						
 
@@ -179,7 +179,7 @@
 						// return value (do some wrapping)
 						let returnValue = MonitorEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two MonitorEvents contain equal inner contents.

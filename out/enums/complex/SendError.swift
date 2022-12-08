@@ -125,7 +125,7 @@
 					}
 		
 					/// Utility method to constructs a new Secp256k1-variant SendError
-					public init(a: Secp256k1Error) {
+					public class func secp256k1(a: Secp256k1Error) -> SendError {
 						// native call variable prep
 						
 
@@ -138,11 +138,11 @@
 						// return value (do some wrapping)
 						let returnValue = SendError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new TooBigPacket-variant SendError
-					public init() {
+					public class func tooBigPacket() -> SendError {
 						// native call variable prep
 						
 
@@ -155,11 +155,11 @@
 						// return value (do some wrapping)
 						let returnValue = SendError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new TooFewBlindedHops-variant SendError
-					public init() {
+					public class func tooFewBlindedHops() -> SendError {
 						// native call variable prep
 						
 
@@ -172,11 +172,11 @@
 						// return value (do some wrapping)
 						let returnValue = SendError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new InvalidFirstHop-variant SendError
-					public init() {
+					public class func invalidFirstHop() -> SendError {
 						// native call variable prep
 						
 
@@ -189,11 +189,11 @@
 						// return value (do some wrapping)
 						let returnValue = SendError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new InvalidMessage-variant SendError
-					public init() {
+					public class func invalidMessage() -> SendError {
 						// native call variable prep
 						
 
@@ -206,11 +206,11 @@
 						// return value (do some wrapping)
 						let returnValue = SendError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new BufferFull-variant SendError
-					public init() {
+					public class func bufferFull() -> SendError {
 						// native call variable prep
 						
 
@@ -223,7 +223,7 @@
 						// return value (do some wrapping)
 						let returnValue = SendError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two SendErrors contain equal inner contents.

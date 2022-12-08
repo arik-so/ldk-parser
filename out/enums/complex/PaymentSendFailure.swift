@@ -132,7 +132,7 @@
 					}
 		
 					/// Utility method to constructs a new ParameterError-variant PaymentSendFailure
-					public init(a: APIError) {
+					public class func parameterError(a: APIError) -> PaymentSendFailure {
 						// native call variable prep
 						
 
@@ -145,11 +145,11 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new PathParameterError-variant PaymentSendFailure
-					public init(a: [Result_NoneAPIErrorZ]) {
+					public class func pathParameterError(a: [Result_NoneAPIErrorZ]) -> PaymentSendFailure {
 						// native call variable prep
 						
 						let aVector = Vec_CResult_NoneAPIErrorZZ(array: a)
@@ -166,11 +166,11 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new AllFailedRetrySafe-variant PaymentSendFailure
-					public init(a: [APIError]) {
+					public class func allFailedRetrySafe(a: [APIError]) -> PaymentSendFailure {
 						// native call variable prep
 						
 						let aVector = Vec_APIErrorZ(array: a)
@@ -187,11 +187,11 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new PartialFailure-variant PaymentSendFailure
-					public init(results: [Result_NoneAPIErrorZ], failedPathsRetry: RouteParameters, paymentId: [UInt8]) {
+					public class func partialFailure(results: [Result_NoneAPIErrorZ], failedPathsRetry: RouteParameters, paymentId: [UInt8]) -> PaymentSendFailure {
 						// native call variable prep
 						
 						let resultsVector = Vec_CResult_NoneAPIErrorZZ(array: results)
@@ -210,7 +210,7 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 

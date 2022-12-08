@@ -76,7 +76,7 @@
 					}
 		
 					/// Utility method to constructs a new Node-variant Destination
-					public init(a: [UInt8]) {
+					public class func node(a: [UInt8]) -> Destination {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = PublicKey(value: a)
@@ -91,11 +91,11 @@
 						// return value (do some wrapping)
 						let returnValue = Destination(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new BlindedRoute-variant Destination
-					public init(a: BlindedRoute) {
+					public class func blindedRoute(a: BlindedRoute) -> Destination {
 						// native call variable prep
 						
 
@@ -108,7 +108,7 @@
 						// return value (do some wrapping)
 						let returnValue = Destination(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 

@@ -141,7 +141,7 @@
 					}
 		
 					/// Utility method to constructs a new ClaimableOnChannelClose-variant Balance
-					public init(claimableAmountSatoshis: UInt64) {
+					public class func claimableOnChannelClose(claimableAmountSatoshis: UInt64) -> Balance {
 						// native call variable prep
 						
 
@@ -154,11 +154,11 @@
 						// return value (do some wrapping)
 						let returnValue = Balance(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ClaimableAwaitingConfirmations-variant Balance
-					public init(claimableAmountSatoshis: UInt64, confirmationHeight: UInt32) {
+					public class func claimableAwaitingConfirmations(claimableAmountSatoshis: UInt64, confirmationHeight: UInt32) -> Balance {
 						// native call variable prep
 						
 
@@ -171,11 +171,11 @@
 						// return value (do some wrapping)
 						let returnValue = Balance(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ContentiousClaimable-variant Balance
-					public init(claimableAmountSatoshis: UInt64, timeoutHeight: UInt32) {
+					public class func contentiousClaimable(claimableAmountSatoshis: UInt64, timeoutHeight: UInt32) -> Balance {
 						// native call variable prep
 						
 
@@ -188,11 +188,11 @@
 						// return value (do some wrapping)
 						let returnValue = Balance(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new MaybeTimeoutClaimableHTLC-variant Balance
-					public init(claimableAmountSatoshis: UInt64, claimableHeight: UInt32) {
+					public class func maybeTimeoutClaimableHtlc(claimableAmountSatoshis: UInt64, claimableHeight: UInt32) -> Balance {
 						// native call variable prep
 						
 
@@ -205,11 +205,11 @@
 						// return value (do some wrapping)
 						let returnValue = Balance(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new MaybePreimageClaimableHTLC-variant Balance
-					public init(claimableAmountSatoshis: UInt64, expiryHeight: UInt32) {
+					public class func maybePreimageClaimableHtlc(claimableAmountSatoshis: UInt64, expiryHeight: UInt32) -> Balance {
 						// native call variable prep
 						
 
@@ -222,11 +222,11 @@
 						// return value (do some wrapping)
 						let returnValue = Balance(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new CounterpartyRevokedOutputClaimable-variant Balance
-					public init(claimableAmountSatoshis: UInt64) {
+					public class func counterpartyRevokedOutputClaimable(claimableAmountSatoshis: UInt64) -> Balance {
 						// native call variable prep
 						
 
@@ -239,7 +239,7 @@
 						// return value (do some wrapping)
 						let returnValue = Balance(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two Balances contain equal inner contents.

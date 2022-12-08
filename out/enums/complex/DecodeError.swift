@@ -130,7 +130,7 @@
 					}
 		
 					/// Utility method to constructs a new UnknownVersion-variant DecodeError
-					public init() {
+					public class func unknownVersion() -> DecodeError {
 						// native call variable prep
 						
 
@@ -143,11 +143,11 @@
 						// return value (do some wrapping)
 						let returnValue = DecodeError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new UnknownRequiredFeature-variant DecodeError
-					public init() {
+					public class func unknownRequiredFeature() -> DecodeError {
 						// native call variable prep
 						
 
@@ -160,11 +160,11 @@
 						// return value (do some wrapping)
 						let returnValue = DecodeError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new InvalidValue-variant DecodeError
-					public init() {
+					public class func invalidValue() -> DecodeError {
 						// native call variable prep
 						
 
@@ -177,11 +177,11 @@
 						// return value (do some wrapping)
 						let returnValue = DecodeError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ShortRead-variant DecodeError
-					public init() {
+					public class func shortRead() -> DecodeError {
 						// native call variable prep
 						
 
@@ -194,11 +194,11 @@
 						// return value (do some wrapping)
 						let returnValue = DecodeError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new BadLengthDescriptor-variant DecodeError
-					public init() {
+					public class func badLengthDescriptor() -> DecodeError {
 						// native call variable prep
 						
 
@@ -211,11 +211,11 @@
 						// return value (do some wrapping)
 						let returnValue = DecodeError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Io-variant DecodeError
-					public init(a: IOError) {
+					public class func io(a: IOError) -> DecodeError {
 						// native call variable prep
 						
 
@@ -228,11 +228,11 @@
 						// return value (do some wrapping)
 						let returnValue = DecodeError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new UnsupportedCompression-variant DecodeError
-					public init() {
+					public class func unsupportedCompression() -> DecodeError {
 						// native call variable prep
 						
 
@@ -245,7 +245,7 @@
 						// return value (do some wrapping)
 						let returnValue = DecodeError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two DecodeErrors contain equal inner contents.

@@ -103,7 +103,7 @@
 					}
 		
 					/// Utility method to constructs a new SegWitProgram-variant Fallback
-					public init(version: UInt8, program: [UInt8]) {
+					public class func segWitProgram(version: UInt8, program: [UInt8]) -> Fallback {
 						// native call variable prep
 						
 						let versionPrimitiveWrapper = u5(value: version)
@@ -122,11 +122,11 @@
 						// return value (do some wrapping)
 						let returnValue = Fallback(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new PubKeyHash-variant Fallback
-					public init(a: [UInt8]) {
+					public class func pubKeyHash(a: [UInt8]) -> Fallback {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = TwentyBytes(value: a)
@@ -141,11 +141,11 @@
 						// return value (do some wrapping)
 						let returnValue = Fallback(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ScriptHash-variant Fallback
-					public init(a: [UInt8]) {
+					public class func scriptHash(a: [UInt8]) -> Fallback {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = TwentyBytes(value: a)
@@ -160,7 +160,7 @@
 						// return value (do some wrapping)
 						let returnValue = Fallback(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two Fallbacks contain equal inner contents.

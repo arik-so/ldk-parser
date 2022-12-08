@@ -82,7 +82,7 @@
 					}
 		
 					/// Utility method to constructs a new P2P-variant GossipSync
-					public init(a: P2PGossipSync) {
+					public class func p2P(a: P2PGossipSync) -> GossipSync {
 						// native call variable prep
 						
 
@@ -99,11 +99,11 @@
 						// return value (do some wrapping)
 						let returnValue = GossipSync(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Rapid-variant GossipSync
-					public init(a: RapidGossipSync) {
+					public class func rapid(a: RapidGossipSync) -> GossipSync {
 						// native call variable prep
 						
 
@@ -120,7 +120,7 @@
 						// return value (do some wrapping)
 						let returnValue = GossipSync(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new None-variant GossipSync

@@ -142,7 +142,7 @@
 					}
 		
 					/// Utility method to constructs a new APIMisuseError-variant APIError
-					public init(err: String) {
+					public class func apimisuseError(err: String) -> APIError {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err)
@@ -157,11 +157,11 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new FeeRateTooHigh-variant APIError
-					public init(err: String, feerate: UInt32) {
+					public class func feeRateTooHigh(err: String, feerate: UInt32) -> APIError {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err)
@@ -176,11 +176,11 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new RouteError-variant APIError
-					public init(err: String) {
+					public class func routeError(err: String) -> APIError {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err)
@@ -195,11 +195,11 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ChannelUnavailable-variant APIError
-					public init(err: String) {
+					public class func channelUnavailable(err: String) -> APIError {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err)
@@ -214,11 +214,11 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new MonitorUpdateInProgress-variant APIError
-					public init() {
+					public class func monitorUpdateInProgress() -> APIError {
 						// native call variable prep
 						
 
@@ -231,11 +231,11 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new IncompatibleShutdownScript-variant APIError
-					public init(script: ShutdownScript) {
+					public class func incompatibleShutdownScript(script: ShutdownScript) -> APIError {
 						// native call variable prep
 						
 
@@ -248,7 +248,7 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two APIErrors contain equal inner contents.

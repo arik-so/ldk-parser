@@ -154,7 +154,7 @@
 					}
 		
 					/// Utility method to constructs a new CounterpartyForceClosed-variant ClosureReason
-					public init(peerMsg: String) {
+					public class func counterpartyForceClosed(peerMsg: String) -> ClosureReason {
 						// native call variable prep
 						
 						let peerMsgPrimitiveWrapper = Str(value: peerMsg)
@@ -169,11 +169,11 @@
 						// return value (do some wrapping)
 						let returnValue = ClosureReason(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new HolderForceClosed-variant ClosureReason
-					public init() {
+					public class func holderForceClosed() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -186,11 +186,11 @@
 						// return value (do some wrapping)
 						let returnValue = ClosureReason(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new CooperativeClosure-variant ClosureReason
-					public init() {
+					public class func cooperativeClosure() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -203,11 +203,11 @@
 						// return value (do some wrapping)
 						let returnValue = ClosureReason(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new CommitmentTxConfirmed-variant ClosureReason
-					public init() {
+					public class func commitmentTxConfirmed() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -220,11 +220,11 @@
 						// return value (do some wrapping)
 						let returnValue = ClosureReason(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new FundingTimedOut-variant ClosureReason
-					public init() {
+					public class func fundingTimedOut() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -237,11 +237,11 @@
 						// return value (do some wrapping)
 						let returnValue = ClosureReason(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ProcessingError-variant ClosureReason
-					public init(err: String) {
+					public class func processingError(err: String) -> ClosureReason {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err)
@@ -256,11 +256,11 @@
 						// return value (do some wrapping)
 						let returnValue = ClosureReason(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new DisconnectedPeer-variant ClosureReason
-					public init() {
+					public class func disconnectedPeer() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -273,11 +273,11 @@
 						// return value (do some wrapping)
 						let returnValue = ClosureReason(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new OutdatedChannelManager-variant ClosureReason
-					public init() {
+					public class func outdatedChannelManager() -> ClosureReason {
 						// native call variable prep
 						
 
@@ -290,7 +290,7 @@
 						// return value (do some wrapping)
 						let returnValue = ClosureReason(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two ClosureReasons contain equal inner contents.

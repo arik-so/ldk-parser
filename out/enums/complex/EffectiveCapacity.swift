@@ -121,7 +121,7 @@
 					}
 		
 					/// Utility method to constructs a new ExactLiquidity-variant EffectiveCapacity
-					public init(liquidityMsat: UInt64) {
+					public class func exactLiquidity(liquidityMsat: UInt64) -> EffectiveCapacity {
 						// native call variable prep
 						
 
@@ -134,11 +134,11 @@
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new MaximumHTLC-variant EffectiveCapacity
-					public init(amountMsat: UInt64) {
+					public class func maximumHtlc(amountMsat: UInt64) -> EffectiveCapacity {
 						// native call variable prep
 						
 
@@ -151,11 +151,11 @@
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Total-variant EffectiveCapacity
-					public init(capacityMsat: UInt64, htlcMaximumMsat: UInt64?) {
+					public class func total(capacityMsat: UInt64, htlcMaximumMsat: UInt64?) -> EffectiveCapacity {
 						// native call variable prep
 						
 						let htlcMaximumMsatOption = Option_u64Z(some: htlcMaximumMsat)
@@ -170,11 +170,11 @@
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Infinite-variant EffectiveCapacity
-					public init() {
+					public class func infinite() -> EffectiveCapacity {
 						// native call variable prep
 						
 
@@ -187,11 +187,11 @@
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Unknown-variant EffectiveCapacity
-					public init() {
+					public class func unknown() -> EffectiveCapacity {
 						// native call variable prep
 						
 
@@ -204,7 +204,7 @@
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Returns the effective capacity denominated in millisatoshi.

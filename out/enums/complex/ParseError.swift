@@ -195,7 +195,7 @@
 					}
 		
 					/// Utility method to constructs a new Bech32Error-variant ParseError
-					public init(a: Bech32Error) {
+					public class func bech32Error(a: Bech32Error) -> ParseError {
 						// native call variable prep
 						
 
@@ -208,11 +208,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ParseAmountError-variant ParseError
-					public init(a: BindingsError) {
+					public class func parseAmountError(a: BindingsError) -> ParseError {
 						// native call variable prep
 						
 
@@ -225,11 +225,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new MalformedSignature-variant ParseError
-					public init(a: Secp256k1Error) {
+					public class func malformedSignature(a: Secp256k1Error) -> ParseError {
 						// native call variable prep
 						
 
@@ -242,11 +242,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new BadPrefix-variant ParseError
-					public init() {
+					public class func badPrefix() -> ParseError {
 						// native call variable prep
 						
 
@@ -259,11 +259,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new UnknownCurrency-variant ParseError
-					public init() {
+					public class func unknownCurrency() -> ParseError {
 						// native call variable prep
 						
 
@@ -276,11 +276,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new UnknownSiPrefix-variant ParseError
-					public init() {
+					public class func unknownSiPrefix() -> ParseError {
 						// native call variable prep
 						
 
@@ -293,11 +293,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new MalformedHRP-variant ParseError
-					public init() {
+					public class func malformedHrp() -> ParseError {
 						// native call variable prep
 						
 
@@ -310,11 +310,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new TooShortDataPart-variant ParseError
-					public init() {
+					public class func tooShortDataPart() -> ParseError {
 						// native call variable prep
 						
 
@@ -327,11 +327,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new UnexpectedEndOfTaggedFields-variant ParseError
-					public init() {
+					public class func unexpectedEndOfTaggedFields() -> ParseError {
 						// native call variable prep
 						
 
@@ -344,11 +344,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new DescriptionDecodeError-variant ParseError
-					public init(a: BindingsError) {
+					public class func descriptionDecodeError(a: BindingsError) -> ParseError {
 						// native call variable prep
 						
 
@@ -361,11 +361,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new PaddingError-variant ParseError
-					public init() {
+					public class func paddingError() -> ParseError {
 						// native call variable prep
 						
 
@@ -378,11 +378,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new IntegerOverflowError-variant ParseError
-					public init() {
+					public class func integerOverflowError() -> ParseError {
 						// native call variable prep
 						
 
@@ -395,11 +395,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new InvalidSegWitProgramLength-variant ParseError
-					public init() {
+					public class func invalidSegWitProgramLength() -> ParseError {
 						// native call variable prep
 						
 
@@ -412,11 +412,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new InvalidPubKeyHashLength-variant ParseError
-					public init() {
+					public class func invalidPubKeyHashLength() -> ParseError {
 						// native call variable prep
 						
 
@@ -429,11 +429,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new InvalidScriptHashLength-variant ParseError
-					public init() {
+					public class func invalidScriptHashLength() -> ParseError {
 						// native call variable prep
 						
 
@@ -446,11 +446,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new InvalidRecoveryId-variant ParseError
-					public init() {
+					public class func invalidRecoveryId() -> ParseError {
 						// native call variable prep
 						
 
@@ -463,11 +463,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new InvalidSliceLength-variant ParseError
-					public init(a: String) {
+					public class func invalidSliceLength(a: String) -> ParseError {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = Str(value: a)
@@ -482,11 +482,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Skip-variant ParseError
-					public init() {
+					public class func skip() -> ParseError {
 						// native call variable prep
 						
 
@@ -499,7 +499,7 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two ParseErrors contain equal inner contents.

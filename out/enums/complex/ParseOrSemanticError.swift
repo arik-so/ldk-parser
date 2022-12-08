@@ -99,7 +99,7 @@
 					}
 		
 					/// Utility method to constructs a new ParseError-variant ParseOrSemanticError
-					public init(a: ParseError) {
+					public class func parseError(a: ParseError) -> ParseOrSemanticError {
 						// native call variable prep
 						
 
@@ -112,11 +112,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseOrSemanticError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new SemanticError-variant ParseOrSemanticError
-					public init(a: SemanticError) {
+					public class func semanticError(a: SemanticError) -> ParseOrSemanticError {
 						// native call variable prep
 						
 
@@ -129,7 +129,7 @@
 						// return value (do some wrapping)
 						let returnValue = ParseOrSemanticError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two ParseOrSemanticErrors contain equal inner contents.

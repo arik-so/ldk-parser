@@ -144,7 +144,7 @@
 					}
 		
 					/// Utility method to constructs a new StaticOutput-variant SpendableOutputDescriptor
-					public init(outpoint: OutPoint, output: TxOut) {
+					public class func staticOutput(outpoint: OutPoint, output: TxOut) -> SpendableOutputDescriptor {
 						// native call variable prep
 						
 
@@ -157,11 +157,11 @@
 						// return value (do some wrapping)
 						let returnValue = SpendableOutputDescriptor(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new DelayedPaymentOutput-variant SpendableOutputDescriptor
-					public init(a: DelayedPaymentOutputDescriptor) {
+					public class func delayedPaymentOutput(a: DelayedPaymentOutputDescriptor) -> SpendableOutputDescriptor {
 						// native call variable prep
 						
 
@@ -174,11 +174,11 @@
 						// return value (do some wrapping)
 						let returnValue = SpendableOutputDescriptor(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new StaticPaymentOutput-variant SpendableOutputDescriptor
-					public init(a: StaticPaymentOutputDescriptor) {
+					public class func staticPaymentOutput(a: StaticPaymentOutputDescriptor) -> SpendableOutputDescriptor {
 						// native call variable prep
 						
 
@@ -191,7 +191,7 @@
 						// return value (do some wrapping)
 						let returnValue = SpendableOutputDescriptor(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Checks if two SpendableOutputDescriptors contain equal inner contents.

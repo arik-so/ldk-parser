@@ -124,7 +124,7 @@
 					}
 		
 					/// Utility method to constructs a new DisconnectPeer-variant ErrorAction
-					public init(msg: ErrorMessage) {
+					public class func disconnectPeer(msg: ErrorMessage) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -137,11 +137,11 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new IgnoreError-variant ErrorAction
-					public init() {
+					public class func ignoreError() -> ErrorAction {
 						// native call variable prep
 						
 
@@ -154,11 +154,11 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new IgnoreAndLog-variant ErrorAction
-					public init(a: Level) {
+					public class func ignoreAndLog(a: Level) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -171,11 +171,11 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new IgnoreDuplicateGossip-variant ErrorAction
-					public init() {
+					public class func ignoreDuplicateGossip() -> ErrorAction {
 						// native call variable prep
 						
 
@@ -188,11 +188,11 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new SendErrorMessage-variant ErrorAction
-					public init(msg: ErrorMessage) {
+					public class func sendErrorMessage(msg: ErrorMessage) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -205,11 +205,11 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new SendWarningMessage-variant ErrorAction
-					public init(msg: WarningMessage, logLevel: Level) {
+					public class func sendWarningMessage(msg: WarningMessage, logLevel: Level) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -222,7 +222,7 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						return returnValue
 					}
 		
 

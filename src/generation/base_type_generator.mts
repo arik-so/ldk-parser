@@ -275,7 +275,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		let standaloneMethodName = method.name;
 		if (containerType) {
 			standaloneMethodName = this.standaloneMethodName(method, containerType);
-			if (method.returnValue.type === containerType && !['clone', 'none'].includes(standaloneMethodName)) {
+			// complex enums may have multiple variants of the same type, so those initializers should be static
+			if (method.returnValue.type === containerType && !['clone', 'none'].includes(standaloneMethodName) && !(containerType instanceof RustTaggedValueEnum)) {
 				return 'init';
 			}
 			return Generator.snakeCaseToCamelCase(standaloneMethodName);
