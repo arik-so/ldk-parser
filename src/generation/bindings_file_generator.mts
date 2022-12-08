@@ -21,6 +21,7 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 
 		let generatedTupleTypeAliases = '';
 		let generatedTupleConverters = '';
+		let generatedTupleComparators = ''
 
 		for (const [rawSwiftTypeSignature, tupleSizes] of Object.entries(this.auxiliaryArtifacts.tuples)) {
 			for (const currentTupleSize of tupleSizes) {
@@ -50,8 +51,8 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 				`;
 
 				if (currentTupleSize >= 7) {
-					generatedTupleConverters += `
-						static func == (tupleA: ${tupleTypeName}, tupleB: ${tupleTypeName}) -> Bool {
+					generatedTupleComparators += `
+						func == (tupleA: Bindings.${tupleTypeName}, tupleB: Bindings.${tupleTypeName}) -> Bool {
    							return ${comparator.join(' && ')}
 						}
 					`;
@@ -287,6 +288,8 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 				}
 
 			}
+
+			${generatedTupleComparators}
 
 		`;
 	}
