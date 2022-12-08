@@ -478,7 +478,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				// figure out when it needs to be dangled
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 				preparedArgument.deferredCleanup += `
-						${preparedArgument.name}.noOpRetain()
+						// ${preparedArgument.name}.noOpRetain()
 				`;
 			} else if (argument.type instanceof RustTrait) {
 				preparedArgument.accessor = preparedArgument.name + '.activate().cType!';

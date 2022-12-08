@@ -198,7 +198,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -221,7 +221,7 @@
 
 						// cleanup
 						
-						scriptPubkeyArgVector.noOpRetain()
+						// scriptPubkeyArgVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

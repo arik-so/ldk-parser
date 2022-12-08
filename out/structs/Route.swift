@@ -99,7 +99,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -187,7 +187,7 @@
 
 						// cleanup
 						
-						pathsArgVector.noOpRetain()
+						// pathsArgVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

@@ -49,7 +49,7 @@
 
 						// cleanup
 						
-						scriptPubkeyVector.noOpRetain()
+						// scriptPubkeyVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

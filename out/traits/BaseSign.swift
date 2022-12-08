@@ -675,7 +675,7 @@
 
 						// cleanup
 						
-						preimagesVector.noOpRetain()
+						// preimagesVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -731,7 +731,7 @@
 
 						// cleanup
 						
-						preimagesVector.noOpRetain()
+						// preimagesVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

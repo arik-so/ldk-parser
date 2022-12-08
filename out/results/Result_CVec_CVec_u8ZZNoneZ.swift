@@ -48,7 +48,7 @@
 
 						// cleanup
 						
-						oVector.noOpRetain()
+						// oVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

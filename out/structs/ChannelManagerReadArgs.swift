@@ -374,7 +374,7 @@
 
 						// cleanup
 						
-						channelMonitorsVector.noOpRetain()
+						// channelMonitorsVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

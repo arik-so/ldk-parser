@@ -269,7 +269,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

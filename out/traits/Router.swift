@@ -272,7 +272,7 @@
 
 						// cleanup
 						
-						firstHopsVector.noOpRetain()
+						// firstHopsVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -293,7 +293,7 @@
 
 						// cleanup
 						
-						pathVector.noOpRetain()
+						// pathVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -314,7 +314,7 @@
 
 						// cleanup
 						
-						pathVector.noOpRetain()
+						// pathVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -335,7 +335,7 @@
 
 						// cleanup
 						
-						pathVector.noOpRetain()
+						// pathVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -356,7 +356,7 @@
 
 						// cleanup
 						
-						pathVector.noOpRetain()
+						// pathVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

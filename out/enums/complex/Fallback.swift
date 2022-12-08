@@ -116,7 +116,7 @@
 
 						// cleanup
 						
-						programVector.noOpRetain()
+						// programVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

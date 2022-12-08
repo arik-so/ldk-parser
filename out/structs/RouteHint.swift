@@ -90,7 +90,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -111,7 +111,7 @@
 
 						// cleanup
 						
-						aArgVector.noOpRetain()
+						// aArgVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

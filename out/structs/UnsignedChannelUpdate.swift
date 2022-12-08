@@ -469,7 +469,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -492,7 +492,7 @@
 
 						// cleanup
 						
-						excessDataArgVector.noOpRetain()
+						// excessDataArgVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

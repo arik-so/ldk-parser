@@ -759,7 +759,7 @@
 
 						// cleanup
 						
-						nodeIdsVector.noOpRetain()
+						// nodeIdsVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

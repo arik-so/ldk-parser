@@ -391,7 +391,7 @@
 
 						// cleanup
 						
-						txdataVector.noOpRetain()
+						// txdataVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -456,7 +456,7 @@
 
 						// cleanup
 						
-						txdataVector.noOpRetain()
+						// txdataVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

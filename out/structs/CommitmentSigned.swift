@@ -159,7 +159,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -184,7 +184,7 @@
 
 						// cleanup
 						
-						htlcSignaturesArgVector.noOpRetain()
+						// htlcSignaturesArgVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

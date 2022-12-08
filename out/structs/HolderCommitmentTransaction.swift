@@ -138,7 +138,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -227,7 +227,7 @@
 
 						// cleanup
 						
-						counterpartyHtlcSigsVector.noOpRetain()
+						// counterpartyHtlcSigsVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

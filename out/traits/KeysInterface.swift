@@ -607,7 +607,7 @@
 
 						// cleanup
 						
-						invoiceDataVector.noOpRetain()
+						// invoiceDataVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

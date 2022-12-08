@@ -160,7 +160,7 @@
 
 						// cleanup
 						
-						aVector.noOpRetain()
+						// aVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -181,7 +181,7 @@
 
 						// cleanup
 						
-						aVector.noOpRetain()
+						// aVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -204,7 +204,7 @@
 
 						// cleanup
 						
-						resultsVector.noOpRetain()
+						// resultsVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

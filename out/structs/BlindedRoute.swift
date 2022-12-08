@@ -73,7 +73,7 @@
 
 						// cleanup
 						
-						nodePksVector.noOpRetain()
+						// nodePksVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

@@ -92,7 +92,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -239,7 +239,7 @@
 
 						// cleanup
 						
-						channelsArgVector.noOpRetain()
+						// channelsArgVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

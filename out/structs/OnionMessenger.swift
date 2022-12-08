@@ -161,7 +161,7 @@
 
 						// cleanup
 						
-						intermediateNodesVector.noOpRetain()
+						// intermediateNodesVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

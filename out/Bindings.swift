@@ -349,7 +349,7 @@
 
 					// cleanup
 					
-					dataWithoutSignatureVector.noOpRetain()
+					// dataWithoutSignatureVector.noOpRetain()
 				
 
 					// return value (do some wrapping)
@@ -551,9 +551,9 @@
 
 					// cleanup
 					
-					toHolderScriptVector.noOpRetain()
+					// toHolderScriptVector.noOpRetain()
 				
-					toCounterpartyScriptVector.noOpRetain()
+					// toCounterpartyScriptVector.noOpRetain()
 				
 
 					// return value (do some wrapping)
@@ -909,7 +909,7 @@
 
 					// cleanup
 					
-					firstHopsVector.noOpRetain()
+					// firstHopsVector.noOpRetain()
 				
 
 					// return value (do some wrapping)
@@ -949,7 +949,7 @@
 
 					// cleanup
 					
-					hopsVector.noOpRetain()
+					// hopsVector.noOpRetain()
 				
 
 					// return value (do some wrapping)
@@ -1006,7 +1006,7 @@
 
 					// cleanup
 					
-					phantomRouteHintsVector.noOpRetain()
+					// phantomRouteHintsVector.noOpRetain()
 				
 
 					// return value (do some wrapping)
@@ -1063,7 +1063,7 @@
 
 					// cleanup
 					
-					phantomRouteHintsVector.noOpRetain()
+					// phantomRouteHintsVector.noOpRetain()
 				
 
 					// return value (do some wrapping)

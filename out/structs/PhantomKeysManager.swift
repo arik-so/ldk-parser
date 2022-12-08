@@ -147,11 +147,11 @@
 
 						// cleanup
 						
-						descriptorsVector.noOpRetain()
+						// descriptorsVector.noOpRetain()
 				
-						outputsVector.noOpRetain()
+						// outputsVector.noOpRetain()
 				
-						changeDestinationScriptVector.noOpRetain()
+						// changeDestinationScriptVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

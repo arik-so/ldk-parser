@@ -110,7 +110,7 @@
 
 						// cleanup
 						
-						ignoredChannelsVector.noOpRetain()
+						// ignoredChannelsVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

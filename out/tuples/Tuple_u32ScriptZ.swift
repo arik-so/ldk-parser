@@ -72,7 +72,7 @@
 
 						// cleanup
 						
-						bVector.noOpRetain()
+						// bVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

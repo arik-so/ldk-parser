@@ -140,9 +140,9 @@
 
 						// cleanup
 						
-						toHolderScriptVector.noOpRetain()
+						// toHolderScriptVector.noOpRetain()
 				
-						toCounterpartyScriptVector.noOpRetain()
+						// toCounterpartyScriptVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

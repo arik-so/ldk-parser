@@ -461,7 +461,7 @@
 
 						// cleanup
 						
-						addressesVector.noOpRetain()
+						// addressesVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

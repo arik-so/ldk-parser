@@ -638,7 +638,7 @@
 
 						// cleanup
 						
-						hopsVector.noOpRetain()
+						// hopsVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -750,7 +750,7 @@
 
 						// cleanup
 						
-						channelIdsVector.noOpRetain()
+						// channelIdsVector.noOpRetain()
 				
 
 						// return value (do some wrapping)

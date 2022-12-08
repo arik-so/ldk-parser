@@ -91,7 +91,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -137,7 +137,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -183,7 +183,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -229,7 +229,7 @@
 
 						// cleanup
 						
-						valVector.noOpRetain()
+						// valVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
@@ -357,13 +357,13 @@
 
 						// cleanup
 						
-						updateAddHtlcsArgVector.noOpRetain()
+						// updateAddHtlcsArgVector.noOpRetain()
 				
-						updateFulfillHtlcsArgVector.noOpRetain()
+						// updateFulfillHtlcsArgVector.noOpRetain()
 				
-						updateFailHtlcsArgVector.noOpRetain()
+						// updateFailHtlcsArgVector.noOpRetain()
 				
-						updateFailMalformedHtlcsArgVector.noOpRetain()
+						// updateFailMalformedHtlcsArgVector.noOpRetain()
 				
 
 						// return value (do some wrapping)
