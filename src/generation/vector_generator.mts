@@ -37,9 +37,11 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		 */
 		let rustArrayToSwiftArrayMapper = '';
 
+		/**
+		 * If the deepest type is not a primitive, a Rust->Swift mapper is definitely necessary,
+		 * and a Swift->Rust mapper is potentially necessary
+		 */
 		if(!(type.deepestIterateeType instanceof RustPrimitive)){
-			// if the deepest type is not a primitive, a Swift->Rust mapper is necessary
-
 			// we'll need to map the Rust types to Swift types because they're not primitive
 			rustArrayToSwiftArrayMapper = 'let swiftArray = array.map { (currentCType) in\n'
 
@@ -62,7 +64,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 					depth++;
 				}
 			} else {
-				// additionally, if the top level iteratee is not a rust vector, a Rust->Swift mapper is necessary
+				// additionally, if the top level iteratee is not a rust vector, a Swift->Rust mapper is necessary
 				// (if it is a vector, a corresponding underlying vector can be trivially initiated)
 				const deepestRustValueUnwrapper = this.prepareSwiftArgumentForRust(artificialDeepestContext, type);
 				swiftArrayToRustArrayMapper = `
@@ -104,7 +106,6 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		} else if (type.iterateeField.type instanceof RustPrimitive) {
 			bracketedIterateeTypeName = `<${type.iterateeField.type.swiftRawSignature}>`;
 			dataContainerInitializationArgumentName = 'array';
-			// rustArrayToSwiftArrayMapper = 'let swiftArray = array';
 		}else if (type.iterateeField.type instanceof RustTuple || type.iterateeField.type instanceof RustPrimitiveWrapper || type.iterateeField.type instanceof RustTaggedValueEnum || type.iterateeField.type instanceof RustResult || type.iterateeField.type instanceof RustStruct) {
 			bracketedIterateeTypeName = `<${type.iterateeField.type.name}>`;
 		} else {
