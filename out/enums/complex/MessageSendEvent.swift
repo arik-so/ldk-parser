@@ -948,9 +948,9 @@
 						}
 		
 						/// The message which should be sent.
-						public func getMsg() -> AcceptChannel {
+						public func getMsg() -> Bindings.AcceptChannel {
 							// return value (do some wrapping)
-							let returnValue = AcceptChannel(cType: self.cType!.msg)
+							let returnValue = Bindings.AcceptChannel(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1009,9 +1009,9 @@
 						}
 		
 						/// The message which should be sent.
-						public func getMsg() -> OpenChannel {
+						public func getMsg() -> Bindings.OpenChannel {
 							// return value (do some wrapping)
-							let returnValue = OpenChannel(cType: self.cType!.msg)
+							let returnValue = Bindings.OpenChannel(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1070,9 +1070,9 @@
 						}
 		
 						/// The message which should be sent.
-						public func getMsg() -> FundingCreated {
+						public func getMsg() -> Bindings.FundingCreated {
 							// return value (do some wrapping)
-							let returnValue = FundingCreated(cType: self.cType!.msg)
+							let returnValue = Bindings.FundingCreated(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1131,9 +1131,9 @@
 						}
 		
 						/// The message which should be sent.
-						public func getMsg() -> FundingSigned {
+						public func getMsg() -> Bindings.FundingSigned {
 							// return value (do some wrapping)
-							let returnValue = FundingSigned(cType: self.cType!.msg)
+							let returnValue = Bindings.FundingSigned(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1192,9 +1192,9 @@
 						}
 		
 						/// The channel_ready message which should be sent.
-						public func getMsg() -> ChannelReady {
+						public func getMsg() -> Bindings.ChannelReady {
 							// return value (do some wrapping)
-							let returnValue = ChannelReady(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelReady(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1253,9 +1253,9 @@
 						}
 		
 						/// The announcement_signatures message which should be sent.
-						public func getMsg() -> AnnouncementSignatures {
+						public func getMsg() -> Bindings.AnnouncementSignatures {
 							// return value (do some wrapping)
-							let returnValue = AnnouncementSignatures(cType: self.cType!.msg)
+							let returnValue = Bindings.AnnouncementSignatures(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1314,9 +1314,9 @@
 						}
 		
 						/// The update messages which should be sent. ALL messages in the struct should be sent!
-						public func getUpdates() -> CommitmentUpdate {
+						public func getUpdates() -> Bindings.CommitmentUpdate {
 							// return value (do some wrapping)
-							let returnValue = CommitmentUpdate(cType: self.cType!.updates)
+							let returnValue = Bindings.CommitmentUpdate(cType: self.cType!.updates)
 
 							return returnValue;
 						}
@@ -1375,9 +1375,9 @@
 						}
 		
 						/// The message which should be sent.
-						public func getMsg() -> RevokeAndACK {
+						public func getMsg() -> Bindings.RevokeAndACK {
 							// return value (do some wrapping)
-							let returnValue = RevokeAndACK(cType: self.cType!.msg)
+							let returnValue = Bindings.RevokeAndACK(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1436,9 +1436,9 @@
 						}
 		
 						/// The message which should be sent.
-						public func getMsg() -> ClosingSigned {
+						public func getMsg() -> Bindings.ClosingSigned {
 							// return value (do some wrapping)
-							let returnValue = ClosingSigned(cType: self.cType!.msg)
+							let returnValue = Bindings.ClosingSigned(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1497,9 +1497,9 @@
 						}
 		
 						/// The message which should be sent.
-						public func getMsg() -> Shutdown {
+						public func getMsg() -> Bindings.Shutdown {
 							// return value (do some wrapping)
-							let returnValue = Shutdown(cType: self.cType!.msg)
+							let returnValue = Bindings.Shutdown(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1558,9 +1558,9 @@
 						}
 		
 						/// The message which should be sent.
-						public func getMsg() -> ChannelReestablish {
+						public func getMsg() -> Bindings.ChannelReestablish {
 							// return value (do some wrapping)
-							let returnValue = ChannelReestablish(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelReestablish(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1619,17 +1619,17 @@
 						}
 		
 						/// The channel_announcement which should be sent.
-						public func getMsg() -> ChannelAnnouncement {
+						public func getMsg() -> Bindings.ChannelAnnouncement {
 							// return value (do some wrapping)
-							let returnValue = ChannelAnnouncement(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelAnnouncement(cType: self.cType!.msg)
 
 							return returnValue;
 						}
 		
 						/// The followup channel_update which should be sent.
-						public func getUpdateMsg() -> ChannelUpdate {
+						public func getUpdateMsg() -> Bindings.ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = ChannelUpdate(cType: self.cType!.update_msg)
+							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.update_msg)
 
 							return returnValue;
 						}
@@ -1680,17 +1680,17 @@
 
 						
 						/// The channel_announcement which should be sent.
-						public func getMsg() -> ChannelAnnouncement {
+						public func getMsg() -> Bindings.ChannelAnnouncement {
 							// return value (do some wrapping)
-							let returnValue = ChannelAnnouncement(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelAnnouncement(cType: self.cType!.msg)
 
 							return returnValue;
 						}
 		
 						/// The followup channel_update which should be sent.
-						public func getUpdateMsg() -> ChannelUpdate {
+						public func getUpdateMsg() -> Bindings.ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = ChannelUpdate(cType: self.cType!.update_msg)
+							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.update_msg)
 
 							return returnValue;
 						}
@@ -1741,9 +1741,9 @@
 
 						
 						/// The channel_update which should be sent.
-						public func getMsg() -> ChannelUpdate {
+						public func getMsg() -> Bindings.ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = ChannelUpdate(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1802,9 +1802,9 @@
 						}
 		
 						/// The channel_update which should be sent.
-						public func getMsg() -> ChannelUpdate {
+						public func getMsg() -> Bindings.ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = ChannelUpdate(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1924,9 +1924,9 @@
 						}
 		
 						/// The query_channel_range which should be sent.
-						public func getMsg() -> QueryChannelRange {
+						public func getMsg() -> Bindings.QueryChannelRange {
 							// return value (do some wrapping)
-							let returnValue = QueryChannelRange(cType: self.cType!.msg)
+							let returnValue = Bindings.QueryChannelRange(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -1985,9 +1985,9 @@
 						}
 		
 						/// The query_short_channel_ids which should be sent.
-						public func getMsg() -> QueryShortChannelIds {
+						public func getMsg() -> Bindings.QueryShortChannelIds {
 							// return value (do some wrapping)
-							let returnValue = QueryShortChannelIds(cType: self.cType!.msg)
+							let returnValue = Bindings.QueryShortChannelIds(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -2046,9 +2046,9 @@
 						}
 		
 						/// The reply_channel_range which should be sent.
-						public func getMsg() -> ReplyChannelRange {
+						public func getMsg() -> Bindings.ReplyChannelRange {
 							// return value (do some wrapping)
-							let returnValue = ReplyChannelRange(cType: self.cType!.msg)
+							let returnValue = Bindings.ReplyChannelRange(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -2107,9 +2107,9 @@
 						}
 		
 						/// The gossip_timestamp_filter which should be sent.
-						public func getMsg() -> GossipTimestampFilter {
+						public func getMsg() -> Bindings.GossipTimestampFilter {
 							// return value (do some wrapping)
-							let returnValue = GossipTimestampFilter(cType: self.cType!.msg)
+							let returnValue = Bindings.GossipTimestampFilter(cType: self.cType!.msg)
 
 							return returnValue;
 						}

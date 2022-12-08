@@ -595,9 +595,9 @@
 
 						
 						/// The hostname on which the node is listening.
-						public func getHostname() -> Hostname {
+						public func getHostname() -> Bindings.Hostname {
 							// return value (do some wrapping)
-							let returnValue = Hostname(cType: self.cType!.hostname)
+							let returnValue = Bindings.Hostname(cType: self.cType!.hostname)
 
 							return returnValue;
 						}

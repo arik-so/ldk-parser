@@ -329,9 +329,9 @@
 
 						
 						/// The update to apply via [`NetworkGraph::update_channel`].
-						public func getMsg() -> ChannelUpdate {
+						public func getMsg() -> Bindings.ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = ChannelUpdate(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.msg)
 
 							return returnValue;
 						}

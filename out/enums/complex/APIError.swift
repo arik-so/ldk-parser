@@ -615,9 +615,9 @@
 
 						
 						/// The incompatible shutdown script.
-						public func getScript() -> ShutdownScript {
+						public func getScript() -> Bindings.ShutdownScript {
 							// return value (do some wrapping)
-							let returnValue = ShutdownScript(cType: self.cType!.script)
+							let returnValue = Bindings.ShutdownScript(cType: self.cType!.script)
 
 							return returnValue;
 						}

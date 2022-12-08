@@ -1495,9 +1495,9 @@
 						/// [`find_route`]: crate::routing::router::find_route
 						/// 
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
-						public func getRetry() -> RouteParameters {
+						public func getRetry() -> Bindings.RouteParameters {
 							// return value (do some wrapping)
-							let returnValue = RouteParameters(cType: self.cType!.retry)
+							let returnValue = Bindings.RouteParameters(cType: self.cType!.retry)
 
 							return returnValue;
 						}
@@ -2111,9 +2111,9 @@
 						/// or will be rejected otherwise.
 						/// 
 						/// [`ChannelManager`]: crate::ln::channelmanager::ChannelManager
-						public func getChannelType() -> ChannelTypeFeatures {
+						public func getChannelType() -> Bindings.ChannelTypeFeatures {
 							// return value (do some wrapping)
-							let returnValue = ChannelTypeFeatures(cType: self.cType!.channel_type)
+							let returnValue = Bindings.ChannelTypeFeatures(cType: self.cType!.channel_type)
 
 							return returnValue;
 						}

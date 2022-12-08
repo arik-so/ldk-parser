@@ -331,9 +331,9 @@
 						/// An error message which we should make an effort to send before we disconnect.
 						/// 
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
-						public func getMsg() -> ErrorMessage {
+						public func getMsg() -> Bindings.ErrorMessage {
 							// return value (do some wrapping)
-							let returnValue = ErrorMessage(cType: self.cType!.msg)
+							let returnValue = Bindings.ErrorMessage(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -384,9 +384,9 @@
 
 						
 						/// The message to send.
-						public func getMsg() -> ErrorMessage {
+						public func getMsg() -> Bindings.ErrorMessage {
 							// return value (do some wrapping)
-							let returnValue = ErrorMessage(cType: self.cType!.msg)
+							let returnValue = Bindings.ErrorMessage(cType: self.cType!.msg)
 
 							return returnValue;
 						}
@@ -437,9 +437,9 @@
 
 						
 						/// The message to send.
-						public func getMsg() -> WarningMessage {
+						public func getMsg() -> Bindings.WarningMessage {
 							// return value (do some wrapping)
-							let returnValue = WarningMessage(cType: self.cType!.msg)
+							let returnValue = Bindings.WarningMessage(cType: self.cType!.msg)
 
 							return returnValue;
 						}

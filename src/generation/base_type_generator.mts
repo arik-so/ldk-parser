@@ -115,9 +115,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			accessorName = Generator.snakeCaseToCamelCase(field.contextualName);
 		}
 
-		const swiftReturnType = this.getPublicTypeSignature(field.type);
+		const swiftReturnType = this.getPublicTypeSignature(field.type, containerType);
 		const fieldAccessor = `self.cType!.${field.contextualName}`;
-		const preparedReturnValue = this.prepareRustReturnValueForSwift(field);
+		const preparedReturnValue = this.prepareRustReturnValueForSwift(field, containerType);
 
 		return `
 					${this.renderDocComment(field.documentation, 5)}
@@ -406,6 +406,12 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 
 			if (containerType instanceof RustTaggedValueEnum && type instanceof RustStruct) {
+				// this is because of NetAddress.swift
+				return `Bindings.${this.swiftTypeName(type)}`;
+			}
+
+			if (type instanceof RustStruct && containerType instanceof RustStruct && containerType.parentType instanceof RustTaggedValueEnum) {
+				// this is because of NetAddress.swift
 				return `Bindings.${this.swiftTypeName(type)}`;
 			}
 
@@ -644,6 +650,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedReturnValue.wrapperSuffix += '.getValue()';
 			}
 		} else if (returnType.type instanceof RustStruct || returnType.type instanceof RustResult || returnType.type instanceof RustTaggedValueEnum) {
+			if (!this.isElidedType(returnType.type) && returnType.type instanceof RustStruct && containerType instanceof RustStruct && containerType.parentType instanceof RustTaggedValueEnum) {
+				preparedReturnValue.wrapperPrefix += 'Bindings.';
+			}
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
 			preparedReturnValue.wrapperSuffix += `)`;
 		} else if (returnType.type instanceof RustPrimitive) {

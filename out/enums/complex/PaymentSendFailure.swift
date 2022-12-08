@@ -341,9 +341,9 @@
 						/// will pay all remaining unpaid balance.
 						/// 
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
-						public func getFailedPathsRetry() -> RouteParameters {
+						public func getFailedPathsRetry() -> Bindings.RouteParameters {
 							// return value (do some wrapping)
-							let returnValue = RouteParameters(cType: self.cType!.failed_paths_retry)
+							let returnValue = Bindings.RouteParameters(cType: self.cType!.failed_paths_retry)
 
 							return returnValue;
 						}
