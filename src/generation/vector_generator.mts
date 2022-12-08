@@ -55,19 +55,16 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			const artificialDeepestContext = new RustFunctionArgument();
 			artificialDeepestContext.contextualName = 'currentValueDepth'+depth;
 			artificialDeepestContext.type = deepestIterateeContext.type;
-			const deepestRustUnwrapper = this.prepareSwiftArgumentForRust(artificialDeepestContext, type);
+			const deepestRustValueUnwrapper = this.prepareSwiftArgumentForRust(artificialDeepestContext, type);
 			rustUnwrapper += `
-				${deepestRustUnwrapper.conversion}
-				return ${deepestRustUnwrapper.methodCallWrapperPrefix}${deepestRustUnwrapper.accessor}${deepestRustUnwrapper.methodCallWrapperSuffix}
+				${deepestRustValueUnwrapper.conversion}
+				return ${deepestRustValueUnwrapper.methodCallWrapperPrefix}${deepestRustValueUnwrapper.accessor}${deepestRustValueUnwrapper.methodCallWrapperSuffix}
 			${unwrapperSuffix}`;
+
+			const deepestSwiftReturnValueWrapper = this.prepareRustReturnValueForSwift(artificialDeepestContext, type);
+			let deepestConstructor = `${deepestSwiftReturnValueWrapper.wrapperPrefix}currentCType${deepestSwiftReturnValueWrapper.wrapperSuffix}`;
+			swiftUnwrapper += `${indentation}${deepestConstructor}${unwrapperSuffix}`;
 		}
-
-		// rustUnwrapper += `${indentation}currentValueDepth${depth}.danglingClone().cType!${unwrapperSuffix}`;
-
-		const deepestWrapper = this.prepareRustReturnValueForSwift(deepestIterateeContext, type);
-		let deepestConstructor = `${deepestWrapper.wrapperPrefix}currentCType${deepestWrapper.wrapperSuffix}`;
-		swiftUnwrapper += `${indentation}${deepestConstructor}${unwrapperSuffix}`;
-
 
 		let bracketedIterateeTypeName = null;
 		if (type.iterateeField.type instanceof RustVector) {

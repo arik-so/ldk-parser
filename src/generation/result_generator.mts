@@ -74,7 +74,7 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 					${failureBlockCommentPrefix}
 					public func getError() -> ${errorTypeSignature} {
 						if self.cType?.result_ok == false {
-							return ${preparedErrorReturnValue.wrapperPrefix}self.cType!.contents.err.pointee${preparedErrorReturnValue.wrapperSuffix}
+							return ${preparedErrorReturnValue.wrapperPrefix}self.cType!.contents.err${preparedErrorReturnValue.wrapperSuffix}
 						}
 						return nil
 					}
@@ -83,7 +83,7 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 					${successBlockCommentPrefix}
 					public func getValue() -> ${successTypeSignature} {
 						if self.cType?.result_ok == true {
-							return ${preparedSuccessReturnValue.wrapperPrefix}self.cType!.contents.result.pointee${preparedSuccessReturnValue.wrapperSuffix}
+							return ${preparedSuccessReturnValue.wrapperPrefix}self.cType!.contents.result${preparedSuccessReturnValue.wrapperSuffix}
 						}
 						return nil
 					}

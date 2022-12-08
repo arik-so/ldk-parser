@@ -199,6 +199,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue, containerType);
 
+		// if (method.returnValue.isAsteriskPointer) {
+		// 	// preparedReturnValue.wrapperSuffix = '.pointee' + preparedReturnValue.wrapperSuffix
+		// }
+
 		if (isCommentDeducedNullablePointer) {
 			nativeCallSuffix += `
 				// COMMENT-DEDUCED OPTIONAL INFERENCE AND HANDLING:
@@ -551,6 +555,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			wrapperPrefix: '',
 			wrapperSuffix: ''
 		};
+
+		if(returnType.isAsteriskPointer){
+			preparedReturnValue.wrapperSuffix += '.pointee'
+		}
 
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes
 		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple || returnType.type instanceof RustPrimitiveWrapper) {
