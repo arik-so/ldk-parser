@@ -81,7 +81,7 @@
 
 						let swiftArray = array.map { (currentCType) in
 							currentCType.map { (currentCType) in
-								RouteHop(cType: currentCType)
+RouteHop(cType: currentCType)
 							}
 						}
 						return swiftArray

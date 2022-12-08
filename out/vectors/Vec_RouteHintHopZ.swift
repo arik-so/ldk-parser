@@ -44,7 +44,7 @@
 							
 							return currentValueDepth1.cType!
 						}
-			
+				
 
 						
 
@@ -67,7 +67,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							RouteHintHop(cType: currentCType)
+RouteHintHop(cType: currentCType)
 						}
 						return swiftArray
 					}

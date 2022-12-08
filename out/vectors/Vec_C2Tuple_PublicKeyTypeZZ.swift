@@ -46,7 +46,7 @@
 				
 							return currentValueDepth1Tuple.cType!
 						}
-			
+				
 
 						
 
@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							Tuple_PublicKeyTypeZ(cType: currentCType).getValue()
+Tuple_PublicKeyTypeZ(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

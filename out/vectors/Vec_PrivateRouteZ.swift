@@ -44,7 +44,7 @@
 							
 							return currentValueDepth1.cType!
 						}
-			
+				
 
 						
 
@@ -67,7 +67,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							PrivateRoute(cType: currentCType)
+PrivateRoute(cType: currentCType)
 						}
 						return swiftArray
 					}

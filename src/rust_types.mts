@@ -88,6 +88,13 @@ export class RustTuple extends RustStruct {
 export class RustVector extends RustStruct {
 	iterateeField: RustStructField;
 	lengthField: RustStructField;
+
+	get deepestIterateeType(): RustType {
+		if (this.iterateeField.type instanceof RustVector) {
+			return this.iterateeField.type.deepestIterateeType;
+		}
+		return this.iterateeField.type;
+	}
 }
 
 export class RustTrait extends RustStruct {

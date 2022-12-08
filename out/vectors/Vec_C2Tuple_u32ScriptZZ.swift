@@ -46,7 +46,7 @@
 				
 							return currentValueDepth1Tuple.cType!
 						}
-			
+				
 
 						
 
@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							Tuple_u32ScriptZ(cType: currentCType).getValue()
+Tuple_u32ScriptZ(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

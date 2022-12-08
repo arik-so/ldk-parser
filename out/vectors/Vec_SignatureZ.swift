@@ -46,7 +46,7 @@
 				
 							return currentValueDepth1PrimitiveWrapper.cType!
 						}
-			
+				
 
 						
 
@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-							Signature(cType: currentCType).getValue()
+Signature(cType: currentCType).getValue()
 						}
 						return swiftArray
 					}

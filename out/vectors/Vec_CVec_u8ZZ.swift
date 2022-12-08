@@ -79,11 +79,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType) in
-							currentCType.map { (currentCType) in
-								currentCType
-							}
-						}
+						let swiftArray = array
 						return swiftArray
 					}
 
