@@ -27,8 +27,15 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		let dataContainerInitializationArgumentName = 'rustArray';
 		let dimensionalityReduction = '';
 
-		let rustUnwrapper = '';
-		let swiftUnwrapper = 'let swiftArray = array.map { (currentCType) in\n';
+		/**
+		 * Necessary for init() methods that take a Swift array
+		 */
+		let swiftArrayToRustArrayMapper = 'let swiftArray = array.map { (currentCType) in\n';
+
+		/**
+		 * Necessary for getValue() calls that need to produce a Swift array
+		 */
+		let rustArrayToSwiftArrayMapper = '';
 
 		let unwrapperSuffix = '';
 		let depth = 1;
@@ -38,8 +45,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			const indentationDepth = 6 + depth;
 			const indentation = `\t`.repeat(indentationDepth);
 
-			rustUnwrapper += `${indentation}currentValueDepth${depth}.map { (currentValueDepth${depth + 1}) in\n`;
-			swiftUnwrapper += `${indentation}currentCType.map { (currentCType) in\n`;
+			swiftArrayToRustArrayMapper += `${indentation}currentCType.map { (currentCType) in\n`;
 			unwrapperSuffix += `\n${indentation}}`;
 
 			deepestIterateeContext = currentIteratee.iterateeField;
@@ -51,31 +57,30 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		const indentationDepth = 6 + depth;
 		const indentation = `\t`.repeat(indentationDepth);
 
-		{
-			const artificialDeepestContext = new RustFunctionArgument();
-			artificialDeepestContext.contextualName = 'currentValueDepth'+depth;
-			artificialDeepestContext.type = deepestIterateeContext.type;
-			const deepestRustValueUnwrapper = this.prepareSwiftArgumentForRust(artificialDeepestContext, type);
-			rustUnwrapper += `
-				${deepestRustValueUnwrapper.conversion}
-				return ${deepestRustValueUnwrapper.methodCallWrapperPrefix}${deepestRustValueUnwrapper.accessor}${deepestRustValueUnwrapper.methodCallWrapperSuffix}
-			${unwrapperSuffix}`;
+		const artificialDeepestContext = new RustFunctionArgument();
+		artificialDeepestContext.contextualName = 'currentValueDepth'+depth;
+		artificialDeepestContext.type = deepestIterateeContext.type;
 
-			rustUnwrapper = `
+		const deepestSwiftReturnValueWrapper = this.prepareRustReturnValueForSwift(artificialDeepestContext, type);
+		let deepestConstructor = `${deepestSwiftReturnValueWrapper.wrapperPrefix}currentCType${deepestSwiftReturnValueWrapper.wrapperSuffix}`;
+
+		swiftArrayToRustArrayMapper += `${indentation}${deepestConstructor}${unwrapperSuffix}`;
+		if(!(deepestIterateeContext.type instanceof RustPrimitive)){
+			// if the deepest type is not a primitive, a Swift->Rust mapper is necessary
+
+			if(!(type.iterateeField.type instanceof RustVector)) {
+				// additionally, if the top level iteratee is not a rust vector, a Rust->Swift mapper is necessary
+				// (if it is a vector, a corresponding underlying vector can be trivially initiated)
+				const deepestRustValueUnwrapper = this.prepareSwiftArgumentForRust(artificialDeepestContext, type);
+				rustArrayToSwiftArrayMapper = `
 						let rustArray = array.map { (currentValueDepth1) in
 							${deepestRustValueUnwrapper.conversion}
 							return ${deepestRustValueUnwrapper.methodCallWrapperPrefix}${deepestRustValueUnwrapper.accessor}${deepestRustValueUnwrapper.methodCallWrapperSuffix}
 						}
 			`;
+			}
 
-			const deepestSwiftReturnValueWrapper = this.prepareRustReturnValueForSwift(artificialDeepestContext, type);
-			let deepestConstructor = `${deepestSwiftReturnValueWrapper.wrapperPrefix}currentCType${deepestSwiftReturnValueWrapper.wrapperSuffix}`;
-			swiftUnwrapper += `${indentation}${deepestConstructor}${unwrapperSuffix}`;
-			// swiftUnwrapper = `
-			// 	let swiftArray = array.map { (currentCType) in
-			// 		${deepestConstructor}
-			// 	}
-			// `;
+
 		}
 
 		let bracketedIterateeTypeName = null;
@@ -95,12 +100,11 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 						}
 			`;
 			dataContainerInitializationArgumentName = 'lowerDimension';
-			rustUnwrapper = ''
+
 		} else if (type.iterateeField.type instanceof RustPrimitive) {
 			bracketedIterateeTypeName = `<${type.iterateeField.type.swiftRawSignature}>`;
 			dataContainerInitializationArgumentName = 'array';
-			rustUnwrapper = '';
-			swiftUnwrapper = 'let swiftArray = array';
+			swiftArrayToRustArrayMapper = 'let swiftArray = array';
 		}else if (type.iterateeField.type instanceof RustTuple || type.iterateeField.type instanceof RustPrimitiveWrapper || type.iterateeField.type instanceof RustTaggedValueEnum || type.iterateeField.type instanceof RustResult || type.iterateeField.type instanceof RustStruct) {
 			bracketedIterateeTypeName = `<${type.iterateeField.type.name}>`;
 		} else {
@@ -130,7 +134,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 						self.instanceNumber = Self.instanceCounter
 						super.init(conflictAvoidingVariableName: 0)
 
-						${rustUnwrapper}
+						${rustArrayToSwiftArrayMapper}
 
 						${dimensionalityReduction}
 
@@ -147,7 +151,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 
 						${this.valueAccessCode(type)}
 
-						${swiftUnwrapper}
+						${swiftArrayToRustArrayMapper}
 						return swiftArray
 					}
 
