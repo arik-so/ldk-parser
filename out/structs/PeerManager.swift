@@ -100,7 +100,13 @@
 						// return value (do some wrapping)
 						let returnValue = PeerManager(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Get the list of node ids for peers which have completed the initial handshake.

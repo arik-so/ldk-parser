@@ -114,7 +114,13 @@
 						// return value (do some wrapping)
 						let returnValue = Retry(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new Timeout-variant Retry
@@ -131,7 +137,13 @@
 						// return value (do some wrapping)
 						let returnValue = Retry(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Checks if two Retrys contain equal inner contents.

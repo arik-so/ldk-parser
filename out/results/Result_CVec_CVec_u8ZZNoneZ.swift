@@ -54,7 +54,13 @@
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Creates a new CResult_CVec_CVec_u8ZZNoneZ in the error state.
@@ -71,7 +77,13 @@
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Frees any resources used by the CResult_CVec_CVec_u8ZZNoneZ.

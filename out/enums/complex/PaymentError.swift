@@ -118,11 +118,17 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new Routing-variant PaymentError
-					public init(a: LightningError) {
+					public init(a: Bindings.LightningError) {
 						// native call variable prep
 						
 
@@ -135,7 +141,13 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new Sending-variant PaymentError
@@ -152,7 +164,13 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 
@@ -165,7 +183,7 @@
 						return Str(cType: self.cType!.invoice).getValue()
 					}
 			
-					public func getValueAsRouting() -> LightningError? {
+					public func getValueAsRouting() -> Bindings.LightningError? {
 						if self.cType?.tag != LDKPaymentError_Routing {
 							return nil
 						}

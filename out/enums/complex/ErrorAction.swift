@@ -124,7 +124,7 @@
 					}
 		
 					/// Utility method to constructs a new DisconnectPeer-variant ErrorAction
-					public class func DisconnectPeer(msg: ErrorMessage) -> ErrorAction {
+					public class func DisconnectPeer(msg: Bindings.ErrorMessage) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -171,7 +171,13 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new IgnoreDuplicateGossip-variant ErrorAction
@@ -192,7 +198,7 @@
 					}
 		
 					/// Utility method to constructs a new SendErrorMessage-variant ErrorAction
-					public class func SendErrorMessage(msg: ErrorMessage) -> ErrorAction {
+					public class func SendErrorMessage(msg: Bindings.ErrorMessage) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -209,7 +215,7 @@
 					}
 		
 					/// Utility method to constructs a new SendWarningMessage-variant ErrorAction
-					public init(msg: WarningMessage, logLevel: Level) {
+					public init(msg: Bindings.WarningMessage, logLevel: Level) {
 						// native call variable prep
 						
 
@@ -222,7 +228,13 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 

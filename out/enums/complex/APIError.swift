@@ -176,7 +176,13 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new RouteError-variant APIError
@@ -231,11 +237,17 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new IncompatibleShutdownScript-variant APIError
-					public init(script: ShutdownScript) {
+					public init(script: Bindings.ShutdownScript) {
 						// native call variable prep
 						
 
@@ -248,7 +260,13 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Checks if two APIErrors contain equal inner contents.

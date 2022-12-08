@@ -124,7 +124,13 @@
 						// return value (do some wrapping)
 						let returnValue = PhantomKeysManager(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// See [`KeysManager::spend_spendable_outputs`] for documentation on this method.

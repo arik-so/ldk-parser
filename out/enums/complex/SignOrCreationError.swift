@@ -111,7 +111,13 @@
 						// return value (do some wrapping)
 						let returnValue = SignOrCreationError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new CreationError-variant SignOrCreationError
@@ -128,7 +134,13 @@
 						// return value (do some wrapping)
 						let returnValue = SignOrCreationError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Checks if two SignOrCreationErrors contain equal inner contents.

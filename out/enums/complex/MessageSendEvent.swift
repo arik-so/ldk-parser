@@ -225,7 +225,7 @@
 					}
 		
 					/// Utility method to constructs a new SendAcceptChannel-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: AcceptChannel) {
+					public init(nodeId: [UInt8], msg: Bindings.AcceptChannel) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -240,11 +240,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendOpenChannel-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: OpenChannel) {
+					public init(nodeId: [UInt8], msg: Bindings.OpenChannel) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -259,11 +265,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendFundingCreated-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: FundingCreated) {
+					public init(nodeId: [UInt8], msg: Bindings.FundingCreated) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -278,11 +290,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendFundingSigned-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: FundingSigned) {
+					public init(nodeId: [UInt8], msg: Bindings.FundingSigned) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -297,11 +315,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendChannelReady-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: ChannelReady) {
+					public init(nodeId: [UInt8], msg: Bindings.ChannelReady) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -316,11 +340,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendAnnouncementSignatures-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: AnnouncementSignatures) {
+					public init(nodeId: [UInt8], msg: Bindings.AnnouncementSignatures) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -335,11 +365,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new UpdateHTLCs-variant MessageSendEvent
-					public init(nodeId: [UInt8], updates: CommitmentUpdate) {
+					public init(nodeId: [UInt8], updates: Bindings.CommitmentUpdate) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -354,11 +390,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendRevokeAndACK-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: RevokeAndACK) {
+					public init(nodeId: [UInt8], msg: Bindings.RevokeAndACK) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -373,11 +415,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendClosingSigned-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: ClosingSigned) {
+					public init(nodeId: [UInt8], msg: Bindings.ClosingSigned) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -392,11 +440,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendShutdown-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: Shutdown) {
+					public init(nodeId: [UInt8], msg: Bindings.Shutdown) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -411,11 +465,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendChannelReestablish-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: ChannelReestablish) {
+					public init(nodeId: [UInt8], msg: Bindings.ChannelReestablish) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -430,11 +490,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendChannelAnnouncement-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: ChannelAnnouncement, updateMsg: ChannelUpdate) {
+					public init(nodeId: [UInt8], msg: Bindings.ChannelAnnouncement, updateMsg: Bindings.ChannelUpdate) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -449,11 +515,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new BroadcastChannelAnnouncement-variant MessageSendEvent
-					public init(msg: ChannelAnnouncement, updateMsg: ChannelUpdate) {
+					public init(msg: Bindings.ChannelAnnouncement, updateMsg: Bindings.ChannelUpdate) {
 						// native call variable prep
 						
 
@@ -466,11 +538,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new BroadcastChannelUpdate-variant MessageSendEvent
-					public init(msg: ChannelUpdate) {
+					public init(msg: Bindings.ChannelUpdate) {
 						// native call variable prep
 						
 
@@ -483,11 +561,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendChannelUpdate-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: ChannelUpdate) {
+					public init(nodeId: [UInt8], msg: Bindings.ChannelUpdate) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -502,7 +586,13 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new HandleError-variant MessageSendEvent
@@ -521,11 +611,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendChannelRangeQuery-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: QueryChannelRange) {
+					public init(nodeId: [UInt8], msg: Bindings.QueryChannelRange) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -540,11 +636,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendShortIdsQuery-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: QueryShortChannelIds) {
+					public init(nodeId: [UInt8], msg: Bindings.QueryShortChannelIds) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -559,11 +661,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendReplyChannelRange-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: ReplyChannelRange) {
+					public init(nodeId: [UInt8], msg: Bindings.ReplyChannelRange) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -578,11 +686,17 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SendGossipTimestampFilter-variant MessageSendEvent
-					public init(nodeId: [UInt8], msg: GossipTimestampFilter) {
+					public init(nodeId: [UInt8], msg: Bindings.GossipTimestampFilter) {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -597,7 +711,13 @@
 						// return value (do some wrapping)
 						let returnValue = MessageSendEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 

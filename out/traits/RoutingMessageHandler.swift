@@ -42,6 +42,7 @@
 					public init(MessageSendEventsProvider: MessageSendEventsProvider) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
+						super.init(conflictAvoidingVariableName: 0)
 
 						let thisArg = Bindings.instanceToPointer(instance: self)
 
@@ -300,8 +301,6 @@
 							MessageSendEventsProvider: MessageSendEventsProvider.activate().cType!,
 							free: freeLambda
 						)
-
-						super.init(conflictAvoidingVariableName: 0)
 					}
 
 					

@@ -75,7 +75,13 @@
 						// return value (do some wrapping)
 						let returnValue = RapidGossipSync(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Update network graph from binary data.

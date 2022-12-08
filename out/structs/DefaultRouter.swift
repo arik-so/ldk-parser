@@ -74,7 +74,13 @@
 						// return value (do some wrapping)
 						let returnValue = DefaultRouter(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Constructs a new Router which calls the relevant methods on this_arg.

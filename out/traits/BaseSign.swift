@@ -52,6 +52,7 @@
 					public init(pubkeys: ChannelPublicKeys) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
+						super.init(conflictAvoidingVariableName: 0)
 
 						let thisArg = Bindings.instanceToPointer(instance: self)
 
@@ -364,8 +365,6 @@
 							ready_channel: readyChannelLambda,
 							free: freeLambda
 						)
-
-						super.init(conflictAvoidingVariableName: 0)
 					}
 
 					

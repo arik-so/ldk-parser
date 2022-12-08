@@ -116,7 +116,13 @@
 						// return value (do some wrapping)
 						let returnValue = BestBlock(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Returns a `BestBlock` as identified by the given block hash and height.
@@ -135,7 +141,13 @@
 						// return value (do some wrapping)
 						let returnValue = BestBlock(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Returns the best block hash.

@@ -74,7 +74,13 @@
 						// return value (do some wrapping)
 						let returnValue = InvoicePayer(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Pays the given [`Invoice`], caching it for later use in case a retry is needed.

@@ -173,7 +173,13 @@
 						// return value (do some wrapping)
 						let returnValue = NetAddress(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new OnionV3-variant NetAddress
@@ -192,11 +198,17 @@
 						// return value (do some wrapping)
 						let returnValue = NetAddress(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new Hostname-variant NetAddress
-					public init(hostname: Hostname, port: UInt16) {
+					public init(hostname: Bindings.Hostname, port: UInt16) {
 						// native call variable prep
 						
 
@@ -209,7 +221,13 @@
 						// return value (do some wrapping)
 						let returnValue = NetAddress(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Checks if two NetAddresss contain equal inner contents.

@@ -36,6 +36,7 @@
 					public init() {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
+						super.init(conflictAvoidingVariableName: 0)
 
 						let thisArg = Bindings.instanceToPointer(instance: self)
 
@@ -84,8 +85,6 @@
 							next_onion_message_for_peer: nextOnionMessageForPeerLambda,
 							free: freeLambda
 						)
-
-						super.init(conflictAvoidingVariableName: 0)
 					}
 
 					

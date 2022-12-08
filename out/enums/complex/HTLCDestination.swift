@@ -127,7 +127,13 @@
 						// return value (do some wrapping)
 						let returnValue = HTLCDestination(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new UnknownNextHop-variant HTLCDestination
@@ -144,7 +150,13 @@
 						// return value (do some wrapping)
 						let returnValue = HTLCDestination(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new FailedPayment-variant HTLCDestination
@@ -163,7 +175,13 @@
 						// return value (do some wrapping)
 						let returnValue = HTLCDestination(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Checks if two HTLCDestinations contain equal inner contents.

@@ -103,7 +103,13 @@
 						// return value (do some wrapping)
 						let returnValue = KeysManager(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Derive an old Sign containing per-channel secrets based on a key derivation parameters.

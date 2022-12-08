@@ -145,7 +145,13 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new PathParameterError-variant PaymentSendFailure
@@ -166,7 +172,13 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new AllFailedRetrySafe-variant PaymentSendFailure
@@ -187,11 +199,17 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new PartialFailure-variant PaymentSendFailure
-					public init(results: [Result_NoneAPIErrorZ], failedPathsRetry: RouteParameters, paymentId: [UInt8]) {
+					public init(results: [Result_NoneAPIErrorZ], failedPathsRetry: Bindings.RouteParameters, paymentId: [UInt8]) {
 						// native call variable prep
 						
 						let resultsVector = Vec_CResult_NoneAPIErrorZZ(array: results)
@@ -210,7 +228,13 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 

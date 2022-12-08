@@ -52,7 +52,13 @@
 						// return value (do some wrapping)
 						let returnValue = Result__u832APIErrorZ(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Creates a new CResult__u832APIErrorZ in the error state.
@@ -69,7 +75,13 @@
 						// return value (do some wrapping)
 						let returnValue = Result__u832APIErrorZ(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Frees any resources used by the CResult__u832APIErrorZ.

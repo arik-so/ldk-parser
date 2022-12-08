@@ -139,7 +139,13 @@
 						// return value (do some wrapping)
 						let returnValue = OnionMessenger(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Send an onion message with contents `message` to `destination`, routing it through `intermediate_nodes`.

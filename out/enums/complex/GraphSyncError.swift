@@ -112,11 +112,17 @@
 						// return value (do some wrapping)
 						let returnValue = GraphSyncError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new LightningError-variant GraphSyncError
-					public init(a: LightningError) {
+					public init(a: Bindings.LightningError) {
 						// native call variable prep
 						
 
@@ -129,7 +135,13 @@
 						// return value (do some wrapping)
 						let returnValue = GraphSyncError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 
@@ -142,7 +154,7 @@
 						return DecodeError(cType: self.cType!.decode_error)
 					}
 			
-					public func getValueAsLightningError() -> LightningError? {
+					public func getValueAsLightningError() -> Bindings.LightningError? {
 						if self.cType?.tag != LDKGraphSyncError_LightningError {
 							return nil
 						}

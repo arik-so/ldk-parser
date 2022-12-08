@@ -40,6 +40,7 @@
 					public init() {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
+						super.init(conflictAvoidingVariableName: 0)
 
 						let thisArg = Bindings.instanceToPointer(instance: self)
 
@@ -88,8 +89,6 @@
 							get_est_sat_per_1000_weight: getEstSatPer_1000WeightLambda,
 							free: freeLambda
 						)
-
-						super.init(conflictAvoidingVariableName: 0)
 					}
 
 					

@@ -80,7 +80,13 @@
 						// return value (do some wrapping)
 						let returnValue = Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Frees any resources used by the C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ.

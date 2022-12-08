@@ -115,7 +115,7 @@
 					}
 		
 					/// Utility method to constructs a new HTLCEvent-variant MonitorEvent
-					public init(a: HTLCUpdate) {
+					public init(a: Bindings.HTLCUpdate) {
 						// native call variable prep
 						
 
@@ -128,11 +128,17 @@
 						// return value (do some wrapping)
 						let returnValue = MonitorEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new CommitmentTxConfirmed-variant MonitorEvent
-					public class func CommitmentTxConfirmed(a: OutPoint) -> MonitorEvent {
+					public class func CommitmentTxConfirmed(a: Bindings.OutPoint) -> MonitorEvent {
 						// native call variable prep
 						
 
@@ -149,7 +155,7 @@
 					}
 		
 					/// Utility method to constructs a new Completed-variant MonitorEvent
-					public init(fundingTxo: OutPoint, monitorUpdateId: UInt64) {
+					public init(fundingTxo: Bindings.OutPoint, monitorUpdateId: UInt64) {
 						// native call variable prep
 						
 
@@ -162,11 +168,17 @@
 						// return value (do some wrapping)
 						let returnValue = MonitorEvent(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new UpdateFailed-variant MonitorEvent
-					public class func UpdateFailed(a: OutPoint) -> MonitorEvent {
+					public class func UpdateFailed(a: Bindings.OutPoint) -> MonitorEvent {
 						// native call variable prep
 						
 
@@ -250,7 +262,7 @@
 		
 
 					
-					public func getValueAsHtlcEvent() -> HTLCUpdate? {
+					public func getValueAsHtlcEvent() -> Bindings.HTLCUpdate? {
 						if self.cType?.tag != LDKMonitorEvent_HTLCEvent {
 							return nil
 						}
@@ -258,7 +270,7 @@
 						return HTLCUpdate(cType: self.cType!.htlc_event)
 					}
 			
-					public func getValueAsCommitmentTxConfirmed() -> OutPoint? {
+					public func getValueAsCommitmentTxConfirmed() -> Bindings.OutPoint? {
 						if self.cType?.tag != LDKMonitorEvent_CommitmentTxConfirmed {
 							return nil
 						}
@@ -274,7 +286,7 @@
 						return MonitorEvent_LDKCompleted_Body(cType: self.cType!.completed)
 					}
 			
-					public func getValueAsUpdateFailed() -> OutPoint? {
+					public func getValueAsUpdateFailed() -> Bindings.OutPoint? {
 						if self.cType?.tag != LDKMonitorEvent_UpdateFailed {
 							return nil
 						}

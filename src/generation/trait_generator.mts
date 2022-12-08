@@ -113,6 +113,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					public init(${constructorArguments.join(', ')}) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
+						super.init(conflictAvoidingVariableName: 0)
 
 						let thisArg = Bindings.instanceToPointer(instance: self)
 
@@ -121,8 +122,6 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 						${generatedLambdas}
 
 						self.cType = ${type.name}(${renderedTraitInitializationArguments})
-
-						super.init(conflictAvoidingVariableName: 0)
 					}
 
 					${generatedCallbacks}

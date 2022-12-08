@@ -194,7 +194,13 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (swiftMethodName === 'init') {
 			// it's a constructor
 			methodDeclarationKeywords = visibility;
-			returnCommand = 'self.cType = nativeCallResult';
+			returnCommand = `
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			`;
 		}
 
 		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue, containerType);
@@ -382,10 +388,20 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					const regex = new RegExp(`^${containerType.name}_LDK(.*)_Body$`);
 					const matches = regex.exec(type.name);
 					if (Array.isArray(matches)) {
+						const abbreviatedName = matches[1];
+						/**
+						 * BUT WAIT! Is there already a type with the same name? Stranger
+						 * things have happened!
+ 						 */
 						return matches[1];
 					}
 				}
 			}
+
+			if(containerType instanceof RustTaggedValueEnum && type instanceof RustStruct){
+				return `Bindings.${this.swiftTypeName(type)}`
+			}
+
 			return this.swiftTypeName(type);
 		}
 

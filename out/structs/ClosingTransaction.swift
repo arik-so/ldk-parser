@@ -148,7 +148,13 @@
 						// return value (do some wrapping)
 						let returnValue = ClosingTransaction(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Trust our pre-built transaction.

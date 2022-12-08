@@ -83,7 +83,13 @@
 						// return value (do some wrapping)
 						let returnValue = ChainMonitor(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Gets the balances in the contained [`ChannelMonitor`]s which are claimable on-chain or

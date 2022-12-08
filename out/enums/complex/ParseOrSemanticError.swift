@@ -112,7 +112,13 @@
 						// return value (do some wrapping)
 						let returnValue = ParseOrSemanticError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new SemanticError-variant ParseOrSemanticError
@@ -129,7 +135,13 @@
 						// return value (do some wrapping)
 						let returnValue = ParseOrSemanticError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Checks if two ParseOrSemanticErrors contain equal inner contents.

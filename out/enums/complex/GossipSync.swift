@@ -82,7 +82,7 @@
 					}
 		
 					/// Utility method to constructs a new P2P-variant GossipSync
-					public init(a: P2PGossipSync) {
+					public init(a: Bindings.P2PGossipSync) {
 						// native call variable prep
 						
 
@@ -99,11 +99,17 @@
 						// return value (do some wrapping)
 						let returnValue = GossipSync(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new Rapid-variant GossipSync
-					public init(a: RapidGossipSync) {
+					public init(a: Bindings.RapidGossipSync) {
 						// native call variable prep
 						
 
@@ -120,7 +126,13 @@
 						// return value (do some wrapping)
 						let returnValue = GossipSync(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new None-variant GossipSync
@@ -142,7 +154,7 @@
 		
 
 					
-					public func getValueAsP2p() -> P2PGossipSync? {
+					public func getValueAsP2p() -> Bindings.P2PGossipSync? {
 						if self.cType?.tag != LDKGossipSync_P2P {
 							return nil
 						}
@@ -150,7 +162,7 @@
 						return P2PGossipSync(cType: self.cType!.p2p)
 					}
 			
-					public func getValueAsRapid() -> RapidGossipSync? {
+					public func getValueAsRapid() -> Bindings.RapidGossipSync? {
 						if self.cType?.tag != LDKGossipSync_Rapid {
 							return nil
 						}

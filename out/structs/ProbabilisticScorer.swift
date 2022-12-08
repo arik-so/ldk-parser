@@ -107,7 +107,13 @@
 						// return value (do some wrapping)
 						let returnValue = ProbabilisticScorer(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Dump the contents of this scorer into the configured logger.

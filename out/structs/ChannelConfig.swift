@@ -428,7 +428,13 @@
 						// return value (do some wrapping)
 						let returnValue = ChannelConfig(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Creates a copy of the ChannelConfig
@@ -493,7 +499,13 @@
 						// return value (do some wrapping)
 						let returnValue = ChannelConfig(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Serialize the ChannelConfig object into a byte array which can be read by ChannelConfig_read

@@ -122,7 +122,13 @@
 						// return value (do some wrapping)
 						let returnValue = Fallback(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new PubKeyHash-variant Fallback

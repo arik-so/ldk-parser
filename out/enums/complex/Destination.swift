@@ -91,11 +91,17 @@
 						// return value (do some wrapping)
 						let returnValue = Destination(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new BlindedRoute-variant Destination
-					public init(a: BlindedRoute) {
+					public init(a: Bindings.BlindedRoute) {
 						// native call variable prep
 						
 
@@ -108,7 +114,13 @@
 						// return value (do some wrapping)
 						let returnValue = Destination(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 
@@ -121,7 +133,7 @@
 						return PublicKey(cType: self.cType!.node).getValue()
 					}
 			
-					public func getValueAsBlindedRoute() -> BlindedRoute? {
+					public func getValueAsBlindedRoute() -> Bindings.BlindedRoute? {
 						if self.cType?.tag != LDKDestination_BlindedRoute {
 							return nil
 						}

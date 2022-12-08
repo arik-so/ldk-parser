@@ -55,7 +55,13 @@
 						// return value (do some wrapping)
 						let returnValue = TxOut(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Frees the data pointed to by script_pubkey.

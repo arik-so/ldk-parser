@@ -208,11 +208,17 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new ParseAmountError-variant ParseError
-					public class func ParseAmountError(a: BindingsError) -> ParseError {
+					public class func ParseAmountError(a: Bindings.BindingsError) -> ParseError {
 						// native call variable prep
 						
 
@@ -242,7 +248,13 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new BadPrefix-variant ParseError
@@ -348,7 +360,7 @@
 					}
 		
 					/// Utility method to constructs a new DescriptionDecodeError-variant ParseError
-					public class func DescriptionDecodeError(a: BindingsError) -> ParseError {
+					public class func DescriptionDecodeError(a: Bindings.BindingsError) -> ParseError {
 						// native call variable prep
 						
 
@@ -482,7 +494,13 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new Skip-variant ParseError
@@ -559,7 +577,7 @@
 						return Bech32Error(cType: self.cType!.bech32_error)
 					}
 			
-					public func getValueAsParseAmountError() -> BindingsError? {
+					public func getValueAsParseAmountError() -> Bindings.BindingsError? {
 						if self.cType?.tag != LDKParseError_ParseAmountError {
 							return nil
 						}
@@ -575,7 +593,7 @@
 						return Secp256k1Error(value: self.cType!.malformed_signature)
 					}
 			
-					public func getValueAsDescriptionDecodeError() -> BindingsError? {
+					public func getValueAsDescriptionDecodeError() -> Bindings.BindingsError? {
 						if self.cType?.tag != LDKParseError_DescriptionDecodeError {
 							return nil
 						}

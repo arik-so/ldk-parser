@@ -50,7 +50,13 @@
 						// return value (do some wrapping)
 						let returnValue = Result_CommitmentSignedDecodeErrorZ(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Creates a new CResult_CommitmentSignedDecodeErrorZ in the error state.
@@ -67,7 +73,13 @@
 						// return value (do some wrapping)
 						let returnValue = Result_CommitmentSignedDecodeErrorZ(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Frees any resources used by the CResult_CommitmentSignedDecodeErrorZ.

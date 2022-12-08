@@ -34,11 +34,9 @@
 		07CE1EBE28E767DC00BB37E4 /* BTCHashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE1EAF28E767DB00BB37E4 /* BTCHashing.swift */; };
 		07CE1EBF28E767DC00BB37E4 /* TestBroadcasterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE1EB028E767DC00BB37E4 /* TestBroadcasterInterface.swift */; };
 		07D3E7C6286C14360095CCD8 /* libldk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D3E7C5286C142F0095CCD8 /* libldk.a */; };
-		07DF14B129412AF900531169 /* ChannelManagerConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14AF29412AF900531169 /* ChannelManagerConstructor.swift */; };
 		07DF14B229412AF900531169 /* ChannelManagerConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14AF29412AF900531169 /* ChannelManagerConstructor.swift */; };
 		07DF14B329412AF900531169 /* ChannelManagerConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14AF29412AF900531169 /* ChannelManagerConstructor.swift */; };
 		07DF14B429412AF900531169 /* ChannelManagerConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14AF29412AF900531169 /* ChannelManagerConstructor.swift */; };
-		07DF14B529412AF900531169 /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14B029412AF900531169 /* UtilMethods.swift */; };
 		07DF14B629412AF900531169 /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14B029412AF900531169 /* UtilMethods.swift */; };
 		07DF14B729412AF900531169 /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14B029412AF900531169 /* UtilMethods.swift */; };
 		07DF14B829412AF900531169 /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14B029412AF900531169 /* UtilMethods.swift */; };
@@ -3747,7 +3745,6 @@
 				07DF2B4A2941684800531169 /* KeysInterface.swift in Sources */,
 				07DF2CD62941684A00531169 /* ConfirmationTarget.swift in Sources */,
 				07DF2ECA2941684D00531169 /* Result_RoutingFeesDecodeErrorZ.swift in Sources */,
-				07DF14B129412AF900531169 /* ChannelManagerConstructor.swift in Sources */,
 				07DF304A2941684F00531169 /* NodeFeatures.swift in Sources */,
 				07DF2AD42941684800531169 /* Option_TypeZ.swift in Sources */,
 				07DF2D2A2941684B00531169 /* Vec_UpdateAddHTLCZ.swift in Sources */,
@@ -3808,7 +3805,6 @@
 				07DF2C322941684900531169 /* DecodeError.swift in Sources */,
 				07DF2EB62941684D00531169 /* Result_NetworkGraphDecodeErrorZ.swift in Sources */,
 				07DF2D9E2941684B00531169 /* Vec_SignatureZ.swift in Sources */,
-				07DF14B529412AF900531169 /* UtilMethods.swift in Sources */,
 				07DF2FBE2941684F00531169 /* Result_HTLCOutputInCommitmentDecodeErrorZ.swift in Sources */,
 				07DF2CD22941684A00531169 /* ParseOrSemanticError_Tag.swift in Sources */,
 				07DF30362941684F00531169 /* HTLCOutputInCommitment.swift in Sources */,

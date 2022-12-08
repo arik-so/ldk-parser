@@ -36,6 +36,7 @@
 					public init(CustomMessageReader: CustomMessageReader) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
+						super.init(conflictAvoidingVariableName: 0)
 
 						let thisArg = Bindings.instanceToPointer(instance: self)
 
@@ -104,8 +105,6 @@
 							CustomMessageReader: CustomMessageReader.activate().cType!,
 							free: freeLambda
 						)
-
-						super.init(conflictAvoidingVariableName: 0)
 					}
 
 					

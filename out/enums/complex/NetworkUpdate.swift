@@ -109,7 +109,7 @@
 					}
 		
 					/// Utility method to constructs a new ChannelUpdateMessage-variant NetworkUpdate
-					public init(msg: ChannelUpdate) {
+					public init(msg: Bindings.ChannelUpdate) {
 						// native call variable prep
 						
 
@@ -122,7 +122,13 @@
 						// return value (do some wrapping)
 						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new ChannelFailure-variant NetworkUpdate
@@ -139,7 +145,13 @@
 						// return value (do some wrapping)
 						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Utility method to constructs a new NodeFailure-variant NetworkUpdate
@@ -158,7 +170,13 @@
 						// return value (do some wrapping)
 						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
-						self.cType = nativeCallResult
+						
+				self.cType = nativeCallResult
+
+				Self.instanceCounter += 1
+				self.instanceNumber = Self.instanceCounter
+				super.init(conflictAvoidingVariableName: 0)
+			
 					}
 		
 					/// Checks if two NetworkUpdates contain equal inner contents.
