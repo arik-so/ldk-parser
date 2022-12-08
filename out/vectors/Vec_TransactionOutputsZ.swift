@@ -39,14 +39,14 @@
 						self.instanceNumber = Self.instanceCounter
 						super.init(conflictAvoidingVariableName: 0)
 
+						
 						let rustArray = array.map { (currentValueDepth1) in
-
-				
+							
 						let currentValueDepth1Tuple = Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(tuple: currentValueDepth1)
 				
-				return currentValueDepth1Tuple.cType!
-			
+							return currentValueDepth1Tuple.cType!
 						}
+			
 
 						
 

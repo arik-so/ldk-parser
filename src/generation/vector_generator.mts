@@ -27,7 +27,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		let dataContainerInitializationArgumentName = 'rustArray';
 		let dimensionalityReduction = '';
 
-		let rustUnwrapper = 'let rustArray = array.map { (currentValueDepth1) in\n';
+		let rustUnwrapper = '';
 		let swiftUnwrapper = 'let swiftArray = array.map { (currentCType) in\n';
 
 		let unwrapperSuffix = '';
@@ -61,9 +61,21 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 				return ${deepestRustValueUnwrapper.methodCallWrapperPrefix}${deepestRustValueUnwrapper.accessor}${deepestRustValueUnwrapper.methodCallWrapperSuffix}
 			${unwrapperSuffix}`;
 
+			rustUnwrapper = `
+						let rustArray = array.map { (currentValueDepth1) in
+							${deepestRustValueUnwrapper.conversion}
+							return ${deepestRustValueUnwrapper.methodCallWrapperPrefix}${deepestRustValueUnwrapper.accessor}${deepestRustValueUnwrapper.methodCallWrapperSuffix}
+						}
+			`;
+
 			const deepestSwiftReturnValueWrapper = this.prepareRustReturnValueForSwift(artificialDeepestContext, type);
 			let deepestConstructor = `${deepestSwiftReturnValueWrapper.wrapperPrefix}currentCType${deepestSwiftReturnValueWrapper.wrapperSuffix}`;
 			swiftUnwrapper += `${indentation}${deepestConstructor}${unwrapperSuffix}`;
+			// swiftUnwrapper = `
+			// 	let swiftArray = array.map { (currentCType) in
+			// 		${deepestConstructor}
+			// 	}
+			// `;
 		}
 
 		let bracketedIterateeTypeName = null;
@@ -76,13 +88,14 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 
 			dimensionalityReduction = `
 						var lowerDimension = [${iterateeRustTypeName}]()
-						for currentEntry in rustArray {
+						for currentEntry in array {
 							let convertedEntry = ${iterateeSwiftTypeName}(array: currentEntry)
 							lowerDimension.append(convertedEntry.cType!)
 							try! self.addAnchor(anchor: convertedEntry)
 						}
 			`;
 			dataContainerInitializationArgumentName = 'lowerDimension';
+			rustUnwrapper = ''
 		} else if (type.iterateeField.type instanceof RustPrimitive) {
 			bracketedIterateeTypeName = `<${type.iterateeField.type.swiftRawSignature}>`;
 			dataContainerInitializationArgumentName = 'array';

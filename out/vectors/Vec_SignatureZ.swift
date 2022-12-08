@@ -39,14 +39,14 @@
 						self.instanceNumber = Self.instanceCounter
 						super.init(conflictAvoidingVariableName: 0)
 
+						
 						let rustArray = array.map { (currentValueDepth1) in
-
-				
+							
 						let currentValueDepth1PrimitiveWrapper = Signature(value: currentValueDepth1)
 				
-				return currentValueDepth1PrimitiveWrapper.cType!
-			
+							return currentValueDepth1PrimitiveWrapper.cType!
 						}
+			
 
 						
 

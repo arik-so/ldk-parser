@@ -39,18 +39,11 @@
 						self.instanceNumber = Self.instanceCounter
 						super.init(conflictAvoidingVariableName: 0)
 
-						let rustArray = array.map { (currentValueDepth1) in
-							currentValueDepth1.map { (currentValueDepth2) in
-
-				
-				return currentValueDepth2.cType!
-			
-							}
-						}
+						
 
 						
 						var lowerDimension = [LDKCVec_RouteHopZ]()
-						for currentEntry in rustArray {
+						for currentEntry in array {
 							let convertedEntry = Vec_RouteHopZ(array: currentEntry)
 							lowerDimension.append(convertedEntry.cType!)
 							try! self.addAnchor(anchor: convertedEntry)
