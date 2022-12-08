@@ -114,19 +114,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> CreationError? {
 						if self.cType?.result_ok == false {
 							return CreationError(value: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> Description? {
 						if self.cType?.result_ok == true {
 							return Description(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_DescriptionCreationErrorZ {
         				self.dangling = true

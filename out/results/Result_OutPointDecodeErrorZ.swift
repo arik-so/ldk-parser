@@ -114,19 +114,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
 							return DecodeError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> OutPoint? {
 						if self.cType?.result_ok == true {
 							return OutPoint(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_OutPointDecodeErrorZ {
         				self.dangling = true

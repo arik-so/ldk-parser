@@ -114,19 +114,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
 							return DecodeError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> ChannelMonitorUpdate? {
 						if self.cType?.result_ok == true {
 							return ChannelMonitorUpdate(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_ChannelMonitorUpdateDecodeErrorZ {
         				self.dangling = true

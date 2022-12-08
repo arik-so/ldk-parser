@@ -1,4 +1,4 @@
-import {RustResult, RustResultValueEnum} from '../rust_types.mjs';
+import {RustPrimitive, RustResult, RustResultValueEnum} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 
 export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
@@ -25,6 +25,20 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 		let successTypeSignature = this.getPublicTypeSignature(valueEnum.resultVariant.type);
 		let errorTypeSignature = this.getPublicTypeSignature(valueEnum.errorVariant.type);
 
+		let successBlockCommentPrefix = '';
+		let successBlockCommentSuffix = '';
+		let failureBlockCommentPrefix = '';
+		let failureBlockCommentSuffix = '';
+
+		if(valueEnum.resultVariant.type instanceof RustPrimitive && valueEnum.resultVariant.type.swiftRawSignature === 'Void'){
+			successBlockCommentPrefix = '/*'
+			successBlockCommentSuffix = '*/'
+		}
+		if(valueEnum.errorVariant.type instanceof RustPrimitive && valueEnum.errorVariant.type.swiftRawSignature === 'Void'){
+			failureBlockCommentPrefix = '/*'
+			failureBlockCommentSuffix = '*/'
+		}
+
 		if (!successTypeSignature.endsWith('?')) {
 			// it's always an optional
 			successTypeSignature += '?';
@@ -34,6 +48,8 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 			// it's always an optional
 			errorTypeSignature += '?';
 		}
+
+
 
 		return `
 			#if SWIFT_PACKAGE
@@ -55,19 +71,23 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 						return self.cType?.result_ok == true
 					}
 
+					${failureBlockCommentPrefix}
 					public func getError() -> ${errorTypeSignature} {
 						if self.cType?.result_ok == false {
 							return ${preparedErrorReturnValue.wrapperPrefix}self.cType!.contents.err.pointee${preparedErrorReturnValue.wrapperSuffix}
 						}
 						return nil
 					}
+					${failureBlockCommentSuffix}
 
+					${successBlockCommentPrefix}
 					public func getValue() -> ${successTypeSignature} {
 						if self.cType?.result_ok == true {
 							return ${preparedSuccessReturnValue.wrapperPrefix}self.cType!.contents.result.pointee${preparedSuccessReturnValue.wrapperSuffix}
 						}
 						return nil
 					}
+					${successBlockCommentSuffix}
 
 					internal func dangle() -> ${swiftTypeName} {
         				self.dangling = true

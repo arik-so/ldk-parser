@@ -116,19 +116,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
 							return DecodeError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> MonitorEvent? {
 						if self.cType?.result_ok == true {
 							return Option_MonitorEventZ(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_COption_MonitorEventZDecodeErrorZ {
         				self.dangling = true

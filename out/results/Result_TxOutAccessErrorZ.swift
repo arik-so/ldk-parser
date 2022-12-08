@@ -114,19 +114,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> AccessError? {
 						if self.cType?.result_ok == false {
 							return AccessError(value: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> TxOut? {
 						if self.cType?.result_ok == true {
 							return TxOut(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_TxOutAccessErrorZ {
         				self.dangling = true

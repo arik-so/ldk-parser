@@ -114,19 +114,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> LightningError? {
 						if self.cType?.result_ok == false {
 							return LightningError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> Route? {
 						if self.cType?.result_ok == true {
 							return Route(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_RouteLightningErrorZ {
         				self.dangling = true

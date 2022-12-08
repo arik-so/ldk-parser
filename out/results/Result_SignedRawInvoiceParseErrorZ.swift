@@ -114,19 +114,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> ParseError? {
 						if self.cType?.result_ok == false {
 							return ParseError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> SignedRawInvoice? {
 						if self.cType?.result_ok == true {
 							return SignedRawInvoice(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_SignedRawInvoiceParseErrorZ {
         				self.dangling = true

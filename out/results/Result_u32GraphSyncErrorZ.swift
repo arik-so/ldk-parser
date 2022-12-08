@@ -92,19 +92,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> GraphSyncError? {
 						if self.cType?.result_ok == false {
 							return GraphSyncError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> UInt32? {
 						if self.cType?.result_ok == true {
 							return self.cType!.contents.result.pointee
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_u32GraphSyncErrorZ {
         				self.dangling = true

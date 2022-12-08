@@ -114,19 +114,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> InvalidShutdownScript? {
 						if self.cType?.result_ok == false {
 							return InvalidShutdownScript(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> ShutdownScript? {
 						if self.cType?.result_ok == true {
 							return ShutdownScript(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_ShutdownScriptInvalidShutdownScriptZ {
         				self.dangling = true

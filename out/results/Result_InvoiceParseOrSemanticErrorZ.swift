@@ -114,19 +114,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> ParseOrSemanticError? {
 						if self.cType?.result_ok == false {
 							return ParseOrSemanticError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> Invoice? {
 						if self.cType?.result_ok == true {
 							return Invoice(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_InvoiceParseOrSemanticErrorZ {
         				self.dangling = true

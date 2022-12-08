@@ -116,19 +116,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> PaymentError? {
 						if self.cType?.result_ok == false {
 							return PaymentError(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
 							return ThirtyTwoBytes(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_PaymentIdPaymentErrorZ {
         				self.dangling = true

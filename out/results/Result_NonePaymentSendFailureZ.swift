@@ -114,19 +114,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> PaymentSendFailure? {
 						if self.cType?.result_ok == false {
 							return PaymentSendFailure(cType: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					/*
 					public func getValue() -> Void? {
 						if self.cType?.result_ok == true {
 							return self.cType!.contents.result.pointee
 						}
 						return nil
 					}
+					*/
 
 					internal func dangle() -> Result_NonePaymentSendFailureZ {
         				self.dangling = true

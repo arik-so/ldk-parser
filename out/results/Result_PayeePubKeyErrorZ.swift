@@ -114,19 +114,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> Secp256k1Error? {
 						if self.cType?.result_ok == false {
 							return Secp256k1Error(value: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> PayeePubKey? {
 						if self.cType?.result_ok == true {
 							return PayeePubKey(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_PayeePubKeyErrorZ {
         				self.dangling = true

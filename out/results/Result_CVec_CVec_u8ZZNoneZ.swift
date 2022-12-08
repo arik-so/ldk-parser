@@ -118,19 +118,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					/*
 					public func getError() -> Void? {
 						if self.cType?.result_ok == false {
 							return self.cType!.contents.err.pointee
 						}
 						return nil
 					}
+					*/
 
+					
 					public func getValue() -> [[UInt8]]? {
 						if self.cType?.result_ok == true {
 							return Vec_CVec_u8ZZ(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_CVec_CVec_u8ZZNoneZ {
         				self.dangling = true

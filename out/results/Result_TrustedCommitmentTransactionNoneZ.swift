@@ -92,19 +92,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					/*
 					public func getError() -> Void? {
 						if self.cType?.result_ok == false {
 							return self.cType!.contents.err.pointee
 						}
 						return nil
 					}
+					*/
 
+					
 					public func getValue() -> TrustedCommitmentTransaction? {
 						if self.cType?.result_ok == true {
 							return TrustedCommitmentTransaction(cType: self.cType!.contents.result.pointee)
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_TrustedCommitmentTransactionNoneZ {
         				self.dangling = true

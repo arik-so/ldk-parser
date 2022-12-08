@@ -116,19 +116,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					/*
 					public func getError() -> Void? {
 						if self.cType?.result_ok == false {
 							return self.cType!.contents.err.pointee
 						}
 						return nil
 					}
+					*/
 
+					
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
 							return PublicKey(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_PublicKeyNoneZ {
         				self.dangling = true

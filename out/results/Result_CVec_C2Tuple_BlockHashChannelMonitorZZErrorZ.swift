@@ -118,19 +118,23 @@
 						return self.cType?.result_ok == true
 					}
 
+					
 					public func getError() -> IOError? {
 						if self.cType?.result_ok == false {
 							return IOError(value: self.cType!.contents.err.pointee)
 						}
 						return nil
 					}
+					
 
+					
 					public func getValue() -> [([UInt8], ChannelMonitor)]? {
 						if self.cType?.result_ok == true {
 							return Vec_C2Tuple_BlockHashChannelMonitorZZ(cType: self.cType!.contents.result.pointee).getValue()
 						}
 						return nil
 					}
+					
 
 					internal func dangle() -> Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ {
         				self.dangling = true
