@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::c_types::derived::C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZs of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ = Bindings.Vec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ
 
 			extension Bindings {

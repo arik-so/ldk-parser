@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::lightning::ln::msgs::UpdateFulfillHTLCs of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_UpdateFulfillHTLCZ = Bindings.Vec_UpdateFulfillHTLCZ
 
 			extension Bindings {

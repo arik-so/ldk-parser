@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::lightning::util::events::MessageSendEvents of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_MessageSendEventZ = Bindings.Vec_MessageSendEventZ
 
 			extension Bindings {

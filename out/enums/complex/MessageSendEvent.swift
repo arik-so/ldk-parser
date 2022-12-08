@@ -908,6 +908,7 @@
 
 					
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendAcceptChannel_Body = SendAcceptChannel
 			
 
@@ -969,6 +970,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendOpenChannel_Body = SendOpenChannel
 			
 
@@ -1030,6 +1032,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendFundingCreated_Body = SendFundingCreated
 			
 
@@ -1091,6 +1094,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendFundingSigned_Body = SendFundingSigned
 			
 
@@ -1152,6 +1156,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendChannelReady_Body = SendChannelReady
 			
 
@@ -1213,6 +1218,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendAnnouncementSignatures_Body = SendAnnouncementSignatures
 			
 
@@ -1274,6 +1280,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKUpdateHTLCs_Body = UpdateHTLCs
 			
 
@@ -1335,6 +1342,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendRevokeAndACK_Body = SendRevokeAndACK
 			
 
@@ -1396,6 +1404,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendClosingSigned_Body = SendClosingSigned
 			
 
@@ -1457,6 +1466,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendShutdown_Body = SendShutdown
 			
 
@@ -1518,6 +1528,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendChannelReestablish_Body = SendChannelReestablish
 			
 
@@ -1579,6 +1590,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendChannelAnnouncement_Body = SendChannelAnnouncement
 			
 
@@ -1648,6 +1660,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKBroadcastChannelAnnouncement_Body = BroadcastChannelAnnouncement
 			
 
@@ -1709,6 +1722,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKBroadcastChannelUpdate_Body = BroadcastChannelUpdate
 			
 
@@ -1762,6 +1776,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendChannelUpdate_Body = SendChannelUpdate
 			
 
@@ -1823,6 +1838,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKHandleError_Body = HandleError
 			
 
@@ -1884,6 +1900,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendChannelRangeQuery_Body = SendChannelRangeQuery
 			
 
@@ -1945,6 +1962,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendShortIdsQuery_Body = SendShortIdsQuery
 			
 
@@ -2006,6 +2024,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendReplyChannelRange_Body = SendReplyChannelRange
 			
 
@@ -2067,6 +2086,7 @@
 					
 		
 					
+					/// 
 					internal typealias MessageSendEvent_LDKSendGossipTimestampFilter_Body = SendGossipTimestampFilter
 			
 

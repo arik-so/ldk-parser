@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			internal typealias Option_WriteableScoreZ = Bindings.Option_WriteableScoreZ
 
 			extension Bindings {

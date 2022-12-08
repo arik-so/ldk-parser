@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::c_types::ThirtyTwoBytess of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_TxidZ = Bindings.Vec_TxidZ
 
 			extension Bindings {

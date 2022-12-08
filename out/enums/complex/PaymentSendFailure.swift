@@ -297,6 +297,7 @@
 
 					
 					
+					/// 
 					internal typealias PaymentSendFailure_LDKPartialFailure_Body = PartialFailure
 			
 

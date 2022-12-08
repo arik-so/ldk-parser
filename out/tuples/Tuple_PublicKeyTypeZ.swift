@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A tuple of 2 elements. See the individual fields for the types contained.
 			internal typealias Tuple_PublicKeyTypeZ = Bindings.Tuple_PublicKeyTypeZ
 
 			extension Bindings {

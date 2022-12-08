@@ -297,6 +297,7 @@
 
 					
 					
+					/// 
 					internal typealias NetworkUpdate_LDKChannelUpdateMessage_Body = ChannelUpdateMessage
 			
 
@@ -350,6 +351,7 @@
 					
 		
 					
+					/// 
 					internal typealias NetworkUpdate_LDKChannelFailure_Body = ChannelFailure
 			
 
@@ -412,6 +414,7 @@
 					
 		
 					
+					/// 
 					internal typealias NetworkUpdate_LDKNodeFailure_Body = NodeFailure
 			
 

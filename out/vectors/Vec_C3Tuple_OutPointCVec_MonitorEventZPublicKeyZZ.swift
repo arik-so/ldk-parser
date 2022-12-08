@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::c_types::derived::C3Tuple_OutPointCVec_MonitorEventZPublicKeyZs of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ = Bindings.Vec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ
 
 			extension Bindings {

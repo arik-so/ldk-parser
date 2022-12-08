@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			internal typealias Option_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ = Bindings.Option_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ
 
 			extension Bindings {

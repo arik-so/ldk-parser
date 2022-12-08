@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents a valid secp256k1 public key serialized in "compressed form" as a 33 byte array.
 			internal typealias PublicKey = Bindings.PublicKey
 
 			extension Bindings {

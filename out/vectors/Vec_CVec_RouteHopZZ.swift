@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::c_types::derived::CVec_RouteHopZs of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_CVec_RouteHopZZ = Bindings.Vec_CVec_RouteHopZZ
 
 			extension Bindings {

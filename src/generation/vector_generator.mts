@@ -121,6 +121,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			import LDKHeaders
 			#endif
 
+			${this.renderDocComment(type.documentation, 3)}
 			internal typealias ${swiftTypeName} = Bindings.${swiftTypeName}
 
 			extension Bindings {

@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A Rust str object, ie a reference to a UTF8-valid string.
+			/// This is *not* null-terminated so cannot be used directly as a C string!
 			internal typealias Str = Bindings.Str
 
 			extension Bindings {

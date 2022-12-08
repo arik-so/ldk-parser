@@ -364,6 +364,7 @@
 
 					
 					
+					/// 
 					internal typealias NetAddress_LDKIPv4_Body = IPv4
 			
 
@@ -425,6 +426,7 @@
 					
 		
 					
+					/// 
 					internal typealias NetAddress_LDKIPv6_Body = IPv6
 			
 
@@ -486,6 +488,7 @@
 					
 		
 					
+					/// 
 					internal typealias NetAddress_LDKOnionV3_Body = OnionV3
 			
 
@@ -563,6 +566,7 @@
 					
 		
 					
+					/// 
 					internal typealias NetAddress_LDKHostname_Body = Hostname
 			
 

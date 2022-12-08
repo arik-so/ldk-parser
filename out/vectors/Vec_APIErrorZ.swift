@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::lightning::util::errors::APIErrors of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_APIErrorZ = Bindings.Vec_APIErrorZ
 
 			extension Bindings {

@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A 16-byte byte array.
 			internal typealias SixteenBytes = Bindings.SixteenBytes
 
 			extension Bindings {

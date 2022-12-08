@@ -3,6 +3,19 @@
 			import LDKHeaders
 			#endif
 
+			/// A serialized transaction, in (pointer, length) form.
+			/// 
+			/// This type optionally owns its own memory, and thus the semantics around access change based on
+			/// the `data_is_owned` flag. If `data_is_owned` is set, you must call `Transaction_free` to free
+			/// the underlying buffer before the object goes out of scope. If `data_is_owned` is not set, any
+			/// access to the buffer after the scope in which the object was provided to you is invalid. eg,
+			/// access after you return from the call in which a `!data_is_owned` `Transaction` is provided to
+			/// you would be invalid.
+			/// 
+			/// Note that, while it may change in the future, because transactions on the Rust side are stored
+			/// in a deserialized form, all `Transaction`s generated on the Rust side will have `data_is_owned`
+			/// set. Similarly, while it may change in the future, all `Transaction`s you pass to Rust may have
+			/// `data_is_owned` either set or unset at your discretion.
 			internal typealias Transaction = Bindings.Transaction
 
 			extension Bindings {

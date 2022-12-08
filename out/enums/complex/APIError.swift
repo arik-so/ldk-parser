@@ -363,6 +363,7 @@
 
 					
 					
+					/// 
 					internal typealias APIError_LDKAPIMisuseError_Body = APIMisuseError
 			
 
@@ -416,6 +417,7 @@
 					
 		
 					
+					/// 
 					internal typealias APIError_LDKFeeRateTooHigh_Body = FeeRateTooHigh
 			
 
@@ -477,6 +479,7 @@
 					
 		
 					
+					/// 
 					internal typealias APIError_LDKRouteError_Body = RouteError
 			
 
@@ -530,6 +533,7 @@
 					
 		
 					
+					/// 
 					internal typealias APIError_LDKChannelUnavailable_Body = ChannelUnavailable
 			
 
@@ -583,6 +587,7 @@
 					
 		
 					
+					/// 
 					internal typealias APIError_LDKIncompatibleShutdownScript_Body = IncompatibleShutdownScript
 			
 

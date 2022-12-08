@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::lightning::chain::channelmonitor::MonitorEvents of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_MonitorEventZ = Bindings.Vec_MonitorEventZ
 
 			extension Bindings {

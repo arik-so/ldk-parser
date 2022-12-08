@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents a secp256k1 signature serialized as two 32-byte numbers
 			internal typealias Signature = Bindings.Signature
 
 			extension Bindings {

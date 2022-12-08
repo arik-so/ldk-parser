@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::c_types::derived::CResult_NoneAPIErrorZs of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_CResult_NoneAPIErrorZZ = Bindings.Vec_CResult_NoneAPIErrorZZ
 
 			extension Bindings {

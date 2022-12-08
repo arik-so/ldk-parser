@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::c_types::u5s of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_u5Z = Bindings.Vec_u5Z
 
 			extension Bindings {

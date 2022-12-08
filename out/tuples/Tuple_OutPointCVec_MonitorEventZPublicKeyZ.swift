@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A tuple of 3 elements. See the individual fields for the types contained.
 			internal typealias Tuple_OutPointCVec_MonitorEventZPublicKeyZ = Bindings.Tuple_OutPointCVec_MonitorEventZPublicKeyZ
 
 			extension Bindings {

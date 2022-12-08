@@ -25,6 +25,7 @@ export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
 		} else if (type.parentType) {
 			swiftTypeName = this.getPublicTypeSignature(type, containerType);
 			containerLessPrefix = `
+				${this.renderDocComment(type.documentation, 4)}
 				internal typealias ${this.getPublicTypeSignature(type)} = ${swiftTypeName}
 			`;
 			containerLessSuffix = '';

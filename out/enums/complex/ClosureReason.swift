@@ -403,6 +403,7 @@
 
 					
 					
+					/// 
 					internal typealias ClosureReason_LDKCounterpartyForceClosed_Body = CounterpartyForceClosed
 			
 
@@ -460,6 +461,7 @@
 					
 		
 					
+					/// 
 					internal typealias ClosureReason_LDKProcessingError_Body = ProcessingError
 			
 

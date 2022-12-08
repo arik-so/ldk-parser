@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::lightning::routing::gossip::NodeIds of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_NodeIdZ = Bindings.Vec_NodeIdZ
 
 			extension Bindings {

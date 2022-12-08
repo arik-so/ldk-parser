@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			internal typealias Option_NetworkUpdateZ = Bindings.Option_NetworkUpdateZ
 
 			extension Bindings {

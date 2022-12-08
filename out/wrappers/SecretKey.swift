@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents a valid secp256k1 secret key serialized as a 32 byte array.
 			internal typealias SecretKey = Bindings.SecretKey
 
 			extension Bindings {

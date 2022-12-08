@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::c_types::derived::CVec_u8Zs of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_CVec_u8ZZ = Bindings.Vec_CVec_u8ZZ
 
 			extension Bindings {

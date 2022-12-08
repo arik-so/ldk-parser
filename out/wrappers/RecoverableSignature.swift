@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents a secp256k1 signature serialized as two 32-byte numbers as well as a tag which
+			/// allows recovering the exact public key which created the signature given the message.
 			internal typealias RecoverableSignature = Bindings.RecoverableSignature
 
 			extension Bindings {

@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Integer in the range `0..32`
 			internal typealias u5 = Bindings.u5
 
 			extension Bindings {

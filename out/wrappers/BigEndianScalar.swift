@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents a scalar value between zero and the secp256k1 curve order, in big endian.
 			internal typealias BigEndianScalar = Bindings.BigEndianScalar
 
 			extension Bindings {

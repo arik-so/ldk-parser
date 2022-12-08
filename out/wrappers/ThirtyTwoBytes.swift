@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Arbitrary 32 bytes, which could represent one of a few different things. You probably want to
+			/// look up the corresponding function in rust-lightning's docs.
 			internal typealias ThirtyTwoBytes = Bindings.ThirtyTwoBytes
 
 			extension Bindings {

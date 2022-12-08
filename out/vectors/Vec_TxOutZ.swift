@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::c_types::TxOuts of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_TxOutZ = Bindings.Vec_TxOutZ
 
 			extension Bindings {

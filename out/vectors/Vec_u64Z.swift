@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of u64s of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_u64Z = Bindings.Vec_u64Z
 
 			extension Bindings {

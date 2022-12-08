@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dynamically-allocated array of crate::lightning::chain::channelmonitor::ChannelMonitors of arbitrary size.
+			/// This corresponds to std::vector in C++
 			internal typealias Vec_ChannelMonitorZ = Bindings.Vec_ChannelMonitorZ
 
 			extension Bindings {

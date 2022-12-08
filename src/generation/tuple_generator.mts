@@ -40,6 +40,7 @@ export default class TupleGenerator extends BaseTypeGenerator<RustTuple> {
 			import LDKHeaders
 			#endif
 
+			${this.renderDocComment(type.documentation, 3)}
 			internal typealias ${swiftTypeName} = Bindings.${swiftTypeName}
 
 			extension Bindings {

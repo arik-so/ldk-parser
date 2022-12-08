@@ -49,6 +49,7 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 			import LDKHeaders
 			#endif
 
+			${this.renderDocComment(type.documentation, 3)}
 			internal typealias ${swiftTypeName} = Bindings.${swiftTypeName}
 
 			extension Bindings {

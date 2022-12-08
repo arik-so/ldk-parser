@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A tuple of 3 elements. See the individual fields for the types contained.
 			internal typealias Tuple_RawInvoice_u832InvoiceSignatureZ = Bindings.Tuple_RawInvoice_u832InvoiceSignatureZ
 
 			extension Bindings {

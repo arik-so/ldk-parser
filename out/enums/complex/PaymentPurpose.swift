@@ -234,6 +234,7 @@
 
 					
 					
+					/// 
 					internal typealias PaymentPurpose_LDKInvoicePayment_Body = InvoicePayment
 			
 

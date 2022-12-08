@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Integer in the range `0..=16`
 			internal typealias WitnessVersion = Bindings.WitnessVersion
 
 			extension Bindings {

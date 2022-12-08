@@ -286,6 +286,7 @@
 
 					
 					
+					/// 
 					internal typealias EffectiveCapacity_LDKExactLiquidity_Body = ExactLiquidity
 			
 
@@ -340,6 +341,7 @@
 					
 		
 					
+					/// 
 					internal typealias EffectiveCapacity_LDKMaximumHTLC_Body = MaximumHTLC
 			
 
@@ -393,6 +395,7 @@
 					
 		
 					
+					/// 
 					internal typealias EffectiveCapacity_LDKTotal_Body = Total
 			
 

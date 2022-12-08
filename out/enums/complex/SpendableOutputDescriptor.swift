@@ -330,6 +330,7 @@
 
 					
 					
+					/// 
 					internal typealias SpendableOutputDescriptor_LDKStaticOutput_Body = StaticOutput
 			
 
