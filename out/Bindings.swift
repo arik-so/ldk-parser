@@ -1187,6 +1187,48 @@
 					return returnValue
 				}
 		
+				/// Read a C2Tuple_BlockHashChannelMonitorZ from a byte array, created by C2Tuple_BlockHashChannelMonitorZ_write
+				public class func readBlockHashChannelMonitor(ser: [UInt8], arg: KeysInterface) -> Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ {
+					// native call variable prep
+					
+					let serPrimitiveWrapper = u8slice(value: ser)
+				
+
+					// native method call
+					let nativeCallResult = 
+					withUnsafePointer(to: arg.activate().cType!) { (argPointer: UnsafePointer<LDKKeysInterface>) in
+				C2Tuple_BlockHashChannelMonitorZ_read(serPrimitiveWrapper.cType!, argPointer)
+					}
+				
+
+					// cleanup
+					
+
+					// return value (do some wrapping)
+					let returnValue = Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ(cType: nativeCallResult)
+
+					return returnValue
+				}
+		
+				/// Read a C2Tuple_BlockHashChannelManagerZ from a byte array, created by C2Tuple_BlockHashChannelManagerZ_write
+				public class func readBlockHashChannelManager(ser: [UInt8], arg: ChannelManagerReadArgs) -> Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ {
+					// native call variable prep
+					
+					let serPrimitiveWrapper = u8slice(value: ser)
+				
+
+					// native method call
+					let nativeCallResult = C2Tuple_BlockHashChannelManagerZ_read(serPrimitiveWrapper.cType!, arg.cType!)
+
+					// cleanup
+					
+
+					// return value (do some wrapping)
+					let returnValue = Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ(cType: nativeCallResult)
+
+					return returnValue
+				}
+		
 
 				
 				internal class func arrayToUInt8Tuple32(array: [UInt8]) -> UInt8Tuple32 {

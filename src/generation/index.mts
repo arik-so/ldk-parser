@@ -1,5 +1,6 @@
 import Parser from '../parser.mjs';
 import {
+	RustFunction,
 	RustNullableOption,
 	RustPrimitiveEnum,
 	RustPrimitiveWrapper,
@@ -227,10 +228,16 @@ export default class Generator {
 
 export class AuxiliaryArtifacts {
 
+	private _elidedTypeMethods: { method: RustFunction, swiftName: string } [] = [];
+
 	private _tuples: { [swiftRawType: string]: Set<number> } = {};
 
 	get tuples() {
 		return this._tuples;
+	}
+
+	get methods() {
+		return this._elidedTypeMethods;
 	}
 
 	public addTuple(swiftTypeName: string, size: number) {
@@ -239,6 +246,10 @@ export class AuxiliaryArtifacts {
 		}
 
 		this._tuples[swiftTypeName].add(size);
+	}
+
+	public addMethod(method: RustFunction, newName: string) {
+		this._elidedTypeMethods.push({method: method, swiftName: newName});
 	}
 
 }

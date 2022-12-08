@@ -19,6 +19,14 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 			generatedMethods += Generator.reindentCode(this.generateMethod(currentMethod), 4);
 		}
 
+		for (const currentMethod of this.auxiliaryArtifacts.methods) {
+			// this call is the sole reason we need this inheritance
+			const swiftMethodName = this.swiftMethodName(currentMethod.method);
+			const methodCode = this.generateMethod(currentMethod.method);
+			const renamedMethodCode = methodCode.replace(swiftMethodName, currentMethod.swiftName);
+			generatedMethods += Generator.reindentCode(renamedMethodCode, 4);
+		}
+
 		let generatedTupleTypeAliases = '';
 		let generatedTupleConverters = '';
 		let generatedTupleComparators = ''

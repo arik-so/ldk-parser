@@ -1,4 +1,4 @@
-import {RustStruct, RustTuple, RustType} from '../rust_types.mjs';
+import {RustTuple, RustType} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 import Generator from './index.mjs';
 
@@ -16,16 +16,23 @@ export default class TupleGenerator extends BaseTypeGenerator<RustTuple> {
 		}
 
 		for (const currentMethod of type.methods) {
+			const standaloneMethodName = this.standaloneMethodName(currentMethod, type);
+
+			if (!['free', 'clone', 'new'].includes(standaloneMethodName)) {
+				let filteredTypeName = swiftTypeName.substring('Tuple_'.length, swiftTypeName.length - 'Z'.length);
+				this.auxiliaryArtifacts.addMethod(currentMethod, standaloneMethodName + filteredTypeName);
+			}
+
 			generatedMethods += this.generateMethod(currentMethod, type);
 		}
 
 		let initializer = [];
 		let valueAccessor = [];
 
-		for (const [fieldIndex, currentField] of type.orderedFields.entries()){
+		for (const [fieldIndex, currentField] of type.orderedFields.entries()) {
 			let fieldAccessorName = Generator.snakeCaseToCamelCase(currentField.contextualName, true);
-			initializer.push(`${currentField.contextualName}: tuple.${fieldIndex}`)
-			valueAccessor.push(`self.get${fieldAccessorName}()`)
+			initializer.push(`${currentField.contextualName}: tuple.${fieldIndex}`);
+			valueAccessor.push(`self.get${fieldAccessorName}()`);
 		}
 
 		return `
