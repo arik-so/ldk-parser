@@ -8,6 +8,7 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 
 		let generatedMethods = '';
 
+		const conflictingArgumentConstructors = this.collectConflictingConstructors(type);
 		for (const currentMethod of type.methods) {
 			const currentMethodName = this.swiftMethodName(currentMethod, type);
 			if (currentMethodName === 'isOk') {
@@ -15,7 +16,8 @@ export default class ResultGenerator extends BaseTypeGenerator<RustResult> {
 				continue;
 			}
 
-			generatedMethods += this.generateMethod(currentMethod, type);
+			const isConflictingConstructor = conflictingArgumentConstructors.has(currentMethod);
+			generatedMethods += this.generateMethod(currentMethod, type, isConflictingConstructor);
 		}
 
 		const valueEnum = type.valueField.type as RustResultValueEnum;
