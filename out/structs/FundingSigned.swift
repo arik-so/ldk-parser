@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingSigned>) in
-			FundingSigned_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				FundingSigned_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingSigned>) in
-			FundingSigned_get_signature(thisPtrPointer)
+				FundingSigned_get_signature(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -107,9 +107,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingSigned>) in
-			FundingSigned_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
+				FundingSigned_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,9 +149,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKFundingSigned>) in
-			FundingSigned_clone(origPointer)
+				FundingSigned_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -172,13 +172,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKFundingSigned>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKFundingSigned>) in
-			FundingSigned_eq(aPointer, bPointer)
+				FundingSigned_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -197,9 +197,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKFundingSigned>) in
-			FundingSigned_write(objPointer)
+				FundingSigned_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

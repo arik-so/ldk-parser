@@ -130,9 +130,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
-			SpendableOutputDescriptor_clone(origPointer)
+				SpendableOutputDescriptor_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -203,13 +203,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
-			SpendableOutputDescriptor_eq(aPointer, bPointer)
+				SpendableOutputDescriptor_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -228,9 +228,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
-			SpendableOutputDescriptor_write(objPointer)
+				SpendableOutputDescriptor_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

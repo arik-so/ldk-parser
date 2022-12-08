@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKExpiryTime>) in
-			ExpiryTime_clone(origPointer)
+				ExpiryTime_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -83,9 +83,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKExpiryTime>) in
-			ExpiryTime_hash(oPointer)
+				ExpiryTime_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -106,13 +106,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKExpiryTime>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKExpiryTime>) in
-			ExpiryTime_eq(aPointer, bPointer)
+				ExpiryTime_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -165,9 +165,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKExpiryTime>) in
-			ExpiryTime_as_seconds(thisArgPointer)
+				ExpiryTime_as_seconds(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -186,9 +186,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKExpiryTime>) in
-			ExpiryTime_as_duration(thisArgPointer)
+				ExpiryTime_as_duration(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -127,9 +127,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKBalance>) in
-			Balance_clone(origPointer)
+				Balance_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -251,13 +251,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKBalance>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKBalance>) in
-			Balance_eq(aPointer, bPointer)
+				Balance_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

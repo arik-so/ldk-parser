@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_CounterpartyForwardingInfoDecodeErrorZ>) in
-			CResult_CounterpartyForwardingInfoDecodeErrorZ_clone(origPointer)
+				CResult_CounterpartyForwardingInfoDecodeErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

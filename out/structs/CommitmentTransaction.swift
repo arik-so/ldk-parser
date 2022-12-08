@@ -66,9 +66,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCommitmentTransaction>) in
-			CommitmentTransaction_clone(origPointer)
+				CommitmentTransaction_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -87,9 +87,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKCommitmentTransaction>) in
-			CommitmentTransaction_write(objPointer)
+				CommitmentTransaction_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -127,9 +127,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
-			CommitmentTransaction_commitment_number(thisArgPointer)
+				CommitmentTransaction_commitment_number(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -148,9 +148,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
-			CommitmentTransaction_to_broadcaster_value_sat(thisArgPointer)
+				CommitmentTransaction_to_broadcaster_value_sat(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -169,9 +169,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
-			CommitmentTransaction_to_countersignatory_value_sat(thisArgPointer)
+				CommitmentTransaction_to_countersignatory_value_sat(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -190,9 +190,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
-			CommitmentTransaction_feerate_per_kw(thisArgPointer)
+				CommitmentTransaction_feerate_per_kw(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -216,9 +216,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
-			CommitmentTransaction_trust(thisArgPointer)
+				CommitmentTransaction_trust(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -242,21 +242,21 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
-			
+				
 						withUnsafePointer(to: channelParameters.cType!) { (channelParametersPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
-			
+				
 						withUnsafePointer(to: broadcasterKeys.cType!) { (broadcasterKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
-			
+				
 						withUnsafePointer(to: countersignatoryKeys.cType!) { (countersignatoryKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
-			CommitmentTransaction_verify(thisArgPointer, channelParametersPointer, broadcasterKeysPointer, countersignatoryKeysPointer)
+				CommitmentTransaction_verify(thisArgPointer, channelParametersPointer, broadcasterKeysPointer, countersignatoryKeysPointer)
 						}
-			
+				
 						}
-			
+				
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

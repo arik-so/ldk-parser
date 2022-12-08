@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_ClosingSignedFeeRangeDecodeErrorZ>) in
-			CResult_ClosingSignedFeeRangeDecodeErrorZ_clone(origPointer)
+				CResult_ClosingSignedFeeRangeDecodeErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

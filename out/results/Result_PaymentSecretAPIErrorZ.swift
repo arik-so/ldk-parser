@@ -98,9 +98,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_PaymentSecretAPIErrorZ>) in
-			CResult_PaymentSecretAPIErrorZ_clone(origPointer)
+				CResult_PaymentSecretAPIErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

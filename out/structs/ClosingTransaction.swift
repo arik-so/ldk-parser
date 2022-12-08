@@ -65,9 +65,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKClosingTransaction>) in
-			ClosingTransaction_clone(origPointer)
+				ClosingTransaction_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKClosingTransaction>) in
-			ClosingTransaction_hash(oPointer)
+				ClosingTransaction_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -109,13 +109,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKClosingTransaction>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKClosingTransaction>) in
-			ClosingTransaction_eq(aPointer, bPointer)
+				ClosingTransaction_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -164,9 +164,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
-			ClosingTransaction_trust(thisArgPointer)
+				ClosingTransaction_trust(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -190,9 +190,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
-			ClosingTransaction_verify(thisArgPointer, fundingOutpoint.cType!)
+				ClosingTransaction_verify(thisArgPointer, fundingOutpoint.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -211,9 +211,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
-			ClosingTransaction_to_holder_value_sat(thisArgPointer)
+				ClosingTransaction_to_holder_value_sat(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -232,9 +232,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
-			ClosingTransaction_to_counterparty_value_sat(thisArgPointer)
+				ClosingTransaction_to_counterparty_value_sat(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -253,9 +253,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
-			ClosingTransaction_to_holder_script(thisArgPointer)
+				ClosingTransaction_to_holder_script(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -274,9 +274,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
-			ClosingTransaction_to_counterparty_script(thisArgPointer)
+				ClosingTransaction_to_counterparty_script(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

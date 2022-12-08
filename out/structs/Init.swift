@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInit>) in
-			Init_get_features(thisPtrPointer)
+				Init_get_features(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInit>) in
-			Init_set_features(thisPtrPointer, val.cType!)
+				Init_set_features(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -106,9 +106,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInit>) in
-			Init_get_remote_network_address(thisPtrPointer)
+				Init_get_remote_network_address(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -132,9 +132,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInit>) in
-			Init_set_remote_network_address(thisPtrPointer, valOption.cType!)
+				Init_set_remote_network_address(thisPtrPointer, valOption.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -172,9 +172,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKInit>) in
-			Init_clone(origPointer)
+				Init_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -195,13 +195,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKInit>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKInit>) in
-			Init_eq(aPointer, bPointer)
+				Init_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -220,9 +220,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKInit>) in
-			Init_write(objPointer)
+				Init_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

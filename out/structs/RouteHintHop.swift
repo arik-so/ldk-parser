@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
-			RouteHintHop_get_src_node_id(thisPtrPointer)
+				RouteHintHop_get_src_node_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
-			RouteHintHop_set_src_node_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				RouteHintHop_set_src_node_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
-			RouteHintHop_get_short_channel_id(thisPtrPointer)
+				RouteHintHop_get_short_channel_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
-			RouteHintHop_set_short_channel_id(thisPtrPointer, val)
+				RouteHintHop_set_short_channel_id(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -147,9 +147,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
-			RouteHintHop_get_fees(thisPtrPointer)
+				RouteHintHop_get_fees(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,9 +168,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
-			RouteHintHop_set_fees(thisPtrPointer, val.cType!)
+				RouteHintHop_set_fees(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -189,9 +189,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
-			RouteHintHop_get_cltv_expiry_delta(thisPtrPointer)
+				RouteHintHop_get_cltv_expiry_delta(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -210,9 +210,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
-			RouteHintHop_set_cltv_expiry_delta(thisPtrPointer, val)
+				RouteHintHop_set_cltv_expiry_delta(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -231,9 +231,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
-			RouteHintHop_get_htlc_minimum_msat(thisPtrPointer)
+				RouteHintHop_get_htlc_minimum_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -254,9 +254,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
-			RouteHintHop_set_htlc_minimum_msat(thisPtrPointer, valOption.cType!)
+				RouteHintHop_set_htlc_minimum_msat(thisPtrPointer, valOption.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -275,9 +275,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHintHop>) in
-			RouteHintHop_get_htlc_maximum_msat(thisPtrPointer)
+				RouteHintHop_get_htlc_maximum_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -298,9 +298,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
-			RouteHintHop_set_htlc_maximum_msat(thisPtrPointer, valOption.cType!)
+				RouteHintHop_set_htlc_maximum_msat(thisPtrPointer, valOption.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -342,9 +342,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRouteHintHop>) in
-			RouteHintHop_clone(origPointer)
+				RouteHintHop_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -363,9 +363,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRouteHintHop>) in
-			RouteHintHop_hash(oPointer)
+				RouteHintHop_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -386,13 +386,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRouteHintHop>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRouteHintHop>) in
-			RouteHintHop_eq(aPointer, bPointer)
+				RouteHintHop_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -411,9 +411,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRouteHintHop>) in
-			RouteHintHop_write(objPointer)
+				RouteHintHop_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

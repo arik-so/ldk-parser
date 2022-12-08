@@ -46,13 +46,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_eq(aPointer, bPointer)
+				InvoiceFeatures_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -71,9 +71,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_clone(origPointer)
+				InvoiceFeatures_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -127,9 +127,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_requires_unknown_bits(thisArgPointer)
+				InvoiceFeatures_requires_unknown_bits(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -148,9 +148,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_write(objPointer)
+				InvoiceFeatures_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -188,9 +188,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_set_variable_length_onion_optional(thisArgPointer)
+				InvoiceFeatures_set_variable_length_onion_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -209,9 +209,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_set_variable_length_onion_required(thisArgPointer)
+				InvoiceFeatures_set_variable_length_onion_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -230,9 +230,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_supports_variable_length_onion(thisArgPointer)
+				InvoiceFeatures_supports_variable_length_onion(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -251,9 +251,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_requires_variable_length_onion(thisArgPointer)
+				InvoiceFeatures_requires_variable_length_onion(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -272,9 +272,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_set_payment_secret_optional(thisArgPointer)
+				InvoiceFeatures_set_payment_secret_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -293,9 +293,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_set_payment_secret_required(thisArgPointer)
+				InvoiceFeatures_set_payment_secret_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -314,9 +314,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_supports_payment_secret(thisArgPointer)
+				InvoiceFeatures_supports_payment_secret(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -335,9 +335,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_requires_payment_secret(thisArgPointer)
+				InvoiceFeatures_requires_payment_secret(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -356,9 +356,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_set_basic_mpp_optional(thisArgPointer)
+				InvoiceFeatures_set_basic_mpp_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -377,9 +377,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_set_basic_mpp_required(thisArgPointer)
+				InvoiceFeatures_set_basic_mpp_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -398,9 +398,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_supports_basic_mpp(thisArgPointer)
+				InvoiceFeatures_supports_basic_mpp(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -419,9 +419,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
-			InvoiceFeatures_requires_basic_mpp(thisArgPointer)
+				InvoiceFeatures_requires_basic_mpp(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

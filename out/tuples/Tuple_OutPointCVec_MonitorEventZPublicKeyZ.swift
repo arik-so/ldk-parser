@@ -47,9 +47,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ>) in
-			C3Tuple_OutPointCVec_MonitorEventZPublicKeyZ_clone(origPointer)
+				C3Tuple_OutPointCVec_MonitorEventZPublicKeyZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

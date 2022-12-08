@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_get_last_update(thisPtrPointer)
+				ChannelUpdateInfo_get_last_update(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_set_last_update(thisPtrPointer, val)
+				ChannelUpdateInfo_set_last_update(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_get_enabled(thisPtrPointer)
+				ChannelUpdateInfo_get_enabled(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_set_enabled(thisPtrPointer, val)
+				ChannelUpdateInfo_set_enabled(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -147,9 +147,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_get_cltv_expiry_delta(thisPtrPointer)
+				ChannelUpdateInfo_get_cltv_expiry_delta(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,9 +168,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_set_cltv_expiry_delta(thisPtrPointer, val)
+				ChannelUpdateInfo_set_cltv_expiry_delta(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -189,9 +189,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_get_htlc_minimum_msat(thisPtrPointer)
+				ChannelUpdateInfo_get_htlc_minimum_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -210,9 +210,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_set_htlc_minimum_msat(thisPtrPointer, val)
+				ChannelUpdateInfo_set_htlc_minimum_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -231,9 +231,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_get_htlc_maximum_msat(thisPtrPointer)
+				ChannelUpdateInfo_get_htlc_maximum_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -252,9 +252,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_set_htlc_maximum_msat(thisPtrPointer, val)
+				ChannelUpdateInfo_set_htlc_maximum_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -273,9 +273,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_get_fees(thisPtrPointer)
+				ChannelUpdateInfo_get_fees(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -294,9 +294,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_set_fees(thisPtrPointer, val.cType!)
+				ChannelUpdateInfo_set_fees(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -320,9 +320,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_get_last_update_message(thisPtrPointer)
+				ChannelUpdateInfo_get_last_update_message(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -359,9 +359,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_set_last_update_message(thisPtrPointer, val.cType!)
+				ChannelUpdateInfo_set_last_update_message(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -397,9 +397,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_clone(origPointer)
+				ChannelUpdateInfo_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -420,13 +420,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_eq(aPointer, bPointer)
+				ChannelUpdateInfo_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -445,9 +445,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelUpdateInfo>) in
-			ChannelUpdateInfo_write(objPointer)
+				ChannelUpdateInfo_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

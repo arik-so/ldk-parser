@@ -93,9 +93,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: tupledSeed) { (tupledSeedPointer: UnsafePointer<UInt8Tuple32>) in
-			KeysManager_new(tupledSeedPointer, startingTimeSecs, startingTimeNanos)
+				KeysManager_new(tupledSeedPointer, startingTimeSecs, startingTimeNanos)
 						}
-			
+				
 
 						// cleanup
 						
@@ -120,13 +120,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKKeysManager>) in
-			
+				
 						withUnsafePointer(to: tupledParams) { (tupledParamsPointer: UnsafePointer<UInt8Tuple32>) in
-			KeysManager_derive_channel_keys(thisArgPointer, channelValueSatoshis, tupledParamsPointer)
+				KeysManager_derive_channel_keys(thisArgPointer, channelValueSatoshis, tupledParamsPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -162,9 +162,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKKeysManager>) in
-			KeysManager_spend_spendable_outputs(thisArgPointer, descriptorsVector.cType!, outputsVector.cType!, changeDestinationScriptVector.cType!, feerateSatPer_1000Weight)
+				KeysManager_spend_spendable_outputs(thisArgPointer, descriptorsVector.cType!, outputsVector.cType!, changeDestinationScriptVector.cType!, feerateSatPer_1000Weight)
 						}
-			
+				
 
 						// cleanup
 						
@@ -190,9 +190,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKKeysManager>) in
-			KeysManager_as_KeysInterface(thisArgPointer)
+				KeysManager_as_KeysInterface(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

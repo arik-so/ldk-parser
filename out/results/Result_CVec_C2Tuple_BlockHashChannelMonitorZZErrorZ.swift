@@ -100,9 +100,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ>) in
-			CResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ_clone(origPointer)
+				CResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

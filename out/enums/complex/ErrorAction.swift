@@ -110,9 +110,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKErrorAction>) in
-			ErrorAction_clone(origPointer)
+				ErrorAction_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

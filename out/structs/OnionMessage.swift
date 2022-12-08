@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKOnionMessage>) in
-			OnionMessage_get_blinding_point(thisPtrPointer)
+				OnionMessage_get_blinding_point(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOnionMessage>) in
-			OnionMessage_set_blinding_point(thisPtrPointer, valPrimitiveWrapper.cType!)
+				OnionMessage_set_blinding_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKOnionMessage>) in
-			OnionMessage_clone(origPointer)
+				OnionMessage_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -128,13 +128,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKOnionMessage>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKOnionMessage>) in
-			OnionMessage_eq(aPointer, bPointer)
+				OnionMessage_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -172,9 +172,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKOnionMessage>) in
-			OnionMessage_write(objPointer)
+				OnionMessage_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPayeePubKey>) in
-			PayeePubKey_get_a(thisPtrPointer)
+				PayeePubKey_get_a(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPayeePubKey>) in
-			PayeePubKey_set_a(thisPtrPointer, valPrimitiveWrapper.cType!)
+				PayeePubKey_set_a(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -124,9 +124,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKPayeePubKey>) in
-			PayeePubKey_clone(origPointer)
+				PayeePubKey_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -145,9 +145,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKPayeePubKey>) in
-			PayeePubKey_hash(oPointer)
+				PayeePubKey_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,13 +168,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKPayeePubKey>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKPayeePubKey>) in
-			PayeePubKey_eq(aPointer, bPointer)
+				PayeePubKey_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

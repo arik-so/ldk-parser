@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKShutdownScript>) in
-			ShutdownScript_clone(origPointer)
+				ShutdownScript_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,13 +86,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKShutdownScript>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKShutdownScript>) in
-			ShutdownScript_eq(aPointer, bPointer)
+				ShutdownScript_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -111,9 +111,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKShutdownScript>) in
-			ShutdownScript_write(objPointer)
+				ShutdownScript_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -153,9 +153,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: tupledPubkeyHash) { (tupledPubkeyHashPointer: UnsafePointer<UInt8Tuple20>) in
-			ShutdownScript_new_p2wpkh(tupledPubkeyHashPointer)
+				ShutdownScript_new_p2wpkh(tupledPubkeyHashPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -176,9 +176,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: tupledScriptHash) { (tupledScriptHashPointer: UnsafePointer<UInt8Tuple32>) in
-			ShutdownScript_new_p2wsh(tupledScriptHashPointer)
+				ShutdownScript_new_p2wsh(tupledScriptHashPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -244,9 +244,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKShutdownScript>) in
-			ShutdownScript_as_legacy_pubkey(thisArgPointer)
+				ShutdownScript_as_legacy_pubkey(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -275,13 +275,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKShutdownScript>) in
-			
+				
 						withUnsafePointer(to: features.cType!) { (featuresPointer: UnsafePointer<LDKInitFeatures>) in
-			ShutdownScript_is_compatible(thisArgPointer, featuresPointer)
+				ShutdownScript_is_compatible(thisArgPointer, featuresPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

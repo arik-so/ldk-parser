@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFee>) in
-			UpdateFee_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UpdateFee_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFee>) in
-			UpdateFee_get_feerate_per_kw(thisPtrPointer)
+				UpdateFee_get_feerate_per_kw(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFee>) in
-			UpdateFee_set_feerate_per_kw(thisPtrPointer, val)
+				UpdateFee_set_feerate_per_kw(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -145,9 +145,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKUpdateFee>) in
-			UpdateFee_clone(origPointer)
+				UpdateFee_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,13 +168,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKUpdateFee>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKUpdateFee>) in
-			UpdateFee_eq(aPointer, bPointer)
+				UpdateFee_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -193,9 +193,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUpdateFee>) in
-			UpdateFee_write(objPointer)
+				UpdateFee_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

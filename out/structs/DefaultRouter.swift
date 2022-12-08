@@ -64,9 +64,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
-			DefaultRouter_new(networkGraphPointer, logger.activate().cType!, randomSeedBytesPrimitiveWrapper.cType!, scorer.activate().cType!)
+				DefaultRouter_new(networkGraphPointer, logger.activate().cType!, randomSeedBytesPrimitiveWrapper.cType!, scorer.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDefaultRouter>) in
-			DefaultRouter_as_Router(thisArgPointer)
+				DefaultRouter_as_Router(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

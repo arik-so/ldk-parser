@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailHTLC>) in
-			UpdateFailHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UpdateFailHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailHTLC>) in
-			UpdateFailHTLC_get_htlc_id(thisPtrPointer)
+				UpdateFailHTLC_get_htlc_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailHTLC>) in
-			UpdateFailHTLC_set_htlc_id(thisPtrPointer, val)
+				UpdateFailHTLC_set_htlc_id(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKUpdateFailHTLC>) in
-			UpdateFailHTLC_clone(origPointer)
+				UpdateFailHTLC_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,13 +149,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKUpdateFailHTLC>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKUpdateFailHTLC>) in
-			UpdateFailHTLC_eq(aPointer, bPointer)
+				UpdateFailHTLC_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -174,9 +174,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUpdateFailHTLC>) in
-			UpdateFailHTLC_write(objPointer)
+				UpdateFailHTLC_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

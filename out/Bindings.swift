@@ -277,9 +277,9 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: tupledSk) { (tupledSkPointer: UnsafePointer<UInt8Tuple32>) in
-			sign(msgPrimitiveWrapper.cType!, tupledSkPointer)
+				sign(msgPrimitiveWrapper.cType!, tupledSkPointer)
 					}
-			
+				
 
 					// cleanup
 					
@@ -432,13 +432,13 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: keys.cType!) { (keysPointer: UnsafePointer<LDKExpandedKey>) in
-			
+				
 					withUnsafePointer(to: keysManager.activate().cType!) { (keysManagerPointer: UnsafePointer<LDKKeysInterface>) in
-			create(keysPointer, minValueMsatOption.cType!, invoiceExpiryDeltaSecs, keysManagerPointer, currentTime)
+				create(keysPointer, minValueMsatOption.cType!, invoiceExpiryDeltaSecs, keysManagerPointer, currentTime)
 					}
-			
+				
 					}
-			
+				
 
 					// cleanup
 					
@@ -467,9 +467,9 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: keys.cType!) { (keysPointer: UnsafePointer<LDKExpandedKey>) in
-			create_from_hash(keysPointer, minValueMsatOption.cType!, paymentHashPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs, currentTime)
+				create_from_hash(keysPointer, minValueMsatOption.cType!, paymentHashPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs, currentTime)
 					}
-			
+				
 
 					// cleanup
 					
@@ -524,9 +524,9 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: tupledCommitmentSeed) { (tupledCommitmentSeedPointer: UnsafePointer<UInt8Tuple32>) in
-			build_commitment_secret(tupledCommitmentSeedPointer, idx)
+				build_commitment_secret(tupledCommitmentSeedPointer, idx)
 					}
-			
+				
 
 					// cleanup
 					
@@ -578,9 +578,9 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: tupledBaseSecret) { (tupledBaseSecretPointer: UnsafePointer<UInt8Tuple32>) in
-			derive_private_key(perCommitmentPointPrimitiveWrapper.cType!, tupledBaseSecretPointer)
+				derive_private_key(perCommitmentPointPrimitiveWrapper.cType!, tupledBaseSecretPointer)
 					}
-			
+				
 
 					// cleanup
 					
@@ -637,13 +637,13 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: tupledPerCommitmentSecret) { (tupledPerCommitmentSecretPointer: UnsafePointer<UInt8Tuple32>) in
-			
+				
 					withUnsafePointer(to: tupledCountersignatoryRevocationBaseSecret) { (tupledCountersignatoryRevocationBaseSecretPointer: UnsafePointer<UInt8Tuple32>) in
-			derive_private_revocation_key(tupledPerCommitmentSecretPointer, tupledCountersignatoryRevocationBaseSecretPointer)
+				derive_private_revocation_key(tupledPerCommitmentSecretPointer, tupledCountersignatoryRevocationBaseSecretPointer)
 					}
-			
+				
 					}
-			
+				
 
 					// cleanup
 					
@@ -717,13 +717,13 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
-			
+				
 					withUnsafePointer(to: keys.cType!) { (keysPointer: UnsafePointer<LDKTxCreationKeys>) in
-			get_htlc_redeemscript(htlcPointer, optAnchors, keysPointer)
+				get_htlc_redeemscript(htlcPointer, optAnchors, keysPointer)
 					}
-			
+				
 					}
-			
+				
 
 					// cleanup
 					
@@ -776,13 +776,13 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: tupledCommitmentTxid) { (tupledCommitmentTxidPointer: UnsafePointer<UInt8Tuple32>) in
-			
+				
 					withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
-			build_htlc_transaction(tupledCommitmentTxidPointer, feeratePerKw, contestDelay, htlcPointer, optAnchors, broadcasterDelayedPaymentKeyPrimitiveWrapper.cType!, revocationKeyPrimitiveWrapper.cType!)
+				build_htlc_transaction(tupledCommitmentTxidPointer, feeratePerKw, contestDelay, htlcPointer, optAnchors, broadcasterDelayedPaymentKeyPrimitiveWrapper.cType!, revocationKeyPrimitiveWrapper.cType!)
 					}
-			
+				
 					}
-			
+				
 
 					// cleanup
 					
@@ -887,25 +887,25 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: routeParams.cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
-			
+				
 					withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
-			
+				
 					withUnsafeMutablePointer(to: &firstHopsVector.cType!) { (firstHopsVectorPointer: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>) in
-			
+				
 					withUnsafePointer(to: scorer.activate().cType!) { (scorerPointer: UnsafePointer<LDKScore>) in
-			
+				
 					withUnsafePointer(to: tupledRandomSeedBytes) { (tupledRandomSeedBytesPointer: UnsafePointer<UInt8Tuple32>) in
-			find_route(ourNodePubkeyPrimitiveWrapper.cType!, routeParamsPointer, networkGraphPointer, firstHopsVectorPointer, logger.activate().cType!, scorerPointer, tupledRandomSeedBytesPointer)
+				find_route(ourNodePubkeyPrimitiveWrapper.cType!, routeParamsPointer, networkGraphPointer, firstHopsVectorPointer, logger.activate().cType!, scorerPointer, tupledRandomSeedBytesPointer)
 					}
-			
+				
 					}
-			
+				
 					}
-			
+				
 					}
-			
+				
 					}
-			
+				
 
 					// cleanup
 					
@@ -935,17 +935,17 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: routeParams.cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
-			
+				
 					withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
-			
+				
 					withUnsafePointer(to: tupledRandomSeedBytes) { (tupledRandomSeedBytesPointer: UnsafePointer<UInt8Tuple32>) in
-			build_route_from_hops(ourNodePubkeyPrimitiveWrapper.cType!, hopsVector.cType!, routeParamsPointer, networkGraphPointer, logger.activate().cType!, tupledRandomSeedBytesPointer)
+				build_route_from_hops(ourNodePubkeyPrimitiveWrapper.cType!, hopsVector.cType!, routeParamsPointer, networkGraphPointer, logger.activate().cType!, tupledRandomSeedBytesPointer)
 					}
-			
+				
 					}
-			
+				
 					}
-			
+				
 
 					// cleanup
 					
@@ -1091,9 +1091,9 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
-			create_invoice_from_channelmanager(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs)
+				create_invoice_from_channelmanager(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs)
 					}
-			
+				
 
 					// cleanup
 					
@@ -1122,9 +1122,9 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
-			create_invoice_from_channelmanager_with_description_hash(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionHash.cType!, invoiceExpiryDeltaSecs)
+				create_invoice_from_channelmanager_with_description_hash(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionHash.cType!, invoiceExpiryDeltaSecs)
 					}
-			
+				
 
 					// cleanup
 					
@@ -1147,9 +1147,9 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
-			create_invoice_from_channelmanager_with_description_hash_and_duration_since_epoch(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionHash.cType!, durationSinceEpoch, invoiceExpiryDeltaSecs)
+				create_invoice_from_channelmanager_with_description_hash_and_duration_since_epoch(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionHash.cType!, durationSinceEpoch, invoiceExpiryDeltaSecs)
 					}
-			
+				
 
 					// cleanup
 					
@@ -1174,9 +1174,9 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
-			create_invoice_from_channelmanager_and_duration_since_epoch(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionPrimitiveWrapper.cType!, durationSinceEpoch, invoiceExpiryDeltaSecs)
+				create_invoice_from_channelmanager_and_duration_since_epoch(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionPrimitiveWrapper.cType!, durationSinceEpoch, invoiceExpiryDeltaSecs)
 					}
-			
+				
 
 					// cleanup
 					

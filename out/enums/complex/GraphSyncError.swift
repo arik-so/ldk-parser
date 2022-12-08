@@ -85,9 +85,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKGraphSyncError>) in
-			GraphSyncError_clone(origPointer)
+				GraphSyncError_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

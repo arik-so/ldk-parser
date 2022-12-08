@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRawDataPart>) in
-			RawDataPart_get_timestamp(thisPtrPointer)
+				RawDataPart_get_timestamp(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRawDataPart>) in
-			RawDataPart_set_timestamp(thisPtrPointer, val.cType!)
+				RawDataPart_set_timestamp(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,13 +105,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRawDataPart>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRawDataPart>) in
-			RawDataPart_eq(aPointer, bPointer)
+				RawDataPart_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -130,9 +130,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRawDataPart>) in
-			RawDataPart_clone(origPointer)
+				RawDataPart_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -151,9 +151,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRawDataPart>) in
-			RawDataPart_hash(oPointer)
+				RawDataPart_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						

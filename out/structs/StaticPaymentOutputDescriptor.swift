@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_get_outpoint(thisPtrPointer)
+				StaticPaymentOutputDescriptor_get_outpoint(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -83,9 +83,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.cType!)
+				StaticPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -106,9 +106,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_get_output(thisPtrPointer)
+				StaticPaymentOutputDescriptor_get_output(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -127,9 +127,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_set_output(thisPtrPointer, val.cType!)
+				StaticPaymentOutputDescriptor_set_output(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -152,9 +152,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_set_channel_keys_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				StaticPaymentOutputDescriptor_set_channel_keys_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -173,9 +173,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_get_channel_value_satoshis(thisPtrPointer)
+				StaticPaymentOutputDescriptor_get_channel_value_satoshis(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -194,9 +194,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_set_channel_value_satoshis(thisPtrPointer, val)
+				StaticPaymentOutputDescriptor_set_channel_value_satoshis(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -234,9 +234,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_clone(origPointer)
+				StaticPaymentOutputDescriptor_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -257,13 +257,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_eq(aPointer, bPointer)
+				StaticPaymentOutputDescriptor_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -282,9 +282,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
-			StaticPaymentOutputDescriptor_write(objPointer)
+				StaticPaymentOutputDescriptor_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -64,9 +64,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKPrivateRoute>) in
-			PrivateRoute_clone(origPointer)
+				PrivateRoute_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -85,9 +85,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKPrivateRoute>) in
-			PrivateRoute_hash(oPointer)
+				PrivateRoute_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -108,13 +108,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKPrivateRoute>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKPrivateRoute>) in
-			PrivateRoute_eq(aPointer, bPointer)
+				PrivateRoute_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

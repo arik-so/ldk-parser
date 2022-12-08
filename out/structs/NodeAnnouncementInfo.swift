@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_get_features(thisPtrPointer)
+				NodeAnnouncementInfo_get_features(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_set_features(thisPtrPointer, val.cType!)
+				NodeAnnouncementInfo_set_features(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -104,9 +104,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_get_last_update(thisPtrPointer)
+				NodeAnnouncementInfo_get_last_update(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_set_last_update(thisPtrPointer, val)
+				NodeAnnouncementInfo_set_last_update(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,9 +149,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_set_rgb(thisPtrPointer, valPrimitiveWrapper.cType!)
+				NodeAnnouncementInfo_set_rgb(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -172,9 +172,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_get_alias(thisPtrPointer)
+				NodeAnnouncementInfo_get_alias(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -195,9 +195,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_set_alias(thisPtrPointer, val.cType!)
+				NodeAnnouncementInfo_set_alias(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -218,9 +218,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_get_addresses(thisPtrPointer)
+				NodeAnnouncementInfo_get_addresses(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -241,9 +241,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_set_addresses(thisPtrPointer, valVector.cType!)
+				NodeAnnouncementInfo_set_addresses(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -269,9 +269,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_get_announcement_message(thisPtrPointer)
+				NodeAnnouncementInfo_get_announcement_message(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -308,9 +308,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_set_announcement_message(thisPtrPointer, val.cType!)
+				NodeAnnouncementInfo_set_announcement_message(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -352,9 +352,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_clone(origPointer)
+				NodeAnnouncementInfo_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -375,13 +375,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKNodeAnnouncementInfo>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_eq(aPointer, bPointer)
+				NodeAnnouncementInfo_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -400,9 +400,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNodeAnnouncementInfo>) in
-			NodeAnnouncementInfo_write(objPointer)
+				NodeAnnouncementInfo_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

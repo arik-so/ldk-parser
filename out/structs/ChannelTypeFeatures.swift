@@ -55,13 +55,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_eq(aPointer, bPointer)
+				ChannelTypeFeatures_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -80,9 +80,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_clone(origPointer)
+				ChannelTypeFeatures_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -136,9 +136,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_requires_unknown_bits(thisArgPointer)
+				ChannelTypeFeatures_requires_unknown_bits(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -157,9 +157,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_write(objPointer)
+				ChannelTypeFeatures_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -197,9 +197,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_set_static_remote_key_optional(thisArgPointer)
+				ChannelTypeFeatures_set_static_remote_key_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -218,9 +218,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_set_static_remote_key_required(thisArgPointer)
+				ChannelTypeFeatures_set_static_remote_key_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -239,9 +239,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_supports_static_remote_key(thisArgPointer)
+				ChannelTypeFeatures_supports_static_remote_key(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -260,9 +260,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_requires_static_remote_key(thisArgPointer)
+				ChannelTypeFeatures_requires_static_remote_key(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -281,9 +281,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_set_scid_privacy_optional(thisArgPointer)
+				ChannelTypeFeatures_set_scid_privacy_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -302,9 +302,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_set_scid_privacy_required(thisArgPointer)
+				ChannelTypeFeatures_set_scid_privacy_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -323,9 +323,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_supports_scid_privacy(thisArgPointer)
+				ChannelTypeFeatures_supports_scid_privacy(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -344,9 +344,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_requires_scid_privacy(thisArgPointer)
+				ChannelTypeFeatures_requires_scid_privacy(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -365,9 +365,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_set_zero_conf_optional(thisArgPointer)
+				ChannelTypeFeatures_set_zero_conf_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -386,9 +386,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_set_zero_conf_required(thisArgPointer)
+				ChannelTypeFeatures_set_zero_conf_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -407,9 +407,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_supports_zero_conf(thisArgPointer)
+				ChannelTypeFeatures_supports_zero_conf(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -428,9 +428,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelTypeFeatures>) in
-			ChannelTypeFeatures_requires_zero_conf(thisArgPointer)
+				ChannelTypeFeatures_requires_zero_conf(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

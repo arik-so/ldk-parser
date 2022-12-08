@@ -47,9 +47,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ>) in
-			C3Tuple_RawInvoice_u832InvoiceSignatureZ_clone(origPointer)
+				C3Tuple_RawInvoice_u832InvoiceSignatureZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

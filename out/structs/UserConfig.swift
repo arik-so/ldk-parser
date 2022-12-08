@@ -64,9 +64,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
-			UserConfig_get_channel_handshake_config(thisPtrPointer)
+				UserConfig_get_channel_handshake_config(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -85,9 +85,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-			UserConfig_set_channel_handshake_config(thisPtrPointer, val.cType!)
+				UserConfig_set_channel_handshake_config(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -106,9 +106,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
-			UserConfig_get_channel_handshake_limits(thisPtrPointer)
+				UserConfig_get_channel_handshake_limits(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -127,9 +127,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-			UserConfig_set_channel_handshake_limits(thisPtrPointer, val.cType!)
+				UserConfig_set_channel_handshake_limits(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -148,9 +148,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
-			UserConfig_get_channel_config(thisPtrPointer)
+				UserConfig_get_channel_config(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -169,9 +169,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-			UserConfig_set_channel_config(thisPtrPointer, val.cType!)
+				UserConfig_set_channel_config(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -205,9 +205,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
-			UserConfig_get_accept_forwards_to_priv_channels(thisPtrPointer)
+				UserConfig_get_accept_forwards_to_priv_channels(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -241,9 +241,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-			UserConfig_set_accept_forwards_to_priv_channels(thisPtrPointer, val)
+				UserConfig_set_accept_forwards_to_priv_channels(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -263,9 +263,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
-			UserConfig_get_accept_inbound_channels(thisPtrPointer)
+				UserConfig_get_accept_inbound_channels(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -285,9 +285,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-			UserConfig_set_accept_inbound_channels(thisPtrPointer, val)
+				UserConfig_set_accept_inbound_channels(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -318,9 +318,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
-			UserConfig_get_manually_accept_inbound_channels(thisPtrPointer)
+				UserConfig_get_manually_accept_inbound_channels(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -351,9 +351,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-			UserConfig_set_manually_accept_inbound_channels(thisPtrPointer, val)
+				UserConfig_set_manually_accept_inbound_channels(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -389,9 +389,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKUserConfig>) in
-			UserConfig_clone(origPointer)
+				UserConfig_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

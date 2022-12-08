@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
-			RouteHop_get_pubkey(thisPtrPointer)
+				RouteHop_get_pubkey(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-			RouteHop_set_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
+				RouteHop_set_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -106,9 +106,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
-			RouteHop_get_node_features(thisPtrPointer)
+				RouteHop_get_node_features(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -128,9 +128,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-			RouteHop_set_node_features(thisPtrPointer, val.cType!)
+				RouteHop_set_node_features(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,9 +149,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
-			RouteHop_get_short_channel_id(thisPtrPointer)
+				RouteHop_get_short_channel_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -170,9 +170,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-			RouteHop_set_short_channel_id(thisPtrPointer, val)
+				RouteHop_set_short_channel_id(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -192,9 +192,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
-			RouteHop_get_channel_features(thisPtrPointer)
+				RouteHop_get_channel_features(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -214,9 +214,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-			RouteHop_set_channel_features(thisPtrPointer, val.cType!)
+				RouteHop_set_channel_features(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -237,9 +237,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
-			RouteHop_get_fee_msat(thisPtrPointer)
+				RouteHop_get_fee_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -260,9 +260,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-			RouteHop_set_fee_msat(thisPtrPointer, val)
+				RouteHop_set_fee_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -282,9 +282,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
-			RouteHop_get_cltv_expiry_delta(thisPtrPointer)
+				RouteHop_get_cltv_expiry_delta(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -304,9 +304,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-			RouteHop_set_cltv_expiry_delta(thisPtrPointer, val)
+				RouteHop_set_cltv_expiry_delta(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -344,9 +344,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRouteHop>) in
-			RouteHop_clone(origPointer)
+				RouteHop_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -365,9 +365,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRouteHop>) in
-			RouteHop_hash(oPointer)
+				RouteHop_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -388,13 +388,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRouteHop>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRouteHop>) in
-			RouteHop_eq(aPointer, bPointer)
+				RouteHop_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -413,9 +413,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRouteHop>) in
-			RouteHop_write(objPointer)
+				RouteHop_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

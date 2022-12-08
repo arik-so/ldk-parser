@@ -140,9 +140,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKClosureReason>) in
-			ClosureReason_clone(origPointer)
+				ClosureReason_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -302,13 +302,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKClosureReason>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKClosureReason>) in
-			ClosureReason_eq(aPointer, bPointer)
+				ClosureReason_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -327,9 +327,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKClosureReason>) in
-			ClosureReason_write(objPointer)
+				ClosureReason_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

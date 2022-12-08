@@ -136,9 +136,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: event.cType!) { (eventPointer: UnsafePointer<LDKEvent>) in
-			self.cType!.handle_event(self.cType!.this_arg, eventPointer)
+				self.cType!.handle_event(self.cType!.this_arg, eventPointer)
 						}
-			
+				
 
 						// cleanup
 						

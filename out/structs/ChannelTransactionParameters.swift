@@ -65,9 +65,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_get_holder_pubkeys(thisPtrPointer)
+				ChannelTransactionParameters_get_holder_pubkeys(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_set_holder_pubkeys(thisPtrPointer, val.cType!)
+				ChannelTransactionParameters_set_holder_pubkeys(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -107,9 +107,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_get_holder_selected_contest_delay(thisPtrPointer)
+				ChannelTransactionParameters_get_holder_selected_contest_delay(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -128,9 +128,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_set_holder_selected_contest_delay(thisPtrPointer, val)
+				ChannelTransactionParameters_set_holder_selected_contest_delay(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -150,9 +150,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_get_is_outbound_from_holder(thisPtrPointer)
+				ChannelTransactionParameters_get_is_outbound_from_holder(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -172,9 +172,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_set_is_outbound_from_holder(thisPtrPointer, val)
+				ChannelTransactionParameters_set_is_outbound_from_holder(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -196,9 +196,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_get_counterparty_parameters(thisPtrPointer)
+				ChannelTransactionParameters_get_counterparty_parameters(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -233,9 +233,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_set_counterparty_parameters(thisPtrPointer, val.cType!)
+				ChannelTransactionParameters_set_counterparty_parameters(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -256,9 +256,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_get_funding_outpoint(thisPtrPointer)
+				ChannelTransactionParameters_get_funding_outpoint(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -292,9 +292,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_set_funding_outpoint(thisPtrPointer, val.cType!)
+				ChannelTransactionParameters_set_funding_outpoint(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -314,9 +314,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_get_opt_anchors(thisPtrPointer)
+				ChannelTransactionParameters_get_opt_anchors(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -336,9 +336,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_set_opt_anchors(thisPtrPointer, val.getCValue())
+				ChannelTransactionParameters_set_opt_anchors(thisPtrPointer, val.getCValue())
 						}
-			
+				
 
 						// cleanup
 						
@@ -374,9 +374,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_clone(origPointer)
+				ChannelTransactionParameters_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -395,9 +395,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_is_populated(thisArgPointer)
+				ChannelTransactionParameters_is_populated(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -419,9 +419,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_as_holder_broadcastable(thisArgPointer)
+				ChannelTransactionParameters_as_holder_broadcastable(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -443,9 +443,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_as_counterparty_broadcastable(thisArgPointer)
+				ChannelTransactionParameters_as_counterparty_broadcastable(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -464,9 +464,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			ChannelTransactionParameters_write(objPointer)
+				ChannelTransactionParameters_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

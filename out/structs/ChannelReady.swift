@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReady>) in
-			ChannelReady_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ChannelReady_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReady>) in
-			ChannelReady_get_next_per_commitment_point(thisPtrPointer)
+				ChannelReady_get_next_per_commitment_point(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -107,9 +107,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReady>) in
-			ChannelReady_set_next_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ChannelReady_set_next_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -129,9 +129,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReady>) in
-			ChannelReady_get_short_channel_id_alias(thisPtrPointer)
+				ChannelReady_get_short_channel_id_alias(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -153,9 +153,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReady>) in
-			ChannelReady_set_short_channel_id_alias(thisPtrPointer, valOption.cType!)
+				ChannelReady_set_short_channel_id_alias(thisPtrPointer, valOption.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -197,9 +197,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChannelReady>) in
-			ChannelReady_clone(origPointer)
+				ChannelReady_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -220,13 +220,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKChannelReady>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKChannelReady>) in
-			ChannelReady_eq(aPointer, bPointer)
+				ChannelReady_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -245,9 +245,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelReady>) in
-			ChannelReady_write(objPointer)
+				ChannelReady_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

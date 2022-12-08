@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_get_outpoint(thisPtrPointer)
+				DelayedPaymentOutputDescriptor_get_outpoint(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -83,9 +83,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.cType!)
+				DelayedPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -104,9 +104,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_get_per_commitment_point(thisPtrPointer)
+				DelayedPaymentOutputDescriptor_get_per_commitment_point(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -127,9 +127,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_set_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
+				DelayedPaymentOutputDescriptor_set_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,9 +149,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_get_to_self_delay(thisPtrPointer)
+				DelayedPaymentOutputDescriptor_get_to_self_delay(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -171,9 +171,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_set_to_self_delay(thisPtrPointer, val)
+				DelayedPaymentOutputDescriptor_set_to_self_delay(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -194,9 +194,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_get_output(thisPtrPointer)
+				DelayedPaymentOutputDescriptor_get_output(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -215,9 +215,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_set_output(thisPtrPointer, val.cType!)
+				DelayedPaymentOutputDescriptor_set_output(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -237,9 +237,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_get_revocation_pubkey(thisPtrPointer)
+				DelayedPaymentOutputDescriptor_get_revocation_pubkey(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -261,9 +261,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_set_revocation_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
+				DelayedPaymentOutputDescriptor_set_revocation_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -286,9 +286,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_set_channel_keys_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				DelayedPaymentOutputDescriptor_set_channel_keys_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -307,9 +307,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_get_channel_value_satoshis(thisPtrPointer)
+				DelayedPaymentOutputDescriptor_get_channel_value_satoshis(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -328,9 +328,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_set_channel_value_satoshis(thisPtrPointer, val)
+				DelayedPaymentOutputDescriptor_set_channel_value_satoshis(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -372,9 +372,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_clone(origPointer)
+				DelayedPaymentOutputDescriptor_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -395,13 +395,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_eq(aPointer, bPointer)
+				DelayedPaymentOutputDescriptor_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -420,9 +420,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
-			DelayedPaymentOutputDescriptor_write(objPointer)
+				DelayedPaymentOutputDescriptor_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

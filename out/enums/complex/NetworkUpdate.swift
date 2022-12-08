@@ -95,9 +95,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKNetworkUpdate>) in
-			NetworkUpdate_clone(origPointer)
+				NetworkUpdate_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -170,13 +170,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKNetworkUpdate>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKNetworkUpdate>) in
-			NetworkUpdate_eq(aPointer, bPointer)
+				NetworkUpdate_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -195,9 +195,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNetworkUpdate>) in
-			NetworkUpdate_write(objPointer)
+				NetworkUpdate_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

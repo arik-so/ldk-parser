@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentSigned>) in
-			CommitmentSigned_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				CommitmentSigned_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentSigned>) in
-			CommitmentSigned_get_signature(thisPtrPointer)
+				CommitmentSigned_get_signature(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -107,9 +107,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentSigned>) in
-			CommitmentSigned_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
+				CommitmentSigned_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -130,9 +130,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentSigned>) in
-			CommitmentSigned_get_htlc_signatures(thisPtrPointer)
+				CommitmentSigned_get_htlc_signatures(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -153,9 +153,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentSigned>) in
-			CommitmentSigned_set_htlc_signatures(thisPtrPointer, valVector.cType!)
+				CommitmentSigned_set_htlc_signatures(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -201,9 +201,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCommitmentSigned>) in
-			CommitmentSigned_clone(origPointer)
+				CommitmentSigned_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -224,13 +224,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKCommitmentSigned>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKCommitmentSigned>) in
-			CommitmentSigned_eq(aPointer, bPointer)
+				CommitmentSigned_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -249,9 +249,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKCommitmentSigned>) in
-			CommitmentSigned_write(objPointer)
+				CommitmentSigned_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

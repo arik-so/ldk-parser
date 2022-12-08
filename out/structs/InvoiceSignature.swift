@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKInvoiceSignature>) in
-			InvoiceSignature_clone(origPointer)
+				InvoiceSignature_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKInvoiceSignature>) in
-			InvoiceSignature_hash(oPointer)
+				InvoiceSignature_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,13 +105,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKInvoiceSignature>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKInvoiceSignature>) in
-			InvoiceSignature_eq(aPointer, bPointer)
+				InvoiceSignature_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

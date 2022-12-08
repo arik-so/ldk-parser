@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKLightningError>) in
-			LightningError_get_err(thisPtrPointer)
+				LightningError_get_err(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKLightningError>) in
-			LightningError_set_err(thisPtrPointer, valPrimitiveWrapper.cType!)
+				LightningError_set_err(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKLightningError>) in
-			LightningError_get_action(thisPtrPointer)
+				LightningError_get_action(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKLightningError>) in
-			LightningError_set_action(thisPtrPointer, val.cType!)
+				LightningError_set_action(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -166,9 +166,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKLightningError>) in
-			LightningError_clone(origPointer)
+				LightningError_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

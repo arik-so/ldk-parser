@@ -37,7 +37,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 
-						self.cType = LDKTwentyBytes(data: Bindings.arrayToUInt8Tuple20(value))
+						self.cType = LDKTwentyBytes(data: Bindings.arrayToUInt8Tuple20(array: value))
 
 						super.init(conflictAvoidingVariableName: 0)
 					}

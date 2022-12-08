@@ -37,7 +37,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 
-						self.cType = LDKSignature(compact_form: Bindings.arrayToUInt8Tuple64(value))
+						self.cType = LDKSignature(compact_form: Bindings.arrayToUInt8Tuple64(array: value))
 
 						super.init(conflictAvoidingVariableName: 0)
 					}

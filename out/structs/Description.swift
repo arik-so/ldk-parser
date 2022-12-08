@@ -64,9 +64,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKDescription>) in
-			Description_clone(origPointer)
+				Description_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -85,9 +85,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKDescription>) in
-			Description_hash(oPointer)
+				Description_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -108,13 +108,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKDescription>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKDescription>) in
-			Description_eq(aPointer, bPointer)
+				Description_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

@@ -89,9 +89,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKFallback>) in
-			Fallback_clone(origPointer)
+				Fallback_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -171,9 +171,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKFallback>) in
-			Fallback_hash(oPointer)
+				Fallback_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -193,13 +193,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKFallback>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKFallback>) in
-			Fallback_eq(aPointer, bPointer)
+				Fallback_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

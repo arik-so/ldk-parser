@@ -67,13 +67,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKSignedRawInvoice>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKSignedRawInvoice>) in
-			SignedRawInvoice_eq(aPointer, bPointer)
+				SignedRawInvoice_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -92,9 +92,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKSignedRawInvoice>) in
-			SignedRawInvoice_clone(origPointer)
+				SignedRawInvoice_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -113,9 +113,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKSignedRawInvoice>) in
-			SignedRawInvoice_hash(oPointer)
+				SignedRawInvoice_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -154,9 +154,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
-			SignedRawInvoice_raw_invoice(thisArgPointer)
+				SignedRawInvoice_raw_invoice(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -175,9 +175,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
-			SignedRawInvoice_signature(thisArgPointer)
+				SignedRawInvoice_signature(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -196,9 +196,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
-			SignedRawInvoice_recover_payee_pub_key(thisArgPointer)
+				SignedRawInvoice_recover_payee_pub_key(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -218,9 +218,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
-			SignedRawInvoice_check_signature(thisArgPointer)
+				SignedRawInvoice_check_signature(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -258,9 +258,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKSignedRawInvoice>) in
-			SignedRawInvoice_to_str(oPointer)
+				SignedRawInvoice_to_str(oPointer)
 						}
-			
+				
 
 						// cleanup
 						

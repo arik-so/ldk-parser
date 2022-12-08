@@ -348,7 +348,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 			const someVariantTypeName = this.getPublicTypeSignature(type.someVariant.type);
 			// TODO: if outer context already implies a Nullable, find way to avoid `??`
-			return someVariantTypeName + '?';
+			return someVariantTypeName + nullabilitySuffix;
 		}
 
 		if (type instanceof RustPrimitiveWrapper) {
@@ -447,9 +447,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			// we're passing self
 			preparedArgument.accessor = 'self.cType!';
 		} else {
-
 			// these type elision helpers only apply outside the context of the very eliding type
-
 			if (argument.type instanceof RustNullableOption) {
 				preparedArgument.name += 'Option';
 				// TODO: figure out when label should be `some: `
@@ -504,6 +502,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else {
 				throw new Error(`Unsupported native argument type: ${argument.type.getName()} (${argument.type.constructor.name})`);
 			}
+
 		}
 
 		if (argument.isAsteriskPointer) {
@@ -514,16 +513,31 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			// TODO: figure out when exactly this is necessary. Seems to be 1:1 with mutable, but not sure yet
 			const inoutAmpersandInfix = argument.isConstant ? '' : '&';
 
-			preparedArgument.name += 'Pointer';
-			preparedArgument.methodCallWrapperPrefix += `
+			if (!argument.isNonnullablePointer && containerType instanceof RustTrait) {
+				// TODO: remove the RustTrait restriction
+				preparedArgument.conversion = `
+					var ${preparedArgument.name}Pointer: UnsafeMutablePointer<${typeName}>? = nil
+					if let ${publicName} = ${publicName} {
+						${preparedArgument.conversion}
+						${preparedArgument.name}Pointer = UnsafeMutablePointer<${typeName}>.allocate(capacity: 1)
+						${preparedArgument.name}Pointer!.initialize(to: ${preparedArgument.accessor})
+					}
+				`;
+				preparedArgument.name += 'Pointer';
+				preparedArgument.accessor = preparedArgument.name;
+			} else {
+				preparedArgument.name += 'Pointer';
+				preparedArgument.methodCallWrapperPrefix += `
 						withUnsafe${mutabilityInfix}Pointer(to: ${inoutAmpersandInfix}${preparedArgument.accessor}) { (${preparedArgument.name}: Unsafe${mutabilityInfix}Pointer<${typeName}>) in
-			`;
-			preparedArgument.methodCallWrapperSuffix += `
+				`;
+				preparedArgument.methodCallWrapperSuffix += `
 						}
-			`;
+				`;
 
-			// the wrapper accesses the variable normally, and introduces a new variable name by which to refer to the value
-			preparedArgument.accessor = preparedArgument.name;
+				// the wrapper accesses the variable normally, and introduces a new variable name by which to refer to the value
+				preparedArgument.accessor = preparedArgument.name;
+			}
+
 		}
 
 		return preparedArgument;

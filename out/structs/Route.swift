@@ -66,9 +66,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRoute>) in
-			Route_get_paths(thisPtrPointer)
+				Route_get_paths(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -93,9 +93,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRoute>) in
-			Route_set_paths(thisPtrPointer, valVector.cType!)
+				Route_set_paths(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -122,9 +122,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRoute>) in
-			Route_get_payment_params(thisPtrPointer)
+				Route_get_payment_params(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -162,9 +162,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRoute>) in
-			Route_set_payment_params(thisPtrPointer, val.cType!)
+				Route_set_payment_params(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -204,9 +204,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRoute>) in
-			Route_clone(origPointer)
+				Route_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -225,9 +225,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRoute>) in
-			Route_hash(oPointer)
+				Route_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -248,13 +248,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRoute>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRoute>) in
-			Route_eq(aPointer, bPointer)
+				Route_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -276,9 +276,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRoute>) in
-			Route_get_total_fees(thisArgPointer)
+				Route_get_total_fees(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -297,9 +297,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRoute>) in
-			Route_get_total_amount(thisArgPointer)
+				Route_get_total_amount(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -318,9 +318,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRoute>) in
-			Route_write(objPointer)
+				Route_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

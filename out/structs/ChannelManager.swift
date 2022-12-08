@@ -122,9 +122,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_get_current_default_configuration(thisArgPointer)
+				ChannelManager_get_current_default_configuration(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -172,9 +172,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_create_channel(thisArgPointer, theirNetworkKeyPrimitiveWrapper.cType!, channelValueSatoshis, pushMsat, userChannelId, overrideConfig.cType!)
+				ChannelManager_create_channel(thisArgPointer, theirNetworkKeyPrimitiveWrapper.cType!, channelValueSatoshis, pushMsat, userChannelId, overrideConfig.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -194,9 +194,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_list_channels(thisArgPointer)
+				ChannelManager_list_channels(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -222,9 +222,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_list_usable_channels(thisArgPointer)
+				ChannelManager_list_usable_channels(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -263,13 +263,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: tupledChannelId) { (tupledChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_close_channel(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!)
+				ChannelManager_close_channel(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -310,13 +310,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: tupledChannelId) { (tupledChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_close_channel_with_target_feerate(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, targetFeerateSatsPer_1000Weight)
+				ChannelManager_close_channel_with_target_feerate(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, targetFeerateSatsPer_1000Weight)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -342,13 +342,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: tupledChannelId) { (tupledChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_force_close_broadcasting_latest_txn(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!)
+				ChannelManager_force_close_broadcasting_latest_txn(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -376,13 +376,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: tupledChannelId) { (tupledChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_force_close_without_broadcasting_txn(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!)
+				ChannelManager_force_close_without_broadcasting_txn(thisArgPointer, tupledChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -402,9 +402,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_force_close_all_channels_broadcasting_latest_txn(thisArgPointer)
+				ChannelManager_force_close_all_channels_broadcasting_latest_txn(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -424,9 +424,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_force_close_all_channels_without_broadcasting_txn(thisArgPointer)
+				ChannelManager_force_close_all_channels_without_broadcasting_txn(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -489,13 +489,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-			ChannelManager_send_payment(thisArgPointer, routePointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
+				ChannelManager_send_payment(thisArgPointer, routePointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -525,13 +525,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-			ChannelManager_retry_payment(thisArgPointer, routePointer, paymentIdPrimitiveWrapper.cType!)
+				ChannelManager_retry_payment(thisArgPointer, routePointer, paymentIdPrimitiveWrapper.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -565,9 +565,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_abandon_payment(thisArgPointer, paymentIdPrimitiveWrapper.cType!)
+				ChannelManager_abandon_payment(thisArgPointer, paymentIdPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -603,13 +603,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-			ChannelManager_send_spontaneous_payment(thisArgPointer, routePointer, paymentPreimagePrimitiveWrapper.cType!)
+				ChannelManager_send_spontaneous_payment(thisArgPointer, routePointer, paymentPreimagePrimitiveWrapper.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -632,9 +632,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_send_probe(thisArgPointer, hopsVector.cType!)
+				ChannelManager_send_probe(thisArgPointer, hopsVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -690,13 +690,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: tupledTemporaryChannelId) { (tupledTemporaryChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_funding_transaction_generated(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, fundingTransactionPrimitiveWrapper.cType!)
+				ChannelManager_funding_transaction_generated(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, fundingTransactionPrimitiveWrapper.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -740,13 +740,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: config.cType!) { (configPointer: UnsafePointer<LDKChannelConfig>) in
-			ChannelManager_update_channel_config(thisArgPointer, counterpartyNodeIdPrimitiveWrapper.cType!, channelIdsVector.cType!, configPointer)
+				ChannelManager_update_channel_config(thisArgPointer, counterpartyNodeIdPrimitiveWrapper.cType!, channelIdsVector.cType!, configPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -770,9 +770,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_process_pending_htlc_forwards(thisArgPointer)
+				ChannelManager_process_pending_htlc_forwards(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -802,9 +802,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_timer_tick_occurred(thisArgPointer)
+				ChannelManager_timer_tick_occurred(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -837,13 +837,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: tupledPaymentHash) { (tupledPaymentHashPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_fail_htlc_backwards(thisArgPointer, tupledPaymentHashPointer)
+				ChannelManager_fail_htlc_backwards(thisArgPointer, tupledPaymentHashPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -881,9 +881,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_claim_funds(thisArgPointer, paymentPreimagePrimitiveWrapper.cType!)
+				ChannelManager_claim_funds(thisArgPointer, paymentPreimagePrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -902,9 +902,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_get_our_node_id(thisArgPointer)
+				ChannelManager_get_our_node_id(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -942,13 +942,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: tupledTemporaryChannelId) { (tupledTemporaryChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_accept_inbound_channel(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, userChannelId)
+				ChannelManager_accept_inbound_channel(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, userChannelId)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -988,13 +988,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			
+				
 						withUnsafePointer(to: tupledTemporaryChannelId) { (tupledTemporaryChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelManager_accept_inbound_channel_from_trusted_peer_0conf(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, userChannelId)
+				ChannelManager_accept_inbound_channel_from_trusted_peer_0conf(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, userChannelId)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -1040,9 +1040,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_create_inbound_payment(thisArgPointer, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
+				ChannelManager_create_inbound_payment(thisArgPointer, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1071,9 +1071,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_create_inbound_payment_legacy(thisArgPointer, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
+				ChannelManager_create_inbound_payment_legacy(thisArgPointer, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1138,9 +1138,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_create_inbound_payment_for_hash(thisArgPointer, paymentHashPrimitiveWrapper.cType!, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
+				ChannelManager_create_inbound_payment_for_hash(thisArgPointer, paymentHashPrimitiveWrapper.cType!, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1171,9 +1171,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_create_inbound_payment_for_hash_legacy(thisArgPointer, paymentHashPrimitiveWrapper.cType!, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
+				ChannelManager_create_inbound_payment_for_hash_legacy(thisArgPointer, paymentHashPrimitiveWrapper.cType!, minValueMsatOption.cType!, invoiceExpiryDeltaSecs)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1199,9 +1199,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_get_payment_preimage(thisArgPointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
+				ChannelManager_get_payment_preimage(thisArgPointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1223,9 +1223,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_get_phantom_scid(thisArgPointer)
+				ChannelManager_get_phantom_scid(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1246,9 +1246,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_get_phantom_route_hints(thisArgPointer)
+				ChannelManager_get_phantom_route_hints(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1268,9 +1268,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_as_MessageSendEventsProvider(thisArgPointer)
+				ChannelManager_as_MessageSendEventsProvider(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1290,9 +1290,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_as_EventsProvider(thisArgPointer)
+				ChannelManager_as_EventsProvider(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1312,9 +1312,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_as_Listen(thisArgPointer)
+				ChannelManager_as_Listen(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1334,9 +1334,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_as_Confirm(thisArgPointer)
+				ChannelManager_as_Confirm(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1360,9 +1360,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_await_persistable_update_timeout(thisArgPointer, maxWait)
+				ChannelManager_await_persistable_update_timeout(thisArgPointer, maxWait)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1383,9 +1383,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_await_persistable_update(thisArgPointer)
+				ChannelManager_await_persistable_update(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1406,9 +1406,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_get_persistable_update_future(thisArgPointer)
+				ChannelManager_get_persistable_update_future(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1428,9 +1428,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_current_best_block(thisArgPointer)
+				ChannelManager_current_best_block(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1450,9 +1450,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_as_ChannelMessageHandler(thisArgPointer)
+				ChannelManager_as_ChannelMessageHandler(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1471,9 +1471,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_write(objPointer)
+				ChannelManager_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1493,9 +1493,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-			ChannelManager_as_Payer(thisArgPointer)
+				ChannelManager_as_Payer(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

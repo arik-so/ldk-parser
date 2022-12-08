@@ -73,9 +73,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKWatchedOutput>) in
-			WatchedOutput_get_block_hash(thisPtrPointer)
+				WatchedOutput_get_block_hash(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -106,9 +106,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
-			WatchedOutput_set_block_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
+				WatchedOutput_set_block_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -127,9 +127,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKWatchedOutput>) in
-			WatchedOutput_get_outpoint(thisPtrPointer)
+				WatchedOutput_get_outpoint(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -148,9 +148,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
-			WatchedOutput_set_outpoint(thisPtrPointer, val.cType!)
+				WatchedOutput_set_outpoint(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -169,9 +169,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKWatchedOutput>) in
-			WatchedOutput_get_script_pubkey(thisPtrPointer)
+				WatchedOutput_get_script_pubkey(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -192,9 +192,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
-			WatchedOutput_set_script_pubkey(thisPtrPointer, valVector.cType!)
+				WatchedOutput_set_script_pubkey(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -238,9 +238,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKWatchedOutput>) in
-			WatchedOutput_clone(origPointer)
+				WatchedOutput_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -261,13 +261,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKWatchedOutput>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKWatchedOutput>) in
-			WatchedOutput_eq(aPointer, bPointer)
+				WatchedOutput_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -286,9 +286,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKWatchedOutput>) in
-			WatchedOutput_hash(oPointer)
+				WatchedOutput_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						

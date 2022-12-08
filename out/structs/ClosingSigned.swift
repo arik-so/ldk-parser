@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSigned>) in
-			ClosingSigned_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ClosingSigned_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKClosingSigned>) in
-			ClosingSigned_get_fee_satoshis(thisPtrPointer)
+				ClosingSigned_get_fee_satoshis(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSigned>) in
-			ClosingSigned_set_fee_satoshis(thisPtrPointer, val)
+				ClosingSigned_set_fee_satoshis(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKClosingSigned>) in
-			ClosingSigned_get_signature(thisPtrPointer)
+				ClosingSigned_get_signature(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,9 +149,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSigned>) in
-			ClosingSigned_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ClosingSigned_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -173,9 +173,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKClosingSigned>) in
-			ClosingSigned_get_fee_range(thisPtrPointer)
+				ClosingSigned_get_fee_range(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -210,9 +210,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSigned>) in
-			ClosingSigned_set_fee_range(thisPtrPointer, val.cType!)
+				ClosingSigned_set_fee_range(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -252,9 +252,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKClosingSigned>) in
-			ClosingSigned_clone(origPointer)
+				ClosingSigned_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -275,13 +275,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKClosingSigned>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKClosingSigned>) in
-			ClosingSigned_eq(aPointer, bPointer)
+				ClosingSigned_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -300,9 +300,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKClosingSigned>) in
-			ClosingSigned_write(objPointer)
+				ClosingSigned_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

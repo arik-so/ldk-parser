@@ -65,9 +65,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
-			DirectedChannelTransactionParameters_broadcaster_pubkeys(thisArgPointer)
+				DirectedChannelTransactionParameters_broadcaster_pubkeys(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
-			DirectedChannelTransactionParameters_countersignatory_pubkeys(thisArgPointer)
+				DirectedChannelTransactionParameters_countersignatory_pubkeys(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -108,9 +108,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
-			DirectedChannelTransactionParameters_contest_delay(thisArgPointer)
+				DirectedChannelTransactionParameters_contest_delay(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -132,9 +132,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
-			DirectedChannelTransactionParameters_is_outbound(thisArgPointer)
+				DirectedChannelTransactionParameters_is_outbound(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -153,9 +153,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
-			DirectedChannelTransactionParameters_funding_outpoint(thisArgPointer)
+				DirectedChannelTransactionParameters_funding_outpoint(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -174,9 +174,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
-			DirectedChannelTransactionParameters_opt_anchors(thisArgPointer)
+				DirectedChannelTransactionParameters_opt_anchors(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

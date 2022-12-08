@@ -89,9 +89,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKP2PGossipSync>) in
-			GossipSync_p2_p(aPointer)
+				GossipSync_p2_p(aPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -110,9 +110,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKRapidGossipSync>) in
-			GossipSync_rapid(aPointer)
+				GossipSync_rapid(aPointer)
 						}
-			
+				
 
 						// cleanup
 						

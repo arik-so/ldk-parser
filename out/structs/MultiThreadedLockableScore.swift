@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKMultiThreadedLockableScore>) in
-			MultiThreadedLockableScore_as_LockableScore(thisArgPointer)
+				MultiThreadedLockableScore_as_LockableScore(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -83,9 +83,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKMultiThreadedLockableScore>) in
-			MultiThreadedLockableScore_write(objPointer)
+				MultiThreadedLockableScore_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKMultiThreadedLockableScore>) in
-			MultiThreadedLockableScore_as_WriteableScore(thisArgPointer)
+				MultiThreadedLockableScore_as_WriteableScore(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

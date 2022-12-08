@@ -76,9 +76,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_clone(origPointer)
+				ChannelMonitor_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -97,9 +97,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_write(objPointer)
+				ChannelMonitor_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -121,21 +121,21 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			
+				
 						withUnsafePointer(to: updates.cType!) { (updatesPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
-			
+				
 						withUnsafePointer(to: broadcaster.activate().cType!) { (broadcasterPointer: UnsafePointer<LDKBroadcasterInterface>) in
-			
+				
 						withUnsafePointer(to: logger.activate().cType!) { (loggerPointer: UnsafePointer<LDKLogger>) in
-			ChannelMonitor_update_monitor(thisArgPointer, updatesPointer, broadcasterPointer, feeEstimator.activate().cType!, loggerPointer)
+				ChannelMonitor_update_monitor(thisArgPointer, updatesPointer, broadcasterPointer, feeEstimator.activate().cType!, loggerPointer)
 						}
-			
+				
 						}
-			
+				
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -155,9 +155,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_get_latest_update_id(thisArgPointer)
+				ChannelMonitor_get_latest_update_id(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -176,9 +176,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_get_funding_txo(thisArgPointer)
+				ChannelMonitor_get_funding_txo(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -198,9 +198,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_get_outputs_to_watch(thisArgPointer)
+				ChannelMonitor_get_outputs_to_watch(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -221,13 +221,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			
+				
 						withUnsafePointer(to: filter.activate().cType!) { (filterPointer: UnsafePointer<LDKFilter>) in
-			ChannelMonitor_load_outputs_to_watch(thisArgPointer, filterPointer)
+				ChannelMonitor_load_outputs_to_watch(thisArgPointer, filterPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -247,9 +247,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_get_and_clear_pending_monitor_events(thisArgPointer)
+				ChannelMonitor_get_and_clear_pending_monitor_events(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -273,9 +273,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_get_and_clear_pending_events(thisArgPointer)
+				ChannelMonitor_get_and_clear_pending_events(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -299,9 +299,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_get_counterparty_node_id(thisArgPointer)
+				ChannelMonitor_get_counterparty_node_id(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -342,13 +342,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			
+				
 						withUnsafePointer(to: logger.activate().cType!) { (loggerPointer: UnsafePointer<LDKLogger>) in
-			ChannelMonitor_get_latest_holder_commitment_txn(thisArgPointer, loggerPointer)
+				ChannelMonitor_get_latest_holder_commitment_txn(thisArgPointer, loggerPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -381,13 +381,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			
+				
 						withUnsafePointer(to: tupledHeader) { (tupledHeaderPointer: UnsafePointer<UInt8Tuple80>) in
-			ChannelMonitor_block_connected(thisArgPointer, tupledHeaderPointer, txdataVector.cType!, height, broadcaster.activate().cType!, feeEstimator.activate().cType!, logger.activate().cType!)
+				ChannelMonitor_block_connected(thisArgPointer, tupledHeaderPointer, txdataVector.cType!, height, broadcaster.activate().cType!, feeEstimator.activate().cType!, logger.activate().cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -411,13 +411,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			
+				
 						withUnsafePointer(to: tupledHeader) { (tupledHeaderPointer: UnsafePointer<UInt8Tuple80>) in
-			ChannelMonitor_block_disconnected(thisArgPointer, tupledHeaderPointer, height, broadcaster.activate().cType!, feeEstimator.activate().cType!, logger.activate().cType!)
+				ChannelMonitor_block_disconnected(thisArgPointer, tupledHeaderPointer, height, broadcaster.activate().cType!, feeEstimator.activate().cType!, logger.activate().cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -446,13 +446,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			
+				
 						withUnsafePointer(to: tupledHeader) { (tupledHeaderPointer: UnsafePointer<UInt8Tuple80>) in
-			ChannelMonitor_transactions_confirmed(thisArgPointer, tupledHeaderPointer, txdataVector.cType!, height, broadcaster.activate().cType!, feeEstimator.activate().cType!, logger.activate().cType!)
+				ChannelMonitor_transactions_confirmed(thisArgPointer, tupledHeaderPointer, txdataVector.cType!, height, broadcaster.activate().cType!, feeEstimator.activate().cType!, logger.activate().cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -480,13 +480,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			
+				
 						withUnsafePointer(to: tupledTxid) { (tupledTxidPointer: UnsafePointer<UInt8Tuple32>) in
-			ChannelMonitor_transaction_unconfirmed(thisArgPointer, tupledTxidPointer, broadcaster.activate().cType!, feeEstimator.activate().cType!, logger.activate().cType!)
+				ChannelMonitor_transaction_unconfirmed(thisArgPointer, tupledTxidPointer, broadcaster.activate().cType!, feeEstimator.activate().cType!, logger.activate().cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -513,13 +513,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			
+				
 						withUnsafePointer(to: tupledHeader) { (tupledHeaderPointer: UnsafePointer<UInt8Tuple80>) in
-			ChannelMonitor_best_block_updated(thisArgPointer, tupledHeaderPointer, height, broadcaster.activate().cType!, feeEstimator.activate().cType!, logger.activate().cType!)
+				ChannelMonitor_best_block_updated(thisArgPointer, tupledHeaderPointer, height, broadcaster.activate().cType!, feeEstimator.activate().cType!, logger.activate().cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -538,9 +538,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_get_relevant_txids(thisArgPointer)
+				ChannelMonitor_get_relevant_txids(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -560,9 +560,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_current_best_block(thisArgPointer)
+				ChannelMonitor_current_best_block(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -595,9 +595,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
-			ChannelMonitor_get_claimable_balances(thisArgPointer)
+				ChannelMonitor_get_claimable_balances(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

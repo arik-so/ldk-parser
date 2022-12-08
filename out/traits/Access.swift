@@ -142,15 +142,18 @@
 					public override func getUtxo(genesisHash: [UInt8]?, shortChannelId: UInt64) -> Result_TxOutAccessErrorZ {
 						// native call variable prep
 						
+					var tupledGenesisHashPointer: UnsafeMutablePointer<UInt8Tuple32>? = nil
+					if let genesisHash = genesisHash {
+						
 						let tupledGenesisHash = Bindings.arrayToUInt8Tuple32(array: genesisHash)
 					
+						tupledGenesisHashPointer = UnsafeMutablePointer<UInt8Tuple32>.allocate(capacity: 1)
+						tupledGenesisHashPointer!.initialize(to: tupledGenesisHash)
+					}
+				
 
 						// native method call
-						let nativeCallResult = 
-						withUnsafePointer(to: tupledGenesisHash) { (tupledGenesisHashPointer: UnsafePointer<UInt8Tuple32>) in
-			self.cType!.get_utxo(self.cType!.this_arg, tupledGenesisHashPointer, shortChannelId)
-						}
-			
+						let nativeCallResult = self.cType!.get_utxo(self.cType!.this_arg, tupledGenesisHashPointer, shortChannelId)
 
 						// cleanup
 						

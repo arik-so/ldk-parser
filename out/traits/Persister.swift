@@ -182,9 +182,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: channelManager.cType!) { (channelManagerPointer: UnsafePointer<LDKChannelManager>) in
-			self.cType!.persist_manager(self.cType!.this_arg, channelManagerPointer)
+				self.cType!.persist_manager(self.cType!.this_arg, channelManagerPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -203,9 +203,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
-			self.cType!.persist_graph(self.cType!.this_arg, networkGraphPointer)
+				self.cType!.persist_graph(self.cType!.this_arg, networkGraphPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -224,9 +224,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: scorer.activate().cType!) { (scorerPointer: UnsafePointer<LDKWriteableScore>) in
-			self.cType!.persist_scorer(self.cType!.this_arg, scorerPointer)
+				self.cType!.persist_scorer(self.cType!.this_arg, scorerPointer)
 						}
-			
+				
 
 						// cleanup
 						

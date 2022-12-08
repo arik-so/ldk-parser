@@ -47,9 +47,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKC2Tuple_PublicKeyTypeZ>) in
-			C2Tuple_PublicKeyTypeZ_clone(origPointer)
+				C2Tuple_PublicKeyTypeZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

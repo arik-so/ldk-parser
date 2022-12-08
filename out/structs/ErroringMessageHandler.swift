@@ -80,9 +80,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKErroringMessageHandler>) in
-			ErroringMessageHandler_as_MessageSendEventsProvider(thisArgPointer)
+				ErroringMessageHandler_as_MessageSendEventsProvider(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -102,9 +102,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKErroringMessageHandler>) in
-			ErroringMessageHandler_as_ChannelMessageHandler(thisArgPointer)
+				ErroringMessageHandler_as_ChannelMessageHandler(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

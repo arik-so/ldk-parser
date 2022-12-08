@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRoutingFees>) in
-			RoutingFees_get_base_msat(thisPtrPointer)
+				RoutingFees_get_base_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRoutingFees>) in
-			RoutingFees_set_base_msat(thisPtrPointer, val)
+				RoutingFees_set_base_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -104,9 +104,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRoutingFees>) in
-			RoutingFees_get_proportional_millionths(thisPtrPointer)
+				RoutingFees_get_proportional_millionths(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRoutingFees>) in
-			RoutingFees_set_proportional_millionths(thisPtrPointer, val)
+				RoutingFees_set_proportional_millionths(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -166,13 +166,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRoutingFees>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRoutingFees>) in
-			RoutingFees_eq(aPointer, bPointer)
+				RoutingFees_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -191,9 +191,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRoutingFees>) in
-			RoutingFees_clone(origPointer)
+				RoutingFees_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -212,9 +212,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRoutingFees>) in
-			RoutingFees_hash(oPointer)
+				RoutingFees_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -233,9 +233,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRoutingFees>) in
-			RoutingFees_write(objPointer)
+				RoutingFees_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

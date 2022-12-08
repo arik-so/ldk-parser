@@ -74,9 +74,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCOption_ClosureReasonZ>) in
-			COption_ClosureReasonZ_clone(origPointer)
+				COption_ClosureReasonZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

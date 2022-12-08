@@ -98,9 +98,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_C2Tuple_SignatureSignatureZNoneZ>) in
-			CResult_C2Tuple_SignatureSignatureZNoneZ_clone(origPointer)
+				CResult_C2Tuple_SignatureSignatureZNoneZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

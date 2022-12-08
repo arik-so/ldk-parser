@@ -111,9 +111,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKSendError>) in
-			SendError_clone(origPointer)
+				SendError_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -235,13 +235,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKSendError>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKSendError>) in
-			SendError_eq(aPointer, bPointer)
+				SendError_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

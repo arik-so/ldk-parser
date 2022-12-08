@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailMalformedHTLC>) in
-			UpdateFailMalformedHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UpdateFailMalformedHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
-			UpdateFailMalformedHTLC_get_htlc_id(thisPtrPointer)
+				UpdateFailMalformedHTLC_get_htlc_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailMalformedHTLC>) in
-			UpdateFailMalformedHTLC_set_htlc_id(thisPtrPointer, val)
+				UpdateFailMalformedHTLC_set_htlc_id(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
-			UpdateFailMalformedHTLC_get_failure_code(thisPtrPointer)
+				UpdateFailMalformedHTLC_get_failure_code(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -147,9 +147,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailMalformedHTLC>) in
-			UpdateFailMalformedHTLC_set_failure_code(thisPtrPointer, val)
+				UpdateFailMalformedHTLC_set_failure_code(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,9 +168,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
-			UpdateFailMalformedHTLC_clone(origPointer)
+				UpdateFailMalformedHTLC_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -191,13 +191,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
-			UpdateFailMalformedHTLC_eq(aPointer, bPointer)
+				UpdateFailMalformedHTLC_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -216,9 +216,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
-			UpdateFailMalformedHTLC_write(objPointer)
+				UpdateFailMalformedHTLC_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

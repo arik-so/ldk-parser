@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_PhantomRouteHintsDecodeErrorZ>) in
-			CResult_PhantomRouteHintsDecodeErrorZ_clone(origPointer)
+				CResult_PhantomRouteHintsDecodeErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -70,9 +70,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryShortChannelIds>) in
-			QueryShortChannelIds_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
+				QueryShortChannelIds_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -93,9 +93,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKQueryShortChannelIds>) in
-			QueryShortChannelIds_get_short_channel_ids(thisPtrPointer)
+				QueryShortChannelIds_get_short_channel_ids(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -116,9 +116,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryShortChannelIds>) in
-			QueryShortChannelIds_set_short_channel_ids(thisPtrPointer, valVector.cType!)
+				QueryShortChannelIds_set_short_channel_ids(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -162,9 +162,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKQueryShortChannelIds>) in
-			QueryShortChannelIds_clone(origPointer)
+				QueryShortChannelIds_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -185,13 +185,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKQueryShortChannelIds>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKQueryShortChannelIds>) in
-			QueryShortChannelIds_eq(aPointer, bPointer)
+				QueryShortChannelIds_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -229,9 +229,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKQueryShortChannelIds>) in
-			QueryShortChannelIds_write(objPointer)
+				QueryShortChannelIds_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

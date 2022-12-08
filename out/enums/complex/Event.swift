@@ -257,9 +257,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKEvent>) in
-			Event_clone(origPointer)
+				Event_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -634,9 +634,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKEvent>) in
-			Event_write(objPointer)
+				Event_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

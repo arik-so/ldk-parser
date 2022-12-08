@@ -76,9 +76,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPhantomKeysManager>) in
-			PhantomKeysManager_as_KeysInterface(thisArgPointer)
+				PhantomKeysManager_as_KeysInterface(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -110,13 +110,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: tupledSeed) { (tupledSeedPointer: UnsafePointer<UInt8Tuple32>) in
-			
+				
 						withUnsafePointer(to: tupledCrossNodeSeed) { (tupledCrossNodeSeedPointer: UnsafePointer<UInt8Tuple32>) in
-			PhantomKeysManager_new(tupledSeedPointer, startingTimeSecs, startingTimeNanos, tupledCrossNodeSeedPointer)
+				PhantomKeysManager_new(tupledSeedPointer, startingTimeSecs, startingTimeNanos, tupledCrossNodeSeedPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -141,9 +141,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPhantomKeysManager>) in
-			PhantomKeysManager_spend_spendable_outputs(thisArgPointer, descriptorsVector.cType!, outputsVector.cType!, changeDestinationScriptVector.cType!, feerateSatPer_1000Weight)
+				PhantomKeysManager_spend_spendable_outputs(thisArgPointer, descriptorsVector.cType!, outputsVector.cType!, changeDestinationScriptVector.cType!, feerateSatPer_1000Weight)
 						}
-			
+				
 
 						// cleanup
 						
@@ -170,13 +170,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPhantomKeysManager>) in
-			
+				
 						withUnsafePointer(to: tupledParams) { (tupledParamsPointer: UnsafePointer<UInt8Tuple32>) in
-			PhantomKeysManager_derive_channel_keys(thisArgPointer, channelValueSatoshis, tupledParamsPointer)
+				PhantomKeysManager_derive_channel_keys(thisArgPointer, channelValueSatoshis, tupledParamsPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

@@ -106,9 +106,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKNetAddress>) in
-			NetAddress_clone(origPointer)
+				NetAddress_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -221,13 +221,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKNetAddress>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKNetAddress>) in
-			NetAddress_eq(aPointer, bPointer)
+				NetAddress_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -246,9 +246,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNetAddress>) in
-			NetAddress_write(objPointer)
+				NetAddress_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

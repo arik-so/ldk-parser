@@ -79,9 +79,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
-			ChannelMonitorUpdate_get_update_id(thisPtrPointer)
+				ChannelMonitorUpdate_get_update_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -112,9 +112,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelMonitorUpdate>) in
-			ChannelMonitorUpdate_set_update_id(thisPtrPointer, val)
+				ChannelMonitorUpdate_set_update_id(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -133,9 +133,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
-			ChannelMonitorUpdate_clone(origPointer)
+				ChannelMonitorUpdate_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -154,9 +154,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
-			ChannelMonitorUpdate_write(objPointer)
+				ChannelMonitorUpdate_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

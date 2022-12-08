@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKBestBlock>) in
-			BestBlock_clone(origPointer)
+				BestBlock_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,13 +84,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKBestBlock>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKBestBlock>) in
-			BestBlock_eq(aPointer, bPointer)
+				BestBlock_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -146,9 +146,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKBestBlock>) in
-			BestBlock_block_hash(thisArgPointer)
+				BestBlock_block_hash(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -167,9 +167,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKBestBlock>) in
-			BestBlock_height(thisArgPointer)
+				BestBlock_height(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

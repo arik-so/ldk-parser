@@ -76,9 +76,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCOption_CVec_NetAddressZZ>) in
-			COption_CVec_NetAddressZZ_clone(origPointer)
+				COption_CVec_NetAddressZZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

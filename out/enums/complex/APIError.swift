@@ -128,9 +128,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKAPIError>) in
-			APIError_clone(origPointer)
+				APIError_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -260,13 +260,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKAPIError>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKAPIError>) in
-			APIError_eq(aPointer, bPointer)
+				APIError_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

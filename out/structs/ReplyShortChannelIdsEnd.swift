@@ -66,9 +66,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyShortChannelIdsEnd>) in
-			ReplyShortChannelIdsEnd_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ReplyShortChannelIdsEnd_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -88,9 +88,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
-			ReplyShortChannelIdsEnd_get_full_information(thisPtrPointer)
+				ReplyShortChannelIdsEnd_get_full_information(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -110,9 +110,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyShortChannelIdsEnd>) in
-			ReplyShortChannelIdsEnd_set_full_information(thisPtrPointer, val)
+				ReplyShortChannelIdsEnd_set_full_information(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -150,9 +150,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
-			ReplyShortChannelIdsEnd_clone(origPointer)
+				ReplyShortChannelIdsEnd_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -173,13 +173,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
-			ReplyShortChannelIdsEnd_eq(aPointer, bPointer)
+				ReplyShortChannelIdsEnd_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -198,9 +198,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
-			ReplyShortChannelIdsEnd_write(objPointer)
+				ReplyShortChannelIdsEnd_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

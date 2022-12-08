@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFulfillHTLC>) in
-			UpdateFulfillHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UpdateFulfillHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFulfillHTLC>) in
-			UpdateFulfillHTLC_get_htlc_id(thisPtrPointer)
+				UpdateFulfillHTLC_get_htlc_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFulfillHTLC>) in
-			UpdateFulfillHTLC_set_htlc_id(thisPtrPointer, val)
+				UpdateFulfillHTLC_set_htlc_id(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -128,9 +128,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFulfillHTLC>) in
-			UpdateFulfillHTLC_set_payment_preimage(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UpdateFulfillHTLC_set_payment_preimage(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -170,9 +170,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKUpdateFulfillHTLC>) in
-			UpdateFulfillHTLC_clone(origPointer)
+				UpdateFulfillHTLC_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -193,13 +193,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKUpdateFulfillHTLC>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKUpdateFulfillHTLC>) in
-			UpdateFulfillHTLC_eq(aPointer, bPointer)
+				UpdateFulfillHTLC_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -218,9 +218,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUpdateFulfillHTLC>) in
-			UpdateFulfillHTLC_write(objPointer)
+				UpdateFulfillHTLC_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

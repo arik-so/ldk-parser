@@ -100,9 +100,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_CVec_CVec_u8ZZNoneZ>) in
-			CResult_CVec_CVec_u8ZZNoneZ_clone(origPointer)
+				CResult_CVec_CVec_u8ZZNoneZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

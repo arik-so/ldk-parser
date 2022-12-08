@@ -67,9 +67,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: keysManager.activate().cType!) { (keysManagerPointer: UnsafePointer<LDKKeysInterface>) in
-			BlindedRoute_new(nodePksVector.cType!, keysManagerPointer)
+				BlindedRoute_new(nodePksVector.cType!, keysManagerPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -90,9 +90,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKBlindedRoute>) in
-			BlindedRoute_write(objPointer)
+				BlindedRoute_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

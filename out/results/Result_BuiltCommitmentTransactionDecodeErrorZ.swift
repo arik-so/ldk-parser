@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_BuiltCommitmentTransactionDecodeErrorZ>) in
-			CResult_BuiltCommitmentTransactionDecodeErrorZ_clone(origPointer)
+				CResult_BuiltCommitmentTransactionDecodeErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

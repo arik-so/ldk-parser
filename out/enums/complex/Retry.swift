@@ -87,9 +87,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRetry>) in
-			Retry_clone(origPointer)
+				Retry_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -143,13 +143,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRetry>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRetry>) in
-			Retry_eq(aPointer, bPointer)
+				Retry_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,9 +168,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRetry>) in
-			Retry_hash(oPointer)
+				Retry_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						

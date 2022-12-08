@@ -258,9 +258,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKOnionMessage>) in
-			self.cType!.handle_onion_message(self.cType!.this_arg, peerNodeIdPrimitiveWrapper.cType!, msgPointer)
+				self.cType!.handle_onion_message(self.cType!.this_arg, peerNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -286,9 +286,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: init.cType!) { (initPointer: UnsafePointer<LDKInit>) in
-			self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, initPointer)
+				self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, initPointer)
 						}
-			
+				
 
 						// cleanup
 						

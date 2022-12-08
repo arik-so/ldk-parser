@@ -104,9 +104,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-			ChainMonitor_get_claimable_balances(thisArgPointer, ignoredChannelsVector.cType!)
+				ChainMonitor_get_claimable_balances(thisArgPointer, ignoredChannelsVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -131,9 +131,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-			ChainMonitor_get_monitor(thisArgPointer, fundingTxo.cType!)
+				ChainMonitor_get_monitor(thisArgPointer, fundingTxo.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -155,9 +155,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-			ChainMonitor_list_monitors(thisArgPointer)
+				ChainMonitor_list_monitors(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -188,9 +188,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-			ChainMonitor_channel_monitor_updated(thisArgPointer, fundingTxo.cType!, completedUpdateId.cType!)
+				ChainMonitor_channel_monitor_updated(thisArgPointer, fundingTxo.cType!, completedUpdateId.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -210,9 +210,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-			ChainMonitor_as_Listen(thisArgPointer)
+				ChainMonitor_as_Listen(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -232,9 +232,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-			ChainMonitor_as_Confirm(thisArgPointer)
+				ChainMonitor_as_Confirm(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -254,9 +254,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-			ChainMonitor_as_Watch(thisArgPointer)
+				ChainMonitor_as_Watch(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -276,9 +276,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-			ChainMonitor_as_EventsProvider(thisArgPointer)
+				ChainMonitor_as_EventsProvider(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

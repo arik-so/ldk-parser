@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
-			FundingCreated_set_temporary_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				FundingCreated_set_temporary_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
-			FundingCreated_set_funding_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
+				FundingCreated_set_funding_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -107,9 +107,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
-			FundingCreated_get_funding_output_index(thisPtrPointer)
+				FundingCreated_get_funding_output_index(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -128,9 +128,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
-			FundingCreated_set_funding_output_index(thisPtrPointer, val)
+				FundingCreated_set_funding_output_index(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,9 +149,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
-			FundingCreated_get_signature(thisPtrPointer)
+				FundingCreated_get_signature(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -172,9 +172,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
-			FundingCreated_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
+				FundingCreated_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -216,9 +216,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKFundingCreated>) in
-			FundingCreated_clone(origPointer)
+				FundingCreated_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -239,13 +239,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKFundingCreated>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKFundingCreated>) in
-			FundingCreated_eq(aPointer, bPointer)
+				FundingCreated_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -264,9 +264,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKFundingCreated>) in
-			FundingCreated_write(objPointer)
+				FundingCreated_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -46,13 +46,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKInitFeatures>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_eq(aPointer, bPointer)
+				InitFeatures_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -71,9 +71,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_clone(origPointer)
+				InitFeatures_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -127,9 +127,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_unknown_bits(thisArgPointer)
+				InitFeatures_requires_unknown_bits(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -148,9 +148,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_write(objPointer)
+				InitFeatures_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -188,9 +188,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_data_loss_protect_optional(thisArgPointer)
+				InitFeatures_set_data_loss_protect_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -209,9 +209,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_data_loss_protect_required(thisArgPointer)
+				InitFeatures_set_data_loss_protect_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -230,9 +230,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_data_loss_protect(thisArgPointer)
+				InitFeatures_supports_data_loss_protect(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -251,9 +251,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_data_loss_protect(thisArgPointer)
+				InitFeatures_requires_data_loss_protect(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -272,9 +272,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_initial_routing_sync_optional(thisArgPointer)
+				InitFeatures_set_initial_routing_sync_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -293,9 +293,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_initial_routing_sync_required(thisArgPointer)
+				InitFeatures_set_initial_routing_sync_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -314,9 +314,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_initial_routing_sync(thisArgPointer)
+				InitFeatures_initial_routing_sync(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -335,9 +335,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_upfront_shutdown_script_optional(thisArgPointer)
+				InitFeatures_set_upfront_shutdown_script_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -356,9 +356,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_upfront_shutdown_script_required(thisArgPointer)
+				InitFeatures_set_upfront_shutdown_script_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -377,9 +377,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_upfront_shutdown_script(thisArgPointer)
+				InitFeatures_supports_upfront_shutdown_script(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -398,9 +398,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_upfront_shutdown_script(thisArgPointer)
+				InitFeatures_requires_upfront_shutdown_script(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -419,9 +419,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_gossip_queries_optional(thisArgPointer)
+				InitFeatures_set_gossip_queries_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -440,9 +440,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_gossip_queries_required(thisArgPointer)
+				InitFeatures_set_gossip_queries_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -461,9 +461,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_gossip_queries(thisArgPointer)
+				InitFeatures_supports_gossip_queries(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -482,9 +482,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_gossip_queries(thisArgPointer)
+				InitFeatures_requires_gossip_queries(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -503,9 +503,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_variable_length_onion_optional(thisArgPointer)
+				InitFeatures_set_variable_length_onion_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -524,9 +524,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_variable_length_onion_required(thisArgPointer)
+				InitFeatures_set_variable_length_onion_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -545,9 +545,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_variable_length_onion(thisArgPointer)
+				InitFeatures_supports_variable_length_onion(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -566,9 +566,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_variable_length_onion(thisArgPointer)
+				InitFeatures_requires_variable_length_onion(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -587,9 +587,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_static_remote_key_optional(thisArgPointer)
+				InitFeatures_set_static_remote_key_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -608,9 +608,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_static_remote_key_required(thisArgPointer)
+				InitFeatures_set_static_remote_key_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -629,9 +629,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_static_remote_key(thisArgPointer)
+				InitFeatures_supports_static_remote_key(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -650,9 +650,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_static_remote_key(thisArgPointer)
+				InitFeatures_requires_static_remote_key(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -671,9 +671,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_payment_secret_optional(thisArgPointer)
+				InitFeatures_set_payment_secret_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -692,9 +692,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_payment_secret_required(thisArgPointer)
+				InitFeatures_set_payment_secret_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -713,9 +713,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_payment_secret(thisArgPointer)
+				InitFeatures_supports_payment_secret(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -734,9 +734,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_payment_secret(thisArgPointer)
+				InitFeatures_requires_payment_secret(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -755,9 +755,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_basic_mpp_optional(thisArgPointer)
+				InitFeatures_set_basic_mpp_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -776,9 +776,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_basic_mpp_required(thisArgPointer)
+				InitFeatures_set_basic_mpp_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -797,9 +797,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_basic_mpp(thisArgPointer)
+				InitFeatures_supports_basic_mpp(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -818,9 +818,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_basic_mpp(thisArgPointer)
+				InitFeatures_requires_basic_mpp(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -839,9 +839,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_wumbo_optional(thisArgPointer)
+				InitFeatures_set_wumbo_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -860,9 +860,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_wumbo_required(thisArgPointer)
+				InitFeatures_set_wumbo_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -881,9 +881,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_wumbo(thisArgPointer)
+				InitFeatures_supports_wumbo(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -902,9 +902,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_wumbo(thisArgPointer)
+				InitFeatures_requires_wumbo(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -923,9 +923,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_shutdown_any_segwit_optional(thisArgPointer)
+				InitFeatures_set_shutdown_any_segwit_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -944,9 +944,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_shutdown_any_segwit_required(thisArgPointer)
+				InitFeatures_set_shutdown_any_segwit_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -965,9 +965,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_shutdown_anysegwit(thisArgPointer)
+				InitFeatures_supports_shutdown_anysegwit(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -986,9 +986,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_shutdown_anysegwit(thisArgPointer)
+				InitFeatures_requires_shutdown_anysegwit(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1007,9 +1007,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_onion_messages_optional(thisArgPointer)
+				InitFeatures_set_onion_messages_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1028,9 +1028,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_onion_messages_required(thisArgPointer)
+				InitFeatures_set_onion_messages_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1049,9 +1049,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_onion_messages(thisArgPointer)
+				InitFeatures_supports_onion_messages(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1070,9 +1070,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_onion_messages(thisArgPointer)
+				InitFeatures_requires_onion_messages(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1091,9 +1091,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_channel_type_optional(thisArgPointer)
+				InitFeatures_set_channel_type_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1112,9 +1112,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_channel_type_required(thisArgPointer)
+				InitFeatures_set_channel_type_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1133,9 +1133,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_channel_type(thisArgPointer)
+				InitFeatures_supports_channel_type(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1154,9 +1154,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_channel_type(thisArgPointer)
+				InitFeatures_requires_channel_type(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1175,9 +1175,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_scid_privacy_optional(thisArgPointer)
+				InitFeatures_set_scid_privacy_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1196,9 +1196,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_scid_privacy_required(thisArgPointer)
+				InitFeatures_set_scid_privacy_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1217,9 +1217,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_scid_privacy(thisArgPointer)
+				InitFeatures_supports_scid_privacy(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1238,9 +1238,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_scid_privacy(thisArgPointer)
+				InitFeatures_requires_scid_privacy(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1259,9 +1259,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_zero_conf_optional(thisArgPointer)
+				InitFeatures_set_zero_conf_optional(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1280,9 +1280,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
-			InitFeatures_set_zero_conf_required(thisArgPointer)
+				InitFeatures_set_zero_conf_required(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1301,9 +1301,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_supports_zero_conf(thisArgPointer)
+				InitFeatures_supports_zero_conf(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1322,9 +1322,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
-			InitFeatures_requires_zero_conf(thisArgPointer)
+				InitFeatures_requires_zero_conf(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

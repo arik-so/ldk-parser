@@ -66,9 +66,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOutPoint>) in
-			OutPoint_set_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
+				OutPoint_set_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -87,9 +87,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKOutPoint>) in
-			OutPoint_get_index(thisPtrPointer)
+				OutPoint_get_index(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -108,9 +108,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOutPoint>) in
-			OutPoint_set_index(thisPtrPointer, val)
+				OutPoint_set_index(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -148,9 +148,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKOutPoint>) in
-			OutPoint_clone(origPointer)
+				OutPoint_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -171,13 +171,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKOutPoint>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKOutPoint>) in
-			OutPoint_eq(aPointer, bPointer)
+				OutPoint_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -196,9 +196,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKOutPoint>) in
-			OutPoint_hash(oPointer)
+				OutPoint_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -217,9 +217,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKOutPoint>) in
-			OutPoint_to_channel_id(thisArgPointer)
+				OutPoint_to_channel_id(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -238,9 +238,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKOutPoint>) in
-			OutPoint_write(objPointer)
+				OutPoint_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

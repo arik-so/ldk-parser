@@ -155,9 +155,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKOnionMessenger>) in
-			OnionMessenger_send_custom_onion_message(thisArgPointer, intermediateNodesVector.cType!, destination.cType!, msg.activate().cType!, replyPath.cType!)
+				OnionMessenger_send_custom_onion_message(thisArgPointer, intermediateNodesVector.cType!, destination.cType!, msg.activate().cType!, replyPath.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -179,9 +179,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKOnionMessenger>) in
-			OnionMessenger_as_OnionMessageHandler(thisArgPointer)
+				OnionMessenger_as_OnionMessageHandler(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -201,9 +201,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKOnionMessenger>) in
-			OnionMessenger_as_OnionMessageProvider(thisArgPointer)
+				OnionMessenger_as_OnionMessageProvider(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

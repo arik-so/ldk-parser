@@ -66,9 +66,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKErrorMessage>) in
-			ErrorMessage_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ErrorMessage_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -90,9 +90,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKErrorMessage>) in
-			ErrorMessage_get_data(thisPtrPointer)
+				ErrorMessage_get_data(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -116,9 +116,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKErrorMessage>) in
-			ErrorMessage_set_data(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ErrorMessage_set_data(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -158,9 +158,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKErrorMessage>) in
-			ErrorMessage_clone(origPointer)
+				ErrorMessage_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -181,13 +181,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKErrorMessage>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKErrorMessage>) in
-			ErrorMessage_eq(aPointer, bPointer)
+				ErrorMessage_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -206,9 +206,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKErrorMessage>) in
-			ErrorMessage_write(objPointer)
+				ErrorMessage_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

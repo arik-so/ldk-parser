@@ -65,17 +65,17 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInFlightHtlcs>) in
-			
+				
 						withUnsafePointer(to: source.cType!) { (sourcePointer: UnsafePointer<LDKNodeId>) in
-			
+				
 						withUnsafePointer(to: target.cType!) { (targetPointer: UnsafePointer<LDKNodeId>) in
-			InFlightHtlcs_used_liquidity_msat(thisArgPointer, sourcePointer, targetPointer, channelScid)
+				InFlightHtlcs_used_liquidity_msat(thisArgPointer, sourcePointer, targetPointer, channelScid)
 						}
-			
+				
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -94,9 +94,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKInFlightHtlcs>) in
-			InFlightHtlcs_write(objPointer)
+				InFlightHtlcs_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

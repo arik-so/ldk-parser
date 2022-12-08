@@ -74,9 +74,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCOption_CustomOnionMessageContentsZ>) in
-			COption_CustomOnionMessageContentsZ_clone(origPointer)
+				COption_CustomOnionMessageContentsZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

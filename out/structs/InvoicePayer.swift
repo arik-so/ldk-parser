@@ -89,13 +89,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
-			
+				
 						withUnsafePointer(to: invoice.cType!) { (invoicePointer: UnsafePointer<LDKInvoice>) in
-			InvoicePayer_pay_invoice(thisArgPointer, invoicePointer)
+				InvoicePayer_pay_invoice(thisArgPointer, invoicePointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -119,13 +119,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
-			
+				
 						withUnsafePointer(to: invoice.cType!) { (invoicePointer: UnsafePointer<LDKInvoice>) in
-			InvoicePayer_pay_zero_value_invoice(thisArgPointer, invoicePointer, amountMsats)
+				InvoicePayer_pay_zero_value_invoice(thisArgPointer, invoicePointer, amountMsats)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -152,9 +152,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
-			InvoicePayer_pay_pubkey(thisArgPointer, pubkeyPrimitiveWrapper.cType!, paymentPreimagePrimitiveWrapper.cType!, amountMsats, finalCltvExpiryDelta)
+				InvoicePayer_pay_pubkey(thisArgPointer, pubkeyPrimitiveWrapper.cType!, paymentPreimagePrimitiveWrapper.cType!, amountMsats, finalCltvExpiryDelta)
 						}
-			
+				
 
 						// cleanup
 						
@@ -178,13 +178,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
-			
+				
 						withUnsafePointer(to: tupledPaymentHash) { (tupledPaymentHashPointer: UnsafePointer<UInt8Tuple32>) in
-			InvoicePayer_remove_cached_payment(thisArgPointer, tupledPaymentHashPointer)
+				InvoicePayer_remove_cached_payment(thisArgPointer, tupledPaymentHashPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -204,9 +204,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
-			InvoicePayer_as_EventHandler(thisArgPointer)
+				InvoicePayer_as_EventHandler(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

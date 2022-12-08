@@ -64,9 +64,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKMessageHandler>) in
-			MessageHandler_get_chan_handler(thisPtrPointer)
+				MessageHandler_get_chan_handler(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -88,9 +88,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMessageHandler>) in
-			MessageHandler_set_chan_handler(thisPtrPointer, val.activate().cType!)
+				MessageHandler_set_chan_handler(thisPtrPointer, val.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -112,9 +112,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKMessageHandler>) in
-			MessageHandler_get_route_handler(thisPtrPointer)
+				MessageHandler_get_route_handler(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -136,9 +136,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMessageHandler>) in
-			MessageHandler_set_route_handler(thisPtrPointer, val.activate().cType!)
+				MessageHandler_set_route_handler(thisPtrPointer, val.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -158,9 +158,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKMessageHandler>) in
-			MessageHandler_get_onion_message_handler(thisPtrPointer)
+				MessageHandler_get_onion_message_handler(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -180,9 +180,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMessageHandler>) in
-			MessageHandler_set_onion_message_handler(thisPtrPointer, val.activate().cType!)
+				MessageHandler_set_onion_message_handler(thisPtrPointer, val.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						

@@ -38,7 +38,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 
-						self.cType = LDKRecoverableSignature(serialized_form: Bindings.arrayToUInt8Tuple68(value))
+						self.cType = LDKRecoverableSignature(serialized_form: Bindings.arrayToUInt8Tuple68(array: value))
 
 						super.init(conflictAvoidingVariableName: 0)
 					}

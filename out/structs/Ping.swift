@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPing>) in
-			Ping_get_ponglen(thisPtrPointer)
+				Ping_get_ponglen(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPing>) in
-			Ping_set_ponglen(thisPtrPointer, val)
+				Ping_set_ponglen(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -104,9 +104,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPing>) in
-			Ping_get_byteslen(thisPtrPointer)
+				Ping_get_byteslen(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPing>) in
-			Ping_set_byteslen(thisPtrPointer, val)
+				Ping_set_byteslen(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -164,9 +164,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKPing>) in
-			Ping_clone(origPointer)
+				Ping_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -187,13 +187,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKPing>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKPing>) in
-			Ping_eq(aPointer, bPointer)
+				Ping_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -212,9 +212,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKPing>) in
-			Ping_write(objPointer)
+				Ping_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -65,9 +65,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKGossipTimestampFilter>) in
-			GossipTimestampFilter_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
+				GossipTimestampFilter_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKGossipTimestampFilter>) in
-			GossipTimestampFilter_get_first_timestamp(thisPtrPointer)
+				GossipTimestampFilter_get_first_timestamp(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -107,9 +107,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKGossipTimestampFilter>) in
-			GossipTimestampFilter_set_first_timestamp(thisPtrPointer, val)
+				GossipTimestampFilter_set_first_timestamp(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -128,9 +128,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKGossipTimestampFilter>) in
-			GossipTimestampFilter_get_timestamp_range(thisPtrPointer)
+				GossipTimestampFilter_get_timestamp_range(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,9 +149,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKGossipTimestampFilter>) in
-			GossipTimestampFilter_set_timestamp_range(thisPtrPointer, val)
+				GossipTimestampFilter_set_timestamp_range(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -189,9 +189,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKGossipTimestampFilter>) in
-			GossipTimestampFilter_clone(origPointer)
+				GossipTimestampFilter_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -212,13 +212,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKGossipTimestampFilter>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKGossipTimestampFilter>) in
-			GossipTimestampFilter_eq(aPointer, bPointer)
+				GossipTimestampFilter_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -237,9 +237,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKGossipTimestampFilter>) in
-			GossipTimestampFilter_write(objPointer)
+				GossipTimestampFilter_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

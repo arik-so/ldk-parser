@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
-			RevokeAndACK_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				RevokeAndACK_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
-			RevokeAndACK_set_per_commitment_secret(thisPtrPointer, valPrimitiveWrapper.cType!)
+				RevokeAndACK_set_per_commitment_secret(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -107,9 +107,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
-			RevokeAndACK_get_next_per_commitment_point(thisPtrPointer)
+				RevokeAndACK_get_next_per_commitment_point(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -130,9 +130,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
-			RevokeAndACK_set_next_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
+				RevokeAndACK_set_next_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -174,9 +174,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRevokeAndACK>) in
-			RevokeAndACK_clone(origPointer)
+				RevokeAndACK_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -197,13 +197,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRevokeAndACK>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRevokeAndACK>) in
-			RevokeAndACK_eq(aPointer, bPointer)
+				RevokeAndACK_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -222,9 +222,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRevokeAndACK>) in
-			RevokeAndACK_write(objPointer)
+				RevokeAndACK_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

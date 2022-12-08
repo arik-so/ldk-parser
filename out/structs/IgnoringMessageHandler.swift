@@ -80,9 +80,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKIgnoringMessageHandler>) in
-			IgnoringMessageHandler_as_MessageSendEventsProvider(thisArgPointer)
+				IgnoringMessageHandler_as_MessageSendEventsProvider(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -102,9 +102,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKIgnoringMessageHandler>) in
-			IgnoringMessageHandler_as_RoutingMessageHandler(thisArgPointer)
+				IgnoringMessageHandler_as_RoutingMessageHandler(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -124,9 +124,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKIgnoringMessageHandler>) in
-			IgnoringMessageHandler_as_OnionMessageProvider(thisArgPointer)
+				IgnoringMessageHandler_as_OnionMessageProvider(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -146,9 +146,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKIgnoringMessageHandler>) in
-			IgnoringMessageHandler_as_OnionMessageHandler(thisArgPointer)
+				IgnoringMessageHandler_as_OnionMessageHandler(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,9 +168,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKIgnoringMessageHandler>) in
-			IgnoringMessageHandler_as_CustomOnionMessageHandler(thisArgPointer)
+				IgnoringMessageHandler_as_CustomOnionMessageHandler(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -190,9 +190,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKIgnoringMessageHandler>) in
-			IgnoringMessageHandler_as_CustomMessageReader(thisArgPointer)
+				IgnoringMessageHandler_as_CustomMessageReader(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -212,9 +212,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKIgnoringMessageHandler>) in
-			IgnoringMessageHandler_as_CustomMessageHandler(thisArgPointer)
+				IgnoringMessageHandler_as_CustomMessageHandler(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

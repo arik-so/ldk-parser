@@ -453,9 +453,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKNodeAnnouncement>) in
-			self.cType!.handle_node_announcement(self.cType!.this_arg, msgPointer)
+				self.cType!.handle_node_announcement(self.cType!.this_arg, msgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -475,9 +475,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			self.cType!.handle_channel_announcement(self.cType!.this_arg, msgPointer)
+				self.cType!.handle_channel_announcement(self.cType!.this_arg, msgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -497,9 +497,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelUpdate>) in
-			self.cType!.handle_channel_update(self.cType!.this_arg, msgPointer)
+				self.cType!.handle_channel_update(self.cType!.this_arg, msgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -570,9 +570,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: init.cType!) { (initPointer: UnsafePointer<LDKInit>) in
-			self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, initPointer)
+				self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, initPointer)
 						}
-			
+				
 
 						// cleanup
 						

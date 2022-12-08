@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_NodeFeaturesDecodeErrorZ>) in
-			CResult_NodeFeaturesDecodeErrorZ_clone(origPointer)
+				CResult_NodeFeaturesDecodeErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

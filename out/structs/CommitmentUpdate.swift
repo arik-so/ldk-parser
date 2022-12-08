@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_get_update_add_htlcs(thisPtrPointer)
+				CommitmentUpdate_get_update_add_htlcs(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -85,9 +85,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_set_update_add_htlcs(thisPtrPointer, valVector.cType!)
+				CommitmentUpdate_set_update_add_htlcs(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -108,9 +108,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_get_update_fulfill_htlcs(thisPtrPointer)
+				CommitmentUpdate_get_update_fulfill_htlcs(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -131,9 +131,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_set_update_fulfill_htlcs(thisPtrPointer, valVector.cType!)
+				CommitmentUpdate_set_update_fulfill_htlcs(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -154,9 +154,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_get_update_fail_htlcs(thisPtrPointer)
+				CommitmentUpdate_get_update_fail_htlcs(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -177,9 +177,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_set_update_fail_htlcs(thisPtrPointer, valVector.cType!)
+				CommitmentUpdate_set_update_fail_htlcs(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -200,9 +200,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_get_update_fail_malformed_htlcs(thisPtrPointer)
+				CommitmentUpdate_get_update_fail_malformed_htlcs(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -223,9 +223,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_set_update_fail_malformed_htlcs(thisPtrPointer, valVector.cType!)
+				CommitmentUpdate_set_update_fail_malformed_htlcs(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -248,9 +248,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_get_update_fee(thisPtrPointer)
+				CommitmentUpdate_get_update_fee(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -284,9 +284,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_set_update_fee(thisPtrPointer, val.cType!)
+				CommitmentUpdate_set_update_fee(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -305,9 +305,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_get_commitment_signed(thisPtrPointer)
+				CommitmentUpdate_get_commitment_signed(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -326,9 +326,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_set_commitment_signed(thisPtrPointer, val.cType!)
+				CommitmentUpdate_set_commitment_signed(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -380,9 +380,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_clone(origPointer)
+				CommitmentUpdate_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -403,13 +403,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKCommitmentUpdate>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKCommitmentUpdate>) in
-			CommitmentUpdate_eq(aPointer, bPointer)
+				CommitmentUpdate_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

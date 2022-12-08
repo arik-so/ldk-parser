@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKBlindedHop>) in
-			BlindedHop_write(objPointer)
+				BlindedHop_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

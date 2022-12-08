@@ -67,9 +67,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDataLossProtect>) in
-			DataLossProtect_set_your_last_per_commitment_secret(thisPtrPointer, valPrimitiveWrapper.cType!)
+				DataLossProtect_set_your_last_per_commitment_secret(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -88,9 +88,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDataLossProtect>) in
-			DataLossProtect_get_my_current_per_commitment_point(thisPtrPointer)
+				DataLossProtect_get_my_current_per_commitment_point(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -111,9 +111,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDataLossProtect>) in
-			DataLossProtect_set_my_current_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
+				DataLossProtect_set_my_current_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -153,9 +153,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKDataLossProtect>) in
-			DataLossProtect_clone(origPointer)
+				DataLossProtect_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -176,13 +176,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKDataLossProtect>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKDataLossProtect>) in
-			DataLossProtect_eq(aPointer, bPointer)
+				DataLossProtect_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

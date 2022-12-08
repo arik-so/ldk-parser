@@ -66,9 +66,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteParameters>) in
-			RouteParameters_get_payment_params(thisPtrPointer)
+				RouteParameters_get_payment_params(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -87,9 +87,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
-			RouteParameters_set_payment_params(thisPtrPointer, val.cType!)
+				RouteParameters_set_payment_params(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -108,9 +108,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteParameters>) in
-			RouteParameters_get_final_value_msat(thisPtrPointer)
+				RouteParameters_get_final_value_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -129,9 +129,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
-			RouteParameters_set_final_value_msat(thisPtrPointer, val)
+				RouteParameters_set_final_value_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -150,9 +150,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteParameters>) in
-			RouteParameters_get_final_cltv_expiry_delta(thisPtrPointer)
+				RouteParameters_get_final_cltv_expiry_delta(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -171,9 +171,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
-			RouteParameters_set_final_cltv_expiry_delta(thisPtrPointer, val)
+				RouteParameters_set_final_cltv_expiry_delta(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -209,9 +209,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRouteParameters>) in
-			RouteParameters_clone(origPointer)
+				RouteParameters_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -230,9 +230,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRouteParameters>) in
-			RouteParameters_write(objPointer)
+				RouteParameters_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

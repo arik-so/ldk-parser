@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUsage>) in
-			ChannelUsage_get_amount_msat(thisPtrPointer)
+				ChannelUsage_get_amount_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUsage>) in
-			ChannelUsage_set_amount_msat(thisPtrPointer, val)
+				ChannelUsage_set_amount_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -104,9 +104,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUsage>) in
-			ChannelUsage_get_inflight_htlc_msat(thisPtrPointer)
+				ChannelUsage_get_inflight_htlc_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUsage>) in
-			ChannelUsage_set_inflight_htlc_msat(thisPtrPointer, val)
+				ChannelUsage_set_inflight_htlc_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -147,9 +147,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUsage>) in
-			ChannelUsage_get_effective_capacity(thisPtrPointer)
+				ChannelUsage_get_effective_capacity(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,9 +168,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUsage>) in
-			ChannelUsage_set_effective_capacity(thisPtrPointer, val.cType!)
+				ChannelUsage_set_effective_capacity(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -206,9 +206,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChannelUsage>) in
-			ChannelUsage_clone(origPointer)
+				ChannelUsage_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

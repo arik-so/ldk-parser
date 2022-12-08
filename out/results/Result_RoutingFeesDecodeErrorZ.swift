@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_RoutingFeesDecodeErrorZ>) in
-			CResult_RoutingFeesDecodeErrorZ_clone(origPointer)
+				CResult_RoutingFeesDecodeErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

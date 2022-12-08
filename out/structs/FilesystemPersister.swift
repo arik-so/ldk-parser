@@ -92,9 +92,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKFilesystemPersister>) in
-			FilesystemPersister_get_data_dir(thisArgPointer)
+				FilesystemPersister_get_data_dir(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -113,9 +113,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKFilesystemPersister>) in
-			FilesystemPersister_read_channelmonitors(thisArgPointer, keysManager.activate().cType!)
+				FilesystemPersister_read_channelmonitors(thisArgPointer, keysManager.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						

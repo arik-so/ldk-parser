@@ -47,9 +47,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKC3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ>) in
-			C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ_clone(origPointer)
+				C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

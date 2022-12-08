@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				AnnouncementSignatures_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_get_short_channel_id(thisPtrPointer)
+				AnnouncementSignatures_get_short_channel_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_set_short_channel_id(thisPtrPointer, val)
+				AnnouncementSignatures_set_short_channel_id(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_get_node_signature(thisPtrPointer)
+				AnnouncementSignatures_get_node_signature(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,9 +149,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_set_node_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
+				AnnouncementSignatures_set_node_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -170,9 +170,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_get_bitcoin_signature(thisPtrPointer)
+				AnnouncementSignatures_get_bitcoin_signature(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -193,9 +193,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_set_bitcoin_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
+				AnnouncementSignatures_set_bitcoin_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -237,9 +237,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_clone(origPointer)
+				AnnouncementSignatures_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -260,13 +260,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKAnnouncementSignatures>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_eq(aPointer, bPointer)
+				AnnouncementSignatures_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -285,9 +285,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKAnnouncementSignatures>) in
-			AnnouncementSignatures_write(objPointer)
+				AnnouncementSignatures_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

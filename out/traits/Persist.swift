@@ -238,9 +238,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: data.cType!) { (dataPointer: UnsafePointer<LDKChannelMonitor>) in
-			self.cType!.persist_new_channel(self.cType!.this_arg, channelId.cType!, dataPointer, updateId.cType!)
+				self.cType!.persist_new_channel(self.cType!.this_arg, channelId.cType!, dataPointer, updateId.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -293,13 +293,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: update.cType!) { (updatePointer: UnsafePointer<LDKChannelMonitorUpdate>) in
-			
+				
 						withUnsafePointer(to: data.cType!) { (dataPointer: UnsafePointer<LDKChannelMonitor>) in
-			self.cType!.update_persisted_channel(self.cType!.this_arg, channelId.cType!, updatePointer, dataPointer, updateId.cType!)
+				self.cType!.update_persisted_channel(self.cType!.this_arg, channelId.cType!, updatePointer, dataPointer, updateId.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

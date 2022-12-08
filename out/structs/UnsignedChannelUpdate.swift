@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UnsignedChannelUpdate_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_get_short_channel_id(thisPtrPointer)
+				UnsignedChannelUpdate_get_short_channel_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_short_channel_id(thisPtrPointer, val)
+				UnsignedChannelUpdate_set_short_channel_id(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_get_timestamp(thisPtrPointer)
+				UnsignedChannelUpdate_get_timestamp(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -147,9 +147,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_timestamp(thisPtrPointer, val)
+				UnsignedChannelUpdate_set_timestamp(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,9 +168,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_get_flags(thisPtrPointer)
+				UnsignedChannelUpdate_get_flags(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -189,9 +189,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_flags(thisPtrPointer, val)
+				UnsignedChannelUpdate_set_flags(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -217,9 +217,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_get_cltv_expiry_delta(thisPtrPointer)
+				UnsignedChannelUpdate_get_cltv_expiry_delta(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -245,9 +245,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_cltv_expiry_delta(thisPtrPointer, val)
+				UnsignedChannelUpdate_set_cltv_expiry_delta(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -266,9 +266,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_get_htlc_minimum_msat(thisPtrPointer)
+				UnsignedChannelUpdate_get_htlc_minimum_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -287,9 +287,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_htlc_minimum_msat(thisPtrPointer, val)
+				UnsignedChannelUpdate_set_htlc_minimum_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -308,9 +308,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_get_htlc_maximum_msat(thisPtrPointer)
+				UnsignedChannelUpdate_get_htlc_maximum_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -329,9 +329,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_htlc_maximum_msat(thisPtrPointer, val)
+				UnsignedChannelUpdate_set_htlc_maximum_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -350,9 +350,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_get_fee_base_msat(thisPtrPointer)
+				UnsignedChannelUpdate_get_fee_base_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -371,9 +371,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_fee_base_msat(thisPtrPointer, val)
+				UnsignedChannelUpdate_set_fee_base_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -392,9 +392,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_get_fee_proportional_millionths(thisPtrPointer)
+				UnsignedChannelUpdate_get_fee_proportional_millionths(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -413,9 +413,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_fee_proportional_millionths(thisPtrPointer, val)
+				UnsignedChannelUpdate_set_fee_proportional_millionths(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -438,9 +438,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_get_excess_data(thisPtrPointer)
+				UnsignedChannelUpdate_get_excess_data(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -463,9 +463,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_set_excess_data(thisPtrPointer, valVector.cType!)
+				UnsignedChannelUpdate_set_excess_data(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -509,9 +509,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_clone(origPointer)
+				UnsignedChannelUpdate_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -532,13 +532,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_eq(aPointer, bPointer)
+				UnsignedChannelUpdate_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -557,9 +557,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			UnsignedChannelUpdate_write(objPointer)
+				UnsignedChannelUpdate_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

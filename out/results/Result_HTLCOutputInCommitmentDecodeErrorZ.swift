@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_HTLCOutputInCommitmentDecodeErrorZ>) in
-			CResult_HTLCOutputInCommitmentDecodeErrorZ_clone(origPointer)
+				CResult_HTLCOutputInCommitmentDecodeErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -116,9 +116,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKDecodeError>) in
-			DecodeError_clone(origPointer)
+				DecodeError_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -257,13 +257,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKDecodeError>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKDecodeError>) in
-			DecodeError_eq(aPointer, bPointer)
+				DecodeError_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

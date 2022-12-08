@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_PositiveTimestampCreationErrorZ>) in
-			CResult_PositiveTimestampCreationErrorZ_clone(origPointer)
+				CResult_PositiveTimestampCreationErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

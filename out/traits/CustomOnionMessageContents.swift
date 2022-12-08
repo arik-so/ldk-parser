@@ -138,9 +138,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCustomOnionMessageContents>) in
-			CustomOnionMessageContents_clone(origPointer)
+				CustomOnionMessageContents_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -90,9 +90,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: tupledEphemeralRandomData) { (tupledEphemeralRandomDataPointer: UnsafePointer<UInt8Tuple32>) in
-			PeerManager_new(messageHandler.cType!, ourNodeSecretPrimitiveWrapper.cType!, currentTime, tupledEphemeralRandomDataPointer, logger.activate().cType!, customMessageHandler.activate().cType!)
+				PeerManager_new(messageHandler.cType!, ourNodeSecretPrimitiveWrapper.cType!, currentTime, tupledEphemeralRandomDataPointer, logger.activate().cType!, customMessageHandler.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -115,9 +115,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_get_peer_node_ids(thisArgPointer)
+				PeerManager_get_peer_node_ids(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -154,9 +154,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_new_outbound_connection(thisArgPointer, theirNodeIdPrimitiveWrapper.cType!, descriptor.activate().cType!, remoteNetworkAddressOption.cType!)
+				PeerManager_new_outbound_connection(thisArgPointer, theirNodeIdPrimitiveWrapper.cType!, descriptor.activate().cType!, remoteNetworkAddressOption.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -191,9 +191,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_new_inbound_connection(thisArgPointer, descriptor.activate().cType!, remoteNetworkAddressOption.cType!)
+				PeerManager_new_inbound_connection(thisArgPointer, descriptor.activate().cType!, remoteNetworkAddressOption.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -223,13 +223,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			
+				
 						withUnsafeMutablePointer(to: &descriptor.activate().cType!) { (descriptorPointer: UnsafeMutablePointer<LDKSocketDescriptor>) in
-			PeerManager_write_buffer_space_avail(thisArgPointer, descriptorPointer)
+				PeerManager_write_buffer_space_avail(thisArgPointer, descriptorPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -263,13 +263,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			
+				
 						withUnsafeMutablePointer(to: &peerDescriptor.activate().cType!) { (peerDescriptorPointer: UnsafeMutablePointer<LDKSocketDescriptor>) in
-			PeerManager_read_event(thisArgPointer, peerDescriptorPointer, dataPrimitiveWrapper.cType!)
+				PeerManager_read_event(thisArgPointer, peerDescriptorPointer, dataPrimitiveWrapper.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -304,9 +304,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_process_events(thisArgPointer)
+				PeerManager_process_events(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -325,13 +325,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			
+				
 						withUnsafePointer(to: descriptor.activate().cType!) { (descriptorPointer: UnsafePointer<LDKSocketDescriptor>) in
-			PeerManager_socket_disconnected(thisArgPointer, descriptorPointer)
+				PeerManager_socket_disconnected(thisArgPointer, descriptorPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -360,9 +360,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_disconnect_by_node_id(thisArgPointer, nodeIdPrimitiveWrapper.cType!, noConnectionPossible)
+				PeerManager_disconnect_by_node_id(thisArgPointer, nodeIdPrimitiveWrapper.cType!, noConnectionPossible)
 						}
-			
+				
 
 						// cleanup
 						
@@ -383,9 +383,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_disconnect_all_peers(thisArgPointer)
+				PeerManager_disconnect_all_peers(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -414,9 +414,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_timer_tick_occurred(thisArgPointer)
+				PeerManager_timer_tick_occurred(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -455,9 +455,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPeerManager>) in
-			PeerManager_broadcast_node_announcement(thisArgPointer, rgbPrimitiveWrapper.cType!, aliasPrimitiveWrapper.cType!, addressesVector.cType!)
+				PeerManager_broadcast_node_announcement(thisArgPointer, rgbPrimitiveWrapper.cType!, aliasPrimitiveWrapper.cType!, addressesVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						

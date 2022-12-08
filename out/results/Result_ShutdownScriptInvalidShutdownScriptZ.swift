@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_ShutdownScriptInvalidShutdownScriptZ>) in
-			CResult_ShutdownScriptInvalidShutdownScriptZ_clone(origPointer)
+				CResult_ShutdownScriptInvalidShutdownScriptZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

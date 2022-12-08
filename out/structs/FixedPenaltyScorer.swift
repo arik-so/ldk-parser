@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKFixedPenaltyScorer>) in
-			FixedPenaltyScorer_clone(origPointer)
+				FixedPenaltyScorer_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -100,9 +100,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKFixedPenaltyScorer>) in
-			FixedPenaltyScorer_as_Score(thisArgPointer)
+				FixedPenaltyScorer_as_Score(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -121,9 +121,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKFixedPenaltyScorer>) in
-			FixedPenaltyScorer_write(objPointer)
+				FixedPenaltyScorer_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

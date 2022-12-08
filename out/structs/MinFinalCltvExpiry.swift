@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
-			MinFinalCltvExpiry_get_a(thisPtrPointer)
+				MinFinalCltvExpiry_get_a(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMinFinalCltvExpiry>) in
-			MinFinalCltvExpiry_set_a(thisPtrPointer, val)
+				MinFinalCltvExpiry_set_a(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -120,9 +120,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
-			MinFinalCltvExpiry_clone(origPointer)
+				MinFinalCltvExpiry_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -141,9 +141,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
-			MinFinalCltvExpiry_hash(oPointer)
+				MinFinalCltvExpiry_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -164,13 +164,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
-			MinFinalCltvExpiry_eq(aPointer, bPointer)
+				MinFinalCltvExpiry_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

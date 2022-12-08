@@ -37,7 +37,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 
-						self.cType = LDKPublicKey(compressed_form: Bindings.arrayToUInt8Tuple33(value))
+						self.cType = LDKPublicKey(compressed_form: Bindings.arrayToUInt8Tuple33(array: value))
 
 						super.init(conflictAvoidingVariableName: 0)
 					}

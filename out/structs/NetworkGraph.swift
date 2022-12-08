@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_as_EventHandler(thisArgPointer)
+				NetworkGraph_as_EventHandler(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -83,9 +83,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_write(objPointer)
+				NetworkGraph_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -142,9 +142,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_read_only(thisArgPointer)
+				NetworkGraph_read_only(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -164,9 +164,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_get_last_rapid_gossip_sync_timestamp(thisArgPointer)
+				NetworkGraph_get_last_rapid_gossip_sync_timestamp(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -186,9 +186,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_set_last_rapid_gossip_sync_timestamp(thisArgPointer, lastRapidGossipSyncTimestamp)
+				NetworkGraph_set_last_rapid_gossip_sync_timestamp(thisArgPointer, lastRapidGossipSyncTimestamp)
 						}
-			
+				
 
 						// cleanup
 						
@@ -212,13 +212,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			
+				
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKNodeAnnouncement>) in
-			NetworkGraph_update_node_from_announcement(thisArgPointer, msgPointer)
+				NetworkGraph_update_node_from_announcement(thisArgPointer, msgPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -240,13 +240,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			
+				
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
-			NetworkGraph_update_node_from_unsigned_announcement(thisArgPointer, msgPointer)
+				NetworkGraph_update_node_from_unsigned_announcement(thisArgPointer, msgPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -274,13 +274,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			
+				
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			NetworkGraph_update_channel_from_announcement(thisArgPointer, msgPointer, chainAccessOption.cType!)
+				NetworkGraph_update_channel_from_announcement(thisArgPointer, msgPointer, chainAccessOption.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -306,13 +306,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			
+				
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			NetworkGraph_update_channel_from_unsigned_announcement(thisArgPointer, msgPointer, chainAccessOption.cType!)
+				NetworkGraph_update_channel_from_unsigned_announcement(thisArgPointer, msgPointer, chainAccessOption.cType!)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -340,9 +340,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_add_channel_from_partial_announcement(thisArgPointer, shortChannelId, timestamp, features.cType!, nodeId_1PrimitiveWrapper.cType!, nodeId_2PrimitiveWrapper.cType!)
+				NetworkGraph_add_channel_from_partial_announcement(thisArgPointer, shortChannelId, timestamp, features.cType!, nodeId_1PrimitiveWrapper.cType!, nodeId_2PrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -364,9 +364,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_channel_failed(thisArgPointer, shortChannelId, isPermanent)
+				NetworkGraph_channel_failed(thisArgPointer, shortChannelId, isPermanent)
 						}
-			
+				
 
 						// cleanup
 						
@@ -388,9 +388,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_node_failed_permanent(thisArgPointer, nodeIdPrimitiveWrapper.cType!)
+				NetworkGraph_node_failed_permanent(thisArgPointer, nodeIdPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -424,9 +424,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_remove_stale_channels_and_tracking(thisArgPointer)
+				NetworkGraph_remove_stale_channels_and_tracking(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -457,9 +457,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			NetworkGraph_remove_stale_channels_and_tracking_with_time(thisArgPointer, currentTimeUnix)
+				NetworkGraph_remove_stale_channels_and_tracking_with_time(thisArgPointer, currentTimeUnix)
 						}
-			
+				
 
 						// cleanup
 						
@@ -486,13 +486,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			
+				
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelUpdate>) in
-			NetworkGraph_update_channel(thisArgPointer, msgPointer)
+				NetworkGraph_update_channel(thisArgPointer, msgPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -516,13 +516,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-			
+				
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
-			NetworkGraph_update_channel_unsigned(thisArgPointer, msgPointer)
+				NetworkGraph_update_channel_unsigned(thisArgPointer, msgPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

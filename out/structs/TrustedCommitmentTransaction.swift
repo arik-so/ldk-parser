@@ -66,9 +66,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKTrustedCommitmentTransaction>) in
-			TrustedCommitmentTransaction_txid(thisArgPointer)
+				TrustedCommitmentTransaction_txid(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -87,9 +87,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKTrustedCommitmentTransaction>) in
-			TrustedCommitmentTransaction_built_transaction(thisArgPointer)
+				TrustedCommitmentTransaction_built_transaction(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -108,9 +108,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKTrustedCommitmentTransaction>) in
-			TrustedCommitmentTransaction_keys(thisArgPointer)
+				TrustedCommitmentTransaction_keys(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -129,9 +129,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKTrustedCommitmentTransaction>) in
-			TrustedCommitmentTransaction_opt_anchors(thisArgPointer)
+				TrustedCommitmentTransaction_opt_anchors(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -157,17 +157,17 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKTrustedCommitmentTransaction>) in
-			
+				
 						withUnsafePointer(to: tupledHtlcBaseKey) { (tupledHtlcBaseKeyPointer: UnsafePointer<UInt8Tuple32>) in
-			
+				
 						withUnsafePointer(to: channelParameters.cType!) { (channelParametersPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
-			TrustedCommitmentTransaction_get_htlc_sigs(thisArgPointer, tupledHtlcBaseKeyPointer, channelParametersPointer)
+				TrustedCommitmentTransaction_get_htlc_sigs(thisArgPointer, tupledHtlcBaseKeyPointer, channelParametersPointer)
 						}
-			
+				
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

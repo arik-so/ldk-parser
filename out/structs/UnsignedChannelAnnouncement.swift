@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_get_features(thisPtrPointer)
+				UnsignedChannelAnnouncement_get_features(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_features(thisPtrPointer, val.cType!)
+				UnsignedChannelAnnouncement_set_features(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UnsignedChannelAnnouncement_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_get_short_channel_id(thisPtrPointer)
+				UnsignedChannelAnnouncement_get_short_channel_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -147,9 +147,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_short_channel_id(thisPtrPointer, val)
+				UnsignedChannelAnnouncement_set_short_channel_id(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,9 +168,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_get_node_id_1(thisPtrPointer)
+				UnsignedChannelAnnouncement_get_node_id_1(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -191,9 +191,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_node_id_1(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UnsignedChannelAnnouncement_set_node_id_1(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -212,9 +212,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_get_node_id_2(thisPtrPointer)
+				UnsignedChannelAnnouncement_get_node_id_2(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -235,9 +235,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_node_id_2(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UnsignedChannelAnnouncement_set_node_id_2(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -256,9 +256,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_get_bitcoin_key_1(thisPtrPointer)
+				UnsignedChannelAnnouncement_get_bitcoin_key_1(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -279,9 +279,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_bitcoin_key_1(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UnsignedChannelAnnouncement_set_bitcoin_key_1(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -300,9 +300,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_get_bitcoin_key_2(thisPtrPointer)
+				UnsignedChannelAnnouncement_get_bitcoin_key_2(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -323,9 +323,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_set_bitcoin_key_2(thisPtrPointer, valPrimitiveWrapper.cType!)
+				UnsignedChannelAnnouncement_set_bitcoin_key_2(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -344,9 +344,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_clone(origPointer)
+				UnsignedChannelAnnouncement_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -367,13 +367,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_eq(aPointer, bPointer)
+				UnsignedChannelAnnouncement_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -392,9 +392,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			UnsignedChannelAnnouncement_write(objPointer)
+				UnsignedChannelAnnouncement_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

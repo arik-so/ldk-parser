@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_PrivateRouteCreationErrorZ>) in
-			CResult_PrivateRouteCreationErrorZ_clone(origPointer)
+				CResult_PrivateRouteCreationErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

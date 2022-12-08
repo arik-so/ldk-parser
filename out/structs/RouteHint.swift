@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHint>) in
-			RouteHint_get_a(thisPtrPointer)
+				RouteHint_get_a(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHint>) in
-			RouteHint_set_a(thisPtrPointer, valVector.cType!)
+				RouteHint_set_a(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -128,9 +128,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRouteHint>) in
-			RouteHint_clone(origPointer)
+				RouteHint_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,9 +149,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRouteHint>) in
-			RouteHint_hash(oPointer)
+				RouteHint_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -172,13 +172,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRouteHint>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRouteHint>) in
-			RouteHint_eq(aPointer, bPointer)
+				RouteHint_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -197,9 +197,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRouteHint>) in
-			RouteHint_write(objPointer)
+				RouteHint_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

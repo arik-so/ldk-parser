@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_get_node_signature_1(thisPtrPointer)
+				ChannelAnnouncement_get_node_signature_1(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_set_node_signature_1(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ChannelAnnouncement_set_node_signature_1(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_get_node_signature_2(thisPtrPointer)
+				ChannelAnnouncement_get_node_signature_2(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -128,9 +128,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_set_node_signature_2(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ChannelAnnouncement_set_node_signature_2(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -149,9 +149,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_get_bitcoin_signature_1(thisPtrPointer)
+				ChannelAnnouncement_get_bitcoin_signature_1(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -172,9 +172,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_set_bitcoin_signature_1(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ChannelAnnouncement_set_bitcoin_signature_1(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -193,9 +193,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_get_bitcoin_signature_2(thisPtrPointer)
+				ChannelAnnouncement_get_bitcoin_signature_2(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -216,9 +216,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_set_bitcoin_signature_2(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ChannelAnnouncement_set_bitcoin_signature_2(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -237,9 +237,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_get_contents(thisPtrPointer)
+				ChannelAnnouncement_get_contents(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -258,9 +258,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_set_contents(thisPtrPointer, val.cType!)
+				ChannelAnnouncement_set_contents(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -304,9 +304,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_clone(origPointer)
+				ChannelAnnouncement_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -327,13 +327,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_eq(aPointer, bPointer)
+				ChannelAnnouncement_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -352,9 +352,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelAnnouncement>) in
-			ChannelAnnouncement_write(objPointer)
+				ChannelAnnouncement_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

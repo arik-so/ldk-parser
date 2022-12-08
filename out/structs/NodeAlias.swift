@@ -66,9 +66,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAlias>) in
-			NodeAlias_set_a(thisPtrPointer, valPrimitiveWrapper.cType!)
+				NodeAlias_set_a(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -106,9 +106,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKNodeAlias>) in
-			NodeAlias_clone(origPointer)
+				NodeAlias_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -129,13 +129,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKNodeAlias>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKNodeAlias>) in
-			NodeAlias_eq(aPointer, bPointer)
+				NodeAlias_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -154,9 +154,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNodeAlias>) in
-			NodeAlias_write(objPointer)
+				NodeAlias_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKReadOnlyNetworkGraph>) in
-			ReadOnlyNetworkGraph_channel(thisArgPointer, shortChannelId)
+				ReadOnlyNetworkGraph_channel(thisArgPointer, shortChannelId)
 						}
-			
+				
 
 						// cleanup
 						
@@ -97,9 +97,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKReadOnlyNetworkGraph>) in
-			ReadOnlyNetworkGraph_list_channels(thisArgPointer)
+				ReadOnlyNetworkGraph_list_channels(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -120,13 +120,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKReadOnlyNetworkGraph>) in
-			
+				
 						withUnsafePointer(to: nodeId.cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
-			ReadOnlyNetworkGraph_node(thisArgPointer, nodeIdPointer)
+				ReadOnlyNetworkGraph_node(thisArgPointer, nodeIdPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -158,9 +158,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKReadOnlyNetworkGraph>) in
-			ReadOnlyNetworkGraph_list_nodes(thisArgPointer)
+				ReadOnlyNetworkGraph_list_nodes(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -183,9 +183,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKReadOnlyNetworkGraph>) in
-			ReadOnlyNetworkGraph_get_addresses(thisArgPointer, pubkeyPrimitiveWrapper.cType!)
+				ReadOnlyNetworkGraph_get_addresses(thisArgPointer, pubkeyPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						

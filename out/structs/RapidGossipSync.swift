@@ -65,9 +65,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
-			RapidGossipSync_new(networkGraphPointer)
+				RapidGossipSync_new(networkGraphPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -93,9 +93,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRapidGossipSync>) in
-			RapidGossipSync_update_network_graph(thisArgPointer, updateDataPrimitiveWrapper.cType!)
+				RapidGossipSync_update_network_graph(thisArgPointer, updateDataPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -114,9 +114,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRapidGossipSync>) in
-			RapidGossipSync_is_initial_sync_complete(thisArgPointer)
+				RapidGossipSync_is_initial_sync_complete(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

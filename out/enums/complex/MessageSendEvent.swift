@@ -211,9 +211,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKMessageSendEvent>) in
-			MessageSendEvent_clone(origPointer)
+				MessageSendEvent_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

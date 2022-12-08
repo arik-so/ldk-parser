@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKNodeId>) in
-			NodeId_clone(origPointer)
+				NodeId_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -101,9 +101,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNodeId>) in
-			NodeId_as_slice(thisArgPointer)
+				NodeId_as_slice(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -122,9 +122,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKNodeId>) in
-			NodeId_hash(oPointer)
+				NodeId_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -143,9 +143,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNodeId>) in
-			NodeId_write(objPointer)
+				NodeId_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

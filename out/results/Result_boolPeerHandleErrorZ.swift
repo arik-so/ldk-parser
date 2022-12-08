@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_boolPeerHandleErrorZ>) in
-			CResult_boolPeerHandleErrorZ_clone(origPointer)
+				CResult_boolPeerHandleErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

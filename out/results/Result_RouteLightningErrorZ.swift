@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_RouteLightningErrorZ>) in
-			CResult_RouteLightningErrorZ_clone(origPointer)
+				CResult_RouteLightningErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

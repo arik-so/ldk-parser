@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_OpenChannelDecodeErrorZ>) in
-			CResult_OpenChannelDecodeErrorZ_clone(origPointer)
+				CResult_OpenChannelDecodeErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -66,9 +66,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKTrustedClosingTransaction>) in
-			TrustedClosingTransaction_built_transaction(thisArgPointer)
+				TrustedClosingTransaction_built_transaction(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -91,9 +91,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKTrustedClosingTransaction>) in
-			TrustedClosingTransaction_get_sighash_all(thisArgPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
+				TrustedClosingTransaction_get_sighash_all(thisArgPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
 						}
-			
+				
 
 						// cleanup
 						
@@ -117,13 +117,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKTrustedClosingTransaction>) in
-			
+				
 						withUnsafePointer(to: tupledFundingKey) { (tupledFundingKeyPointer: UnsafePointer<UInt8Tuple32>) in
-			TrustedClosingTransaction_sign(thisArgPointer, tupledFundingKeyPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
+				TrustedClosingTransaction_sign(thisArgPointer, tupledFundingKeyPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

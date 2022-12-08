@@ -65,9 +65,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWarningMessage>) in
-			WarningMessage_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				WarningMessage_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -89,9 +89,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKWarningMessage>) in
-			WarningMessage_get_data(thisPtrPointer)
+				WarningMessage_get_data(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -115,9 +115,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWarningMessage>) in
-			WarningMessage_set_data(thisPtrPointer, valPrimitiveWrapper.cType!)
+				WarningMessage_set_data(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -157,9 +157,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKWarningMessage>) in
-			WarningMessage_clone(origPointer)
+				WarningMessage_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -180,13 +180,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKWarningMessage>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKWarningMessage>) in
-			WarningMessage_eq(aPointer, bPointer)
+				WarningMessage_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -205,9 +205,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKWarningMessage>) in
-			WarningMessage_write(objPointer)
+				WarningMessage_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

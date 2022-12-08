@@ -68,13 +68,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKPositiveTimestamp>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKPositiveTimestamp>) in
-			PositiveTimestamp_eq(aPointer, bPointer)
+				PositiveTimestamp_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -93,9 +93,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKPositiveTimestamp>) in
-			PositiveTimestamp_clone(origPointer)
+				PositiveTimestamp_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -114,9 +114,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKPositiveTimestamp>) in
-			PositiveTimestamp_hash(oPointer)
+				PositiveTimestamp_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -198,9 +198,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPositiveTimestamp>) in
-			PositiveTimestamp_as_unix_timestamp(thisArgPointer)
+				PositiveTimestamp_as_unix_timestamp(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -219,9 +219,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPositiveTimestamp>) in
-			PositiveTimestamp_as_duration_since_epoch(thisArgPointer)
+				PositiveTimestamp_as_duration_since_epoch(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -240,9 +240,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPositiveTimestamp>) in
-			PositiveTimestamp_as_time(thisArgPointer)
+				PositiveTimestamp_as_time(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

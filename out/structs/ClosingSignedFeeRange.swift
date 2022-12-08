@@ -64,9 +64,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKClosingSignedFeeRange>) in
-			ClosingSignedFeeRange_get_min_fee_satoshis(thisPtrPointer)
+				ClosingSignedFeeRange_get_min_fee_satoshis(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSignedFeeRange>) in
-			ClosingSignedFeeRange_set_min_fee_satoshis(thisPtrPointer, val)
+				ClosingSignedFeeRange_set_min_fee_satoshis(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -108,9 +108,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKClosingSignedFeeRange>) in
-			ClosingSignedFeeRange_get_max_fee_satoshis(thisPtrPointer)
+				ClosingSignedFeeRange_get_max_fee_satoshis(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -130,9 +130,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSignedFeeRange>) in
-			ClosingSignedFeeRange_set_max_fee_satoshis(thisPtrPointer, val)
+				ClosingSignedFeeRange_set_max_fee_satoshis(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,9 +168,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKClosingSignedFeeRange>) in
-			ClosingSignedFeeRange_clone(origPointer)
+				ClosingSignedFeeRange_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -191,13 +191,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKClosingSignedFeeRange>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKClosingSignedFeeRange>) in
-			ClosingSignedFeeRange_eq(aPointer, bPointer)
+				ClosingSignedFeeRange_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -216,9 +216,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKClosingSignedFeeRange>) in
-			ClosingSignedFeeRange_write(objPointer)
+				ClosingSignedFeeRange_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -181,9 +181,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKParseError>) in
-			ParseError_clone(origPointer)
+				ParseError_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -511,13 +511,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKParseError>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKParseError>) in
-			ParseError_eq(aPointer, bPointer)
+				ParseError_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -536,9 +536,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKParseError>) in
-			ParseError_to_str(oPointer)
+				ParseError_to_str(oPointer)
 						}
-			
+				
 
 						// cleanup
 						

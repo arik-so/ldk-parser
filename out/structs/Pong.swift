@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPong>) in
-			Pong_get_byteslen(thisPtrPointer)
+				Pong_get_byteslen(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPong>) in
-			Pong_set_byteslen(thisPtrPointer, val)
+				Pong_set_byteslen(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -122,9 +122,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKPong>) in
-			Pong_clone(origPointer)
+				Pong_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -145,13 +145,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKPong>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKPong>) in
-			Pong_eq(aPointer, bPointer)
+				Pong_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -170,9 +170,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKPong>) in
-			Pong_write(objPointer)
+				Pong_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -47,9 +47,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKC2Tuple_BlockHashChannelMonitorZ>) in
-			C2Tuple_BlockHashChannelMonitorZ_clone(origPointer)
+				C2Tuple_BlockHashChannelMonitorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -106,9 +106,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: arg.activate().cType!) { (argPointer: UnsafePointer<LDKKeysInterface>) in
-			C2Tuple_BlockHashChannelMonitorZ_read(serPrimitiveWrapper.cType!, argPointer)
+				C2Tuple_BlockHashChannelMonitorZ_read(serPrimitiveWrapper.cType!, argPointer)
 						}
-			
+				
 
 						// cleanup
 						

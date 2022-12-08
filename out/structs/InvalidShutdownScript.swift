@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInvalidShutdownScript>) in
-			InvalidShutdownScript_get_script(thisPtrPointer)
+				InvalidShutdownScript_get_script(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -88,9 +88,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInvalidShutdownScript>) in
-			InvalidShutdownScript_set_script(thisPtrPointer, valVector.cType!)
+				InvalidShutdownScript_set_script(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -132,9 +132,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKInvalidShutdownScript>) in
-			InvalidShutdownScript_clone(origPointer)
+				InvalidShutdownScript_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

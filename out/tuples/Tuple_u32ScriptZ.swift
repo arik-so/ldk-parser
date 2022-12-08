@@ -47,9 +47,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKC2Tuple_u32ScriptZ>) in
-			C2Tuple_u32ScriptZ_clone(origPointer)
+				C2Tuple_u32ScriptZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

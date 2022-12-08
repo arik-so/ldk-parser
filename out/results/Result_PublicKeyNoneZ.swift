@@ -98,9 +98,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_PublicKeyNoneZ>) in
-			CResult_PublicKeyNoneZ_clone(origPointer)
+				CResult_PublicKeyNoneZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

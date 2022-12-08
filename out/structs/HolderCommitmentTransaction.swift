@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
-			HolderCommitmentTransaction_get_counterparty_sig(thisPtrPointer)
+				HolderCommitmentTransaction_get_counterparty_sig(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHolderCommitmentTransaction>) in
-			HolderCommitmentTransaction_set_counterparty_sig(thisPtrPointer, valPrimitiveWrapper.cType!)
+				HolderCommitmentTransaction_set_counterparty_sig(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -109,9 +109,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
-			HolderCommitmentTransaction_get_counterparty_htlc_sigs(thisPtrPointer)
+				HolderCommitmentTransaction_get_counterparty_htlc_sigs(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -132,9 +132,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHolderCommitmentTransaction>) in
-			HolderCommitmentTransaction_set_counterparty_htlc_sigs(thisPtrPointer, valVector.cType!)
+				HolderCommitmentTransaction_set_counterparty_htlc_sigs(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -155,9 +155,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
-			HolderCommitmentTransaction_clone(origPointer)
+				HolderCommitmentTransaction_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -176,9 +176,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
-			HolderCommitmentTransaction_write(objPointer)
+				HolderCommitmentTransaction_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

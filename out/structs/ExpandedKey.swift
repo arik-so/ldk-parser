@@ -68,9 +68,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: tupledKeyMaterial) { (tupledKeyMaterialPointer: UnsafePointer<UInt8Tuple32>) in
-			ExpandedKey_new(tupledKeyMaterialPointer)
+				ExpandedKey_new(tupledKeyMaterialPointer)
 						}
-			
+				
 
 						// cleanup
 						

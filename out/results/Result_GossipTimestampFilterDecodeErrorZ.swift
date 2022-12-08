@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_GossipTimestampFilterDecodeErrorZ>) in
-			CResult_GossipTimestampFilterDecodeErrorZ_clone(origPointer)
+				CResult_GossipTimestampFilterDecodeErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

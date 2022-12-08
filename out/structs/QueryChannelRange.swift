@@ -66,9 +66,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryChannelRange>) in
-			QueryChannelRange_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
+				QueryChannelRange_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -87,9 +87,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKQueryChannelRange>) in
-			QueryChannelRange_get_first_blocknum(thisPtrPointer)
+				QueryChannelRange_get_first_blocknum(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -108,9 +108,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryChannelRange>) in
-			QueryChannelRange_set_first_blocknum(thisPtrPointer, val)
+				QueryChannelRange_set_first_blocknum(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -129,9 +129,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKQueryChannelRange>) in
-			QueryChannelRange_get_number_of_blocks(thisPtrPointer)
+				QueryChannelRange_get_number_of_blocks(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -150,9 +150,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryChannelRange>) in
-			QueryChannelRange_set_number_of_blocks(thisPtrPointer, val)
+				QueryChannelRange_set_number_of_blocks(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -190,9 +190,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKQueryChannelRange>) in
-			QueryChannelRange_clone(origPointer)
+				QueryChannelRange_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -213,13 +213,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKQueryChannelRange>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKQueryChannelRange>) in
-			QueryChannelRange_eq(aPointer, bPointer)
+				QueryChannelRange_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -238,9 +238,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKQueryChannelRange>) in
-			QueryChannelRange_end_blocknum(thisArgPointer)
+				QueryChannelRange_end_blocknum(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -259,9 +259,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKQueryChannelRange>) in
-			QueryChannelRange_write(objPointer)
+				QueryChannelRange_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

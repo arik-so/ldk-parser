@@ -200,17 +200,20 @@
 					public override func filteredBlockConnected(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) {
 						// native call variable prep
 						
+					var tupledHeaderPointer: UnsafeMutablePointer<UInt8Tuple80>? = nil
+					if let header = header {
+						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
 					
+						tupledHeaderPointer = UnsafeMutablePointer<UInt8Tuple80>.allocate(capacity: 1)
+						tupledHeaderPointer!.initialize(to: tupledHeader)
+					}
+				
 						let txdataVector = Vec_C2Tuple_usizeTransactionZZ(array: txdata)
 				
 
 						// native method call
-						let nativeCallResult = 
-						withUnsafePointer(to: tupledHeader) { (tupledHeaderPointer: UnsafePointer<UInt8Tuple80>) in
-			self.cType!.filtered_block_connected(self.cType!.this_arg, tupledHeaderPointer, txdataVector.cType!, height)
-						}
-			
+						let nativeCallResult = self.cType!.filtered_block_connected(self.cType!.this_arg, tupledHeaderPointer, txdataVector.cType!, height)
 
 						// cleanup
 						
@@ -246,15 +249,18 @@
 					public override func blockDisconnected(header: [UInt8]?, height: UInt32) {
 						// native call variable prep
 						
+					var tupledHeaderPointer: UnsafeMutablePointer<UInt8Tuple80>? = nil
+					if let header = header {
+						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
 					
+						tupledHeaderPointer = UnsafeMutablePointer<UInt8Tuple80>.allocate(capacity: 1)
+						tupledHeaderPointer!.initialize(to: tupledHeader)
+					}
+				
 
 						// native method call
-						let nativeCallResult = 
-						withUnsafePointer(to: tupledHeader) { (tupledHeaderPointer: UnsafePointer<UInt8Tuple80>) in
-			self.cType!.block_disconnected(self.cType!.this_arg, tupledHeaderPointer, height)
-						}
-			
+						let nativeCallResult = self.cType!.block_disconnected(self.cType!.this_arg, tupledHeaderPointer, height)
 
 						// cleanup
 						

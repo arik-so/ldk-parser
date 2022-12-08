@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKBech32Error>) in
-			Bech32Error_clone(origPointer)
+				Bech32Error_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRecord>) in
-			Record_get_level(thisPtrPointer)
+				Record_get_level(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -83,9 +83,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRecord>) in
-			Record_set_level(thisPtrPointer, val.getCValue())
+				Record_set_level(thisPtrPointer, val.getCValue())
 						}
-			
+				
 
 						// cleanup
 						
@@ -104,9 +104,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRecord>) in
-			Record_get_args(thisPtrPointer)
+				Record_get_args(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -127,9 +127,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRecord>) in
-			Record_set_args(thisPtrPointer, valPrimitiveWrapper.cType!)
+				Record_set_args(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -148,9 +148,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRecord>) in
-			Record_get_module_path(thisPtrPointer)
+				Record_get_module_path(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -171,9 +171,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRecord>) in
-			Record_set_module_path(thisPtrPointer, valPrimitiveWrapper.cType!)
+				Record_set_module_path(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -192,9 +192,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRecord>) in
-			Record_get_file(thisPtrPointer)
+				Record_get_file(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -215,9 +215,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRecord>) in
-			Record_set_file(thisPtrPointer, valPrimitiveWrapper.cType!)
+				Record_set_file(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -236,9 +236,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRecord>) in
-			Record_get_line(thisPtrPointer)
+				Record_get_line(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -257,9 +257,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRecord>) in
-			Record_set_line(thisPtrPointer, val)
+				Record_set_line(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -278,9 +278,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRecord>) in
-			Record_clone(origPointer)
+				Record_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

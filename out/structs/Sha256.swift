@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKSha256>) in
-			Sha256_clone(origPointer)
+				Sha256_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKSha256>) in
-			Sha256_hash(oPointer)
+				Sha256_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,13 +105,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKSha256>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKSha256>) in
-			Sha256_eq(aPointer, bPointer)
+				Sha256_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

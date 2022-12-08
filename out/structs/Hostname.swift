@@ -65,9 +65,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKHostname>) in
-			Hostname_clone(origPointer)
+				Hostname_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -88,13 +88,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKHostname>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKHostname>) in
-			Hostname_eq(aPointer, bPointer)
+				Hostname_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -113,9 +113,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKHostname>) in
-			Hostname_len(thisArgPointer)
+				Hostname_len(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

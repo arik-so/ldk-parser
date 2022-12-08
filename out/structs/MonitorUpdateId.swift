@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKMonitorUpdateId>) in
-			MonitorUpdateId_clone(origPointer)
+				MonitorUpdateId_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKMonitorUpdateId>) in
-			MonitorUpdateId_hash(oPointer)
+				MonitorUpdateId_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,13 +105,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKMonitorUpdateId>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKMonitorUpdateId>) in
-			MonitorUpdateId_eq(aPointer, bPointer)
+				MonitorUpdateId_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

@@ -65,9 +65,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_get_data(thisPtrPointer)
+				RawInvoice_get_data(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRawInvoice>) in
-			RawInvoice_set_data(thisPtrPointer, val.cType!)
+				RawInvoice_set_data(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -109,13 +109,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRawInvoice>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_eq(aPointer, bPointer)
+				RawInvoice_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -134,9 +134,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_clone(origPointer)
+				RawInvoice_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -155,9 +155,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_hash(oPointer)
+				RawInvoice_hash(oPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -176,9 +176,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_signable_hash(thisArgPointer)
+				RawInvoice_signable_hash(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -197,9 +197,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_payment_hash(thisArgPointer)
+				RawInvoice_payment_hash(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -231,9 +231,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_description(thisArgPointer)
+				RawInvoice_description(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -265,9 +265,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_payee_pub_key(thisArgPointer)
+				RawInvoice_payee_pub_key(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -299,9 +299,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_description_hash(thisArgPointer)
+				RawInvoice_description_hash(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -333,9 +333,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_expiry_time(thisArgPointer)
+				RawInvoice_expiry_time(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -367,9 +367,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_min_final_cltv_expiry(thisArgPointer)
+				RawInvoice_min_final_cltv_expiry(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -401,9 +401,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_payment_secret(thisArgPointer)
+				RawInvoice_payment_secret(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -430,9 +430,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_features(thisArgPointer)
+				RawInvoice_features(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -464,9 +464,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_private_routes(thisArgPointer)
+				RawInvoice_private_routes(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -485,9 +485,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_amount_pico_btc(thisArgPointer)
+				RawInvoice_amount_pico_btc(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -506,9 +506,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
-			RawInvoice_currency(thisArgPointer)
+				RawInvoice_currency(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

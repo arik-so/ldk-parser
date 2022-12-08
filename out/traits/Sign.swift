@@ -118,9 +118,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKSign>) in
-			Sign_clone(origPointer)
+				Sign_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

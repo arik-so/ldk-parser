@@ -669,9 +669,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: holderTx.cType!) { (holderTxPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
-			self.cType!.validate_holder_commitment(self.cType!.this_arg, holderTxPointer, preimagesVector.cType!)
+				self.cType!.validate_holder_commitment(self.cType!.this_arg, holderTxPointer, preimagesVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -725,9 +725,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: commitmentTx.cType!) { (commitmentTxPointer: UnsafePointer<LDKCommitmentTransaction>) in
-			self.cType!.sign_counterparty_commitment(self.cType!.this_arg, commitmentTxPointer, preimagesVector.cType!)
+				self.cType!.sign_counterparty_commitment(self.cType!.this_arg, commitmentTxPointer, preimagesVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -747,15 +747,18 @@
 					public override func validateCounterpartyRevocation(idx: UInt64, secret: [UInt8]?) -> Result_NoneNoneZ {
 						// native call variable prep
 						
+					var tupledSecretPointer: UnsafeMutablePointer<UInt8Tuple32>? = nil
+					if let secret = secret {
+						
 						let tupledSecret = Bindings.arrayToUInt8Tuple32(array: secret)
 					
+						tupledSecretPointer = UnsafeMutablePointer<UInt8Tuple32>.allocate(capacity: 1)
+						tupledSecretPointer!.initialize(to: tupledSecret)
+					}
+				
 
 						// native method call
-						let nativeCallResult = 
-						withUnsafePointer(to: tupledSecret) { (tupledSecretPointer: UnsafePointer<UInt8Tuple32>) in
-			self.cType!.validate_counterparty_revocation(self.cType!.this_arg, idx, tupledSecretPointer)
-						}
-			
+						let nativeCallResult = self.cType!.validate_counterparty_revocation(self.cType!.this_arg, idx, tupledSecretPointer)
 
 						// cleanup
 						
@@ -784,9 +787,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: commitmentTx.cType!) { (commitmentTxPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
-			self.cType!.sign_holder_commitment_and_htlcs(self.cType!.this_arg, commitmentTxPointer)
+				self.cType!.sign_holder_commitment_and_htlcs(self.cType!.this_arg, commitmentTxPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -816,15 +819,18 @@
 						
 						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx)
 				
+					var tupledPerCommitmentKeyPointer: UnsafeMutablePointer<UInt8Tuple32>? = nil
+					if let perCommitmentKey = perCommitmentKey {
+						
 						let tupledPerCommitmentKey = Bindings.arrayToUInt8Tuple32(array: perCommitmentKey)
 					
+						tupledPerCommitmentKeyPointer = UnsafeMutablePointer<UInt8Tuple32>.allocate(capacity: 1)
+						tupledPerCommitmentKeyPointer!.initialize(to: tupledPerCommitmentKey)
+					}
+				
 
 						// native method call
-						let nativeCallResult = 
-						withUnsafePointer(to: tupledPerCommitmentKey) { (tupledPerCommitmentKeyPointer: UnsafePointer<UInt8Tuple32>) in
-			self.cType!.sign_justice_revoked_output(self.cType!.this_arg, justiceTxPrimitiveWrapper.cType!, input, amount, tupledPerCommitmentKeyPointer)
-						}
-			
+						let nativeCallResult = self.cType!.sign_justice_revoked_output(self.cType!.this_arg, justiceTxPrimitiveWrapper.cType!, input, amount, tupledPerCommitmentKeyPointer)
 
 						// cleanup
 						
@@ -857,19 +863,22 @@
 						
 						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx)
 				
+					var tupledPerCommitmentKeyPointer: UnsafeMutablePointer<UInt8Tuple32>? = nil
+					if let perCommitmentKey = perCommitmentKey {
+						
 						let tupledPerCommitmentKey = Bindings.arrayToUInt8Tuple32(array: perCommitmentKey)
 					
+						tupledPerCommitmentKeyPointer = UnsafeMutablePointer<UInt8Tuple32>.allocate(capacity: 1)
+						tupledPerCommitmentKeyPointer!.initialize(to: tupledPerCommitmentKey)
+					}
+				
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: tupledPerCommitmentKey) { (tupledPerCommitmentKeyPointer: UnsafePointer<UInt8Tuple32>) in
-			
 						withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
-			self.cType!.sign_justice_revoked_htlc(self.cType!.this_arg, justiceTxPrimitiveWrapper.cType!, input, amount, tupledPerCommitmentKeyPointer, htlcPointer)
+				self.cType!.sign_justice_revoked_htlc(self.cType!.this_arg, justiceTxPrimitiveWrapper.cType!, input, amount, tupledPerCommitmentKeyPointer, htlcPointer)
 						}
-			
-						}
-			
+				
 
 						// cleanup
 						
@@ -908,9 +917,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
-			self.cType!.sign_counterparty_htlc_transaction(self.cType!.this_arg, htlcTxPrimitiveWrapper.cType!, input, amount, perCommitmentPointPrimitiveWrapper.cType!, htlcPointer)
+				self.cType!.sign_counterparty_htlc_transaction(self.cType!.this_arg, htlcTxPrimitiveWrapper.cType!, input, amount, perCommitmentPointPrimitiveWrapper.cType!, htlcPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -932,9 +941,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: closingTx.cType!) { (closingTxPointer: UnsafePointer<LDKClosingTransaction>) in
-			self.cType!.sign_closing_transaction(self.cType!.this_arg, closingTxPointer)
+				self.cType!.sign_closing_transaction(self.cType!.this_arg, closingTxPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -981,9 +990,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
-			self.cType!.sign_channel_announcement(self.cType!.this_arg, msgPointer)
+				self.cType!.sign_channel_announcement(self.cType!.this_arg, msgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -1011,9 +1020,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: channelParameters.cType!) { (channelParametersPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-			self.cType!.ready_channel(self.cType!.this_arg, channelParametersPointer)
+				self.cType!.ready_channel(self.cType!.this_arg, channelParametersPointer)
 						}
-			
+				
 
 						// cleanup
 						

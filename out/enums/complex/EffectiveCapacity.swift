@@ -107,9 +107,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKEffectiveCapacity>) in
-			EffectiveCapacity_clone(origPointer)
+				EffectiveCapacity_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -215,9 +215,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKEffectiveCapacity>) in
-			EffectiveCapacity_as_msat(thisArgPointer)
+				EffectiveCapacity_as_msat(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

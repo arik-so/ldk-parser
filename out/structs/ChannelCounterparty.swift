@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_get_node_id(thisPtrPointer)
+				ChannelCounterparty_get_node_id(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -85,9 +85,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_set_node_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ChannelCounterparty_set_node_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -108,9 +108,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_get_features(thisPtrPointer)
+				ChannelCounterparty_get_features(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -131,9 +131,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_set_features(thisPtrPointer, val.cType!)
+				ChannelCounterparty_set_features(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -158,9 +158,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_get_unspendable_punishment_reserve(thisPtrPointer)
+				ChannelCounterparty_get_unspendable_punishment_reserve(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -185,9 +185,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_set_unspendable_punishment_reserve(thisPtrPointer, val)
+				ChannelCounterparty_set_unspendable_punishment_reserve(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -209,9 +209,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_get_forwarding_info(thisPtrPointer)
+				ChannelCounterparty_get_forwarding_info(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -246,9 +246,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_set_forwarding_info(thisPtrPointer, val.cType!)
+				ChannelCounterparty_set_forwarding_info(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -269,9 +269,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_get_outbound_htlc_minimum_msat(thisPtrPointer)
+				ChannelCounterparty_get_outbound_htlc_minimum_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -294,9 +294,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_set_outbound_htlc_minimum_msat(thisPtrPointer, valOption.cType!)
+				ChannelCounterparty_set_outbound_htlc_minimum_msat(thisPtrPointer, valOption.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -315,9 +315,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_get_outbound_htlc_maximum_msat(thisPtrPointer)
+				ChannelCounterparty_get_outbound_htlc_maximum_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -338,9 +338,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_set_outbound_htlc_maximum_msat(thisPtrPointer, valOption.cType!)
+				ChannelCounterparty_set_outbound_htlc_maximum_msat(thisPtrPointer, valOption.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -382,9 +382,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_clone(origPointer)
+				ChannelCounterparty_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -403,9 +403,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelCounterparty>) in
-			ChannelCounterparty_write(objPointer)
+				ChannelCounterparty_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

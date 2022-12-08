@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_TxOutAccessErrorZ>) in
-			CResult_TxOutAccessErrorZ_clone(origPointer)
+				CResult_TxOutAccessErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

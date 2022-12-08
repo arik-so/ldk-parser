@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKHTLCDestination>) in
-			HTLCDestination_clone(origPointer)
+				HTLCDestination_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -175,13 +175,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKHTLCDestination>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKHTLCDestination>) in
-			HTLCDestination_eq(aPointer, bPointer)
+				HTLCDestination_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -200,9 +200,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKHTLCDestination>) in
-			HTLCDestination_write(objPointer)
+				HTLCDestination_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

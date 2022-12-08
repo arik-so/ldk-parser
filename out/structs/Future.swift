@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKFuture>) in
-			Future_register_callback_fn(thisArgPointer, callback.activate().cType!)
+				Future_register_callback_fn(thisArgPointer, callback.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						

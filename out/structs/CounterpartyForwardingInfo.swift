@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyForwardingInfo>) in
-			CounterpartyForwardingInfo_get_fee_base_msat(thisPtrPointer)
+				CounterpartyForwardingInfo_get_fee_base_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -82,9 +82,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCounterpartyForwardingInfo>) in
-			CounterpartyForwardingInfo_set_fee_base_msat(thisPtrPointer, val)
+				CounterpartyForwardingInfo_set_fee_base_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -103,9 +103,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyForwardingInfo>) in
-			CounterpartyForwardingInfo_get_fee_proportional_millionths(thisPtrPointer)
+				CounterpartyForwardingInfo_get_fee_proportional_millionths(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -124,9 +124,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCounterpartyForwardingInfo>) in
-			CounterpartyForwardingInfo_set_fee_proportional_millionths(thisPtrPointer, val)
+				CounterpartyForwardingInfo_set_fee_proportional_millionths(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -147,9 +147,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyForwardingInfo>) in
-			CounterpartyForwardingInfo_get_cltv_expiry_delta(thisPtrPointer)
+				CounterpartyForwardingInfo_get_cltv_expiry_delta(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -170,9 +170,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCounterpartyForwardingInfo>) in
-			CounterpartyForwardingInfo_set_cltv_expiry_delta(thisPtrPointer, val)
+				CounterpartyForwardingInfo_set_cltv_expiry_delta(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -208,9 +208,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCounterpartyForwardingInfo>) in
-			CounterpartyForwardingInfo_clone(origPointer)
+				CounterpartyForwardingInfo_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -229,9 +229,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKCounterpartyForwardingInfo>) in
-			CounterpartyForwardingInfo_write(objPointer)
+				CounterpartyForwardingInfo_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

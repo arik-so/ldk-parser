@@ -65,9 +65,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChainParameters>) in
-			ChainParameters_get_network(thisPtrPointer)
+				ChainParameters_get_network(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,9 +86,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChainParameters>) in
-			ChainParameters_set_network(thisPtrPointer, val.getCValue())
+				ChainParameters_set_network(thisPtrPointer, val.getCValue())
 						}
-			
+				
 
 						// cleanup
 						
@@ -109,9 +109,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChainParameters>) in
-			ChainParameters_get_best_block(thisPtrPointer)
+				ChainParameters_get_best_block(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -132,9 +132,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChainParameters>) in
-			ChainParameters_set_best_block(thisPtrPointer, val.cType!)
+				ChainParameters_set_best_block(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -170,9 +170,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChainParameters>) in
-			ChainParameters_clone(origPointer)
+				ChainParameters_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

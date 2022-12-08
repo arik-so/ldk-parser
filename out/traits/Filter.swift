@@ -184,17 +184,20 @@
 					public override func registerTx(txid: [UInt8]?, scriptPubkey: [UInt8]) {
 						// native call variable prep
 						
+					var tupledTxidPointer: UnsafeMutablePointer<UInt8Tuple32>? = nil
+					if let txid = txid {
+						
 						let tupledTxid = Bindings.arrayToUInt8Tuple32(array: txid)
 					
+						tupledTxidPointer = UnsafeMutablePointer<UInt8Tuple32>.allocate(capacity: 1)
+						tupledTxidPointer!.initialize(to: tupledTxid)
+					}
+				
 						let scriptPubkeyPrimitiveWrapper = u8slice(value: scriptPubkey)
 				
 
 						// native method call
-						let nativeCallResult = 
-						withUnsafePointer(to: tupledTxid) { (tupledTxidPointer: UnsafePointer<UInt8Tuple32>) in
-			self.cType!.register_tx(self.cType!.this_arg, tupledTxidPointer, scriptPubkeyPrimitiveWrapper.cType!)
-						}
-			
+						let nativeCallResult = self.cType!.register_tx(self.cType!.this_arg, tupledTxidPointer, scriptPubkeyPrimitiveWrapper.cType!)
 
 						// cleanup
 						

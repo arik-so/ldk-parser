@@ -67,9 +67,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKBigSize>) in
-			BigSize_get_a(thisPtrPointer)
+				BigSize_get_a(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -88,9 +88,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKBigSize>) in
-			BigSize_set_a(thisPtrPointer, val)
+				BigSize_set_a(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						

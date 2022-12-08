@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKShutdown>) in
-			Shutdown_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				Shutdown_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -85,9 +85,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKShutdown>) in
-			Shutdown_get_scriptpubkey(thisPtrPointer)
+				Shutdown_get_scriptpubkey(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -109,9 +109,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKShutdown>) in
-			Shutdown_set_scriptpubkey(thisPtrPointer, valVector.cType!)
+				Shutdown_set_scriptpubkey(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -155,9 +155,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKShutdown>) in
-			Shutdown_clone(origPointer)
+				Shutdown_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -178,13 +178,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKShutdown>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKShutdown>) in
-			Shutdown_eq(aPointer, bPointer)
+				Shutdown_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -203,9 +203,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKShutdown>) in
-			Shutdown_write(objPointer)
+				Shutdown_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

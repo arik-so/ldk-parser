@@ -46,13 +46,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKChannelFeatures>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKChannelFeatures>) in
-			ChannelFeatures_eq(aPointer, bPointer)
+				ChannelFeatures_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -71,9 +71,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKChannelFeatures>) in
-			ChannelFeatures_clone(origPointer)
+				ChannelFeatures_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -127,9 +127,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelFeatures>) in
-			ChannelFeatures_requires_unknown_bits(thisArgPointer)
+				ChannelFeatures_requires_unknown_bits(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -148,9 +148,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelFeatures>) in
-			ChannelFeatures_write(objPointer)
+				ChannelFeatures_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKHTLCUpdate>) in
-			HTLCUpdate_clone(origPointer)
+				HTLCUpdate_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -86,13 +86,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKHTLCUpdate>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKHTLCUpdate>) in
-			HTLCUpdate_eq(aPointer, bPointer)
+				HTLCUpdate_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -111,9 +111,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKHTLCUpdate>) in
-			HTLCUpdate_write(objPointer)
+				HTLCUpdate_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

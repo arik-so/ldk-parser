@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_AnnouncementSignaturesDecodeErrorZ>) in
-			CResult_AnnouncementSignaturesDecodeErrorZ_clone(origPointer)
+				CResult_AnnouncementSignaturesDecodeErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

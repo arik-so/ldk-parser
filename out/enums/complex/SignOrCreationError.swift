@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKSignOrCreationError>) in
-			SignOrCreationError_clone(origPointer)
+				SignOrCreationError_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -140,13 +140,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKSignOrCreationError>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKSignOrCreationError>) in
-			SignOrCreationError_eq(aPointer, bPointer)
+				SignOrCreationError_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -165,9 +165,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKSignOrCreationError>) in
-			SignOrCreationError_to_str(oPointer)
+				SignOrCreationError_to_str(oPointer)
 						}
-			
+				
 
 						// cleanup
 						

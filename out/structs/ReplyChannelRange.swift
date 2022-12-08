@@ -69,9 +69,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
+				ReplyChannelRange_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -90,9 +90,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_get_first_blocknum(thisPtrPointer)
+				ReplyChannelRange_get_first_blocknum(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -111,9 +111,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_set_first_blocknum(thisPtrPointer, val)
+				ReplyChannelRange_set_first_blocknum(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -132,9 +132,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_get_number_of_blocks(thisPtrPointer)
+				ReplyChannelRange_get_number_of_blocks(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -153,9 +153,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_set_number_of_blocks(thisPtrPointer, val)
+				ReplyChannelRange_set_number_of_blocks(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -174,9 +174,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_get_sync_complete(thisPtrPointer)
+				ReplyChannelRange_get_sync_complete(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -195,9 +195,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_set_sync_complete(thisPtrPointer, val)
+				ReplyChannelRange_set_sync_complete(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -218,9 +218,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_get_short_channel_ids(thisPtrPointer)
+				ReplyChannelRange_get_short_channel_ids(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -241,9 +241,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_set_short_channel_ids(thisPtrPointer, valVector.cType!)
+				ReplyChannelRange_set_short_channel_ids(thisPtrPointer, valVector.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -287,9 +287,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_clone(origPointer)
+				ReplyChannelRange_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -310,13 +310,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKReplyChannelRange>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_eq(aPointer, bPointer)
+				ReplyChannelRange_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -354,9 +354,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKReplyChannelRange>) in
-			ReplyChannelRange_write(objPointer)
+				ReplyChannelRange_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

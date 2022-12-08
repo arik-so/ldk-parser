@@ -96,9 +96,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_SiPrefixParseErrorZ>) in
-			CResult_SiPrefixParseErrorZ_clone(origPointer)
+				CResult_SiPrefixParseErrorZ_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						

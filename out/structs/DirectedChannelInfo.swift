@@ -62,9 +62,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKDirectedChannelInfo>) in
-			DirectedChannelInfo_clone(origPointer)
+				DirectedChannelInfo_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -83,9 +83,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelInfo>) in
-			DirectedChannelInfo_channel(thisArgPointer)
+				DirectedChannelInfo_channel(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -106,9 +106,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelInfo>) in
-			DirectedChannelInfo_direction(thisArgPointer)
+				DirectedChannelInfo_direction(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -140,9 +140,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelInfo>) in
-			DirectedChannelInfo_htlc_maximum_msat(thisArgPointer)
+				DirectedChannelInfo_htlc_maximum_msat(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -165,9 +165,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelInfo>) in
-			DirectedChannelInfo_effective_capacity(thisArgPointer)
+				DirectedChannelInfo_effective_capacity(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

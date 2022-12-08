@@ -74,9 +74,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
-			P2PGossipSync_new(networkGraphPointer, chainAccessOption.cType!, logger.activate().cType!)
+				P2PGossipSync_new(networkGraphPointer, chainAccessOption.cType!, logger.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -99,9 +99,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKP2PGossipSync>) in
-			P2PGossipSync_add_chain_access(thisArgPointer, chainAccessOption.cType!)
+				P2PGossipSync_add_chain_access(thisArgPointer, chainAccessOption.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -121,9 +121,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKP2PGossipSync>) in
-			P2PGossipSync_as_RoutingMessageHandler(thisArgPointer)
+				P2PGossipSync_as_RoutingMessageHandler(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -143,9 +143,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKP2PGossipSync>) in
-			P2PGossipSync_as_MessageSendEventsProvider(thisArgPointer)
+				P2PGossipSync_as_MessageSendEventsProvider(thisArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

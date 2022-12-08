@@ -219,9 +219,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKSocketDescriptor>) in
-			SocketDescriptor_clone(origPointer)
+				SocketDescriptor_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -315,9 +315,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (otherArgPointer: UnsafePointer<LDKSocketDescriptor>) in
-			self.cType!.eq(self.cType!.this_arg, otherArgPointer)
+				self.cType!.eq(self.cType!.this_arg, otherArgPointer)
 						}
-			
+				
 
 						// cleanup
 						

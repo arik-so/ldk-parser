@@ -61,9 +61,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKBuiltCommitmentTransaction>) in
-			BuiltCommitmentTransaction_get_transaction(thisPtrPointer)
+				BuiltCommitmentTransaction_get_transaction(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKBuiltCommitmentTransaction>) in
-			BuiltCommitmentTransaction_set_transaction(thisPtrPointer, valPrimitiveWrapper.cType!)
+				BuiltCommitmentTransaction_set_transaction(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -110,9 +110,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKBuiltCommitmentTransaction>) in
-			BuiltCommitmentTransaction_set_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
+				BuiltCommitmentTransaction_set_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -152,9 +152,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKBuiltCommitmentTransaction>) in
-			BuiltCommitmentTransaction_clone(origPointer)
+				BuiltCommitmentTransaction_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -173,9 +173,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKBuiltCommitmentTransaction>) in
-			BuiltCommitmentTransaction_write(objPointer)
+				BuiltCommitmentTransaction_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -217,9 +217,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKBuiltCommitmentTransaction>) in
-			BuiltCommitmentTransaction_get_sighash_all(thisArgPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
+				BuiltCommitmentTransaction_get_sighash_all(thisArgPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
 						}
-			
+				
 
 						// cleanup
 						
@@ -243,13 +243,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKBuiltCommitmentTransaction>) in
-			
+				
 						withUnsafePointer(to: tupledFundingKey) { (tupledFundingKeyPointer: UnsafePointer<UInt8Tuple32>) in
-			BuiltCommitmentTransaction_sign(thisArgPointer, tupledFundingKeyPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
+				BuiltCommitmentTransaction_sign(thisArgPointer, tupledFundingKeyPointer, fundingRedeemscriptPrimitiveWrapper.cType!, channelValueSatoshis)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						

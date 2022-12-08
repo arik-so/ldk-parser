@@ -63,9 +63,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_temporary_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
+				AcceptChannel_set_temporary_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -84,9 +84,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_dust_limit_satoshis(thisPtrPointer)
+				AcceptChannel_get_dust_limit_satoshis(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -105,9 +105,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_dust_limit_satoshis(thisPtrPointer, val)
+				AcceptChannel_set_dust_limit_satoshis(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -126,9 +126,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_max_htlc_value_in_flight_msat(thisPtrPointer)
+				AcceptChannel_get_max_htlc_value_in_flight_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -147,9 +147,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_max_htlc_value_in_flight_msat(thisPtrPointer, val)
+				AcceptChannel_set_max_htlc_value_in_flight_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -168,9 +168,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_channel_reserve_satoshis(thisPtrPointer)
+				AcceptChannel_get_channel_reserve_satoshis(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -189,9 +189,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_channel_reserve_satoshis(thisPtrPointer, val)
+				AcceptChannel_set_channel_reserve_satoshis(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -210,9 +210,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_htlc_minimum_msat(thisPtrPointer)
+				AcceptChannel_get_htlc_minimum_msat(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -231,9 +231,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_htlc_minimum_msat(thisPtrPointer, val)
+				AcceptChannel_set_htlc_minimum_msat(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -252,9 +252,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_minimum_depth(thisPtrPointer)
+				AcceptChannel_get_minimum_depth(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -273,9 +273,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_minimum_depth(thisPtrPointer, val)
+				AcceptChannel_set_minimum_depth(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -294,9 +294,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_to_self_delay(thisPtrPointer)
+				AcceptChannel_get_to_self_delay(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -315,9 +315,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_to_self_delay(thisPtrPointer, val)
+				AcceptChannel_set_to_self_delay(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -336,9 +336,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_max_accepted_htlcs(thisPtrPointer)
+				AcceptChannel_get_max_accepted_htlcs(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -357,9 +357,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_max_accepted_htlcs(thisPtrPointer, val)
+				AcceptChannel_set_max_accepted_htlcs(thisPtrPointer, val)
 						}
-			
+				
 
 						// cleanup
 						
@@ -378,9 +378,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_funding_pubkey(thisPtrPointer)
+				AcceptChannel_get_funding_pubkey(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -401,9 +401,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_funding_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
+				AcceptChannel_set_funding_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -422,9 +422,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_revocation_basepoint(thisPtrPointer)
+				AcceptChannel_get_revocation_basepoint(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -445,9 +445,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_revocation_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
+				AcceptChannel_set_revocation_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -466,9 +466,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_payment_point(thisPtrPointer)
+				AcceptChannel_get_payment_point(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -489,9 +489,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_payment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
+				AcceptChannel_set_payment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -510,9 +510,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_delayed_payment_basepoint(thisPtrPointer)
+				AcceptChannel_get_delayed_payment_basepoint(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -533,9 +533,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_delayed_payment_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
+				AcceptChannel_set_delayed_payment_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -554,9 +554,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_htlc_basepoint(thisPtrPointer)
+				AcceptChannel_get_htlc_basepoint(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -577,9 +577,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_htlc_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
+				AcceptChannel_set_htlc_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -598,9 +598,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_first_per_commitment_point(thisPtrPointer)
+				AcceptChannel_get_first_per_commitment_point(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -621,9 +621,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_first_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
+				AcceptChannel_set_first_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -648,9 +648,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_get_channel_type(thisPtrPointer)
+				AcceptChannel_get_channel_type(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -688,9 +688,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-			AcceptChannel_set_channel_type(thisPtrPointer, val.cType!)
+				AcceptChannel_set_channel_type(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -709,9 +709,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_clone(origPointer)
+				AcceptChannel_clone(origPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -732,13 +732,13 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKAcceptChannel>) in
-			
+				
 						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_eq(aPointer, bPointer)
+				AcceptChannel_eq(aPointer, bPointer)
 						}
-			
+				
 						}
-			
+				
 
 						// cleanup
 						
@@ -757,9 +757,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKAcceptChannel>) in
-			AcceptChannel_write(objPointer)
+				AcceptChannel_write(objPointer)
 						}
-			
+				
 
 						// cleanup
 						

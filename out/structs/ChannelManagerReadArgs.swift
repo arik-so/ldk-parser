@@ -94,9 +94,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_get_keys_manager(thisPtrPointer)
+				ChannelManagerReadArgs_get_keys_manager(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -117,9 +117,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_set_keys_manager(thisPtrPointer, val.activate().cType!)
+				ChannelManagerReadArgs_set_keys_manager(thisPtrPointer, val.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -140,9 +140,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_get_fee_estimator(thisPtrPointer)
+				ChannelManagerReadArgs_get_fee_estimator(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -163,9 +163,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_set_fee_estimator(thisPtrPointer, val.activate().cType!)
+				ChannelManagerReadArgs_set_fee_estimator(thisPtrPointer, val.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -188,9 +188,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_get_chain_monitor(thisPtrPointer)
+				ChannelManagerReadArgs_get_chain_monitor(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -213,9 +213,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_set_chain_monitor(thisPtrPointer, val.activate().cType!)
+				ChannelManagerReadArgs_set_chain_monitor(thisPtrPointer, val.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -236,9 +236,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_get_tx_broadcaster(thisPtrPointer)
+				ChannelManagerReadArgs_get_tx_broadcaster(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -259,9 +259,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_set_tx_broadcaster(thisPtrPointer, val.activate().cType!)
+				ChannelManagerReadArgs_set_tx_broadcaster(thisPtrPointer, val.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -281,9 +281,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_get_logger(thisPtrPointer)
+				ChannelManagerReadArgs_get_logger(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -303,9 +303,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_set_logger(thisPtrPointer, val.activate().cType!)
+				ChannelManagerReadArgs_set_logger(thisPtrPointer, val.activate().cType!)
 						}
-			
+				
 
 						// cleanup
 						
@@ -325,9 +325,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_get_default_config(thisPtrPointer)
+				ChannelManagerReadArgs_get_default_config(thisPtrPointer)
 						}
-			
+				
 
 						// cleanup
 						
@@ -347,9 +347,9 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelManagerReadArgs>) in
-			ChannelManagerReadArgs_set_default_config(thisPtrPointer, val.cType!)
+				ChannelManagerReadArgs_set_default_config(thisPtrPointer, val.cType!)
 						}
-			
+				
 
 						// cleanup
 						
