@@ -1,4 +1,4 @@
-import {RustPrimitiveEnum, RustStruct, RustTaggedValueEnum} from '../rust_types.mjs';
+import {RustPrimitiveEnum, RustPrimitiveEnumVariant, RustStruct, RustTaggedValueEnum} from '../rust_types.mjs';
 import {BaseTypeGenerator} from './base_type_generator.mjs';
 import Generator from './index.mjs';
 import StructGenerator from './struct_generator.mjs';
@@ -54,9 +54,23 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 
 			const preparedReturnValue = this.prepareRustReturnValueForSwift(currentVariant, type);
 
+			let matchingTagTypeVariant: RustPrimitiveEnumVariant | null = null;
+			for (const currentTagVariant of tagType.variants) {
+				if (currentTagVariant.name.toLowerCase()
+				.endsWith(currentVariant.contextualName.replaceAll('_', '').toLowerCase())) {
+					matchingTagTypeVariant = currentTagVariant;
+					break;
+				}
+				debugger
+			}
+
+			if (!matchingTagTypeVariant) {
+				throw new Error(`Unable to find matching tag variant in ${currentSwiftTypeName} for ${currentVariant.contextualName}`);
+			}
+
 			polymorphicAccessors += `
 					public func getValueAs${currentSwiftTypeName}() -> ${currentPublicType}? {
-						if self.cType?.tag != ${type.name}_${camelCasedVariantName} {
+						if self.cType?.tag != ${matchingTagTypeVariant.name} {
 							return nil
 						}
 
@@ -72,7 +86,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 			for (const currentChildStruct of childStructs) {
 				let currentStructRendering = childStructGenerator.generateFileContents(currentChildStruct, type);
 				// embedded structs have no business being publicly initializeable
-				currentStructRendering = currentStructRendering.replaceAll('public init(', 'fileprivate init(')
+				currentStructRendering = currentStructRendering.replaceAll('public init(', 'fileprivate init(');
 				renderedChildStructs += Generator.reindentCode(currentStructRendering, 5);
 			}
 		}

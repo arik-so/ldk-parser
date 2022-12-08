@@ -143,7 +143,7 @@
 
 					
 					public func getValueAsP2p() -> P2PGossipSync? {
-						if self.cType?.tag != LDKGossipSync_P2p {
+						if self.cType?.tag != LDKGossipSync_P2P {
 							return nil
 						}
 

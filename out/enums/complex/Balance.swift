@@ -295,7 +295,7 @@
 					}
 			
 					public func getValueAsMaybeTimeoutClaimableHtlc() -> MaybeTimeoutClaimableHTLC? {
-						if self.cType?.tag != LDKBalance_MaybeTimeoutClaimableHtlc {
+						if self.cType?.tag != LDKBalance_MaybeTimeoutClaimableHTLC {
 							return nil
 						}
 
@@ -303,7 +303,7 @@
 					}
 			
 					public func getValueAsMaybePreimageClaimableHtlc() -> MaybePreimageClaimableHTLC? {
-						if self.cType?.tag != LDKBalance_MaybePreimageClaimableHtlc {
+						if self.cType?.tag != LDKBalance_MaybePreimageClaimableHTLC {
 							return nil
 						}
 

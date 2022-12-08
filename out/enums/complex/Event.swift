@@ -741,7 +741,7 @@
 					}
 			
 					public func getValueAsPendingHtlCsForwardable() -> PendingHTLCsForwardable? {
-						if self.cType?.tag != LDKEvent_PendingHtlCsForwardable {
+						if self.cType?.tag != LDKEvent_PendingHTLCsForwardable {
 							return nil
 						}
 
@@ -789,7 +789,7 @@
 					}
 			
 					public func getValueAsHtlcHandlingFailed() -> HTLCHandlingFailed? {
-						if self.cType?.tag != LDKEvent_HtlcHandlingFailed {
+						if self.cType?.tag != LDKEvent_HTLCHandlingFailed {
 							return nil
 						}
 

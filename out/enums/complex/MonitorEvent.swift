@@ -251,7 +251,7 @@
 
 					
 					public func getValueAsHtlcEvent() -> HTLCUpdate? {
-						if self.cType?.tag != LDKMonitorEvent_HtlcEvent {
+						if self.cType?.tag != LDKMonitorEvent_HTLCEvent {
 							return nil
 						}
 

@@ -651,7 +651,7 @@
 					}
 			
 					public func getValueAsUpdateHtlCs() -> UpdateHTLCs? {
-						if self.cType?.tag != LDKMessageSendEvent_UpdateHtlCs {
+						if self.cType?.tag != LDKMessageSendEvent_UpdateHTLCs {
 							return nil
 						}
 
@@ -659,7 +659,7 @@
 					}
 			
 					public func getValueAsSendRevokeAndAck() -> SendRevokeAndACK? {
-						if self.cType?.tag != LDKMessageSendEvent_SendRevokeAndAck {
+						if self.cType?.tag != LDKMessageSendEvent_SendRevokeAndACK {
 							return nil
 						}
 

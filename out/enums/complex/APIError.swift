@@ -280,7 +280,7 @@
 
 					
 					public func getValueAsApiMisuseError() -> APIMisuseError? {
-						if self.cType?.tag != LDKAPIError_ApiMisuseError {
+						if self.cType?.tag != LDKAPIError_APIMisuseError {
 							return nil
 						}
 

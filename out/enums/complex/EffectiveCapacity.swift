@@ -239,7 +239,7 @@
 					}
 			
 					public func getValueAsMaximumHtlc() -> MaximumHTLC? {
-						if self.cType?.tag != LDKEffectiveCapacity_MaximumHtlc {
+						if self.cType?.tag != LDKEffectiveCapacity_MaximumHTLC {
 							return nil
 						}
 
