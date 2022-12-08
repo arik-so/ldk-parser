@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-TxOut(cType: currentCType)
+TxOut(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

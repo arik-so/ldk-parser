@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-ChannelDetails(cType: currentCType)
+ChannelDetails(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

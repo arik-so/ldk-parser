@@ -83,7 +83,7 @@
 
 						let swiftArray = array.map { (currentCType) in
 							currentCType.map { (currentCType) in
-RouteHop(cType: currentCType)
+RouteHop(cType: currentCType, anchor: self).dangle()
 							}
 						}
 						return swiftArray

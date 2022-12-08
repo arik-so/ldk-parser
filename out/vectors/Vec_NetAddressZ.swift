@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-NetAddress(cType: currentCType)
+NetAddress(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

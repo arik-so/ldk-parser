@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-APIError(cType: currentCType)
+APIError(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

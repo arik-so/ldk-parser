@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-ChannelMonitor(cType: currentCType)
+ChannelMonitor(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-Balance(cType: currentCType)
+Balance(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

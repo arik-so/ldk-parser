@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-PrivateRoute(cType: currentCType)
+PrivateRoute(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

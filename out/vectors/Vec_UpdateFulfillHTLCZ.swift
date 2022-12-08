@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-UpdateFulfillHTLC(cType: currentCType)
+UpdateFulfillHTLC(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

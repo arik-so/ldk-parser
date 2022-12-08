@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-RouteHint(cType: currentCType)
+RouteHint(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-NodeId(cType: currentCType)
+NodeId(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

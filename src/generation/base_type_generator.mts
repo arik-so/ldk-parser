@@ -695,7 +695,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedReturnValue.wrapperPrefix += 'Bindings.';
 			}
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
-			preparedReturnValue.wrapperSuffix += `)`;
+			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
 		} else if (returnType.type instanceof RustPrimitive) {
 			// nothing to do here
 			return preparedReturnValue;

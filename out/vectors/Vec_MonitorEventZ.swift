@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-MonitorEvent(cType: currentCType)
+MonitorEvent(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}

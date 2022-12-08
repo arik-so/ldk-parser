@@ -69,7 +69,7 @@
 		
 
 						let swiftArray = array.map { (currentCType) in
-SpendableOutputDescriptor(cType: currentCType)
+SpendableOutputDescriptor(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}
