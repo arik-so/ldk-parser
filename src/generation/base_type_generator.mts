@@ -296,7 +296,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			standaloneMethodName = this.standaloneMethodName(method, containerType);
 			// complex enums may have multiple variants of the same type, so those initializers should be static
 			if (method.returnValue.type === containerType && !['clone', 'none'].includes(standaloneMethodName)) {
-				if (forceStaticConstructor) {
+				if (forceStaticConstructor/* || standaloneMethodName !== 'new'*/) {
+					// if the method name isn't new, we want an `initWith` name. For now.
 					const suffix = Generator.snakeCaseToCamelCase(standaloneMethodName, true);
 					if (suffix.startsWith('From')) {
 						return 'init' + suffix;
