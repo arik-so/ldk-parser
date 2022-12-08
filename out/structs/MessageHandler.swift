@@ -57,7 +57,7 @@
 					/// [`ChannelManager`] object or an [`ErroringMessageHandler`].
 					/// 
 					/// [`ChannelManager`]: crate::ln::channelmanager::ChannelManager
-					public func getChanHandler() -> ChannelMessageHandler {
+					public func getChanHandler() -> ChannelMessageHandler? {
 						// native call variable prep
 						
 
@@ -70,6 +70,10 @@
 
 						// cleanup
 						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
 
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult.pointee, anchor: self)
@@ -105,7 +109,7 @@
 					/// graph. Usually this is just a [`P2PGossipSync`] object or an [`IgnoringMessageHandler`].
 					/// 
 					/// [`P2PGossipSync`]: crate::routing::gossip::P2PGossipSync
-					public func getRouteHandler() -> RoutingMessageHandler {
+					public func getRouteHandler() -> RoutingMessageHandler? {
 						// native call variable prep
 						
 
@@ -118,6 +122,10 @@
 
 						// cleanup
 						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
 
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult.pointee, anchor: self)
@@ -151,7 +159,7 @@
 		
 					/// A message handler which handles onion messages. For now, this can only be an
 					/// [`IgnoringMessageHandler`].
-					public func getOnionMessageHandler() -> OnionMessageHandler {
+					public func getOnionMessageHandler() -> OnionMessageHandler? {
 						// native call variable prep
 						
 
@@ -164,6 +172,10 @@
 
 						// cleanup
 						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
 
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult.pointee, anchor: self)

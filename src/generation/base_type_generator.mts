@@ -181,6 +181,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			swiftReturnType += '?';
 		}
 
+		const isNullablePointer = method.returnValue.isAsteriskPointer && !method.returnValue.isNonnullablePointer;
+		if (isNullablePointer && !swiftReturnType.endsWith('?')) {
+			swiftReturnType += '?';
+		}
+
 		const returnTypeInfix = (swiftReturnType === 'Void' || swiftMethodName === 'init') ? '' : `-> ${swiftReturnType} `;
 
 		const staticInfix = isInstanceMethod ? '' : 'class ';
@@ -205,9 +210,13 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue, containerType);
 
-		// if (method.returnValue.isAsteriskPointer) {
-		// 	// preparedReturnValue.wrapperSuffix = '.pointee' + preparedReturnValue.wrapperSuffix
-		// }
+		if (method.returnValue.isAsteriskPointer) {
+			nativeCallSuffix += `
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			`
+		}
 
 		if (isCommentDeducedNullablePointer) {
 			nativeCallSuffix += `

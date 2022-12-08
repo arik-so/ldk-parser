@@ -87,7 +87,7 @@
 					/// The keys provider which will give us relevant keys. Some keys will be loaded during
 					/// deserialization and KeysInterface::read_chan_signer will be used to read per-Channel
 					/// signing data.
-					public func getKeysManager() -> KeysInterface {
+					public func getKeysManager() -> KeysInterface? {
 						// native call variable prep
 						
 
@@ -100,6 +100,10 @@
 
 						// cleanup
 						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
 
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult.pointee, anchor: self)
@@ -133,7 +137,7 @@
 					/// The fee_estimator for use in the ChannelManager in the future.
 					/// 
 					/// No calls to the FeeEstimator will be made during deserialization.
-					public func getFeeEstimator() -> FeeEstimator {
+					public func getFeeEstimator() -> FeeEstimator? {
 						// native call variable prep
 						
 
@@ -146,6 +150,10 @@
 
 						// cleanup
 						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
 
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedFeeEstimator(cType: nativeCallResult.pointee, anchor: self)
@@ -181,7 +189,7 @@
 					/// No calls to the chain::Watch will be made during deserialization. It is assumed that
 					/// you have deserialized ChannelMonitors separately and will add them to your
 					/// chain::Watch after deserializing this ChannelManager.
-					public func getChainMonitor() -> Watch {
+					public func getChainMonitor() -> Watch? {
 						// native call variable prep
 						
 
@@ -194,6 +202,10 @@
 
 						// cleanup
 						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
 
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedWatch(cType: nativeCallResult.pointee, anchor: self)
@@ -229,7 +241,7 @@
 					/// The BroadcasterInterface which will be used in the ChannelManager in the future and may be
 					/// used to broadcast the latest local commitment transactions of channels which must be
 					/// force-closed during deserialization.
-					public func getTxBroadcaster() -> BroadcasterInterface {
+					public func getTxBroadcaster() -> BroadcasterInterface? {
 						// native call variable prep
 						
 
@@ -242,6 +254,10 @@
 
 						// cleanup
 						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
 
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedBroadcasterInterface(cType: nativeCallResult.pointee, anchor: self)
@@ -274,7 +290,7 @@
 		
 					/// The Logger for use in the ChannelManager and which may be used to log information during
 					/// deserialization.
-					public func getLogger() -> Logger {
+					public func getLogger() -> Logger? {
 						// native call variable prep
 						
 
@@ -287,6 +303,10 @@
 
 						// cleanup
 						
+						guard let nativeCallResult = nativeCallResult else {
+							return nil
+						}
+			
 
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedLogger(cType: nativeCallResult.pointee, anchor: self)
