@@ -204,7 +204,11 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 				continue;
 			}
 
-			const swiftArgumentName = Generator.snakeCaseToCamelCase(currentArgument.contextualName);
+			let swiftArgumentName = Generator.snakeCaseToCamelCase(currentArgument.contextualName);
+			if (swiftArgumentName === 'init') {
+				swiftArgumentName = 'initArgument';
+			}
+
 			let swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, type, currentArgument);
 
 			swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
@@ -237,11 +241,20 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 				continue;
 			}
 
-			const swiftArgumentName = Generator.snakeCaseToCamelCase(currentArgument.contextualName);
-			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, type, currentArgument);
+			let swiftArgumentName = Generator.snakeCaseToCamelCase(currentArgument.contextualName);
+			let context = currentArgument;
+			if (swiftArgumentName === 'init') {
+				swiftArgumentName = 'initArgument';
+				context = new RustFunctionArgument();
+				Object.assign(context, currentArgument);
+				context.contextualName = 'init_argument';
+			}
+
+			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, type, context);
 			swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
 
-			const preparedArgument = this.prepareSwiftArgumentForRust(currentArgument, type);
+			const preparedArgument = this.prepareSwiftArgumentForRust(context, type);
+
 			nativeCallPrefix += preparedArgument.conversion;
 			nativeCallWrapperPrefix += preparedArgument.methodCallWrapperPrefix;
 			nativeCallWrapperSuffix += preparedArgument.methodCallWrapperSuffix;
@@ -292,7 +305,10 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 	 */
 	private prepareRustArgumentForSwift(argumentType: RustFunctionArgument): PreparedSwiftArgument {
 
-		const labelName = Generator.snakeCaseToCamelCase(argumentType.contextualName);
+		let labelName = Generator.snakeCaseToCamelCase(argumentType.contextualName);
+		if (labelName === 'init') {
+			labelName = 'initArgument';
+		}
 
 		const preparedArgument: PreparedSwiftArgument = {
 			name: argumentType.contextualName,
@@ -306,6 +322,11 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 			deferredCleanup: ''
 		};
+
+		if (argumentType.contextualName === 'init') {
+			preparedArgument.name = 'initArgument';
+			preparedArgument.accessor = 'initArgument';
+		}
 
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes
 
@@ -434,7 +455,11 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		for (const currentArgument of lambda.arguments) {
 			const rawTypeName = this.getRawTypeSignature(currentArgument);
-			rawLambdaArguments.push(`${currentArgument.contextualName}: ${rawTypeName}`);
+			if (currentArgument.contextualName === 'init') {
+				rawLambdaArguments.push(`initArgument: ${rawTypeName}`);
+			} else {
+				rawLambdaArguments.push(`${currentArgument.contextualName}: ${rawTypeName}`);
+			}
 
 			if (currentArgument === lambda.thisArgument) {
 				continue;

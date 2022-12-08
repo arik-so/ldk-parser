@@ -60,14 +60,14 @@
 							return returnValue
 						}
 		
-						func peerConnectedLambda(this_arg: UnsafeRawPointer?, their_node_id: LDKPublicKey, init: UnsafePointer<LDKInit>) -> LDKCResult_NoneNoneZ {
+						func peerConnectedLambda(this_arg: UnsafeRawPointer?, their_node_id: LDKPublicKey, initArgument: UnsafePointer<LDKInit>) -> LDKCResult_NoneNoneZ {
 							let instance: OnionMessageHandler = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "OnionMessageHandler::peerConnectedLambda")
 
 							// Swift callback variable prep
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), init: BindingsInit(cType: init.pointee))
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), initArgument: BindingsInit(cType: initArgument.pointee))
 
 							// cleanup
 							
@@ -178,7 +178,7 @@
 					/// May return an `Err(())` if the features the peer supports are not sufficient to communicate
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
-					open func peerConnected(theirNodeId: [UInt8], init: BindingsInit) -> Result_NoneNoneZ {
+					open func peerConnected(theirNodeId: [UInt8], initArgument: BindingsInit) -> Result_NoneNoneZ {
 						Bindings.print("Error: OnionMessageHandler::peerConnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -277,7 +277,7 @@
 					/// May return an `Err(())` if the features the peer supports are not sufficient to communicate
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
-					public override func peerConnected(theirNodeId: [UInt8], init: BindingsInit) -> Result_NoneNoneZ {
+					public override func peerConnected(theirNodeId: [UInt8], initArgument: BindingsInit) -> Result_NoneNoneZ {
 						// native call variable prep
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
@@ -285,8 +285,8 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: init.cType!) { (initPointer: UnsafePointer<LDKInit>) in
-				self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, initPointer)
+						withUnsafePointer(to: initArgument.cType!) { (initArgumentPointer: UnsafePointer<LDKInit>) in
+				self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, initArgumentPointer)
 						}
 				
 
