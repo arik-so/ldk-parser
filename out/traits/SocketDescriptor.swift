@@ -3,6 +3,18 @@
 			import LDKHeaders
 			#endif
 
+			/// Provides an object which can be used to send data to and which uniquely identifies a connection
+			/// to a remote host. You will need to be able to generate multiple of these which meet Eq and
+			/// implement Hash to meet the PeerManager API.
+			/// 
+			/// For efficiency, Clone should be relatively cheap for this type.
+			/// 
+			/// Two descriptors may compare equal (by [`cmp::Eq`] and [`hash::Hash`]) as long as the original
+			/// has been disconnected, the [`PeerManager`] has been informed of the disconnection (either by it
+			/// having triggered the disconnection or a call to [`PeerManager::socket_disconnected`]), and no
+			/// further calls to the [`PeerManager`] related to the original socket occur. This allows you to
+			/// use a file descriptor for your SocketDescriptor directly, however for simplicity you may wish
+			/// to simply use another value which is guaranteed to be globally unique instead.
 			public typealias SocketDescriptor = Bindings.SocketDescriptor
 
 			extension Bindings {

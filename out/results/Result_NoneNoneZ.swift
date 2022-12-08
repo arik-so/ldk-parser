@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_NoneNoneZ represents the result of a fallible operation,
+			/// containing a () on success and a () on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_NoneNoneZ = Bindings.Result_NoneNoneZ
 
 			extension Bindings {

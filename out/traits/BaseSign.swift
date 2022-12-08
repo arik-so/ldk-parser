@@ -3,6 +3,23 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait to sign lightning channel transactions as described in BOLT 3.
+			/// 
+			/// Signing services could be implemented on a hardware wallet. In this case,
+			/// the current Sign would be a front-end on top of a communication
+			/// channel connected to your secure device and lightning key material wouldn't
+			/// reside on a hot server. Nevertheless, a this deployment would still need
+			/// to trust the ChannelManager to avoid loss of funds as this latest component
+			/// could ask to sign commitment transaction with HTLCs paying to attacker pubkeys.
+			/// 
+			/// A more secure iteration would be to use hashlock (or payment points) to pair
+			/// invoice/incoming HTLCs with outgoing HTLCs to implement a no-trust-ChannelManager
+			/// at the price of more state and computation on the hardware wallet side. In the future,
+			/// we are looking forward to design such interface.
+			/// 
+			/// In any case, ChannelMonitor or fallback watchtowers are always going to be trusted
+			/// to act, as liveness and breach reply correctness are always going to be hard requirements
+			/// of LN security model, orthogonal of key management issues.
 			public typealias BaseSign = Bindings.BaseSign
 
 			extension Bindings {

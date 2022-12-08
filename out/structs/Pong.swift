@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A pong message to be sent or received from a peer
 			public typealias Pong = Bindings.Pong
 
 			extension Bindings {

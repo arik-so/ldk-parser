@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// The contents of a custom onion message.
 			public typealias CustomOnionMessageContents = Bindings.CustomOnionMessageContents
 
 			extension Bindings {

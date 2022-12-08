@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_SecretKeyErrorZ represents the result of a fallible operation,
+			/// containing a crate::c_types::SecretKey on success and a crate::c_types::Secp256k1Error on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_SecretKeyErrorZ = Bindings.Result_SecretKeyErrorZ
 
 			extension Bindings {

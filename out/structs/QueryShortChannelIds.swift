@@ -4,6 +4,14 @@
 			import LDKHeaders
 			#endif
 
+			/// A query_short_channel_ids message is used to query a peer for
+			/// routing gossip messages related to one or more short_channel_ids.
+			/// The query recipient will reply with the latest, if available,
+			/// channel_announcement, channel_update and node_announcement messages
+			/// it maintains for the requested short_channel_ids followed by a
+			/// reply_short_channel_ids_end message. The short_channel_ids sent in
+			/// this query are encoded. We only support encoding_type=0 uncompressed
+			/// serialization and do not support encoding_type=1 zlib serialization.
 			public typealias QueryShortChannelIds = Bindings.QueryShortChannelIds
 
 			extension Bindings {

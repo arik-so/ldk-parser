@@ -4,6 +4,11 @@
 			import LDKHeaders
 			#endif
 
+			/// Chain-related parameters used to construct a new `ChannelManager`.
+			/// 
+			/// Typically, the block-specific parameters are derived from the best block hash for the network,
+			/// as a newly constructed `ChannelManager` will not have created any channels yet. These parameters
+			/// are not needed when deserializing a previously constructed `ChannelManager`.
 			public typealias ChainParameters = Bindings.ChainParameters
 
 			extension Bindings {

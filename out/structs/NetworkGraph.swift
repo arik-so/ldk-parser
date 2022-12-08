@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents the network as nodes and channels between them
 			public typealias NetworkGraph = Bindings.NetworkGraph
 
 			extension Bindings {

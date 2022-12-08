@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait defining behavior of an [`Invoice`] payer.
 			public typealias Payer = Bindings.Payer
 
 			extension Bindings {

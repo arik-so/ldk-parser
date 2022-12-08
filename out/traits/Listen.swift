@@ -3,6 +3,17 @@
 			import LDKHeaders
 			#endif
 
+			/// The `Listen` trait is used to notify when blocks have been connected or disconnected from the
+			/// chain.
+			/// 
+			/// Useful when needing to replay chain data upon startup or as new chain events occur. Clients
+			/// sourcing chain data using a block-oriented API should prefer this interface over [`Confirm`].
+			/// Such clients fetch the entire header chain whereas clients using [`Confirm`] only fetch headers
+			/// when needed.
+			/// 
+			/// By using [`Listen::filtered_block_connected`] this interface supports clients fetching the
+			/// entire header chain and only blocks with matching transaction data using BIP 157 filters or
+			/// other similar filtering.
 			public typealias Listen = Bindings.Listen
 
 			extension Bindings {

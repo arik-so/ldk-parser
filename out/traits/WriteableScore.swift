@@ -3,6 +3,10 @@
 			import LDKHeaders
 			#endif
 
+			/// Refers to a scorer that is accessible under lock and also writeable to disk
+			/// 
+			/// We need this trait to be able to pass in a scorer to `lightning-background-processor` that will enable us to
+			/// use the Persister to persist it.
 			public typealias WriteableScore = Bindings.WriteableScore
 
 			extension Bindings {

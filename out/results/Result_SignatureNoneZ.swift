@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_SignatureNoneZ represents the result of a fallible operation,
+			/// containing a crate::c_types::Signature on success and a () on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_SignatureNoneZ = Bindings.Result_SignatureNoneZ
 
 			extension Bindings {

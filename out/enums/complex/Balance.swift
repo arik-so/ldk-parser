@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias Balance = Bindings.Balance
 
 			extension Bindings {

@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ represents the result of a fallible operation,
+			/// containing a crate::c_types::derived::C2Tuple_PaymentHashPaymentIdZ on success and a crate::lightning::ln::channelmanager::PaymentSendFailure on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ = Bindings.Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ
 
 			extension Bindings {

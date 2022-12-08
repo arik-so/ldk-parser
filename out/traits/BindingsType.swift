@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// Defines a type identifier for sending messages over the wire.
+			/// 
+			/// Messages implementing this trait specify a type and must be [`Writeable`].
 			public typealias BindingsType = Bindings.BindingsType
 
 			extension Bindings {

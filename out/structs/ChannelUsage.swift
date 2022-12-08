@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Proposed use of a channel passed as a parameter to [`Score::channel_penalty_msat`].
 			public typealias ChannelUsage = Bindings.ChannelUsage
 
 			extension Bindings {

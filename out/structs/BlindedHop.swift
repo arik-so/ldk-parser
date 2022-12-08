@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Used to construct the blinded hops portion of a blinded route. These hops cannot be identified
+			/// by outside observers and thus can be used to hide the identity of the recipient.
 			public typealias BlindedHop = Bindings.BlindedHop
 
 			extension Bindings {

@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An opaque identifier describing a specific [`Persist`] method call.
 			public typealias MonitorUpdateId = Bindings.MonitorUpdateId
 
 			extension Bindings {

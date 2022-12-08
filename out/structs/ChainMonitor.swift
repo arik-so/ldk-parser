@@ -4,6 +4,15 @@
 			import LDKHeaders
 			#endif
 
+			/// An implementation of [`chain::Watch`] for monitoring channels.
+			/// 
+			/// Connected and disconnected blocks must be provided to `ChainMonitor` as documented by
+			/// [`chain::Watch`]. May be used in conjunction with [`ChannelManager`] to monitor channels locally
+			/// or used independently to monitor channels remotely. See the [module-level documentation] for
+			/// details.
+			/// 
+			/// [`ChannelManager`]: crate::ln::channelmanager::ChannelManager
+			/// [module-level documentation]: crate::chain::chainmonitor
 			public typealias ChainMonitor = Bindings.ChainMonitor
 
 			extension Bindings {

@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_NoneAPIErrorZ represents the result of a fallible operation,
+			/// containing a () on success and a crate::lightning::util::errors::APIError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_NoneAPIErrorZ = Bindings.Result_NoneAPIErrorZ
 
 			extension Bindings {

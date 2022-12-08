@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias EffectiveCapacity = Bindings.EffectiveCapacity
 
 			extension Bindings {

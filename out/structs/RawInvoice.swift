@@ -4,6 +4,11 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents an syntactically correct Invoice for a payment on the lightning network,
+			/// but without the signature information.
+			/// De- and encoding should not lead to information loss but may lead to different hashes.
+			/// 
+			/// For methods without docs see the corresponding methods in `Invoice`.
 			public typealias RawInvoice = Bindings.RawInvoice
 
 			extension Bindings {

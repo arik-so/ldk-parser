@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Information about an HTLC as it appears in a commitment transaction
 			public typealias HTLCOutputInCommitment = Bindings.HTLCOutputInCommitment
 
 			extension Bindings {

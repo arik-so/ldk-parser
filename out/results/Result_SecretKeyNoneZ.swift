@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_SecretKeyNoneZ represents the result of a fallible operation,
+			/// containing a crate::c_types::SecretKey on success and a () on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_SecretKeyNoneZ = Bindings.Result_SecretKeyNoneZ
 
 			extension Bindings {

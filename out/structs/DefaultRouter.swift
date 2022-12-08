@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A [`Router`] implemented using [`find_route`].
 			public typealias DefaultRouter = Bindings.DefaultRouter
 
 			extension Bindings {

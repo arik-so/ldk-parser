@@ -4,6 +4,16 @@
 			import LDKHeaders
 			#endif
 
+			/// Features used within the channel_type field in an OpenChannel message.
+			/// 
+			/// A channel is always of some known \"type\", describing the transaction formats used and the exact
+			/// semantics of our interaction with our peer.
+			/// 
+			/// Note that because a channel is a specific type which is proposed by the opener and accepted by
+			/// the counterparty, only required features are allowed here.
+			/// 
+			/// This is serialized differently from other feature types - it is not prefixed by a length, and
+			/// thus must only appear inside a TLV where its length is known in advance.
 			public typealias ChannelTypeFeatures = Bindings.ChannelTypeFeatures
 
 			extension Bindings {

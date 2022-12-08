@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents an IO Error. Note that some information is lost in the conversion from Rust.
 			public typealias IOError = Bindings.IOError
 
 			extension Bindings {

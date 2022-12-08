@@ -3,6 +3,26 @@
 			import LDKHeaders
 			#endif
 
+			/// `Persist` defines behavior for persisting channel monitors: this could mean
+			/// writing once to disk, and/or uploading to one or more backup services.
+			/// 
+			/// Each method can return three possible values:
+			/// * If persistence (including any relevant `fsync()` calls) happens immediately, the
+			/// implementation should return [`ChannelMonitorUpdateStatus::Completed`], indicating normal
+			/// channel operation should continue.
+			/// * If persistence happens asynchronously, implementations should first ensure the
+			/// [`ChannelMonitor`] or [`ChannelMonitorUpdate`] are written durably to disk, and then return
+			/// [`ChannelMonitorUpdateStatus::InProgress`] while the update continues in the background.
+			/// Once the update completes, [`ChainMonitor::channel_monitor_updated`] should be called with
+			/// the corresponding [`MonitorUpdateId`].
+			/// 
+			/// Note that unlike the direct [`chain::Watch`] interface,
+			/// [`ChainMonitor::channel_monitor_updated`] must be called once for *each* update which occurs.
+			/// 
+			/// * If persistence fails for some reason, implementations should return
+			/// [`ChannelMonitorUpdateStatus::PermanentFailure`], in which case the channel will likely be
+			/// closed without broadcasting the latest state. See
+			/// [`ChannelMonitorUpdateStatus::PermanentFailure`] for more details.
 			public typealias Persist = Bindings.Persist
 
 			extension Bindings {

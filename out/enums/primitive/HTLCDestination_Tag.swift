@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Intended destination of a failed HTLC as indicated in [`Event::HTLCHandlingFailed`].
 			public typealias HTLCDestination_Tag = Bindings.HTLCDestination_Tag
 
 			extension Bindings {

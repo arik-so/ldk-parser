@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Struct used to return values from revoke_and_ack messages, containing a bunch of commitment
+			/// transaction updates if they were pending.
 			public typealias CommitmentUpdate = Bindings.CommitmentUpdate
 
 			extension Bindings {

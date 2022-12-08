@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Channel parameters which apply to our counterparty. These are split out from [`ChannelDetails`]
+			/// to better separate parameters.
 			public typealias ChannelCounterparty = Bindings.ChannelCounterparty
 
 			extension Bindings {

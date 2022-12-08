@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A revoke_and_ack message to be sent or received from a peer
 			public typealias RevokeAndACK = Bindings.RevokeAndACK
 
 			extension Bindings {

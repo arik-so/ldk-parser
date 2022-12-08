@@ -3,6 +3,10 @@
 			import LDKHeaders
 			#endif
 
+			/// The effective capacity of a channel for routing purposes.
+			/// 
+			/// While this may be smaller than the actual channel capacity, amounts greater than
+			/// [`Self::as_msat`] should not be routed through the channel.
 			public typealias EffectiveCapacity_Tag = Bindings.EffectiveCapacity_Tag
 
 			extension Bindings {

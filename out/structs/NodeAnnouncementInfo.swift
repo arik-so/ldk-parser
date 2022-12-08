@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Information received in the latest node_announcement from this node.
 			public typealias NodeAnnouncementInfo = Bindings.NodeAnnouncementInfo
 
 			extension Bindings {

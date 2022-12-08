@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// If a payment fails to send, it can be in one of several states. This enum is returned as the
+			/// Err() type describing which state the payment is in, see the description of individual enum
+			/// states for more.
 			public typealias PaymentSendFailure_Tag = Bindings.PaymentSendFailure_Tag
 
 			extension Bindings {

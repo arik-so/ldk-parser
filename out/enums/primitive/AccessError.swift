@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An error when accessing the chain via [`Access`].
 			public typealias AccessError = Bindings.AccessError
 
 			extension Bindings {

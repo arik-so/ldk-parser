@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Options which apply on a per-channel basis and may change at runtime or based on negotiation
+			/// with our counterparty.
 			public typealias ChannelConfig = Bindings.ChannelConfig
 
 			extension Bindings {

@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An error message to be sent or received from a peer
 			public typealias ErrorMessage = Bindings.ErrorMessage
 
 			extension Bindings {

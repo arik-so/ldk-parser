@@ -3,6 +3,25 @@
 			import LDKHeaders
 			#endif
 
+			/// The `Watch` trait defines behavior for watching on-chain activity pertaining to channels as
+			/// blocks are connected and disconnected.
+			/// 
+			/// Each channel is associated with a [`ChannelMonitor`]. Implementations of this trait are
+			/// responsible for maintaining a set of monitors such that they can be updated accordingly as
+			/// channel state changes and HTLCs are resolved. See method documentation for specific
+			/// requirements.
+			/// 
+			/// Implementations **must** ensure that updates are successfully applied and persisted upon method
+			/// completion. If an update fails with a [`PermanentFailure`], then it must immediately shut down
+			/// without taking any further action such as persisting the current state.
+			/// 
+			/// If an implementation maintains multiple instances of a channel's monitor (e.g., by storing
+			/// backup copies), then it must ensure that updates are applied across all instances. Otherwise, it
+			/// could result in a revoked transaction being broadcast, allowing the counterparty to claim all
+			/// funds in the channel. See [`ChannelMonitorUpdateStatus`] for more details about how to handle
+			/// multiple instances.
+			/// 
+			/// [`PermanentFailure`]: ChannelMonitorUpdateStatus::PermanentFailure
 			public typealias Watch = Bindings.Watch
 
 			extension Bindings {

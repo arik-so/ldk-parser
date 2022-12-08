@@ -4,6 +4,12 @@
 			import LDKHeaders
 			#endif
 
+			/// A timestamp that refers to a date after 1 January 1970.
+			/// 
+			/// # Invariants
+			/// 
+			/// The Unix timestamp representing the stored time has to be positive and no greater than
+			/// [`MAX_TIMESTAMP`].
 			public typealias PositiveTimestamp = Bindings.PositiveTimestamp
 
 			extension Bindings {

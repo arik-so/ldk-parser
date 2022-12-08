@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_CVec_CVec_u8ZZNoneZ represents the result of a fallible operation,
+			/// containing a crate::c_types::derived::CVec_CVec_u8ZZ on success and a () on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_CVec_CVec_u8ZZNoneZ = Bindings.Result_CVec_CVec_u8ZZNoneZ
 
 			extension Bindings {

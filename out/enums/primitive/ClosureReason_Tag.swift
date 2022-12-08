@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// The reason the channel was closed. See individual variants more details.
 			public typealias ClosureReason_Tag = Bindings.ClosureReason_Tag
 
 			extension Bindings {

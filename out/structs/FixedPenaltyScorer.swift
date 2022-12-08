@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// [`Score`] implementation that uses a fixed penalty.
 			public typealias FixedPenaltyScorer = Bindings.FixedPenaltyScorer
 
 			extension Bindings {

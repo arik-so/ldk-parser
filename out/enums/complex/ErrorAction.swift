@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias ErrorAction = Bindings.ErrorAction
 
 			extension Bindings {

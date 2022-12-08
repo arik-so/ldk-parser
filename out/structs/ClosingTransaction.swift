@@ -4,6 +4,11 @@
 			import LDKHeaders
 			#endif
 
+			/// This class tracks the per-transaction information needed to build a closing transaction and will
+			/// actually build it and sign.
+			/// 
+			/// This class can be used inside a signer implementation to generate a signature given the relevant
+			/// secret key.
 			public typealias ClosingTransaction = Bindings.ClosingTransaction
 
 			extension Bindings {

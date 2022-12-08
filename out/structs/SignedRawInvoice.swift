@@ -4,6 +4,11 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents a signed `RawInvoice` with cached hash. The signature is not checked and may be
+			/// invalid.
+			/// 
+			/// # Invariants
+			/// The hash has to be either from the deserialized invoice or from the serialized `raw_invoice`.
 			public typealias SignedRawInvoice = Bindings.SignedRawInvoice
 
 			extension Bindings {

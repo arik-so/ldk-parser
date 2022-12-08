@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents the compressed public key of a node
 			public typealias NodeId = Bindings.NodeId
 
 			extension Bindings {

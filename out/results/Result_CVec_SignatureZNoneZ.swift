@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_CVec_SignatureZNoneZ represents the result of a fallible operation,
+			/// containing a crate::c_types::derived::CVec_SignatureZ on success and a () on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_CVec_SignatureZNoneZ = Bindings.Result_CVec_SignatureZNoneZ
 
 			extension Bindings {

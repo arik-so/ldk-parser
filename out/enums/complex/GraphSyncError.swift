@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias GraphSyncError = Bindings.GraphSyncError
 
 			extension Bindings {

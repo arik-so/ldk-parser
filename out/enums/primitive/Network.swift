@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An enum representing the possible Bitcoin or test networks which we can run on
 			public typealias Network = Bindings.Network
 
 			extension Bindings {

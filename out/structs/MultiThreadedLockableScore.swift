@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A concrete implementation of [`LockableScore`] which supports multi-threading.
 			public typealias MultiThreadedLockableScore = Bindings.MultiThreadedLockableScore
 
 			extension Bindings {

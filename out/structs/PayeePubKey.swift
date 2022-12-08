@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Payee public key
 			public typealias PayeePubKey = Bindings.PayeePubKey
 
 			extension Bindings {

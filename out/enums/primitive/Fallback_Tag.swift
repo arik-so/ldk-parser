@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Fallback address in case no LN payment is possible
 			public typealias Fallback_Tag = Bindings.Fallback_Tag
 
 			extension Bindings {

@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_NodeAliasDecodeErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning::routing::gossip::NodeAlias on success and a crate::lightning::ln::msgs::DecodeError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_NodeAliasDecodeErrorZ = Bindings.Result_NodeAliasDecodeErrorZ
 
 			extension Bindings {

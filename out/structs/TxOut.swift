@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A transaction output including a scriptPubKey and value.
+			/// This type *does* own its own memory, so must be free'd appropriately.
 			public typealias TxOut = Bindings.TxOut
 
 			extension Bindings {

@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias NetAddress = Bindings.NetAddress
 
 			extension Bindings {

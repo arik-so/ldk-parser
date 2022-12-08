@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An enum which can either contain a  or not
 			public typealias Option_NoneZ = Bindings.Option_NoneZ
 
 			extension Bindings {

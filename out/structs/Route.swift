@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A route directs a payment from the sender (us) to the recipient. If the recipient supports MPP,
+			/// it can take multiple paths. Each path is composed of one or more hops through the network.
 			public typealias Route = Bindings.Route
 
 			extension Bindings {

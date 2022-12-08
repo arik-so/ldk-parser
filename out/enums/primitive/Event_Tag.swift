@@ -3,6 +3,11 @@
 			import LDKHeaders
 			#endif
 
+			/// An Event which you should probably take some action in response to.
+			/// 
+			/// Note that while Writeable and Readable are implemented for Event, you probably shouldn't use
+			/// them directly as they don't round-trip exactly (for example FundingGenerationReady is never
+			/// written as it makes no sense to respond to it after reconnecting to peers).
 			public typealias Event_Tag = Bindings.Event_Tag
 
 			extension Bindings {

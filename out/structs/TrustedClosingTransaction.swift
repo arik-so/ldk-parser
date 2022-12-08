@@ -4,6 +4,12 @@
 			import LDKHeaders
 			#endif
 
+			/// A wrapper on ClosingTransaction indicating that the built bitcoin
+			/// transaction is trusted.
+			/// 
+			/// See trust() and verify() functions on CommitmentTransaction.
+			/// 
+			/// This structure implements Deref.
 			public typealias TrustedClosingTransaction = Bindings.TrustedClosingTransaction
 
 			extension Bindings {

@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias DecodeError = Bindings.DecodeError
 
 			extension Bindings {

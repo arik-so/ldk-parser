@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// The recipient of a payment.
 			public typealias PaymentParameters = Bindings.PaymentParameters
 
 			extension Bindings {

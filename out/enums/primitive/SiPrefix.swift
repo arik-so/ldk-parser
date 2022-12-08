@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// SI prefixes for the human readable part
 			public typealias SiPrefix = Bindings.SiPrefix
 
 			extension Bindings {

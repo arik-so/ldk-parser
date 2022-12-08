@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Details of a channel, as returned by ChannelManager::list_channels and ChannelManager::list_usable_channels
 			public typealias ChannelDetails = Bindings.ChannelDetails
 
 			extension Bindings {

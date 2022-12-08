@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Used to put an error message in a LightningError
 			public typealias ErrorAction_Tag = Bindings.ErrorAction_Tag
 
 			extension Bindings {

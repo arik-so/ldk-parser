@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_CVec_u8ZPeerHandleErrorZ represents the result of a fallible operation,
+			/// containing a crate::c_types::derived::CVec_u8Z on success and a crate::lightning::ln::peer_handler::PeerHandleError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_CVec_u8ZPeerHandleErrorZ = Bindings.Result_CVec_u8ZPeerHandleErrorZ
 
 			extension Bindings {

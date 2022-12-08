@@ -4,6 +4,11 @@
 			import LDKHeaders
 			#endif
 
+			/// Implements the per-commitment secret storage scheme from
+			/// [BOLT 3](https://github.com/lightning/bolts/blob/dcbf8583976df087c79c3ce0b535311212e6812d/03-transactions.md#efficient-per-commitment-secret-storage).
+			/// 
+			/// Allows us to keep track of all of the revocation secrets of our counterparty in just 50*32 bytes
+			/// or so.
 			public typealias CounterpartyCommitmentSecrets = Bindings.CounterpartyCommitmentSecrets
 
 			extension Bindings {

@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dummy struct which implements `ChannelMessageHandler` without having any channels.
+			/// You can provide one of these as the route_handler in a MessageHandler.
 			public typealias ErroringMessageHandler = Bindings.ErroringMessageHandler
 
 			extension Bindings {

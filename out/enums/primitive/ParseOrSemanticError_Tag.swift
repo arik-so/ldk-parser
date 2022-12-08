@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// Indicates that something went wrong while parsing or validating the invoice. Parsing errors
+			/// should be mostly seen as opaque and are only there for debugging reasons. Semantic errors
+			/// like wrong signatures, missing fields etc. could mean that someone tampered with the invoice.
 			public typealias ParseOrSemanticError_Tag = Bindings.ParseOrSemanticError_Tag
 
 			extension Bindings {

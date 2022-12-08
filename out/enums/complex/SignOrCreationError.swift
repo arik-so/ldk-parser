@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias SignOrCreationError = Bindings.SignOrCreationError
 
 			extension Bindings {

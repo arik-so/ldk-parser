@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A node_announcement message to be sent or received from a peer
 			public typealias NodeAnnouncement = Bindings.NodeAnnouncement
 
 			extension Bindings {

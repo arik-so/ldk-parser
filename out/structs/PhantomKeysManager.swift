@@ -4,6 +4,21 @@
 			import LDKHeaders
 			#endif
 
+			/// Similar to [`KeysManager`], but allows the node using this struct to receive phantom node
+			/// payments.
+			/// 
+			/// A phantom node payment is a payment made to a phantom invoice, which is an invoice that can be
+			/// paid to one of multiple nodes. This works because we encode the invoice route hints such that
+			/// LDK will recognize an incoming payment as destined for a phantom node, and collect the payment
+			/// itself without ever needing to forward to this fake node.
+			/// 
+			/// Phantom node payments are useful for load balancing between multiple LDK nodes. They also
+			/// provide some fault tolerance, because payers will automatically retry paying other provided
+			/// nodes in the case that one node goes down.
+			/// 
+			/// Note that multi-path payments are not supported in phantom invoices for security reasons.
+			/// Switching between this struct and [`KeysManager`] will invalidate any previously issued
+			/// invoices and attempts to pay previous invoices will fail.
 			public typealias PhantomKeysManager = Bindings.PhantomKeysManager
 
 			extension Bindings {

@@ -4,6 +4,17 @@
 			import LDKHeaders
 			#endif
 
+			/// A transaction output watched by a [`ChannelMonitor`] for spends on-chain.
+			/// 
+			/// Used to convey to a [`Filter`] such an output with a given spending condition. Any transaction
+			/// spending the output must be given to [`ChannelMonitor::block_connected`] either directly or via
+			/// [`Confirm::transactions_confirmed`].
+			/// 
+			/// If `block_hash` is `Some`, this indicates the output was created in the corresponding block and
+			/// may have been spent there. See [`Filter::register_output`] for details.
+			/// 
+			/// [`ChannelMonitor`]: channelmonitor::ChannelMonitor
+			/// [`ChannelMonitor::block_connected`]: channelmonitor::ChannelMonitor::block_connected
 			public typealias WatchedOutput = Bindings.WatchedOutput
 
 			extension Bindings {

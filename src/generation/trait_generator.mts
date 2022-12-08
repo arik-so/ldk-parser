@@ -101,6 +101,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 			import LDKHeaders
 			#endif
 
+			${this.renderDocComment(type.documentation, 3)}
 			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}
 
 			extension Bindings {

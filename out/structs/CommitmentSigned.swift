@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A commitment_signed message to be sent or received from a peer
 			public typealias CommitmentSigned = Bindings.CommitmentSigned
 
 			extension Bindings {

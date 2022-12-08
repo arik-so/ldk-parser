@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias Bech32Error = Bindings.Bech32Error
 
 			extension Bindings {

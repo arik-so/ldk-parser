@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Trait that handles persisting a [`ChannelManager`], [`NetworkGraph`], and [`WriteableScore`] to disk.
 			public typealias Persister = Bindings.Persister
 
 			extension Bindings {

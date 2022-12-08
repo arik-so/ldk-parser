@@ -4,6 +4,12 @@
 			import LDKHeaders
 			#endif
 
+			/// This class tracks the per-transaction information needed to build a commitment transaction and will
+			/// actually build it and sign.  It is used for holder transactions that we sign only when needed
+			/// and for transactions we sign for the counterparty.
+			/// 
+			/// This class can be used inside a signer implementation to generate a signature given the relevant
+			/// secret key.
 			public typealias CommitmentTransaction = Bindings.CommitmentTransaction
 
 			extension Bindings {

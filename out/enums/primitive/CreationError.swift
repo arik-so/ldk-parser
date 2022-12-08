@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Errors that may occur when constructing a new `RawInvoice` or `Invoice`
 			public typealias CreationError = Bindings.CreationError
 
 			extension Bindings {

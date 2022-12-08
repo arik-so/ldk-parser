@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A channel_announcement message to be sent or received from a peer
 			public typealias ChannelAnnouncement = Bindings.ChannelAnnouncement
 
 			extension Bindings {

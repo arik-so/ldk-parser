@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Fees for routing via a given channel or a node
 			public typealias RoutingFees = Bindings.RoutingFees
 
 			extension Bindings {

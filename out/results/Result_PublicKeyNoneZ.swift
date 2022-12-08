@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_PublicKeyNoneZ represents the result of a fallible operation,
+			/// containing a crate::c_types::PublicKey on success and a () on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_PublicKeyNoneZ = Bindings.Result_PublicKeyNoneZ
 
 			extension Bindings {

@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Handler for BOLT1-compliant messages.
 			public typealias CustomMessageHandler = Bindings.CustomMessageHandler
 
 			extension Bindings {

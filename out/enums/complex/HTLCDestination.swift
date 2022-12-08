@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias HTLCDestination = Bindings.HTLCDestination
 
 			extension Bindings {

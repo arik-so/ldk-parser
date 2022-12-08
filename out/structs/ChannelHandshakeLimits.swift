@@ -4,6 +4,17 @@
 			import LDKHeaders
 			#endif
 
+			/// Optional channel limits which are applied during channel creation.
+			/// 
+			/// These limits are only applied to our counterparty's limits, not our own.
+			/// 
+			/// Use 0/<type>::max_value() as appropriate to skip checking.
+			/// 
+			/// Provides sane defaults for most configurations.
+			/// 
+			/// Most additional limits are disabled except those with which specify a default in individual
+			/// field documentation. Note that this may result in barely-usable channels, but since they
+			/// are applied mostly only to incoming channels that's not much of a problem.
 			public typealias ChannelHandshakeLimits = Bindings.ChannelHandshakeLimits
 
 			extension Bindings {

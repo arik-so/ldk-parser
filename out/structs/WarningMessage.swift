@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A warning message to be sent or received from a peer
 			public typealias WarningMessage = Bindings.WarningMessage
 
 			extension Bindings {

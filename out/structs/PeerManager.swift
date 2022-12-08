@@ -4,6 +4,25 @@
 			import LDKHeaders
 			#endif
 
+			/// A PeerManager manages a set of peers, described by their [`SocketDescriptor`] and marshalls
+			/// socket events into messages which it passes on to its [`MessageHandler`].
+			/// 
+			/// Locks are taken internally, so you must never assume that reentrancy from a
+			/// [`SocketDescriptor`] call back into [`PeerManager`] methods will not deadlock.
+			/// 
+			/// Calls to [`read_event`] will decode relevant messages and pass them to the
+			/// [`ChannelMessageHandler`], likely doing message processing in-line. Thus, the primary form of
+			/// parallelism in Rust-Lightning is in calls to [`read_event`]. Note, however, that calls to any
+			/// [`PeerManager`] functions related to the same connection must occur only in serial, making new
+			/// calls only after previous ones have returned.
+			/// 
+			/// Rather than using a plain PeerManager, it is preferable to use either a SimpleArcPeerManager
+			/// a SimpleRefPeerManager, for conciseness. See their documentation for more details, but
+			/// essentially you should default to using a SimpleRefPeerManager, and use a
+			/// SimpleArcPeerManager when you require a PeerManager with a static lifetime, such as when
+			/// you're using lightning-net-tokio.
+			/// 
+			/// [`read_event`]: PeerManager::read_event
 			public typealias PeerManager = Bindings.PeerManager
 
 			extension Bindings {

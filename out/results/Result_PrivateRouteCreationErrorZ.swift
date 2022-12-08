@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_PrivateRouteCreationErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning_invoice::PrivateRoute on success and a crate::lightning_invoice::CreationError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_PrivateRouteCreationErrorZ = Bindings.Result_PrivateRouteCreationErrorZ
 
 			extension Bindings {

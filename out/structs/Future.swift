@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A simple future which can complete once, and calls some callback(s) when it does so.
 			public typealias Future = Bindings.Future
 
 			extension Bindings {

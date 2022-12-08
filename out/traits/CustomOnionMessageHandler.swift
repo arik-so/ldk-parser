@@ -3,6 +3,16 @@
 			import LDKHeaders
 			#endif
 
+			/// Handler for custom onion messages. If you are using [`SimpleArcOnionMessenger`],
+			/// [`SimpleRefOnionMessenger`], or prefer to ignore inbound custom onion messages,
+			/// [`IgnoringMessageHandler`] must be provided to [`OnionMessenger::new`]. Otherwise, a custom
+			/// implementation of this trait must be provided, with [`CustomMessage`] specifying the supported
+			/// message types.
+			/// 
+			/// See [`OnionMessenger`] for example usage.
+			/// 
+			/// [`IgnoringMessageHandler`]: crate::ln::peer_handler::IgnoringMessageHandler
+			/// [`CustomMessage`]: Self::CustomMessage
 			public typealias CustomOnionMessageHandler = Bindings.CustomOnionMessageHandler
 
 			extension Bindings {

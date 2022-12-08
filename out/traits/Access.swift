@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// The `Access` trait defines behavior for accessing chain data and state, such as blocks and
+			/// UTXOs.
 			public typealias Access = Bindings.Access
 
 			extension Bindings {

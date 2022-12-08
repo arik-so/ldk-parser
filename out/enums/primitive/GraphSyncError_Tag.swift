@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// All-encompassing standard error type that processing can return
 			public typealias GraphSyncError_Tag = Bindings.GraphSyncError_Tag
 
 			extension Bindings {

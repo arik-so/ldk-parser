@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias MonitorEvent = Bindings.MonitorEvent
 
 			extension Bindings {

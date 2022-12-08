@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Features used within a `channel_announcement` message.
 			public typealias ChannelFeatures = Bindings.ChannelFeatures
 
 			extension Bindings {

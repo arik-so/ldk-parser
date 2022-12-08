@@ -4,6 +4,9 @@
 			import LDKHeaders
 			#endif
 
+			/// Configuration we set when applicable.
+			/// 
+			/// Default::default() provides sane defaults.
 			public typealias ChannelHandshakeConfig = Bindings.ChannelHandshakeConfig
 
 			extension Bindings {

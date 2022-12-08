@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias Destination = Bindings.Destination
 
 			extension Bindings {

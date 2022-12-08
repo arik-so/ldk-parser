@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_DescriptionCreationErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning_invoice::Description on success and a crate::lightning_invoice::CreationError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_DescriptionCreationErrorZ = Bindings.Result_DescriptionCreationErrorZ
 
 			extension Bindings {

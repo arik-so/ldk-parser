@@ -4,6 +4,11 @@
 			import LDKHeaders
 			#endif
 
+			/// The main Rapid Gossip Sync object.
+			/// 
+			/// See [crate-level documentation] for usage.
+			/// 
+			/// [crate-level documentation]: crate
 			public typealias RapidGossipSync = Bindings.RapidGossipSync
 
 			extension Bindings {

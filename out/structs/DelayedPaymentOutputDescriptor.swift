@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Information about a spendable output to a P2WSH script. See
+			/// SpendableOutputDescriptor::DelayedPaymentOutput for more details on how to spend this.
 			public typealias DelayedPaymentOutputDescriptor = Bindings.DelayedPaymentOutputDescriptor
 
 			extension Bindings {

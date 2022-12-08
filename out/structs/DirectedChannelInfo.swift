@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A wrapper around [`ChannelInfo`] representing information about the channel as directed from a
+			/// source node to a target node.
 			public typealias DirectedChannelInfo = Bindings.DirectedChannelInfo
 
 			extension Bindings {

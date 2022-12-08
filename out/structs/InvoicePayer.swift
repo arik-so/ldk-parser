@@ -4,6 +4,11 @@
 			import LDKHeaders
 			#endif
 
+			/// A utility for paying [`Invoice`]s and sending spontaneous payments.
+			/// 
+			/// See [module-level documentation] for details.
+			/// 
+			/// [module-level documentation]: crate::payment
 			public typealias InvoicePayer = Bindings.InvoicePayer
 
 			extension Bindings {

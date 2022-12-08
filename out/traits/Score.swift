@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// An interface used to score payment channels for path finding.
+			/// 
+			/// \tScoring is in terms of fees willing to be paid in order to avoid routing through a channel.
 			public typealias Score = Bindings.Score
 
 			extension Bindings {

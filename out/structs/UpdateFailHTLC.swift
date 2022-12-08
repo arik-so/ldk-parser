@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An update_fail_htlc message to be sent or received from a peer
 			public typealias UpdateFailHTLC = Bindings.UpdateFailHTLC
 
 			extension Bindings {

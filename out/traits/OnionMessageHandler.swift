@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait to describe an object that can receive onion messages.
 			public typealias OnionMessageHandler = Bindings.OnionMessageHandler
 
 			extension Bindings {

@@ -4,6 +4,10 @@
 			import LDKHeaders
 			#endif
 
+			/// Private routing information
+			/// 
+			/// # Invariants
+			/// The encoded route has to be <1024 5bit characters long (<=639 bytes or <=12 hops)
 			public typealias PrivateRoute = Bindings.PrivateRoute
 
 			extension Bindings {

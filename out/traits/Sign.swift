@@ -3,6 +3,11 @@
 			import LDKHeaders
 			#endif
 
+			/// A cloneable signer.
+			/// 
+			/// Although we require signers to be cloneable, it may be useful for developers to be able to use
+			/// signers in an un-sized way, for example as `dyn BaseSign`. Therefore we separate the Clone trait,
+			/// which implies Sized, into this derived trait.
 			public typealias Sign = Bindings.Sign
 
 			extension Bindings {

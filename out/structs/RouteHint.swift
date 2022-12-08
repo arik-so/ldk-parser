@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A list of hops along a payment path terminating with a channel to the recipient.
 			public typealias RouteHint = Bindings.RouteHint
 
 			extension Bindings {

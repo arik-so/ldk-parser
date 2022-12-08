@@ -4,6 +4,19 @@
 			import LDKHeaders
 			#endif
 
+			/// Simple KeysInterface implementor that takes a 32-byte seed for use as a BIP 32 extended key
+			/// and derives keys from that.
+			/// 
+			/// Your node_id is seed/0'
+			/// ChannelMonitor closes may use seed/1'
+			/// Cooperative closes may use seed/2'
+			/// The two close keys may be needed to claim on-chain funds!
+			/// 
+			/// This struct cannot be used for nodes that wish to support receiving phantom payments;
+			/// [`PhantomKeysManager`] must be used instead.
+			/// 
+			/// Note that switching between this struct and [`PhantomKeysManager`] will invalidate any
+			/// previously issued invoices and attempts to pay previous invoices will fail.
 			public typealias KeysManager = Bindings.KeysManager
 
 			extension Bindings {

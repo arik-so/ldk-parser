@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_TrustedCommitmentTransactionNoneZ represents the result of a fallible operation,
+			/// containing a crate::lightning::ln::chan_utils::TrustedCommitmentTransaction on success and a () on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_TrustedCommitmentTransactionNoneZ = Bindings.Result_TrustedCommitmentTransactionNoneZ
 
 			extension Bindings {

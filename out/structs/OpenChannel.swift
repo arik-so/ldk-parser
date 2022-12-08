@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An open_channel message to be sent or received from a peer
 			public typealias OpenChannel = Bindings.OpenChannel
 
 			extension Bindings {

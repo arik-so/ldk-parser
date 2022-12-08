@@ -3,6 +3,11 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait which should be implemented to provide feerate information on a number of time
+			/// horizons.
+			/// 
+			/// Note that all of the functions implemented here *must* be reentrant-safe (obviously - they're
+			/// called from inside the library in response to chain events, P2P events, or timer events).
 			public typealias FeeEstimator = Bindings.FeeEstimator
 
 			extension Bindings {

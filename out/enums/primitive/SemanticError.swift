@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Errors that may occur when converting a `RawInvoice` to an `Invoice`. They relate to the
+			/// requirements sections in BOLT #11
 			public typealias SemanticError = Bindings.SemanticError
 
 			extension Bindings {

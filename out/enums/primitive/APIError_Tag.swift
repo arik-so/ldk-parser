@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Indicates an error on the client's part (usually some variant of attempting to use too-low or
+			/// too-high values)
 			public typealias APIError_Tag = Bindings.APIError_Tag
 
 			extension Bindings {

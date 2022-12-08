@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Either [`P2PGossipSync`] or [`RapidGossipSync`].
 			public typealias GossipSync_Tag = Bindings.GossipSync_Tag
 
 			extension Bindings {

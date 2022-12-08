@@ -3,6 +3,38 @@
 			import LDKHeaders
 			#endif
 
+			/// The `Confirm` trait is used to notify when transactions have been confirmed on chain or
+			/// unconfirmed during a chain reorganization.
+			/// 
+			/// Clients sourcing chain data using a transaction-oriented API should prefer this interface over
+			/// [`Listen`]. For instance, an Electrum client may implement [`Filter`] by subscribing to activity
+			/// related to registered transactions and outputs. Upon notification, it would pass along the
+			/// matching transactions using this interface.
+			/// 
+			/// # Use
+			/// 
+			/// The intended use is as follows:
+			/// - Call [`transactions_confirmed`] to process any on-chain activity of interest.
+			/// - Call [`transaction_unconfirmed`] to process any transaction returned by [`get_relevant_txids`]
+			/// that has been reorganized out of the chain.
+			/// - Call [`best_block_updated`] whenever a new chain tip becomes available.
+			/// 
+			/// # Order
+			/// 
+			/// Clients must call these methods in chain order. Specifically:
+			/// - Transactions confirmed in a block must be given before transactions confirmed in a later
+			/// block.
+			/// - Dependent transactions within the same block must be given in topological order, possibly in
+			/// separate calls.
+			/// - Unconfirmed transactions must be given after the original confirmations and before any
+			/// reconfirmation.
+			/// 
+			/// See individual method documentation for further details.
+			/// 
+			/// [`transactions_confirmed`]: Self::transactions_confirmed
+			/// [`transaction_unconfirmed`]: Self::transaction_unconfirmed
+			/// [`best_block_updated`]: Self::best_block_updated
+			/// [`get_relevant_txids`]: Self::get_relevant_txids
 			public typealias Confirm = Bindings.Confirm
 
 			extension Bindings {

@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Trait to be implemented by custom message (unrelated to the channel/gossip LN layers)
+			/// decoders.
 			public typealias CustomMessageReader = Bindings.CustomMessageReader
 
 			extension Bindings {

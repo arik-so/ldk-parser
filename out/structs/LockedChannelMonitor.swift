@@ -4,6 +4,10 @@
 			import LDKHeaders
 			#endif
 
+			/// A read-only reference to a current ChannelMonitor.
+			/// 
+			/// Note that this holds a mutex in [`ChainMonitor`] and may block other events until it is
+			/// released.
 			public typealias LockedChannelMonitor = Bindings.LockedChannelMonitor
 
 			extension Bindings {

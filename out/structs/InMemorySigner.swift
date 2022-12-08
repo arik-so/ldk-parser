@@ -4,6 +4,10 @@
 			import LDKHeaders
 			#endif
 
+			/// A simple implementation of Sign that just keeps the private keys in memory.
+			/// 
+			/// This implementation performs no policy checks and is insufficient by itself as
+			/// a secure external signer.
 			public typealias InMemorySigner = Bindings.InMemorySigner
 
 			extension Bindings {

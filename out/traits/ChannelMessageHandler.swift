@@ -3,6 +3,10 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait to describe an object which can receive channel messages.
+			/// 
+			/// Messages MAY be called in parallel when they originate from different their_node_ids, however
+			/// they MUST NOT be called in parallel when the two calls have the same their_node_id.
 			public typealias ChannelMessageHandler = Bindings.ChannelMessageHandler
 
 			extension Bindings {

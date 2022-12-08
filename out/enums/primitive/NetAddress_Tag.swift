@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An address which can be used to connect to a remote peer
 			public typealias NetAddress_Tag = Bindings.NetAddress_Tag
 
 			extension Bindings {

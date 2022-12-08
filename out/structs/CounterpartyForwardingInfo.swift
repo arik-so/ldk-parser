@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Information needed for constructing an invoice route hint for this channel.
 			public typealias CounterpartyForwardingInfo = Bindings.CounterpartyForwardingInfo
 
 			extension Bindings {

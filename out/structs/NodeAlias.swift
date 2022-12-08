@@ -4,6 +4,10 @@
 			import LDKHeaders
 			#endif
 
+			/// A user-defined name for a node, which may be used when displaying the node in a graph.
+			/// 
+			/// Since node aliases are provided by third parties, they are a potential avenue for injection
+			/// attacks. Care must be taken when processing.
 			public typealias NodeAlias = Bindings.NodeAlias
 
 			extension Bindings {

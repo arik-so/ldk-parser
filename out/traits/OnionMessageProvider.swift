@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait indicating an object may generate onion messages to send
 			public typealias OnionMessageProvider = Bindings.OnionMessageProvider
 
 			extension Bindings {

@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// The unsigned part of a channel_update
 			public typealias UnsignedChannelUpdate = Bindings.UnsignedChannelUpdate
 
 			extension Bindings {

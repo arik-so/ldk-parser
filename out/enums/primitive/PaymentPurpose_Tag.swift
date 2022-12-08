@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Some information provided on receipt of payment depends on whether the payment received is a
+			/// spontaneous payment or a \"conventional\" lightning payment that's paying an invoice.
 			public typealias PaymentPurpose_Tag = Bindings.PaymentPurpose_Tag
 
 			extension Bindings {

@@ -4,6 +4,38 @@
 			import LDKHeaders
 			#endif
 
+			/// Arguments for the creation of a ChannelManager that are not deserialized.
+			/// 
+			/// At a high-level, the process for deserializing a ChannelManager and resuming normal operation
+			/// is:
+			/// 1) Deserialize all stored [`ChannelMonitor`]s.
+			/// 2) Deserialize the [`ChannelManager`] by filling in this struct and calling:
+			/// `<(BlockHash, ChannelManager)>::read(reader, args)`
+			/// This may result in closing some channels if the [`ChannelMonitor`] is newer than the stored
+			/// [`ChannelManager`] state to ensure no loss of funds. Thus, transactions may be broadcasted.
+			/// 3) If you are not fetching full blocks, register all relevant [`ChannelMonitor`] outpoints the
+			/// same way you would handle a [`chain::Filter`] call using
+			/// [`ChannelMonitor::get_outputs_to_watch`] and [`ChannelMonitor::get_funding_txo`].
+			/// 4) Reconnect blocks on your [`ChannelMonitor`]s.
+			/// 5) Disconnect/connect blocks on the [`ChannelManager`].
+			/// 6) Re-persist the [`ChannelMonitor`]s to ensure the latest state is on disk.
+			/// Note that if you're using a [`ChainMonitor`] for your [`chain::Watch`] implementation, you
+			/// will likely accomplish this as a side-effect of calling [`chain::Watch::watch_channel`] in
+			/// the next step.
+			/// 7) Move the [`ChannelMonitor`]s into your local [`chain::Watch`]. If you're using a
+			/// [`ChainMonitor`], this is done by calling [`chain::Watch::watch_channel`].
+			/// 
+			/// Note that the ordering of #4-7 is not of importance, however all four must occur before you
+			/// call any other methods on the newly-deserialized [`ChannelManager`].
+			/// 
+			/// Note that because some channels may be closed during deserialization, it is critical that you
+			/// always deserialize only the latest version of a ChannelManager and ChannelMonitors available to
+			/// you. If you deserialize an old ChannelManager (during which force-closure transactions may be
+			/// broadcast), and then later deserialize a newer version of the same ChannelManager (which will
+			/// not force-close the same channels but consider them live), you may end up revoking a state for
+			/// which you've already broadcasted the transaction.
+			/// 
+			/// [`ChainMonitor`]: crate::chain::chainmonitor::ChainMonitor
 			public typealias ChannelManagerReadArgs = Bindings.ChannelManagerReadArgs
 
 			extension Bindings {

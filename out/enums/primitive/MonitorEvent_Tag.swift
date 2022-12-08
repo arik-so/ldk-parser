@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An event to be processed by the ChannelManager.
 			public typealias MonitorEvent_Tag = Bindings.MonitorEvent_Tag
 
 			extension Bindings {

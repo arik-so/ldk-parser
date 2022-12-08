@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// An enum that represents the speed at which we want a transaction to confirm used for feerate
+			/// estimation.
 			public typealias ConfirmationTarget = Bindings.ConfirmationTarget
 
 			extension Bindings {

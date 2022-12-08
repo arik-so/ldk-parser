@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_boolPeerHandleErrorZ represents the result of a fallible operation,
+			/// containing a bool on success and a crate::lightning::ln::peer_handler::PeerHandleError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_boolPeerHandleErrorZ = Bindings.Result_boolPeerHandleErrorZ
 
 			extension Bindings {

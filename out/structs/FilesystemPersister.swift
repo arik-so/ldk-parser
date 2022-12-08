@@ -4,6 +4,18 @@
 			import LDKHeaders
 			#endif
 
+			/// FilesystemPersister persists channel data on disk, where each channel's
+			/// data is stored in a file named after its funding outpoint.
+			/// 
+			/// Warning: this module does the best it can with calls to persist data, but it
+			/// can only guarantee that the data is passed to the drive. It is up to the
+			/// drive manufacturers to do the actual persistence properly, which they often
+			/// don't (especially on consumer-grade hardware). Therefore, it is up to the
+			/// user to validate their entire storage stack, to ensure the writes are
+			/// persistent.
+			/// Corollary: especially when dealing with larger amounts of money, it is best
+			/// practice to have multiple channel data backups and not rely only on one
+			/// FilesystemPersister.
 			public typealias FilesystemPersister = Bindings.FilesystemPersister
 
 			extension Bindings {

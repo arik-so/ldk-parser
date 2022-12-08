@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An error occurring when converting from [`Script`] to [`ShutdownScript`].
 			public typealias InvalidShutdownScript = Bindings.InvalidShutdownScript
 
 			extension Bindings {

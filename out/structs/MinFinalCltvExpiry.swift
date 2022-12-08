@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// `min_final_cltv_expiry` to use for the last HTLC in the route
 			public typealias MinFinalCltvExpiry = Bindings.MinFinalCltvExpiry
 
 			extension Bindings {

@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Information about a spendable output to our \"payment key\". See
+			/// SpendableOutputDescriptor::StaticPaymentOutput for more details on how to spend this.
 			public typealias StaticPaymentOutputDescriptor = Bindings.StaticPaymentOutputDescriptor
 
 			extension Bindings {

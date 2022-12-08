@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Positive duration that defines when (relatively to the timestamp) in the future the invoice
+			/// expires
 			public typealias ExpiryTime = Bindings.ExpiryTime
 
 			extension Bindings {

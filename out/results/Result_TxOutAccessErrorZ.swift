@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_TxOutAccessErrorZ represents the result of a fallible operation,
+			/// containing a crate::c_types::TxOut on success and a crate::lightning::chain::AccessError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_TxOutAccessErrorZ = Bindings.Result_TxOutAccessErrorZ
 
 			extension Bindings {

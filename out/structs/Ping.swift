@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A ping message to be sent or received from a peer
 			public typealias Ping = Bindings.Ping
 
 			extension Bindings {

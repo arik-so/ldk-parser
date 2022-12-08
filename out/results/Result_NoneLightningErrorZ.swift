@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_NoneLightningErrorZ represents the result of a fallible operation,
+			/// containing a () on success and a crate::lightning::ln::msgs::LightningError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_NoneLightningErrorZ = Bindings.Result_NoneLightningErrorZ
 
 			extension Bindings {

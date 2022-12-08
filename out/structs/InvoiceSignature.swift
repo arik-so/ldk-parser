@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Recoverable signature
 			public typealias InvoiceSignature = Bindings.InvoiceSignature
 
 			extension Bindings {

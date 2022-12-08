@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ represents the result of a fallible operation,
+			/// containing a crate::c_types::derived::CVec_C2Tuple_BlockHashChannelMonitorZZ on success and a crate::c_types::IOError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ = Bindings.Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ
 
 			extension Bindings {

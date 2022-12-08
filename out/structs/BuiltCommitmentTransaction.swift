@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A pre-built Bitcoin commitment transaction and its txid.
 			public typealias BuiltCommitmentTransaction = Bindings.BuiltCommitmentTransaction
 
 			extension Bindings {

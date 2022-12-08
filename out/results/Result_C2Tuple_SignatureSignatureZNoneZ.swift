@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_C2Tuple_SignatureSignatureZNoneZ represents the result of a fallible operation,
+			/// containing a crate::c_types::derived::C2Tuple_SignatureSignatureZ on success and a () on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_C2Tuple_SignatureSignatureZNoneZ = Bindings.Result_C2Tuple_SignatureSignatureZNoneZ
 
 			extension Bindings {

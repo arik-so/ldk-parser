@@ -4,6 +4,12 @@
 			import LDKHeaders
 			#endif
 
+			/// A wrapper on CommitmentTransaction indicating that the derived fields (the built bitcoin
+			/// transaction and the transaction creation keys) are trusted.
+			/// 
+			/// See trust() and verify() functions on CommitmentTransaction.
+			/// 
+			/// This structure implements Deref.
 			public typealias TrustedCommitmentTransaction = Bindings.TrustedCommitmentTransaction
 
 			extension Bindings {

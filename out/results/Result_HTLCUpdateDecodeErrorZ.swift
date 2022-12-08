@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_HTLCUpdateDecodeErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning::chain::channelmonitor::HTLCUpdate on success and a crate::lightning::ln::msgs::DecodeError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_HTLCUpdateDecodeErrorZ = Bindings.Result_HTLCUpdateDecodeErrorZ
 
 			extension Bindings {

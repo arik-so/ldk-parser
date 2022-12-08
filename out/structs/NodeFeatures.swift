@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Features used within a `node_announcement` message.
 			public typealias NodeFeatures = Bindings.NodeFeatures
 
 			extension Bindings {

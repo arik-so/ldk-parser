@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait encapsulating the operations required of a logger
 			public typealias Logger = Bindings.Logger
 
 			extension Bindings {

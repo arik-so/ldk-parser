@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// One counterparty's public keys which do not change over the life of a channel.
 			public typealias ChannelPublicKeys = Bindings.ChannelPublicKeys
 
 			extension Bindings {

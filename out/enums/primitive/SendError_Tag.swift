@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// Errors that may occur when [sending an onion message].
+			/// 
+			/// [sending an onion message]: OnionMessenger::send_custom_onion_message
 			public typealias SendError_Tag = Bindings.SendError_Tag
 
 			extension Bindings {

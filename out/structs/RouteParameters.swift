@@ -4,6 +4,12 @@
 			import LDKHeaders
 			#endif
 
+			/// Parameters needed to find a [`Route`].
+			/// 
+			/// Passed to [`find_route`] and [`build_route_from_hops`], but also provided in
+			/// [`Event::PaymentPathFailed`] for retrying a failed payment path.
+			/// 
+			/// [`Event::PaymentPathFailed`]: crate::util::events::Event::PaymentPathFailed
 			public typealias RouteParameters = Bindings.RouteParameters
 
 			extension Bindings {

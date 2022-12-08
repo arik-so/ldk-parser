@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A dummy struct which implements `RoutingMessageHandler` without storing any routing information
+			/// or doing any processing. You can provide one of these as the route_handler in a MessageHandler.
 			public typealias IgnoringMessageHandler = Bindings.IgnoringMessageHandler
 
 			extension Bindings {

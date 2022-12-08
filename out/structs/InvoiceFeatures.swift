@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Features used within an invoice.
 			public typealias InvoiceFeatures = Bindings.InvoiceFeatures
 
 			extension Bindings {

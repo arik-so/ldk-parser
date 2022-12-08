@@ -4,6 +4,9 @@
 			import LDKHeaders
 			#endif
 
+			/// Route hints used in constructing invoices for [phantom node payents].
+			/// 
+			/// [phantom node payments]: crate::chain::keysinterface::PhantomKeysManager
 			public typealias PhantomRouteHints = Bindings.PhantomRouteHints
 
 			extension Bindings {

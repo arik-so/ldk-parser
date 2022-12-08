@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Provides references to trait impls which handle different types of messages.
 			public typealias MessageHandler = Bindings.MessageHandler
 
 			extension Bindings {

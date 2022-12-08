@@ -4,6 +4,31 @@
 			import LDKHeaders
 			#endif
 
+			/// `BackgroundProcessor` takes care of tasks that (1) need to happen periodically to keep
+			/// Rust-Lightning running properly, and (2) either can or should be run in the background. Its
+			/// responsibilities are:
+			/// * Processing [`Event`]s with a user-provided [`EventHandler`].
+			/// * Monitoring whether the [`ChannelManager`] needs to be re-persisted to disk, and if so,
+			/// writing it to disk/backups by invoking the callback given to it at startup.
+			/// [`ChannelManager`] persistence should be done in the background.
+			/// * Calling [`ChannelManager::timer_tick_occurred`] and [`PeerManager::timer_tick_occurred`]
+			/// at the appropriate intervals.
+			/// * Calling [`NetworkGraph::remove_stale_channels_and_tracking`] (if a [`GossipSync`] with a
+			/// [`NetworkGraph`] is provided to [`BackgroundProcessor::start`]).
+			/// 
+			/// It will also call [`PeerManager::process_events`] periodically though this shouldn't be relied
+			/// upon as doing so may result in high latency.
+			/// 
+			/// # Note
+			/// 
+			/// If [`ChannelManager`] persistence fails and the persisted manager becomes out-of-date, then
+			/// there is a risk of channels force-closing on startup when the manager realizes it's outdated.
+			/// However, as long as [`ChannelMonitor`] backups are sound, no funds besides those used for
+			/// unilateral chain closure fees are at risk.
+			/// 
+			/// [`ChannelMonitor`]: lightning::chain::channelmonitor::ChannelMonitor
+			/// [`Event`]: lightning::util::events::Event
+			/// BackgroundProcessor will immediately stop on drop. It should be stored until shutdown.
 			public typealias BackgroundProcessor = Bindings.BackgroundProcessor
 
 			extension Bindings {

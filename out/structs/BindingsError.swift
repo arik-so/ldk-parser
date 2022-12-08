@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Sub-errors which don't have specific information in them use this type.
 			public typealias BindingsError = Bindings.BindingsError
 
 			extension Bindings {

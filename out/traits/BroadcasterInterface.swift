@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An interface to send a transaction to the Bitcoin network.
 			public typealias BroadcasterInterface = Bindings.BroadcasterInterface
 
 			extension Bindings {

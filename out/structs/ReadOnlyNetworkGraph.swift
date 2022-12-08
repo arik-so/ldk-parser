@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A read-only view of [`NetworkGraph`].
 			public typealias ReadOnlyNetworkGraph = Bindings.ReadOnlyNetworkGraph
 
 			extension Bindings {

@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_TxCreationKeysErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning::ln::chan_utils::TxCreationKeys on success and a crate::c_types::Secp256k1Error on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_TxCreationKeysErrorZ = Bindings.Result_TxCreationKeysErrorZ
 
 			extension Bindings {

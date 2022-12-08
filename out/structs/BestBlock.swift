@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// The best known block as identified by its hash and height.
 			public typealias BestBlock = Bindings.BestBlock
 
 			extension Bindings {

@@ -4,6 +4,17 @@
 			import LDKHeaders
 			#endif
 
+			/// The set of public keys which are used in the creation of one commitment transaction.
+			/// These are derived from the channel base keys and per-commitment data.
+			/// 
+			/// A broadcaster key is provided from potential broadcaster of the computed transaction.
+			/// A countersignatory key is coming from a protocol participant unable to broadcast the
+			/// transaction.
+			/// 
+			/// These keys are assumed to be good, either because the code derived them from
+			/// channel basepoints via the new function, or they were obtained via
+			/// CommitmentTransaction.trust().keys() because we trusted the source of the
+			/// pre-calculated keys.
 			public typealias TxCreationKeys = Bindings.TxCreationKeys
 
 			extension Bindings {

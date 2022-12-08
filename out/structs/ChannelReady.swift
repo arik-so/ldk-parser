@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A channel_ready message to be sent or received from a peer
 			public typealias ChannelReady = Bindings.ChannelReady
 
 			extension Bindings {

@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An error in decoding a message or struct.
 			public typealias DecodeError_Tag = Bindings.DecodeError_Tag
 
 			extension Bindings {

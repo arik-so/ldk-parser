@@ -141,6 +141,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		let nativeCallWrapperPrefix = '', nativeCallWrapperSuffix = '';
 		let nativeCallSuffix = '';
 
+		let passesNonCloneableArgumentsByValue = false;
+
 		for (const currentArgument of method.arguments) {
 			if (currentArgument.type instanceof RustPrimitive) {
 				if (currentArgument.type.swiftRawSignature === 'Void' && !currentArgument.contextualName) {
@@ -148,6 +150,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					// it's not supposed to happen, but if it's void, for some reason it somehow does
 					continue;
 				}
+			} else if(!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && !(currentArgument.type instanceof RustArray) && swiftMethodName !== 'free' && !(currentArgument.type instanceof RustPrimitiveWrapper)){
+				// TODO: figure out the exact condition
+				passesNonCloneableArgumentsByValue = true;
 			}
 
 			let isInstanceArgument = false;
@@ -168,6 +173,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			nativeCallWrapperSuffix += preparedArgument.methodCallWrapperSuffix;
 			nativeCallValueAccessors.push(preparedArgument.accessor);
 			nativeCallSuffix += preparedArgument.deferredCleanup;
+		}
+
+		if (passesNonCloneableArgumentsByValue){
+			// not true yet
+			// console.log('Method passes non-cloneable arguments by value:', method.name);
 		}
 
 		// don't mark return types from C as optional because they will be automatically force-unwrapped

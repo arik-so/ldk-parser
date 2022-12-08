@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A closing_signed message to be sent or received from a peer
 			public typealias ClosingSigned = Bindings.ClosingSigned
 
 			extension Bindings {

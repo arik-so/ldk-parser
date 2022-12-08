@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// The unsigned part of a node_announcement
 			public typealias UnsignedNodeAnnouncement = Bindings.UnsignedNodeAnnouncement
 
 			extension Bindings {

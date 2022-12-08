@@ -3,6 +3,26 @@
 			import LDKHeaders
 			#endif
 
+			/// The `Filter` trait defines behavior for indicating chain activity of interest pertaining to
+			/// channels.
+			/// 
+			/// This is useful in order to have a [`Watch`] implementation convey to a chain source which
+			/// transactions to be notified of. Notification may take the form of pre-filtering blocks or, in
+			/// the case of [BIP 157]/[BIP 158], only fetching a block if the compact filter matches. If
+			/// receiving full blocks from a chain source, any further filtering is unnecessary.
+			/// 
+			/// After an output has been registered, subsequent block retrievals from the chain source must not
+			/// exclude any transactions matching the new criteria nor any in-block descendants of such
+			/// transactions.
+			/// 
+			/// Note that use as part of a [`Watch`] implementation involves reentrancy. Therefore, the `Filter`
+			/// should not block on I/O. Implementations should instead queue the newly monitored data to be
+			/// processed later. Then, in order to block until the data has been processed, any [`Watch`]
+			/// invocation that has called the `Filter` must return [`InProgress`].
+			/// 
+			/// [`InProgress`]: ChannelMonitorUpdateStatus::InProgress
+			/// [BIP 157]: https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki
+			/// [BIP 158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
 			public typealias Filter = Bindings.Filter
 
 			extension Bindings {

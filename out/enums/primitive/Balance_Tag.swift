@@ -3,6 +3,10 @@
 			import LDKHeaders
 			#endif
 
+			/// Details about the balance(s) available for spending once the channel appears on chain.
+			/// 
+			/// See [`ChannelMonitor::get_claimable_balances`] for more details on when these will or will not
+			/// be provided.
 			public typealias Balance_Tag = Bindings.Balance_Tag
 
 			extension Bindings {

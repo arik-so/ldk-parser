@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias SendError = Bindings.SendError
 
 			extension Bindings {

@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait indicating an object may generate message send events
 			public typealias MessageSendEventsProvider = Bindings.MessageSendEventsProvider
 
 			extension Bindings {

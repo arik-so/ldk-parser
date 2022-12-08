@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_BlindedRouteNoneZ represents the result of a fallible operation,
+			/// containing a crate::lightning::onion_message::blinded_route::BlindedRoute on success and a () on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_BlindedRouteNoneZ = Bindings.Result_BlindedRouteNoneZ
 
 			extension Bindings {

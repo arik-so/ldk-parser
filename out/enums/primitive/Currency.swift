@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Enum representing the crypto currencies (or networks) supported by this library
 			public typealias Currency = Bindings.Currency
 
 			extension Bindings {

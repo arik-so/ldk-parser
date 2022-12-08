@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Details about a channel (both directions).
+			/// Received within a channel announcement.
 			public typealias ChannelInfo = Bindings.ChannelInfo
 
 			extension Bindings {

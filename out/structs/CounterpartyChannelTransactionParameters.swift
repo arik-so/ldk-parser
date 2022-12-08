@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Late-bound per-channel counterparty data used to build transactions.
 			public typealias CounterpartyChannelTransactionParameters = Bindings.CounterpartyChannelTransactionParameters
 
 			extension Bindings {

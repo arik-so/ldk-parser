@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An enum representing the status of a channel monitor update persistence.
 			public typealias ChannelMonitorUpdateStatus = Bindings.ChannelMonitorUpdateStatus
 
 			extension Bindings {

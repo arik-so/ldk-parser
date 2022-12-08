@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An accept_channel message to be sent or received from a peer
 			public typealias AcceptChannel = Bindings.AcceptChannel
 
 			extension Bindings {

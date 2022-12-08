@@ -4,6 +4,14 @@
 			import LDKHeaders
 			#endif
 
+			/// Receives and validates network updates from peers,
+			/// stores authentic and relevant data as a network graph.
+			/// This network graph is then used for routing payments.
+			/// Provides interface to help with initial routing sync by
+			/// serving historical announcements.
+			/// 
+			/// Serves as an [`EventHandler`] for applying updates from [`Event::PaymentPathFailed`] to the
+			/// [`NetworkGraph`].
 			public typealias P2PGossipSync = Bindings.P2PGossipSync
 
 			extension Bindings {

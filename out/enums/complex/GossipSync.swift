@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias GossipSync = Bindings.GossipSync
 
 			extension Bindings {

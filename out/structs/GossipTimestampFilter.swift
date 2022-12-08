@@ -4,6 +4,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A gossip_timestamp_filter message is used by a node to request
+			/// gossip relay for messages in the requested time range when the
+			/// gossip_queries feature has been negotiated.
 			public typealias GossipTimestampFilter = Bindings.GossipTimestampFilter
 
 			extension Bindings {

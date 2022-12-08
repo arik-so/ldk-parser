@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Specifies the recipient of an invoice, to indicate to [`KeysInterface::sign_invoice`] what node
+			/// secret key should be used to sign the invoice.
 			public typealias Recipient = Bindings.Recipient
 
 			extension Bindings {

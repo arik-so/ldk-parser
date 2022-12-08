@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Errors that indicate what is wrong with the invoice. They have some granularity for debug
+			/// reasons, but should generally result in an \"invalid BOLT11 invoice\" message for the user.
 			public typealias ParseError_Tag = Bindings.ParseError_Tag
 
 			extension Bindings {

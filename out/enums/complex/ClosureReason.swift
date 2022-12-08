@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias ClosureReason = Bindings.ClosureReason
 
 			extension Bindings {

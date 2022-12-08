@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_SpendableOutputDescriptorDecodeErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning::chain::keysinterface::SpendableOutputDescriptor on success and a crate::lightning::ln::msgs::DecodeError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_SpendableOutputDescriptorDecodeErrorZ = Bindings.Result_SpendableOutputDescriptorDecodeErrorZ
 
 			extension Bindings {

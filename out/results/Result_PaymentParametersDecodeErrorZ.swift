@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_PaymentParametersDecodeErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning::routing::router::PaymentParameters on success and a crate::lightning::ln::msgs::DecodeError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_PaymentParametersDecodeErrorZ = Bindings.Result_PaymentParametersDecodeErrorZ
 
 			extension Bindings {

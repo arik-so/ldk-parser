@@ -4,6 +4,13 @@
 			import LDKHeaders
 			#endif
 
+			/// Parameters for configuring [`ProbabilisticScorer`].
+			/// 
+			/// Used to configure base, liquidity, and amount penalties, the sum of which comprises the channel
+			/// penalty (i.e., the amount in msats willing to be paid to avoid routing through the channel).
+			/// 
+			/// The penalty applied to any channel by the [`ProbabilisticScorer`] is the sum of each of the
+			/// parameters here.
 			public typealias ProbabilisticScoringParameters = Bindings.ProbabilisticScoringParameters
 
 			extension Bindings {

@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An Err type for failure to process messages.
 			public typealias LightningError = Bindings.LightningError
 
 			extension Bindings {

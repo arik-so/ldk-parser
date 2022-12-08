@@ -4,6 +4,11 @@
 			import LDKHeaders
 			#endif
 
+			/// Per-channel data used to build transactions in conjunction with the per-commitment data (CommitmentTransaction).
+			/// The fields are organized by holder/counterparty.
+			/// 
+			/// Normally, this is converted to the broadcaster/countersignatory-organized DirectedChannelTransactionParameters
+			/// before use, via the as_holder_broadcastable and as_counterparty_broadcastable functions.
 			public typealias ChannelTransactionParameters = Bindings.ChannelTransactionParameters
 
 			extension Bindings {

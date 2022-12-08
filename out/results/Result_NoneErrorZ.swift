@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_NoneErrorZ represents the result of a fallible operation,
+			/// containing a () on success and a crate::c_types::IOError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_NoneErrorZ = Bindings.Result_NoneErrorZ
 
 			extension Bindings {

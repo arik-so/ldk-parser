@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_TransactionNoneZ represents the result of a fallible operation,
+			/// containing a crate::c_types::Transaction on success and a () on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_TransactionNoneZ = Bindings.Result_TransactionNoneZ
 
 			extension Bindings {

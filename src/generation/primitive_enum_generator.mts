@@ -48,6 +48,7 @@ export default class PrimitiveEnumGenerator extends BaseTypeGenerator<RustPrimit
 			import LDKHeaders
 			#endif
 
+			${this.renderDocComment(type.documentation, 3)}
 			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}
 
 			extension Bindings {

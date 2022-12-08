@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_SiPrefixParseErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning_invoice::SiPrefix on success and a crate::lightning_invoice::ParseError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_SiPrefixParseErrorZ = Bindings.Result_SiPrefixParseErrorZ
 
 			extension Bindings {

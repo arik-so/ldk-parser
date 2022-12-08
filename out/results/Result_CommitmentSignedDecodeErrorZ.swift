@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_CommitmentSignedDecodeErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning::ln::msgs::CommitmentSigned on success and a crate::lightning::ln::msgs::DecodeError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_CommitmentSignedDecodeErrorZ = Bindings.Result_CommitmentSignedDecodeErrorZ
 
 			extension Bindings {

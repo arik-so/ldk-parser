@@ -4,6 +4,42 @@
 			import LDKHeaders
 			#endif
 
+			/// Manager which keeps track of a number of channels and sends messages to the appropriate
+			/// channel, also tracking HTLC preimages and forwarding onion packets appropriately.
+			/// 
+			/// Implements ChannelMessageHandler, handling the multi-channel parts and passing things through
+			/// to individual Channels.
+			/// 
+			/// Implements Writeable to write out all channel state to disk. Implies peer_disconnected() for
+			/// all peers during write/read (though does not modify this instance, only the instance being
+			/// serialized). This will result in any channels which have not yet exchanged funding_created (ie
+			/// called funding_transaction_generated for outbound channels).
+			/// 
+			/// Note that you can be a bit lazier about writing out ChannelManager than you can be with
+			/// ChannelMonitors. With ChannelMonitors you MUST write each monitor update out to disk before
+			/// returning from chain::Watch::watch_/update_channel, with ChannelManagers, writing updates
+			/// happens out-of-band (and will prevent any other ChannelManager operations from occurring during
+			/// the serialization process). If the deserialized version is out-of-date compared to the
+			/// ChannelMonitors passed by reference to read(), those channels will be force-closed based on the
+			/// ChannelMonitor state and no funds will be lost (mod on-chain transaction fees).
+			/// 
+			/// Note that the deserializer is only implemented for (BlockHash, ChannelManager), which
+			/// tells you the last block hash which was block_connect()ed. You MUST rescan any blocks along
+			/// the \"reorg path\" (ie call block_disconnected() until you get to a common block and then call
+			/// block_connected() to step towards your best block) upon deserialization before using the
+			/// object!
+			/// 
+			/// Note that ChannelManager is responsible for tracking liveness of its channels and generating
+			/// ChannelUpdate messages informing peers that the channel is temporarily disabled. To avoid
+			/// spam due to quick disconnection/reconnection, updates are not sent until the channel has been
+			/// offline for a full minute. In order to track this, you must call
+			/// timer_tick_occurred roughly once per minute, though it doesn't have to be perfect.
+			/// 
+			/// Rather than using a plain ChannelManager, it is preferable to use either a SimpleArcChannelManager
+			/// a SimpleRefChannelManager, for conciseness. See their documentation for more details, but
+			/// essentially you should default to using a SimpleRefChannelManager, and use a
+			/// SimpleArcChannelManager when you require a ChannelManager with a static lifetime, such as when
+			/// you're using lightning-net-tokio.
 			public typealias ChannelManager = Bindings.ChannelManager
 
 			extension Bindings {

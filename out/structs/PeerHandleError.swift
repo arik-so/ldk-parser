@@ -4,6 +4,9 @@
 			import LDKHeaders
 			#endif
 
+			/// Error for PeerManager errors. If you get one of these, you must disconnect the socket and
+			/// generate no further read_event/write_buffer_space_avail/socket_disconnected calls for the
+			/// descriptor.
 			public typealias PeerHandleError = Bindings.PeerHandleError
 
 			extension Bindings {

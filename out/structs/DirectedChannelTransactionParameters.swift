@@ -4,6 +4,11 @@
 			import LDKHeaders
 			#endif
 
+			/// Static channel fields used to build transactions given per-commitment fields, organized by
+			/// broadcaster/countersignatory.
+			/// 
+			/// This is derived from the holder/counterparty-organized ChannelTransactionParameters via the
+			/// as_holder_broadcastable and as_counterparty_broadcastable functions.
 			public typealias DirectedChannelTransactionParameters = Bindings.DirectedChannelTransactionParameters
 
 			extension Bindings {

@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_u32GraphSyncErrorZ represents the result of a fallible operation,
+			/// containing a u32 on success and a crate::lightning_rapid_gossip_sync::error::GraphSyncError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_u32GraphSyncErrorZ = Bindings.Result_u32GraphSyncErrorZ
 
 			extension Bindings {

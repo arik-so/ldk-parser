@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An error that may occur when making a payment.
 			public typealias PaymentError_Tag = Bindings.PaymentError_Tag
 
 			extension Bindings {

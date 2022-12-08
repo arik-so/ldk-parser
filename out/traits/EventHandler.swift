@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait implemented for objects handling events from [`EventsProvider`].
 			public typealias EventHandler = Bindings.EventHandler
 
 			extension Bindings {

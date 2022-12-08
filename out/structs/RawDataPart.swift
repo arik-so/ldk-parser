@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Data of the `RawInvoice` that is encoded in the data part
 			public typealias RawDataPart = Bindings.RawDataPart
 
 			extension Bindings {

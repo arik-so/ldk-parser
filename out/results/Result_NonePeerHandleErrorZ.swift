@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_NonePeerHandleErrorZ represents the result of a fallible operation,
+			/// containing a () on success and a crate::lightning::ln::peer_handler::PeerHandleError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_NonePeerHandleErrorZ = Bindings.Result_NonePeerHandleErrorZ
 
 			extension Bindings {

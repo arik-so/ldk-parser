@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_BlindedHopDecodeErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning::onion_message::blinded_route::BlindedHop on success and a crate::lightning::ln::msgs::DecodeError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_BlindedHopDecodeErrorZ = Bindings.Result_BlindedHopDecodeErrorZ
 
 			extension Bindings {

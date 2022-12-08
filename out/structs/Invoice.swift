@@ -4,6 +4,12 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents a syntactically and semantically correct lightning BOLT11 invoice.
+			/// 
+			/// There are three ways to construct an `Invoice`:
+			/// 1. using `InvoiceBuilder`
+			/// 2. using `Invoice::from_signed(SignedRawInvoice)`
+			/// 3. using `str::parse::<Invoice>(&str)`
 			public typealias Invoice = Bindings.Invoice
 
 			extension Bindings {

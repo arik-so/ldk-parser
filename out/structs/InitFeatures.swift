@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Features used within an `init` message.
 			public typealias InitFeatures = Bindings.InitFeatures
 
 			extension Bindings {

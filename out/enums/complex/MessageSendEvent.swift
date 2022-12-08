@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias MessageSendEvent = Bindings.MessageSendEvent
 
 			extension Bindings {

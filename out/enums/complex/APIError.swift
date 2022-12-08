@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias APIError = Bindings.APIError
 
 			extension Bindings {

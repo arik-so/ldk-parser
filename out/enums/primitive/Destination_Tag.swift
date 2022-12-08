@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// The destination of an onion message.
 			public typealias Destination_Tag = Bindings.Destination_Tag
 
 			extension Bindings {

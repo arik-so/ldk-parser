@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents an error returned from the bech32 library during validation of some bech32 data
 			public typealias Bech32Error_Tag = Bindings.Bech32Error_Tag
 
 			extension Bindings {

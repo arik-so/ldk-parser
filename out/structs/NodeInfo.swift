@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Details about a node in the network, known from the network announcement.
 			public typealias NodeInfo = Bindings.NodeInfo
 
 			extension Bindings {

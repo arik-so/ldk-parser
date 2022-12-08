@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// SHA-256 hash
 			public typealias Sha256 = Bindings.Sha256
 
 			extension Bindings {

@@ -4,6 +4,10 @@
 			import LDKHeaders
 			#endif
 
+			/// A query_channel_range message is used to query a peer for channel
+			/// UTXOs in a range of blocks. The recipient of a query makes a best
+			/// effort to reply to the query using one or more reply_channel_range
+			/// messages.
 			public typealias QueryChannelRange = Bindings.QueryChannelRange
 
 			extension Bindings {

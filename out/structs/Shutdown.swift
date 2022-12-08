@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A shutdown message to be sent or received from a peer
 			public typealias Shutdown = Bindings.Shutdown
 
 			extension Bindings {

@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait defining behavior for routing an [`Invoice`] payment.
 			public typealias Router = Bindings.Router
 
 			extension Bindings {

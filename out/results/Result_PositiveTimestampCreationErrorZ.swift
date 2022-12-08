@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_PositiveTimestampCreationErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning_invoice::PositiveTimestamp on success and a crate::lightning_invoice::CreationError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_PositiveTimestampCreationErrorZ = Bindings.Result_PositiveTimestampCreationErrorZ
 
 			extension Bindings {

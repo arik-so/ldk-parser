@@ -4,6 +4,9 @@
 			import LDKHeaders
 			#endif
 
+			/// Simple structure sent back by `chain::Watch` when an HTLC from a forward channel is detected on
+			/// chain. Used to update the corresponding HTLC in the backward channel. Failing to pass the
+			/// preimage claim backward will lead to loss of funds.
 			public typealias HTLCUpdate = Bindings.HTLCUpdate
 
 			extension Bindings {

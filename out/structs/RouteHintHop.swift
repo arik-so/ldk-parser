@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A channel descriptor for a hop along a payment path.
 			public typealias RouteHintHop = Bindings.RouteHintHop
 
 			extension Bindings {

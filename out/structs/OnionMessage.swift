@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An onion message to be sent or received from a peer
 			public typealias OnionMessage = Bindings.OnionMessage
 
 			extension Bindings {

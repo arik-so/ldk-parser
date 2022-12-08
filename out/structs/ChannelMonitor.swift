@@ -4,6 +4,22 @@
 			import LDKHeaders
 			#endif
 
+			/// A ChannelMonitor handles chain events (blocks connected and disconnected) and generates
+			/// on-chain transactions to ensure no loss of funds occurs.
+			/// 
+			/// You MUST ensure that no ChannelMonitors for a given channel anywhere contain out-of-date
+			/// information and are actively monitoring the chain.
+			/// 
+			/// Pending Events or updated HTLCs which have not yet been read out by
+			/// get_and_clear_pending_monitor_events or get_and_clear_pending_events are serialized to disk and
+			/// reloaded at deserialize-time. Thus, you must ensure that, when handling events, all events
+			/// gotten are fully handled before re-serializing the new state.
+			/// 
+			/// Note that the deserializer is only implemented for (BlockHash, ChannelMonitor), which
+			/// tells you the last block hash which was block_connect()ed. You MUST rescan any blocks along
+			/// the \"reorg path\" (ie disconnecting blocks until you find a common ancestor from both the
+			/// returned block hash and the the current chain and then reconnecting blocks to get to the
+			/// best chain) upon deserializing the object!
 			public typealias ChannelMonitor = Bindings.ChannelMonitor
 
 			extension Bindings {

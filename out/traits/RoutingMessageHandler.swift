@@ -3,6 +3,13 @@
 			import LDKHeaders
 			#endif
 
+			/// A trait to describe an object which can receive routing messages.
+			/// 
+			/// # Implementor DoS Warnings
+			/// 
+			/// For `gossip_queries` messages there are potential DoS vectors when handling
+			/// inbound queries. Implementors using an on-disk network graph should be aware of
+			/// repeated disk I/O for queries accessing different parts of the network graph.
 			public typealias RoutingMessageHandler = Bindings.RoutingMessageHandler
 
 			extension Bindings {

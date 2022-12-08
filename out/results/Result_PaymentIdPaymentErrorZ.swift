@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_PaymentIdPaymentErrorZ represents the result of a fallible operation,
+			/// containing a crate::c_types::ThirtyTwoBytes on success and a crate::lightning_invoice::payment::PaymentError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_PaymentIdPaymentErrorZ = Bindings.Result_PaymentIdPaymentErrorZ
 
 			extension Bindings {

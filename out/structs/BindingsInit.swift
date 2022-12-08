@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An init message to be sent or received from a peer
 			public typealias BindingsInit = Bindings.BindingsInit
 
 			extension Bindings {

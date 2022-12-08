@@ -4,6 +4,13 @@
 			import LDKHeaders
 			#endif
 
+			/// A reply_channel_range message is a reply to a query_channel_range
+			/// message. Multiple reply_channel_range messages can be sent in reply
+			/// to a single query_channel_range message. The query recipient makes a
+			/// best effort to respond based on their local network view which may
+			/// not be a perfect view of the network. The short_channel_ids in the
+			/// reply are encoded. We only support encoding_type=0 uncompressed
+			/// serialization and do not support encoding_type=1 zlib serialization.
 			public typealias ReplyChannelRange = Bindings.ReplyChannelRange
 
 			extension Bindings {

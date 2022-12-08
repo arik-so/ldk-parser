@@ -4,6 +4,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A script pubkey for shutting down a channel as defined by [BOLT #2].
+			/// 
+			/// [BOLT #2]: https://github.com/lightning/bolts/blob/master/02-peer-protocol.md
 			public typealias ShutdownScript = Bindings.ShutdownScript
 
 			extension Bindings {

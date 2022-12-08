@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			/// When signing using a fallible method either an user-supplied `SignError` or a `CreationError`
+			/// may occur.
 			public typealias SignOrCreationError_Tag = Bindings.SignOrCreationError_Tag
 
 			extension Bindings {

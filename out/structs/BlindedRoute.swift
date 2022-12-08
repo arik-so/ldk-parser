@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// Onion messages can be sent and received to blinded routes, which serve to hide the identity of
+			/// the recipient.
 			public typealias BlindedRoute = Bindings.BlindedRoute
 
 			extension Bindings {

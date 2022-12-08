@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_ShutdownScriptInvalidShutdownScriptZ represents the result of a fallible operation,
+			/// containing a crate::lightning::ln::script::ShutdownScript on success and a crate::lightning::ln::script::InvalidShutdownScript on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_ShutdownScriptInvalidShutdownScriptZ = Bindings.Result_ShutdownScriptInvalidShutdownScriptZ
 
 			extension Bindings {

@@ -4,6 +4,10 @@
 			import LDKHeaders
 			#endif
 
+			/// Top-level config which holds ChannelHandshakeLimits and ChannelConfig.
+			/// 
+			/// Default::default() provides sane defaults for most configurations
+			/// (but currently with 0 relay fees!)
 			public typealias UserConfig = Bindings.UserConfig
 
 			extension Bindings {

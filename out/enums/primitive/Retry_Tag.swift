@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Strategies available to retry payment path failures for an [`Invoice`].
 			public typealias Retry_Tag = Bindings.Retry_Tag
 
 			extension Bindings {

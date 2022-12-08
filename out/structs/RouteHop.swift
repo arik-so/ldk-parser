@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A hop in a route
 			public typealias RouteHop = Bindings.RouteHop
 
 			extension Bindings {

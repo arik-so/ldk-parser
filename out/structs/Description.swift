@@ -4,6 +4,10 @@
 			import LDKHeaders
 			#endif
 
+			/// Description string
+			/// 
+			/// # Invariants
+			/// The description can be at most 639 __bytes__ long
 			public typealias Description = Bindings.Description
 
 			extension Bindings {

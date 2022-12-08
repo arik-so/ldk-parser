@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_InvoiceSemanticErrorZ represents the result of a fallible operation,
+			/// containing a crate::lightning_invoice::Invoice on success and a crate::lightning_invoice::SemanticError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_InvoiceSemanticErrorZ = Bindings.Result_InvoiceSemanticErrorZ
 
 			extension Bindings {

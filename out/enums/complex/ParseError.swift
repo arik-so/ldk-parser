@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias ParseError = Bindings.ParseError
 
 			extension Bindings {

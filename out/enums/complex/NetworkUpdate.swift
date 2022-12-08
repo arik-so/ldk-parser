@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias NetworkUpdate = Bindings.NetworkUpdate
 
 			extension Bindings {

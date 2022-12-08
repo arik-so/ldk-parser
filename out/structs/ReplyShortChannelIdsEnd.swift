@@ -4,6 +4,10 @@
 			import LDKHeaders
 			#endif
 
+			/// A reply_short_channel_ids_end message is sent as a reply to a
+			/// query_short_channel_ids message. The query recipient makes a best
+			/// effort to respond based on their local network view which may not be
+			/// a perfect view of the network.
 			public typealias ReplyShortChannelIdsEnd = Bindings.ReplyShortChannelIdsEnd
 
 			extension Bindings {

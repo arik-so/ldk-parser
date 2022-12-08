@@ -4,6 +4,9 @@
 			import LDKHeaders
 			#endif
 
+			/// Information needed to build and sign a holder's commitment transaction.
+			/// 
+			/// The transaction is only signed once we are ready to broadcast.
 			public typealias HolderCommitmentTransaction = Bindings.HolderCommitmentTransaction
 
 			extension Bindings {

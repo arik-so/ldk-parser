@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// Represents an error returned from libsecp256k1 during validation of some secp256k1 data
 			public typealias Secp256k1Error = Bindings.Secp256k1Error
 
 			extension Bindings {

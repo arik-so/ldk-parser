@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An update_fee message to be sent or received from a peer
 			public typealias UpdateFee = Bindings.UpdateFee
 
 			extension Bindings {

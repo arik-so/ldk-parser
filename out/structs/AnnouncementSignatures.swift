@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An announcement_signatures message to be sent or received from a peer
 			public typealias AnnouncementSignatures = Bindings.AnnouncementSignatures
 
 			extension Bindings {

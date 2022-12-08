@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			/// A CResult_COption_HTLCDestinationZDecodeErrorZ represents the result of a fallible operation,
+			/// containing a crate::c_types::derived::COption_HTLCDestinationZ on success and a crate::lightning::ln::msgs::DecodeError on failure.
+			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_COption_HTLCDestinationZDecodeErrorZ = Bindings.Result_COption_HTLCDestinationZDecodeErrorZ
 
 			extension Bindings {

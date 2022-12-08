@@ -4,6 +4,8 @@
 			import LDKHeaders
 			#endif
 
+			/// A Record, unit of logging output with Metadata to enable filtering
+			/// Module_path, file, line to inform on log's source
 			public typealias Record = Bindings.Record
 
 			extension Bindings {

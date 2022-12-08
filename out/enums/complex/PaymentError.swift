@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// 
 			public typealias PaymentError = Bindings.PaymentError
 
 			extension Bindings {

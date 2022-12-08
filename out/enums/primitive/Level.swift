@@ -3,6 +3,7 @@
 			import LDKHeaders
 			#endif
 
+			/// An enum representing the available verbosity levels of the logger.
 			public typealias Level = Bindings.Level
 
 			extension Bindings {

@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A funding_created message to be sent or received from a peer
 			public typealias FundingCreated = Bindings.FundingCreated
 
 			extension Bindings {

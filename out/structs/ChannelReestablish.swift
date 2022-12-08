@@ -4,6 +4,7 @@
 			import LDKHeaders
 			#endif
 
+			/// A channel_reestablish message to be sent or received from a peer
 			public typealias ChannelReestablish = Bindings.ChannelReestablish
 
 			extension Bindings {
