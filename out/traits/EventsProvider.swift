@@ -152,7 +152,7 @@
 					}
 				}
 
-				public class NativelyImplementedEventsProvider: EventsProvider {
+				internal class NativelyImplementedEventsProvider: EventsProvider {
 					
 					/// Processes any events generated since the last call using the given event handler.
 					/// 

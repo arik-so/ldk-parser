@@ -156,7 +156,7 @@
 					}
 				}
 
-				public class NativelyImplementedCustomOnionMessageHandler: CustomOnionMessageHandler {
+				internal class NativelyImplementedCustomOnionMessageHandler: CustomOnionMessageHandler {
 					
 					/// Called with the custom message that was received.
 					public override func handleCustomMessage(msg: CustomOnionMessageContents) {

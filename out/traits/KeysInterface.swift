@@ -401,7 +401,7 @@
 					}
 				}
 
-				public class NativelyImplementedKeysInterface: KeysInterface {
+				internal class NativelyImplementedKeysInterface: KeysInterface {
 					
 					/// Get node secret key based on the provided [`Recipient`].
 					/// 

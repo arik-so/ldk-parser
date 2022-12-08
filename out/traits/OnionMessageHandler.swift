@@ -245,7 +245,7 @@
 					}
 				}
 
-				public class NativelyImplementedOnionMessageHandler: OnionMessageHandler {
+				internal class NativelyImplementedOnionMessageHandler: OnionMessageHandler {
 					
 					/// Handle an incoming onion_message message from the given peer.
 					public override func handleOnionMessage(peerNodeId: [UInt8], msg: OnionMessage) {

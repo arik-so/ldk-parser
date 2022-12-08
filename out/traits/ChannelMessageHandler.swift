@@ -674,7 +674,7 @@
 					}
 				}
 
-				public class NativelyImplementedChannelMessageHandler: ChannelMessageHandler {
+				internal class NativelyImplementedChannelMessageHandler: ChannelMessageHandler {
 					
 					/// Handle an incoming open_channel message from the given peer.
 					public override func handleOpenChannel(theirNodeId: [UInt8], theirFeatures: InitFeatures, msg: OpenChannel) {

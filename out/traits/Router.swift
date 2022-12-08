@@ -233,7 +233,7 @@
 					}
 				}
 
-				public class NativelyImplementedRouter: Router {
+				internal class NativelyImplementedRouter: Router {
 					
 					/// Finds a [`Route`] between `payer` and `payee` for a payment with the given values.
 					/// 

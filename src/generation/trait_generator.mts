@@ -145,7 +145,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					}
 				}
 
-				public class NativelyImplemented${swiftTypeName}: ${swiftTypeName} {
+				internal class NativelyImplemented${swiftTypeName}: ${swiftTypeName} {
 					${nativelyImplementedCallbacks}
 				}
 

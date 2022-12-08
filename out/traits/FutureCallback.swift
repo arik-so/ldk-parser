@@ -128,7 +128,7 @@
 					}
 				}
 
-				public class NativelyImplementedFutureCallback: FutureCallback {
+				internal class NativelyImplementedFutureCallback: FutureCallback {
 					
 					/// The method which is called.
 					public override func call() {

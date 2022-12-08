@@ -249,7 +249,7 @@
 					}
 				}
 
-				public class NativelyImplementedSocketDescriptor: SocketDescriptor {
+				internal class NativelyImplementedSocketDescriptor: SocketDescriptor {
 					
 					/// Attempts to send some data from the given slice to the peer.
 					/// 

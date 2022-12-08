@@ -176,7 +176,7 @@
 					}
 				}
 
-				public class NativelyImplementedFilter: Filter {
+				internal class NativelyImplementedFilter: Filter {
 					
 					/// Registers interest in a transaction with `txid` and having an output with `script_pubkey` as
 					/// a spending condition.

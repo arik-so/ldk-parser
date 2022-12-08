@@ -213,7 +213,7 @@
 					}
 				}
 
-				public class NativelyImplementedWatch: Watch {
+				internal class NativelyImplementedWatch: Watch {
 					
 					/// Watches a channel identified by `funding_txo` using `monitor`.
 					/// 

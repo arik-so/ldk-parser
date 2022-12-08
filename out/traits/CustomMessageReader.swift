@@ -125,7 +125,7 @@
 					}
 				}
 
-				public class NativelyImplementedCustomMessageReader: CustomMessageReader {
+				internal class NativelyImplementedCustomMessageReader: CustomMessageReader {
 					
 					/// Decodes a custom message to `CustomMessageType`. If the given message type is known to the
 					/// implementation and the message could be decoded, must return `Ok(Some(message))`. If the

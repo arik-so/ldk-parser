@@ -255,7 +255,7 @@
 					}
 				}
 
-				public class NativelyImplementedScore: Score {
+				internal class NativelyImplementedScore: Score {
 					
 					/// Returns the fee in msats willing to be paid to avoid routing `send_amt_msat` through the
 					/// given channel in the direction from `source` to `target`.

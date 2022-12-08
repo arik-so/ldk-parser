@@ -121,7 +121,7 @@
 					}
 				}
 
-				public class NativelyImplementedLogger: Logger {
+				internal class NativelyImplementedLogger: Logger {
 					
 					/// Logs the `Record`
 					public override func log(record: Record) {

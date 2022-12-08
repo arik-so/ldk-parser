@@ -276,7 +276,7 @@
 					}
 				}
 
-				public class NativelyImplementedConfirm: Confirm {
+				internal class NativelyImplementedConfirm: Confirm {
 					
 					/// Processes transactions confirmed in a block with a given header and height.
 					/// 

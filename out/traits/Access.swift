@@ -131,7 +131,7 @@
 					}
 				}
 
-				public class NativelyImplementedAccess: Access {
+				internal class NativelyImplementedAccess: Access {
 					
 					/// Returns the transaction output of a funding transaction encoded by [`short_channel_id`].
 					/// Returns an error if `genesis_hash` is for a different chain or if such a transaction output

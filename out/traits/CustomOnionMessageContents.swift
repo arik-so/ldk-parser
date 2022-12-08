@@ -168,7 +168,7 @@
 					}
 				}
 
-				public class NativelyImplementedCustomOnionMessageContents: CustomOnionMessageContents {
+				internal class NativelyImplementedCustomOnionMessageContents: CustomOnionMessageContents {
 					
 					/// Returns the TLV type identifying the message contents. MUST be >= 64.
 					public override func tlvType() -> UInt64 {

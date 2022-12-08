@@ -156,7 +156,7 @@
 					}
 				}
 
-				public class NativelyImplementedSign: Sign {
+				internal class NativelyImplementedSign: Sign {
 					
 					/// Serialize the object into a byte array
 					public override func write() -> [UInt8] {

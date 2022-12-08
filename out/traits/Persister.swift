@@ -171,7 +171,7 @@
 					}
 				}
 
-				public class NativelyImplementedPersister: Persister {
+				internal class NativelyImplementedPersister: Persister {
 					
 					/// Persist the given ['ChannelManager'] to disk, returning an error if persistence failed.
 					public override func persistManager(channelManager: ChannelManager) -> Result_NoneErrorZ {

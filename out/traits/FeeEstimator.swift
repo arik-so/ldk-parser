@@ -132,7 +132,7 @@
 					}
 				}
 
-				public class NativelyImplementedFeeEstimator: FeeEstimator {
+				internal class NativelyImplementedFeeEstimator: FeeEstimator {
 					
 					/// Gets estimated satoshis of fee required per 1000 Weight-Units.
 					/// 

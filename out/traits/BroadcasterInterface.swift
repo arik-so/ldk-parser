@@ -121,7 +121,7 @@
 					}
 				}
 
-				public class NativelyImplementedBroadcasterInterface: BroadcasterInterface {
+				internal class NativelyImplementedBroadcasterInterface: BroadcasterInterface {
 					
 					/// Sends a transaction out to (hopefully) be mined.
 					public override func broadcastTransaction(tx: [UInt8]) {

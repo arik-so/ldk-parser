@@ -133,7 +133,7 @@
 					}
 				}
 
-				public class NativelyImplementedWriteableScore: WriteableScore {
+				internal class NativelyImplementedWriteableScore: WriteableScore {
 					
 					/// Serialize the object into a byte array
 					public override func write() -> [UInt8] {

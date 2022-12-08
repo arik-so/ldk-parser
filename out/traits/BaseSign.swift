@@ -601,7 +601,7 @@
 					}
 				}
 
-				public class NativelyImplementedBaseSign: BaseSign {
+				internal class NativelyImplementedBaseSign: BaseSign {
 					
 					/// Gets the per-commitment point for a specific commitment number
 					/// 

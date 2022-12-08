@@ -248,7 +248,7 @@
 					}
 				}
 
-				public class NativelyImplementedPayer: Payer {
+				internal class NativelyImplementedPayer: Payer {
 					
 					/// Returns the payer's node id.
 					public override func nodeId() -> [UInt8] {

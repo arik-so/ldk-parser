@@ -213,7 +213,7 @@
 					}
 				}
 
-				public class NativelyImplementedPersist: Persist {
+				internal class NativelyImplementedPersist: Persist {
 					
 					/// Persist a new channel's data in response to a [`chain::Watch::watch_channel`] call. This is
 					/// called by [`ChannelManager`] for new channels, or may be called directly, e.g. on startup.

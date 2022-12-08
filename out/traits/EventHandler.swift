@@ -123,7 +123,7 @@
 					}
 				}
 
-				public class NativelyImplementedEventHandler: EventHandler {
+				internal class NativelyImplementedEventHandler: EventHandler {
 					
 					/// Handles the given [`Event`].
 					/// 

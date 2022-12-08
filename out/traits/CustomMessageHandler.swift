@@ -159,7 +159,7 @@
 					}
 				}
 
-				public class NativelyImplementedCustomMessageHandler: CustomMessageHandler {
+				internal class NativelyImplementedCustomMessageHandler: CustomMessageHandler {
 					
 					/// Called with the message type that was received and the buffer to be read.
 					/// Can return a `MessageHandlingError` if the message could not be handled.

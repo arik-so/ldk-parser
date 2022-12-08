@@ -128,7 +128,7 @@
 					}
 				}
 
-				public class NativelyImplementedLockableScore: LockableScore {
+				internal class NativelyImplementedLockableScore: LockableScore {
 					
 					/// Returns the locked scorer.
 					public override func lock() -> Score {

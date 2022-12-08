@@ -195,7 +195,7 @@
 					}
 				}
 
-				public class NativelyImplementedBindingsType: BindingsType {
+				internal class NativelyImplementedBindingsType: BindingsType {
 					
 					/// Returns the type identifying the message payload.
 					public override func typeId() -> UInt16 {

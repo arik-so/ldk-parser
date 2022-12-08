@@ -123,7 +123,7 @@
 					}
 				}
 
-				public class NativelyImplementedOnionMessageProvider: OnionMessageProvider {
+				internal class NativelyImplementedOnionMessageProvider: OnionMessageProvider {
 					
 					/// Gets the next pending onion message for the peer with the given node id.
 					/// 

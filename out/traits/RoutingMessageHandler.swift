@@ -441,7 +441,7 @@
 					}
 				}
 
-				public class NativelyImplementedRoutingMessageHandler: RoutingMessageHandler {
+				internal class NativelyImplementedRoutingMessageHandler: RoutingMessageHandler {
 					
 					/// Handle an incoming node_announcement message, returning true if it should be forwarded on,
 					/// false or returning an Err otherwise.

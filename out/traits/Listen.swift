@@ -192,7 +192,7 @@
 					}
 				}
 
-				public class NativelyImplementedListen: Listen {
+				internal class NativelyImplementedListen: Listen {
 					
 					/// Notifies the listener that a block was added at the given height, with the transaction data
 					/// possibly filtered.
