@@ -238,7 +238,7 @@
 					/// [`best_block_updated`]: Self::best_block_updated
 					open func transactionsConfirmed(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) -> Void {
 						
-						Bindings.print("Error: Confirm::transactionsConfirmed MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Confirm::transactionsConfirmed MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -252,7 +252,7 @@
 					/// [`transactions_confirmed`]: Self::transactions_confirmed
 					open func transactionUnconfirmed(txid: [UInt8]?) -> Void {
 						
-						Bindings.print("Error: Confirm::transactionUnconfirmed MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Confirm::transactionUnconfirmed MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -262,7 +262,7 @@
 					/// if they become available at the same time.
 					open func bestBlockUpdated(header: [UInt8]?, height: UInt32) -> Void {
 						
-						Bindings.print("Error: Confirm::bestBlockUpdated MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Confirm::bestBlockUpdated MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -281,7 +281,7 @@
 					/// [`transaction_unconfirmed`]: Self::transaction_unconfirmed
 					open func getRelevantTxids() -> [[UInt8]] {
 						
-						Bindings.print("Error: Confirm::getRelevantTxids MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Confirm::getRelevantTxids MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -290,9 +290,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: Confirm::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Confirm::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

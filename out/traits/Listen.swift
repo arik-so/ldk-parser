@@ -161,21 +161,21 @@
 					/// possibly filtered.
 					open func filteredBlockConnected(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) -> Void {
 						
-						Bindings.print("Error: Listen::filteredBlockConnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Listen::filteredBlockConnected MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Notifies the listener that a block was added at the given height.
 					open func blockConnected(block: [UInt8], height: UInt32) -> Void {
 						
-						Bindings.print("Error: Listen::blockConnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Listen::blockConnected MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Notifies the listener that a block was removed at the given height.
 					open func blockDisconnected(header: [UInt8]?, height: UInt32) -> Void {
 						
-						Bindings.print("Error: Listen::blockDisconnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Listen::blockDisconnected MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -184,9 +184,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: Listen::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Listen::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

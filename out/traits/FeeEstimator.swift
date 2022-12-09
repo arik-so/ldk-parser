@@ -107,7 +107,7 @@
 					/// * satoshis-per-kbyte / 4
 					open func getEstSatPer_1000Weight(confirmationTarget: ConfirmationTarget) -> UInt32 {
 						
-						Bindings.print("Error: FeeEstimator::getEstSatPer_1000Weight MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: FeeEstimator::getEstSatPer_1000Weight MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -116,9 +116,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: FeeEstimator::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: FeeEstimator::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

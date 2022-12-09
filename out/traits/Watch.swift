@@ -177,7 +177,7 @@
 					/// [`block_disconnected`]: channelmonitor::ChannelMonitor::block_disconnected
 					open func watchChannel(fundingTxo: OutPoint, monitor: ChannelMonitor) -> ChannelMonitorUpdateStatus {
 						
-						Bindings.print("Error: Watch::watchChannel MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Watch::watchChannel MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -189,7 +189,7 @@
 					/// [`update_monitor`]: channelmonitor::ChannelMonitor::update_monitor
 					open func updateChannel(fundingTxo: OutPoint, update: ChannelMonitorUpdate) -> ChannelMonitorUpdateStatus {
 						
-						Bindings.print("Error: Watch::updateChannel MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Watch::updateChannel MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -204,7 +204,7 @@
 					/// [`MonitorEvent::Completed`] here, see [`ChannelMonitorUpdateStatus::InProgress`].
 					open func releasePendingMonitorEvents() -> [(OutPoint, [MonitorEvent], [UInt8])] {
 						
-						Bindings.print("Error: Watch::releasePendingMonitorEvents MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Watch::releasePendingMonitorEvents MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -213,9 +213,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: Watch::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Watch::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

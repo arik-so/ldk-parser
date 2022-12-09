@@ -129,7 +129,7 @@
 					/// Called with the custom message that was received.
 					open func handleCustomMessage(msg: CustomOnionMessageContents) -> Void {
 						
-						Bindings.print("Error: CustomOnionMessageHandler::handleCustomMessage MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomOnionMessageHandler::handleCustomMessage MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -137,7 +137,7 @@
 					/// message type is unknown.
 					open func readCustomMessage(messageType: UInt64, buffer: [UInt8]) -> Result_COption_CustomOnionMessageContentsZDecodeErrorZ {
 						
-						Bindings.print("Error: CustomOnionMessageHandler::readCustomMessage MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomOnionMessageHandler::readCustomMessage MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -146,9 +146,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: CustomOnionMessageHandler::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomOnionMessageHandler::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

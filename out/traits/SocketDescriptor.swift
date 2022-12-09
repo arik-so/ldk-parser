@@ -188,7 +188,7 @@
 					/// `resume_read` of false carries no meaning, and should not cause any action.
 					open func sendData(data: [UInt8], resumeRead: Bool) -> UInt {
 						
-						Bindings.print("Error: SocketDescriptor::sendData MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: SocketDescriptor::sendData MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -198,14 +198,14 @@
 					/// call (doing so is a noop).
 					open func disconnectSocket() -> Void {
 						
-						Bindings.print("Error: SocketDescriptor::disconnectSocket MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: SocketDescriptor::disconnectSocket MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Checks if two objects are equal given this object's this_arg pointer and another object.
 					open func eq(otherArg: SocketDescriptor) -> Bool {
 						
-						Bindings.print("Error: SocketDescriptor::eq MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: SocketDescriptor::eq MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -213,7 +213,7 @@
 					/// This is used, for example, for inclusion of this object in a hash map.
 					open func hash() -> UInt64 {
 						
-						Bindings.print("Error: SocketDescriptor::hash MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: SocketDescriptor::hash MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -222,9 +222,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: SocketDescriptor::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: SocketDescriptor::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

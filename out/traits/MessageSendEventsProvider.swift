@@ -93,7 +93,7 @@
 					/// in the process.
 					open func getAndClearPendingMsgEvents() -> [MessageSendEvent] {
 						
-						Bindings.print("Error: MessageSendEventsProvider::getAndClearPendingMsgEvents MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: MessageSendEventsProvider::getAndClearPendingMsgEvents MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -102,9 +102,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: MessageSendEventsProvider::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: MessageSendEventsProvider::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

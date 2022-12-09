@@ -92,7 +92,7 @@
 					/// Sends a transaction out to (hopefully) be mined.
 					open func broadcastTransaction(tx: [UInt8]) -> Void {
 						
-						Bindings.print("Error: BroadcasterInterface::broadcastTransaction MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: BroadcasterInterface::broadcastTransaction MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -101,9 +101,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: BroadcasterInterface::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: BroadcasterInterface::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

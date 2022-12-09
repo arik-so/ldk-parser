@@ -113,7 +113,7 @@
 					/// Can return a `MessageHandlingError` if the message could not be handled.
 					open func handleCustomMessage(msg: BindingsType, senderNodeId: [UInt8]) -> Result_NoneLightningErrorZ {
 						
-						Bindings.print("Error: CustomMessageHandler::handleCustomMessage MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomMessageHandler::handleCustomMessage MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -123,7 +123,7 @@
 					/// specified node does not exist, the message is simply not sent to it.
 					open func getAndClearPendingMsg() -> [([UInt8], BindingsType)] {
 						
-						Bindings.print("Error: CustomMessageHandler::getAndClearPendingMsg MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomMessageHandler::getAndClearPendingMsg MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -132,9 +132,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: CustomMessageHandler::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomMessageHandler::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

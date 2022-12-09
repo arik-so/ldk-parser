@@ -155,7 +155,7 @@
 					/// a spending condition.
 					open func registerTx(txid: [UInt8]?, scriptPubkey: [UInt8]) -> Void {
 						
-						Bindings.print("Error: Filter::registerTx MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Filter::registerTx MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -167,7 +167,7 @@
 					/// registered mid-processing.
 					open func registerOutput(output: WatchedOutput) -> Void {
 						
-						Bindings.print("Error: Filter::registerOutput MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Filter::registerOutput MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -176,9 +176,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: Filter::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Filter::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

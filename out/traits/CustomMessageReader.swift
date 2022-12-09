@@ -97,7 +97,7 @@
 					/// occur, must return `Err(DecodeError::X)` where `X` details the encountered error.
 					open func read(messageType: UInt16, buffer: [UInt8]) -> Result_COption_TypeZDecodeErrorZ {
 						
-						Bindings.print("Error: CustomMessageReader::read MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomMessageReader::read MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -106,9 +106,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: CustomMessageReader::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomMessageReader::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

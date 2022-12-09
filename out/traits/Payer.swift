@@ -187,14 +187,14 @@
 					/// Returns the payer's node id.
 					open func nodeId() -> [UInt8] {
 						
-						Bindings.print("Error: Payer::nodeId MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Payer::nodeId MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Returns the payer's channels.
 					open func firstHops() -> [ChannelDetails] {
 						
-						Bindings.print("Error: Payer::firstHops MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Payer::firstHops MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -203,28 +203,28 @@
 					/// Note that payment_secret (or a relevant inner pointer) may be NULL or all-0s to represent None
 					open func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
 						
-						Bindings.print("Error: Payer::sendPayment MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Payer::sendPayment MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Sends a spontaneous payment over the Lightning Network using the given [`Route`].
 					open func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
 						
-						Bindings.print("Error: Payer::sendSpontaneousPayment MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Payer::sendSpontaneousPayment MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Retries a failed payment path for the [`PaymentId`] using the given [`Route`].
 					open func retryPayment(route: Route, paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
 						
-						Bindings.print("Error: Payer::retryPayment MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Payer::retryPayment MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Signals that no further retries for the given payment will occur.
 					open func abandonPayment(paymentId: [UInt8]) -> Void {
 						
-						Bindings.print("Error: Payer::abandonPayment MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Payer::abandonPayment MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -233,9 +233,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: Payer::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Payer::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

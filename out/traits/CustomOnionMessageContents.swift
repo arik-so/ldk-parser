@@ -112,14 +112,14 @@
 					/// Returns the TLV type identifying the message contents. MUST be >= 64.
 					open func tlvType() -> UInt64 {
 						
-						Bindings.print("Error: CustomOnionMessageContents::tlvType MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomOnionMessageContents::tlvType MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Serialize the object into a byte array
 					open func write() -> [UInt8] {
 						
-						Bindings.print("Error: CustomOnionMessageContents::write MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomOnionMessageContents::write MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -128,9 +128,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: CustomOnionMessageContents::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: CustomOnionMessageContents::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

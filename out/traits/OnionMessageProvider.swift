@@ -94,7 +94,7 @@
 					/// Note that the return value (or a relevant inner pointer) may be NULL or all-0s to represent None
 					open func nextOnionMessageForPeer(peerNodeId: [UInt8]) -> OnionMessage {
 						
-						Bindings.print("Error: OnionMessageProvider::nextOnionMessageForPeer MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: OnionMessageProvider::nextOnionMessageForPeer MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -103,9 +103,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: OnionMessageProvider::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: OnionMessageProvider::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

@@ -135,21 +135,21 @@
 					/// Returns the type identifying the message payload.
 					open func typeId() -> UInt16 {
 						
-						Bindings.print("Error: BindingsType::typeId MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: BindingsType::typeId MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Return a human-readable "debug" string describing this object
 					open func debugStr() -> String {
 						
-						Bindings.print("Error: BindingsType::debugStr MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: BindingsType::debugStr MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Serialize the object into a byte array
 					open func write() -> [UInt8] {
 						
-						Bindings.print("Error: BindingsType::write MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: BindingsType::write MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -158,9 +158,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: BindingsType::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: BindingsType::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

@@ -223,7 +223,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		if(isFreeCallback) {
 			isFreeBody = `
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			`;
 		}
 
@@ -231,7 +231,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					${this.renderDocComment(lambda.documentation, 5)}
 					${visibility} func ${swiftMethodName}(${swiftMethodArguments.join(', ')}) -> ${swiftReturnType} {
 						${isFreeBody}
-						Bindings.print("Error: ${swiftTypeName}::${swiftMethodName} MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: ${swiftTypeName}::${swiftMethodName} MUST be overridden! Offending class: \\(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		`;

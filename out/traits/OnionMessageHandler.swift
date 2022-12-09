@@ -169,7 +169,7 @@
 					/// Handle an incoming onion_message message from the given peer.
 					open func handleOnionMessage(peerNodeId: [UInt8], msg: OnionMessage) -> Void {
 						
-						Bindings.print("Error: OnionMessageHandler::handleOnionMessage MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: OnionMessageHandler::handleOnionMessage MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -181,7 +181,7 @@
 					/// message handlers may still wish to communicate with this peer.
 					open func peerConnected(theirNodeId: [UInt8], initArgument: BindingsInit) -> Result_NoneNoneZ {
 						
-						Bindings.print("Error: OnionMessageHandler::peerConnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: OnionMessageHandler::peerConnected MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -192,7 +192,7 @@
 					/// [`Self::peer_connected`].
 					open func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) -> Void {
 						
-						Bindings.print("Error: OnionMessageHandler::peerDisconnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: OnionMessageHandler::peerDisconnected MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -201,7 +201,7 @@
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
 					open func providedNodeFeatures() -> NodeFeatures {
 						
-						Bindings.print("Error: OnionMessageHandler::providedNodeFeatures MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: OnionMessageHandler::providedNodeFeatures MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -212,7 +212,7 @@
 					/// Note that this method is called before [`Self::peer_connected`].
 					open func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
 						
-						Bindings.print("Error: OnionMessageHandler::providedInitFeatures MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: OnionMessageHandler::providedInitFeatures MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -221,9 +221,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: OnionMessageHandler::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: OnionMessageHandler::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		

@@ -130,21 +130,21 @@
 					/// Persist the given ['ChannelManager'] to disk, returning an error if persistence failed.
 					open func persistManager(channelManager: ChannelManager) -> Result_NoneErrorZ {
 						
-						Bindings.print("Error: Persister::persistManager MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Persister::persistManager MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Persist the given [`NetworkGraph`] to disk, returning an error if persistence failed.
 					open func persistGraph(networkGraph: NetworkGraph) -> Result_NoneErrorZ {
 						
-						Bindings.print("Error: Persister::persistGraph MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Persister::persistGraph MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Persist the given [`WriteableScore`] to disk, returning an error if persistence failed.
 					open func persistScorer(scorer: WriteableScore) -> Result_NoneErrorZ {
 						
-						Bindings.print("Error: Persister::persistScorer MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Persister::persistScorer MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -153,9 +153,9 @@
 					internal func free() -> Void {
 						
 				// TODO: figure out something smarter
-				return
+				return; // the semicolon is necessary because Swift is whitespace-agnostic
 			
-						Bindings.print("Error: Persister::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: Persister::free MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
