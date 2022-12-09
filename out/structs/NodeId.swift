@@ -76,7 +76,7 @@
 					}
 		
 					/// Create a new NodeId from a public key
-					public class func initFromPubkey(pubkey: [UInt8]) -> NodeId {
+					public class func initWithPubkey(pubkey: [UInt8]) -> NodeId {
 						// native call variable prep
 						
 						let pubkeyPrimitiveWrapper = PublicKey(value: pubkey)

@@ -310,10 +310,16 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					// if the method name isn't new, we want an `initWith` name. For now.
 					const suffix = Generator.snakeCaseToCamelCase(standaloneMethodName, true);
 					if (suffix.startsWith('From')) {
-						return 'init' + suffix;
+						// example: fromPubkey -> initWithPubkey
+						return 'initWith' + suffix.substring(4);
 					}
 					if (suffix.startsWith('New')) {
+						// example: NewP2wpkh -> initWithP2wpkh
 						return 'initWith' + suffix.substring(3);
+					}
+					if (suffix.startsWith('For')) {
+						// example: forKeysend -> initForKeysend
+						return 'init' + suffix;
 					}
 					return 'initWith' + suffix;
 				}

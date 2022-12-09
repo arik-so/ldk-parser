@@ -104,7 +104,7 @@
 		
 					/// Constructs a `BestBlock` that represents the genesis block at height 0 of the given
 					/// network.
-					public class func initFromGenesis(network: Network) -> BestBlock {
+					public class func initWithGenesis(network: Network) -> BestBlock {
 						// native call variable prep
 						
 
