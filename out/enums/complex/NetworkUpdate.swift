@@ -110,7 +110,7 @@
 					}
 		
 					/// Utility method to constructs a new ChannelUpdateMessage-variant NetworkUpdate
-					public init(msg: Bindings.ChannelUpdate) {
+					public class func initWithChannelUpdateMessage(msg: Bindings.ChannelUpdate) -> NetworkUpdate {
 						// native call variable prep
 						
 
@@ -123,17 +123,11 @@
 						// return value (do some wrapping)
 						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ChannelFailure-variant NetworkUpdate
-					public init(shortChannelId: UInt64, isPermanent: Bool) {
+					public class func initWithChannelFailure(shortChannelId: UInt64, isPermanent: Bool) -> NetworkUpdate {
 						// native call variable prep
 						
 
@@ -146,17 +140,11 @@
 						// return value (do some wrapping)
 						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new NodeFailure-variant NetworkUpdate
-					public init(nodeId: [UInt8], isPermanent: Bool) {
+					public class func initWithNodeFailure(nodeId: [UInt8], isPermanent: Bool) -> NetworkUpdate {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -171,13 +159,7 @@
 						// return value (do some wrapping)
 						let returnValue = NetworkUpdate(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Checks if two NetworkUpdates contain equal inner contents.

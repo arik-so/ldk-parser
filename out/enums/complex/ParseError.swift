@@ -196,7 +196,7 @@
 					}
 		
 					/// Utility method to constructs a new Bech32Error-variant ParseError
-					public init(a: Bech32Error) {
+					public class func initWithBech32Error(a: Bech32Error) -> ParseError {
 						// native call variable prep
 						
 
@@ -209,13 +209,7 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ParseAmountError-variant ParseError
@@ -236,7 +230,7 @@
 					}
 		
 					/// Utility method to constructs a new MalformedSignature-variant ParseError
-					public init(a: Secp256k1Error) {
+					public class func initWithMalformedSignature(a: Secp256k1Error) -> ParseError {
 						// native call variable prep
 						
 
@@ -249,13 +243,7 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new BadPrefix-variant ParseError
@@ -480,7 +468,7 @@
 					}
 		
 					/// Utility method to constructs a new InvalidSliceLength-variant ParseError
-					public init(a: String) {
+					public class func initWithInvalidSliceLength(a: String) -> ParseError {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = Str(value: a)
@@ -495,13 +483,7 @@
 						// return value (do some wrapping)
 						let returnValue = ParseError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Skip-variant ParseError

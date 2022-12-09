@@ -104,7 +104,7 @@
 					}
 		
 					/// Utility method to constructs a new SegWitProgram-variant Fallback
-					public init(version: UInt8, program: [UInt8]) {
+					public class func initWithSegWitProgram(version: UInt8, program: [UInt8]) -> Fallback {
 						// native call variable prep
 						
 						let versionPrimitiveWrapper = u5(value: version)
@@ -123,13 +123,7 @@
 						// return value (do some wrapping)
 						let returnValue = Fallback(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new PubKeyHash-variant Fallback

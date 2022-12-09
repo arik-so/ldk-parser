@@ -40,7 +40,7 @@
 
 					
 					/// Creates a new CResult_ChannelMonitorUpdateDecodeErrorZ in the success state.
-					public init(o: ChannelMonitorUpdate) {
+					public class func initWithOk(o: ChannelMonitorUpdate) -> Result_ChannelMonitorUpdateDecodeErrorZ {
 						// native call variable prep
 						
 
@@ -53,17 +53,11 @@
 						// return value (do some wrapping)
 						let returnValue = Result_ChannelMonitorUpdateDecodeErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Creates a new CResult_ChannelMonitorUpdateDecodeErrorZ in the error state.
-					public init(e: DecodeError) {
+					public class func initWithErr(e: DecodeError) -> Result_ChannelMonitorUpdateDecodeErrorZ {
 						// native call variable prep
 						
 
@@ -76,13 +70,7 @@
 						// return value (do some wrapping)
 						let returnValue = Result_ChannelMonitorUpdateDecodeErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Frees any resources used by the CResult_ChannelMonitorUpdateDecodeErrorZ.

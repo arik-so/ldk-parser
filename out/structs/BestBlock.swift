@@ -104,7 +104,7 @@
 		
 					/// Constructs a `BestBlock` that represents the genesis block at height 0 of the given
 					/// network.
-					public init(network: Network) {
+					public class func initFromGenesis(network: Network) -> BestBlock {
 						// native call variable prep
 						
 
@@ -117,13 +117,7 @@
 						// return value (do some wrapping)
 						let returnValue = BestBlock(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Returns a `BestBlock` as identified by the given block hash and height.

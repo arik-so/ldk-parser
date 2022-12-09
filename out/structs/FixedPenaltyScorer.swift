@@ -76,7 +76,7 @@
 					}
 		
 					/// Creates a new scorer using `penalty_msat`.
-					public init(penaltyMsat: UInt64) {
+					public class func initWithWithPenalty(penaltyMsat: UInt64) -> FixedPenaltyScorer {
 						// native call variable prep
 						
 
@@ -89,13 +89,7 @@
 						// return value (do some wrapping)
 						let returnValue = FixedPenaltyScorer(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Constructs a new Score which calls the relevant methods on this_arg.

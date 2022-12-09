@@ -40,7 +40,7 @@
 
 					
 					/// Creates a new CResult_StringErrorZ in the success state.
-					public init(o: String) {
+					public class func initWithOk(o: String) -> Result_StringErrorZ {
 						// native call variable prep
 						
 						let oPrimitiveWrapper = Str(value: o)
@@ -55,17 +55,11 @@
 						// return value (do some wrapping)
 						let returnValue = Result_StringErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Creates a new CResult_StringErrorZ in the error state.
-					public init(e: Secp256k1Error) {
+					public class func initWithErr(e: Secp256k1Error) -> Result_StringErrorZ {
 						// native call variable prep
 						
 
@@ -78,13 +72,7 @@
 						// return value (do some wrapping)
 						let returnValue = Result_StringErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Frees any resources used by the CResult_StringErrorZ.

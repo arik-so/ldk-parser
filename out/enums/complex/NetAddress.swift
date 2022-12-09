@@ -159,7 +159,7 @@
 					}
 		
 					/// Utility method to constructs a new OnionV2-variant NetAddress
-					public init(a: [UInt8]) {
+					public class func initWithOnionV2(a: [UInt8]) -> NetAddress {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = TwelveBytes(value: a)
@@ -174,17 +174,11 @@
 						// return value (do some wrapping)
 						let returnValue = NetAddress(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new OnionV3-variant NetAddress
-					public init(ed25519Pubkey: [UInt8], checksum: UInt16, version: UInt8, port: UInt16) {
+					public class func initWithOnionV3(ed25519Pubkey: [UInt8], checksum: UInt16, version: UInt8, port: UInt16) -> NetAddress {
 						// native call variable prep
 						
 						let ed25519PubkeyPrimitiveWrapper = ThirtyTwoBytes(value: ed25519Pubkey)
@@ -199,17 +193,11 @@
 						// return value (do some wrapping)
 						let returnValue = NetAddress(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Hostname-variant NetAddress
-					public init(hostname: Bindings.Hostname, port: UInt16) {
+					public class func initWithHostname(hostname: Bindings.Hostname, port: UInt16) -> NetAddress {
 						// native call variable prep
 						
 
@@ -222,13 +210,7 @@
 						// return value (do some wrapping)
 						let returnValue = NetAddress(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Checks if two NetAddresss contain equal inner contents.

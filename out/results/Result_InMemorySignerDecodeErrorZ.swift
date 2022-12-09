@@ -40,7 +40,7 @@
 
 					
 					/// Creates a new CResult_InMemorySignerDecodeErrorZ in the success state.
-					public init(o: InMemorySigner) {
+					public class func initWithOk(o: InMemorySigner) -> Result_InMemorySignerDecodeErrorZ {
 						// native call variable prep
 						
 
@@ -53,17 +53,11 @@
 						// return value (do some wrapping)
 						let returnValue = Result_InMemorySignerDecodeErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Creates a new CResult_InMemorySignerDecodeErrorZ in the error state.
-					public init(e: DecodeError) {
+					public class func initWithErr(e: DecodeError) -> Result_InMemorySignerDecodeErrorZ {
 						// native call variable prep
 						
 
@@ -76,13 +70,7 @@
 						// return value (do some wrapping)
 						let returnValue = Result_InMemorySignerDecodeErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Frees any resources used by the CResult_InMemorySignerDecodeErrorZ.

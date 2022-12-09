@@ -272,7 +272,7 @@
 					}
 		
 					/// Utility method to constructs a new FundingGenerationReady-variant Event
-					public init(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], channelValueSatoshis: UInt64, outputScript: [UInt8], userChannelId: UInt64) {
+					public class func initWithFundingGenerationReady(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], channelValueSatoshis: UInt64, outputScript: [UInt8], userChannelId: UInt64) -> Event {
 						// native call variable prep
 						
 						let temporaryChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: temporaryChannelId)
@@ -293,13 +293,7 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new PaymentReceived-variant Event
@@ -341,7 +335,7 @@
 					}
 		
 					/// Utility method to constructs a new PaymentSent-variant Event
-					public init(paymentId: [UInt8], paymentPreimage: [UInt8], paymentHash: [UInt8], feePaidMsat: UInt64?) {
+					public class func initWithPaymentSent(paymentId: [UInt8], paymentPreimage: [UInt8], paymentHash: [UInt8], feePaidMsat: UInt64?) -> Event {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -362,13 +356,7 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new PaymentFailed-variant Event
@@ -418,7 +406,7 @@
 					}
 		
 					/// Utility method to constructs a new PaymentPathFailed-variant Event
-					public init(paymentId: [UInt8], paymentHash: [UInt8], paymentFailedPermanently: Bool, networkUpdate: NetworkUpdate?, allPathsFailed: Bool, path: [RouteHop], shortChannelId: UInt64?, retry: Bindings.RouteParameters) {
+					public class func initWithPaymentPathFailed(paymentId: [UInt8], paymentHash: [UInt8], paymentFailedPermanently: Bool, networkUpdate: NetworkUpdate?, allPathsFailed: Bool, path: [RouteHop], shortChannelId: UInt64?, retry: Bindings.RouteParameters) -> Event {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -443,13 +431,7 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ProbeSuccessful-variant Event
@@ -478,7 +460,7 @@
 					}
 		
 					/// Utility method to constructs a new ProbeFailed-variant Event
-					public init(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop], shortChannelId: UInt64?) {
+					public class func initWithProbeFailed(paymentId: [UInt8], paymentHash: [UInt8], path: [RouteHop], shortChannelId: UInt64?) -> Event {
 						// native call variable prep
 						
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
@@ -501,17 +483,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new PendingHTLCsForwardable-variant Event
-					public init(timeForwardable: UInt64) {
+					public class func initWithPendingHtlcsForwardable(timeForwardable: UInt64) -> Event {
 						// native call variable prep
 						
 
@@ -524,17 +500,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new SpendableOutputs-variant Event
-					public init(outputs: [SpendableOutputDescriptor]) {
+					public class func initWithSpendableOutputs(outputs: [SpendableOutputDescriptor]) -> Event {
 						// native call variable prep
 						
 						let outputsVector = Vec_SpendableOutputDescriptorZ(array: outputs)
@@ -551,17 +521,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new PaymentForwarded-variant Event
-					public init(prevChannelId: [UInt8], nextChannelId: [UInt8], feeEarnedMsat: UInt64?, claimFromOnchainTx: Bool) {
+					public class func initWithPaymentForwarded(prevChannelId: [UInt8], nextChannelId: [UInt8], feeEarnedMsat: UInt64?, claimFromOnchainTx: Bool) -> Event {
 						// native call variable prep
 						
 						let prevChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: prevChannelId)
@@ -580,17 +544,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new ChannelClosed-variant Event
-					public init(channelId: [UInt8], userChannelId: UInt64, reason: ClosureReason) {
+					public class func initWithChannelClosed(channelId: [UInt8], userChannelId: UInt64, reason: ClosureReason) -> Event {
 						// native call variable prep
 						
 						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
@@ -605,13 +563,7 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new DiscardFunding-variant Event
@@ -636,7 +588,7 @@
 					}
 		
 					/// Utility method to constructs a new OpenChannelRequest-variant Event
-					public init(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], fundingSatoshis: UInt64, pushMsat: UInt64, channelType: Bindings.ChannelTypeFeatures) {
+					public class func initWithOpenChannelRequest(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], fundingSatoshis: UInt64, pushMsat: UInt64, channelType: Bindings.ChannelTypeFeatures) -> Event {
 						// native call variable prep
 						
 						let temporaryChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: temporaryChannelId)
@@ -653,17 +605,11 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new HTLCHandlingFailed-variant Event
-					public init(prevChannelId: [UInt8], failedNextDestination: HTLCDestination) {
+					public class func initWithHtlchandlingFailed(prevChannelId: [UInt8], failedNextDestination: HTLCDestination) -> Event {
 						// native call variable prep
 						
 						let prevChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: prevChannelId)
@@ -678,13 +624,7 @@
 						// return value (do some wrapping)
 						let returnValue = Event(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Serialize the Event object into a byte array which can be read by Event_read

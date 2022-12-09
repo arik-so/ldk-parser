@@ -40,7 +40,7 @@
 
 					
 					/// Creates a new CResult_TrustedClosingTransactionNoneZ in the success state.
-					public init(o: TrustedClosingTransaction) {
+					public class func initWithOk(o: TrustedClosingTransaction) -> Result_TrustedClosingTransactionNoneZ {
 						// native call variable prep
 						
 
@@ -53,17 +53,11 @@
 						// return value (do some wrapping)
 						let returnValue = Result_TrustedClosingTransactionNoneZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Creates a new CResult_TrustedClosingTransactionNoneZ in the error state.
-					public init() {
+					public class func initWithErr() -> Result_TrustedClosingTransactionNoneZ {
 						// native call variable prep
 						
 
@@ -76,13 +70,7 @@
 						// return value (do some wrapping)
 						let returnValue = Result_TrustedClosingTransactionNoneZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Frees any resources used by the CResult_TrustedClosingTransactionNoneZ.

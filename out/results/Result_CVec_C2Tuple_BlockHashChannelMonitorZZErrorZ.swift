@@ -40,7 +40,7 @@
 
 					
 					/// Creates a new CResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ in the success state.
-					public init(o: [([UInt8], ChannelMonitor)]) {
+					public class func initWithOk(o: [([UInt8], ChannelMonitor)]) -> Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ {
 						// native call variable prep
 						
 						let oVector = Vec_C2Tuple_BlockHashChannelMonitorZZ(array: o)
@@ -57,17 +57,11 @@
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Creates a new CResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ in the error state.
-					public init(e: IOError) {
+					public class func initWithErr(e: IOError) -> Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ {
 						// native call variable prep
 						
 
@@ -80,13 +74,7 @@
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Frees any resources used by the CResult_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ.

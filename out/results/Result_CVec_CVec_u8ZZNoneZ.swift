@@ -40,7 +40,7 @@
 
 					
 					/// Creates a new CResult_CVec_CVec_u8ZZNoneZ in the success state.
-					public init(o: [[UInt8]]) {
+					public class func initWithOk(o: [[UInt8]]) -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						
 						let oVector = Vec_CVec_u8ZZ(array: o)
@@ -57,17 +57,11 @@
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Creates a new CResult_CVec_CVec_u8ZZNoneZ in the error state.
-					public init() {
+					public class func initWithErr() -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						
 
@@ -80,13 +74,7 @@
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Frees any resources used by the CResult_CVec_CVec_u8ZZNoneZ.

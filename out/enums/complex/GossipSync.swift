@@ -83,7 +83,7 @@
 					}
 		
 					/// Utility method to constructs a new P2P-variant GossipSync
-					public init(a: Bindings.P2PGossipSync) {
+					public class func initWithP2P(a: Bindings.P2PGossipSync) -> GossipSync {
 						// native call variable prep
 						
 
@@ -100,17 +100,11 @@
 						// return value (do some wrapping)
 						let returnValue = GossipSync(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Rapid-variant GossipSync
-					public init(a: Bindings.RapidGossipSync) {
+					public class func initWithRapid(a: Bindings.RapidGossipSync) -> GossipSync {
 						// native call variable prep
 						
 
@@ -127,13 +121,7 @@
 						// return value (do some wrapping)
 						let returnValue = GossipSync(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new None-variant GossipSync

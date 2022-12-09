@@ -40,7 +40,7 @@
 
 					
 					/// Creates a new CResult_PublicKeyNoneZ in the success state.
-					public init(o: [UInt8]) {
+					public class func initWithOk(o: [UInt8]) -> Result_PublicKeyNoneZ {
 						// native call variable prep
 						
 						let oPrimitiveWrapper = PublicKey(value: o)
@@ -55,17 +55,11 @@
 						// return value (do some wrapping)
 						let returnValue = Result_PublicKeyNoneZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Creates a new CResult_PublicKeyNoneZ in the error state.
-					public init() {
+					public class func initWithErr() -> Result_PublicKeyNoneZ {
 						// native call variable prep
 						
 
@@ -78,13 +72,7 @@
 						// return value (do some wrapping)
 						let returnValue = Result_PublicKeyNoneZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Frees any resources used by the CResult_PublicKeyNoneZ.

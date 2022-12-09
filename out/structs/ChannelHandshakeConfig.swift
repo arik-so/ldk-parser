@@ -669,7 +669,7 @@
 					}
 		
 					/// Creates a "default" ChannelHandshakeConfig. See struct and individual field documentaiton for details on which values are used.
-					public init() {
+					public class func initWithDefault() -> ChannelHandshakeConfig {
 						// native call variable prep
 						
 
@@ -682,13 +682,7 @@
 						// return value (do some wrapping)
 						let returnValue = ChannelHandshakeConfig(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 

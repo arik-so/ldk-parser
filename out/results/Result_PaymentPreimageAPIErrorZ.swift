@@ -40,7 +40,7 @@
 
 					
 					/// Creates a new CResult_PaymentPreimageAPIErrorZ in the success state.
-					public init(o: [UInt8]) {
+					public class func initWithOk(o: [UInt8]) -> Result_PaymentPreimageAPIErrorZ {
 						// native call variable prep
 						
 						let oPrimitiveWrapper = ThirtyTwoBytes(value: o)
@@ -55,17 +55,11 @@
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentPreimageAPIErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Creates a new CResult_PaymentPreimageAPIErrorZ in the error state.
-					public init(e: APIError) {
+					public class func initWithErr(e: APIError) -> Result_PaymentPreimageAPIErrorZ {
 						// native call variable prep
 						
 
@@ -78,13 +72,7 @@
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentPreimageAPIErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Frees any resources used by the CResult_PaymentPreimageAPIErrorZ.

@@ -104,7 +104,7 @@
 					}
 		
 					/// Utility method to constructs a new Invoice-variant PaymentError
-					public init(a: String) {
+					public class func initWithInvoice(a: String) -> PaymentError {
 						// native call variable prep
 						
 						let aPrimitiveWrapper = Str(value: a)
@@ -119,17 +119,11 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Routing-variant PaymentError
-					public init(a: Bindings.LightningError) {
+					public class func initWithRouting(a: Bindings.LightningError) -> PaymentError {
 						// native call variable prep
 						
 
@@ -142,17 +136,11 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Sending-variant PaymentError
-					public init(a: PaymentSendFailure) {
+					public class func initWithSending(a: PaymentSendFailure) -> PaymentError {
 						// native call variable prep
 						
 
@@ -165,13 +153,7 @@
 						// return value (do some wrapping)
 						let returnValue = PaymentError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 

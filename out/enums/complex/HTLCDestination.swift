@@ -111,7 +111,7 @@
 					}
 		
 					/// Utility method to constructs a new NextHopChannel-variant HTLCDestination
-					public init(nodeId: [UInt8], channelId: [UInt8]) {
+					public class func initWithNextHopChannel(nodeId: [UInt8], channelId: [UInt8]) -> HTLCDestination {
 						// native call variable prep
 						
 						let nodeIdPrimitiveWrapper = PublicKey(value: nodeId)
@@ -128,17 +128,11 @@
 						// return value (do some wrapping)
 						let returnValue = HTLCDestination(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new UnknownNextHop-variant HTLCDestination
-					public init(requestedForwardScid: UInt64) {
+					public class func initWithUnknownNextHop(requestedForwardScid: UInt64) -> HTLCDestination {
 						// native call variable prep
 						
 
@@ -151,17 +145,11 @@
 						// return value (do some wrapping)
 						let returnValue = HTLCDestination(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new FailedPayment-variant HTLCDestination
-					public init(paymentHash: [UInt8]) {
+					public class func initWithFailedPayment(paymentHash: [UInt8]) -> HTLCDestination {
 						// native call variable prep
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
@@ -176,13 +164,7 @@
 						// return value (do some wrapping)
 						let returnValue = HTLCDestination(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Checks if two HTLCDestinations contain equal inner contents.

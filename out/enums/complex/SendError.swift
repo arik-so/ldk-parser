@@ -126,7 +126,7 @@
 					}
 		
 					/// Utility method to constructs a new Secp256k1-variant SendError
-					public init(a: Secp256k1Error) {
+					public class func initWithSecp256k1(a: Secp256k1Error) -> SendError {
 						// native call variable prep
 						
 
@@ -139,13 +139,7 @@
 						// return value (do some wrapping)
 						let returnValue = SendError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new TooBigPacket-variant SendError

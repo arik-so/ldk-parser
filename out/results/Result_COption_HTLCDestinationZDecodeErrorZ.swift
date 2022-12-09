@@ -40,7 +40,7 @@
 
 					
 					/// Creates a new CResult_COption_HTLCDestinationZDecodeErrorZ in the success state.
-					public init(o: HTLCDestination?) {
+					public class func initWithOk(o: HTLCDestination?) -> Result_COption_HTLCDestinationZDecodeErrorZ {
 						// native call variable prep
 						
 						let oOption = Option_HTLCDestinationZ(some: o)
@@ -55,17 +55,11 @@
 						// return value (do some wrapping)
 						let returnValue = Result_COption_HTLCDestinationZDecodeErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Creates a new CResult_COption_HTLCDestinationZDecodeErrorZ in the error state.
-					public init(e: DecodeError) {
+					public class func initWithErr(e: DecodeError) -> Result_COption_HTLCDestinationZDecodeErrorZ {
 						// native call variable prep
 						
 
@@ -78,13 +72,7 @@
 						// return value (do some wrapping)
 						let returnValue = Result_COption_HTLCDestinationZDecodeErrorZ(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Frees any resources used by the CResult_COption_HTLCDestinationZDecodeErrorZ.

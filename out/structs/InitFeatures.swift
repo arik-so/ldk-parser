@@ -103,7 +103,7 @@
 					}
 		
 					/// Create a blank Features with no features set
-					public init() {
+					public class func initWithEmpty() -> InitFeatures {
 						// native call variable prep
 						
 
@@ -116,13 +116,7 @@
 						// return value (do some wrapping)
 						let returnValue = InitFeatures(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Returns true if this `Features` object contains unknown feature flags which are set as

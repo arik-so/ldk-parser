@@ -86,7 +86,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
         }
 
         print("Collected channel monitors, reading channel manager")
-        let channelManagerReadArgs = ChannelManagerReadArgs(keysManager: keys_interface, feeEstimator: fee_estimator, chainMonitor: chain_monitor.asWatch(), txBroadcaster: tx_broadcaster, logger: logger, defaultConfig: UserConfig(), channelMonitors: monitors)
+        let channelManagerReadArgs = ChannelManagerReadArgs(keysManager: keys_interface, feeEstimator: fee_estimator, chainMonitor: chain_monitor.asWatch(), txBroadcaster: tx_broadcaster, logger: logger, defaultConfig: UserConfig.initWithDefault(), channelMonitors: monitors)
         
         guard let (latestBlockHash, channelManager) = Bindings.readBlockHashChannelManager(ser: channel_manager_serialized, arg: channelManagerReadArgs).getValue() else {
             throw InvalidSerializedDataError.invalidSerializedChannelManager
@@ -117,7 +117,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
         var messageHandler: MessageHandler!
         if let netGraph = net_graph, enableP2PGossip {
             let p2pGossipSync = P2PGossipSync(networkGraph: netGraph, chainAccess: nil, logger: logger)
-            self.graph_msg_handler = GossipSync(a: p2pGossipSync)
+            self.graph_msg_handler = GossipSync.initWithP2P(a: p2pGossipSync)
             messageHandler = MessageHandler(chanHandlerArg: channelManager.asChannelMessageHandler(), routeHandlerArg: p2pGossipSync.asRoutingMessageHandler(), onionMessageHandlerArg: noCustomMessages.asOnionMessageHandler())
         } else {
             messageHandler = MessageHandler(chanHandlerArg: channelManager.asChannelMessageHandler(), routeHandlerArg: noCustomMessages.asRoutingMessageHandler(), onionMessageHandlerArg: noCustomMessages.asOnionMessageHandler())
@@ -163,7 +163,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
         var messageHandler: MessageHandler!
         if let netGraph = net_graph, enableP2PGossip {
             let p2pGossipSync = P2PGossipSync(networkGraph: netGraph, chainAccess: nil, logger: logger)
-            self.graph_msg_handler = GossipSync(a: p2pGossipSync)
+            self.graph_msg_handler = GossipSync.initWithP2P(a: p2pGossipSync)
             messageHandler = MessageHandler(chanHandlerArg: channelManager.asChannelMessageHandler(), routeHandlerArg: p2pGossipSync.asRoutingMessageHandler(), onionMessageHandlerArg: noCustomMessages.asOnionMessageHandler())
         } else {
             messageHandler = MessageHandler(chanHandlerArg: channelManager.asChannelMessageHandler(), routeHandlerArg: noCustomMessages.asRoutingMessageHandler(), onionMessageHandlerArg: noCustomMessages.asOnionMessageHandler())
@@ -217,7 +217,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
             // either dangle router, or set is_owned to false
             scorer.cType!.is_owned = false
             router.cType!.is_owned = false
-            self.payer = InvoicePayer(payer: self.channelManager.asPayer(), router: router.asRouter(), logger: self.logger, eventHandler: self.customEventHandler!, retry: Retry(a: UInt(3)))
+            self.payer = InvoicePayer(payer: self.channelManager.asPayer(), router: router.asRouter(), logger: self.logger, eventHandler: self.customEventHandler!, retry: Retry.initWithAttempts(a: UInt(3)))
             router.cType!.is_owned = true
             self.customEventHandler = self.payer!.asEventHandler()
         }
@@ -225,7 +225,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
         // if there is a graph msg handler, set its is_owned to false
         // self.graph_msg_handler?.cOpaqueStruct?.is_owned = false
 
-        self.backgroundProcessor = BackgroundProcessor(persister: self.customPersister!, eventHandler: self.customEventHandler!, chainMonitor: self.chain_monitor, channelManager: self.channelManager, gossipSync: self.graph_msg_handler ?? GossipSync.none(), peerManager: self.peerManager, logger: self.logger, scorer: self.scorer?.asWriteableScore())
+        self.backgroundProcessor = BackgroundProcessor.start(persister: self.customPersister!, eventHandler: self.customEventHandler!, chainMonitor: self.chain_monitor, channelManager: self.channelManager, gossipSync: self.graph_msg_handler ?? GossipSync.none(), peerManager: self.peerManager, logger: self.logger, scorer: self.scorer?.asWriteableScore())
 
         // restore it back to true
         // self.graph_msg_handler?.cOpaqueStruct?.is_owned = true

@@ -216,7 +216,7 @@
 					}
 		
 					/// Utility method to constructs a new Io-variant DecodeError
-					public init(a: IOError) {
+					public class func initWithIo(a: IOError) -> DecodeError {
 						// native call variable prep
 						
 
@@ -229,13 +229,7 @@
 						// return value (do some wrapping)
 						let returnValue = DecodeError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new UnsupportedCompression-variant DecodeError

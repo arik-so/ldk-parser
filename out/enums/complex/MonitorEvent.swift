@@ -116,7 +116,7 @@
 					}
 		
 					/// Utility method to constructs a new HTLCEvent-variant MonitorEvent
-					public init(a: Bindings.HTLCUpdate) {
+					public class func initWithHtlcevent(a: Bindings.HTLCUpdate) -> MonitorEvent {
 						// native call variable prep
 						
 
@@ -129,13 +129,7 @@
 						// return value (do some wrapping)
 						let returnValue = MonitorEvent(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new CommitmentTxConfirmed-variant MonitorEvent
@@ -156,7 +150,7 @@
 					}
 		
 					/// Utility method to constructs a new Completed-variant MonitorEvent
-					public init(fundingTxo: Bindings.OutPoint, monitorUpdateId: UInt64) {
+					public class func initWithCompleted(fundingTxo: Bindings.OutPoint, monitorUpdateId: UInt64) -> MonitorEvent {
 						// native call variable prep
 						
 
@@ -169,13 +163,7 @@
 						// return value (do some wrapping)
 						let returnValue = MonitorEvent(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new UpdateFailed-variant MonitorEvent

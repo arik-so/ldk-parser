@@ -159,7 +159,7 @@
 					}
 		
 					/// Utility method to constructs a new IgnoreAndLog-variant ErrorAction
-					public init(a: Level) {
+					public class func initWithIgnoreAndLog(a: Level) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -172,13 +172,7 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new IgnoreDuplicateGossip-variant ErrorAction
@@ -216,7 +210,7 @@
 					}
 		
 					/// Utility method to constructs a new SendWarningMessage-variant ErrorAction
-					public init(msg: Bindings.WarningMessage, logLevel: Level) {
+					public class func initWithSendWarningMessage(msg: Bindings.WarningMessage, logLevel: Level) -> ErrorAction {
 						// native call variable prep
 						
 
@@ -229,13 +223,7 @@
 						// return value (do some wrapping)
 						let returnValue = ErrorAction(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 

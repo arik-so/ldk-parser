@@ -76,7 +76,7 @@
 					}
 		
 					/// Create a new NodeId from a public key
-					public init(pubkey: [UInt8]) {
+					public class func initFromPubkey(pubkey: [UInt8]) -> NodeId {
 						// native call variable prep
 						
 						let pubkeyPrimitiveWrapper = PublicKey(value: pubkey)
@@ -91,13 +91,7 @@
 						// return value (do some wrapping)
 						let returnValue = NodeId(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Get the public key slice from this NodeId

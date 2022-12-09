@@ -100,7 +100,7 @@
 					}
 		
 					/// Utility method to constructs a new ParseError-variant ParseOrSemanticError
-					public init(a: ParseError) {
+					public class func initWithParseError(a: ParseError) -> ParseOrSemanticError {
 						// native call variable prep
 						
 
@@ -113,17 +113,11 @@
 						// return value (do some wrapping)
 						let returnValue = ParseOrSemanticError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new SemanticError-variant ParseOrSemanticError
-					public init(a: SemanticError) {
+					public class func initWithSemanticError(a: SemanticError) -> ParseOrSemanticError {
 						// native call variable prep
 						
 
@@ -136,13 +130,7 @@
 						// return value (do some wrapping)
 						let returnValue = ParseOrSemanticError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Checks if two ParseOrSemanticErrors contain equal inner contents.

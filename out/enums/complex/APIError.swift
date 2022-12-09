@@ -162,7 +162,7 @@
 					}
 		
 					/// Utility method to constructs a new FeeRateTooHigh-variant APIError
-					public init(err: String, feerate: UInt32) {
+					public class func initWithFeeRateTooHigh(err: String, feerate: UInt32) -> APIError {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err)
@@ -177,13 +177,7 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new RouteError-variant APIError
@@ -225,7 +219,7 @@
 					}
 		
 					/// Utility method to constructs a new MonitorUpdateInProgress-variant APIError
-					public init() {
+					public class func initWithMonitorUpdateInProgress() -> APIError {
 						// native call variable prep
 						
 
@@ -238,17 +232,11 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new IncompatibleShutdownScript-variant APIError
-					public init(script: Bindings.ShutdownScript) {
+					public class func initWithIncompatibleShutdownScript(script: Bindings.ShutdownScript) -> APIError {
 						// native call variable prep
 						
 
@@ -261,13 +249,7 @@
 						// return value (do some wrapping)
 						let returnValue = APIError(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Checks if two APIErrors contain equal inner contents.

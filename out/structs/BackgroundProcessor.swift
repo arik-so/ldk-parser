@@ -146,7 +146,7 @@
 					/// [`Persister::persist_graph`]: lightning::util::persist::Persister::persist_graph
 					/// [`NetworkGraph`]: lightning::routing::gossip::NetworkGraph
 					/// [`NetworkGraph::write`]: lightning::routing::gossip::NetworkGraph#impl-Writeable
-					public init(persister: Persister, eventHandler: EventHandler, chainMonitor: ChainMonitor, channelManager: ChannelManager, gossipSync: GossipSync, peerManager: PeerManager, logger: Logger, scorer: WriteableScore?) {
+					public class func start(persister: Persister, eventHandler: EventHandler, chainMonitor: ChainMonitor, channelManager: ChannelManager, gossipSync: GossipSync, peerManager: PeerManager, logger: Logger, scorer: WriteableScore?) -> BackgroundProcessor {
 						// native call variable prep
 						
 						let scorerOption = Option_WriteableScoreZ(some: scorer)
@@ -173,13 +173,7 @@
 						// return value (do some wrapping)
 						let returnValue = BackgroundProcessor(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Join `BackgroundProcessor`'s thread, returning any error that occurred while persisting

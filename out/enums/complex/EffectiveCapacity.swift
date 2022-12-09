@@ -156,7 +156,7 @@
 					}
 		
 					/// Utility method to constructs a new Total-variant EffectiveCapacity
-					public init(capacityMsat: UInt64, htlcMaximumMsat: UInt64?) {
+					public class func initWithTotal(capacityMsat: UInt64, htlcMaximumMsat: UInt64?) -> EffectiveCapacity {
 						// native call variable prep
 						
 						let htlcMaximumMsatOption = Option_u64Z(some: htlcMaximumMsat)
@@ -171,13 +171,7 @@
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new Infinite-variant EffectiveCapacity

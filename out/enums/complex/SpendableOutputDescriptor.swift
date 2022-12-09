@@ -145,7 +145,7 @@
 					}
 		
 					/// Utility method to constructs a new StaticOutput-variant SpendableOutputDescriptor
-					public init(outpoint: Bindings.OutPoint, output: Bindings.TxOut) {
+					public class func initWithStaticOutput(outpoint: Bindings.OutPoint, output: Bindings.TxOut) -> SpendableOutputDescriptor {
 						// native call variable prep
 						
 
@@ -158,17 +158,11 @@
 						// return value (do some wrapping)
 						let returnValue = SpendableOutputDescriptor(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new DelayedPaymentOutput-variant SpendableOutputDescriptor
-					public init(a: Bindings.DelayedPaymentOutputDescriptor) {
+					public class func initWithDelayedPaymentOutput(a: Bindings.DelayedPaymentOutputDescriptor) -> SpendableOutputDescriptor {
 						// native call variable prep
 						
 
@@ -181,17 +175,11 @@
 						// return value (do some wrapping)
 						let returnValue = SpendableOutputDescriptor(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Utility method to constructs a new StaticPaymentOutput-variant SpendableOutputDescriptor
-					public init(a: Bindings.StaticPaymentOutputDescriptor) {
+					public class func initWithStaticPaymentOutput(a: Bindings.StaticPaymentOutputDescriptor) -> SpendableOutputDescriptor {
 						// native call variable prep
 						
 
@@ -204,13 +192,7 @@
 						// return value (do some wrapping)
 						let returnValue = SpendableOutputDescriptor(cType: nativeCallResult)
 
-						
-				self.cType = nativeCallResult
-
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Checks if two SpendableOutputDescriptors contain equal inner contents.
