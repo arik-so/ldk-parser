@@ -176,13 +176,13 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 						// if #available(iOS 14.0, *) {
 						// 	#if canImport(os)
 						// 	if severity == Self.PrintSeverity.DEBUG {
-						// 		logger.debug("\(string)")
+						// 		logger.debug("\\(string)")
 						// 	}else if severity == Self.PrintSeverity.WARNING {
-						// 		logger.warning("\(string)")
+						// 		logger.warning("\\(string)")
 						// 	}else if severity == Self.PrintSeverity.ERROR {
-						// 		logger.error("\(string)")
+						// 		logger.error("\\(string)")
 						// 	}else {
-						// 		logger.log("\(string)")
+						// 		logger.log("\\(string)")
 						// 	}
 						// 	#else
 						// 	Swift.print(string)
@@ -210,7 +210,7 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 						Self.nativelyExposedInstanceReferenceCounter[key] = referenceCount
 					}
 					if referenceCount == 1 {
-						print("Caching global instance \(key). Cached instance count: \(nativelyExposedInstanceReferenceCounter.count)")
+						print("Caching global instance \\(key). Cached instance count: \\(nativelyExposedInstanceReferenceCounter.count)")
 						Self.nativelyExposedInstances[key] = instance
 					}
 				}
@@ -227,7 +227,7 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 					let key = UInt(bitPattern: pointer)
 					let referenceCount = Self.nativelyExposedInstanceReferenceCounter[key] ?? 0
 					if referenceCount < 1 {
-						print("Bad lookup: non-positive reference count for instance \(key): \(referenceCount)!", severity: .ERROR)
+						print("Bad lookup: non-positive reference count for instance \\(key): \\(referenceCount)!", severity: .ERROR)
 					}
 					let value = Self.nativelyExposedInstances[key] as! T
 					return value
@@ -238,12 +238,12 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 					let referenceCount = (Self.nativelyExposedInstanceReferenceCounter[key] ?? 0) - 1
 					Self.nativelyExposedInstanceReferenceCounter[key] = referenceCount
 					if referenceCount == 0 {
-						print("Uncaching global instance \(key)")
+						print("Uncaching global instance \\(key)")
 						// TODO: fix counting
 						// Self.nativelyExposedInstances.removeValue(forKey: key)
 						// instance.pointerDebugDescription = nil
 					} else if referenceCount < 0 {
-						print("Bad uncache: negative reference count (\(referenceCount)) for instance \(key)!", severity: .ERROR)
+						print("Bad uncache: negative reference count (\\(referenceCount)) for instance \\(key)!", severity: .ERROR)
 					}
 					return true
 				}
