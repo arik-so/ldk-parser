@@ -665,76 +665,64 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		 */
 		let dangleSuffix = '';
 
-		{
+		/**
+		 * This block is where we try to handle the anchoring, dangling, and danglingCloning.
+		 * One should note that if the method whose return value is being considered for this
+		 * is a clone method, none of this should be happening.
+		 *
+		 * The roundabout way of checking for that is if the return type matches the container
+		 * type.
+		 *
+		 * Additionally, we obviously cannot set the anchor on a static method. In principle,
+		 * we don't actually wanna set the anchor on any struct whose cType is the result
+		 * of a function call, as opposed to a property that livings on cType itself.
+		 *
+		 * Detecting that might be really tricky, and could require additional context
+		 * information.
+		 */
+		if(containerType && returnType.type !== containerType) {
+
 			/**
-			 * This block is where we try to handle the anchoring, dangling, and danglingCloning.
-			 * One should note that if the method whose return value is being considered for this
-			 * is a clone method, none of this should be happening.
+			 * If a container type is elided, it might return an object whose content will
+			 * stop working as soon as the elided type gets freed. To avoid that problem,
+			 * we need to make sure that we a) anchor the elided type inside the return value,
+			 * and b) make sure that the return value doesn't get freed, because its memory
+			 * will be handled by the elided type instead.
 			 *
-			 * The roundabout way of checking for that is if the return type matches the container
-			 * type.
-			 *
-			 * Additionally, we obviously cannot set the anchor on a static method. In principle,
-			 * we don't actually wanna set the anchor on any struct whose cType is the result
-			 * of a function call, as opposed to a property that livings on cType itself.
-			 *
-			 * Detecting that might be really tricky, and could require additional context
-			 * information.
+			 * However, some elided types may have methods. While they're uncallable by
+			 * external users of the SDK, they very well may be called from "batteries,"
+			 * which necessitates the check to make sure that the return type is not,
+			 * ironically, an actual return type. That works because this method can
+			 * technically handle any contextual type.
 			 */
-
-			if(containerType && returnType.type !== containerType) {
-
-				/**
-				 * If a container type is elided, it might return an object whose content will
-				 * stop working as soon as the elided type gets freed. To avoid that problem,
-				 * we need to make sure that we a) anchor the elided type inside the return value,
-				 * and b) make sure that the return value doesn't get freed, because its memory
-				 * will be handled by the elided type instead.
-				 *
-				 * However, some elided types may have methods. While they're uncallable by
-				 * external users of the SDK, they very well may be called from "batteries,"
-				 * which necessitates the check to make sure that the return type is not,
-				 * ironically, an actual return type. That works because this method can
-				 * technically handle any contextual type.
-				 */
-				if (containerType && this.isElidedType(containerType!) && !(returnType instanceof RustFunctionReturnValue)) {
-					if (!this.isElidedType(returnType.type)) {
-						anchorInfix = ', anchor: self';
-					}
-					dangleSuffix = '.dangle()';
+			if (this.isElidedType(containerType!) && !(returnType instanceof RustFunctionReturnValue)) {
+				if (!this.isElidedType(returnType.type)) {
+					anchorInfix = ', anchor: self';
 				}
-
-				/**
-				 * If the return type is actually a struct field, it means that this method is
-				 * a field accessor, i. e. it's probably wrapping some field on the container's
-				 * cType property in a Swift class.
-				 *
-				 * Should that returned value outlive the type whose value is being accessed, it
-				 * might break that returned value, which is why the container type must be
-				 * anchored inside the return.
-				 *
-				 * Additionally, given that the container and the return value both wrap the same
-				 * memory, only one of the two may be freed, and we choose the container, which is
-				 * why the returned value must be dangled.
-				 */
-				if (returnType instanceof RustStructField) {
-					if (!this.isElidedType(returnType.type)) {
-						anchorInfix = ', anchor: self';
-					}
-					dangleSuffix = '.dangle()';
-				}
-
-				// if (containerType instanceof RustStruct && returnType instanceof RustStructField) {
-				// 	if (!this.isElidedType(returnType.type)) {
-				// 		anchorInfix = ', anchor: self';
-				// 	}
-				// 	dangleSuffix = '.dangle()';
-				// }
-
+				dangleSuffix = '.dangle()';
 			}
 
-			// IN PROGRESS END
+			/**
+			 * If the return type is actually a struct field, it means that this method is
+			 * a field accessor, i.e. it's probably wrapping some field on the container's
+			 * cType property in a Swift class.
+			 *
+			 * Should that returned value outlive the type whose value is being accessed, it
+			 * might break that returned value, which is why the container type must be
+			 * anchored inside the return.
+			 *
+			 * Additionally, given that the container and the return value both wrap the same
+			 * memory, only one of the two may be freed, and we choose the container, which is
+			 * why the returned value must be dangled.
+			 */
+			if (returnType instanceof RustStructField) {
+				if (!this.isElidedType(returnType.type)) {
+					anchorInfix = ', anchor: self';
+				}
+				dangleSuffix = '.dangle()';
+			}
 		}
+
 
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes
 		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple || returnType.type instanceof RustPrimitiveWrapper) {
