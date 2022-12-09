@@ -100,6 +100,7 @@
 					}
 		
 					/// Utility method to constructs a new BlindedRoute-variant Destination
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `a`.")
 					public class func initWithBlindedRoute(a: Bindings.BlindedRoute) -> Destination {
 						// native call variable prep
 						

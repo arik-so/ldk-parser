@@ -148,6 +148,7 @@
 					/// [`Persister::persist_graph`]: lightning::util::persist::Persister::persist_graph
 					/// [`NetworkGraph`]: lightning::routing::gossip::NetworkGraph
 					/// [`NetworkGraph::write`]: lightning::routing::gossip::NetworkGraph#impl-Writeable
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `gossipSync`.")
 					public class func start(persister: Persister, eventHandler: EventHandler, chainMonitor: ChainMonitor, channelManager: ChannelManager, gossipSync: GossipSync, peerManager: PeerManager, logger: Logger, scorer: WriteableScore?) -> BackgroundProcessor {
 						// native call variable prep
 						
@@ -189,6 +190,7 @@
 					/// handling events.
 					/// 
 					/// [`ChannelManager`]: lightning::ln::channelmanager::ChannelManager
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: self.")
 					public func join() -> Result_NoneErrorZ {
 						// native call variable prep
 						
@@ -216,6 +218,7 @@
 					/// handling events.
 					/// 
 					/// [`ChannelManager`]: lightning::ln::channelmanager::ChannelManager
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: self.")
 					public func stop() -> Result_NoneErrorZ {
 						// native call variable prep
 						

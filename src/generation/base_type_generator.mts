@@ -141,7 +141,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		let nativeCallWrapperPrefix = '', nativeCallWrapperSuffix = '';
 		let nativeCallSuffix = '';
 
-		let passesNonCloneableArgumentsByValue = false;
+		const nonCloneableArguments = [];
 
 		for (const currentArgument of method.arguments) {
 			if (currentArgument.type instanceof RustPrimitive) {
@@ -150,9 +150,6 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					// it's not supposed to happen, but if it's void, for some reason it somehow does
 					continue;
 				}
-			} else if (!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && !(currentArgument.type instanceof RustArray) && swiftMethodName !== 'free' && !(currentArgument.type instanceof RustPrimitiveWrapper) && !(currentArgument.type instanceof RustPrimitive) && !(currentArgument.type instanceof RustTrait)) {
-				// TODO: figure out the exact condition
-				passesNonCloneableArgumentsByValue = true;
 			}
 
 			let isInstanceArgument = false;
@@ -167,6 +164,14 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
 			}
 
+			if (!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && swiftMethodName !== 'free' && !this.isElidedType(currentArgument.type) && !(currentArgument.type instanceof RustTrait) && this.hasFreeMethod(currentArgument.type)) {
+				if (isInstanceArgument) {
+					nonCloneableArguments.push('self');
+				} else {
+					nonCloneableArguments.push('`'+swiftArgumentName+'`');
+				}
+			}
+
 			const preparedArgument = this.prepareSwiftArgumentForRust(currentArgument, containerType);
 			nativeCallPrefix += preparedArgument.conversion;
 			nativeCallWrapperPrefix += preparedArgument.methodCallWrapperPrefix;
@@ -175,9 +180,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			nativeCallSuffix += preparedArgument.deferredCleanup;
 		}
 
-		if (passesNonCloneableArgumentsByValue) {
+		let cloneabilityDeprecationWarning = '';
+		if (nonCloneableArguments.length > 0) {
 			// not true yet
-			console.log('Method passes non-cloneable arguments by value:', method.name);
+			console.log(`Method passes non-cloneable arguments by value: ${method.name} (${nonCloneableArguments.join(', ')})`);
+			cloneabilityDeprecationWarning = `\n\t\t\t\t\t@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: ${nonCloneableArguments.join(', ')}.")`;
 		}
 
 		// don't mark return types from C as optional because they will be automatically force-unwrapped
@@ -271,7 +278,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		}
 
 		return `
-					${this.renderDocComment(method.documentation, 5)}
+					${this.renderDocComment(method.documentation, 5)}${cloneabilityDeprecationWarning}
 					${methodDeclarationKeywords} ${swiftMethodName}(${swiftMethodArguments.join(', ')}) ${returnTypeInfix}{
 						// native call variable prep
 						${nativeCallPrefix}
@@ -618,7 +625,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedArgument.conversion += `
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})${cloneInfix}
 				`;
-				if(argument.type.ownershipField) {
+				if (argument.type.ownershipField) {
 					preparedArgument.conversion += `
 						${preparedArgument.name}.cType!.${argument.type.ownershipField!.contextualName} = false
 					`;

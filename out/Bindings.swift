@@ -1292,6 +1292,7 @@
 				}
 		
 				/// Read a C2Tuple_BlockHashChannelManagerZ from a byte array, created by C2Tuple_BlockHashChannelManagerZ_write
+				@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `arg`.")
 				public class func readBlockHashChannelManager(ser: [UInt8], arg: ChannelManagerReadArgs) -> Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ {
 					// native call variable prep
 					

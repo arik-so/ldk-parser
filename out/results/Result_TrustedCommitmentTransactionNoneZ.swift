@@ -40,6 +40,7 @@
 
 					
 					/// Creates a new CResult_TrustedCommitmentTransactionNoneZ in the success state.
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `o`.")
 					public class func initWithOk(o: TrustedCommitmentTransaction) -> Result_TrustedCommitmentTransactionNoneZ {
 						// native call variable prep
 						

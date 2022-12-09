@@ -228,6 +228,7 @@
 					/// See [`OnionMessenger`] for example usage.
 					/// 
 					/// Note that reply_path (or a relevant inner pointer) may be NULL or all-0s to represent None
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `destination`, `replyPath`.")
 					public func sendCustomOnionMessage(intermediateNodes: [[UInt8]], destination: Destination, msg: CustomOnionMessageContents, replyPath: BlindedRoute) -> Result_NoneSendErrorZ {
 						// native call variable prep
 						

@@ -100,6 +100,7 @@
 					/// incremented irregularly internally. In general it is best to simply use the current UNIX
 					/// timestamp, however if it is not available a persistent counter that increases once per
 					/// minute should suffice.
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `messageHandler`.")
 					public init(messageHandler: MessageHandler, ourNodeSecret: [UInt8], currentTime: UInt32, ephemeralRandomData: [UInt8], logger: Logger, customMessageHandler: CustomMessageHandler) {
 						// native call variable prep
 						

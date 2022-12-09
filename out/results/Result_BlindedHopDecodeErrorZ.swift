@@ -40,6 +40,7 @@
 
 					
 					/// Creates a new CResult_BlindedHopDecodeErrorZ in the success state.
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `o`.")
 					public class func initWithOk(o: BlindedHop) -> Result_BlindedHopDecodeErrorZ {
 						// native call variable prep
 						
