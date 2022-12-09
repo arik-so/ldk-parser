@@ -152,7 +152,7 @@
 							return nil
 						}
 
-						return DecodeError(cType: self.cType!.decode_error)
+						return DecodeError(cType: self.cType!.decode_error, anchor: self).dangle()
 					}
 			
 					public func getValueAsLightningError() -> Bindings.LightningError? {
@@ -160,7 +160,7 @@
 							return nil
 						}
 
-						return LightningError(cType: self.cType!.lightning_error)
+						return LightningError(cType: self.cType!.lightning_error, anchor: self).dangle()
 					}
 			
 

@@ -132,7 +132,7 @@
 					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(cType: self.cType!.contents.err.pointee)
+							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
 						}
 						return nil
 					}
@@ -141,7 +141,7 @@
 					
 					public func getValue() -> QueryChannelRange? {
 						if self.cType?.result_ok == true {
-							return QueryChannelRange(cType: self.cType!.contents.result.pointee)
+							return QueryChannelRange(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

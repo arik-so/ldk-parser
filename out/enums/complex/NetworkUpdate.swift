@@ -222,7 +222,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).dangle().getValue()
 
 						return returnValue
 					}
@@ -241,7 +241,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_NetworkUpdateZDecodeErrorZ(cType: nativeCallResult)
+						let returnValue = Result_COption_NetworkUpdateZDecodeErrorZ(cType: nativeCallResult, anchor: self).dangle()
 
 						return returnValue
 					}
@@ -253,7 +253,7 @@
 							return nil
 						}
 
-						return NetworkUpdate_LDKChannelUpdateMessage_Body(cType: self.cType!.channel_update_message)
+						return NetworkUpdate_LDKChannelUpdateMessage_Body(cType: self.cType!.channel_update_message, anchor: self).dangle()
 					}
 			
 					public func getValueAsChannelFailure() -> ChannelFailure? {
@@ -261,7 +261,7 @@
 							return nil
 						}
 
-						return NetworkUpdate_LDKChannelFailure_Body(cType: self.cType!.channel_failure)
+						return NetworkUpdate_LDKChannelFailure_Body(cType: self.cType!.channel_failure, anchor: self).dangle()
 					}
 			
 					public func getValueAsNodeFailure() -> NodeFailure? {
@@ -269,7 +269,7 @@
 							return nil
 						}
 
-						return NetworkUpdate_LDKNodeFailure_Body(cType: self.cType!.node_failure)
+						return NetworkUpdate_LDKNodeFailure_Body(cType: self.cType!.node_failure, anchor: self).dangle()
 					}
 			
 

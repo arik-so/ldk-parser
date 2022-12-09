@@ -132,7 +132,7 @@
 					
 					public func getError() -> InvalidShutdownScript? {
 						if self.cType?.result_ok == false {
-							return InvalidShutdownScript(cType: self.cType!.contents.err.pointee)
+							return InvalidShutdownScript(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
 						}
 						return nil
 					}
@@ -141,7 +141,7 @@
 					
 					public func getValue() -> ShutdownScript? {
 						if self.cType?.result_ok == true {
-							return ShutdownScript(cType: self.cType!.contents.result.pointee)
+							return ShutdownScript(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

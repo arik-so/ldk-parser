@@ -563,7 +563,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult).getValue()
+						let returnValue = Str(cType: nativeCallResult).dangle().getValue()
 
 						return returnValue
 					}
@@ -575,7 +575,7 @@
 							return nil
 						}
 
-						return Bech32Error(cType: self.cType!.bech32_error)
+						return Bech32Error(cType: self.cType!.bech32_error, anchor: self).dangle()
 					}
 			
 					public func getValueAsParseAmountError() -> Bindings.BindingsError? {
@@ -583,7 +583,7 @@
 							return nil
 						}
 
-						return BindingsError(cType: self.cType!.parse_amount_error)
+						return BindingsError(cType: self.cType!.parse_amount_error, anchor: self).dangle()
 					}
 			
 					public func getValueAsMalformedSignature() -> Secp256k1Error? {
@@ -599,7 +599,7 @@
 							return nil
 						}
 
-						return BindingsError(cType: self.cType!.description_decode_error)
+						return BindingsError(cType: self.cType!.description_decode_error, anchor: self).dangle()
 					}
 			
 					public func getValueAsInvalidSliceLength() -> String? {
@@ -607,7 +607,7 @@
 							return nil
 						}
 
-						return Str(cType: self.cType!.invalid_slice_length).getValue()
+						return Str(cType: self.cType!.invalid_slice_length).dangle().getValue()
 					}
 			
 

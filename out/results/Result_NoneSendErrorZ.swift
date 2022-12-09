@@ -110,7 +110,7 @@
 					
 					public func getError() -> SendError? {
 						if self.cType?.result_ok == false {
-							return SendError(cType: self.cType!.contents.err.pointee)
+							return SendError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

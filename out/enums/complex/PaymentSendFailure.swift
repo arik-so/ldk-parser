@@ -245,7 +245,7 @@
 							return nil
 						}
 
-						return APIError(cType: self.cType!.parameter_error)
+						return APIError(cType: self.cType!.parameter_error, anchor: self).dangle()
 					}
 			
 					public func getValueAsPathParameterError() -> [Result_NoneAPIErrorZ]? {
@@ -253,7 +253,7 @@
 							return nil
 						}
 
-						return Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.path_parameter_error).getValue()
+						return Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.path_parameter_error).dangle().getValue()
 					}
 			
 					public func getValueAsAllFailedRetrySafe() -> [APIError]? {
@@ -261,7 +261,7 @@
 							return nil
 						}
 
-						return Vec_APIErrorZ(cType: self.cType!.all_failed_retry_safe).getValue()
+						return Vec_APIErrorZ(cType: self.cType!.all_failed_retry_safe).dangle().getValue()
 					}
 			
 					public func getValueAsPartialFailure() -> PartialFailure? {
@@ -269,7 +269,7 @@
 							return nil
 						}
 
-						return PaymentSendFailure_LDKPartialFailure_Body(cType: self.cType!.partial_failure)
+						return PaymentSendFailure_LDKPartialFailure_Body(cType: self.cType!.partial_failure, anchor: self).dangle()
 					}
 			
 

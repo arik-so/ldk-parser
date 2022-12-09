@@ -132,7 +132,7 @@
 					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(cType: self.cType!.contents.err.pointee)
+							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
 						}
 						return nil
 					}
@@ -141,7 +141,7 @@
 					
 					public func getValue() -> OnionMessage? {
 						if self.cType?.result_ok == true {
-							return OnionMessage(cType: self.cType!.contents.result.pointee)
+							return OnionMessage(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

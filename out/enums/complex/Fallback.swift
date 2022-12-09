@@ -224,7 +224,7 @@
 							return nil
 						}
 
-						return Fallback_LDKSegWitProgram_Body(cType: self.cType!.seg_wit_program)
+						return Fallback_LDKSegWitProgram_Body(cType: self.cType!.seg_wit_program, anchor: self).dangle()
 					}
 			
 					public func getValueAsPubKeyHash() -> [UInt8]? {
@@ -232,7 +232,7 @@
 							return nil
 						}
 
-						return TwentyBytes(cType: self.cType!.pub_key_hash).getValue()
+						return TwentyBytes(cType: self.cType!.pub_key_hash).dangle().getValue()
 					}
 			
 					public func getValueAsScriptHash() -> [UInt8]? {
@@ -240,7 +240,7 @@
 							return nil
 						}
 
-						return TwentyBytes(cType: self.cType!.script_hash).getValue()
+						return TwentyBytes(cType: self.cType!.script_hash).dangle().getValue()
 					}
 			
 

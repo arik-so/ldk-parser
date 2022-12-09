@@ -132,7 +132,7 @@
 					
 					public func getError() -> APIError? {
 						if self.cType?.result_ok == false {
-							return APIError(cType: self.cType!.contents.err.pointee)
+							return APIError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

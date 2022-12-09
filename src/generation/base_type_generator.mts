@@ -664,11 +664,51 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		 * to shared memory, so only one of the two may be freed.
 		 */
 		let dangleSuffix = '';
-		if (containerType instanceof RustVector) {
-			if (!this.isElidedType(returnType.type)) {
-				anchorInfix = ', anchor: self';
+
+		{
+			/**
+			 * This block is where we try to handle the anchoring, dangling, and danglingCloning.
+			 * One should note that if the method whose return value is being considered for this
+			 * is a clone method, none of this should be happening.
+			 *
+			 * The roundabout way of checking for that is if the return type matches the container
+			 * type.
+			 *
+			 * Additionally, we obviously cannot set the anchor on a static method. In principle,
+			 * we don't actually wanna set the anchor on any struct whose cType is the result
+			 * of a function call, as opposed to a property that livings on cType itself.
+			 *
+			 * Detecting that might be really tricky, and could require additional context
+			 * information.
+			 */
+
+			if(returnType.type !== containerType) {
+
+				// this is for the rust array to swift mapper
+				if (containerType instanceof RustVector) {
+					if (!this.isElidedType(returnType.type)) {
+						anchorInfix = ', anchor: self';
+					}
+					dangleSuffix = '.dangle()';
+				}
+
+				if (containerType instanceof RustResult || containerType instanceof RustTaggedValueEnum) {
+					if (!this.isElidedType(returnType.type)) {
+						anchorInfix = ', anchor: self';
+					}
+					dangleSuffix = '.dangle()';
+				}
+
+				// if (containerType instanceof RustStruct && returnType instanceof RustStructField) {
+				// 	if (!this.isElidedType(returnType.type)) {
+				// 		anchorInfix = ', anchor: self';
+				// 	}
+				// 	dangleSuffix = '.dangle()';
+				// }
+
 			}
-			dangleSuffix = '.dangle()';
+
+			// IN PROGRESS END
 		}
 
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes

@@ -141,7 +141,7 @@
 					
 					public func getValue() -> Invoice? {
 						if self.cType?.result_ok == true {
-							return Invoice(cType: self.cType!.contents.result.pointee)
+							return Invoice(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

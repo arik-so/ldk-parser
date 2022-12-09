@@ -273,7 +273,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).dangle().getValue()
 
 						return returnValue
 					}
@@ -292,7 +292,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_NetAddressDecodeErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NetAddressDecodeErrorZ(cType: nativeCallResult, anchor: self).dangle()
 
 						return returnValue
 					}
@@ -304,7 +304,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKIPv4_Body(cType: self.cType!.i_pv4)
+						return NetAddress_LDKIPv4_Body(cType: self.cType!.i_pv4, anchor: self).dangle()
 					}
 			
 					public func getValueAsIPv6() -> IPv6? {
@@ -312,7 +312,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKIPv6_Body(cType: self.cType!.i_pv6)
+						return NetAddress_LDKIPv6_Body(cType: self.cType!.i_pv6, anchor: self).dangle()
 					}
 			
 					public func getValueAsOnionV2() -> [UInt8]? {
@@ -320,7 +320,7 @@
 							return nil
 						}
 
-						return TwelveBytes(cType: self.cType!.onion_v2).getValue()
+						return TwelveBytes(cType: self.cType!.onion_v2).dangle().getValue()
 					}
 			
 					public func getValueAsOnionV3() -> OnionV3? {
@@ -328,7 +328,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKOnionV3_Body(cType: self.cType!.onion_v3)
+						return NetAddress_LDKOnionV3_Body(cType: self.cType!.onion_v3, anchor: self).dangle()
 					}
 			
 					public func getValueAsHostname() -> Hostname? {
@@ -336,7 +336,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKHostname_Body(cType: self.cType!.hostname)
+						return NetAddress_LDKHostname_Body(cType: self.cType!.hostname, anchor: self).dangle()
 					}
 			
 

@@ -303,7 +303,7 @@
 							return nil
 						}
 
-						return APIError_LDKAPIMisuseError_Body(cType: self.cType!.api_misuse_error)
+						return APIError_LDKAPIMisuseError_Body(cType: self.cType!.api_misuse_error, anchor: self).dangle()
 					}
 			
 					public func getValueAsFeeRateTooHigh() -> FeeRateTooHigh? {
@@ -311,7 +311,7 @@
 							return nil
 						}
 
-						return APIError_LDKFeeRateTooHigh_Body(cType: self.cType!.fee_rate_too_high)
+						return APIError_LDKFeeRateTooHigh_Body(cType: self.cType!.fee_rate_too_high, anchor: self).dangle()
 					}
 			
 					public func getValueAsRouteError() -> RouteError? {
@@ -319,7 +319,7 @@
 							return nil
 						}
 
-						return APIError_LDKRouteError_Body(cType: self.cType!.route_error)
+						return APIError_LDKRouteError_Body(cType: self.cType!.route_error, anchor: self).dangle()
 					}
 			
 					public func getValueAsChannelUnavailable() -> ChannelUnavailable? {
@@ -327,7 +327,7 @@
 							return nil
 						}
 
-						return APIError_LDKChannelUnavailable_Body(cType: self.cType!.channel_unavailable)
+						return APIError_LDKChannelUnavailable_Body(cType: self.cType!.channel_unavailable, anchor: self).dangle()
 					}
 			
 					public func getValueAsIncompatibleShutdownScript() -> IncompatibleShutdownScript? {
@@ -335,7 +335,7 @@
 							return nil
 						}
 
-						return APIError_LDKIncompatibleShutdownScript_Body(cType: self.cType!.incompatible_shutdown_script)
+						return APIError_LDKIncompatibleShutdownScript_Body(cType: self.cType!.incompatible_shutdown_script, anchor: self).dangle()
 					}
 			
 

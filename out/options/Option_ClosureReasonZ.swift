@@ -94,7 +94,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_ClosureReasonZ_Some {
-							return ClosureReason(cType: self.cType!.some)
+							return ClosureReason(cType: self.cType!.some, anchor: self).dangle()
 						}
 						assert(false, "invalid option enum value")
 						return nil

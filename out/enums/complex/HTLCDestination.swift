@@ -227,7 +227,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).dangle().getValue()
 
 						return returnValue
 					}
@@ -246,7 +246,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_HTLCDestinationZDecodeErrorZ(cType: nativeCallResult)
+						let returnValue = Result_COption_HTLCDestinationZDecodeErrorZ(cType: nativeCallResult, anchor: self).dangle()
 
 						return returnValue
 					}
@@ -258,7 +258,7 @@
 							return nil
 						}
 
-						return HTLCDestination_LDKNextHopChannel_Body(cType: self.cType!.next_hop_channel)
+						return HTLCDestination_LDKNextHopChannel_Body(cType: self.cType!.next_hop_channel, anchor: self).dangle()
 					}
 			
 					public func getValueAsUnknownNextHop() -> UnknownNextHop? {
@@ -266,7 +266,7 @@
 							return nil
 						}
 
-						return HTLCDestination_LDKUnknownNextHop_Body(cType: self.cType!.unknown_next_hop)
+						return HTLCDestination_LDKUnknownNextHop_Body(cType: self.cType!.unknown_next_hop, anchor: self).dangle()
 					}
 			
 					public func getValueAsFailedPayment() -> FailedPayment? {
@@ -274,7 +274,7 @@
 							return nil
 						}
 
-						return HTLCDestination_LDKFailedPayment_Body(cType: self.cType!.failed_payment)
+						return HTLCDestination_LDKFailedPayment_Body(cType: self.cType!.failed_payment, anchor: self).dangle()
 					}
 			
 

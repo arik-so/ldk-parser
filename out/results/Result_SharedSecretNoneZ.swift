@@ -143,7 +143,7 @@
 					
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
-							return ThirtyTwoBytes(cType: self.cType!.contents.result.pointee).getValue()
+							return ThirtyTwoBytes(cType: self.cType!.contents.result.pointee).dangle().getValue()
 						}
 						return nil
 					}

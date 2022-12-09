@@ -143,7 +143,7 @@
 					
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
-							return Signature(cType: self.cType!.contents.result.pointee).getValue()
+							return Signature(cType: self.cType!.contents.result.pointee).dangle().getValue()
 						}
 						return nil
 					}

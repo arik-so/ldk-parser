@@ -143,7 +143,7 @@
 					
 					public func getValue() -> ([UInt8], [[UInt8]])? {
 						if self.cType?.result_ok == true {
-							return Tuple_SignatureCVec_SignatureZZ(cType: self.cType!.contents.result.pointee).getValue()
+							return Tuple_SignatureCVec_SignatureZZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
 						}
 						return nil
 					}

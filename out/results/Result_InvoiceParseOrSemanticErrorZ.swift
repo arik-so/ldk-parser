@@ -132,7 +132,7 @@
 					
 					public func getError() -> ParseOrSemanticError? {
 						if self.cType?.result_ok == false {
-							return ParseOrSemanticError(cType: self.cType!.contents.err.pointee)
+							return ParseOrSemanticError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
 						}
 						return nil
 					}
@@ -141,7 +141,7 @@
 					
 					public func getValue() -> Invoice? {
 						if self.cType?.result_ok == true {
-							return Invoice(cType: self.cType!.contents.result.pointee)
+							return Invoice(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

@@ -181,7 +181,7 @@
 							return nil
 						}
 
-						return Str(cType: self.cType!.invoice).getValue()
+						return Str(cType: self.cType!.invoice).dangle().getValue()
 					}
 			
 					public func getValueAsRouting() -> Bindings.LightningError? {
@@ -189,7 +189,7 @@
 							return nil
 						}
 
-						return LightningError(cType: self.cType!.routing)
+						return LightningError(cType: self.cType!.routing, anchor: self).dangle()
 					}
 			
 					public func getValueAsSending() -> PaymentSendFailure? {
@@ -197,7 +197,7 @@
 							return nil
 						}
 
-						return PaymentSendFailure(cType: self.cType!.sending)
+						return PaymentSendFailure(cType: self.cType!.sending, anchor: self).dangle()
 					}
 			
 

@@ -276,7 +276,7 @@
 							return nil
 						}
 
-						return Balance_LDKClaimableOnChannelClose_Body(cType: self.cType!.claimable_on_channel_close)
+						return Balance_LDKClaimableOnChannelClose_Body(cType: self.cType!.claimable_on_channel_close, anchor: self).dangle()
 					}
 			
 					public func getValueAsClaimableAwaitingConfirmations() -> ClaimableAwaitingConfirmations? {
@@ -284,7 +284,7 @@
 							return nil
 						}
 
-						return Balance_LDKClaimableAwaitingConfirmations_Body(cType: self.cType!.claimable_awaiting_confirmations)
+						return Balance_LDKClaimableAwaitingConfirmations_Body(cType: self.cType!.claimable_awaiting_confirmations, anchor: self).dangle()
 					}
 			
 					public func getValueAsContentiousClaimable() -> ContentiousClaimable? {
@@ -292,7 +292,7 @@
 							return nil
 						}
 
-						return Balance_LDKContentiousClaimable_Body(cType: self.cType!.contentious_claimable)
+						return Balance_LDKContentiousClaimable_Body(cType: self.cType!.contentious_claimable, anchor: self).dangle()
 					}
 			
 					public func getValueAsMaybeTimeoutClaimableHtlc() -> MaybeTimeoutClaimableHTLC? {
@@ -300,7 +300,7 @@
 							return nil
 						}
 
-						return Balance_LDKMaybeTimeoutClaimableHTLC_Body(cType: self.cType!.maybe_timeout_claimable_htlc)
+						return Balance_LDKMaybeTimeoutClaimableHTLC_Body(cType: self.cType!.maybe_timeout_claimable_htlc, anchor: self).dangle()
 					}
 			
 					public func getValueAsMaybePreimageClaimableHtlc() -> MaybePreimageClaimableHTLC? {
@@ -308,7 +308,7 @@
 							return nil
 						}
 
-						return Balance_LDKMaybePreimageClaimableHTLC_Body(cType: self.cType!.maybe_preimage_claimable_htlc)
+						return Balance_LDKMaybePreimageClaimableHTLC_Body(cType: self.cType!.maybe_preimage_claimable_htlc, anchor: self).dangle()
 					}
 			
 					public func getValueAsCounterpartyRevokedOutputClaimable() -> CounterpartyRevokedOutputClaimable? {
@@ -316,7 +316,7 @@
 							return nil
 						}
 
-						return Balance_LDKCounterpartyRevokedOutputClaimable_Body(cType: self.cType!.counterparty_revoked_output_claimable)
+						return Balance_LDKCounterpartyRevokedOutputClaimable_Body(cType: self.cType!.counterparty_revoked_output_claimable, anchor: self).dangle()
 					}
 			
 

@@ -237,7 +237,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).dangle().getValue()
 
 						return returnValue
 					}
@@ -256,7 +256,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_MonitorEventZDecodeErrorZ(cType: nativeCallResult)
+						let returnValue = Result_COption_MonitorEventZDecodeErrorZ(cType: nativeCallResult, anchor: self).dangle()
 
 						return returnValue
 					}
@@ -268,7 +268,7 @@
 							return nil
 						}
 
-						return HTLCUpdate(cType: self.cType!.htlc_event)
+						return HTLCUpdate(cType: self.cType!.htlc_event, anchor: self).dangle()
 					}
 			
 					public func getValueAsCommitmentTxConfirmed() -> Bindings.OutPoint? {
@@ -276,7 +276,7 @@
 							return nil
 						}
 
-						return OutPoint(cType: self.cType!.commitment_tx_confirmed)
+						return OutPoint(cType: self.cType!.commitment_tx_confirmed, anchor: self).dangle()
 					}
 			
 					public func getValueAsCompleted() -> Completed? {
@@ -284,7 +284,7 @@
 							return nil
 						}
 
-						return MonitorEvent_LDKCompleted_Body(cType: self.cType!.completed)
+						return MonitorEvent_LDKCompleted_Body(cType: self.cType!.completed, anchor: self).dangle()
 					}
 			
 					public func getValueAsUpdateFailed() -> Bindings.OutPoint? {
@@ -292,7 +292,7 @@
 							return nil
 						}
 
-						return OutPoint(cType: self.cType!.update_failed)
+						return OutPoint(cType: self.cType!.update_failed, anchor: self).dangle()
 					}
 			
 

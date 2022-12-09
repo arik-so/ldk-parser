@@ -141,7 +141,7 @@
 					
 					public func getValue() -> PayeePubKey? {
 						if self.cType?.result_ok == true {
-							return PayeePubKey(cType: self.cType!.contents.result.pointee)
+							return PayeePubKey(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

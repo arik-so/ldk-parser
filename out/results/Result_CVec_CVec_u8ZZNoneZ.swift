@@ -145,7 +145,7 @@
 					
 					public func getValue() -> [[UInt8]]? {
 						if self.cType?.result_ok == true {
-							return Vec_CVec_u8ZZ(cType: self.cType!.contents.result.pointee).getValue()
+							return Vec_CVec_u8ZZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
 						}
 						return nil
 					}

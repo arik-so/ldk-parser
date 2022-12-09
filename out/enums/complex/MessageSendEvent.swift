@@ -728,7 +728,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendAcceptChannel_Body(cType: self.cType!.send_accept_channel)
+						return MessageSendEvent_LDKSendAcceptChannel_Body(cType: self.cType!.send_accept_channel, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendOpenChannel() -> SendOpenChannel? {
@@ -736,7 +736,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendOpenChannel_Body(cType: self.cType!.send_open_channel)
+						return MessageSendEvent_LDKSendOpenChannel_Body(cType: self.cType!.send_open_channel, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendFundingCreated() -> SendFundingCreated? {
@@ -744,7 +744,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendFundingCreated_Body(cType: self.cType!.send_funding_created)
+						return MessageSendEvent_LDKSendFundingCreated_Body(cType: self.cType!.send_funding_created, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendFundingSigned() -> SendFundingSigned? {
@@ -752,7 +752,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendFundingSigned_Body(cType: self.cType!.send_funding_signed)
+						return MessageSendEvent_LDKSendFundingSigned_Body(cType: self.cType!.send_funding_signed, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendChannelReady() -> SendChannelReady? {
@@ -760,7 +760,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendChannelReady_Body(cType: self.cType!.send_channel_ready)
+						return MessageSendEvent_LDKSendChannelReady_Body(cType: self.cType!.send_channel_ready, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendAnnouncementSignatures() -> SendAnnouncementSignatures? {
@@ -768,7 +768,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendAnnouncementSignatures_Body(cType: self.cType!.send_announcement_signatures)
+						return MessageSendEvent_LDKSendAnnouncementSignatures_Body(cType: self.cType!.send_announcement_signatures, anchor: self).dangle()
 					}
 			
 					public func getValueAsUpdateHtlCs() -> UpdateHTLCs? {
@@ -776,7 +776,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKUpdateHTLCs_Body(cType: self.cType!.update_htl_cs)
+						return MessageSendEvent_LDKUpdateHTLCs_Body(cType: self.cType!.update_htl_cs, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendRevokeAndAck() -> SendRevokeAndACK? {
@@ -784,7 +784,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendRevokeAndACK_Body(cType: self.cType!.send_revoke_and_ack)
+						return MessageSendEvent_LDKSendRevokeAndACK_Body(cType: self.cType!.send_revoke_and_ack, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendClosingSigned() -> SendClosingSigned? {
@@ -792,7 +792,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendClosingSigned_Body(cType: self.cType!.send_closing_signed)
+						return MessageSendEvent_LDKSendClosingSigned_Body(cType: self.cType!.send_closing_signed, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendShutdown() -> SendShutdown? {
@@ -800,7 +800,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendShutdown_Body(cType: self.cType!.send_shutdown)
+						return MessageSendEvent_LDKSendShutdown_Body(cType: self.cType!.send_shutdown, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendChannelReestablish() -> SendChannelReestablish? {
@@ -808,7 +808,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendChannelReestablish_Body(cType: self.cType!.send_channel_reestablish)
+						return MessageSendEvent_LDKSendChannelReestablish_Body(cType: self.cType!.send_channel_reestablish, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendChannelAnnouncement() -> SendChannelAnnouncement? {
@@ -816,7 +816,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendChannelAnnouncement_Body(cType: self.cType!.send_channel_announcement)
+						return MessageSendEvent_LDKSendChannelAnnouncement_Body(cType: self.cType!.send_channel_announcement, anchor: self).dangle()
 					}
 			
 					public func getValueAsBroadcastChannelAnnouncement() -> BroadcastChannelAnnouncement? {
@@ -824,7 +824,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKBroadcastChannelAnnouncement_Body(cType: self.cType!.broadcast_channel_announcement)
+						return MessageSendEvent_LDKBroadcastChannelAnnouncement_Body(cType: self.cType!.broadcast_channel_announcement, anchor: self).dangle()
 					}
 			
 					public func getValueAsBroadcastChannelUpdate() -> BroadcastChannelUpdate? {
@@ -832,7 +832,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKBroadcastChannelUpdate_Body(cType: self.cType!.broadcast_channel_update)
+						return MessageSendEvent_LDKBroadcastChannelUpdate_Body(cType: self.cType!.broadcast_channel_update, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendChannelUpdate() -> SendChannelUpdate? {
@@ -840,7 +840,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendChannelUpdate_Body(cType: self.cType!.send_channel_update)
+						return MessageSendEvent_LDKSendChannelUpdate_Body(cType: self.cType!.send_channel_update, anchor: self).dangle()
 					}
 			
 					public func getValueAsHandleError() -> HandleError? {
@@ -848,7 +848,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKHandleError_Body(cType: self.cType!.handle_error)
+						return MessageSendEvent_LDKHandleError_Body(cType: self.cType!.handle_error, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendChannelRangeQuery() -> SendChannelRangeQuery? {
@@ -856,7 +856,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendChannelRangeQuery_Body(cType: self.cType!.send_channel_range_query)
+						return MessageSendEvent_LDKSendChannelRangeQuery_Body(cType: self.cType!.send_channel_range_query, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendShortIdsQuery() -> SendShortIdsQuery? {
@@ -864,7 +864,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendShortIdsQuery_Body(cType: self.cType!.send_short_ids_query)
+						return MessageSendEvent_LDKSendShortIdsQuery_Body(cType: self.cType!.send_short_ids_query, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendReplyChannelRange() -> SendReplyChannelRange? {
@@ -872,7 +872,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendReplyChannelRange_Body(cType: self.cType!.send_reply_channel_range)
+						return MessageSendEvent_LDKSendReplyChannelRange_Body(cType: self.cType!.send_reply_channel_range, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendGossipTimestampFilter() -> SendGossipTimestampFilter? {
@@ -880,7 +880,7 @@
 							return nil
 						}
 
-						return MessageSendEvent_LDKSendGossipTimestampFilter_Body(cType: self.cType!.send_gossip_timestamp_filter)
+						return MessageSendEvent_LDKSendGossipTimestampFilter_Body(cType: self.cType!.send_gossip_timestamp_filter, anchor: self).dangle()
 					}
 			
 

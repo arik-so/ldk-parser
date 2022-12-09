@@ -119,7 +119,7 @@
 					
 					public func getValue() -> LockedChannelMonitor? {
 						if self.cType?.result_ok == true {
-							return LockedChannelMonitor(cType: self.cType!.contents.result.pointee)
+							return LockedChannelMonitor(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

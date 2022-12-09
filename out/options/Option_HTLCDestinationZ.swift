@@ -94,7 +94,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_HTLCDestinationZ_Some {
-							return HTLCDestination(cType: self.cType!.some)
+							return HTLCDestination(cType: self.cType!.some, anchor: self).dangle()
 						}
 						assert(false, "invalid option enum value")
 						return nil

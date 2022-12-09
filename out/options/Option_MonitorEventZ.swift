@@ -94,7 +94,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_MonitorEventZ_Some {
-							return MonitorEvent(cType: self.cType!.some)
+							return MonitorEvent(cType: self.cType!.some, anchor: self).dangle()
 						}
 						assert(false, "invalid option enum value")
 						return nil

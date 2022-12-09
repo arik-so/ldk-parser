@@ -119,7 +119,7 @@
 					
 					public func getValue() -> TrustedCommitmentTransaction? {
 						if self.cType?.result_ok == true {
-							return TrustedCommitmentTransaction(cType: self.cType!.contents.result.pointee)
+							return TrustedCommitmentTransaction(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

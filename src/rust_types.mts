@@ -115,6 +115,7 @@ export class RustPrimitiveWrapper extends RustStruct {
 
 	/**
 	 * To initialize a wrapper, all its fields must be provided in the order of their declaration
+	 * TODO: enforce!
 	 */
 	orderedFields: RustStructField[] = [];
 }

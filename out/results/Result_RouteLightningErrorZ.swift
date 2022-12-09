@@ -132,7 +132,7 @@
 					
 					public func getError() -> LightningError? {
 						if self.cType?.result_ok == false {
-							return LightningError(cType: self.cType!.contents.err.pointee)
+							return LightningError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
 						}
 						return nil
 					}
@@ -141,7 +141,7 @@
 					
 					public func getValue() -> Route? {
 						if self.cType?.result_ok == true {
-							return Route(cType: self.cType!.contents.result.pointee)
+							return Route(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

@@ -187,7 +187,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult).getValue()
+						let returnValue = Str(cType: nativeCallResult).dangle().getValue()
 
 						return returnValue
 					}
@@ -199,7 +199,7 @@
 							return nil
 						}
 
-						return ParseError(cType: self.cType!.parse_error)
+						return ParseError(cType: self.cType!.parse_error, anchor: self).dangle()
 					}
 			
 					public func getValueAsSemanticError() -> SemanticError? {

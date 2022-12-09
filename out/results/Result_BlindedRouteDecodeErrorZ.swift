@@ -110,7 +110,7 @@
 					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(cType: self.cType!.contents.err.pointee)
+							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
 						}
 						return nil
 					}
@@ -119,7 +119,7 @@
 					
 					public func getValue() -> BlindedRoute? {
 						if self.cType?.result_ok == true {
-							return BlindedRoute(cType: self.cType!.contents.result.pointee)
+							return BlindedRoute(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

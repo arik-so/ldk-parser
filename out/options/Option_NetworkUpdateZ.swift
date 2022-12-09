@@ -94,7 +94,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_NetworkUpdateZ_Some {
-							return NetworkUpdate(cType: self.cType!.some)
+							return NetworkUpdate(cType: self.cType!.some, anchor: self).dangle()
 						}
 						assert(false, "invalid option enum value")
 						return nil

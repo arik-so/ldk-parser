@@ -167,7 +167,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).dangle().getValue()
 
 						return returnValue
 					}
@@ -186,7 +186,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentPurposeDecodeErrorZ(cType: nativeCallResult)
+						let returnValue = Result_PaymentPurposeDecodeErrorZ(cType: nativeCallResult, anchor: self).dangle()
 
 						return returnValue
 					}
@@ -198,7 +198,7 @@
 							return nil
 						}
 
-						return PaymentPurpose_LDKInvoicePayment_Body(cType: self.cType!.invoice_payment)
+						return PaymentPurpose_LDKInvoicePayment_Body(cType: self.cType!.invoice_payment, anchor: self).dangle()
 					}
 			
 					public func getValueAsSpontaneousPayment() -> [UInt8]? {
@@ -206,7 +206,7 @@
 							return nil
 						}
 
-						return ThirtyTwoBytes(cType: self.cType!.spontaneous_payment).getValue()
+						return ThirtyTwoBytes(cType: self.cType!.spontaneous_payment).dangle().getValue()
 					}
 			
 

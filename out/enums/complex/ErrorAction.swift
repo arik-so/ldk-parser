@@ -245,7 +245,7 @@
 							return nil
 						}
 
-						return ErrorAction_LDKDisconnectPeer_Body(cType: self.cType!.disconnect_peer)
+						return ErrorAction_LDKDisconnectPeer_Body(cType: self.cType!.disconnect_peer, anchor: self).dangle()
 					}
 			
 					public func getValueAsIgnoreAndLog() -> Level? {
@@ -261,7 +261,7 @@
 							return nil
 						}
 
-						return ErrorAction_LDKSendErrorMessage_Body(cType: self.cType!.send_error_message)
+						return ErrorAction_LDKSendErrorMessage_Body(cType: self.cType!.send_error_message, anchor: self).dangle()
 					}
 			
 					public func getValueAsSendWarningMessage() -> SendWarningMessage? {
@@ -269,7 +269,7 @@
 							return nil
 						}
 
-						return ErrorAction_LDKSendWarningMessage_Body(cType: self.cType!.send_warning_message)
+						return ErrorAction_LDKSendWarningMessage_Body(cType: self.cType!.send_warning_message, anchor: self).dangle()
 					}
 			
 

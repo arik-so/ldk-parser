@@ -336,7 +336,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).dangle().getValue()
 
 						return returnValue
 					}
@@ -355,7 +355,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_ClosureReasonZDecodeErrorZ(cType: nativeCallResult)
+						let returnValue = Result_COption_ClosureReasonZDecodeErrorZ(cType: nativeCallResult, anchor: self).dangle()
 
 						return returnValue
 					}
@@ -367,7 +367,7 @@
 							return nil
 						}
 
-						return ClosureReason_LDKCounterpartyForceClosed_Body(cType: self.cType!.counterparty_force_closed)
+						return ClosureReason_LDKCounterpartyForceClosed_Body(cType: self.cType!.counterparty_force_closed, anchor: self).dangle()
 					}
 			
 					public func getValueAsProcessingError() -> ProcessingError? {
@@ -375,7 +375,7 @@
 							return nil
 						}
 
-						return ClosureReason_LDKProcessingError_Body(cType: self.cType!.processing_error)
+						return ClosureReason_LDKProcessingError_Body(cType: self.cType!.processing_error, anchor: self).dangle()
 					}
 			
 

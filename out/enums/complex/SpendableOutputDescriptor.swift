@@ -255,7 +255,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).dangle().getValue()
 
 						return returnValue
 					}
@@ -274,7 +274,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_SpendableOutputDescriptorDecodeErrorZ(cType: nativeCallResult)
+						let returnValue = Result_SpendableOutputDescriptorDecodeErrorZ(cType: nativeCallResult, anchor: self).dangle()
 
 						return returnValue
 					}
@@ -286,7 +286,7 @@
 							return nil
 						}
 
-						return SpendableOutputDescriptor_LDKStaticOutput_Body(cType: self.cType!.static_output)
+						return SpendableOutputDescriptor_LDKStaticOutput_Body(cType: self.cType!.static_output, anchor: self).dangle()
 					}
 			
 					public func getValueAsDelayedPaymentOutput() -> Bindings.DelayedPaymentOutputDescriptor? {
@@ -294,7 +294,7 @@
 							return nil
 						}
 
-						return DelayedPaymentOutputDescriptor(cType: self.cType!.delayed_payment_output)
+						return DelayedPaymentOutputDescriptor(cType: self.cType!.delayed_payment_output, anchor: self).dangle()
 					}
 			
 					public func getValueAsStaticPaymentOutput() -> Bindings.StaticPaymentOutputDescriptor? {
@@ -302,7 +302,7 @@
 							return nil
 						}
 
-						return StaticPaymentOutputDescriptor(cType: self.cType!.static_payment_output)
+						return StaticPaymentOutputDescriptor(cType: self.cType!.static_payment_output, anchor: self).dangle()
 					}
 			
 

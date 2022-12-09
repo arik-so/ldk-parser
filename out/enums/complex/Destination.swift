@@ -131,7 +131,7 @@
 							return nil
 						}
 
-						return PublicKey(cType: self.cType!.node).getValue()
+						return PublicKey(cType: self.cType!.node).dangle().getValue()
 					}
 			
 					public func getValueAsBlindedRoute() -> Bindings.BlindedRoute? {
@@ -139,7 +139,7 @@
 							return nil
 						}
 
-						return BlindedRoute(cType: self.cType!.blinded_route)
+						return BlindedRoute(cType: self.cType!.blinded_route, anchor: self).dangle()
 					}
 			
 

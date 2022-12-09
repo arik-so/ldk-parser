@@ -143,7 +143,7 @@
 					
 					public func getValue() -> String? {
 						if self.cType?.result_ok == true {
-							return Str(cType: self.cType!.contents.result.pointee).getValue()
+							return Str(cType: self.cType!.contents.result.pointee).dangle().getValue()
 						}
 						return nil
 					}

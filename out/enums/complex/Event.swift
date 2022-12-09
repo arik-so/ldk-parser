@@ -703,7 +703,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).dangle().getValue()
 
 						return returnValue
 					}
@@ -722,7 +722,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_COption_EventZDecodeErrorZ(cType: nativeCallResult)
+						let returnValue = Result_COption_EventZDecodeErrorZ(cType: nativeCallResult, anchor: self).dangle()
 
 						return returnValue
 					}
@@ -734,7 +734,7 @@
 							return nil
 						}
 
-						return Event_LDKFundingGenerationReady_Body(cType: self.cType!.funding_generation_ready)
+						return Event_LDKFundingGenerationReady_Body(cType: self.cType!.funding_generation_ready, anchor: self).dangle()
 					}
 			
 					public func getValueAsPaymentReceived() -> PaymentReceived? {
@@ -742,7 +742,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentReceived_Body(cType: self.cType!.payment_received)
+						return Event_LDKPaymentReceived_Body(cType: self.cType!.payment_received, anchor: self).dangle()
 					}
 			
 					public func getValueAsPaymentClaimed() -> PaymentClaimed? {
@@ -750,7 +750,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentClaimed_Body(cType: self.cType!.payment_claimed)
+						return Event_LDKPaymentClaimed_Body(cType: self.cType!.payment_claimed, anchor: self).dangle()
 					}
 			
 					public func getValueAsPaymentSent() -> PaymentSent? {
@@ -758,7 +758,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentSent_Body(cType: self.cType!.payment_sent)
+						return Event_LDKPaymentSent_Body(cType: self.cType!.payment_sent, anchor: self).dangle()
 					}
 			
 					public func getValueAsPaymentFailed() -> PaymentFailed? {
@@ -766,7 +766,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentFailed_Body(cType: self.cType!.payment_failed)
+						return Event_LDKPaymentFailed_Body(cType: self.cType!.payment_failed, anchor: self).dangle()
 					}
 			
 					public func getValueAsPaymentPathSuccessful() -> PaymentPathSuccessful? {
@@ -774,7 +774,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentPathSuccessful_Body(cType: self.cType!.payment_path_successful)
+						return Event_LDKPaymentPathSuccessful_Body(cType: self.cType!.payment_path_successful, anchor: self).dangle()
 					}
 			
 					public func getValueAsPaymentPathFailed() -> PaymentPathFailed? {
@@ -782,7 +782,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentPathFailed_Body(cType: self.cType!.payment_path_failed)
+						return Event_LDKPaymentPathFailed_Body(cType: self.cType!.payment_path_failed, anchor: self).dangle()
 					}
 			
 					public func getValueAsProbeSuccessful() -> ProbeSuccessful? {
@@ -790,7 +790,7 @@
 							return nil
 						}
 
-						return Event_LDKProbeSuccessful_Body(cType: self.cType!.probe_successful)
+						return Event_LDKProbeSuccessful_Body(cType: self.cType!.probe_successful, anchor: self).dangle()
 					}
 			
 					public func getValueAsProbeFailed() -> ProbeFailed? {
@@ -798,7 +798,7 @@
 							return nil
 						}
 
-						return Event_LDKProbeFailed_Body(cType: self.cType!.probe_failed)
+						return Event_LDKProbeFailed_Body(cType: self.cType!.probe_failed, anchor: self).dangle()
 					}
 			
 					public func getValueAsPendingHtlCsForwardable() -> PendingHTLCsForwardable? {
@@ -806,7 +806,7 @@
 							return nil
 						}
 
-						return Event_LDKPendingHTLCsForwardable_Body(cType: self.cType!.pending_htl_cs_forwardable)
+						return Event_LDKPendingHTLCsForwardable_Body(cType: self.cType!.pending_htl_cs_forwardable, anchor: self).dangle()
 					}
 			
 					public func getValueAsSpendableOutputs() -> SpendableOutputs? {
@@ -814,7 +814,7 @@
 							return nil
 						}
 
-						return Event_LDKSpendableOutputs_Body(cType: self.cType!.spendable_outputs)
+						return Event_LDKSpendableOutputs_Body(cType: self.cType!.spendable_outputs, anchor: self).dangle()
 					}
 			
 					public func getValueAsPaymentForwarded() -> PaymentForwarded? {
@@ -822,7 +822,7 @@
 							return nil
 						}
 
-						return Event_LDKPaymentForwarded_Body(cType: self.cType!.payment_forwarded)
+						return Event_LDKPaymentForwarded_Body(cType: self.cType!.payment_forwarded, anchor: self).dangle()
 					}
 			
 					public func getValueAsChannelClosed() -> ChannelClosed? {
@@ -830,7 +830,7 @@
 							return nil
 						}
 
-						return Event_LDKChannelClosed_Body(cType: self.cType!.channel_closed)
+						return Event_LDKChannelClosed_Body(cType: self.cType!.channel_closed, anchor: self).dangle()
 					}
 			
 					public func getValueAsDiscardFunding() -> DiscardFunding? {
@@ -838,7 +838,7 @@
 							return nil
 						}
 
-						return Event_LDKDiscardFunding_Body(cType: self.cType!.discard_funding)
+						return Event_LDKDiscardFunding_Body(cType: self.cType!.discard_funding, anchor: self).dangle()
 					}
 			
 					public func getValueAsOpenChannelRequest() -> OpenChannelRequest? {
@@ -846,7 +846,7 @@
 							return nil
 						}
 
-						return Event_LDKOpenChannelRequest_Body(cType: self.cType!.open_channel_request)
+						return Event_LDKOpenChannelRequest_Body(cType: self.cType!.open_channel_request, anchor: self).dangle()
 					}
 			
 					public func getValueAsHtlcHandlingFailed() -> HTLCHandlingFailed? {
@@ -854,7 +854,7 @@
 							return nil
 						}
 
-						return Event_LDKHTLCHandlingFailed_Body(cType: self.cType!.htlc_handling_failed)
+						return Event_LDKHTLCHandlingFailed_Body(cType: self.cType!.htlc_handling_failed, anchor: self).dangle()
 					}
 			
 

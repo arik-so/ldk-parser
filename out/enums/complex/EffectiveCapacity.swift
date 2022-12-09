@@ -242,7 +242,7 @@
 							return nil
 						}
 
-						return EffectiveCapacity_LDKExactLiquidity_Body(cType: self.cType!.exact_liquidity)
+						return EffectiveCapacity_LDKExactLiquidity_Body(cType: self.cType!.exact_liquidity, anchor: self).dangle()
 					}
 			
 					public func getValueAsMaximumHtlc() -> MaximumHTLC? {
@@ -250,7 +250,7 @@
 							return nil
 						}
 
-						return EffectiveCapacity_LDKMaximumHTLC_Body(cType: self.cType!.maximum_htlc)
+						return EffectiveCapacity_LDKMaximumHTLC_Body(cType: self.cType!.maximum_htlc, anchor: self).dangle()
 					}
 			
 					public func getValueAsTotal() -> Total? {
@@ -258,7 +258,7 @@
 							return nil
 						}
 
-						return EffectiveCapacity_LDKTotal_Body(cType: self.cType!.total)
+						return EffectiveCapacity_LDKTotal_Body(cType: self.cType!.total, anchor: self).dangle()
 					}
 			
 

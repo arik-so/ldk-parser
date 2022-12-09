@@ -134,7 +134,7 @@
 					
 					public func getError() -> APIError? {
 						if self.cType?.result_ok == false {
-							return APIError(cType: self.cType!.contents.err.pointee)
+							return APIError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
 						}
 						return nil
 					}
@@ -143,7 +143,7 @@
 					
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
-							return ThirtyTwoBytes(cType: self.cType!.contents.result.pointee).getValue()
+							return ThirtyTwoBytes(cType: self.cType!.contents.result.pointee).dangle().getValue()
 						}
 						return nil
 					}
