@@ -113,6 +113,8 @@
 						
 						let aPrimitiveWrapper = Str(value: a)
 				
+						aPrimitiveWrapper.cType!.chars_is_owned = false
+					
 
 						// native method call
 						let nativeCallResult = PaymentError_invoice(aPrimitiveWrapper.cType!)

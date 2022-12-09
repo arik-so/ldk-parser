@@ -85,6 +85,8 @@
 						
 						let valPrimitiveWrapper = Transaction(value: val)
 				
+						valPrimitiveWrapper.cType!.data_is_owned = false
+					
 
 						// native method call
 						let nativeCallResult = 
@@ -168,6 +170,8 @@
 						
 						let transactionArgPrimitiveWrapper = Transaction(value: transactionArg)
 				
+						transactionArgPrimitiveWrapper.cType!.data_is_owned = false
+					
 						let txidArgPrimitiveWrapper = ThirtyTwoBytes(value: txidArg)
 				
 

@@ -287,6 +287,8 @@
 						
 						let sPrimitiveWrapper = Str(value: s)
 				
+						sPrimitiveWrapper.cType!.chars_is_owned = false
+					
 
 						// native method call
 						let nativeCallResult = SignedRawInvoice_from_str(sPrimitiveWrapper.cType!)

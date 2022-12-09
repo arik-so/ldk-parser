@@ -85,6 +85,8 @@
 						
 						let valPrimitiveWrapper = Str(value: val)
 				
+						valPrimitiveWrapper.cType!.chars_is_owned = false
+					
 
 						// native method call
 						let nativeCallResult = 
@@ -156,6 +158,8 @@
 						
 						let errArgPrimitiveWrapper = Str(value: errArg)
 				
+						errArgPrimitiveWrapper.cType!.chars_is_owned = false
+					
 
 						// native method call
 						let nativeCallResult = LightningError_new(errArgPrimitiveWrapper.cType!, actionArg.cType!)

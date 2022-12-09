@@ -45,6 +45,8 @@
 						
 						let oPrimitiveWrapper = Transaction(value: o)
 				
+						oPrimitiveWrapper.cType!.data_is_owned = false
+					
 
 						// native method call
 						let nativeCallResult = CResult_TransactionNoneZ_ok(oPrimitiveWrapper.cType!)

@@ -604,6 +604,8 @@
 				
 						let transactionPrimitiveWrapper = Transaction(value: transaction)
 				
+						transactionPrimitiveWrapper.cType!.data_is_owned = false
+					
 
 						// native method call
 						let nativeCallResult = Event_discard_funding(channelIdPrimitiveWrapper.cType!, transactionPrimitiveWrapper.cType!)

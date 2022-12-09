@@ -581,13 +581,15 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			// determine whether this is an initialization of that container
 			if (containerType instanceof RustVector) {
 				if (argument.type === containerType.iterateeField.type) {
-					if(this.hasCloneMethod(argument.type)){
+					if (this.hasCloneMethod(argument.type)) {
 						// the array is gonna get passed to C, and the array is gonna get cleaned
 						// to make sure this value doesn't also get freed after the array gets freed,
 						// the clone must be dangled
-						cloneInfix = '.danglingClone()'
-					} else {
-						// console.log('uncloneable vector entry:', containerType.iterateeField.type.constructor.name)
+						cloneInfix = '.danglingClone()';
+					} else if (this.hasFreeMethod(argument.type)) {
+						if (argument.type instanceof RustPrimitiveWrapper && !argument.type.ownershipField) {
+							throw new Error(`Uncloneable, but freeable argument without an ownership field: ${argument.type.getName()} (${argument.type.constructor.name})`);
+						}
 					}
 				}
 			}
@@ -616,6 +618,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedArgument.conversion += `
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})${cloneInfix}
 				`;
+				if(argument.type.ownershipField) {
+					preparedArgument.conversion += `
+						${preparedArgument.name}.cType!.${argument.type.ownershipField!.contextualName} = false
+					`;
+				}
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustVector) {
 				preparedArgument.name += 'Vector';

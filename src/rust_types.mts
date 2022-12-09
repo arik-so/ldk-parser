@@ -26,6 +26,13 @@ export abstract class RustType {
 	 */
 	protected _name: string | null;
 
+	get typeDescription(): string {
+		if (this._name) {
+			return `${this._name} (${this.constructor.name})`;
+		}
+		return this.constructor.name;
+	}
+
 	/**
 	 * This is a rather unfortunate workaround because some child types _definitely_ have
 	 * a nonnull name, but others may not have a name.

@@ -135,6 +135,8 @@
 						
 						let txPrimitiveWrapper = Transaction(value: tx)
 				
+						txPrimitiveWrapper.cType!.data_is_owned = false
+					
 
 						// native method call
 						let nativeCallResult = self.cType!.broadcast_transaction(self.cType!.this_arg, txPrimitiveWrapper.cType!)

@@ -853,6 +853,8 @@
 						
 						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx)
 				
+						justiceTxPrimitiveWrapper.cType!.data_is_owned = false
+					
 					var tupledPerCommitmentKeyPointer: UnsafeMutablePointer<UInt8Tuple32>? = nil
 					if let perCommitmentKey = perCommitmentKey {
 						
@@ -897,6 +899,8 @@
 						
 						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx)
 				
+						justiceTxPrimitiveWrapper.cType!.data_is_owned = false
+					
 					var tupledPerCommitmentKeyPointer: UnsafeMutablePointer<UInt8Tuple32>? = nil
 					if let perCommitmentKey = perCommitmentKey {
 						
@@ -945,6 +949,8 @@
 						
 						let htlcTxPrimitiveWrapper = Transaction(value: htlcTx)
 				
+						htlcTxPrimitiveWrapper.cType!.data_is_owned = false
+					
 						let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
 				
 
@@ -995,6 +1001,8 @@
 						
 						let anchorTxPrimitiveWrapper = Transaction(value: anchorTx)
 				
+						anchorTxPrimitiveWrapper.cType!.data_is_owned = false
+					
 
 						// native method call
 						let nativeCallResult = self.cType!.sign_holder_anchor_input(self.cType!.this_arg, anchorTxPrimitiveWrapper.cType!, input)

@@ -85,6 +85,8 @@
 						
 						let pathToChannelDataPrimitiveWrapper = Str(value: pathToChannelData)
 				
+						pathToChannelDataPrimitiveWrapper.cType!.chars_is_owned = false
+					
 
 						// native method call
 						let nativeCallResult = FilesystemPersister_new(pathToChannelDataPrimitiveWrapper.cType!)
