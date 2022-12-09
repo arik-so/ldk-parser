@@ -23,6 +23,7 @@
 		07344C65264277ED001CD90E /* Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 07344C57264277ED001CD90E /* Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07344C8726427F95001CD90E /* LDKExampleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07344C8626427F95001CD90E /* LDKExampleClass.swift */; };
 		07344C8826427F95001CD90E /* LDKExampleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07344C8626427F95001CD90E /* LDKExampleClass.swift */; };
+		07BFB9A02943C0D000D93FAA /* Crypto in Frameworks */ = {isa = PBXBuildFile; productRef = 07BFB99F2943C0D000D93FAA /* Crypto */; };
 		07CE1EB128E767DC00BB37E4 /* TestKeysInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE1EA128E767DA00BB37E4 /* TestKeysInterface.swift */; };
 		07CE1EB228E767DC00BB37E4 /* TestPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE1EA228E767DA00BB37E4 /* TestPersister.swift */; };
 		07CE1EB328E767DC00BB37E4 /* LDKTestFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE1EA328E767DA00BB37E4 /* LDKTestFixtures.swift */; };
@@ -2593,6 +2594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				072B063329431EAB0007BC53 /* libldk.a in Frameworks */,
+				07BFB9A02943C0D000D93FAA /* Crypto in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3542,6 +3544,7 @@
 			);
 			name = DirectlyLinkedBindingsApp;
 			packageProductDependencies = (
+				07BFB99F2943C0D000D93FAA /* Crypto */,
 			);
 			productName = DirectlyLinkedBindingsApp;
 			productReference = 07E06469287CAD0600CFA8BF /* DirectlyLinkedBindingsApp.app */;
@@ -6114,6 +6117,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		07BFB99F2943C0D000D93FAA /* Crypto */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07DF1E012941318D00531169 /* XCRemoteSwiftPackageReference "swift-crypto" */;
+			productName = Crypto;
+		};
 		07DF1E022941318D00531169 /* Crypto */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 07DF1E012941318D00531169 /* XCRemoteSwiftPackageReference "swift-crypto" */;

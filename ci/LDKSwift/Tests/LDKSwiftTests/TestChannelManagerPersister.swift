@@ -22,13 +22,13 @@ class TestChannelManagerPersister : Persister, ExtendedChannelManagerPersister {
     func handle_event(event: Event) {
         // privateHandleEvent(event: event)
     }
-
-    override func persist_manager(channel_manager: ChannelManager) -> Result_NoneErrorZ {
-        return Result_NoneErrorZ()
+    
+    override func persistManager(channelManager: Bindings.ChannelManager) -> Bindings.Result_NoneErrorZ {
+        .initWithOk()
     }
     
-    override func persist_scorer(scorer: Bindings.WriteableScore) -> Bindings.Result_NoneErrorZ {
-        Result_NoneErrorZ()
+    override func persistScorer(scorer: Bindings.WriteableScore) -> Bindings.Result_NoneErrorZ {
+        .initWithOk()
     }
 }
 
