@@ -738,7 +738,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 
 		// TODO: add support for anchor infix and dangle()/danglingClone() suffixes
-		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple || returnType.type instanceof RustPrimitiveWrapper) {
+		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple || returnType.type instanceof RustPrimitiveWrapper || returnType.type instanceof RustNullableOption) {
+			// basically all the elided types
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
 			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
 			if (returnType.type !== containerType) {
@@ -748,16 +749,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		} else if (returnType.type instanceof RustTrait) {
 			preparedReturnValue.wrapperPrefix += `NativelyImplemented${this.swiftTypeName(returnType.type)}(cType: `;
 			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
-		} else if (returnType.type instanceof RustNullableOption) {
-			// nullable option must come BEFORE tagged value enum, because it's a subclass
-			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
-			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
-			if (returnType.type !== containerType) {
-				// it's an elided type, so we pass it through
-				preparedReturnValue.wrapperSuffix += '.getValue()';
-			}
 		} else if (returnType.type instanceof RustStruct || returnType.type instanceof RustResult || returnType.type instanceof RustTaggedValueEnum) {
+			// basically all the non-elided types
 			if (!this.isElidedType(returnType.type) && returnType.type instanceof RustStruct && containerType instanceof RustStruct && containerType.parentType instanceof RustTaggedValueEnum) {
+				// one really odd edge case
 				preparedReturnValue.wrapperPrefix += 'Bindings.';
 			}
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
