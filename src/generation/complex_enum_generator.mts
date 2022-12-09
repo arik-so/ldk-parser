@@ -53,7 +53,16 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 		for (const [_, currentVariant] of Object.entries(type.variants)) {
 			const currentPublicType = this.getPublicTypeSignature(currentVariant.type, type);
 			const camelCasedVariantName = Generator.snakeCaseToCamelCase(currentVariant.contextualName, true);
-			const currentSwiftTypeName = camelCasedVariantName;
+
+			/**
+			 * This is a special-cased workaround for the following two offenders:
+			 * – `LDKEvent_LDKPendingHTLCsForwardable_Body pending_htl_cs_forwardable;`
+			 * – `LDKMessageSendEvent_LDKUpdateHTLCs_Body`
+			 *
+			 * For now, we just do a string substitution, but long term…
+			 * TODO: keep bugging Matt until this is gone from the header file
+			 */
+			let currentSwiftTypeName = camelCasedVariantName.replace('HtlC', 'Htlc');
 
 			if (currentVariant.type.parentType === type) {
 				if (!(currentVariant.type instanceof RustStruct)) {
@@ -74,7 +83,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 			}
 
 			if (!matchingTagTypeVariant) {
-				throw new Error(`Unable to find matching tag variant in ${currentSwiftTypeName} for ${currentVariant.contextualName}`);
+				throw new Error(`Unable to find matching tag variant in ${currentVariant.type.getName()} for ${currentVariant.contextualName}`);
 			}
 
 			polymorphicAccessors += `

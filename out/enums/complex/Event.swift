@@ -741,7 +741,7 @@
 						return Event_LDKProbeFailed_Body(cType: self.cType!.probe_failed, anchor: self).dangle()
 					}
 			
-					public func getValueAsPendingHtlCsForwardable() -> PendingHTLCsForwardable? {
+					public func getValueAsPendingHtlcsForwardable() -> PendingHTLCsForwardable? {
 						if self.cType?.tag != LDKEvent_PendingHTLCsForwardable {
 							return nil
 						}

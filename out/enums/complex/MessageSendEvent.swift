@@ -651,7 +651,7 @@
 						return MessageSendEvent_LDKSendAnnouncementSignatures_Body(cType: self.cType!.send_announcement_signatures, anchor: self).dangle()
 					}
 			
-					public func getValueAsUpdateHtlCs() -> UpdateHTLCs? {
+					public func getValueAsUpdateHtlcs() -> UpdateHTLCs? {
 						if self.cType?.tag != LDKMessageSendEvent_UpdateHTLCs {
 							return nil
 						}
