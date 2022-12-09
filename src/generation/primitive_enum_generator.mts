@@ -30,7 +30,6 @@ export default class PrimitiveEnumGenerator extends BaseTypeGenerator<RustPrimit
 			rustValueAccessor += `
 							case .${currentVariantSwiftName}:
 								return ${currentVariant.name}
-								// return ${type.name}(${index})
 			`;
 
 			let swiftCase = `case ${currentVariant.name}`;
@@ -38,11 +37,8 @@ export default class PrimitiveEnumGenerator extends BaseTypeGenerator<RustPrimit
 				swiftCase = 'default';
 			}
 			swiftValueInitializer += `
-							// ${currentVariant.name}
-							// if value.rawValue == ${index} {
-							${swiftCase}: // {
+							${swiftCase}:
 								self = .${currentVariantSwiftName}
-							// }
 			`;
 
 			lastSwiftVariantName = currentVariantSwiftName;
@@ -64,10 +60,6 @@ export default class PrimitiveEnumGenerator extends BaseTypeGenerator<RustPrimit
 					${enumVariants}
 
 					internal init (value: ${type.name}) {
-
-						// TODO: remove this initial assumption somehow
-						// self = .${lastSwiftVariantName}
-
 						switch value {
 							${swiftValueInitializer}
 						}

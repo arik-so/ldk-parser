@@ -20,23 +20,13 @@
 			
 
 					internal init (value: LDKAccessError) {
-
-						// TODO: remove this initial assumption somehow
-						// self = .UnknownTx
-
 						switch value {
 							
-							// LDKAccessError_UnknownChain
-							// if value.rawValue == 0 {
-							case LDKAccessError_UnknownChain: // {
+							case LDKAccessError_UnknownChain:
 								self = .UnknownChain
-							// }
 			
-							// LDKAccessError_UnknownTx
-							// if value.rawValue == 1 {
-							default: // {
+							default:
 								self = .UnknownTx
-							// }
 			
 						}
 					}
@@ -46,11 +36,9 @@
 							
 							case .UnknownChain:
 								return LDKAccessError_UnknownChain
-								// return LDKAccessError(0)
 			
 							case .UnknownTx:
 								return LDKAccessError_UnknownTx
-								// return LDKAccessError(1)
 			
 						}
 					}

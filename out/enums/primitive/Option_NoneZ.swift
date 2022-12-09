@@ -20,23 +20,13 @@
 			
 
 					internal init (value: LDKCOption_NoneZ) {
-
-						// TODO: remove this initial assumption somehow
-						// self = .None
-
 						switch value {
 							
-							// LDKCOption_NoneZ_Some
-							// if value.rawValue == 0 {
-							case LDKCOption_NoneZ_Some: // {
+							case LDKCOption_NoneZ_Some:
 								self = .Some
-							// }
 			
-							// LDKCOption_NoneZ_None
-							// if value.rawValue == 1 {
-							default: // {
+							default:
 								self = .None
-							// }
 			
 						}
 					}
@@ -46,11 +36,9 @@
 							
 							case .Some:
 								return LDKCOption_NoneZ_Some
-								// return LDKCOption_NoneZ(0)
 			
 							case .None:
 								return LDKCOption_NoneZ_None
-								// return LDKCOption_NoneZ(1)
 			
 						}
 					}

@@ -29,41 +29,22 @@
 			
 
 					internal init (value: LDKCurrency) {
-
-						// TODO: remove this initial assumption somehow
-						// self = .Signet
-
 						switch value {
 							
-							// LDKCurrency_Bitcoin
-							// if value.rawValue == 0 {
-							case LDKCurrency_Bitcoin: // {
+							case LDKCurrency_Bitcoin:
 								self = .Bitcoin
-							// }
 			
-							// LDKCurrency_BitcoinTestnet
-							// if value.rawValue == 1 {
-							case LDKCurrency_BitcoinTestnet: // {
+							case LDKCurrency_BitcoinTestnet:
 								self = .BitcoinTestnet
-							// }
 			
-							// LDKCurrency_Regtest
-							// if value.rawValue == 2 {
-							case LDKCurrency_Regtest: // {
+							case LDKCurrency_Regtest:
 								self = .Regtest
-							// }
 			
-							// LDKCurrency_Simnet
-							// if value.rawValue == 3 {
-							case LDKCurrency_Simnet: // {
+							case LDKCurrency_Simnet:
 								self = .Simnet
-							// }
 			
-							// LDKCurrency_Signet
-							// if value.rawValue == 4 {
-							default: // {
+							default:
 								self = .Signet
-							// }
 			
 						}
 					}
@@ -73,23 +54,18 @@
 							
 							case .Bitcoin:
 								return LDKCurrency_Bitcoin
-								// return LDKCurrency(0)
 			
 							case .BitcoinTestnet:
 								return LDKCurrency_BitcoinTestnet
-								// return LDKCurrency(1)
 			
 							case .Regtest:
 								return LDKCurrency_Regtest
-								// return LDKCurrency(2)
 			
 							case .Simnet:
 								return LDKCurrency_Simnet
-								// return LDKCurrency(3)
 			
 							case .Signet:
 								return LDKCurrency_Signet
-								// return LDKCurrency(4)
 			
 						}
 					}

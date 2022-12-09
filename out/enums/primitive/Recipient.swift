@@ -25,23 +25,13 @@
 			
 
 					internal init (value: LDKRecipient) {
-
-						// TODO: remove this initial assumption somehow
-						// self = .PhantomNode
-
 						switch value {
 							
-							// LDKRecipient_Node
-							// if value.rawValue == 0 {
-							case LDKRecipient_Node: // {
+							case LDKRecipient_Node:
 								self = .Node
-							// }
 			
-							// LDKRecipient_PhantomNode
-							// if value.rawValue == 1 {
-							default: // {
+							default:
 								self = .PhantomNode
-							// }
 			
 						}
 					}
@@ -51,11 +41,9 @@
 							
 							case .Node:
 								return LDKRecipient_Node
-								// return LDKRecipient(0)
 			
 							case .PhantomNode:
 								return LDKRecipient_PhantomNode
-								// return LDKRecipient(1)
 			
 						}
 					}

@@ -26,35 +26,19 @@
 			
 
 					internal init (value: LDKNetwork) {
-
-						// TODO: remove this initial assumption somehow
-						// self = .Signet
-
 						switch value {
 							
-							// LDKNetwork_Bitcoin
-							// if value.rawValue == 0 {
-							case LDKNetwork_Bitcoin: // {
+							case LDKNetwork_Bitcoin:
 								self = .Bitcoin
-							// }
 			
-							// LDKNetwork_Testnet
-							// if value.rawValue == 1 {
-							case LDKNetwork_Testnet: // {
+							case LDKNetwork_Testnet:
 								self = .Testnet
-							// }
 			
-							// LDKNetwork_Regtest
-							// if value.rawValue == 2 {
-							case LDKNetwork_Regtest: // {
+							case LDKNetwork_Regtest:
 								self = .Regtest
-							// }
 			
-							// LDKNetwork_Signet
-							// if value.rawValue == 3 {
-							default: // {
+							default:
 								self = .Signet
-							// }
 			
 						}
 					}
@@ -64,19 +48,15 @@
 							
 							case .Bitcoin:
 								return LDKNetwork_Bitcoin
-								// return LDKNetwork(0)
 			
 							case .Testnet:
 								return LDKNetwork_Testnet
-								// return LDKNetwork(1)
 			
 							case .Regtest:
 								return LDKNetwork_Regtest
-								// return LDKNetwork(2)
 			
 							case .Signet:
 								return LDKNetwork_Signet
-								// return LDKNetwork(3)
 			
 						}
 					}

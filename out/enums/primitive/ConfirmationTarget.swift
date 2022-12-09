@@ -25,29 +25,16 @@
 			
 
 					internal init (value: LDKConfirmationTarget) {
-
-						// TODO: remove this initial assumption somehow
-						// self = .HighPriority
-
 						switch value {
 							
-							// LDKConfirmationTarget_Background
-							// if value.rawValue == 0 {
-							case LDKConfirmationTarget_Background: // {
+							case LDKConfirmationTarget_Background:
 								self = .Background
-							// }
 			
-							// LDKConfirmationTarget_Normal
-							// if value.rawValue == 1 {
-							case LDKConfirmationTarget_Normal: // {
+							case LDKConfirmationTarget_Normal:
 								self = .Normal
-							// }
 			
-							// LDKConfirmationTarget_HighPriority
-							// if value.rawValue == 2 {
-							default: // {
+							default:
 								self = .HighPriority
-							// }
 			
 						}
 					}
@@ -57,15 +44,12 @@
 							
 							case .Background:
 								return LDKConfirmationTarget_Background
-								// return LDKConfirmationTarget(0)
 			
 							case .Normal:
 								return LDKConfirmationTarget_Normal
-								// return LDKConfirmationTarget(1)
 			
 							case .HighPriority:
 								return LDKConfirmationTarget_HighPriority
-								// return LDKConfirmationTarget(2)
 			
 						}
 					}
