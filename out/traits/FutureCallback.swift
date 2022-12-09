@@ -105,13 +105,18 @@
 					
 					/// The method which is called.
 					open func call() -> Void {
+						
 						Bindings.print("Error: FutureCallback::call MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: FutureCallback::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

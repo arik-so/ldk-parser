@@ -128,6 +128,7 @@
 					
 					/// Called with the custom message that was received.
 					open func handleCustomMessage(msg: CustomOnionMessageContents) -> Void {
+						
 						Bindings.print("Error: CustomOnionMessageHandler::handleCustomMessage MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -135,13 +136,18 @@
 					/// Read a custom message of type `message_type` from `buffer`, returning `Ok(None)` if the
 					/// message type is unknown.
 					open func readCustomMessage(messageType: UInt64, buffer: [UInt8]) -> Result_COption_CustomOnionMessageContentsZDecodeErrorZ {
+						
 						Bindings.print("Error: CustomOnionMessageHandler::readCustomMessage MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: CustomOnionMessageHandler::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

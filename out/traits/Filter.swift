@@ -154,6 +154,7 @@
 					/// Registers interest in a transaction with `txid` and having an output with `script_pubkey` as
 					/// a spending condition.
 					open func registerTx(txid: [UInt8]?, scriptPubkey: [UInt8]) -> Void {
+						
 						Bindings.print("Error: Filter::registerTx MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -165,13 +166,18 @@
 					/// handled, e.g., by re-scanning the block in question whenever new outputs have been
 					/// registered mid-processing.
 					open func registerOutput(output: WatchedOutput) -> Void {
+						
 						Bindings.print("Error: Filter::registerOutput MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: Filter::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

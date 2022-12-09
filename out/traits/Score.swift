@@ -197,43 +197,53 @@
 					/// [`u64::max_value`] is given to indicate sufficient capacity for the invoice's full amount.
 					/// Thus, implementations should be overflow-safe.
 					open func channelPenaltyMsat(shortChannelId: UInt64, source: NodeId, target: NodeId, usage: ChannelUsage) -> UInt64 {
+						
 						Bindings.print("Error: Score::channelPenaltyMsat MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Handles updating channel penalties after failing to route through a channel.
 					open func paymentPathFailed(path: [RouteHop], shortChannelId: UInt64) -> Void {
+						
 						Bindings.print("Error: Score::paymentPathFailed MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Handles updating channel penalties after successfully routing along a path.
 					open func paymentPathSuccessful(path: [RouteHop]) -> Void {
+						
 						Bindings.print("Error: Score::paymentPathSuccessful MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Handles updating channel penalties after a probe over the given path failed.
 					open func probeFailed(path: [RouteHop], shortChannelId: UInt64) -> Void {
+						
 						Bindings.print("Error: Score::probeFailed MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Handles updating channel penalties after a probe over the given path succeeded.
 					open func probeSuccessful(path: [RouteHop]) -> Void {
+						
 						Bindings.print("Error: Score::probeSuccessful MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Serialize the object into a byte array
 					open func write() -> [UInt8] {
+						
 						Bindings.print("Error: Score::write MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: Score::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

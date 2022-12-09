@@ -168,6 +168,7 @@
 					
 					/// Handle an incoming onion_message message from the given peer.
 					open func handleOnionMessage(peerNodeId: [UInt8], msg: OnionMessage) -> Void {
+						
 						Bindings.print("Error: OnionMessageHandler::handleOnionMessage MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -179,6 +180,7 @@
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
 					open func peerConnected(theirNodeId: [UInt8], initArgument: BindingsInit) -> Result_NoneNoneZ {
+						
 						Bindings.print("Error: OnionMessageHandler::peerConnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -189,6 +191,7 @@
 					/// Note that in some rare cases this may be called without a corresponding
 					/// [`Self::peer_connected`].
 					open func peerDisconnected(theirNodeId: [UInt8], noConnectionPossible: Bool) -> Void {
+						
 						Bindings.print("Error: OnionMessageHandler::peerDisconnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -197,6 +200,7 @@
 					/// queried similarly and their feature flags are OR'd together to form the [`NodeFeatures`]
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
 					open func providedNodeFeatures() -> NodeFeatures {
+						
 						Bindings.print("Error: OnionMessageHandler::providedNodeFeatures MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -207,13 +211,18 @@
 					/// 
 					/// Note that this method is called before [`Self::peer_connected`].
 					open func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
+						
 						Bindings.print("Error: OnionMessageHandler::providedInitFeatures MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: OnionMessageHandler::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

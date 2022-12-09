@@ -237,6 +237,7 @@
 					/// [chain order]: Confirm#order
 					/// [`best_block_updated`]: Self::best_block_updated
 					open func transactionsConfirmed(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) -> Void {
+						
 						Bindings.print("Error: Confirm::transactionsConfirmed MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -250,6 +251,7 @@
 					/// [`get_relevant_txids`]: Self::get_relevant_txids
 					/// [`transactions_confirmed`]: Self::transactions_confirmed
 					open func transactionUnconfirmed(txid: [UInt8]?) -> Void {
+						
 						Bindings.print("Error: Confirm::transactionUnconfirmed MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -259,6 +261,7 @@
 					/// Should be called when a new header is available but may be skipped for intermediary blocks
 					/// if they become available at the same time.
 					open func bestBlockUpdated(header: [UInt8]?, height: UInt32) -> Void {
+						
 						Bindings.print("Error: Confirm::bestBlockUpdated MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -277,13 +280,18 @@
 					/// [`transactions_confirmed`]: Self::transactions_confirmed
 					/// [`transaction_unconfirmed`]: Self::transaction_unconfirmed
 					open func getRelevantTxids() -> [[UInt8]] {
+						
 						Bindings.print("Error: Confirm::getRelevantTxids MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: Confirm::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

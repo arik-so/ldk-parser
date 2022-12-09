@@ -111,19 +111,25 @@
 					
 					/// Returns the TLV type identifying the message contents. MUST be >= 64.
 					open func tlvType() -> UInt64 {
+						
 						Bindings.print("Error: CustomOnionMessageContents::tlvType MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Serialize the object into a byte array
 					open func write() -> [UInt8] {
+						
 						Bindings.print("Error: CustomOnionMessageContents::write MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: CustomOnionMessageContents::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

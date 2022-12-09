@@ -112,6 +112,7 @@
 					/// Called with the message type that was received and the buffer to be read.
 					/// Can return a `MessageHandlingError` if the message could not be handled.
 					open func handleCustomMessage(msg: BindingsType, senderNodeId: [UInt8]) -> Result_NoneLightningErrorZ {
+						
 						Bindings.print("Error: CustomMessageHandler::handleCustomMessage MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -121,13 +122,18 @@
 					/// correspond to the intended recipients node ids. If no connection to one of the
 					/// specified node does not exist, the message is simply not sent to it.
 					open func getAndClearPendingMsg() -> [([UInt8], BindingsType)] {
+						
 						Bindings.print("Error: CustomMessageHandler::getAndClearPendingMsg MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: CustomMessageHandler::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

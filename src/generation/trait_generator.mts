@@ -199,6 +199,9 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		const swiftMethodName = Generator.snakeCaseToCamelCase(lambda.name);
 		let swiftMethodArguments = [];
 
+		const isFreeCallback = (swiftMethodName === 'free');
+		const visibility = isFreeCallback ? 'internal' : 'open';
+
 		for (const currentArgument of lambda.arguments) {
 			if (currentArgument === lambda.thisArgument) {
 				continue;
@@ -216,9 +219,18 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		const swiftReturnType = this.getPublicTypeSignature(lambda.returnValue.type);
 
+		let isFreeBody = '';
+		if(isFreeCallback) {
+			isFreeBody = `
+				// TODO: figure out something smarter
+				return
+			`;
+		}
+
 		return `
 					${this.renderDocComment(lambda.documentation, 5)}
-					open func ${swiftMethodName}(${swiftMethodArguments.join(', ')}) -> ${swiftReturnType} {
+					${visibility} func ${swiftMethodName}(${swiftMethodArguments.join(', ')}) -> ${swiftReturnType} {
+						${isFreeBody}
 						Bindings.print("Error: ${swiftTypeName}::${swiftMethodName} MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

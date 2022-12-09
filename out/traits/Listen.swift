@@ -160,25 +160,32 @@
 					/// Notifies the listener that a block was added at the given height, with the transaction data
 					/// possibly filtered.
 					open func filteredBlockConnected(header: [UInt8]?, txdata: [(UInt, [UInt8])], height: UInt32) -> Void {
+						
 						Bindings.print("Error: Listen::filteredBlockConnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Notifies the listener that a block was added at the given height.
 					open func blockConnected(block: [UInt8], height: UInt32) -> Void {
+						
 						Bindings.print("Error: Listen::blockConnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Notifies the listener that a block was removed at the given height.
 					open func blockDisconnected(header: [UInt8]?, height: UInt32) -> Void {
+						
 						Bindings.print("Error: Listen::blockDisconnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: Listen::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

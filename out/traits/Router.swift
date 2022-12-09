@@ -179,37 +179,46 @@
 					/// 
 					/// Note that first_hops (or a relevant inner pointer) may be NULL or all-0s to represent None
 					open func findRoute(payer: [UInt8], routeParams: RouteParameters, paymentHash: [UInt8]?, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs) -> Result_RouteLightningErrorZ {
+						
 						Bindings.print("Error: Router::findRoute MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Lets the router know that payment through a specific path has failed.
 					open func notifyPaymentPathFailed(path: [RouteHop], shortChannelId: UInt64) -> Void {
+						
 						Bindings.print("Error: Router::notifyPaymentPathFailed MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Lets the router know that payment through a specific path was successful.
 					open func notifyPaymentPathSuccessful(path: [RouteHop]) -> Void {
+						
 						Bindings.print("Error: Router::notifyPaymentPathSuccessful MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Lets the router know that a payment probe was successful.
 					open func notifyPaymentProbeSuccessful(path: [RouteHop]) -> Void {
+						
 						Bindings.print("Error: Router::notifyPaymentProbeSuccessful MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Lets the router know that a payment probe failed.
 					open func notifyPaymentProbeFailed(path: [RouteHop], shortChannelId: UInt64) -> Void {
+						
 						Bindings.print("Error: Router::notifyPaymentProbeFailed MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: Router::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

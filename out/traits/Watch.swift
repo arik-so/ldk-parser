@@ -176,6 +176,7 @@
 					/// [`block_connected`]: channelmonitor::ChannelMonitor::block_connected
 					/// [`block_disconnected`]: channelmonitor::ChannelMonitor::block_disconnected
 					open func watchChannel(fundingTxo: OutPoint, monitor: ChannelMonitor) -> ChannelMonitorUpdateStatus {
+						
 						Bindings.print("Error: Watch::watchChannel MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -187,6 +188,7 @@
 					/// 
 					/// [`update_monitor`]: channelmonitor::ChannelMonitor::update_monitor
 					open func updateChannel(fundingTxo: OutPoint, update: ChannelMonitorUpdate) -> ChannelMonitorUpdateStatus {
+						
 						Bindings.print("Error: Watch::updateChannel MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -201,13 +203,18 @@
 					/// For details on asynchronous [`ChannelMonitor`] updating and returning
 					/// [`MonitorEvent::Completed`] here, see [`ChannelMonitorUpdateStatus::InProgress`].
 					open func releasePendingMonitorEvents() -> [(OutPoint, [MonitorEvent], [UInt8])] {
+						
 						Bindings.print("Error: Watch::releasePendingMonitorEvents MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: Watch::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

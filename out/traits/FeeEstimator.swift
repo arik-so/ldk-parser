@@ -106,13 +106,18 @@
 					/// * satoshis-per-byte * 250
 					/// * satoshis-per-kbyte / 4
 					open func getEstSatPer_1000Weight(confirmationTarget: ConfirmationTarget) -> UInt32 {
+						
 						Bindings.print("Error: FeeEstimator::getEstSatPer_1000Weight MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: FeeEstimator::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

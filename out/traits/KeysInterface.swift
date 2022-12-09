@@ -269,6 +269,7 @@
 					/// 
 					/// Errors if the `Recipient` variant is not supported by the implementation.
 					open func getNodeSecret(recipient: Recipient) -> Result_SecretKeyNoneZ {
+						
 						Bindings.print("Error: KeysInterface::getNodeSecret MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -283,6 +284,7 @@
 					/// 
 					/// [`get_node_secret`]: KeysInterface::get_node_secret
 					open func getNodeId(recipient: Recipient) -> Result_PublicKeyNoneZ {
+						
 						Bindings.print("Error: KeysInterface::getNodeId MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -295,6 +297,7 @@
 					/// 
 					/// [`node secret`]: Self::get_node_secret
 					open func ecdh(recipient: Recipient, otherKey: [UInt8], tweak: [UInt8]?) -> Result_SharedSecretNoneZ {
+						
 						Bindings.print("Error: KeysInterface::ecdh MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -304,6 +307,7 @@
 					/// This method should return a different value each time it is called, to avoid linking
 					/// on-chain funds across channels as controlled to the same user.
 					open func getDestinationScript() -> [UInt8] {
+						
 						Bindings.print("Error: KeysInterface::getDestinationScript MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -313,6 +317,7 @@
 					/// This method should return a different value each time it is called, to avoid linking
 					/// on-chain funds across channels as controlled to the same user.
 					open func getShutdownScriptpubkey() -> ShutdownScript {
+						
 						Bindings.print("Error: KeysInterface::getShutdownScriptpubkey MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -322,6 +327,7 @@
 					/// 
 					/// This method must return a different value each time it is called.
 					open func getChannelSigner(inbound: Bool, channelValueSatoshis: UInt64) -> Sign {
+						
 						Bindings.print("Error: KeysInterface::getChannelSigner MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -332,6 +338,7 @@
 					/// 
 					/// This method must return a different value each time it is called.
 					open func getSecureRandomBytes() -> [UInt8] {
+						
 						Bindings.print("Error: KeysInterface::getSecureRandomBytes MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -343,6 +350,7 @@
 					/// contain no versioning scheme. You may wish to include your own version prefix and ensure
 					/// you've read all of the provided bytes to ensure no corruption occurred.
 					open func readChanSigner(reader: [UInt8]) -> Result_SignDecodeErrorZ {
+						
 						Bindings.print("Error: KeysInterface::readChanSigner MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -357,6 +365,7 @@
 					/// 
 					/// Errors if the `Recipient` variant is not supported by the implementation.
 					open func signInvoice(hrpBytes: [UInt8], invoiceData: [UInt8], receipient: Recipient) -> Result_RecoverableSignatureNoneZ {
+						
 						Bindings.print("Error: KeysInterface::signInvoice MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -371,13 +380,18 @@
 					/// 
 					/// [phantom node payments]: PhantomKeysManager
 					open func getInboundPaymentKeyMaterial() -> [UInt8] {
+						
 						Bindings.print("Error: KeysInterface::getInboundPaymentKeyMaterial MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: KeysInterface::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

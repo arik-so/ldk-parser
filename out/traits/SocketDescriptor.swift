@@ -187,6 +187,7 @@
 					/// `resume_read` may be set indicating that read events on this descriptor should resume. A
 					/// `resume_read` of false carries no meaning, and should not cause any action.
 					open func sendData(data: [UInt8], resumeRead: Bool) -> UInt {
+						
 						Bindings.print("Error: SocketDescriptor::sendData MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -196,12 +197,14 @@
 					/// You do *not* need to call [`PeerManager::socket_disconnected`] with this socket after this
 					/// call (doing so is a noop).
 					open func disconnectSocket() -> Void {
+						
 						Bindings.print("Error: SocketDescriptor::disconnectSocket MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Checks if two objects are equal given this object's this_arg pointer and another object.
 					open func eq(otherArg: SocketDescriptor) -> Bool {
+						
 						Bindings.print("Error: SocketDescriptor::eq MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -209,13 +212,18 @@
 					/// Calculate a succinct non-cryptographic hash for an object given its this_arg pointer.
 					/// This is used, for example, for inclusion of this object in a hash map.
 					open func hash() -> UInt64 {
+						
 						Bindings.print("Error: SocketDescriptor::hash MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: SocketDescriptor::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}

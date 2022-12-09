@@ -314,6 +314,7 @@
 					/// Handle an incoming node_announcement message, returning true if it should be forwarded on,
 					/// false or returning an Err otherwise.
 					open func handleNodeAnnouncement(msg: NodeAnnouncement) -> Result_boolLightningErrorZ {
+						
 						Bindings.print("Error: RoutingMessageHandler::handleNodeAnnouncement MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -321,6 +322,7 @@
 					/// Handle a channel_announcement message, returning true if it should be forwarded on, false
 					/// or returning an Err otherwise.
 					open func handleChannelAnnouncement(msg: ChannelAnnouncement) -> Result_boolLightningErrorZ {
+						
 						Bindings.print("Error: RoutingMessageHandler::handleChannelAnnouncement MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -328,6 +330,7 @@
 					/// Handle an incoming channel_update message, returning true if it should be forwarded on,
 					/// false or returning an Err otherwise.
 					open func handleChannelUpdate(msg: ChannelUpdate) -> Result_boolLightningErrorZ {
+						
 						Bindings.print("Error: RoutingMessageHandler::handleChannelUpdate MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -336,6 +339,7 @@
 					/// starting at the short_channel_id indicated by starting_point and including announcements
 					/// for a single channel.
 					open func getNextChannelAnnouncement(startingPoint: UInt64) -> (ChannelAnnouncement, ChannelUpdate, ChannelUpdate)? {
+						
 						Bindings.print("Error: RoutingMessageHandler::getNextChannelAnnouncement MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -348,6 +352,7 @@
 					/// Note that starting_point (or a relevant inner pointer) may be NULL or all-0s to represent None
 					/// Note that the return value (or a relevant inner pointer) may be NULL or all-0s to represent None
 					open func getNextNodeAnnouncement(startingPoint: [UInt8]) -> NodeAnnouncement {
+						
 						Bindings.print("Error: RoutingMessageHandler::getNextNodeAnnouncement MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -360,6 +365,7 @@
 					/// with us. Implementors should be somewhat conservative about doing so, however, as other
 					/// message handlers may still wish to communicate with this peer.
 					open func peerConnected(theirNodeId: [UInt8], initArgument: BindingsInit) -> Result_NoneNoneZ {
+						
 						Bindings.print("Error: RoutingMessageHandler::peerConnected MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -368,6 +374,7 @@
 					/// for a given range of blocks. We can expect to receive one or more
 					/// replies to a single query.
 					open func handleReplyChannelRange(theirNodeId: [UInt8], msg: ReplyChannelRange) -> Result_NoneLightningErrorZ {
+						
 						Bindings.print("Error: RoutingMessageHandler::handleReplyChannelRange MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -377,6 +384,7 @@
 					/// a node has completed its best effort to send us the pertaining routing
 					/// gossip messages.
 					open func handleReplyShortChannelIdsEnd(theirNodeId: [UInt8], msg: ReplyShortChannelIdsEnd) -> Result_NoneLightningErrorZ {
+						
 						Bindings.print("Error: RoutingMessageHandler::handleReplyShortChannelIdsEnd MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -384,6 +392,7 @@
 					/// Handles when a peer asks us to send a list of short_channel_ids
 					/// for the requested range of blocks.
 					open func handleQueryChannelRange(theirNodeId: [UInt8], msg: QueryChannelRange) -> Result_NoneLightningErrorZ {
+						
 						Bindings.print("Error: RoutingMessageHandler::handleQueryChannelRange MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -391,6 +400,7 @@
 					/// Handles when a peer asks us to send routing gossip messages for a
 					/// list of short_channel_ids.
 					open func handleQueryShortChannelIds(theirNodeId: [UInt8], msg: QueryShortChannelIds) -> Result_NoneLightningErrorZ {
+						
 						Bindings.print("Error: RoutingMessageHandler::handleQueryShortChannelIds MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -399,6 +409,7 @@
 					/// queried similarly and their feature flags are OR'd together to form the [`NodeFeatures`]
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
 					open func providedNodeFeatures() -> NodeFeatures {
+						
 						Bindings.print("Error: RoutingMessageHandler::providedNodeFeatures MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
@@ -409,13 +420,18 @@
 					/// 
 					/// Note that this method is called before [`Self::peer_connected`].
 					open func providedInitFeatures(theirNodeId: [UInt8]) -> InitFeatures {
+						
 						Bindings.print("Error: RoutingMessageHandler::providedInitFeatures MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Frees any resources associated with this object given its this_arg pointer.
 					/// Does not need to free the outer struct containing function pointers and may be NULL is no resources need to be freed.
-					open func free() -> Void {
+					internal func free() -> Void {
+						
+				// TODO: figure out something smarter
+				return
+			
 						Bindings.print("Error: RoutingMessageHandler::free MUST be overridden! Offending class: (String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
