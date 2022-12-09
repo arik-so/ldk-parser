@@ -27,40 +27,45 @@
 					internal init (value: LDKConfirmationTarget) {
 
 						// TODO: remove this initial assumption somehow
-						self = .HighPriority
+						// self = .HighPriority
 
-						
-						// LDKConfirmationTarget_Background
-						if value.rawValue == 0 {
-							self = .Background
-						}
+						switch value {
+							
+							// LDKConfirmationTarget_Background
+							// if value.rawValue == 0 {
+							case LDKConfirmationTarget_Background: // {
+								self = .Background
+							// }
 			
-						// LDKConfirmationTarget_Normal
-						if value.rawValue == 1 {
-							self = .Normal
-						}
+							// LDKConfirmationTarget_Normal
+							// if value.rawValue == 1 {
+							case LDKConfirmationTarget_Normal: // {
+								self = .Normal
+							// }
 			
-						// LDKConfirmationTarget_HighPriority
-						if value.rawValue == 2 {
-							self = .HighPriority
-						}
+							// LDKConfirmationTarget_HighPriority
+							// if value.rawValue == 2 {
+							default: // {
+								self = .HighPriority
+							// }
 			
+						}
 					}
 
 					internal func getCValue() -> LDKConfirmationTarget {
 						switch self {
 							
 							case .Background:
-								// return LDKConfirmationTarget_Background
-								return LDKConfirmationTarget(0)
+								return LDKConfirmationTarget_Background
+								// return LDKConfirmationTarget(0)
 			
 							case .Normal:
-								// return LDKConfirmationTarget_Normal
-								return LDKConfirmationTarget(1)
+								return LDKConfirmationTarget_Normal
+								// return LDKConfirmationTarget(1)
 			
 							case .HighPriority:
-								// return LDKConfirmationTarget_HighPriority
-								return LDKConfirmationTarget(2)
+								return LDKConfirmationTarget_HighPriority
+								// return LDKConfirmationTarget(2)
 			
 						}
 					}

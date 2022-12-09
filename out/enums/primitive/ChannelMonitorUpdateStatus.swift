@@ -92,40 +92,45 @@
 					internal init (value: LDKChannelMonitorUpdateStatus) {
 
 						// TODO: remove this initial assumption somehow
-						self = .PermanentFailure
+						// self = .PermanentFailure
 
-						
-						// LDKChannelMonitorUpdateStatus_Completed
-						if value.rawValue == 0 {
-							self = .Completed
-						}
+						switch value {
+							
+							// LDKChannelMonitorUpdateStatus_Completed
+							// if value.rawValue == 0 {
+							case LDKChannelMonitorUpdateStatus_Completed: // {
+								self = .Completed
+							// }
 			
-						// LDKChannelMonitorUpdateStatus_InProgress
-						if value.rawValue == 1 {
-							self = .InProgress
-						}
+							// LDKChannelMonitorUpdateStatus_InProgress
+							// if value.rawValue == 1 {
+							case LDKChannelMonitorUpdateStatus_InProgress: // {
+								self = .InProgress
+							// }
 			
-						// LDKChannelMonitorUpdateStatus_PermanentFailure
-						if value.rawValue == 2 {
-							self = .PermanentFailure
-						}
+							// LDKChannelMonitorUpdateStatus_PermanentFailure
+							// if value.rawValue == 2 {
+							default: // {
+								self = .PermanentFailure
+							// }
 			
+						}
 					}
 
 					internal func getCValue() -> LDKChannelMonitorUpdateStatus {
 						switch self {
 							
 							case .Completed:
-								// return LDKChannelMonitorUpdateStatus_Completed
-								return LDKChannelMonitorUpdateStatus(0)
+								return LDKChannelMonitorUpdateStatus_Completed
+								// return LDKChannelMonitorUpdateStatus(0)
 			
 							case .InProgress:
-								// return LDKChannelMonitorUpdateStatus_InProgress
-								return LDKChannelMonitorUpdateStatus(1)
+								return LDKChannelMonitorUpdateStatus_InProgress
+								// return LDKChannelMonitorUpdateStatus(1)
 			
 							case .PermanentFailure:
-								// return LDKChannelMonitorUpdateStatus_PermanentFailure
-								return LDKChannelMonitorUpdateStatus(2)
+								return LDKChannelMonitorUpdateStatus_PermanentFailure
+								// return LDKChannelMonitorUpdateStatus(2)
 			
 						}
 					}

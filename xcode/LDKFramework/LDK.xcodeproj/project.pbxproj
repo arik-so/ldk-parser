@@ -487,38 +487,6 @@
 		07DF2C632941684A00531169 /* Secp256k1Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E22941684700531169 /* Secp256k1Error.swift */; };
 		07DF2C642941684A00531169 /* Secp256k1Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E22941684700531169 /* Secp256k1Error.swift */; };
 		07DF2C652941684A00531169 /* Secp256k1Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E22941684700531169 /* Secp256k1Error.swift */; };
-		07DF2C662941684A00531169 /* MessageSendEvent_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E32941684700531169 /* MessageSendEvent_Tag.swift */; };
-		07DF2C672941684A00531169 /* MessageSendEvent_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E32941684700531169 /* MessageSendEvent_Tag.swift */; };
-		07DF2C682941684A00531169 /* MessageSendEvent_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E32941684700531169 /* MessageSendEvent_Tag.swift */; };
-		07DF2C692941684A00531169 /* MessageSendEvent_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E32941684700531169 /* MessageSendEvent_Tag.swift */; };
-		07DF2C6A2941684A00531169 /* Retry_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E42941684700531169 /* Retry_Tag.swift */; };
-		07DF2C6B2941684A00531169 /* Retry_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E42941684700531169 /* Retry_Tag.swift */; };
-		07DF2C6C2941684A00531169 /* Retry_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E42941684700531169 /* Retry_Tag.swift */; };
-		07DF2C6D2941684A00531169 /* Retry_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E42941684700531169 /* Retry_Tag.swift */; };
-		07DF2C6E2941684A00531169 /* PaymentPurpose_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E52941684700531169 /* PaymentPurpose_Tag.swift */; };
-		07DF2C6F2941684A00531169 /* PaymentPurpose_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E52941684700531169 /* PaymentPurpose_Tag.swift */; };
-		07DF2C702941684A00531169 /* PaymentPurpose_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E52941684700531169 /* PaymentPurpose_Tag.swift */; };
-		07DF2C712941684A00531169 /* PaymentPurpose_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E52941684700531169 /* PaymentPurpose_Tag.swift */; };
-		07DF2C722941684A00531169 /* NetAddress_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E62941684700531169 /* NetAddress_Tag.swift */; };
-		07DF2C732941684A00531169 /* NetAddress_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E62941684700531169 /* NetAddress_Tag.swift */; };
-		07DF2C742941684A00531169 /* NetAddress_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E62941684700531169 /* NetAddress_Tag.swift */; };
-		07DF2C752941684A00531169 /* NetAddress_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E62941684700531169 /* NetAddress_Tag.swift */; };
-		07DF2C762941684A00531169 /* SpendableOutputDescriptor_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E72941684700531169 /* SpendableOutputDescriptor_Tag.swift */; };
-		07DF2C772941684A00531169 /* SpendableOutputDescriptor_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E72941684700531169 /* SpendableOutputDescriptor_Tag.swift */; };
-		07DF2C782941684A00531169 /* SpendableOutputDescriptor_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E72941684700531169 /* SpendableOutputDescriptor_Tag.swift */; };
-		07DF2C792941684A00531169 /* SpendableOutputDescriptor_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E72941684700531169 /* SpendableOutputDescriptor_Tag.swift */; };
-		07DF2C7A2941684A00531169 /* GossipSync_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E82941684700531169 /* GossipSync_Tag.swift */; };
-		07DF2C7B2941684A00531169 /* GossipSync_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E82941684700531169 /* GossipSync_Tag.swift */; };
-		07DF2C7C2941684A00531169 /* GossipSync_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E82941684700531169 /* GossipSync_Tag.swift */; };
-		07DF2C7D2941684A00531169 /* GossipSync_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E82941684700531169 /* GossipSync_Tag.swift */; };
-		07DF2C7E2941684A00531169 /* Event_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E92941684700531169 /* Event_Tag.swift */; };
-		07DF2C7F2941684A00531169 /* Event_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E92941684700531169 /* Event_Tag.swift */; };
-		07DF2C802941684A00531169 /* Event_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E92941684700531169 /* Event_Tag.swift */; };
-		07DF2C812941684A00531169 /* Event_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28E92941684700531169 /* Event_Tag.swift */; };
-		07DF2C822941684A00531169 /* HTLCDestination_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EA2941684700531169 /* HTLCDestination_Tag.swift */; };
-		07DF2C832941684A00531169 /* HTLCDestination_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EA2941684700531169 /* HTLCDestination_Tag.swift */; };
-		07DF2C842941684A00531169 /* HTLCDestination_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EA2941684700531169 /* HTLCDestination_Tag.swift */; };
-		07DF2C852941684A00531169 /* HTLCDestination_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EA2941684700531169 /* HTLCDestination_Tag.swift */; };
 		07DF2C862941684A00531169 /* IOError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EB2941684700531169 /* IOError.swift */; };
 		07DF2C872941684A00531169 /* IOError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EB2941684700531169 /* IOError.swift */; };
 		07DF2C882941684A00531169 /* IOError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EB2941684700531169 /* IOError.swift */; };
@@ -527,14 +495,6 @@
 		07DF2C8B2941684A00531169 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EC2941684700531169 /* Currency.swift */; };
 		07DF2C8C2941684A00531169 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EC2941684700531169 /* Currency.swift */; };
 		07DF2C8D2941684A00531169 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EC2941684700531169 /* Currency.swift */; };
-		07DF2C8E2941684A00531169 /* Balance_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28ED2941684700531169 /* Balance_Tag.swift */; };
-		07DF2C8F2941684A00531169 /* Balance_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28ED2941684700531169 /* Balance_Tag.swift */; };
-		07DF2C902941684A00531169 /* Balance_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28ED2941684700531169 /* Balance_Tag.swift */; };
-		07DF2C912941684A00531169 /* Balance_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28ED2941684700531169 /* Balance_Tag.swift */; };
-		07DF2C922941684A00531169 /* SendError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EE2941684700531169 /* SendError_Tag.swift */; };
-		07DF2C932941684A00531169 /* SendError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EE2941684700531169 /* SendError_Tag.swift */; };
-		07DF2C942941684A00531169 /* SendError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EE2941684700531169 /* SendError_Tag.swift */; };
-		07DF2C952941684A00531169 /* SendError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EE2941684700531169 /* SendError_Tag.swift */; };
 		07DF2C962941684A00531169 /* Recipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EF2941684700531169 /* Recipient.swift */; };
 		07DF2C972941684A00531169 /* Recipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EF2941684700531169 /* Recipient.swift */; };
 		07DF2C982941684A00531169 /* Recipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28EF2941684700531169 /* Recipient.swift */; };
@@ -543,10 +503,6 @@
 		07DF2C9B2941684A00531169 /* Option_NoneZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F02941684700531169 /* Option_NoneZ.swift */; };
 		07DF2C9C2941684A00531169 /* Option_NoneZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F02941684700531169 /* Option_NoneZ.swift */; };
 		07DF2C9D2941684A00531169 /* Option_NoneZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F02941684700531169 /* Option_NoneZ.swift */; };
-		07DF2C9E2941684A00531169 /* Destination_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F12941684700531169 /* Destination_Tag.swift */; };
-		07DF2C9F2941684A00531169 /* Destination_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F12941684700531169 /* Destination_Tag.swift */; };
-		07DF2CA02941684A00531169 /* Destination_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F12941684700531169 /* Destination_Tag.swift */; };
-		07DF2CA12941684A00531169 /* Destination_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F12941684700531169 /* Destination_Tag.swift */; };
 		07DF2CA22941684A00531169 /* ChannelMonitorUpdateStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F22941684700531169 /* ChannelMonitorUpdateStatus.swift */; };
 		07DF2CA32941684A00531169 /* ChannelMonitorUpdateStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F22941684700531169 /* ChannelMonitorUpdateStatus.swift */; };
 		07DF2CA42941684A00531169 /* ChannelMonitorUpdateStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F22941684700531169 /* ChannelMonitorUpdateStatus.swift */; };
@@ -555,50 +511,14 @@
 		07DF2CA72941684A00531169 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F32941684700531169 /* Network.swift */; };
 		07DF2CA82941684A00531169 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F32941684700531169 /* Network.swift */; };
 		07DF2CA92941684A00531169 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F32941684700531169 /* Network.swift */; };
-		07DF2CAA2941684A00531169 /* ParseError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F42941684700531169 /* ParseError_Tag.swift */; };
-		07DF2CAB2941684A00531169 /* ParseError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F42941684700531169 /* ParseError_Tag.swift */; };
-		07DF2CAC2941684A00531169 /* ParseError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F42941684700531169 /* ParseError_Tag.swift */; };
-		07DF2CAD2941684A00531169 /* ParseError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F42941684700531169 /* ParseError_Tag.swift */; };
-		07DF2CAE2941684A00531169 /* ClosureReason_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F52941684700531169 /* ClosureReason_Tag.swift */; };
-		07DF2CAF2941684A00531169 /* ClosureReason_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F52941684700531169 /* ClosureReason_Tag.swift */; };
-		07DF2CB02941684A00531169 /* ClosureReason_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F52941684700531169 /* ClosureReason_Tag.swift */; };
-		07DF2CB12941684A00531169 /* ClosureReason_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F52941684700531169 /* ClosureReason_Tag.swift */; };
-		07DF2CB22941684A00531169 /* DecodeError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F62941684700531169 /* DecodeError_Tag.swift */; };
-		07DF2CB32941684A00531169 /* DecodeError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F62941684700531169 /* DecodeError_Tag.swift */; };
-		07DF2CB42941684A00531169 /* DecodeError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F62941684700531169 /* DecodeError_Tag.swift */; };
-		07DF2CB52941684A00531169 /* DecodeError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F62941684700531169 /* DecodeError_Tag.swift */; };
-		07DF2CB62941684A00531169 /* APIError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F72941684700531169 /* APIError_Tag.swift */; };
-		07DF2CB72941684A00531169 /* APIError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F72941684700531169 /* APIError_Tag.swift */; };
-		07DF2CB82941684A00531169 /* APIError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F72941684700531169 /* APIError_Tag.swift */; };
-		07DF2CB92941684A00531169 /* APIError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F72941684700531169 /* APIError_Tag.swift */; };
-		07DF2CBA2941684A00531169 /* NetworkUpdate_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F82941684700531169 /* NetworkUpdate_Tag.swift */; };
-		07DF2CBB2941684A00531169 /* NetworkUpdate_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F82941684700531169 /* NetworkUpdate_Tag.swift */; };
-		07DF2CBC2941684A00531169 /* NetworkUpdate_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F82941684700531169 /* NetworkUpdate_Tag.swift */; };
-		07DF2CBD2941684A00531169 /* NetworkUpdate_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F82941684700531169 /* NetworkUpdate_Tag.swift */; };
-		07DF2CBE2941684A00531169 /* Fallback_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F92941684700531169 /* Fallback_Tag.swift */; };
-		07DF2CBF2941684A00531169 /* Fallback_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F92941684700531169 /* Fallback_Tag.swift */; };
-		07DF2CC02941684A00531169 /* Fallback_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F92941684700531169 /* Fallback_Tag.swift */; };
-		07DF2CC12941684A00531169 /* Fallback_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28F92941684700531169 /* Fallback_Tag.swift */; };
 		07DF2CC22941684A00531169 /* AccessError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FA2941684700531169 /* AccessError.swift */; };
 		07DF2CC32941684A00531169 /* AccessError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FA2941684700531169 /* AccessError.swift */; };
 		07DF2CC42941684A00531169 /* AccessError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FA2941684700531169 /* AccessError.swift */; };
 		07DF2CC52941684A00531169 /* AccessError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FA2941684700531169 /* AccessError.swift */; };
-		07DF2CC62941684A00531169 /* SignOrCreationError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FB2941684700531169 /* SignOrCreationError_Tag.swift */; };
-		07DF2CC72941684A00531169 /* SignOrCreationError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FB2941684700531169 /* SignOrCreationError_Tag.swift */; };
-		07DF2CC82941684A00531169 /* SignOrCreationError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FB2941684700531169 /* SignOrCreationError_Tag.swift */; };
-		07DF2CC92941684A00531169 /* SignOrCreationError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FB2941684700531169 /* SignOrCreationError_Tag.swift */; };
 		07DF2CCA2941684A00531169 /* CreationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FC2941684700531169 /* CreationError.swift */; };
 		07DF2CCB2941684A00531169 /* CreationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FC2941684700531169 /* CreationError.swift */; };
 		07DF2CCC2941684A00531169 /* CreationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FC2941684700531169 /* CreationError.swift */; };
 		07DF2CCD2941684A00531169 /* CreationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FC2941684700531169 /* CreationError.swift */; };
-		07DF2CCE2941684A00531169 /* PaymentError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FD2941684700531169 /* PaymentError_Tag.swift */; };
-		07DF2CCF2941684A00531169 /* PaymentError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FD2941684700531169 /* PaymentError_Tag.swift */; };
-		07DF2CD02941684A00531169 /* PaymentError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FD2941684700531169 /* PaymentError_Tag.swift */; };
-		07DF2CD12941684A00531169 /* PaymentError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FD2941684700531169 /* PaymentError_Tag.swift */; };
-		07DF2CD22941684A00531169 /* ParseOrSemanticError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FE2941684700531169 /* ParseOrSemanticError_Tag.swift */; };
-		07DF2CD32941684A00531169 /* ParseOrSemanticError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FE2941684700531169 /* ParseOrSemanticError_Tag.swift */; };
-		07DF2CD42941684A00531169 /* ParseOrSemanticError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FE2941684700531169 /* ParseOrSemanticError_Tag.swift */; };
-		07DF2CD52941684A00531169 /* ParseOrSemanticError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FE2941684700531169 /* ParseOrSemanticError_Tag.swift */; };
 		07DF2CD62941684A00531169 /* ConfirmationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FF2941684700531169 /* ConfirmationTarget.swift */; };
 		07DF2CD72941684A00531169 /* ConfirmationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FF2941684700531169 /* ConfirmationTarget.swift */; };
 		07DF2CD82941684A00531169 /* ConfirmationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28FF2941684700531169 /* ConfirmationTarget.swift */; };
@@ -607,38 +527,14 @@
 		07DF2CDB2941684A00531169 /* SiPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29002941684700531169 /* SiPrefix.swift */; };
 		07DF2CDC2941684A00531169 /* SiPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29002941684700531169 /* SiPrefix.swift */; };
 		07DF2CDD2941684A00531169 /* SiPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29002941684700531169 /* SiPrefix.swift */; };
-		07DF2CDE2941684A00531169 /* ErrorAction_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29012941684700531169 /* ErrorAction_Tag.swift */; };
-		07DF2CDF2941684A00531169 /* ErrorAction_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29012941684700531169 /* ErrorAction_Tag.swift */; };
-		07DF2CE02941684A00531169 /* ErrorAction_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29012941684700531169 /* ErrorAction_Tag.swift */; };
-		07DF2CE12941684A00531169 /* ErrorAction_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29012941684700531169 /* ErrorAction_Tag.swift */; };
 		07DF2CE22941684A00531169 /* SemanticError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29022941684700531169 /* SemanticError.swift */; };
 		07DF2CE32941684A00531169 /* SemanticError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29022941684700531169 /* SemanticError.swift */; };
 		07DF2CE42941684A00531169 /* SemanticError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29022941684700531169 /* SemanticError.swift */; };
 		07DF2CE52941684A00531169 /* SemanticError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29022941684700531169 /* SemanticError.swift */; };
-		07DF2CE62941684A00531169 /* GraphSyncError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29032941684700531169 /* GraphSyncError_Tag.swift */; };
-		07DF2CE72941684A00531169 /* GraphSyncError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29032941684700531169 /* GraphSyncError_Tag.swift */; };
-		07DF2CE82941684A00531169 /* GraphSyncError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29032941684700531169 /* GraphSyncError_Tag.swift */; };
-		07DF2CE92941684A00531169 /* GraphSyncError_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29032941684700531169 /* GraphSyncError_Tag.swift */; };
-		07DF2CEA2941684A00531169 /* MonitorEvent_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29042941684700531169 /* MonitorEvent_Tag.swift */; };
-		07DF2CEB2941684A00531169 /* MonitorEvent_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29042941684700531169 /* MonitorEvent_Tag.swift */; };
-		07DF2CEC2941684A00531169 /* MonitorEvent_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29042941684700531169 /* MonitorEvent_Tag.swift */; };
-		07DF2CED2941684A00531169 /* MonitorEvent_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29042941684700531169 /* MonitorEvent_Tag.swift */; };
-		07DF2CEE2941684A00531169 /* EffectiveCapacity_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29052941684700531169 /* EffectiveCapacity_Tag.swift */; };
-		07DF2CEF2941684A00531169 /* EffectiveCapacity_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29052941684700531169 /* EffectiveCapacity_Tag.swift */; };
-		07DF2CF02941684A00531169 /* EffectiveCapacity_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29052941684700531169 /* EffectiveCapacity_Tag.swift */; };
-		07DF2CF12941684A00531169 /* EffectiveCapacity_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29052941684700531169 /* EffectiveCapacity_Tag.swift */; };
 		07DF2CF22941684A00531169 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29062941684700531169 /* Level.swift */; };
 		07DF2CF32941684A00531169 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29062941684700531169 /* Level.swift */; };
 		07DF2CF42941684A00531169 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29062941684700531169 /* Level.swift */; };
 		07DF2CF52941684A00531169 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29062941684700531169 /* Level.swift */; };
-		07DF2CF62941684A00531169 /* PaymentSendFailure_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29072941684700531169 /* PaymentSendFailure_Tag.swift */; };
-		07DF2CF72941684A00531169 /* PaymentSendFailure_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29072941684700531169 /* PaymentSendFailure_Tag.swift */; };
-		07DF2CF82941684A00531169 /* PaymentSendFailure_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29072941684700531169 /* PaymentSendFailure_Tag.swift */; };
-		07DF2CF92941684A00531169 /* PaymentSendFailure_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29072941684700531169 /* PaymentSendFailure_Tag.swift */; };
-		07DF2CFA2941684A00531169 /* Bech32Error_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29082941684700531169 /* Bech32Error_Tag.swift */; };
-		07DF2CFB2941684A00531169 /* Bech32Error_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29082941684700531169 /* Bech32Error_Tag.swift */; };
-		07DF2CFC2941684A00531169 /* Bech32Error_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29082941684700531169 /* Bech32Error_Tag.swift */; };
-		07DF2CFD2941684A00531169 /* Bech32Error_Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF29082941684700531169 /* Bech32Error_Tag.swift */; };
 		07DF2CFE2941684A00531169 /* Vec_RouteHintZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF290A2941684700531169 /* Vec_RouteHintZ.swift */; };
 		07DF2CFF2941684A00531169 /* Vec_RouteHintZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF290A2941684700531169 /* Vec_RouteHintZ.swift */; };
 		07DF2D002941684A00531169 /* Vec_RouteHintZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF290A2941684700531169 /* Vec_RouteHintZ.swift */; };
@@ -2036,30 +1932,6 @@
 		07DF28712941684600531169 /* Option_CustomOnionMessageContentsZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option_CustomOnionMessageContentsZ.swift; sourceTree = "<group>"; };
 		07DF28722941684600531169 /* Option_ScalarZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option_ScalarZ.swift; sourceTree = "<group>"; };
 		07DF28732941684600531169 /* Option_CVec_NetAddressZZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option_CVec_NetAddressZZ.swift; sourceTree = "<group>"; };
-		07DF28762941684600531169 /* parser_tests.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = parser_tests.js; sourceTree = "<group>"; };
-		07DF28772941684600531169 /* parser_tests.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = parser_tests.js.map; sourceTree = "<group>"; };
-		07DF28782941684600531169 /* generator_tests.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = generator_tests.ts; sourceTree = "<group>"; };
-		07DF28792941684600531169 /* generator_tests.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = generator_tests.js.map; sourceTree = "<group>"; };
-		07DF287C2941684600531169 /* tagged_value_enum_test_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tagged_value_enum_test_01.h; sourceTree = "<group>"; };
-		07DF287D2941684600531169 /* trait_test_03.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trait_test_03.h; sourceTree = "<group>"; };
-		07DF287E2941684600531169 /* vector_test_02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector_test_02.h; sourceTree = "<group>"; };
-		07DF287F2941684600531169 /* tagged_value_enum_test_02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tagged_value_enum_test_02.h; sourceTree = "<group>"; };
-		07DF28802941684600531169 /* vector_test_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector_test_01.h; sourceTree = "<group>"; };
-		07DF28812941684600531169 /* array_wrapper_test_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = array_wrapper_test_01.h; sourceTree = "<group>"; };
-		07DF28822941684600531169 /* trait_test_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trait_test_01.h; sourceTree = "<group>"; };
-		07DF28832941684600531169 /* binary_option_test_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = binary_option_test_01.h; sourceTree = "<group>"; };
-		07DF28842941684600531169 /* vector_test_04.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector_test_04.h; sourceTree = "<group>"; };
-		07DF28852941684600531169 /* result_test_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = result_test_01.h; sourceTree = "<group>"; };
-		07DF28862941684600531169 /* trait_test_02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trait_test_02.h; sourceTree = "<group>"; };
-		07DF28872941684600531169 /* tuple_test_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuple_test_01.h; sourceTree = "<group>"; };
-		07DF28882941684600531169 /* vector_test_03.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector_test_03.h; sourceTree = "<group>"; };
-		07DF288A2941684600531169 /* vec_vec_route_hop_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec_vec_route_hop_test.h; sourceTree = "<group>"; };
-		07DF288B2941684600531169 /* chain_monitor_test_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chain_monitor_test_01.h; sourceTree = "<group>"; };
-		07DF288C2941684600531169 /* enum_test_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enum_test_01.h; sourceTree = "<group>"; };
-		07DF288D2941684600531169 /* vec_u8_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec_u8_test.h; sourceTree = "<group>"; };
-		07DF288E2941684600531169 /* option_u32_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = option_u32_test.h; sourceTree = "<group>"; };
-		07DF288F2941684600531169 /* generator_tests.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = generator_tests.js; sourceTree = "<group>"; };
-		07DF28902941684600531169 /* parser_tests.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = parser_tests.ts; sourceTree = "<group>"; };
 		07DF28922941684600531169 /* CustomOnionMessageContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOnionMessageContents.swift; sourceTree = "<group>"; };
 		07DF28932941684600531169 /* BaseSign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSign.swift; sourceTree = "<group>"; };
 		07DF28942941684600531169 /* FutureCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureCallback.swift; sourceTree = "<group>"; };
@@ -2137,44 +2009,18 @@
 		07DF28DF2941684600531169 /* GraphSyncError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSyncError.swift; sourceTree = "<group>"; };
 		07DF28E02941684600531169 /* Retry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Retry.swift; sourceTree = "<group>"; };
 		07DF28E22941684700531169 /* Secp256k1Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secp256k1Error.swift; sourceTree = "<group>"; };
-		07DF28E32941684700531169 /* MessageSendEvent_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSendEvent_Tag.swift; sourceTree = "<group>"; };
-		07DF28E42941684700531169 /* Retry_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Retry_Tag.swift; sourceTree = "<group>"; };
-		07DF28E52941684700531169 /* PaymentPurpose_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentPurpose_Tag.swift; sourceTree = "<group>"; };
-		07DF28E62941684700531169 /* NetAddress_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAddress_Tag.swift; sourceTree = "<group>"; };
-		07DF28E72941684700531169 /* SpendableOutputDescriptor_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpendableOutputDescriptor_Tag.swift; sourceTree = "<group>"; };
-		07DF28E82941684700531169 /* GossipSync_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GossipSync_Tag.swift; sourceTree = "<group>"; };
-		07DF28E92941684700531169 /* Event_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event_Tag.swift; sourceTree = "<group>"; };
-		07DF28EA2941684700531169 /* HTLCDestination_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLCDestination_Tag.swift; sourceTree = "<group>"; };
 		07DF28EB2941684700531169 /* IOError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOError.swift; sourceTree = "<group>"; };
 		07DF28EC2941684700531169 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		07DF28ED2941684700531169 /* Balance_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance_Tag.swift; sourceTree = "<group>"; };
-		07DF28EE2941684700531169 /* SendError_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendError_Tag.swift; sourceTree = "<group>"; };
 		07DF28EF2941684700531169 /* Recipient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipient.swift; sourceTree = "<group>"; };
 		07DF28F02941684700531169 /* Option_NoneZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option_NoneZ.swift; sourceTree = "<group>"; };
-		07DF28F12941684700531169 /* Destination_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destination_Tag.swift; sourceTree = "<group>"; };
 		07DF28F22941684700531169 /* ChannelMonitorUpdateStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMonitorUpdateStatus.swift; sourceTree = "<group>"; };
 		07DF28F32941684700531169 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		07DF28F42941684700531169 /* ParseError_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseError_Tag.swift; sourceTree = "<group>"; };
-		07DF28F52941684700531169 /* ClosureReason_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureReason_Tag.swift; sourceTree = "<group>"; };
-		07DF28F62941684700531169 /* DecodeError_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeError_Tag.swift; sourceTree = "<group>"; };
-		07DF28F72941684700531169 /* APIError_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError_Tag.swift; sourceTree = "<group>"; };
-		07DF28F82941684700531169 /* NetworkUpdate_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUpdate_Tag.swift; sourceTree = "<group>"; };
-		07DF28F92941684700531169 /* Fallback_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fallback_Tag.swift; sourceTree = "<group>"; };
 		07DF28FA2941684700531169 /* AccessError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessError.swift; sourceTree = "<group>"; };
-		07DF28FB2941684700531169 /* SignOrCreationError_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOrCreationError_Tag.swift; sourceTree = "<group>"; };
 		07DF28FC2941684700531169 /* CreationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationError.swift; sourceTree = "<group>"; };
-		07DF28FD2941684700531169 /* PaymentError_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentError_Tag.swift; sourceTree = "<group>"; };
-		07DF28FE2941684700531169 /* ParseOrSemanticError_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseOrSemanticError_Tag.swift; sourceTree = "<group>"; };
 		07DF28FF2941684700531169 /* ConfirmationTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationTarget.swift; sourceTree = "<group>"; };
 		07DF29002941684700531169 /* SiPrefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiPrefix.swift; sourceTree = "<group>"; };
-		07DF29012941684700531169 /* ErrorAction_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAction_Tag.swift; sourceTree = "<group>"; };
 		07DF29022941684700531169 /* SemanticError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticError.swift; sourceTree = "<group>"; };
-		07DF29032941684700531169 /* GraphSyncError_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSyncError_Tag.swift; sourceTree = "<group>"; };
-		07DF29042941684700531169 /* MonitorEvent_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorEvent_Tag.swift; sourceTree = "<group>"; };
-		07DF29052941684700531169 /* EffectiveCapacity_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectiveCapacity_Tag.swift; sourceTree = "<group>"; };
 		07DF29062941684700531169 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		07DF29072941684700531169 /* PaymentSendFailure_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentSendFailure_Tag.swift; sourceTree = "<group>"; };
-		07DF29082941684700531169 /* Bech32Error_Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bech32Error_Tag.swift; sourceTree = "<group>"; };
 		07DF290A2941684700531169 /* Vec_RouteHintZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec_RouteHintZ.swift; sourceTree = "<group>"; };
 		07DF290B2941684700531169 /* Vec_C2Tuple_u32TxOutZZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec_C2Tuple_u32TxOutZZ.swift; sourceTree = "<group>"; };
 		07DF290C2941684700531169 /* Vec_C2Tuple_usizeTransactionZZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec_C2Tuple_usizeTransactionZZ.swift; sourceTree = "<group>"; };
@@ -2499,58 +2345,6 @@
 		07DF2A4D2941684700531169 /* OutPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutPoint.swift; sourceTree = "<group>"; };
 		07DF2A4E2941684700531169 /* InvoicePayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicePayer.swift; sourceTree = "<group>"; };
 		07DF2A4F2941684700531169 /* DelayedPaymentOutputDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayedPaymentOutputDescriptor.swift; sourceTree = "<group>"; };
-		07DF2A522941684700531169 /* parser.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = parser.mjs.map; sourceTree = "<group>"; };
-		07DF2A532941684700531169 /* rust_types.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rust_types.mts; sourceTree = "<group>"; };
-		07DF2A542941684700531169 /* parser.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = parser.mts; sourceTree = "<group>"; };
-		07DF2A552941684700531169 /* index.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.mts; sourceTree = "<group>"; };
-		07DF2A562941684700531169 /* config.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.mts; sourceTree = "<group>"; };
-		07DF2A582941684700531169 /* scid.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scid.mjs; sourceTree = "<group>"; };
-		07DF2A592941684700531169 /* scid.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = scid.mjs.map; sourceTree = "<group>"; };
-		07DF2A5A2941684700531169 /* scid.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scid.mts; sourceTree = "<group>"; };
-		07DF2A5B2941684700531169 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		07DF2A5C2941684700531169 /* index.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = index.mjs.map; sourceTree = "<group>"; };
-		07DF2A5D2941684700531169 /* rust_types.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = rust_types.mjs.map; sourceTree = "<group>"; };
-		07DF2A5E2941684700531169 /* config.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = config.mjs.map; sourceTree = "<group>"; };
-		07DF2A5F2941684700531169 /* rust_types.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rust_types.mjs; sourceTree = "<group>"; };
-		07DF2A602941684700531169 /* parser.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = parser.mjs; sourceTree = "<group>"; };
-		07DF2A612941684700531169 /* index.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.mjs; sourceTree = "<group>"; };
-		07DF2A622941684700531169 /* config.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.mjs; sourceTree = "<group>"; };
-		07DF2A642941684700531169 /* primitive_enum_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = primitive_enum_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A652941684700531169 /* index.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.mts; sourceTree = "<group>"; };
-		07DF2A662941684700531169 /* struct_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = struct_generator.mjs; sourceTree = "<group>"; };
-		07DF2A672941684700531169 /* trait_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = trait_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A682941684700531169 /* result_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = result_generator.mjs; sourceTree = "<group>"; };
-		07DF2A692941684700531169 /* complex_enum_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = complex_enum_generator.mjs; sourceTree = "<group>"; };
-		07DF2A6A2941684700531169 /* trait_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trait_generator.mjs; sourceTree = "<group>"; };
-		07DF2A6B2941684700531169 /* primitive_enum_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = primitive_enum_generator.mjs; sourceTree = "<group>"; };
-		07DF2A6C2941684700531169 /* tuple_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tuple_generator.mjs; sourceTree = "<group>"; };
-		07DF2A6D2941684700531169 /* bindings_file_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bindings_file_generator.mts; sourceTree = "<group>"; };
-		07DF2A6E2941684700531169 /* base_type_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = base_type_generator.mts; sourceTree = "<group>"; };
-		07DF2A6F2941684700531169 /* vector_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = vector_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A702941684700531169 /* tuple_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = tuple_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A712941684700531169 /* vector_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vector_generator.mjs; sourceTree = "<group>"; };
-		07DF2A722941684700531169 /* result_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = result_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A732941684700531169 /* complex_enum_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = complex_enum_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A742941684700531169 /* nullable_option_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nullable_option_generator.mts; sourceTree = "<group>"; };
-		07DF2A752941684700531169 /* index.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = index.mjs.map; sourceTree = "<group>"; };
-		07DF2A762941684700531169 /* primitive_wrapper_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = primitive_wrapper_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A772941684700531169 /* primitive_wrapper_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = primitive_wrapper_generator.mjs; sourceTree = "<group>"; };
-		07DF2A782941684700531169 /* base_type_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = base_type_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A792941684700531169 /* result_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = result_generator.mts; sourceTree = "<group>"; };
-		07DF2A7A2941684700531169 /* primitive_enum_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = primitive_enum_generator.mts; sourceTree = "<group>"; };
-		07DF2A7B2941684700531169 /* trait_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trait_generator.mts; sourceTree = "<group>"; };
-		07DF2A7C2941684700531169 /* complex_enum_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = complex_enum_generator.mts; sourceTree = "<group>"; };
-		07DF2A7D2941684700531169 /* tuple_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tuple_generator.mts; sourceTree = "<group>"; };
-		07DF2A7E2941684700531169 /* struct_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = struct_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A7F2941684700531169 /* nullable_option_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = nullable_option_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A802941684700531169 /* index.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.mjs; sourceTree = "<group>"; };
-		07DF2A812941684700531169 /* struct_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = struct_generator.mts; sourceTree = "<group>"; };
-		07DF2A822941684700531169 /* bindings_file_generator.mjs.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = bindings_file_generator.mjs.map; sourceTree = "<group>"; };
-		07DF2A832941684700531169 /* nullable_option_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nullable_option_generator.mjs; sourceTree = "<group>"; };
-		07DF2A842941684700531169 /* primitive_wrapper_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = primitive_wrapper_generator.mts; sourceTree = "<group>"; };
-		07DF2A852941684700531169 /* base_type_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = base_type_generator.mjs; sourceTree = "<group>"; };
-		07DF2A862941684700531169 /* bindings_file_generator.mjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bindings_file_generator.mjs; sourceTree = "<group>"; };
-		07DF2A872941684700531169 /* vector_generator.mts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vector_generator.mts; sourceTree = "<group>"; };
 		07E06469287CAD0600CFA8BF /* DirectlyLinkedBindingsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DirectlyLinkedBindingsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E0646B287CAD0600CFA8BF /* DirectlyLinkedBindingsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectlyLinkedBindingsAppApp.swift; sourceTree = "<group>"; };
 		07E0646D287CAD0600CFA8BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -2702,7 +2496,6 @@
 			children = (
 				07DF28502941684600531169 /* wrappers */,
 				07DF28612941684600531169 /* options */,
-				07DF28742941684600531169 /* test */,
 				07DF28912941684600531169 /* traits */,
 				07DF28B22941684600531169 /* tuples */,
 				07DF28C42941684600531169 /* Bindings.swift */,
@@ -2711,7 +2504,6 @@
 				07DF29332941684700531169 /* VersionDescriptor.swift */,
 				07DF29342941684700531169 /* results */,
 				07DF29C52941684700531169 /* structs */,
-				07DF2A502941684700531169 /* production */,
 			);
 			name = bindings;
 			path = ../../ci/LDKSwift/Sources/LDKSwift/bindings;
@@ -2763,69 +2555,6 @@
 				07DF28732941684600531169 /* Option_CVec_NetAddressZZ.swift */,
 			);
 			path = options;
-			sourceTree = "<group>";
-		};
-		07DF28742941684600531169 /* test */ = {
-			isa = PBXGroup;
-			children = (
-				07DF28752941684600531169 /* ldk-parser */,
-			);
-			path = test;
-			sourceTree = "<group>";
-		};
-		07DF28752941684600531169 /* ldk-parser */ = {
-			isa = PBXGroup;
-			children = (
-				07DF28762941684600531169 /* parser_tests.js */,
-				07DF28772941684600531169 /* parser_tests.js.map */,
-				07DF28782941684600531169 /* generator_tests.ts */,
-				07DF28792941684600531169 /* generator_tests.js.map */,
-				07DF287A2941684600531169 /* fixtures */,
-				07DF288F2941684600531169 /* generator_tests.js */,
-				07DF28902941684600531169 /* parser_tests.ts */,
-			);
-			path = "ldk-parser";
-			sourceTree = "<group>";
-		};
-		07DF287A2941684600531169 /* fixtures */ = {
-			isa = PBXGroup;
-			children = (
-				07DF287B2941684600531169 /* parsing */,
-				07DF28892941684600531169 /* generation */,
-			);
-			path = fixtures;
-			sourceTree = "<group>";
-		};
-		07DF287B2941684600531169 /* parsing */ = {
-			isa = PBXGroup;
-			children = (
-				07DF287C2941684600531169 /* tagged_value_enum_test_01.h */,
-				07DF287D2941684600531169 /* trait_test_03.h */,
-				07DF287E2941684600531169 /* vector_test_02.h */,
-				07DF287F2941684600531169 /* tagged_value_enum_test_02.h */,
-				07DF28802941684600531169 /* vector_test_01.h */,
-				07DF28812941684600531169 /* array_wrapper_test_01.h */,
-				07DF28822941684600531169 /* trait_test_01.h */,
-				07DF28832941684600531169 /* binary_option_test_01.h */,
-				07DF28842941684600531169 /* vector_test_04.h */,
-				07DF28852941684600531169 /* result_test_01.h */,
-				07DF28862941684600531169 /* trait_test_02.h */,
-				07DF28872941684600531169 /* tuple_test_01.h */,
-				07DF28882941684600531169 /* vector_test_03.h */,
-			);
-			path = parsing;
-			sourceTree = "<group>";
-		};
-		07DF28892941684600531169 /* generation */ = {
-			isa = PBXGroup;
-			children = (
-				07DF288A2941684600531169 /* vec_vec_route_hop_test.h */,
-				07DF288B2941684600531169 /* chain_monitor_test_01.h */,
-				07DF288C2941684600531169 /* enum_test_01.h */,
-				07DF288D2941684600531169 /* vec_u8_test.h */,
-				07DF288E2941684600531169 /* option_u32_test.h */,
-			);
-			path = generation;
 			sourceTree = "<group>";
 		};
 		07DF28912941684600531169 /* traits */ = {
@@ -2937,44 +2666,18 @@
 			isa = PBXGroup;
 			children = (
 				07DF28E22941684700531169 /* Secp256k1Error.swift */,
-				07DF28E32941684700531169 /* MessageSendEvent_Tag.swift */,
-				07DF28E42941684700531169 /* Retry_Tag.swift */,
-				07DF28E52941684700531169 /* PaymentPurpose_Tag.swift */,
-				07DF28E62941684700531169 /* NetAddress_Tag.swift */,
-				07DF28E72941684700531169 /* SpendableOutputDescriptor_Tag.swift */,
-				07DF28E82941684700531169 /* GossipSync_Tag.swift */,
-				07DF28E92941684700531169 /* Event_Tag.swift */,
-				07DF28EA2941684700531169 /* HTLCDestination_Tag.swift */,
 				07DF28EB2941684700531169 /* IOError.swift */,
 				07DF28EC2941684700531169 /* Currency.swift */,
-				07DF28ED2941684700531169 /* Balance_Tag.swift */,
-				07DF28EE2941684700531169 /* SendError_Tag.swift */,
 				07DF28EF2941684700531169 /* Recipient.swift */,
 				07DF28F02941684700531169 /* Option_NoneZ.swift */,
-				07DF28F12941684700531169 /* Destination_Tag.swift */,
 				07DF28F22941684700531169 /* ChannelMonitorUpdateStatus.swift */,
 				07DF28F32941684700531169 /* Network.swift */,
-				07DF28F42941684700531169 /* ParseError_Tag.swift */,
-				07DF28F52941684700531169 /* ClosureReason_Tag.swift */,
-				07DF28F62941684700531169 /* DecodeError_Tag.swift */,
-				07DF28F72941684700531169 /* APIError_Tag.swift */,
-				07DF28F82941684700531169 /* NetworkUpdate_Tag.swift */,
-				07DF28F92941684700531169 /* Fallback_Tag.swift */,
 				07DF28FA2941684700531169 /* AccessError.swift */,
-				07DF28FB2941684700531169 /* SignOrCreationError_Tag.swift */,
 				07DF28FC2941684700531169 /* CreationError.swift */,
-				07DF28FD2941684700531169 /* PaymentError_Tag.swift */,
-				07DF28FE2941684700531169 /* ParseOrSemanticError_Tag.swift */,
 				07DF28FF2941684700531169 /* ConfirmationTarget.swift */,
 				07DF29002941684700531169 /* SiPrefix.swift */,
-				07DF29012941684700531169 /* ErrorAction_Tag.swift */,
 				07DF29022941684700531169 /* SemanticError.swift */,
-				07DF29032941684700531169 /* GraphSyncError_Tag.swift */,
-				07DF29042941684700531169 /* MonitorEvent_Tag.swift */,
-				07DF29052941684700531169 /* EffectiveCapacity_Tag.swift */,
 				07DF29062941684700531169 /* Level.swift */,
-				07DF29072941684700531169 /* PaymentSendFailure_Tag.swift */,
-				07DF29082941684700531169 /* Bech32Error_Tag.swift */,
 			);
 			path = primitive;
 			sourceTree = "<group>";
@@ -3323,89 +3026,6 @@
 			path = structs;
 			sourceTree = "<group>";
 		};
-		07DF2A502941684700531169 /* production */ = {
-			isa = PBXGroup;
-			children = (
-				07DF2A512941684700531169 /* ldk-parser */,
-			);
-			path = production;
-			sourceTree = "<group>";
-		};
-		07DF2A512941684700531169 /* ldk-parser */ = {
-			isa = PBXGroup;
-			children = (
-				07DF2A522941684700531169 /* parser.mjs.map */,
-				07DF2A532941684700531169 /* rust_types.mts */,
-				07DF2A542941684700531169 /* parser.mts */,
-				07DF2A552941684700531169 /* index.mts */,
-				07DF2A562941684700531169 /* config.mts */,
-				07DF2A572941684700531169 /* lab */,
-				07DF2A5C2941684700531169 /* index.mjs.map */,
-				07DF2A5D2941684700531169 /* rust_types.mjs.map */,
-				07DF2A5E2941684700531169 /* config.mjs.map */,
-				07DF2A5F2941684700531169 /* rust_types.mjs */,
-				07DF2A602941684700531169 /* parser.mjs */,
-				07DF2A612941684700531169 /* index.mjs */,
-				07DF2A622941684700531169 /* config.mjs */,
-				07DF2A632941684700531169 /* generation */,
-			);
-			path = "ldk-parser";
-			sourceTree = "<group>";
-		};
-		07DF2A572941684700531169 /* lab */ = {
-			isa = PBXGroup;
-			children = (
-				07DF2A582941684700531169 /* scid.mjs */,
-				07DF2A592941684700531169 /* scid.mjs.map */,
-				07DF2A5A2941684700531169 /* scid.mts */,
-				07DF2A5B2941684700531169 /* .gitignore */,
-			);
-			path = lab;
-			sourceTree = "<group>";
-		};
-		07DF2A632941684700531169 /* generation */ = {
-			isa = PBXGroup;
-			children = (
-				07DF2A642941684700531169 /* primitive_enum_generator.mjs.map */,
-				07DF2A652941684700531169 /* index.mts */,
-				07DF2A662941684700531169 /* struct_generator.mjs */,
-				07DF2A672941684700531169 /* trait_generator.mjs.map */,
-				07DF2A682941684700531169 /* result_generator.mjs */,
-				07DF2A692941684700531169 /* complex_enum_generator.mjs */,
-				07DF2A6A2941684700531169 /* trait_generator.mjs */,
-				07DF2A6B2941684700531169 /* primitive_enum_generator.mjs */,
-				07DF2A6C2941684700531169 /* tuple_generator.mjs */,
-				07DF2A6D2941684700531169 /* bindings_file_generator.mts */,
-				07DF2A6E2941684700531169 /* base_type_generator.mts */,
-				07DF2A6F2941684700531169 /* vector_generator.mjs.map */,
-				07DF2A702941684700531169 /* tuple_generator.mjs.map */,
-				07DF2A712941684700531169 /* vector_generator.mjs */,
-				07DF2A722941684700531169 /* result_generator.mjs.map */,
-				07DF2A732941684700531169 /* complex_enum_generator.mjs.map */,
-				07DF2A742941684700531169 /* nullable_option_generator.mts */,
-				07DF2A752941684700531169 /* index.mjs.map */,
-				07DF2A762941684700531169 /* primitive_wrapper_generator.mjs.map */,
-				07DF2A772941684700531169 /* primitive_wrapper_generator.mjs */,
-				07DF2A782941684700531169 /* base_type_generator.mjs.map */,
-				07DF2A792941684700531169 /* result_generator.mts */,
-				07DF2A7A2941684700531169 /* primitive_enum_generator.mts */,
-				07DF2A7B2941684700531169 /* trait_generator.mts */,
-				07DF2A7C2941684700531169 /* complex_enum_generator.mts */,
-				07DF2A7D2941684700531169 /* tuple_generator.mts */,
-				07DF2A7E2941684700531169 /* struct_generator.mjs.map */,
-				07DF2A7F2941684700531169 /* nullable_option_generator.mjs.map */,
-				07DF2A802941684700531169 /* index.mjs */,
-				07DF2A812941684700531169 /* struct_generator.mts */,
-				07DF2A822941684700531169 /* bindings_file_generator.mjs.map */,
-				07DF2A832941684700531169 /* nullable_option_generator.mjs */,
-				07DF2A842941684700531169 /* primitive_wrapper_generator.mts */,
-				07DF2A852941684700531169 /* base_type_generator.mjs */,
-				07DF2A862941684700531169 /* bindings_file_generator.mjs */,
-				07DF2A872941684700531169 /* vector_generator.mts */,
-			);
-			path = generation;
-			sourceTree = "<group>";
-		};
 		07E0646A287CAD0600CFA8BF /* DirectlyLinkedBindingsApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -3741,7 +3361,6 @@
 				07DF2C1A2941684900531169 /* PaymentPurpose.swift in Sources */,
 				07DF31562941685100531169 /* ClosingSigned.swift in Sources */,
 				07DF304E2941685000531169 /* InvoiceFeatures.swift in Sources */,
-				07DF2CC62941684A00531169 /* SignOrCreationError_Tag.swift in Sources */,
 				07DF2F6E2941684E00531169 /* Result_ProbabilisticScorerDecodeErrorZ.swift in Sources */,
 				07DF2F362941684E00531169 /* Result_BlindedRouteDecodeErrorZ.swift in Sources */,
 				07DF2D122941684B00531169 /* Vec_C2Tuple_u32ScriptZZ.swift in Sources */,
@@ -3771,7 +3390,6 @@
 				07DF2EB62941684D00531169 /* Result_NetworkGraphDecodeErrorZ.swift in Sources */,
 				07DF2D9E2941684B00531169 /* Vec_SignatureZ.swift in Sources */,
 				07DF2FBE2941684F00531169 /* Result_HTLCOutputInCommitmentDecodeErrorZ.swift in Sources */,
-				07DF2CD22941684A00531169 /* ParseOrSemanticError_Tag.swift in Sources */,
 				07DF30362941684F00531169 /* HTLCOutputInCommitment.swift in Sources */,
 				07DF2E262941684C00531169 /* Result_SpendableOutputDescriptorDecodeErrorZ.swift in Sources */,
 				07DF2D362941684B00531169 /* Vec_UpdateFailMalformedHTLCZ.swift in Sources */,
@@ -3811,7 +3429,6 @@
 				07DF30622941685000531169 /* ExpandedKey.swift in Sources */,
 				07DF2BC22941684900531169 /* Tuple_u64u64Z.swift in Sources */,
 				07DF2ACC2941684800531169 /* Option_HTLCDestinationZ.swift in Sources */,
-				07DF2CEE2941684A00531169 /* EffectiveCapacity_Tag.swift in Sources */,
 				07DF2BDA2941684900531169 /* Tuple_u32TxOutZ.swift in Sources */,
 				07DF2D962941684B00531169 /* Vec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ.swift in Sources */,
 				07DF2F4E2941684E00531169 /* Result_QueryShortChannelIdsDecodeErrorZ.swift in Sources */,
@@ -3831,7 +3448,6 @@
 				07DF318A2941685200531169 /* RouteHop.swift in Sources */,
 				07DF2CA62941684A00531169 /* Network.swift in Sources */,
 				07DF2D622941684B00531169 /* Vec_NetAddressZ.swift in Sources */,
-				07DF2CE62941684A00531169 /* GraphSyncError_Tag.swift in Sources */,
 				07DF2DEE2941684C00531169 /* Result_RouteDecodeErrorZ.swift in Sources */,
 				07DF2B9A2941684900531169 /* BindingsType.swift in Sources */,
 				07DF2FDE2941684F00531169 /* Result_ClosingSignedDecodeErrorZ.swift in Sources */,
@@ -3840,7 +3456,6 @@
 				07DF2C2A2941684900531169 /* Balance.swift in Sources */,
 				07DF2F622941684E00531169 /* Result_ReplyChannelRangeDecodeErrorZ.swift in Sources */,
 				07DF2F1E2941684E00531169 /* Result_ChannelMonitorUpdateDecodeErrorZ.swift in Sources */,
-				07DF2C9E2941684A00531169 /* Destination_Tag.swift in Sources */,
 				07DF30E62941685100531169 /* CommitmentSigned.swift in Sources */,
 				07DF306E2941685000531169 /* BestBlock.swift in Sources */,
 				07DF31F62941685200531169 /* MultiThreadedScoreLock.swift in Sources */,
@@ -3849,14 +3464,12 @@
 				07DF2E962941684D00531169 /* Result_ShutdownScriptDecodeErrorZ.swift in Sources */,
 				07DF2D422941684B00531169 /* Vec_PhantomRouteHintsZ.swift in Sources */,
 				07DF31CA2941685200531169 /* ClosingTransaction.swift in Sources */,
-				07DF2C822941684A00531169 /* HTLCDestination_Tag.swift in Sources */,
 				07DF30FE2941685100531169 /* ChannelConfig.swift in Sources */,
 				07DF2EB22941684D00531169 /* Result_TransactionNoneZ.swift in Sources */,
 				07DF2B762941684800531169 /* Confirm.swift in Sources */,
 				07DF30A62941685000531169 /* CounterpartyChannelTransactionParameters.swift in Sources */,
 				07DF2D1A2941684B00531169 /* Vec_TransactionOutputsZ.swift in Sources */,
 				07DF31BA2941685200531169 /* OpenChannel.swift in Sources */,
-				07DF2CDE2941684A00531169 /* ErrorAction_Tag.swift in Sources */,
 				07DF2AB82941684700531169 /* SecretKey.swift in Sources */,
 				07DF31122941685100531169 /* BackgroundProcessor.swift in Sources */,
 				07DF2ADC2941684800531169 /* Option_C2Tuple_u64u64ZZ.swift in Sources */,
@@ -3867,14 +3480,12 @@
 				07DF301A2941684F00531169 /* UpdateAddHTLC.swift in Sources */,
 				07DF2A942941684700531169 /* u8slice.swift in Sources */,
 				07DF30962941685000531169 /* InvalidShutdownScript.swift in Sources */,
-				07DF2C7A2941684A00531169 /* GossipSync_Tag.swift in Sources */,
 				07DF2F962941684E00531169 /* Result_NodeInfoDecodeErrorZ.swift in Sources */,
 				07DF305A2941685000531169 /* RoutingFees.swift in Sources */,
 				07DF2E162941684C00531169 /* Result_BuiltCommitmentTransactionDecodeErrorZ.swift in Sources */,
 				07DF2E322941684C00531169 /* Result_BlindedRouteNoneZ.swift in Sources */,
 				07DF31B62941685200531169 /* InvoiceSignature.swift in Sources */,
 				07DF2C262941684900531169 /* EffectiveCapacity.swift in Sources */,
-				07DF2CF62941684A00531169 /* PaymentSendFailure_Tag.swift in Sources */,
 				07DF308E2941685000531169 /* NetworkGraph.swift in Sources */,
 				07DF2FF62941684F00531169 /* Description.swift in Sources */,
 				07DF2A982941684700531169 /* BigEndianScalar.swift in Sources */,
@@ -3892,7 +3503,6 @@
 				07DF2F2A2941684E00531169 /* Result_u32GraphSyncErrorZ.swift in Sources */,
 				07DF31362941685100531169 /* FilesystemPersister.swift in Sources */,
 				07DF2E7E2941684D00531169 /* Result_PublicKeyErrorZ.swift in Sources */,
-				07DF2C8E2941684A00531169 /* Balance_Tag.swift in Sources */,
 				07DF30BE2941685000531169 /* UpdateFailHTLC.swift in Sources */,
 				07DF2A8C2941684700531169 /* PublicKey.swift in Sources */,
 				07DF2E1E2941684C00531169 /* Result_SharedSecretNoneZ.swift in Sources */,
@@ -3917,19 +3527,16 @@
 				07DF2FE62941684F00531169 /* MessageHandler.swift in Sources */,
 				07DF2F862941684E00531169 /* Result_PayeePubKeyErrorZ.swift in Sources */,
 				07DF2D662941684B00531169 /* Vec_BalanceZ.swift in Sources */,
-				07DF2C7E2941684A00531169 /* Event_Tag.swift in Sources */,
 				07DF30922941685000531169 /* DirectedChannelInfo.swift in Sources */,
 				07DF2F2E2941684E00531169 /* Result_UpdateAddHTLCDecodeErrorZ.swift in Sources */,
 				07DF2EF62941684D00531169 /* Result_NodeIdDecodeErrorZ.swift in Sources */,
 				07DF300A2941684F00531169 /* BigSize.swift in Sources */,
 				07DF2C022941684900531169 /* Bech32Error.swift in Sources */,
-				07DF2CB62941684A00531169 /* APIError_Tag.swift in Sources */,
 				07DF31E22941685200531169 /* TrustedCommitmentTransaction.swift in Sources */,
 				07DF2DD22941684C00531169 /* Result_InFlightHtlcsDecodeErrorZ.swift in Sources */,
 				07DF31D62941685200531169 /* FixedPenaltyScorer.swift in Sources */,
 				07DF2EA62941684D00531169 /* Result_FundingSignedDecodeErrorZ.swift in Sources */,
 				07DF2AE42941684800531169 /* Option_ClosureReasonZ.swift in Sources */,
-				07DF2CBE2941684A00531169 /* Fallback_Tag.swift in Sources */,
 				07DF2AA02941684700531169 /* SixteenBytes.swift in Sources */,
 				07DF2FBA2941684F00531169 /* Result_ChannelReadyDecodeErrorZ.swift in Sources */,
 				07DF2E5A2941684C00531169 /* Result_RouteHopDecodeErrorZ.swift in Sources */,
@@ -3946,7 +3553,6 @@
 				07DF2BAA2941684900531169 /* Sign.swift in Sources */,
 				07DF31662941685100531169 /* UnsignedChannelAnnouncement.swift in Sources */,
 				07DF2FFA2941684F00531169 /* BindingsInit.swift in Sources */,
-				07DF2CEA2941684A00531169 /* MonitorEvent_Tag.swift in Sources */,
 				07DF2FA62941684E00531169 /* Result_DelayedPaymentOutputDescriptorDecodeErrorZ.swift in Sources */,
 				07DF2BA62941684900531169 /* Watch.swift in Sources */,
 				07DF2D7E2941684B00531169 /* Vec_ThirtyTwoBytesZ.swift in Sources */,
@@ -3987,7 +3593,6 @@
 				07DF30222941684F00531169 /* BlindedHop.swift in Sources */,
 				07DF2EE62941684D00531169 /* Result_PaymentIdPaymentErrorZ.swift in Sources */,
 				07DF2E6A2941684D00531169 /* Result_TxOutAccessErrorZ.swift in Sources */,
-				07DF2CBA2941684A00531169 /* NetworkUpdate_Tag.swift in Sources */,
 				07DF314A2941685100531169 /* PaymentParameters.swift in Sources */,
 				07DF2E8E2941684D00531169 /* Result_UpdateFeeDecodeErrorZ.swift in Sources */,
 				07DF30CE2941685000531169 /* NodeId.swift in Sources */,
@@ -3996,7 +3601,6 @@
 				07DF2E8A2941684D00531169 /* Result_NodeAliasDecodeErrorZ.swift in Sources */,
 				07DF2FF22941684F00531169 /* PayeePubKey.swift in Sources */,
 				07DF2E4A2941684C00531169 /* Result_TrustedCommitmentTransactionNoneZ.swift in Sources */,
-				07DF2C762941684A00531169 /* SpendableOutputDescriptor_Tag.swift in Sources */,
 				07DF2B722941684800531169 /* LockableScore.swift in Sources */,
 				07DF2DC62941684C00531169 /* Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ.swift in Sources */,
 				07DF2C162941684900531169 /* GossipSync.swift in Sources */,
@@ -4014,7 +3618,6 @@
 				07DF320A2941685300531169 /* DelayedPaymentOutputDescriptor.swift in Sources */,
 				07DF2FB62941684F00531169 /* Result_COption_MonitorEventZDecodeErrorZ.swift in Sources */,
 				07DF2ABC2941684700531169 /* ThreeBytes.swift in Sources */,
-				07DF2CAE2941684A00531169 /* ClosureReason_Tag.swift in Sources */,
 				07DF2B862941684800531169 /* ChannelMessageHandler.swift in Sources */,
 				07DF30F22941685100531169 /* Pong.swift in Sources */,
 				07DF2E522941684C00531169 /* Result_StringErrorZ.swift in Sources */,
@@ -4037,7 +3640,6 @@
 				07DF31FA2941685200531169 /* Route.swift in Sources */,
 				07DF30AE2941685000531169 /* ReplyShortChannelIdsEnd.swift in Sources */,
 				07DF2FEE2941684F00531169 /* ChainMonitor.swift in Sources */,
-				07DF2CAA2941684A00531169 /* ParseError_Tag.swift in Sources */,
 				07DF2BDE2941684900531169 /* Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ.swift in Sources */,
 				07DF2D762941684B00531169 /* Vec_ChannelDetailsZ.swift in Sources */,
 				07DF31CE2941685200531169 /* LockedChannelMonitor.swift in Sources */,
@@ -4049,7 +3651,6 @@
 				07DF2E922941684D00531169 /* Result_DescriptionCreationErrorZ.swift in Sources */,
 				07DF31962941685200531169 /* Record.swift in Sources */,
 				07DF2E0E2941684C00531169 /* Result_ClosingSignedFeeRangeDecodeErrorZ.swift in Sources */,
-				07DF2C722941684A00531169 /* NetAddress_Tag.swift in Sources */,
 				07DF2BBE2941684900531169 /* Tuple_PaymentHashPaymentIdZ.swift in Sources */,
 				07DF30BA2941685000531169 /* PeerManager.swift in Sources */,
 				07DF2FD62941684F00531169 /* Result_ReplyShortChannelIdsEndDecodeErrorZ.swift in Sources */,
@@ -4069,12 +3670,9 @@
 				07DF2BBA2941684900531169 /* Tuple_OutPointScriptZ.swift in Sources */,
 				07DF2E4E2941684C00531169 /* Result_AnnouncementSignaturesDecodeErrorZ.swift in Sources */,
 				07DF316E2941685100531169 /* LightningError.swift in Sources */,
-				07DF2CB22941684A00531169 /* DecodeError_Tag.swift in Sources */,
 				07DF2CC22941684A00531169 /* AccessError.swift in Sources */,
-				07DF2C6A2941684A00531169 /* Retry_Tag.swift in Sources */,
 				07DF2C522941684A00531169 /* MonitorEvent.swift in Sources */,
 				07DF2BEA2941684900531169 /* Tuple_PublicKeyTypeZ.swift in Sources */,
-				07DF2CCE2941684A00531169 /* PaymentError_Tag.swift in Sources */,
 				07DF2D4E2941684B00531169 /* Vec_MonitorEventZ.swift in Sources */,
 				07DF2D3E2941684B00531169 /* Vec_APIErrorZ.swift in Sources */,
 				07DF2B9E2941684900531169 /* Access.swift in Sources */,
@@ -4126,7 +3724,6 @@
 				07DF2B082941684800531169 /* Option_ScalarZ.swift in Sources */,
 				07DF2C1E2941684900531169 /* ParseOrSemanticError.swift in Sources */,
 				07DF2DDE2941684C00531169 /* Result_NonePaymentSendFailureZ.swift in Sources */,
-				07DF2C922941684A00531169 /* SendError_Tag.swift in Sources */,
 				07DF319E2941685200531169 /* ReplyChannelRange.swift in Sources */,
 				07DF31462941685100531169 /* PhantomRouteHints.swift in Sources */,
 				07DF30B22941685000531169 /* IgnoringMessageHandler.swift in Sources */,
@@ -4141,7 +3738,6 @@
 				07DF2ECE2941684D00531169 /* Result_CounterpartyCommitmentSecretsDecodeErrorZ.swift in Sources */,
 				07DF2D462941684B00531169 /* Vec_u8Z.swift in Sources */,
 				07DF2D6E2941684B00531169 /* Vec_C2Tuple_PublicKeyTypeZZ.swift in Sources */,
-				07DF2C6E2941684A00531169 /* PaymentPurpose_Tag.swift in Sources */,
 				07DF2E862941684D00531169 /* Result_ChannelUpdateDecodeErrorZ.swift in Sources */,
 				07DF312A2941685100531169 /* Shutdown.swift in Sources */,
 				07DF2D8E2941684B00531169 /* Vec_RouteHintHopZ.swift in Sources */,
@@ -4150,7 +3746,6 @@
 				07DF2FC22941684F00531169 /* Result_InitDecodeErrorZ.swift in Sources */,
 				07DF31822941685200531169 /* ErrorMessage.swift in Sources */,
 				07DF2C622941684A00531169 /* Secp256k1Error.swift in Sources */,
-				07DF2C662941684A00531169 /* MessageSendEvent_Tag.swift in Sources */,
 				07DF2B7E2941684800531169 /* RoutingMessageHandler.swift in Sources */,
 				07DF31922941685200531169 /* ChannelUpdate.swift in Sources */,
 				07DF31522941685100531169 /* CommitmentUpdate.swift in Sources */,
@@ -4165,7 +3760,6 @@
 				07DF2C2E2941684900531169 /* ErrorAction.swift in Sources */,
 				07DF2D9A2941684B00531169 /* Vec_EventZ.swift in Sources */,
 				07DF2C5E2941684A00531169 /* Retry.swift in Sources */,
-				07DF2CFA2941684A00531169 /* Bech32Error_Tag.swift in Sources */,
 				07DF2DBE2941684C00531169 /* Result_FundingCreatedDecodeErrorZ.swift in Sources */,
 				07DF2AB02941684700531169 /* Transaction.swift in Sources */,
 				07DF31622941685100531169 /* NodeAnnouncementInfo.swift in Sources */,
@@ -4242,7 +3836,6 @@
 				07DF2A8D2941684700531169 /* PublicKey.swift in Sources */,
 				07DF31BB2941685200531169 /* OpenChannel.swift in Sources */,
 				07DF2D6F2941684B00531169 /* Vec_C2Tuple_PublicKeyTypeZZ.swift in Sources */,
-				07DF2C7B2941684A00531169 /* GossipSync_Tag.swift in Sources */,
 				07DF2EFF2941684D00531169 /* Result_InvoiceSemanticErrorZ.swift in Sources */,
 				07DF14B229412AF900531169 /* ChannelManagerConstructor.swift in Sources */,
 				07DF2D5B2941684B00531169 /* Vec_OutPointZ.swift in Sources */,
@@ -4309,12 +3902,10 @@
 				07DF30AF2941685000531169 /* ReplyShortChannelIdsEnd.swift in Sources */,
 				07DF2E6B2941684D00531169 /* Result_TxOutAccessErrorZ.swift in Sources */,
 				07DF319B2941685200531169 /* ProbabilisticScorer.swift in Sources */,
-				07DF2CB32941684A00531169 /* DecodeError_Tag.swift in Sources */,
 				07DF2C232941684900531169 /* PaymentError.swift in Sources */,
 				07DF2D6B2941684B00531169 /* Vec_SpendableOutputDescriptorZ.swift in Sources */,
 				07DF31572941685100531169 /* ClosingSigned.swift in Sources */,
 				07DF2E8F2941684D00531169 /* Result_UpdateFeeDecodeErrorZ.swift in Sources */,
-				07DF2C732941684A00531169 /* NetAddress_Tag.swift in Sources */,
 				07DF2E232941684C00531169 /* Result_RouteHintDecodeErrorZ.swift in Sources */,
 				07DF2B5F2941684800531169 /* OnionMessageHandler.swift in Sources */,
 				07DF2F6B2941684E00531169 /* Result_UpdateFailHTLCDecodeErrorZ.swift in Sources */,
@@ -4347,17 +3938,14 @@
 				07DF2FEB2941684F00531169 /* InFlightHtlcs.swift in Sources */,
 				07DF2A9D2941684700531169 /* Signature.swift in Sources */,
 				07DF2D532941684B00531169 /* Vec_CResult_NoneAPIErrorZZ.swift in Sources */,
-				07DF2CD32941684A00531169 /* ParseOrSemanticError_Tag.swift in Sources */,
 				07DF2E5F2941684C00531169 /* Result_UnsignedChannelAnnouncementDecodeErrorZ.swift in Sources */,
 				07DF2DC72941684C00531169 /* Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ.swift in Sources */,
 				07DF2F172941684E00531169 /* Result_ChannelDetailsDecodeErrorZ.swift in Sources */,
 				07DF2EF32941684D00531169 /* Result_HTLCUpdateDecodeErrorZ.swift in Sources */,
-				07DF2C6B2941684A00531169 /* Retry_Tag.swift in Sources */,
 				07DF31972941685200531169 /* Record.swift in Sources */,
 				07DF310F2941685100531169 /* NodeInfo.swift in Sources */,
 				07DF30372941684F00531169 /* HTLCOutputInCommitment.swift in Sources */,
 				07DF2B832941684800531169 /* Listen.swift in Sources */,
-				07DF2CBB2941684A00531169 /* NetworkUpdate_Tag.swift in Sources */,
 				07DF2F772941684E00531169 /* Result_NoneNoneZ.swift in Sources */,
 				07DF2D7B2941684B00531169 /* Vec_PaymentPreimageZ.swift in Sources */,
 				07DF2ECF2941684D00531169 /* Result_CounterpartyCommitmentSecretsDecodeErrorZ.swift in Sources */,
@@ -4371,7 +3959,6 @@
 				07DF2BF72941684900531169 /* Bindings.swift in Sources */,
 				07DF2AA52941684700531169 /* TwentyBytes.swift in Sources */,
 				07DF2AF52941684800531169 /* Option_u32Z.swift in Sources */,
-				07DF2C6F2941684A00531169 /* PaymentPurpose_Tag.swift in Sources */,
 				07DF2E372941684C00531169 /* Result_AcceptChannelDecodeErrorZ.swift in Sources */,
 				07DF2AA12941684700531169 /* SixteenBytes.swift in Sources */,
 				07DF30DB2941685000531169 /* GossipTimestampFilter.swift in Sources */,
@@ -4443,9 +4030,7 @@
 				07DF2EDF2941684D00531169 /* Result_COption_EventZDecodeErrorZ.swift in Sources */,
 				07DF2A892941684700531169 /* FourBytes.swift in Sources */,
 				07DF2AD12941684800531169 /* Option_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ.swift in Sources */,
-				07DF2CCF2941684A00531169 /* PaymentError_Tag.swift in Sources */,
 				07DF2FCB2941684F00531169 /* Result_NoneSendErrorZ.swift in Sources */,
-				07DF2CE72941684A00531169 /* GraphSyncError_Tag.swift in Sources */,
 				07DF311F2941685100531169 /* RouteParameters.swift in Sources */,
 				07DF2FC32941684F00531169 /* Result_InitDecodeErrorZ.swift in Sources */,
 				07DF308F2941685000531169 /* NetworkGraph.swift in Sources */,
@@ -4468,10 +4053,8 @@
 				07DF30832941685000531169 /* MultiThreadedLockableScore.swift in Sources */,
 				07DF2DB72941684B00531169 /* Result_C2Tuple_SignatureSignatureZNoneZ.swift in Sources */,
 				07DF2D1F2941684B00531169 /* Vec_CVec_u8ZZ.swift in Sources */,
-				07DF2CBF2941684A00531169 /* Fallback_Tag.swift in Sources */,
 				07DF2ABD2941684700531169 /* ThreeBytes.swift in Sources */,
 				07DF2C332941684900531169 /* DecodeError.swift in Sources */,
-				07DF2CFB2941684A00531169 /* Bech32Error_Tag.swift in Sources */,
 				07DF2E132941684C00531169 /* Result_ChannelPublicKeysDecodeErrorZ.swift in Sources */,
 				07DF307B2941685000531169 /* UpdateFee.swift in Sources */,
 				07DF2BD32941684900531169 /* Tuple_RawInvoice_u832InvoiceSignatureZ.swift in Sources */,
@@ -4483,9 +4066,7 @@
 				07DF2FB72941684F00531169 /* Result_COption_MonitorEventZDecodeErrorZ.swift in Sources */,
 				07DF2F0F2941684E00531169 /* Result_WarningMessageDecodeErrorZ.swift in Sources */,
 				07DF30BB2941685000531169 /* PeerManager.swift in Sources */,
-				07DF2C772941684A00531169 /* SpendableOutputDescriptor_Tag.swift in Sources */,
 				07DF2F7B2941684E00531169 /* Result_PositiveTimestampCreationErrorZ.swift in Sources */,
-				07DF2C8F2941684A00531169 /* Balance_Tag.swift in Sources */,
 				07DF2B9B2941684900531169 /* BindingsType.swift in Sources */,
 				07DF30A72941685000531169 /* CounterpartyChannelTransactionParameters.swift in Sources */,
 				07DF2D7F2941684B00531169 /* Vec_ThirtyTwoBytesZ.swift in Sources */,
@@ -4521,7 +4102,6 @@
 				07DF2D1B2941684B00531169 /* Vec_TransactionOutputsZ.swift in Sources */,
 				07DF2C072941684900531169 /* SendError.swift in Sources */,
 				07DF2E6F2941684D00531169 /* Result_TrustedClosingTransactionNoneZ.swift in Sources */,
-				07DF2C832941684A00531169 /* HTLCDestination_Tag.swift in Sources */,
 				07DF2BAF2941684900531169 /* CustomMessageHandler.swift in Sources */,
 				07DF2AED2941684800531169 /* Option_MonitorEventZ.swift in Sources */,
 				07DF2F372941684E00531169 /* Result_BlindedRouteDecodeErrorZ.swift in Sources */,
@@ -4529,7 +4109,6 @@
 				07DF2D732941684B00531169 /* Vec_NodeIdZ.swift in Sources */,
 				07DF2DA72941684B00531169 /* Result_ChannelConfigDecodeErrorZ.swift in Sources */,
 				07DF2FFF2941684F00531169 /* RevokeAndACK.swift in Sources */,
-				07DF2CB72941684A00531169 /* APIError_Tag.swift in Sources */,
 				07DF304B2941684F00531169 /* NodeFeatures.swift in Sources */,
 				07DF2CC32941684A00531169 /* AccessError.swift in Sources */,
 				07DF2C3B2941684900531169 /* Destination.swift in Sources */,
@@ -4556,12 +4135,10 @@
 				07DF2FF72941684F00531169 /* Description.swift in Sources */,
 				07DF2B372941684800531169 /* BaseSign.swift in Sources */,
 				07DF315B2941685100531169 /* DefaultRouter.swift in Sources */,
-				07DF2CC72941684A00531169 /* SignOrCreationError_Tag.swift in Sources */,
 				07DF2F732941684E00531169 /* Result_TxCreationKeysDecodeErrorZ.swift in Sources */,
 				07DF2FD32941684F00531169 /* Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ.swift in Sources */,
 				07DF309B2941685000531169 /* CommitmentTransaction.swift in Sources */,
 				07DF2F5F2941684E00531169 /* Result_C2Tuple_SignatureCVec_SignatureZZNoneZ.swift in Sources */,
-				07DF2CAF2941684A00531169 /* ClosureReason_Tag.swift in Sources */,
 				07DF2F232941684E00531169 /* Result_SignatureNoneZ.swift in Sources */,
 				07DF2E172941684C00531169 /* Result_BuiltCommitmentTransactionDecodeErrorZ.swift in Sources */,
 				07DF308B2941685000531169 /* QueryShortChannelIds.swift in Sources */,
@@ -4570,20 +4147,15 @@
 				07DF2C132941684900531169 /* ParseError.swift in Sources */,
 				07DF2CFF2941684A00531169 /* Vec_RouteHintZ.swift in Sources */,
 				07DF2DAB2941684B00531169 /* Result_FixedPenaltyScorerDecodeErrorZ.swift in Sources */,
-				07DF2CEB2941684A00531169 /* MonitorEvent_Tag.swift in Sources */,
-				07DF2C672941684A00531169 /* MessageSendEvent_Tag.swift in Sources */,
-				07DF2CEF2941684A00531169 /* EffectiveCapacity_Tag.swift in Sources */,
 				07DF2F2B2941684E00531169 /* Result_u32GraphSyncErrorZ.swift in Sources */,
 				07DF2BDF2941684900531169 /* Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ.swift in Sources */,
 				07DF31DB2941685200531169 /* ChannelTypeFeatures.swift in Sources */,
 				07012EA1287753D000148346 /* ldk_net.c in Sources */,
 				07DF2DEB2941684C00531169 /* Result_StaticPaymentOutputDescriptorDecodeErrorZ.swift in Sources */,
 				07DF2BB72941684900531169 /* Tuple_SignatureSignatureZ.swift in Sources */,
-				07DF2CDF2941684A00531169 /* ErrorAction_Tag.swift in Sources */,
 				07DF30C72941685000531169 /* StaticPaymentOutputDescriptor.swift in Sources */,
 				07DF31D32941685200531169 /* CounterpartyForwardingInfo.swift in Sources */,
 				07DF301B2941684F00531169 /* UpdateAddHTLC.swift in Sources */,
-				07DF2C7F2941684A00531169 /* Event_Tag.swift in Sources */,
 				07DF2AC12941684800531169 /* TwelveBytes.swift in Sources */,
 				07DF313B2941685100531169 /* OnionMessage.swift in Sources */,
 				07DF2FE72941684F00531169 /* MessageHandler.swift in Sources */,
@@ -4613,7 +4185,6 @@
 				07DF2AA92941684700531169 /* u5.swift in Sources */,
 				07DF30CF2941685000531169 /* NodeId.swift in Sources */,
 				07DF2B3F2941684800531169 /* OnionMessageProvider.swift in Sources */,
-				07DF2CAB2941684A00531169 /* ParseError_Tag.swift in Sources */,
 				07DF2E0F2941684C00531169 /* Result_ClosingSignedFeeRangeDecodeErrorZ.swift in Sources */,
 				07DF311B2941685100531169 /* ChannelHandshakeConfig.swift in Sources */,
 				07DF30932941685000531169 /* DirectedChannelInfo.swift in Sources */,
@@ -4630,7 +4201,6 @@
 				07DF2F7F2941684E00531169 /* Result_OutPointDecodeErrorZ.swift in Sources */,
 				07DF2BC72941684900531169 /* Tuple_OutPointCVec_MonitorEventZPublicKeyZ.swift in Sources */,
 				07DF30F72941685100531169 /* CounterpartyCommitmentSecrets.swift in Sources */,
-				07DF2CF72941684A00531169 /* PaymentSendFailure_Tag.swift in Sources */,
 				07DF2B872941684800531169 /* ChannelMessageHandler.swift in Sources */,
 				07DF2D932941684B00531169 /* Vec_PrivateRouteZ.swift in Sources */,
 				07DF2D5F2941684B00531169 /* Vec_CVec_RouteHopZZ.swift in Sources */,
@@ -4644,12 +4214,10 @@
 				07DF30AB2941685000531169 /* ChannelAnnouncement.swift in Sources */,
 				07DF2B432941684800531169 /* Persist.swift in Sources */,
 				07DF31532941685100531169 /* CommitmentUpdate.swift in Sources */,
-				07DF2C932941684A00531169 /* SendError_Tag.swift in Sources */,
 				07DF2FCF2941684F00531169 /* Result_PrivateRouteCreationErrorZ.swift in Sources */,
 				07DF30432941684F00531169 /* ChannelManagerReadArgs.swift in Sources */,
 				07DF2ACD2941684800531169 /* Option_HTLCDestinationZ.swift in Sources */,
 				07DF31772941685200531169 /* BindingsError.swift in Sources */,
-				07DF2C9F2941684A00531169 /* Destination_Tag.swift in Sources */,
 				07DF2FDB2941684F00531169 /* Result_ChannelCounterpartyDecodeErrorZ.swift in Sources */,
 				07DF32032941685300531169 /* OutPoint.swift in Sources */,
 				07DF2E332941684C00531169 /* Result_BlindedRouteNoneZ.swift in Sources */,
@@ -4670,7 +4238,6 @@
 				07DF2B442941684800531169 /* Persist.swift in Sources */,
 				07DF30682941685000531169 /* Hostname.swift in Sources */,
 				07DF31F42941685200531169 /* UserConfig.swift in Sources */,
-				07DF2C742941684A00531169 /* NetAddress_Tag.swift in Sources */,
 				07DF2F602941684E00531169 /* Result_C2Tuple_SignatureCVec_SignatureZZNoneZ.swift in Sources */,
 				07DF2B6C2941684800531169 /* MessageSendEventsProvider.swift in Sources */,
 				07DF313C2941685100531169 /* OnionMessage.swift in Sources */,
@@ -4680,7 +4247,6 @@
 				07DF2FF82941684F00531169 /* Description.swift in Sources */,
 				07DF2F7C2941684E00531169 /* Result_PositiveTimestampCreationErrorZ.swift in Sources */,
 				07DF2D302941684B00531169 /* Vec_TransactionZ.swift in Sources */,
-				07DF2C942941684A00531169 /* SendError_Tag.swift in Sources */,
 				07DF310C2941685100531169 /* ChannelTransactionParameters.swift in Sources */,
 				07DF2F482941684E00531169 /* Result_SecretKeyNoneZ.swift in Sources */,
 				07DF2FC42941684F00531169 /* Result_InitDecodeErrorZ.swift in Sources */,
@@ -4699,21 +4265,17 @@
 				07DF30982941685000531169 /* InvalidShutdownScript.swift in Sources */,
 				07DF2C302941684900531169 /* ErrorAction.swift in Sources */,
 				07DF2E782941684D00531169 /* Result_NoneAPIErrorZ.swift in Sources */,
-				07DF2CC82941684A00531169 /* SignOrCreationError_Tag.swift in Sources */,
 				07DF2ABA2941684700531169 /* SecretKey.swift in Sources */,
-				07DF2CB82941684A00531169 /* APIError_Tag.swift in Sources */,
 				07DF2FB42941684F00531169 /* Result_CounterpartyForwardingInfoDecodeErrorZ.swift in Sources */,
 				07DF2DF42941684C00531169 /* Result_RevokeAndACKDecodeErrorZ.swift in Sources */,
 				07DF31D02941685200531169 /* LockedChannelMonitor.swift in Sources */,
 				07DF30F42941685100531169 /* Pong.swift in Sources */,
-				07DF2CFC2941684A00531169 /* Bech32Error_Tag.swift in Sources */,
 				07DF2F0C2941684E00531169 /* Result_NetAddressDecodeErrorZ.swift in Sources */,
 				07DF32002941685200531169 /* ChannelReady.swift in Sources */,
 				07DF2FD82941684F00531169 /* Result_ReplyShortChannelIdsEndDecodeErrorZ.swift in Sources */,
 				07DF2EDC2941684D00531169 /* Result_RouteParametersDecodeErrorZ.swift in Sources */,
 				07DF2DDC2941684C00531169 /* Result_UpdateFulfillHTLCDecodeErrorZ.swift in Sources */,
 				07DF2ADE2941684800531169 /* Option_C2Tuple_u64u64ZZ.swift in Sources */,
-				07DF2C802941684A00531169 /* Event_Tag.swift in Sources */,
 				07DF2AD22941684800531169 /* Option_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ.swift in Sources */,
 				07DF2DB82941684B00531169 /* Result_C2Tuple_SignatureSignatureZNoneZ.swift in Sources */,
 				07DF30002941684F00531169 /* RevokeAndACK.swift in Sources */,
@@ -4741,7 +4303,6 @@
 				07DF2FE42941684F00531169 /* Result_InMemorySignerDecodeErrorZ.swift in Sources */,
 				07DF2F442941684E00531169 /* Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ.swift in Sources */,
 				07DF2F342941684E00531169 /* Result_PhantomRouteHintsDecodeErrorZ.swift in Sources */,
-				07DF2CE82941684A00531169 /* GraphSyncError_Tag.swift in Sources */,
 				07DF2FB82941684F00531169 /* Result_COption_MonitorEventZDecodeErrorZ.swift in Sources */,
 				07DF31142941685100531169 /* BackgroundProcessor.swift in Sources */,
 				07DF31C82941685200531169 /* ChannelUsage.swift in Sources */,
@@ -4788,7 +4349,6 @@
 				07DF311C2941685100531169 /* ChannelHandshakeConfig.swift in Sources */,
 				07DF2D6C2941684B00531169 /* Vec_SpendableOutputDescriptorZ.swift in Sources */,
 				07DF2E282941684C00531169 /* Result_SpendableOutputDescriptorDecodeErrorZ.swift in Sources */,
-				07DF2C902941684A00531169 /* Balance_Tag.swift in Sources */,
 				07DF2DBC2941684C00531169 /* Result_ShutdownScriptInvalidShutdownScriptZ.swift in Sources */,
 				07DF2FAC2941684E00531169 /* Result_PaymentSecretNoneZ.swift in Sources */,
 				07DF2C1C2941684900531169 /* PaymentPurpose.swift in Sources */,
@@ -4798,7 +4358,6 @@
 				07DF2B0E2941684800531169 /* Option_CVec_NetAddressZZ.swift in Sources */,
 				07DF2FCC2941684F00531169 /* Result_NoneSendErrorZ.swift in Sources */,
 				07E06773287CB0E200CFA8BF /* RegtestBroadcasterInterface.swift in Sources */,
-				07DF2CF82941684A00531169 /* PaymentSendFailure_Tag.swift in Sources */,
 				07E06763287CB0E200CFA8BF /* RegtestChannelManagerPersister.swift in Sources */,
 				07DF30A42941685000531169 /* FundingCreated.swift in Sources */,
 				07DF31342941685100531169 /* AcceptChannel.swift in Sources */,
@@ -4828,7 +4387,6 @@
 				07DF301C2941684F00531169 /* UpdateAddHTLC.swift in Sources */,
 				07DF2B502941684800531169 /* Logger.swift in Sources */,
 				07DF30F82941685100531169 /* CounterpartyCommitmentSecrets.swift in Sources */,
-				07DF2CBC2941684A00531169 /* NetworkUpdate_Tag.swift in Sources */,
 				07DF30AC2941685000531169 /* ChannelAnnouncement.swift in Sources */,
 				07DF31182941685100531169 /* DirectedChannelTransactionParameters.swift in Sources */,
 				07DF2B942941684900531169 /* Filter.swift in Sources */,
@@ -4842,7 +4400,6 @@
 				07DF2E542941684C00531169 /* Result_StringErrorZ.swift in Sources */,
 				07DF2DA42941684B00531169 /* VersionDescriptor.swift in Sources */,
 				07DF2DFC2941684C00531169 /* Result_OpenChannelDecodeErrorZ.swift in Sources */,
-				07DF2CAC2941684A00531169 /* ParseError_Tag.swift in Sources */,
 				07DF31E82941685200531169 /* ReadOnlyNetworkGraph.swift in Sources */,
 				07DF30842941685000531169 /* MultiThreadedLockableScore.swift in Sources */,
 				07DF2BFC2941684900531169 /* PaymentSendFailure.swift in Sources */,
@@ -4900,7 +4457,6 @@
 				07DF2B782941684800531169 /* Confirm.swift in Sources */,
 				07DF31582941685100531169 /* ClosingSigned.swift in Sources */,
 				07DF2D442941684B00531169 /* Vec_PhantomRouteHintsZ.swift in Sources */,
-				07DF2C702941684A00531169 /* PaymentPurpose_Tag.swift in Sources */,
 				07DF2E942941684D00531169 /* Result_DescriptionCreationErrorZ.swift in Sources */,
 				07DF2B3C2941684800531169 /* FutureCallback.swift in Sources */,
 				07DF306C2941685000531169 /* ClosingSignedFeeRange.swift in Sources */,
@@ -4916,7 +4472,6 @@
 				07E0676B287CB0E200CFA8BF /* BlockchainObserver.swift in Sources */,
 				07DF2ED02941684D00531169 /* Result_CounterpartyCommitmentSecretsDecodeErrorZ.swift in Sources */,
 				07DF2DF82941684C00531169 /* Result_COption_ClosureReasonZDecodeErrorZ.swift in Sources */,
-				07DF2CEC2941684A00531169 /* MonitorEvent_Tag.swift in Sources */,
 				07DF2A9E2941684700531169 /* Signature.swift in Sources */,
 				07DF2B062941684800531169 /* Option_CustomOnionMessageContentsZ.swift in Sources */,
 				07DF2FC82941684F00531169 /* Result_COption_CustomOnionMessageContentsZDecodeErrorZ.swift in Sources */,
@@ -4926,7 +4481,6 @@
 				07DF2BF02941684900531169 /* Tuple_TxidCVec_C2Tuple_u32TxOutZZZ.swift in Sources */,
 				07DF2AFA2941684800531169 /* Option_u16Z.swift in Sources */,
 				07DF2F582941684E00531169 /* Result_boolPeerHandleErrorZ.swift in Sources */,
-				07DF2C782941684A00531169 /* SpendableOutputDescriptor_Tag.swift in Sources */,
 				07DF2BA82941684900531169 /* Watch.swift in Sources */,
 				07DF2C3C2941684900531169 /* Destination.swift in Sources */,
 				07DF2C8C2941684A00531169 /* Currency.swift in Sources */,
@@ -4997,7 +4551,6 @@
 				07DF2B342941684800531169 /* CustomOnionMessageContents.swift in Sources */,
 				07DF2C102941684900531169 /* Event.swift in Sources */,
 				07DF2C982941684A00531169 /* Recipient.swift in Sources */,
-				07DF2C6C2941684A00531169 /* Retry_Tag.swift in Sources */,
 				07DF2D502941684B00531169 /* Vec_MonitorEventZ.swift in Sources */,
 				07DF2D202941684B00531169 /* Vec_CVec_u8ZZ.swift in Sources */,
 				07DF2BD02941684900531169 /* Tuple_u32ScriptZ.swift in Sources */,
@@ -5016,9 +4569,6 @@
 				07DF2FF42941684F00531169 /* PayeePubKey.swift in Sources */,
 				07DF2AA62941684700531169 /* TwentyBytes.swift in Sources */,
 				07DF30E02941685000531169 /* PeerHandleError.swift in Sources */,
-				07DF2CB02941684A00531169 /* ClosureReason_Tag.swift in Sources */,
-				07DF2CF02941684A00531169 /* EffectiveCapacity_Tag.swift in Sources */,
-				07DF2CC02941684A00531169 /* Fallback_Tag.swift in Sources */,
 				07DF2EE02941684D00531169 /* Result_COption_EventZDecodeErrorZ.swift in Sources */,
 				07DF30582941685000531169 /* Invoice.swift in Sources */,
 				07DF2F402941684E00531169 /* Result_OnionMessageDecodeErrorZ.swift in Sources */,
@@ -5062,12 +4612,10 @@
 				07DF2E3C2941684C00531169 /* Result_PaymentPreimageAPIErrorZ.swift in Sources */,
 				07DF31802941685200531169 /* TxOut.swift in Sources */,
 				07DF2AD62941684800531169 /* Option_TypeZ.swift in Sources */,
-				07DF2CA02941684A00531169 /* Destination_Tag.swift in Sources */,
 				07DF2EB42941684D00531169 /* Result_TransactionNoneZ.swift in Sources */,
 				07DF30742941685000531169 /* OnionMessenger.swift in Sources */,
 				07DF30442941684F00531169 /* ChannelManagerReadArgs.swift in Sources */,
 				07DF2EA42941684D00531169 /* Result_BlindedHopDecodeErrorZ.swift in Sources */,
-				07DF2C842941684A00531169 /* HTLCDestination_Tag.swift in Sources */,
 				07DF30542941685000531169 /* Future.swift in Sources */,
 				07DF2AA22941684700531169 /* SixteenBytes.swift in Sources */,
 				07DF30242941684F00531169 /* BlindedHop.swift in Sources */,
@@ -5112,7 +4660,6 @@
 				07DF2EB02941684D00531169 /* Result_PublicKeyNoneZ.swift in Sources */,
 				07DF2E9C2941684D00531169 /* Result_CommitmentTransactionDecodeErrorZ.swift in Sources */,
 				07DF30782941685000531169 /* BlindedRoute.swift in Sources */,
-				07DF2CB42941684A00531169 /* DecodeError_Tag.swift in Sources */,
 				07DF2DD02941684C00531169 /* Result_PingDecodeErrorZ.swift in Sources */,
 				07E0674F287CAEC200CFA8BF /* ldk_net.c in Sources */,
 				07DF2BC02941684900531169 /* Tuple_PaymentHashPaymentIdZ.swift in Sources */,
@@ -5125,7 +4672,6 @@
 				07DF2EA82941684D00531169 /* Result_FundingSignedDecodeErrorZ.swift in Sources */,
 				07DF2B0A2941684800531169 /* Option_ScalarZ.swift in Sources */,
 				07DF2E102941684C00531169 /* Result_ClosingSignedFeeRangeDecodeErrorZ.swift in Sources */,
-				07DF2C7C2941684A00531169 /* GossipSync_Tag.swift in Sources */,
 				07DF30802941685000531169 /* UnsignedChannelUpdate.swift in Sources */,
 				07DF2EBC2941684D00531169 /* Result_ChannelAnnouncementDecodeErrorZ.swift in Sources */,
 				07DF317C2941685200531169 /* DataLossProtect.swift in Sources */,
@@ -5138,13 +4684,9 @@
 				07DF2DC82941684C00531169 /* Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ.swift in Sources */,
 				07DF2E302941684C00531169 /* Result_ErrorMessageDecodeErrorZ.swift in Sources */,
 				07DF2CE42941684A00531169 /* SemanticError.swift in Sources */,
-				07DF2CD02941684A00531169 /* PaymentError_Tag.swift in Sources */,
-				07DF2C682941684A00531169 /* MessageSendEvent_Tag.swift in Sources */,
-				07DF2CE02941684A00531169 /* ErrorAction_Tag.swift in Sources */,
 				07DF2FF02941684F00531169 /* ChainMonitor.swift in Sources */,
 				07DF2FE82941684F00531169 /* MessageHandler.swift in Sources */,
 				07DF2F382941684E00531169 /* Result_BlindedRouteDecodeErrorZ.swift in Sources */,
-				07DF2CD42941684A00531169 /* ParseOrSemanticError_Tag.swift in Sources */,
 				07DF31F82941685200531169 /* MultiThreadedScoreLock.swift in Sources */,
 				07DF2D682941684B00531169 /* Vec_BalanceZ.swift in Sources */,
 				07DF2B542941684800531169 /* Payer.swift in Sources */,
@@ -5165,10 +4707,8 @@
 				07DF2D5D2941684B00531169 /* Vec_OutPointZ.swift in Sources */,
 				07DF2EB92941684D00531169 /* Result_NetworkGraphDecodeErrorZ.swift in Sources */,
 				07DF2D752941684B00531169 /* Vec_NodeIdZ.swift in Sources */,
-				07DF2C852941684A00531169 /* HTLCDestination_Tag.swift in Sources */,
 				07DF2D512941684B00531169 /* Vec_MonitorEventZ.swift in Sources */,
 				07DF30412941684F00531169 /* RouteHintHop.swift in Sources */,
-				07DF2CD52941684A00531169 /* ParseOrSemanticError_Tag.swift in Sources */,
 				07DF2D2D2941684B00531169 /* Vec_UpdateAddHTLCZ.swift in Sources */,
 				07DF2FFD2941684F00531169 /* BindingsInit.swift in Sources */,
 				07DF2EB52941684D00531169 /* Result_TransactionNoneZ.swift in Sources */,
@@ -5184,13 +4724,11 @@
 				07DF2B892941684800531169 /* ChannelMessageHandler.swift in Sources */,
 				07DF2FC12941684F00531169 /* Result_HTLCOutputInCommitmentDecodeErrorZ.swift in Sources */,
 				07DF2D612941684B00531169 /* Vec_CVec_RouteHopZZ.swift in Sources */,
-				07DF2C912941684A00531169 /* Balance_Tag.swift in Sources */,
 				07DF2AD32941684800531169 /* Option_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ.swift in Sources */,
 				07DF2B3D2941684800531169 /* FutureCallback.swift in Sources */,
 				07DF2B8D2941684900531169 /* WriteableScore.swift in Sources */,
 				07DF2C012941684900531169 /* Fallback.swift in Sources */,
 				07DF31D12941685200531169 /* LockedChannelMonitor.swift in Sources */,
-				07DF2CC12941684A00531169 /* Fallback_Tag.swift in Sources */,
 				07DF2CA52941684A00531169 /* ChannelMonitorUpdateStatus.swift in Sources */,
 				07DF2F092941684D00531169 /* Result_InitFeaturesDecodeErrorZ.swift in Sources */,
 				07DF2B5D2941684800531169 /* FeeEstimator.swift in Sources */,
@@ -5211,9 +4749,7 @@
 				07DF2DB52941684B00531169 /* Result_QueryChannelRangeDecodeErrorZ.swift in Sources */,
 				07DF2ED52941684D00531169 /* Result_ChannelReestablishDecodeErrorZ.swift in Sources */,
 				07DF2DE12941684C00531169 /* Result_NonePaymentSendFailureZ.swift in Sources */,
-				07DF2C712941684A00531169 /* PaymentPurpose_Tag.swift in Sources */,
 				07DF2E392941684C00531169 /* Result_AcceptChannelDecodeErrorZ.swift in Sources */,
-				07DF2CB52941684A00531169 /* DecodeError_Tag.swift in Sources */,
 				07DF2B752941684800531169 /* LockableScore.swift in Sources */,
 				07DF30F92941685100531169 /* CounterpartyCommitmentSecrets.swift in Sources */,
 				07DF2B452941684800531169 /* Persist.swift in Sources */,
@@ -5274,7 +4810,6 @@
 				07DF2C492941684900531169 /* HTLCDestination.swift in Sources */,
 				07DF2E192941684C00531169 /* Result_BuiltCommitmentTransactionDecodeErrorZ.swift in Sources */,
 				07DF31612941685100531169 /* ChannelDetails.swift in Sources */,
-				07DF2CC92941684A00531169 /* SignOrCreationError_Tag.swift in Sources */,
 				07DF31292941685100531169 /* PrivateRoute.swift in Sources */,
 				07DF2DAD2941684B00531169 /* Result_FixedPenaltyScorerDecodeErrorZ.swift in Sources */,
 				07DF2D312941684B00531169 /* Vec_TransactionZ.swift in Sources */,
@@ -5287,7 +4822,6 @@
 				07DF2E6D2941684D00531169 /* Result_TxOutAccessErrorZ.swift in Sources */,
 				07DF2E952941684D00531169 /* Result_DescriptionCreationErrorZ.swift in Sources */,
 				07DF2DA12941684B00531169 /* Vec_SignatureZ.swift in Sources */,
-				07DF2CB92941684A00531169 /* APIError_Tag.swift in Sources */,
 				07DF2AC32941684800531169 /* TwelveBytes.swift in Sources */,
 				07DF2F812941684E00531169 /* Result_OutPointDecodeErrorZ.swift in Sources */,
 				07DF2BC92941684900531169 /* Tuple_OutPointCVec_MonitorEventZPublicKeyZ.swift in Sources */,
@@ -5319,7 +4853,6 @@
 				07DF2C152941684900531169 /* ParseError.swift in Sources */,
 				07DF2E552941684C00531169 /* Result_StringErrorZ.swift in Sources */,
 				07DF2B0B2941684800531169 /* Option_ScalarZ.swift in Sources */,
-				07DF2CD12941684A00531169 /* PaymentError_Tag.swift in Sources */,
 				07DF31692941685100531169 /* UnsignedChannelAnnouncement.swift in Sources */,
 				07DF2A972941684700531169 /* u8slice.swift in Sources */,
 				07DF30CD2941685000531169 /* HTLCUpdate.swift in Sources */,
@@ -5327,7 +4860,6 @@
 				07DF2B992941684900531169 /* CustomMessageReader.swift in Sources */,
 				07DF2CA92941684A00531169 /* Network.swift in Sources */,
 				07DF2FAD2941684E00531169 /* Result_PaymentSecretNoneZ.swift in Sources */,
-				07DF2CBD2941684A00531169 /* NetworkUpdate_Tag.swift in Sources */,
 				07DF2D852941684B00531169 /* Vec_RouteHopZ.swift in Sources */,
 				07DF31852941685200531169 /* ErrorMessage.swift in Sources */,
 				07DF2E292941684C00531169 /* Result_SpendableOutputDescriptorDecodeErrorZ.swift in Sources */,
@@ -5341,13 +4873,11 @@
 				07DF2E852941684D00531169 /* Result_boolLightningErrorZ.swift in Sources */,
 				07DF2E912941684D00531169 /* Result_UpdateFeeDecodeErrorZ.swift in Sources */,
 				07DF2F7D2941684E00531169 /* Result_PositiveTimestampCreationErrorZ.swift in Sources */,
-				07DF2CE12941684A00531169 /* ErrorAction_Tag.swift in Sources */,
 				07CE1EB528E767DC00BB37E4 /* TestFilter.swift in Sources */,
 				07DF31F52941685200531169 /* UserConfig.swift in Sources */,
 				07DF30E92941685100531169 /* CommitmentSigned.swift in Sources */,
 				07DF2F152941684E00531169 /* Result_RecoverableSignatureNoneZ.swift in Sources */,
 				07DF2D252941684B00531169 /* Vec_ChannelMonitorZ.swift in Sources */,
-				07DF2CE92941684A00531169 /* GraphSyncError_Tag.swift in Sources */,
 				07DF2B792941684800531169 /* Confirm.swift in Sources */,
 				07DF31C52941685200531169 /* SignedRawInvoice.swift in Sources */,
 				07DF2B852941684800531169 /* Listen.swift in Sources */,
@@ -5375,7 +4905,6 @@
 				07DF30292941684F00531169 /* UpdateFailMalformedHTLC.swift in Sources */,
 				07DF2F9D2941684E00531169 /* Result_COption_HTLCDestinationZDecodeErrorZ.swift in Sources */,
 				07DF2E8D2941684D00531169 /* Result_NodeAliasDecodeErrorZ.swift in Sources */,
-				07DF2CF12941684A00531169 /* EffectiveCapacity_Tag.swift in Sources */,
 				07DF2FED2941684F00531169 /* InFlightHtlcs.swift in Sources */,
 				07DF2B072941684800531169 /* Option_CustomOnionMessageContentsZ.swift in Sources */,
 				07DF2EC92941684D00531169 /* Result_SiPrefixParseErrorZ.swift in Sources */,
@@ -5406,7 +4935,6 @@
 				07DF30612941685000531169 /* ChannelMonitor.swift in Sources */,
 				07DF2D092941684A00531169 /* Vec_C2Tuple_usizeTransactionZZ.swift in Sources */,
 				07DF2BFD2941684900531169 /* PaymentSendFailure.swift in Sources */,
-				07DF2C952941684A00531169 /* SendError_Tag.swift in Sources */,
 				07DF2C352941684900531169 /* DecodeError.swift in Sources */,
 				07DF2BD52941684900531169 /* Tuple_RawInvoice_u832InvoiceSignatureZ.swift in Sources */,
 				07DF2C452941684900531169 /* NetworkUpdate.swift in Sources */,
@@ -5415,7 +4943,6 @@
 				07DF2CC52941684A00531169 /* AccessError.swift in Sources */,
 				07DF30112941684F00531169 /* RapidGossipSync.swift in Sources */,
 				07CE1EBD28E767DC00BB37E4 /* BTCTransaction.swift in Sources */,
-				07DF2C812941684A00531169 /* Event_Tag.swift in Sources */,
 				07DF2E512941684C00531169 /* Result_AnnouncementSignaturesDecodeErrorZ.swift in Sources */,
 				07DF2FDD2941684F00531169 /* Result_ChannelCounterpartyDecodeErrorZ.swift in Sources */,
 				07DF2F612941684E00531169 /* Result_C2Tuple_SignatureCVec_SignatureZZNoneZ.swift in Sources */,
@@ -5444,10 +4971,8 @@
 				07DF2DCD2941684C00531169 /* Result_LockedChannelMonitorNoneZ.swift in Sources */,
 				07DF2CCD2941684A00531169 /* CreationError.swift in Sources */,
 				07DF2BA52941684900531169 /* EventsProvider.swift in Sources */,
-				07DF2CB12941684A00531169 /* ClosureReason_Tag.swift in Sources */,
 				07DF2AF72941684800531169 /* Option_u32Z.swift in Sources */,
 				07DF314D2941685100531169 /* PaymentParameters.swift in Sources */,
-				07DF2CAD2941684A00531169 /* ParseError_Tag.swift in Sources */,
 				07DF30C52941685000531169 /* NodeAlias.swift in Sources */,
 				07DF2DC92941684C00531169 /* Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ.swift in Sources */,
 				07DF2C5D2941684A00531169 /* GraphSyncError.swift in Sources */,
@@ -5459,7 +4984,6 @@
 				07DF30F12941685100531169 /* RawInvoice.swift in Sources */,
 				07DF2C1D2941684900531169 /* PaymentPurpose.swift in Sources */,
 				07DF2FC52941684F00531169 /* Result_InitDecodeErrorZ.swift in Sources */,
-				07DF2CF92941684A00531169 /* PaymentSendFailure_Tag.swift in Sources */,
 				07DF2B712941684800531169 /* BroadcasterInterface.swift in Sources */,
 				07DF2C652941684A00531169 /* Secp256k1Error.swift in Sources */,
 				07DF31F92941685200531169 /* MultiThreadedScoreLock.swift in Sources */,
@@ -5498,7 +5022,6 @@
 				07DF31652941685100531169 /* NodeAnnouncementInfo.swift in Sources */,
 				07DF2E792941684D00531169 /* Result_NoneAPIErrorZ.swift in Sources */,
 				07DF307D2941685000531169 /* UpdateFee.swift in Sources */,
-				07DF2CED2941684A00531169 /* MonitorEvent_Tag.swift in Sources */,
 				07DF31312941685100531169 /* ChainParameters.swift in Sources */,
 				07DF2AFF2941684800531169 /* Option_EventZ.swift in Sources */,
 				07DF2C552941684A00531169 /* MonitorEvent.swift in Sources */,
@@ -5529,13 +5052,11 @@
 				07DF2E152941684C00531169 /* Result_ChannelPublicKeysDecodeErrorZ.swift in Sources */,
 				07DF319D2941685200531169 /* ProbabilisticScorer.swift in Sources */,
 				07DF2F412941684E00531169 /* Result_OnionMessageDecodeErrorZ.swift in Sources */,
-				07DF2CA12941684A00531169 /* Destination_Tag.swift in Sources */,
 				07DF2E092941684C00531169 /* Result__u832APIErrorZ.swift in Sources */,
 				07DF30352941684F00531169 /* Sha256.swift in Sources */,
 				07E06774287CB0E200CFA8BF /* RegtestBroadcasterInterface.swift in Sources */,
 				07DF2EE52941684D00531169 /* Result_PaymentIdPaymentSendFailureZ.swift in Sources */,
 				07DF30152941684F00531169 /* Ping.swift in Sources */,
-				07DF2CFD2941684A00531169 /* Bech32Error_Tag.swift in Sources */,
 				07DF2E5D2941684C00531169 /* Result_RouteHopDecodeErrorZ.swift in Sources */,
 				07DF2E692941684D00531169 /* Result_NonePeerHandleErrorZ.swift in Sources */,
 				07DF30ED2941685100531169 /* TxCreationKeys.swift in Sources */,
@@ -5578,7 +5099,6 @@
 				07DF2DA92941684B00531169 /* Result_ChannelConfigDecodeErrorZ.swift in Sources */,
 				07DF310D2941685100531169 /* ChannelTransactionParameters.swift in Sources */,
 				07DF30552941685000531169 /* Future.swift in Sources */,
-				07DF2C692941684A00531169 /* MessageSendEvent_Tag.swift in Sources */,
 				07DF31A92941685200531169 /* NodeAnnouncement.swift in Sources */,
 				07DF31812941685200531169 /* TxOut.swift in Sources */,
 				07DF2FBD2941684F00531169 /* Result_ChannelReadyDecodeErrorZ.swift in Sources */,
@@ -5594,7 +5114,6 @@
 				07DF2E012941684C00531169 /* Result_ChannelInfoDecodeErrorZ.swift in Sources */,
 				07DF2E752941684D00531169 /* Result_NoneLightningErrorZ.swift in Sources */,
 				07DF2AFB2941684800531169 /* Option_u16Z.swift in Sources */,
-				07DF2C752941684A00531169 /* NetAddress_Tag.swift in Sources */,
 				07DF2E612941684C00531169 /* Result_UnsignedChannelAnnouncementDecodeErrorZ.swift in Sources */,
 				07DF30792941685000531169 /* BlindedRoute.swift in Sources */,
 				07DF2C8D2941684A00531169 /* Currency.swift in Sources */,
@@ -5615,7 +5134,6 @@
 				07DF2EAD2941684D00531169 /* Result_InvoiceFeaturesDecodeErrorZ.swift in Sources */,
 				07DF2BE12941684900531169 /* Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ.swift in Sources */,
 				07DF30B92941685000531169 /* ShutdownScript.swift in Sources */,
-				07DF2C7D2941684A00531169 /* GossipSync_Tag.swift in Sources */,
 				07DF31192941685100531169 /* DirectedChannelTransactionParameters.swift in Sources */,
 				07DF2EB12941684D00531169 /* Result_PublicKeyNoneZ.swift in Sources */,
 				07DF2F6D2941684E00531169 /* Result_UpdateFailHTLCDecodeErrorZ.swift in Sources */,
@@ -5628,7 +5146,6 @@
 				07DF2D392941684B00531169 /* Vec_UpdateFailMalformedHTLCZ.swift in Sources */,
 				07DF2BA12941684900531169 /* Access.swift in Sources */,
 				07DF31FD2941685200531169 /* Route.swift in Sources */,
-				07DF2C792941684A00531169 /* SpendableOutputDescriptor_Tag.swift in Sources */,
 				07DF2B692941684800531169 /* CustomOnionMessageHandler.swift in Sources */,
 				07DF2E592941684C00531169 /* Result_HolderCommitmentTransactionDecodeErrorZ.swift in Sources */,
 				07DF2AE72941684800531169 /* Option_ClosureReasonZ.swift in Sources */,
@@ -5641,7 +5158,6 @@
 				07DF31212941685100531169 /* RouteParameters.swift in Sources */,
 				07DF2B812941684800531169 /* RoutingMessageHandler.swift in Sources */,
 				07DF31452941685100531169 /* ProbabilisticScoringParameters.swift in Sources */,
-				07DF2C6D2941684A00531169 /* Retry_Tag.swift in Sources */,
 				07DF305D2941685000531169 /* RoutingFees.swift in Sources */,
 				07DF31092941685100531169 /* HolderCommitmentTransaction.swift in Sources */,
 				07DF2ECD2941684D00531169 /* Result_RoutingFeesDecodeErrorZ.swift in Sources */,

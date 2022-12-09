@@ -276,9 +276,9 @@ export default class Parser {
 							const variantBName = enumVariants[1].name;
 							if ((variantAName.endsWith('_Some') && variantBName.endsWith('_None')) || (variantAName.endsWith('_None') && variantBName.endsWith('_Some'))) {
 								descriptor = new RustNullableOption();
-								primitiveEnum.parentType = descriptor;
 							}
 						}
+						primitiveEnum.parentType = descriptor;
 
 					} else if (hypotheticalResultEnumName in this.typeGlossary && this.typeGlossary[hypotheticalResultEnumName] instanceof RustResultValueEnum) {
 						const resultValueEnum = this.typeGlossary[hypotheticalResultEnumName];

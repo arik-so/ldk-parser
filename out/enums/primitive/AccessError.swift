@@ -22,31 +22,35 @@
 					internal init (value: LDKAccessError) {
 
 						// TODO: remove this initial assumption somehow
-						self = .UnknownTx
+						// self = .UnknownTx
 
-						
-						// LDKAccessError_UnknownChain
-						if value.rawValue == 0 {
-							self = .UnknownChain
-						}
+						switch value {
+							
+							// LDKAccessError_UnknownChain
+							// if value.rawValue == 0 {
+							case LDKAccessError_UnknownChain: // {
+								self = .UnknownChain
+							// }
 			
-						// LDKAccessError_UnknownTx
-						if value.rawValue == 1 {
-							self = .UnknownTx
-						}
+							// LDKAccessError_UnknownTx
+							// if value.rawValue == 1 {
+							default: // {
+								self = .UnknownTx
+							// }
 			
+						}
 					}
 
 					internal func getCValue() -> LDKAccessError {
 						switch self {
 							
 							case .UnknownChain:
-								// return LDKAccessError_UnknownChain
-								return LDKAccessError(0)
+								return LDKAccessError_UnknownChain
+								// return LDKAccessError(0)
 			
 							case .UnknownTx:
-								// return LDKAccessError_UnknownTx
-								return LDKAccessError(1)
+								return LDKAccessError_UnknownTx
+								// return LDKAccessError(1)
 			
 						}
 					}

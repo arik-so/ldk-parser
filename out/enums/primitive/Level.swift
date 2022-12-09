@@ -34,67 +34,75 @@
 					internal init (value: LDKLevel) {
 
 						// TODO: remove this initial assumption somehow
-						self = .Error
+						// self = .Error
 
-						
-						// LDKLevel_Gossip
-						if value.rawValue == 0 {
-							self = .Gossip
-						}
+						switch value {
+							
+							// LDKLevel_Gossip
+							// if value.rawValue == 0 {
+							case LDKLevel_Gossip: // {
+								self = .Gossip
+							// }
 			
-						// LDKLevel_Trace
-						if value.rawValue == 1 {
-							self = .Trace
-						}
+							// LDKLevel_Trace
+							// if value.rawValue == 1 {
+							case LDKLevel_Trace: // {
+								self = .Trace
+							// }
 			
-						// LDKLevel_Debug
-						if value.rawValue == 2 {
-							self = .Debug
-						}
+							// LDKLevel_Debug
+							// if value.rawValue == 2 {
+							case LDKLevel_Debug: // {
+								self = .Debug
+							// }
 			
-						// LDKLevel_Info
-						if value.rawValue == 3 {
-							self = .Info
-						}
+							// LDKLevel_Info
+							// if value.rawValue == 3 {
+							case LDKLevel_Info: // {
+								self = .Info
+							// }
 			
-						// LDKLevel_Warn
-						if value.rawValue == 4 {
-							self = .Warn
-						}
+							// LDKLevel_Warn
+							// if value.rawValue == 4 {
+							case LDKLevel_Warn: // {
+								self = .Warn
+							// }
 			
-						// LDKLevel_Error
-						if value.rawValue == 5 {
-							self = .Error
-						}
+							// LDKLevel_Error
+							// if value.rawValue == 5 {
+							default: // {
+								self = .Error
+							// }
 			
+						}
 					}
 
 					internal func getCValue() -> LDKLevel {
 						switch self {
 							
 							case .Gossip:
-								// return LDKLevel_Gossip
-								return LDKLevel(0)
+								return LDKLevel_Gossip
+								// return LDKLevel(0)
 			
 							case .Trace:
-								// return LDKLevel_Trace
-								return LDKLevel(1)
+								return LDKLevel_Trace
+								// return LDKLevel(1)
 			
 							case .Debug:
-								// return LDKLevel_Debug
-								return LDKLevel(2)
+								return LDKLevel_Debug
+								// return LDKLevel(2)
 			
 							case .Info:
-								// return LDKLevel_Info
-								return LDKLevel(3)
+								return LDKLevel_Info
+								// return LDKLevel(3)
 			
 							case .Warn:
-								// return LDKLevel_Warn
-								return LDKLevel(4)
+								return LDKLevel_Warn
+								// return LDKLevel(4)
 			
 							case .Error:
-								// return LDKLevel_Error
-								return LDKLevel(5)
+								return LDKLevel_Error
+								// return LDKLevel(5)
 			
 						}
 					}

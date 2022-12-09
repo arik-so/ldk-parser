@@ -22,31 +22,35 @@
 					internal init (value: LDKCOption_NoneZ) {
 
 						// TODO: remove this initial assumption somehow
-						self = .None
+						// self = .None
 
-						
-						// LDKCOption_NoneZ_Some
-						if value.rawValue == 0 {
-							self = .Some
-						}
+						switch value {
+							
+							// LDKCOption_NoneZ_Some
+							// if value.rawValue == 0 {
+							case LDKCOption_NoneZ_Some: // {
+								self = .Some
+							// }
 			
-						// LDKCOption_NoneZ_None
-						if value.rawValue == 1 {
-							self = .None
-						}
+							// LDKCOption_NoneZ_None
+							// if value.rawValue == 1 {
+							default: // {
+								self = .None
+							// }
 			
+						}
 					}
 
 					internal func getCValue() -> LDKCOption_NoneZ {
 						switch self {
 							
 							case .Some:
-								// return LDKCOption_NoneZ_Some
-								return LDKCOption_NoneZ(0)
+								return LDKCOption_NoneZ_Some
+								// return LDKCOption_NoneZ(0)
 			
 							case .None:
-								// return LDKCOption_NoneZ_None
-								return LDKCOption_NoneZ(1)
+								return LDKCOption_NoneZ_None
+								// return LDKCOption_NoneZ(1)
 			
 						}
 					}

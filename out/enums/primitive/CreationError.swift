@@ -34,58 +34,65 @@
 					internal init (value: LDKCreationError) {
 
 						// TODO: remove this initial assumption somehow
-						self = .MissingRouteHints
+						// self = .MissingRouteHints
 
-						
-						// LDKCreationError_DescriptionTooLong
-						if value.rawValue == 0 {
-							self = .DescriptionTooLong
-						}
+						switch value {
+							
+							// LDKCreationError_DescriptionTooLong
+							// if value.rawValue == 0 {
+							case LDKCreationError_DescriptionTooLong: // {
+								self = .DescriptionTooLong
+							// }
 			
-						// LDKCreationError_RouteTooLong
-						if value.rawValue == 1 {
-							self = .RouteTooLong
-						}
+							// LDKCreationError_RouteTooLong
+							// if value.rawValue == 1 {
+							case LDKCreationError_RouteTooLong: // {
+								self = .RouteTooLong
+							// }
 			
-						// LDKCreationError_TimestampOutOfBounds
-						if value.rawValue == 2 {
-							self = .TimestampOutOfBounds
-						}
+							// LDKCreationError_TimestampOutOfBounds
+							// if value.rawValue == 2 {
+							case LDKCreationError_TimestampOutOfBounds: // {
+								self = .TimestampOutOfBounds
+							// }
 			
-						// LDKCreationError_InvalidAmount
-						if value.rawValue == 3 {
-							self = .InvalidAmount
-						}
+							// LDKCreationError_InvalidAmount
+							// if value.rawValue == 3 {
+							case LDKCreationError_InvalidAmount: // {
+								self = .InvalidAmount
+							// }
 			
-						// LDKCreationError_MissingRouteHints
-						if value.rawValue == 4 {
-							self = .MissingRouteHints
-						}
+							// LDKCreationError_MissingRouteHints
+							// if value.rawValue == 4 {
+							default: // {
+								self = .MissingRouteHints
+							// }
 			
+						}
 					}
 
 					internal func getCValue() -> LDKCreationError {
 						switch self {
 							
 							case .DescriptionTooLong:
-								// return LDKCreationError_DescriptionTooLong
-								return LDKCreationError(0)
+								return LDKCreationError_DescriptionTooLong
+								// return LDKCreationError(0)
 			
 							case .RouteTooLong:
-								// return LDKCreationError_RouteTooLong
-								return LDKCreationError(1)
+								return LDKCreationError_RouteTooLong
+								// return LDKCreationError(1)
 			
 							case .TimestampOutOfBounds:
-								// return LDKCreationError_TimestampOutOfBounds
-								return LDKCreationError(2)
+								return LDKCreationError_TimestampOutOfBounds
+								// return LDKCreationError(2)
 			
 							case .InvalidAmount:
-								// return LDKCreationError_InvalidAmount
-								return LDKCreationError(3)
+								return LDKCreationError_InvalidAmount
+								// return LDKCreationError(3)
 			
 							case .MissingRouteHints:
-								// return LDKCreationError_MissingRouteHints
-								return LDKCreationError(4)
+								return LDKCreationError_MissingRouteHints
+								// return LDKCreationError(4)
 			
 						}
 					}

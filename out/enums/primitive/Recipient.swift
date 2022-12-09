@@ -27,31 +27,35 @@
 					internal init (value: LDKRecipient) {
 
 						// TODO: remove this initial assumption somehow
-						self = .PhantomNode
+						// self = .PhantomNode
 
-						
-						// LDKRecipient_Node
-						if value.rawValue == 0 {
-							self = .Node
-						}
+						switch value {
+							
+							// LDKRecipient_Node
+							// if value.rawValue == 0 {
+							case LDKRecipient_Node: // {
+								self = .Node
+							// }
 			
-						// LDKRecipient_PhantomNode
-						if value.rawValue == 1 {
-							self = .PhantomNode
-						}
+							// LDKRecipient_PhantomNode
+							// if value.rawValue == 1 {
+							default: // {
+								self = .PhantomNode
+							// }
 			
+						}
 					}
 
 					internal func getCValue() -> LDKRecipient {
 						switch self {
 							
 							case .Node:
-								// return LDKRecipient_Node
-								return LDKRecipient(0)
+								return LDKRecipient_Node
+								// return LDKRecipient(0)
 			
 							case .PhantomNode:
-								// return LDKRecipient_PhantomNode
-								return LDKRecipient(1)
+								return LDKRecipient_PhantomNode
+								// return LDKRecipient(1)
 			
 						}
 					}
