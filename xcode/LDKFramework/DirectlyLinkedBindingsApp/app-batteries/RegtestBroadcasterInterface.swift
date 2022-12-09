@@ -9,7 +9,7 @@ import Foundation
 
 class RegtestBroadcasterInterface: BroadcasterInterface {
     
-    override func broadcast_transaction(tx: [UInt8]) {
+    override func broadcastTransaction(tx: [UInt8]) {
         
         print("TX TO BROADCAST: \(tx)")
         

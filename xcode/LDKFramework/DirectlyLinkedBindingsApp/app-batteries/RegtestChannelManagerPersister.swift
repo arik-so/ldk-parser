@@ -22,11 +22,6 @@ class RegtestChannelManagerPersister : Persister, ExtendedChannelManagerPersiste
     }
     
     
-    func convertRouteHop(path: [LDKRouteHop]) {
-        let wrappedPath = path.map { (h) in RouteHop(pointer: h) }
-    }
-    
-    
     private func privateHandleEvent(event: Event) {
         if let spendableOutputEvent = event.getValueAsSpendableOutputs() {
             
@@ -35,7 +30,7 @@ class RegtestChannelManagerPersister : Persister, ExtendedChannelManagerPersiste
             let fastFeerate = 7500
             let destinationScriptHardcoded: [UInt8] = [118,169,20,25,18,157,83,230,49,155,175,25,219,160,89,190,173,22,109,249,10,184,245,136,172]
             
-            guard let result = self.keysManager?.spend_spendable_outputs(descriptors: outputs, outputs: [], change_destination_script: destinationScriptHardcoded, feerate_sat_per_1000_weight: UInt32(fastFeerate)) else {
+            guard let result = self.keysManager?.spendSpendableOutputs(descriptors: outputs, outputs: [], changeDestinationScript: destinationScriptHardcoded, feerateSatPer_1000Weight: UInt32(fastFeerate)) else {
                 return
             }
             
@@ -47,22 +42,17 @@ class RegtestChannelManagerPersister : Persister, ExtendedChannelManagerPersiste
             
         }else if let paymentSentEvent = event.getValueAsPaymentSent() {
             // print what needs printing
-        }else if let pendingHTLCsForwardableEvent = event.getValueAsPendingHTLCsForwardable() {
-            channelManager?.process_pending_htlc_forwards()
+        }else if let pendingHTLCsForwardableEvent = event.getValueAsPendingHtlCsForwardable() {
+            channelManager?.processPendingHtlcForwards()
             
             
-            
-            // LDKC2Tuple_usizeTransactionZ(a: <#T##UInt#>, b: <#T##LDKTransaction#>)
-            // channelManager?.as_Confirm().transactions_confirmed(header: <#T##[UInt8]?#>, txdata: <#T##[LDKC2Tuple_usizeTransactionZ]#>, height: <#T##UInt32#>)
-            
-            // C2Tuple_usizeTransactionZ_new(<#T##a: UInt##UInt#>, <#T##b: LDKTransaction##LDKTransaction#>)
             
             
             
             
         }else if let fundingReadyEvent = event.getValueAsFundingGenerationReady() {
-            let outputScript = fundingReadyEvent.getOutput_script()
-            let amount = fundingReadyEvent.getChannel_value_satoshis()
+            let outputScript = fundingReadyEvent.getOutputScript()
+            let amount = fundingReadyEvent.getChannelValueSatoshis()
             
             print("ready stuff: \(amount) to  \(outputScript)")
             print("funding event ready!")
@@ -70,13 +60,13 @@ class RegtestChannelManagerPersister : Persister, ExtendedChannelManagerPersiste
             let url = URL(string: "http://localhost:3000/api/lab/funding-generation-ready")!
             var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
             
-            let tcid = fundingReadyEvent.getTemporary_channel_id()
+            let tcid = fundingReadyEvent.getTemporaryChannelId()
             
             components.queryItems = [
                 URLQueryItem(name: "script", value: "\(outputScript)"),
                 URLQueryItem(name: "amount", value: "\(amount)"),
-                URLQueryItem(name: "tcid", value: "\(fundingReadyEvent.getTemporary_channel_id())"),
-                URLQueryItem(name: "ucid", value: "\(fundingReadyEvent.getUser_channel_id())")
+                URLQueryItem(name: "tcid", value: "\(fundingReadyEvent.getTemporaryChannelId())"),
+                URLQueryItem(name: "ucid", value: "\(fundingReadyEvent.getUserChannelId())")
             ]
             
             let query = components.url!.query
@@ -93,13 +83,7 @@ class RegtestChannelManagerPersister : Persister, ExtendedChannelManagerPersiste
         }
     }
     
-    override func persist_manager(channel_manager: ChannelManager) -> Result_NoneErrorZ {
-        /*
-         let managerBytes = channel_manager.write()
-         let defaults = UserDefaults.standard
-         defaults.setValue(Data(managerBytes), forKey: "manager")
-         print("PERSIST CHANNEL MANAGER:\n\n\(managerBytes)\n\n")
-         */
-        return Result_NoneErrorZ.ok()
+    override func persistManager(channelManager: Bindings.ChannelManager) -> Bindings.Result_NoneErrorZ {
+        .initWithOk()
     }
 }

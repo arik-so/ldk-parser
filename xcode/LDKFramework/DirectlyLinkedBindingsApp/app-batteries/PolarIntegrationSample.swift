@@ -42,22 +42,22 @@ public class PolarIntegrationSample {
 
         let timestamp_seconds = UInt64(NSDate().timeIntervalSince1970)
         let timestamp_nanos = UInt32(truncating: NSNumber(value: timestamp_seconds * 1000 * 1000))
-        let keysManager = KeysManager(seed: seed, starting_time_secs: timestamp_seconds, starting_time_nanos: timestamp_nanos)
-        let keysInterface = keysManager.as_KeysInterface()
+        let keysManager = KeysManager(seed: seed, startingTimeSecs: timestamp_seconds, startingTimeNanos: timestamp_nanos)
+        let keysInterface = keysManager.asKeysInterface()
 
         let logger = LDKTraitImplementations.PolarLogger()
-        let config = UserConfig()
-        let lightningNetwork = LDKNetwork_Regtest
+        let config = UserConfig.initWithDefault()
+        let lightningNetwork = Bindings.Network.Regtest
         let genesisHash = try await rpcInterface.getBlockHash(height: 0)
         let reversedGenesisHash = [UInt8](genesisHash.reversed())
         let chaintipHash = try await rpcInterface.getChaintipHash()
         let reversedChaintipHash = [UInt8](chaintipHash.reversed())
         let chaintipHeight = try await rpcInterface.getChaintipHeight()
-        let networkGraph = NetworkGraph(genesis_hash: reversedGenesisHash, logger: logger)
+        let networkGraph = NetworkGraph(genesisHash: reversedGenesisHash, logger: logger)
 
-        let scoringParams = ProbabilisticScoringParameters()
-        let probabalisticScorer = ProbabilisticScorer(params: scoringParams, network_graph: networkGraph, logger: logger)
-        let score = probabalisticScorer.as_Score()
+        let scoringParams = ProbabilisticScoringParameters.initWithDefault()
+        let probabalisticScorer = ProbabilisticScorer(params: scoringParams, networkGraph: networkGraph, logger: logger)
+        let score = probabalisticScorer.asScore()
         let multiThreadedScorer = MultiThreadedLockableScore(score: score)
 
         print("Genesis hash: \(PolarIntegrationSample.bytesToHexString(bytes: genesisHash))")
@@ -71,7 +71,7 @@ public class PolarIntegrationSample {
         let broadcaster = LDKTraitImplementations.PolarBroadcaster(rpcInterface: rpcInterface)
         let channelMonitorPersister = LDKTraitImplementations.PolarChannelMonitorPersister()
         let channelManagerAndNetworkGraphPersisterAndEventHandler = LDKTraitImplementations.PolarChannelManagerAndNetworkGraphPersisterAndEventHandler()
-        let chainMonitor = ChainMonitor(chain_source: Option_FilterZ(value: nil), broadcaster: broadcaster, logger: logger, feeest: feeEstimator, persister: channelMonitorPersister)
+        let chainMonitor = ChainMonitor(chainSource: nil, broadcaster: broadcaster, logger: logger, feeest: feeEstimator, persister: channelMonitorPersister)
 
         let channelManagerConstructor = ChannelManagerConstructor(network: lightningNetwork, config: config, current_blockchain_tip_hash: reversedChaintipHash, current_blockchain_tip_height: UInt32(chaintipHeight), keys_interface: keysInterface, fee_estimator: feeEstimator, chain_monitor: chainMonitor, net_graph: networkGraph, tx_broadcaster: broadcaster, logger: logger)
         let channelManager = channelManagerConstructor.channelManager
@@ -93,13 +93,13 @@ public class PolarIntegrationSample {
             }
 
             func blockConnected(block: [UInt8], height: UInt32) {
-                self.channelManager.as_Listen().block_connected(block: block, height: height)
-                self.chainMonitor.as_Listen().block_connected(block: block, height: height)
+                self.channelManager.asListen().blockConnected(block: block, height: height)
+                self.chainMonitor.asListen().blockConnected(block: block, height: height)
             }
 
             func blockDisconnected(header: [UInt8]?, height: UInt32) {
-                self.chainMonitor.as_Listen().block_disconnected(header: header, height: height)
-                self.channelManager.as_Listen().block_disconnected(header: header, height: height)
+                self.chainMonitor.asListen().blockDisconnected(header: header, height: height)
+                self.channelManager.asListen().blockDisconnected(header: header, height: height)
             }
         }
 
@@ -117,19 +117,18 @@ public class PolarIntegrationSample {
 
         // sleep for one second
         try await Task.sleep(nanoseconds: 1_000_000_000)
-        let connectedPeers = peerManager.get_peer_node_ids()
+        let connectedPeers = peerManager.getPeerNodeIds()
 
         let channelValue: UInt64 = 1_300_000 // 1.3 million satoshis, or 0.013 BTC
         let channelValueBtcString = "0.013"
         let reserveAmount: UInt64 = 1000 // a thousand satoshis rserve
-        let channelOpenResult = channelManager.create_channel(their_network_key: lndPubkey, channel_value_satoshis: channelValue, push_msat: reserveAmount, user_channel_id: 42, override_config: config)
+        let channelOpenResult = channelManager.createChannel(theirNetworkKey: lndPubkey, channelValueSatoshis: channelValue, pushMsat: reserveAmount, userChannelId: 42, overrideConfig: config)
 
         if let channelOpenError = channelOpenResult.getError() {
             print("error type: \(channelOpenError.getValueType())")
-            if let error = channelOpenError.getValueAsAPIMisuseError() {
+            if let error = channelOpenError.getValueAsApiMisuseError() {
                 print("API misuse error: \(error.getErr())")
             } else if let error = channelOpenError.getValueAsChannelUnavailable() {
-                let opaqueStruct = channelOpenError.cOpaqueStruct!
                 print("anchor count: \(error.anchors.count)")
                 print("channel unavailable error: \(error.getErr())")
             } else if let error = channelOpenError.getValueAsFeeRateTooHigh() {
@@ -155,15 +154,15 @@ public class PolarIntegrationSample {
                 let errorString = preciseReason.getErr()
                 print("processing error: \(errorString)")
             } else if let preciseReason = reason.getValueAsCounterpartyForceClosed() {
-                print("peer message: \(preciseReason.getPeer_msg())")
+                print("peer message: \(preciseReason.getPeerMsg())")
             }
         }
 
         guard let fundingReadyEvent = managerEvent.getValueAsFundingGenerationReady() else {
             throw TestFlowExceptions.unexpectedChannelManagerEventType
         }
-        let fundingOutputScript = fundingReadyEvent.getOutput_script();
-        let temporaryChannelId = fundingReadyEvent.getTemporary_channel_id();
+        let fundingOutputScript = fundingReadyEvent.getOutputScript();
+        let temporaryChannelId = fundingReadyEvent.getTemporaryChannelId();
 
         let outputScriptDetails = try await rpcInterface.decodeScript(script: fundingOutputScript)
         guard let outputScriptAddresses = outputScriptDetails["addresses"] as? [String] else {
@@ -174,7 +173,7 @@ public class PolarIntegrationSample {
         }
         let fundingTxid = try await rpcInterface.sendMoney(destinationAddress: outputAddress, amount: channelValueBtcString)
         let fundingTransaction = try await rpcInterface.getTransaction(hash: fundingTxid)
-        channelManager.funding_transaction_generated(temporary_channel_id: temporaryChannelId, counterparty_node_id: lndPubkey, funding_transaction: fundingTransaction)
+        channelManager.fundingTransactionGenerated(temporaryChannelId: temporaryChannelId, counterpartyNodeId: lndPubkey, fundingTransaction: fundingTransaction)
 
         // let's add a couple confirmations
         let fakeAddress = try await self.getBogusAddress(rpcInterface: rpcInterface)
@@ -182,7 +181,7 @@ public class PolarIntegrationSample {
 
         var usableChannels = [ChannelDetails]()
         while (usableChannels.isEmpty) {
-            usableChannels = channelManager.list_usable_channels()
+            usableChannels = channelManager.listUsableChannels()
             // sleep for 100ms
             try await Task.sleep(nanoseconds: 0_100_000_000)
         }
@@ -190,8 +189,7 @@ public class PolarIntegrationSample {
         guard let invoicePayer = channelManagerConstructor.payer else {
             throw TestFlowExceptions.missingInvoicePayer
         }
-        let invoiceResult = Invoice.from_str(s: PolarIntegrationSample.POLAR_LND_PEER_INVOICE)
-
+        let invoiceResult = Invoice.fromStr(s: PolarIntegrationSample.POLAR_LND_PEER_INVOICE)
 
         guard let invoice = invoiceResult.getValue() else {
             throw TestFlowExceptions.invoiceParsingError(invoiceResult.getError()!)
@@ -201,7 +199,7 @@ public class PolarIntegrationSample {
         // channelManagerConstructor.interrupt(tcpPeerHandler: tcpPeerHandler)
         // return
         
-        let invoicePaymentResult = invoicePayer.pay_invoice(invoice: invoice)
+        let invoicePaymentResult = invoicePayer.payInvoice(invoice: invoice)
 
         do {
             // process payment
@@ -214,7 +212,7 @@ public class PolarIntegrationSample {
             guard let paymentPathSuccessful = paymentPathSuccessfulEvent.getValueAsPaymentPathSuccessful() else {
                 throw TestFlowExceptions.paymentPathUnsuccessful
             }
-            print("sent payment \(paymentSent.getPayment_id()) with fee \(paymentSent.getFee_paid_msat().getValue()) via \(paymentPathSuccessful.getPath().map { h in h.get_short_channel_id() })")
+            print("sent payment \(paymentSent.getPaymentId()) with fee \(paymentSent.getFeePaidMsat()) via \(paymentPathSuccessful.getPath().map { h in h.getShortChannelId() })")
         }
         
         for i in 0...600 {
@@ -222,7 +220,7 @@ public class PolarIntegrationSample {
             try await Task.sleep(nanoseconds: 0_100_000_000)
         }
         
-        print(channelManagerConstructor.peerManager.get_peer_node_ids())
+        print(channelManagerConstructor.peerManager.getPeerNodeIds())
 
     }
 
@@ -276,7 +274,7 @@ public class PolarIntegrationSample {
     class LDKTraitImplementations {
 
         class PolarFeeEstimator: FeeEstimator {
-            override func get_est_sat_per_1000_weight(confirmation_target: LDKConfirmationTarget) -> UInt32 {
+            override func getEstSatPer_1000Weight(confirmationTarget: Bindings.ConfirmationTarget) -> UInt32 {
                 return 253
             }
         }
@@ -290,7 +288,7 @@ public class PolarIntegrationSample {
                 super.init()
             }
 
-            override func broadcast_transaction(tx: [UInt8]) {
+            override func broadcastTransaction(tx: [UInt8]) {
                 Task {
                     try? await self.rpcInterface.submitTransaction(transaction: tx)
                 }
@@ -298,14 +296,14 @@ public class PolarIntegrationSample {
         }
         
         class MuteBroadcaster: BroadcasterInterface {
-            override func broadcast_transaction(tx: [UInt8]) {
+            override func broadcastTransaction(tx: [UInt8]) {
                 // do nothing
             }
         }
 
         class PolarLogger: Logger {
             override func log(record: Record) {
-                print("\nRLPolarLog (\(record.get_level())): \(record.get_file()):\(record.get_line()):\n> \(record.get_args())\n")
+                print("\nRLPolarLog (\(record.getLevel())): \(record.getFile()):\(record.getLine()):\n> \(record.getArgs())\n")
             }
         }
         
@@ -317,18 +315,13 @@ public class PolarIntegrationSample {
 
         class PolarChannelMonitorPersister: Persist {
             
-            override func persist_new_channel(channel_id: OutPoint, data: ChannelMonitor, update_id: MonitorUpdateId) -> LDKChannelMonitorUpdateStatus {
-                let idBytes: [UInt8] = channel_id.write()
-                let monitorBytes: [UInt8] = data.write()
-                return LDKChannelMonitorUpdateStatus_Completed
+            override func persistNewChannel(channelId: Bindings.OutPoint, data: Bindings.ChannelMonitor, updateId: Bindings.MonitorUpdateId) -> Bindings.ChannelMonitorUpdateStatus {
+                return .Completed
             }
             
-            override func update_persisted_channel(channel_id: OutPoint, update: ChannelMonitorUpdate, data: ChannelMonitor, update_id: MonitorUpdateId) -> LDKChannelMonitorUpdateStatus {
-                let idBytes: [UInt8] = channel_id.write()
-                let monitorBytes: [UInt8] = data.write()
-                return LDKChannelMonitorUpdateStatus_Completed
+            override func updatePersistedChannel(channelId: Bindings.OutPoint, update: Bindings.ChannelMonitorUpdate, data: Bindings.ChannelMonitor, updateId: Bindings.MonitorUpdateId) -> Bindings.ChannelMonitorUpdateStatus {
+                return .Completed
             }
-            
             
 
         }
@@ -351,17 +344,17 @@ public class PolarIntegrationSample {
                     await self.eventTracker.addEvent(event: event)
                 }
             }
-
-            override func persist_manager(channel_manager: ChannelManager) -> Result_NoneErrorZ {
-                return Result_NoneErrorZ.ok()
-            }
-
-            override func persist_graph(network_graph: NetworkGraph) -> Result_NoneErrorZ {
-                return Result_NoneErrorZ.ok()
+            
+            override func persistManager(channelManager: Bindings.ChannelManager) -> Bindings.Result_NoneErrorZ {
+                .initWithOk()
             }
             
-            override func persist_scorer(scorer: Bindings.WriteableScore) -> Bindings.Result_NoneErrorZ {
-                return Result_NoneErrorZ.ok()
+            override func persistGraph(networkGraph: Bindings.NetworkGraph) -> Bindings.Result_NoneErrorZ {
+                .initWithOk()
+            }
+            
+            override func persistScorer(scorer: Bindings.WriteableScore) -> Bindings.Result_NoneErrorZ {
+                .initWithOk()
             }
 
             fileprivate actor PendingEventTracker {
@@ -429,7 +422,7 @@ public class PolarIntegrationSample {
         public var channelManagerConstructor: ChannelManagerConstructor!
         
         public func simulateMultiplePeers() async throws {
-            print("bindings version: \(Bindings.get_ldk_swift_bindings_version())")
+            print("bindings version: \(Bindings.getLDKSwiftBindingsSerializationHash())")
             // print("\(Bindings.versio)")
             
             /*
@@ -444,12 +437,12 @@ public class PolarIntegrationSample {
 
             let timestamp_seconds = UInt64(NSDate().timeIntervalSince1970)
             let timestamp_nanos = UInt32(truncating: NSNumber(value: timestamp_seconds * 1000 * 1000))
-            keysManager = KeysManager(seed: seed, starting_time_secs: timestamp_seconds, starting_time_nanos: timestamp_nanos)
-            keysInterface = keysManager.as_KeysInterface()
+            keysManager = KeysManager(seed: seed, startingTimeSecs: timestamp_seconds, startingTimeNanos: timestamp_nanos)
+            keysInterface = keysManager.asKeysInterface()
 
-            config = UserConfig()
+            config = UserConfig.initWithDefault()
             let logger = LDKTraitImplementations.MuteLogger()
-            let lightningNetwork = LDKNetwork_Bitcoin
+            let lightningNetwork = Bindings.Network.Bitcoin
             /*
             let genesisHash = try await rpcInterface.getBlockHash(height: 0)
             let reversedGenesisHash = [UInt8](genesisHash.reversed())
@@ -461,13 +454,13 @@ public class PolarIntegrationSample {
             let reversedGenesisHash = PolarIntegrationSample.hexStringToBytes(hexString: reversedGenesisHashHex)!
             let chaintipHeight = 0
             let reversedChaintipHash = reversedGenesisHash
-            let networkGraph = NetworkGraph(genesis_hash: reversedGenesisHash, logger: logger)
+            let networkGraph = NetworkGraph(genesisHash: reversedGenesisHash, logger: logger)
             
             print("Genesis hash reversed: \(PolarIntegrationSample.bytesToHexString(bytes: reversedGenesisHash))")
 
-            let scoringParams = ProbabilisticScoringParameters()
-            let probabalisticScorer = ProbabilisticScorer(params: scoringParams, network_graph: networkGraph, logger: logger)
-            let score = probabalisticScorer.as_Score()
+            let scoringParams = ProbabilisticScoringParameters.initWithDefault()
+            let probabalisticScorer = ProbabilisticScorer(params: scoringParams, networkGraph: networkGraph, logger: logger)
+            let score = probabalisticScorer.asScore()
             let multiThreadedScorer = MultiThreadedLockableScore(score: score)
             
             let feeEstimator = LDKTraitImplementations.PolarFeeEstimator()
@@ -477,7 +470,7 @@ public class PolarIntegrationSample {
             
             let channelMonitorPersister = LDKTraitImplementations.PolarChannelMonitorPersister()
             let channelManagerAndNetworkGraphPersisterAndEventHandler = LDKTraitImplementations.PolarChannelManagerAndNetworkGraphPersisterAndEventHandler()
-            let chainMonitor = ChainMonitor(chain_source: Option_FilterZ(value: nil), broadcaster: broadcaster, logger: logger, feeest: feeEstimator, persister: channelMonitorPersister)
+            let chainMonitor = ChainMonitor(chainSource: nil, broadcaster: broadcaster, logger: logger, feeest: feeEstimator, persister: channelMonitorPersister)
 
             channelManagerConstructor = ChannelManagerConstructor(network: lightningNetwork, config: config, current_blockchain_tip_hash: reversedChaintipHash, current_blockchain_tip_height: UInt32(chaintipHeight), keys_interface: keysInterface, fee_estimator: feeEstimator, chain_monitor: chainMonitor, net_graph: networkGraph, tx_broadcaster: broadcaster, logger: logger)
             let channelManager = channelManagerConstructor.channelManager

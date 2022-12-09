@@ -14,6 +14,10 @@
 		07012EA3287753D000148346 /* ldk_rust_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 07012E9D287753D000148346 /* ldk_rust_types.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07012EA4287753D000148346 /* lightning.h in Headers */ = {isa = PBXBuildFile; fileRef = 07012E9E287753D000148346 /* lightning.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072B062D2941CFF80007BC53 /* ChannelManagerConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14AF29412AF900531169 /* ChannelManagerConstructor.swift */; };
+		072B063129431EA50007BC53 /* libldk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 072B063029431EA00007BC53 /* libldk.a */; };
+		072B063229431EAA0007BC53 /* libldk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 072B063029431EA00007BC53 /* libldk.a */; };
+		072B063329431EAB0007BC53 /* libldk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 072B063029431EA00007BC53 /* libldk.a */; };
+		072B063429431EAC0007BC53 /* libldk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 072B063029431EA00007BC53 /* libldk.a */; };
 		07344C5E264277ED001CD90E /* LightningDevKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07344C54264277EC001CD90E /* LightningDevKit.framework */; };
 		07344C63264277ED001CD90E /* FrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07344C62264277ED001CD90E /* FrameworkTests.swift */; };
 		07344C65264277ED001CD90E /* Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 07344C57264277ED001CD90E /* Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,7 +38,6 @@
 		07CE1EBD28E767DC00BB37E4 /* BTCTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE1EAE28E767DB00BB37E4 /* BTCTransaction.swift */; };
 		07CE1EBE28E767DC00BB37E4 /* BTCHashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE1EAF28E767DB00BB37E4 /* BTCHashing.swift */; };
 		07CE1EBF28E767DC00BB37E4 /* TestBroadcasterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE1EB028E767DC00BB37E4 /* TestBroadcasterInterface.swift */; };
-		07D3E7C6286C14360095CCD8 /* libldk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D3E7C5286C142F0095CCD8 /* libldk.a */; };
 		07DF14B229412AF900531169 /* ChannelManagerConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14AF29412AF900531169 /* ChannelManagerConstructor.swift */; };
 		07DF14B329412AF900531169 /* ChannelManagerConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14AF29412AF900531169 /* ChannelManagerConstructor.swift */; };
 		07DF14B429412AF900531169 /* ChannelManagerConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF14AF29412AF900531169 /* ChannelManagerConstructor.swift */; };
@@ -175,24 +178,6 @@
 		07DF2B0D2941684800531169 /* Option_CVec_NetAddressZZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28732941684600531169 /* Option_CVec_NetAddressZZ.swift */; };
 		07DF2B0E2941684800531169 /* Option_CVec_NetAddressZZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28732941684600531169 /* Option_CVec_NetAddressZZ.swift */; };
 		07DF2B0F2941684800531169 /* Option_CVec_NetAddressZZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28732941684600531169 /* Option_CVec_NetAddressZZ.swift */; };
-		07DF2B182941684800531169 /* tagged_value_enum_test_01.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF287C2941684600531169 /* tagged_value_enum_test_01.h */; };
-		07DF2B192941684800531169 /* trait_test_03.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF287D2941684600531169 /* trait_test_03.h */; };
-		07DF2B1A2941684800531169 /* vector_test_02.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF287E2941684600531169 /* vector_test_02.h */; };
-		07DF2B1B2941684800531169 /* tagged_value_enum_test_02.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF287F2941684600531169 /* tagged_value_enum_test_02.h */; };
-		07DF2B1C2941684800531169 /* vector_test_01.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF28802941684600531169 /* vector_test_01.h */; };
-		07DF2B1D2941684800531169 /* array_wrapper_test_01.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF28812941684600531169 /* array_wrapper_test_01.h */; };
-		07DF2B1E2941684800531169 /* trait_test_01.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF28822941684600531169 /* trait_test_01.h */; };
-		07DF2B1F2941684800531169 /* binary_option_test_01.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF28832941684600531169 /* binary_option_test_01.h */; };
-		07DF2B202941684800531169 /* vector_test_04.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF28842941684600531169 /* vector_test_04.h */; };
-		07DF2B212941684800531169 /* result_test_01.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF28852941684600531169 /* result_test_01.h */; };
-		07DF2B222941684800531169 /* trait_test_02.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF28862941684600531169 /* trait_test_02.h */; };
-		07DF2B232941684800531169 /* tuple_test_01.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF28872941684600531169 /* tuple_test_01.h */; };
-		07DF2B242941684800531169 /* vector_test_03.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF28882941684600531169 /* vector_test_03.h */; };
-		07DF2B252941684800531169 /* vec_vec_route_hop_test.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF288A2941684600531169 /* vec_vec_route_hop_test.h */; };
-		07DF2B262941684800531169 /* chain_monitor_test_01.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF288B2941684600531169 /* chain_monitor_test_01.h */; };
-		07DF2B272941684800531169 /* enum_test_01.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF288C2941684600531169 /* enum_test_01.h */; };
-		07DF2B282941684800531169 /* vec_u8_test.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF288D2941684600531169 /* vec_u8_test.h */; };
-		07DF2B292941684800531169 /* option_u32_test.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DF288E2941684600531169 /* option_u32_test.h */; };
 		07DF2B322941684800531169 /* CustomOnionMessageContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28922941684600531169 /* CustomOnionMessageContents.swift */; };
 		07DF2B332941684800531169 /* CustomOnionMessageContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28922941684600531169 /* CustomOnionMessageContents.swift */; };
 		07DF2B342941684800531169 /* CustomOnionMessageContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF28922941684600531169 /* CustomOnionMessageContents.swift */; };
@@ -1951,7 +1936,6 @@
 		07DF320D2941685300531169 /* DelayedPaymentOutputDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF2A4F2941684700531169 /* DelayedPaymentOutputDescriptor.swift */; };
 		07E0646C287CAD0600CFA8BF /* DirectlyLinkedBindingsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E0646B287CAD0600CFA8BF /* DirectlyLinkedBindingsAppApp.swift */; };
 		07E0646E287CAD0600CFA8BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E0646D287CAD0600CFA8BF /* ContentView.swift */; };
-		07E06495287CAE6800CFA8BF /* libldk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D3E7C5286C142F0095CCD8 /* libldk.a */; };
 		07E0674F287CAEC200CFA8BF /* ldk_net.c in Sources */ = {isa = PBXBuildFile; fileRef = 07012E9B287753D000148346 /* ldk_net.c */; };
 		07E06750287CAEC400CFA8BF /* ldk_net.c in Sources */ = {isa = PBXBuildFile; fileRef = 07012E9B287753D000148346 /* ldk_net.c */; };
 		07E06763287CB0E200CFA8BF /* RegtestChannelManagerPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E06758287CB0E200CFA8BF /* RegtestChannelManagerPersister.swift */; };
@@ -1991,6 +1975,7 @@
 		07012E9C287753D000148346 /* ldk_ver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ldk_ver.h; path = headers/ldk_ver.h; sourceTree = SOURCE_ROOT; };
 		07012E9D287753D000148346 /* ldk_rust_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ldk_rust_types.h; path = headers/ldk_rust_types.h; sourceTree = SOURCE_ROOT; };
 		07012E9E287753D000148346 /* lightning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lightning.h; path = headers/lightning.h; sourceTree = SOURCE_ROOT; };
+		072B063029431EA00007BC53 /* libldk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libldk.a; path = binary/libldk.a; sourceTree = "<group>"; };
 		07344C54264277EC001CD90E /* LightningDevKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LightningDevKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07344C57264277ED001CD90E /* Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Framework.h; path = Framework/Framework.h; sourceTree = SOURCE_ROOT; };
 		07344C58264277ED001CD90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2000,7 +1985,6 @@
 		07344C8626427F95001CD90E /* LDKExampleClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDKExampleClass.swift; sourceTree = "<group>"; };
 		07344FCD26428DD2001CD90E /* LightningDevKit.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = LightningDevKit.modulemap; sourceTree = "<group>"; };
 		0767D0322698BB9600BEB4CC /* FrameworkTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FrameworkTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		0767DB2F26A0964800BEB4CC /* LDKFramework copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LDKFramework copy-Info.plist"; path = "/Users/arik/Developer/ldk-swift-generator/xcode/LDKFramework/LDKFramework copy-Info.plist"; sourceTree = "<absolute>"; };
 		07CE1EA128E767DA00BB37E4 /* TestKeysInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestKeysInterface.swift; path = ../../../ci/LDKSwift/Tests/LDKSwiftTests/TestKeysInterface.swift; sourceTree = "<group>"; };
 		07CE1EA228E767DA00BB37E4 /* TestPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestPersister.swift; path = ../../../ci/LDKSwift/Tests/LDKSwiftTests/TestPersister.swift; sourceTree = "<group>"; };
 		07CE1EA328E767DA00BB37E4 /* LDKTestFixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LDKTestFixtures.swift; path = ../../../ci/LDKSwift/Tests/LDKSwiftTests/LDKTestFixtures.swift; sourceTree = "<group>"; };
@@ -2016,7 +2000,6 @@
 		07CE1EAE28E767DB00BB37E4 /* BTCTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTCTransaction.swift; sourceTree = "<group>"; };
 		07CE1EAF28E767DB00BB37E4 /* BTCHashing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTCHashing.swift; sourceTree = "<group>"; };
 		07CE1EB028E767DC00BB37E4 /* TestBroadcasterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestBroadcasterInterface.swift; path = ../../../ci/LDKSwift/Tests/LDKSwiftTests/TestBroadcasterInterface.swift; sourceTree = "<group>"; };
-		07D3E7C5286C142F0095CCD8 /* libldk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libldk.a; sourceTree = "<group>"; };
 		07DF14AF29412AF900531169 /* ChannelManagerConstructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelManagerConstructor.swift; sourceTree = "<group>"; };
 		07DF28512941684600531169 /* FourBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourBytes.swift; sourceTree = "<group>"; };
 		07DF28522941684600531169 /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
@@ -2591,8 +2574,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D3E7C6286C14360095CCD8 /* libldk.a in Frameworks */,
 				07DF1E032941318D00531169 /* Crypto in Frameworks */,
+				072B063129431EA50007BC53 /* libldk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2601,6 +2584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07344C5E264277ED001CD90E /* LightningDevKit.framework in Frameworks */,
+				072B063229431EAA0007BC53 /* libldk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2608,7 +2592,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07E06495287CAE6800CFA8BF /* libldk.a in Frameworks */,
+				072B063329431EAB0007BC53 /* libldk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2616,6 +2600,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072B063429431EAC0007BC53 /* libldk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2633,7 +2618,6 @@
 				07E0647B287CAD0800CFA8BF /* DirectlyLinkedBindingsAppTests */,
 				07344C55264277EC001CD90E /* Products */,
 				07344FA826428AD0001CD90E /* Frameworks */,
-				0767DB2F26A0964800BEB4CC /* LDKFramework copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2671,7 +2655,7 @@
 		07344FA826428AD0001CD90E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07D3E7C5286C142F0095CCD8 /* libldk.a */,
+				072B063029431EA00007BC53 /* libldk.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3492,29 +3476,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07DF2B242941684800531169 /* vector_test_03.h in Headers */,
-				07DF2B1E2941684800531169 /* trait_test_01.h in Headers */,
-				07DF2B282941684800531169 /* vec_u8_test.h in Headers */,
-				07DF2B1C2941684800531169 /* vector_test_01.h in Headers */,
-				07DF2B1B2941684800531169 /* tagged_value_enum_test_02.h in Headers */,
-				07DF2B182941684800531169 /* tagged_value_enum_test_01.h in Headers */,
-				07DF2B1A2941684800531169 /* vector_test_02.h in Headers */,
-				07DF2B262941684800531169 /* chain_monitor_test_01.h in Headers */,
-				07DF2B1F2941684800531169 /* binary_option_test_01.h in Headers */,
 				07012E9F287753D000148346 /* ldk_net.h in Headers */,
-				07DF2B202941684800531169 /* vector_test_04.h in Headers */,
-				07DF2B212941684800531169 /* result_test_01.h in Headers */,
-				07DF2B252941684800531169 /* vec_vec_route_hop_test.h in Headers */,
-				07DF2B272941684800531169 /* enum_test_01.h in Headers */,
-				07DF2B222941684800531169 /* trait_test_02.h in Headers */,
 				07012EA4287753D000148346 /* lightning.h in Headers */,
 				07012EA3287753D000148346 /* ldk_rust_types.h in Headers */,
 				07012EA2287753D000148346 /* ldk_ver.h in Headers */,
-				07DF2B292941684800531169 /* option_u32_test.h in Headers */,
 				07344C65264277ED001CD90E /* Framework.h in Headers */,
-				07DF2B232941684800531169 /* tuple_test_01.h in Headers */,
-				07DF2B192941684800531169 /* trait_test_03.h in Headers */,
-				07DF2B1D2941684800531169 /* array_wrapper_test_01.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
