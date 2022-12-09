@@ -561,7 +561,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 		let dangleInfix = ''; // the dangle must come before the clone
 		let cloneInfix = '';
-		if (!(argument.type instanceof RustTrait) && !argument.isAsteriskPointer && !(argument.type instanceof RustPrimitive) && !this.isElidedType(argument.type)) {
+		if (!(argument.type instanceof RustTrait) && !argument.isAsteriskPointer && !this.isElidedType(argument.type)) {
 			if (this.hasCloneMethod(argument.type)) {
 				// cloneInfix = '.clone()';
 				if (argument.type instanceof RustNullableOption) {
@@ -575,12 +575,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						cloneInfix = '';
 					}
 				}
-			} else {
-				if (argument.type instanceof RustVector) {
-					if (!(argument.type.deepestIterateeType instanceof RustPrimitive) && !this.hasCloneMethod(argument.type.deepestIterateeType)) {
-						dangleInfix = '.dangle()';
-					}
-				}
+			} else if(this.hasFreeMethod(argument.type)) {
+				dangleInfix = '.dangle()';
 			}
 		}
 
@@ -644,7 +640,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else if (argument.type instanceof RustTrait) {
 				preparedArgument.accessor = preparedArgument.name + '.activate().cType!';
 			} else if (argument.type instanceof RustStruct || argument.type instanceof RustTaggedValueEnum || argument.type instanceof RustResult) {
-				preparedArgument.accessor = preparedArgument.name + `${cloneInfix}.cType!`;
+				preparedArgument.accessor = preparedArgument.name + `${cloneInfix}${dangleInfix}.cType!`;
 			} else if (argument.type instanceof RustPrimitiveEnum) {
 				preparedArgument.accessor = preparedArgument.name + '.getCValue()';
 			} else if (argument.type instanceof RustArray) {

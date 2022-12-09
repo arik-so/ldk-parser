@@ -112,7 +112,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: tupledEphemeralRandomData) { (tupledEphemeralRandomDataPointer: UnsafePointer<UInt8Tuple32>) in
-				PeerManager_new(messageHandler.cType!, ourNodeSecretPrimitiveWrapper.cType!, currentTime, tupledEphemeralRandomDataPointer, logger.activate().cType!, customMessageHandler.activate().cType!)
+				PeerManager_new(messageHandler.dangle().cType!, ourNodeSecretPrimitiveWrapper.cType!, currentTime, tupledEphemeralRandomDataPointer, logger.activate().cType!, customMessageHandler.activate().cType!)
 						}
 				
 

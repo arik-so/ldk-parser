@@ -162,7 +162,7 @@
 						withUnsafePointer(to: channelManager.cType!) { (channelManagerPointer: UnsafePointer<LDKChannelManager>) in
 				
 						withUnsafePointer(to: peerManager.cType!) { (peerManagerPointer: UnsafePointer<LDKPeerManager>) in
-				BackgroundProcessor_start(persister.activate().cType!, eventHandler.activate().cType!, chainMonitorPointer, channelManagerPointer, gossipSync.cType!, peerManagerPointer, logger.activate().cType!, scorerOption.cType!)
+				BackgroundProcessor_start(persister.activate().cType!, eventHandler.activate().cType!, chainMonitorPointer, channelManagerPointer, gossipSync.dangle().cType!, peerManagerPointer, logger.activate().cType!, scorerOption.cType!)
 						}
 				
 						}

@@ -48,7 +48,7 @@
 				
 
 						// native method call
-						let nativeCallResult = C2Tuple_BlockHashChannelManagerZ_new(aPrimitiveWrapper.cType!, b.cType!)
+						let nativeCallResult = C2Tuple_BlockHashChannelManagerZ_new(aPrimitiveWrapper.cType!, b.dangle().cType!)
 
 						// cleanup
 						
@@ -95,7 +95,7 @@
 				
 
 						// native method call
-						let nativeCallResult = C2Tuple_BlockHashChannelManagerZ_read(serPrimitiveWrapper.cType!, arg.cType!)
+						let nativeCallResult = C2Tuple_BlockHashChannelManagerZ_read(serPrimitiveWrapper.cType!, arg.dangle().cType!)
 
 						// cleanup
 						

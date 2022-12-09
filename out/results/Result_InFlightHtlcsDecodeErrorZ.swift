@@ -46,7 +46,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_InFlightHtlcsDecodeErrorZ_ok(o.cType!)
+						let nativeCallResult = CResult_InFlightHtlcsDecodeErrorZ_ok(o.dangle().cType!)
 
 						// cleanup
 						

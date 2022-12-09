@@ -106,7 +106,7 @@
 						
 
 						// native method call
-						let nativeCallResult = Destination_blinded_route(a.cType!)
+						let nativeCallResult = Destination_blinded_route(a.dangle().cType!)
 
 						// cleanup
 						
