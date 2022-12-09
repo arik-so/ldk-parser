@@ -143,7 +143,7 @@
 					
 					public func getValue() -> BindingsType? {
 						if self.cType?.result_ok == true {
-							return Option_TypeZ(cType: self.cType!.contents.result.pointee).getValue()
+							return Option_TypeZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
 						}
 						return nil
 					}

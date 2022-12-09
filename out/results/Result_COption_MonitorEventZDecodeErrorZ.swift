@@ -143,7 +143,7 @@
 					
 					public func getValue() -> MonitorEvent? {
 						if self.cType?.result_ok == true {
-							return Option_MonitorEventZ(cType: self.cType!.contents.result.pointee).getValue()
+							return Option_MonitorEventZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
 						}
 						return nil
 					}

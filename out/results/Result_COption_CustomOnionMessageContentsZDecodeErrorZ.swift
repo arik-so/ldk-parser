@@ -143,7 +143,7 @@
 					
 					public func getValue() -> CustomOnionMessageContents? {
 						if self.cType?.result_ok == true {
-							return Option_CustomOnionMessageContentsZ(cType: self.cType!.contents.result.pointee).getValue()
+							return Option_CustomOnionMessageContentsZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
 						}
 						return nil
 					}

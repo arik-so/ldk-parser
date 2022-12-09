@@ -439,7 +439,7 @@
 						/// The maximum HTLC amount denominated in millisatoshi.
 						public func getHtlcMaximumMsat() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(cType: self.cType!.htlc_maximum_msat).getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.htlc_maximum_msat).dangle().getValue()
 
 							return returnValue;
 						}

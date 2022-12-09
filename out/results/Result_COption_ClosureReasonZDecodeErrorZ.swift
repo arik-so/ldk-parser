@@ -143,7 +143,7 @@
 					
 					public func getValue() -> ClosureReason? {
 						if self.cType?.result_ok == true {
-							return Option_ClosureReasonZ(cType: self.cType!.contents.result.pointee).getValue()
+							return Option_ClosureReasonZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
 						}
 						return nil
 					}

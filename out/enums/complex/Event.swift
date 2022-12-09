@@ -1199,7 +1199,7 @@
 						/// [`Route::get_total_fees`]: crate::routing::router::Route::get_total_fees
 						public func getFeePaidMsat() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(cType: self.cType!.fee_paid_msat).getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.fee_paid_msat).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1443,7 +1443,7 @@
 						/// [`NetworkGraph`]: crate::routing::gossip::NetworkGraph
 						public func getNetworkUpdate() -> NetworkUpdate? {
 							// return value (do some wrapping)
-							let returnValue = Option_NetworkUpdateZ(cType: self.cType!.network_update).getValue()
+							let returnValue = Option_NetworkUpdateZ(cType: self.cType!.network_update).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1490,7 +1490,7 @@
 						/// retried. May be `None` for older [`Event`] serializations.
 						public func getShortChannelId() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(cType: self.cType!.short_channel_id).getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.short_channel_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1665,7 +1665,7 @@
 						/// with channels in the public network graph.
 						public func getShortChannelId() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(cType: self.cType!.short_channel_id).getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.short_channel_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1864,7 +1864,7 @@
 						/// `None`.
 						public func getFeeEarnedMsat() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(cType: self.cType!.fee_earned_msat).getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.fee_earned_msat).dangle().getValue()
 
 							return returnValue;
 						}

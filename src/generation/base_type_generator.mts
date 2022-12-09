@@ -751,7 +751,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		} else if (returnType.type instanceof RustNullableOption) {
 			// nullable option must come BEFORE tagged value enum, because it's a subclass
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
-			preparedReturnValue.wrapperSuffix += `)`;
+			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
 			if (returnType.type !== containerType) {
 				// it's an elided type, so we pass it through
 				preparedReturnValue.wrapperSuffix += '.getValue()';
