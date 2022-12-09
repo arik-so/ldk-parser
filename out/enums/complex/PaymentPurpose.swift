@@ -167,7 +167,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).dangle().getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}
@@ -186,7 +186,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentPurposeDecodeErrorZ(cType: nativeCallResult, anchor: self).dangle()
+						let returnValue = Result_PaymentPurposeDecodeErrorZ(cType: nativeCallResult)
 
 						return returnValue
 					}

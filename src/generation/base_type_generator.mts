@@ -640,7 +640,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return preparedArgument;
 	}
 
-	protected prepareRustReturnValueForSwift(returnType: RustFunctionReturnValue, containerType?: RustType): PreparedReturnValue {
+	protected prepareRustReturnValueForSwift(returnType: RustFunctionReturnValue, containerType?: RustType, memoryContext?: MemoryHandlingContext): PreparedReturnValue {
 		const preparedReturnValue: PreparedReturnValue = {
 			wrapperPrefix: '',
 			wrapperSuffix: ''
@@ -685,6 +685,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			if(returnType.type !== containerType) {
 
 				// this is for the rust array to swift mapper
+				// I suspect this applies to any elided container type though
 				if (containerType instanceof RustVector) {
 					if (!this.isElidedType(returnType.type)) {
 						anchorInfix = ', anchor: self';
@@ -692,11 +693,16 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					dangleSuffix = '.dangle()';
 				}
 
-				if (containerType instanceof RustResult || containerType instanceof RustTaggedValueEnum) {
-					if (!this.isElidedType(returnType.type)) {
-						anchorInfix = ', anchor: self';
+				// if the container type is not elided, the return type must be a struct field
+				if (returnType instanceof RustStructField) {
+
+					if (containerType instanceof RustResult || containerType instanceof RustTaggedValueEnum) {
+						if (!this.isElidedType(returnType.type)) {
+							anchorInfix = ', anchor: self';
+						}
+						dangleSuffix = '.dangle()';
 					}
-					dangleSuffix = '.dangle()';
+
 				}
 
 				// if (containerType instanceof RustStruct && returnType instanceof RustStructField) {
@@ -892,4 +898,26 @@ export interface PreparedArgument {
 export interface PreparedReturnValue {
 	wrapperPrefix: string;
 	wrapperSuffix: string;
+}
+
+export interface MemoryHandlingContext {
+	/**
+	 * True if the containing Swift method is accessing a struct's field.
+	 */
+	isValueAccessor: boolean
+
+	/**
+	 * True if the containing Swift method is static.
+	 */
+	isStatic: boolean
+
+	/**
+	 * True if the containing Swift method instantiates a new object of the same type.
+	 */
+	isConstructor: boolean
+
+	/**
+	 * True if the containing Swift method returns a close of its containing struct.
+	 */
+	isCloneMethod: boolean
 }
