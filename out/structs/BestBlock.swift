@@ -48,8 +48,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -69,8 +71,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = BestBlock(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -96,8 +100,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -114,8 +120,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = BestBlock(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -133,8 +141,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = BestBlock(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -160,8 +170,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -181,8 +193,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

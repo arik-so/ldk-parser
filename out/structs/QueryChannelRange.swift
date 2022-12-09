@@ -54,8 +54,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -79,8 +81,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -102,8 +106,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -123,8 +129,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -144,8 +152,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -165,8 +175,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -186,8 +198,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -205,8 +219,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = QueryChannelRange(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -232,8 +248,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = QueryChannelRange(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -259,8 +277,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -280,8 +300,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -301,8 +323,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -320,8 +344,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_QueryChannelRangeDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

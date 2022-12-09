@@ -118,8 +118,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -144,8 +146,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = ChannelManager(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -171,8 +175,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = UserConfig(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -221,8 +227,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result__u832APIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -243,8 +251,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_ChannelDetailsZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -271,8 +281,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_ChannelDetailsZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -316,8 +328,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -363,8 +377,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -395,8 +411,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -429,8 +447,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -451,8 +471,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -473,8 +495,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -542,8 +566,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -578,8 +604,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -614,8 +642,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -656,8 +686,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -683,8 +715,10 @@
 						// hopsVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -743,8 +777,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -795,8 +831,10 @@
 						// channelIdsVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -819,8 +857,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -851,8 +891,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -890,8 +932,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -930,8 +974,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -951,8 +997,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PublicKey(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -995,8 +1043,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -1041,8 +1091,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -1089,8 +1141,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZNoneZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -1120,8 +1174,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -1187,8 +1243,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentSecretNoneZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -1220,8 +1278,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentSecretAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -1248,8 +1308,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentPreimageAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -1272,8 +1334,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -1295,8 +1359,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PhantomRouteHints(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -1317,8 +1383,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -1339,8 +1407,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedEventsProvider(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -1361,8 +1431,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedListen(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -1383,8 +1455,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedConfirm(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -1409,8 +1483,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -1432,8 +1508,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -1455,8 +1533,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Future(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -1477,8 +1557,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = BestBlock(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -1499,8 +1581,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -1520,8 +1604,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -1542,8 +1628,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedPayer(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}

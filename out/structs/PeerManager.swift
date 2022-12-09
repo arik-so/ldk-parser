@@ -84,8 +84,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -116,8 +118,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = PeerManager(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -147,8 +151,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_PublicKeyZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -186,8 +192,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -223,8 +231,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NonePeerHandleErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -259,8 +269,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NonePeerHandleErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -299,8 +311,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_boolPeerHandleErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -336,8 +350,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -361,8 +377,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -392,8 +410,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -415,8 +435,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -446,8 +468,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -489,8 +513,10 @@
 						// addressesVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

@@ -56,8 +56,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -77,8 +79,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -98,8 +102,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -120,8 +126,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -144,8 +152,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -165,8 +175,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = OutPoint(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -186,8 +198,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

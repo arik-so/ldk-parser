@@ -58,8 +58,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -85,8 +87,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -106,8 +110,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Invoice(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -127,8 +133,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -144,8 +152,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = SignedRawInvoice(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -165,8 +175,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneSemanticErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -201,8 +213,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_InvoiceSemanticErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -222,8 +236,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -243,8 +259,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -268,8 +286,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -299,8 +319,10 @@
             			}
 					
 
+						
 						// return value (do some wrapping)
 						let returnValue = PublicKey(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -324,8 +346,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -360,8 +384,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = InvoiceFeatures(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -381,8 +407,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PublicKey(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -402,8 +430,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -423,8 +453,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -445,8 +477,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -467,8 +501,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -488,8 +524,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_PrivateRouteZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -509,8 +547,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_RouteHintZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -530,8 +570,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Currency(value: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -551,8 +593,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Option_u64Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -570,8 +614,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_InvoiceParseOrSemanticErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -591,8 +637,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Str(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}

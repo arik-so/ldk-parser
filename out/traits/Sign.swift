@@ -134,8 +134,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedSign(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

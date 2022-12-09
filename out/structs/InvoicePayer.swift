@@ -56,8 +56,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -76,8 +78,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = InvoicePayer(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -111,8 +115,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -141,8 +147,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -170,8 +178,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -200,8 +210,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -222,8 +234,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedEventHandler(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}

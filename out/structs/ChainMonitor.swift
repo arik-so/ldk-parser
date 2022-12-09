@@ -64,8 +64,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -89,8 +91,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = ChainMonitor(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -128,8 +132,10 @@
 						// ignoredChannelsVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_BalanceZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -153,8 +159,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_LockedChannelMonitorNoneZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -177,8 +185,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_OutPointZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -210,8 +220,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -232,8 +244,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedListen(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -254,8 +268,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedConfirm(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -276,8 +292,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedWatch(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -298,8 +316,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedEventsProvider(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}

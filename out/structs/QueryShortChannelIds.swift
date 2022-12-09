@@ -62,8 +62,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -87,8 +89,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -110,8 +114,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -133,8 +139,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u64Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -158,8 +166,10 @@
 						// valVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -181,8 +191,10 @@
 						// shortChannelIdsArgVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = QueryShortChannelIds(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -208,8 +220,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = QueryShortChannelIds(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -235,8 +249,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -254,8 +270,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_QueryShortChannelIdsDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -275,8 +293,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}

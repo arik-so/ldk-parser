@@ -58,8 +58,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -79,8 +81,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Transaction(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -104,8 +108,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -134,8 +140,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Signature(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}

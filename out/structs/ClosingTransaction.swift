@@ -56,8 +56,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -77,8 +79,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ClosingTransaction(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -98,8 +102,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -125,8 +131,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -150,8 +158,10 @@
 						// toCounterpartyScriptVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = ClosingTransaction(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -182,8 +192,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = TrustedClosingTransaction(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -208,8 +220,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_TrustedClosingTransactionNoneZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -229,8 +243,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -250,8 +266,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -271,8 +289,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = u8slice(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -292,8 +312,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = u8slice(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}

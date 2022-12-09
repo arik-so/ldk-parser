@@ -55,8 +55,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Tuple_BlockHashChannelMonitorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -74,8 +76,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = Tuple_BlockHashChannelMonitorZ(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -97,8 +101,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -120,8 +126,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

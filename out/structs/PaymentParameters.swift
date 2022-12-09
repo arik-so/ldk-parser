@@ -48,8 +48,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -69,8 +71,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PublicKey(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -92,8 +96,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -133,8 +139,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = InvoiceFeatures(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -161,8 +169,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -182,8 +192,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_RouteHintZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -207,8 +219,10 @@
 						// valVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -228,8 +242,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Option_u64Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -251,8 +267,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -273,8 +291,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -295,8 +315,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -317,8 +339,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -339,8 +363,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -372,8 +398,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -405,8 +433,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -430,8 +460,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u64Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -457,8 +489,10 @@
 						// valVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -486,8 +520,10 @@
 						// previouslyFailedChannelsArgVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = PaymentParameters(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -513,8 +549,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PaymentParameters(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -534,8 +572,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -561,8 +601,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -582,8 +624,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -601,8 +645,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentParametersDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -620,8 +666,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PaymentParameters(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -639,8 +687,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PaymentParameters(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

@@ -55,8 +55,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Tuple_SignatureCVec_SignatureZZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -78,8 +80,10 @@
 						// bVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = Tuple_SignatureCVec_SignatureZZ(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -101,8 +105,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

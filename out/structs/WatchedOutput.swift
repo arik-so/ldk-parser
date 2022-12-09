@@ -68,8 +68,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -99,8 +101,10 @@
             			}
 					
 
+						
 						// return value (do some wrapping)
 						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -124,8 +128,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -145,8 +151,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = OutPoint(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -166,8 +174,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -187,8 +197,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = u8slice(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -212,8 +224,10 @@
 						// valVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -235,8 +249,10 @@
 						// scriptPubkeyArgVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = WatchedOutput(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -262,8 +278,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = WatchedOutput(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -289,8 +307,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -310,8 +330,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

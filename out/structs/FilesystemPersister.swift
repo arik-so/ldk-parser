@@ -70,8 +70,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -90,8 +92,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = FilesystemPersister(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -117,8 +121,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Str(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -138,8 +144,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

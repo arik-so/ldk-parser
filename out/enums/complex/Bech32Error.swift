@@ -104,8 +104,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bech32Error(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -121,8 +123,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

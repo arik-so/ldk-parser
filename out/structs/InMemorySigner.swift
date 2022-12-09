@@ -54,8 +54,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -79,8 +81,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -102,8 +106,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -127,8 +133,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -150,8 +158,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -175,8 +185,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -198,8 +210,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -223,8 +237,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -246,8 +262,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -271,8 +289,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -294,8 +314,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -319,8 +341,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -342,8 +366,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -363,8 +389,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = InMemorySigner(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -396,8 +424,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = InMemorySigner(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -424,8 +454,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -448,8 +480,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -472,8 +506,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -494,8 +530,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -516,8 +554,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = OutPoint(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -540,8 +580,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelTransactionParameters(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -562,8 +604,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -594,8 +638,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -627,8 +673,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -649,8 +697,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedBaseSign(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -671,8 +721,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedSign(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -692,8 +744,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -713,8 +767,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_InMemorySignerDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

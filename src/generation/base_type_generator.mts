@@ -206,6 +206,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 		let methodDeclarationKeywords = `${visibility} ${staticInfix}func`;
 		let returnCommand = 'return returnValue';
+		let returnValueHandlingPrefix = '';
+		let returnValueHandlingSuffix = '';
 		if (swiftMethodName === 'init') {
 			// it's a constructor
 			methodDeclarationKeywords = visibility;
@@ -216,9 +218,13 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				self.instanceNumber = Self.instanceCounter
 				super.init(conflictAvoidingVariableName: 0)
 			`;
+
+			returnValueHandlingPrefix = '/*';
+			returnValueHandlingSuffix = '*/';
 		}
 
 		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue, containerType);
+
 
 		if (method.returnValue.isAsteriskPointer) {
 			nativeCallSuffix += `
@@ -276,8 +282,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						// cleanup
 						${nativeCallSuffix}
 
+						${returnValueHandlingPrefix}
 						// return value (do some wrapping)
 						let returnValue = ${preparedReturnValue.wrapperPrefix}nativeCallResult${preparedReturnValue.wrapperSuffix}
+						${returnValueHandlingSuffix}
 
 						${returnCommand}
 					}

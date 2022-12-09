@@ -52,8 +52,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = Tuple_BlockHashChannelManagerZ(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -75,8 +77,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -94,8 +98,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

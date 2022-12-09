@@ -56,8 +56,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -77,8 +79,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = RapidGossipSync(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -111,8 +115,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_u32GraphSyncErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -132,8 +138,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

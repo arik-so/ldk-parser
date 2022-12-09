@@ -52,8 +52,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -73,8 +75,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = HTLCUpdate(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -100,8 +104,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -121,8 +127,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -140,8 +148,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_HTLCUpdateDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

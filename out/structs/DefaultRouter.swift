@@ -48,8 +48,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -72,8 +74,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = DefaultRouter(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -100,8 +104,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedRouter(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}

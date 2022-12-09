@@ -54,8 +54,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -80,8 +82,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -104,8 +108,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -125,8 +131,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PublicKey(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -148,8 +156,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -169,8 +179,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = DataLossProtect(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -196,8 +208,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = DataLossProtect(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -223,8 +237,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

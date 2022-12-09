@@ -55,8 +55,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Tuple_u32ScriptZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -76,8 +78,10 @@
 						// bVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = Tuple_u32ScriptZ(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -99,8 +103,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

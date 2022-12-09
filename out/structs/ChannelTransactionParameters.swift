@@ -56,8 +56,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -77,8 +79,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -98,8 +102,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -119,8 +125,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -140,8 +148,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -162,8 +172,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -184,8 +196,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -221,8 +235,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = CounterpartyChannelTransactionParameters(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -245,8 +261,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -281,8 +299,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = OutPoint(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -304,8 +324,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -326,8 +348,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Option_NoneZ(value: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -348,8 +372,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -365,8 +391,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = ChannelTransactionParameters(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -392,8 +420,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelTransactionParameters(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -413,8 +443,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -437,8 +469,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -461,8 +495,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -482,8 +518,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -501,8 +539,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_ChannelTransactionParametersDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

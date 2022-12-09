@@ -50,8 +50,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -71,8 +73,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelFeatures(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -92,8 +96,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -113,8 +119,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NodeId(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -134,8 +142,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -170,8 +180,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -193,8 +205,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -214,8 +228,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NodeId(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -235,8 +251,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -271,8 +289,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -294,8 +314,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -315,8 +337,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Option_u64Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -338,8 +362,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -377,8 +403,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelAnnouncement(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -403,8 +431,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -424,8 +454,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelInfo(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -451,8 +483,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -487,8 +521,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -508,8 +544,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -527,8 +565,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_ChannelInfoDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

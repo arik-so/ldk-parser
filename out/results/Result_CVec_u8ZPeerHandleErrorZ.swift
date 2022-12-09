@@ -54,8 +54,10 @@
 						// oVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -71,8 +73,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -88,8 +92,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -110,8 +116,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

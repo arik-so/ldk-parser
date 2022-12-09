@@ -48,8 +48,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -76,8 +78,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult.pointee, anchor: self)
+						
 
 						return returnValue
 					}
@@ -100,8 +104,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -128,8 +134,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult.pointee, anchor: self)
+						
 
 						return returnValue
 					}
@@ -152,8 +160,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -178,8 +188,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult.pointee, anchor: self)
+						
 
 						return returnValue
 					}
@@ -200,8 +212,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -217,8 +231,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = MessageHandler(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult

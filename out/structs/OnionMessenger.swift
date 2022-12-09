@@ -190,8 +190,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -208,8 +210,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = OnionMessenger(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -242,8 +246,10 @@
 						// intermediateNodesVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneSendErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -264,8 +270,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -286,8 +294,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedOnionMessageProvider(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}

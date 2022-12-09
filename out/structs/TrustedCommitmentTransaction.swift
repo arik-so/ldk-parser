@@ -58,8 +58,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -79,8 +81,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -100,8 +104,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = BuiltCommitmentTransaction(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -121,8 +127,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = TxCreationKeys(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -142,8 +150,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -178,8 +188,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_CVec_SignatureZNoneZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

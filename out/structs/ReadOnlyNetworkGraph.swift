@@ -48,8 +48,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -84,8 +86,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChannelInfo(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -105,8 +109,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u64Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -145,8 +151,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = NodeInfo(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -166,8 +174,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_NodeIdZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -191,8 +201,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Option_CVec_NetAddressZZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}

@@ -50,8 +50,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -67,8 +69,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = IgnoringMessageHandler(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -95,8 +99,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -117,8 +123,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -139,8 +147,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedOnionMessageProvider(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -161,8 +171,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -183,8 +195,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedCustomOnionMessageHandler(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -205,8 +219,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedCustomMessageReader(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -227,8 +243,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedCustomMessageHandler(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}

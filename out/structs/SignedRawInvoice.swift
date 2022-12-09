@@ -56,8 +56,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -83,8 +85,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -104,8 +108,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = SignedRawInvoice(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -125,8 +131,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -145,8 +153,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Tuple_RawInvoice_u832InvoiceSignatureZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -166,8 +176,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = RawInvoice(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -191,8 +203,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = Bindings.UInt8Tuple32ToArray(tuple: nativeCallResult.pointee)
+						
 
 						return returnValue
 					}
@@ -212,8 +226,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = InvoiceSignature(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -233,8 +249,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_PayeePubKeyErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -255,8 +273,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -274,8 +294,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_SignedRawInvoiceParseErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -295,8 +317,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Str(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}

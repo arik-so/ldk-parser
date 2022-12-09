@@ -57,8 +57,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = BigEndianScalar(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult

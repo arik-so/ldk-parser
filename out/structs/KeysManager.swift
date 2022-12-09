@@ -72,8 +72,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -113,8 +115,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = KeysManager(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -150,8 +154,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = InMemorySigner(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -194,8 +200,10 @@
 						// changeDestinationScriptVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_TransactionNoneZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -216,8 +224,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}

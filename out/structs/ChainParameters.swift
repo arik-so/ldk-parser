@@ -56,8 +56,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -77,8 +79,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Network(value: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -98,8 +102,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -121,8 +127,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = BestBlock(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -144,8 +152,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -161,8 +171,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = ChainParameters(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -188,8 +200,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ChainParameters(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

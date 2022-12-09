@@ -50,8 +50,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -67,8 +69,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = ErroringMessageHandler(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -95,8 +99,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -117,8 +123,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}

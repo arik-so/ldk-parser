@@ -48,8 +48,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -69,8 +71,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Signature(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -92,8 +96,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -113,8 +119,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = UnsignedNodeAnnouncement(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -134,8 +142,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -153,8 +163,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = NodeAnnouncement(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -180,8 +192,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NodeAnnouncement(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -207,8 +221,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -228,8 +244,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -247,8 +265,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NodeAnnouncementDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

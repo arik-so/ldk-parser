@@ -54,8 +54,10 @@
 						// scriptPubkeyVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = TxOut(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -77,8 +79,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -98,8 +102,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = TxOut(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

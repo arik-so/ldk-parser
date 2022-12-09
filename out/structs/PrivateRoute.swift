@@ -54,8 +54,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -75,8 +77,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PrivateRoute(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -96,8 +100,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -123,8 +129,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -140,8 +148,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_PrivateRouteCreationErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -157,8 +167,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = RouteHint(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

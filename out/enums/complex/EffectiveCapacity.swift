@@ -94,8 +94,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -115,8 +117,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -132,8 +136,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -149,8 +155,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -168,8 +176,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -185,8 +195,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -202,8 +214,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = EffectiveCapacity(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -223,8 +237,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

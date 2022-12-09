@@ -50,8 +50,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -71,8 +73,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_UpdateAddHTLCZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -96,8 +100,10 @@
 						// valVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -117,8 +123,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_UpdateFulfillHTLCZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -142,8 +150,10 @@
 						// valVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -163,8 +173,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_UpdateFailHTLCZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -188,8 +200,10 @@
 						// valVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -209,8 +223,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_UpdateFailMalformedHTLCZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -234,8 +250,10 @@
 						// valVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -270,8 +288,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = UpdateFee(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -293,8 +313,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -314,8 +336,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = CommitmentSigned(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -335,8 +359,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -368,8 +394,10 @@
 						// updateFailMalformedHtlcsArgVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = CommitmentUpdate(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -395,8 +423,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = CommitmentUpdate(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -422,8 +452,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

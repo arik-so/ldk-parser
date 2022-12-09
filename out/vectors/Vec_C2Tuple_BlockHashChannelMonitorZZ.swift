@@ -88,8 +88,10 @@ Tuple_BlockHashChannelMonitorZ(cType: currentCType).dangle().getValue()
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

@@ -96,8 +96,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -170,8 +172,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = BackgroundProcessor(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -195,8 +199,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -220,8 +226,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

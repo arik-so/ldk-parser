@@ -88,8 +88,10 @@ Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: currentCType).dangle().getValu
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}

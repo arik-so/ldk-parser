@@ -110,8 +110,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -137,8 +139,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult.pointee, anchor: self)
+						
 
 						return returnValue
 					}
@@ -160,8 +164,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -187,8 +193,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedFeeEstimator(cType: nativeCallResult.pointee, anchor: self)
+						
 
 						return returnValue
 					}
@@ -210,8 +218,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -239,8 +249,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedWatch(cType: nativeCallResult.pointee, anchor: self)
+						
 
 						return returnValue
 					}
@@ -264,8 +276,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -291,8 +305,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedBroadcasterInterface(cType: nativeCallResult.pointee, anchor: self)
+						
 
 						return returnValue
 					}
@@ -314,8 +330,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -340,8 +358,10 @@
 						}
 			
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedLogger(cType: nativeCallResult.pointee, anchor: self)
+						
 
 						return returnValue
 					}
@@ -362,8 +382,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -384,8 +406,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = UserConfig(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -406,8 +430,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -429,8 +455,10 @@
 						// channelMonitorsVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = ChannelManagerReadArgs(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult

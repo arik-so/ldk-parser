@@ -105,8 +105,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -126,8 +128,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -143,8 +147,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -164,8 +170,10 @@
 						// aVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -185,8 +193,10 @@
 						// aVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -208,8 +218,10 @@
 						// resultsVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = PaymentSendFailure(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

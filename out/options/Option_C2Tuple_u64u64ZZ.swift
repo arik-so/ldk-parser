@@ -62,8 +62,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -84,8 +86,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Option_C2Tuple_u64u64ZZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

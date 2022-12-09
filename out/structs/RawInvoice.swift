@@ -56,8 +56,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -77,8 +79,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = RawDataPart(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -98,8 +102,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -125,8 +131,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -146,8 +154,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = RawInvoice(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -167,8 +177,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -188,8 +200,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -222,8 +236,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = Sha256(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -256,8 +272,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = Description(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -290,8 +308,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = PayeePubKey(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -324,8 +344,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = Sha256(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -358,8 +380,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = ExpiryTime(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -392,8 +416,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = MinFinalCltvExpiry(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -421,8 +447,10 @@
             			}
 					
 
+						
 						// return value (do some wrapping)
 						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -455,8 +483,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = InvoiceFeatures(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -476,8 +506,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_PrivateRouteZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -497,8 +529,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Option_u64Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -518,8 +552,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Currency(value: nativeCallResult)
+						
 
 						return returnValue
 					}

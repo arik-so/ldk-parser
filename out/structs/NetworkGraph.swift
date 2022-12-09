@@ -48,8 +48,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -70,8 +72,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedEventHandler(cType: nativeCallResult, anchor: self)
+						
 
 						return returnValue
 					}
@@ -91,8 +95,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -110,8 +116,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NetworkGraphDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -129,8 +137,10 @@
 						// cleanup
 						
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = NetworkGraph(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -156,8 +166,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = ReadOnlyNetworkGraph(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -178,8 +190,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Option_u32Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -200,8 +214,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -230,8 +246,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -258,8 +276,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -292,8 +312,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -324,8 +346,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -354,8 +378,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -378,8 +404,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -402,8 +430,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -438,8 +468,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -471,8 +503,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -504,8 +538,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -534,8 +570,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

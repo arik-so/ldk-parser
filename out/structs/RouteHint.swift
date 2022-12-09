@@ -48,8 +48,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -69,8 +71,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_RouteHintHopZ(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -94,8 +98,10 @@
 						// valVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -115,8 +121,10 @@
 						// aArgVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = RouteHint(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -142,8 +150,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = RouteHint(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -163,8 +173,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -190,8 +202,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -211,8 +225,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -230,8 +246,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_RouteHintDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

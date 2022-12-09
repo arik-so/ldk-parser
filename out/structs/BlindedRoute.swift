@@ -50,8 +50,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -78,8 +80,10 @@
 						// nodePksVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_BlindedRouteNoneZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -99,8 +103,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -118,8 +124,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_BlindedRouteDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}

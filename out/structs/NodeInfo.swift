@@ -48,8 +48,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -71,8 +73,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u64Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -96,8 +100,10 @@
 						// valVector.noOpRetain()
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -134,8 +140,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = RoutingFees(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -159,8 +167,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -197,8 +207,10 @@
 					}
 				
 
+						
 						// return value (do some wrapping)
 						let returnValue = NodeAnnouncementInfo(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -222,8 +234,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -243,8 +257,10 @@
 						// channelsArgVector.noOpRetain()
 				
 
+						/*
 						// return value (do some wrapping)
 						let returnValue = NodeInfo(cType: nativeCallResult)
+						*/
 
 						
 				self.cType = nativeCallResult
@@ -270,8 +286,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = NodeInfo(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
@@ -297,8 +315,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
 
 						return returnValue
 					}
@@ -318,8 +338,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						
 
 						return returnValue
 					}
@@ -337,8 +359,10 @@
 						// cleanup
 						
 
+						
 						// return value (do some wrapping)
 						let returnValue = Result_NodeInfoDecodeErrorZ(cType: nativeCallResult)
+						
 
 						return returnValue
 					}
