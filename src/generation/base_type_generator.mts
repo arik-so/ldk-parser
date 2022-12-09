@@ -640,7 +640,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return preparedArgument;
 	}
 
-	protected prepareRustReturnValueForSwift(returnType: RustFunctionReturnValue, containerType?: RustType, memoryContext?: MemoryHandlingContext): PreparedReturnValue {
+	protected prepareRustReturnValueForSwift(returnType: ContextualRustType, containerType?: RustType, memoryContext?: MemoryHandlingContext): PreparedReturnValue {
 		const preparedReturnValue: PreparedReturnValue = {
 			wrapperPrefix: '',
 			wrapperSuffix: ''
@@ -682,11 +682,22 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			 * information.
 			 */
 
-			if(returnType.type !== containerType) {
+			if(containerType && returnType.type !== containerType) {
 
-				// this is for the rust array to swift mapper
-				// I suspect this applies to any elided container type though
-				if (containerType instanceof RustVector) {
+				/**
+				 * If a container type is elided, it might return an object whose content will
+				 * stop working as soon as the elided type gets freed. To avoid that problem,
+				 * we need to make sure that we a) anchor the elided type inside the return value,
+				 * and b) make sure that the return value doesn't get freed, because its memory
+				 * will be handled by the elided type instead.
+				 *
+				 * However, some elided types may have methods. While they're uncallable by
+				 * external users of the SDK, they very well may be called from "batteries,"
+				 * which necessitates the check to make sure that the return type is not,
+				 * ironically, an actual return type. That works because this method can
+				 * technically handle any contextual type.
+				 */
+				if (containerType && this.isElidedType(containerType!) && !(returnType instanceof RustFunctionReturnValue)) {
 					if (!this.isElidedType(returnType.type)) {
 						anchorInfix = ', anchor: self';
 					}

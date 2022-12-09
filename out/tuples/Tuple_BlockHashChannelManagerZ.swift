@@ -109,7 +109,7 @@
 					/// The element at position 0
 					public func getA() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: self.cType!.a).getValue()
+						let returnValue = ThirtyTwoBytes(cType: self.cType!.a).dangle().getValue()
 
 						return returnValue;
 					}
@@ -117,7 +117,7 @@
 					/// The element at position 1
 					public func getB() -> ChannelManager {
 						// return value (do some wrapping)
-						let returnValue = ChannelManager(cType: self.cType!.b)
+						let returnValue = ChannelManager(cType: self.cType!.b, anchor: self).dangle()
 
 						return returnValue;
 					}

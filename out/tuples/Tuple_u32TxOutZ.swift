@@ -118,7 +118,7 @@
 					/// The element at position 1
 					public func getB() -> TxOut {
 						// return value (do some wrapping)
-						let returnValue = TxOut(cType: self.cType!.b)
+						let returnValue = TxOut(cType: self.cType!.b, anchor: self).dangle()
 
 						return returnValue;
 					}

@@ -114,7 +114,7 @@
 					/// The element at position 0
 					public func getA() -> OutPoint {
 						// return value (do some wrapping)
-						let returnValue = OutPoint(cType: self.cType!.a)
+						let returnValue = OutPoint(cType: self.cType!.a, anchor: self).dangle()
 
 						return returnValue;
 					}
@@ -122,7 +122,7 @@
 					/// The element at position 1
 					public func getB() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: self.cType!.b).getValue()
+						let returnValue = Vec_u8Z(cType: self.cType!.b).dangle().getValue()
 
 						return returnValue;
 					}

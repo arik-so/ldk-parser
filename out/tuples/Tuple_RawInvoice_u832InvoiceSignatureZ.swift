@@ -112,7 +112,7 @@
 					/// The element at position 0
 					public func getA() -> RawInvoice {
 						// return value (do some wrapping)
-						let returnValue = RawInvoice(cType: self.cType!.a)
+						let returnValue = RawInvoice(cType: self.cType!.a, anchor: self).dangle()
 
 						return returnValue;
 					}
@@ -120,7 +120,7 @@
 					/// The element at position 1
 					public func getB() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: self.cType!.b).getValue()
+						let returnValue = ThirtyTwoBytes(cType: self.cType!.b).dangle().getValue()
 
 						return returnValue;
 					}
@@ -128,7 +128,7 @@
 					/// The element at position 2
 					public func getC() -> InvoiceSignature {
 						// return value (do some wrapping)
-						let returnValue = InvoiceSignature(cType: self.cType!.c)
+						let returnValue = InvoiceSignature(cType: self.cType!.c, anchor: self).dangle()
 
 						return returnValue;
 					}

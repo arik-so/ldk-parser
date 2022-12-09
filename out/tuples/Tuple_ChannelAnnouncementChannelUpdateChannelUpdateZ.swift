@@ -110,7 +110,7 @@
 					/// The element at position 0
 					public func getA() -> ChannelAnnouncement {
 						// return value (do some wrapping)
-						let returnValue = ChannelAnnouncement(cType: self.cType!.a)
+						let returnValue = ChannelAnnouncement(cType: self.cType!.a, anchor: self).dangle()
 
 						return returnValue;
 					}
@@ -118,7 +118,7 @@
 					/// The element at position 1
 					public func getB() -> ChannelUpdate {
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdate(cType: self.cType!.b)
+						let returnValue = ChannelUpdate(cType: self.cType!.b, anchor: self).dangle()
 
 						return returnValue;
 					}
@@ -126,7 +126,7 @@
 					/// The element at position 2
 					public func getC() -> ChannelUpdate {
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdate(cType: self.cType!.c)
+						let returnValue = ChannelUpdate(cType: self.cType!.c, anchor: self).dangle()
 
 						return returnValue;
 					}
