@@ -130,7 +130,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedSign(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedSign(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -140,7 +140,7 @@
 					/// Implementation of BaseSign for this object.
 					public func getBaseSign() -> BaseSign {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBaseSign(cType: self.cType!.BaseSign, anchor: self)
+						let returnValue = NativelyImplementedBaseSign(cType: self.cType!.BaseSign, anchor: self).dangle()
 
 						return returnValue;
 					}

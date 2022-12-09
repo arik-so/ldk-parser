@@ -238,7 +238,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedSocketDescriptor(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedSocketDescriptor(cType: nativeCallResult)
 
 						return returnValue
 					}

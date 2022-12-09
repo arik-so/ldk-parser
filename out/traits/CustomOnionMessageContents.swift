@@ -146,7 +146,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedCustomOnionMessageContents(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedCustomOnionMessageContents(cType: nativeCallResult)
 
 						return returnValue
 					}

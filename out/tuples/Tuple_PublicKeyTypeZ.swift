@@ -120,7 +120,7 @@
 					/// The element at position 1
 					public func getB() -> BindingsType {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBindingsType(cType: self.cType!.b, anchor: self)
+						let returnValue = NativelyImplementedBindingsType(cType: self.cType!.b, anchor: self).dangle()
 
 						return returnValue;
 					}

@@ -721,6 +721,19 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				}
 				dangleSuffix = '.dangle()';
 			}
+
+			/**
+			 * Some method calls produce return values that are still reliant on the caller's
+			 * memory. One obvious example is structs with asTrait() methods, exemplified
+			 * here. For those scenarios, the inner pointer is copied into the new object,
+			 * and therefore the container must outlive the returned object.
+			 *
+			 * However, there is no issue with freeing both the returned object and the container,
+			 * which is why we don't have a dangle() suffix.
+			 */
+			if(containerType instanceof RustStruct && returnType.type instanceof RustTrait){
+				anchorInfix = ', anchor: self';
+			}
 		}
 
 
@@ -734,7 +747,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 		} else if (returnType.type instanceof RustTrait) {
 			preparedReturnValue.wrapperPrefix += `NativelyImplemented${this.swiftTypeName(returnType.type)}(cType: `;
-			preparedReturnValue.wrapperSuffix += `, anchor: self)`;
+			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
 		} else if (returnType.type instanceof RustNullableOption) {
 			// nullable option must come BEFORE tagged value enum, because it's a subclass
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;

@@ -116,7 +116,7 @@
 					/// Implementation of LockableScore for this object.
 					public func getLockableScore() -> LockableScore {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedLockableScore(cType: self.cType!.LockableScore, anchor: self)
+						let returnValue = NativelyImplementedLockableScore(cType: self.cType!.LockableScore, anchor: self).dangle()
 
 						return returnValue;
 					}

@@ -139,7 +139,7 @@
 					/// Implementation of CustomMessageReader for this object.
 					public func getCustomMessageReader() -> CustomMessageReader {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedCustomMessageReader(cType: self.cType!.CustomMessageReader, anchor: self)
+						let returnValue = NativelyImplementedCustomMessageReader(cType: self.cType!.CustomMessageReader, anchor: self).dangle()
 
 						return returnValue;
 					}

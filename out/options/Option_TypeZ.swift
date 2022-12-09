@@ -94,7 +94,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_TypeZ_Some {
-							return NativelyImplementedBindingsType(cType: self.cType!.some, anchor: self)
+							return NativelyImplementedBindingsType(cType: self.cType!.some, anchor: self).dangle()
 						}
 						assert(false, "invalid option enum value")
 						return nil

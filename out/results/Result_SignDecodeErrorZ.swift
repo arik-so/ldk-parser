@@ -141,7 +141,7 @@
 					
 					public func getValue() -> Sign? {
 						if self.cType?.result_ok == true {
-							return NativelyImplementedSign(cType: self.cType!.contents.result.pointee, anchor: self)
+							return NativelyImplementedSign(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
 						}
 						return nil
 					}

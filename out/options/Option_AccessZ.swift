@@ -72,7 +72,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_AccessZ_Some {
-							return NativelyImplementedAccess(cType: self.cType!.some, anchor: self)
+							return NativelyImplementedAccess(cType: self.cType!.some, anchor: self).dangle()
 						}
 						assert(false, "invalid option enum value")
 						return nil

@@ -175,7 +175,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBindingsType(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedBindingsType(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -225,7 +225,7 @@
 					/// Implementation of OnionMessageProvider for this object.
 					public func getOnionMessageProvider() -> OnionMessageProvider {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageProvider(cType: self.cType!.OnionMessageProvider, anchor: self)
+						let returnValue = NativelyImplementedOnionMessageProvider(cType: self.cType!.OnionMessageProvider, anchor: self).dangle()
 
 						return returnValue;
 					}

@@ -72,7 +72,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_FilterZ_Some {
-							return NativelyImplementedFilter(cType: self.cType!.some, anchor: self)
+							return NativelyImplementedFilter(cType: self.cType!.some, anchor: self).dangle()
 						}
 						assert(false, "invalid option enum value")
 						return nil

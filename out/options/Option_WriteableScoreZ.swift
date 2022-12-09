@@ -72,7 +72,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_WriteableScoreZ_Some {
-							return NativelyImplementedWriteableScore(cType: self.cType!.some, anchor: self)
+							return NativelyImplementedWriteableScore(cType: self.cType!.some, anchor: self).dangle()
 						}
 						assert(false, "invalid option enum value")
 						return nil

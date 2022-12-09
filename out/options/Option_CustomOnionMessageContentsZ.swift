@@ -94,7 +94,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_CustomOnionMessageContentsZ_Some {
-							return NativelyImplementedCustomOnionMessageContents(cType: self.cType!.some, anchor: self)
+							return NativelyImplementedCustomOnionMessageContents(cType: self.cType!.some, anchor: self).dangle()
 						}
 						assert(false, "invalid option enum value")
 						return nil

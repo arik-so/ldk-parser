@@ -427,7 +427,7 @@
 					/// Implementation of MessageSendEventsProvider for this object.
 					public func getMessageSendEventsProvider() -> MessageSendEventsProvider {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: self.cType!.MessageSendEventsProvider, anchor: self)
+						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: self.cType!.MessageSendEventsProvider, anchor: self).dangle()
 
 						return returnValue;
 					}
