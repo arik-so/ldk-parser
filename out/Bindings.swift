@@ -874,12 +874,19 @@
 				/// [`NetworkGraph`]: crate::routing::gossip::NetworkGraph
 				/// 
 				/// Note that first_hops (or a relevant inner pointer) may be NULL or all-0s to represent None
-				public class func swiftFindRoute(ourNodePubkey: [UInt8], routeParams: RouteParameters, networkGraph: NetworkGraph, firstHops: [ChannelDetails], logger: Logger, scorer: Score, randomSeedBytes: [UInt8]) -> Result_RouteLightningErrorZ {
+				public class func swiftFindRoute(ourNodePubkey: [UInt8], routeParams: RouteParameters, networkGraph: NetworkGraph, firstHops: [ChannelDetails]?, logger: Logger, scorer: Score, randomSeedBytes: [UInt8]) -> Result_RouteLightningErrorZ {
 					// native call variable prep
 					
 					let ourNodePubkeyPrimitiveWrapper = PublicKey(value: ourNodePubkey)
 				
+				var firstHopsVectorPointer: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>? = nil
+				if let firstHops = firstHops {
+					
 					let firstHopsVector = Vec_ChannelDetailsZ(array: firstHops)
+				
+					firstHopsVectorPointer = UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>.allocate(capacity: 1)
+					firstHopsVectorPointer!.initialize(to: firstHopsVector.cType!)
+				}
 				
 					let tupledRandomSeedBytes = Bindings.arrayToUInt8Tuple32(array: randomSeedBytes)
 				
@@ -890,14 +897,10 @@
 				
 					withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
 				
-					withUnsafeMutablePointer(to: &firstHopsVector.cType!) { (firstHopsVectorPointer: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>) in
-				
 					withUnsafePointer(to: scorer.activate().cType!) { (scorerPointer: UnsafePointer<LDKScore>) in
 				
 					withUnsafePointer(to: tupledRandomSeedBytes) { (tupledRandomSeedBytesPointer: UnsafePointer<UInt8Tuple32>) in
 				find_route(ourNodePubkeyPrimitiveWrapper.cType!, routeParamsPointer, networkGraphPointer, firstHopsVectorPointer, logger.activate().cType!, scorerPointer, tupledRandomSeedBytesPointer)
-					}
-				
 					}
 				
 					}

@@ -162,7 +162,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 
 			const swiftArgumentName = Generator.snakeCaseToCamelCase(currentArgument.contextualName);
-			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, containerType);
+			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, containerType, currentArgument);
 			if (!isInstanceArgument) {
 				swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
 			}
@@ -406,13 +406,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		}
 
 		let nullabilitySuffix = '';
-		if (context && context.isAsteriskPointer) {
+		if (context && this.isPointerArgumentNullable(context as RustFunctionArgument, containerType)) {
 			// we're dealing with a pointer here, which means nullability is possible
 			// however, if it's just a vector's field or a string's field, it doesn't mean
 			// it should be nullable
-			if (!context.isNonnullablePointer) {
-				nullabilitySuffix = '?';
-			}
+			nullabilitySuffix = '?';
 		}
 
 		if (!isTypeElided) {
@@ -616,7 +614,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			// TODO: figure out when exactly this is necessary. Seems to be 1:1 with mutable, but not sure yet
 			const inoutAmpersandInfix = argument.isConstant ? '' : '&';
 
-			if (!argument.isNonnullablePointer && containerType instanceof RustTrait) {
+			if (this.isPointerArgumentNullable(argument, containerType)) {
 				// TODO: remove the RustTrait restriction
 				preparedArgument.conversion = `
 					var ${preparedArgument.name}Pointer: UnsafeMutablePointer<${typeName}>? = nil
@@ -686,7 +684,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		 * Detecting that might be really tricky, and could require additional context
 		 * information.
 		 */
-		if(containerType && returnType.type !== containerType) {
+		if (containerType && returnType.type !== containerType) {
 
 			/**
 			 * If a container type is elided, it might return an object whose content will
@@ -737,7 +735,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			 * However, there is no issue with freeing both the returned object and the container,
 			 * which is why we don't have a dangle() suffix.
 			 */
-			if(containerType instanceof RustStruct && returnType.type instanceof RustTrait){
+			if (containerType instanceof RustStruct && returnType.type instanceof RustTrait) {
 				anchorInfix = ', anchor: self';
 			}
 		}
@@ -854,6 +852,29 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return commentPrefix + comment.replaceAll('\n', '\n' + indentation + commentPrefix);
 	}
 
+	private isPointerArgumentNullable(argument: RustFunctionArgument, containerType?: RustType): boolean {
+		if (!argument.isAsteriskPointer) {
+			return false;
+		}
+
+		if (argument.isNonnullablePointer) {
+			return false;
+		}
+
+		if (containerType instanceof RustTrait) {
+			return true;
+		}
+
+		// TODO: figure out how to properly detect this stuff!
+		if (argument.type instanceof RustVector) {
+			if (!(argument.type.iterateeField.type instanceof RustPrimitive)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	private hasMethod(type: RustType, methodName: string) {
 		let methods: RustFunction[] = [];
 		if (type instanceof RustStruct) {
@@ -925,20 +946,20 @@ export interface MemoryHandlingContext {
 	/**
 	 * True if the containing Swift method is accessing a struct's field.
 	 */
-	isValueAccessor: boolean
+	isValueAccessor: boolean;
 
 	/**
 	 * True if the containing Swift method is static.
 	 */
-	isStatic: boolean
+	isStatic: boolean;
 
 	/**
 	 * True if the containing Swift method instantiates a new object of the same type.
 	 */
-	isConstructor: boolean
+	isConstructor: boolean;
 
 	/**
 	 * True if the containing Swift method returns a close of its containing struct.
 	 */
-	isCloneMethod: boolean
+	isCloneMethod: boolean;
 }
