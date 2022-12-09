@@ -42,7 +42,7 @@ class RegtestChannelManagerPersister : Persister, ExtendedChannelManagerPersiste
             
         }else if let paymentSentEvent = event.getValueAsPaymentSent() {
             // print what needs printing
-        }else if let pendingHTLCsForwardableEvent = event.getValueAsPendingHtlCsForwardable() {
+        }else if let pendingHTLCsForwardableEvent = event.getValueAsPendingHtlcsForwardable() {
             channelManager?.processPendingHtlcForwards()
             
             

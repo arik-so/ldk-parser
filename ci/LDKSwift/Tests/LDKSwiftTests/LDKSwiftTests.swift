@@ -314,7 +314,7 @@ class LDKSwiftTests: XCTestCase {
             path.append(extraHop)
         }
 
-        let paymentParams = PaymentParameters.initWithForKeysend(payeePubkey: Self.hexStringToBytes(hexString: destPubkeyHex)!)
+        let paymentParams = PaymentParameters.initForKeysend(payeePubkey: Self.hexStringToBytes(hexString: destPubkeyHex)!)
         let route = Route(pathsArg: [path], paymentParamsArg: paymentParams)
     }
 
@@ -374,7 +374,7 @@ class LDKSwiftTests: XCTestCase {
         let payerPubkey = LDKSwiftTests.hexStringToBytes(hexString: "0242a4ae0c5bef18048fbecf995094b74bfb0f7391418d71ed394784373f41e4f3")!
         let recipientPubkey = LDKSwiftTests.hexStringToBytes(hexString: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f")!
 
-        let paymentParameters = PaymentParameters.initWithForKeysend(payeePubkey: recipientPubkey)
+        let paymentParameters = PaymentParameters.initForKeysend(payeePubkey: recipientPubkey)
         let routeParameters = RouteParameters(paymentParamsArg: paymentParameters, finalValueMsatArg: 500, finalCltvExpiryDeltaArg: 3)
 
 		print("STEP A")

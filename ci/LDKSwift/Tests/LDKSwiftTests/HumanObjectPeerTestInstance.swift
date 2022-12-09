@@ -631,7 +631,7 @@ public class HumanObjectPeerTestInstance {
                 guard case .PendingHTLCsForwardable = peer2Event.getValueType() else {
                     return XCTAssert(false, "Expected .PendingHTLCsForwardable, got \(peer2Event.getValueType())")
                 }
-                let pendingHTLCsForwardable = peer2Event.getValueAsPendingHtlCsForwardable()!
+                let pendingHTLCsForwardable = peer2Event.getValueAsPendingHtlcsForwardable()!
                 print("forwardable time: \(pendingHTLCsForwardable.getTimeForwardable())")
                 peer2.channelManager.processPendingHtlcForwards()
                 print("processed pending HTLC forwards")
@@ -754,7 +754,7 @@ public class HumanObjectPeerTestInstance {
                 guard case .PendingHTLCsForwardable = peer1Event.getValueType() else {
                     return XCTAssert(false, "Expected .PendingHTLCsForwardable, got \(peer1Event.getValueType())")
                 }
-                let pendingHTLCsForwardable = peer1Event.getValueAsPendingHtlCsForwardable()!
+                let pendingHTLCsForwardable = peer1Event.getValueAsPendingHtlcsForwardable()!
                 print("forwardable time: \(pendingHTLCsForwardable.getTimeForwardable())")
                 peer1.channelManager.processPendingHtlcForwards()
                 print("processed pending HTLC forwards")
