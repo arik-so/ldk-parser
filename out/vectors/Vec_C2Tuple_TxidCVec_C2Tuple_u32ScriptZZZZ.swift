@@ -44,7 +44,7 @@
 						
 						let rustArray = array.map { (currentValueDepth1) in
 							
-						let currentValueDepth1Tuple = Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(tuple: currentValueDepth1)
+						let currentValueDepth1Tuple = Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(tuple: currentValueDepth1).danglingClone()
 				
 							return currentValueDepth1Tuple.cType!
 						}

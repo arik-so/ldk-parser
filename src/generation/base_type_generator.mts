@@ -150,7 +150,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					// it's not supposed to happen, but if it's void, for some reason it somehow does
 					continue;
 				}
-			} else if (!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && !(currentArgument.type instanceof RustArray) && swiftMethodName !== 'free' && !(currentArgument.type instanceof RustPrimitiveWrapper)) {
+			} else if (!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && !(currentArgument.type instanceof RustArray) && swiftMethodName !== 'free' && !(currentArgument.type instanceof RustPrimitiveWrapper) && !(currentArgument.type instanceof RustPrimitive) && !(currentArgument.type instanceof RustTrait)) {
 				// TODO: figure out the exact condition
 				passesNonCloneableArgumentsByValue = true;
 			}
@@ -177,7 +177,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 		if (passesNonCloneableArgumentsByValue) {
 			// not true yet
-			// console.log('Method passes non-cloneable arguments by value:', method.name);
+			console.log('Method passes non-cloneable arguments by value:', method.name);
 		}
 
 		// don't mark return types from C as optional because they will be automatically force-unwrapped
@@ -552,6 +552,47 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			deferredCleanup: ''
 		};
 
+		let dangleInfix = ''; // the dangle must come before the clone
+		let cloneInfix = '';
+		if (!(argument.type instanceof RustTrait) && !argument.isAsteriskPointer && !(argument.type instanceof RustPrimitive) && !this.isElidedType(argument.type)) {
+			if (this.hasCloneMethod(argument.type)) {
+				// cloneInfix = '.clone()';
+				if (argument.type instanceof RustNullableOption) {
+					if (argument.type.someVariant.type instanceof RustPrimitive) {
+						// no need to clone options that are made right here
+						cloneInfix = '';
+					}
+				} else if (argument.type instanceof RustVector) {
+					if (argument.type.deepestIterateeType instanceof RustPrimitive) {
+						// no need to clone a vector that is made right in place
+						cloneInfix = '';
+					}
+				}
+			} else {
+				if (argument.type instanceof RustVector) {
+					if (!(argument.type.deepestIterateeType instanceof RustPrimitive) && !this.hasCloneMethod(argument.type.deepestIterateeType)) {
+						dangleInfix = '.dangle()';
+					}
+				}
+			}
+		}
+
+		if (containerType && this.isElidedType(containerType)) {
+			// determine whether this is an initialization of that container
+			if (containerType instanceof RustVector) {
+				if (argument.type === containerType.iterateeField.type) {
+					if(this.hasCloneMethod(argument.type)){
+						// the array is gonna get passed to C, and the array is gonna get cleaned
+						// to make sure this value doesn't also get freed after the array gets freed,
+						// the clone must be dangled
+						cloneInfix = '.danglingClone()'
+					} else {
+						// console.log('uncloneable vector entry:', containerType.iterateeField.type.constructor.name)
+					}
+				}
+			}
+		}
+
 		if (argument.type === containerType) {
 			// we're passing self
 			preparedArgument.accessor = 'self.cType!';
@@ -561,25 +602,25 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedArgument.name += 'Option';
 				// TODO: figure out when label should be `some: `
 				preparedArgument.conversion += `
-						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(some: ${publicName})
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(some: ${publicName})${dangleInfix}${cloneInfix}
 				`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustTuple) {
 				preparedArgument.name += 'Tuple';
 				preparedArgument.conversion += `
-						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(tuple: ${publicName})
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(tuple: ${publicName})${cloneInfix}
 				`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustPrimitiveWrapper) {
 				preparedArgument.name += 'PrimitiveWrapper';
 				preparedArgument.conversion += `
-						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})${cloneInfix}
 				`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustVector) {
 				preparedArgument.name += 'Vector';
 				preparedArgument.conversion += `
-						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(array: ${publicName})
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(array: ${publicName})${cloneInfix}
 				`;
 				// figure out when it needs to be dangled
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
@@ -589,7 +630,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else if (argument.type instanceof RustTrait) {
 				preparedArgument.accessor = preparedArgument.name + '.activate().cType!';
 			} else if (argument.type instanceof RustStruct || argument.type instanceof RustTaggedValueEnum || argument.type instanceof RustResult) {
-				preparedArgument.accessor = preparedArgument.name + '.cType!';
+				preparedArgument.accessor = preparedArgument.name + `${cloneInfix}.cType!`;
 			} else if (argument.type instanceof RustPrimitiveEnum) {
 				preparedArgument.accessor = preparedArgument.name + '.getCValue()';
 			} else if (argument.type instanceof RustArray) {

@@ -44,7 +44,7 @@
 						
 						let rustArray = array.map { (currentValueDepth1) in
 							
-						let currentValueDepth1Tuple = Tuple_PublicKeyTypeZ(tuple: currentValueDepth1)
+						let currentValueDepth1Tuple = Tuple_PublicKeyTypeZ(tuple: currentValueDepth1).danglingClone()
 				
 							return currentValueDepth1Tuple.cType!
 						}

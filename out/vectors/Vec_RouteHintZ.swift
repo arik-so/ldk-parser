@@ -44,7 +44,7 @@
 						
 						let rustArray = array.map { (currentValueDepth1) in
 							
-							return currentValueDepth1.cType!
+							return currentValueDepth1.danglingClone().cType!
 						}
 				
 
