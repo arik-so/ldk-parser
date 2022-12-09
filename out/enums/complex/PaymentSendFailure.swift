@@ -333,7 +333,7 @@
 						/// The errors themselves, in the same order as the route hops.
 						public func getResults() -> [Result_NoneAPIErrorZ] {
 							// return value (do some wrapping)
-							let returnValue = Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.results).getValue()
+							let returnValue = Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.results).dangle().getValue()
 
 							return returnValue;
 						}
@@ -345,7 +345,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getFailedPathsRetry() -> Bindings.RouteParameters {
 							// return value (do some wrapping)
-							let returnValue = Bindings.RouteParameters(cType: self.cType!.failed_paths_retry)
+							let returnValue = Bindings.RouteParameters(cType: self.cType!.failed_paths_retry, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -353,7 +353,7 @@
 						/// The payment id for the payment, which is now at least partially pending.
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).dangle().getValue()
 
 							return returnValue;
 						}

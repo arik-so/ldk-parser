@@ -335,7 +335,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getMsg() -> Bindings.ErrorMessage {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ErrorMessage(cType: self.cType!.msg)
+							let returnValue = Bindings.ErrorMessage(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -389,7 +389,7 @@
 						/// The message to send.
 						public func getMsg() -> Bindings.ErrorMessage {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ErrorMessage(cType: self.cType!.msg)
+							let returnValue = Bindings.ErrorMessage(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -443,7 +443,7 @@
 						/// The message to send.
 						public func getMsg() -> Bindings.WarningMessage {
 							// return value (do some wrapping)
-							let returnValue = Bindings.WarningMessage(cType: self.cType!.msg)
+							let returnValue = Bindings.WarningMessage(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}

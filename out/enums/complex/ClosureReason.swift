@@ -443,7 +443,7 @@
 						/// a security vulnerability in the terminal emulator or the logging subsystem.
 						public func getPeerMsg() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.peer_msg).getValue()
+							let returnValue = Str(cType: self.cType!.peer_msg).dangle().getValue()
 
 							return returnValue;
 						}
@@ -497,7 +497,7 @@
 						/// A developer-readable error message which we generated.
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.err).getValue()
+							let returnValue = Str(cType: self.cType!.err).dangle().getValue()
 
 							return returnValue;
 						}

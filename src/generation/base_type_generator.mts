@@ -704,16 +704,24 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					dangleSuffix = '.dangle()';
 				}
 
-				// if the container type is not elided, the return type must be a struct field
+				/**
+				 * If the return type is actually a struct field, it means that this method is
+				 * a field accessor, i. e. it's probably wrapping some field on the container's
+				 * cType property in a Swift class.
+				 *
+				 * Should that returned value outlive the type whose value is being accessed, it
+				 * might break that returned value, which is why the container type must be
+				 * anchored inside the return.
+				 *
+				 * Additionally, given that the container and the return value both wrap the same
+				 * memory, only one of the two may be freed, and we choose the container, which is
+				 * why the returned value must be dangled.
+				 */
 				if (returnType instanceof RustStructField) {
-
-					if (containerType instanceof RustResult || containerType instanceof RustTaggedValueEnum) {
-						if (!this.isElidedType(returnType.type)) {
-							anchorInfix = ', anchor: self';
-						}
-						dangleSuffix = '.dangle()';
+					if (!this.isElidedType(returnType.type)) {
+						anchorInfix = ', anchor: self';
 					}
-
+					dangleSuffix = '.dangle()';
 				}
 
 				// if (containerType instanceof RustStruct && returnType instanceof RustStructField) {

@@ -400,7 +400,7 @@
 						/// The 4-byte IPv4 address
 						public func getAddr() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = FourBytes(cType: self.cType!.addr).getValue()
+							let returnValue = FourBytes(cType: self.cType!.addr).dangle().getValue()
 
 							return returnValue;
 						}
@@ -462,7 +462,7 @@
 						/// The 16-byte IPv6 address
 						public func getAddr() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = SixteenBytes(cType: self.cType!.addr).getValue()
+							let returnValue = SixteenBytes(cType: self.cType!.addr).dangle().getValue()
 
 							return returnValue;
 						}
@@ -524,7 +524,7 @@
 						/// The ed25519 long-term public key of the peer
 						public func getEd25519Pubkey() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.ed25519_pubkey).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.ed25519_pubkey).dangle().getValue()
 
 							return returnValue;
 						}
@@ -602,7 +602,7 @@
 						/// The hostname on which the node is listening.
 						public func getHostname() -> Bindings.Hostname {
 							// return value (do some wrapping)
-							let returnValue = Bindings.Hostname(cType: self.cType!.hostname)
+							let returnValue = Bindings.Hostname(cType: self.cType!.hostname, anchor: self).dangle()
 
 							return returnValue;
 						}

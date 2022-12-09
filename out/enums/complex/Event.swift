@@ -921,7 +921,7 @@
 						/// [`ChannelManager::funding_transaction_generated`]: crate::ln::channelmanager::ChannelManager::funding_transaction_generated
 						public func getTemporaryChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.temporary_channel_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.temporary_channel_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -932,7 +932,7 @@
 						/// [`ChannelManager::funding_transaction_generated`]: crate::ln::channelmanager::ChannelManager::funding_transaction_generated
 						public func getCounterpartyNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.counterparty_node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.counterparty_node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -948,7 +948,7 @@
 						/// The script which should be used in the transaction output.
 						public func getOutputScript() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = Vec_u8Z(cType: self.cType!.output_script).getValue()
+							let returnValue = Vec_u8Z(cType: self.cType!.output_script).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1014,7 +1014,7 @@
 						/// not stop you from registering duplicate payment hashes for inbound payments.
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1031,7 +1031,7 @@
 						/// payment is to pay an invoice or to send a spontaneous payment.
 						public func getPurpose() -> PaymentPurpose {
 							// return value (do some wrapping)
-							let returnValue = PaymentPurpose(cType: self.cType!.purpose)
+							let returnValue = PaymentPurpose(cType: self.cType!.purpose, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1086,7 +1086,7 @@
 						/// registering duplicate payment hashes for inbound payments.
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1103,7 +1103,7 @@
 						/// spontaneous payment.
 						public func getPurpose() -> PaymentPurpose {
 							// return value (do some wrapping)
-							let returnValue = PaymentPurpose(cType: self.cType!.purpose)
+							let returnValue = PaymentPurpose(cType: self.cType!.purpose, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1163,7 +1163,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1173,7 +1173,7 @@
 						/// store it somehow!
 						public func getPaymentPreimage() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_preimage).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_preimage).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1183,7 +1183,7 @@
 						/// [`ChannelManager::send_payment`]: crate::ln::channelmanager::ChannelManager::send_payment
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1258,7 +1258,7 @@
 						/// [`ChannelManager::abandon_payment`]: crate::ln::channelmanager::ChannelManager::abandon_payment
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1268,7 +1268,7 @@
 						/// [`ChannelManager::send_payment`]: crate::ln::channelmanager::ChannelManager::send_payment
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1326,7 +1326,7 @@
 						/// [`ChannelManager::retry_payment`]: crate::ln::channelmanager::ChannelManager::retry_payment
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1338,7 +1338,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1348,7 +1348,7 @@
 						/// May contain a closed channel if the HTLC sent along the path was fulfilled on chain.
 						public func getPath() -> [RouteHop] {
 							// return value (do some wrapping)
-							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).getValue()
+							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1409,7 +1409,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1419,7 +1419,7 @@
 						/// [`ChannelManager::send_payment`]: crate::ln::channelmanager::ChannelManager::send_payment
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1475,7 +1475,7 @@
 						/// The payment path that failed.
 						public func getPath() -> [RouteHop] {
 							// return value (do some wrapping)
-							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).getValue()
+							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1505,7 +1505,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getRetry() -> Bindings.RouteParameters {
 							// return value (do some wrapping)
-							let returnValue = Bindings.RouteParameters(cType: self.cType!.retry)
+							let returnValue = Bindings.RouteParameters(cType: self.cType!.retry, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1561,7 +1561,7 @@
 						/// [`ChannelManager::send_probe`]: crate::ln::channelmanager::ChannelManager::send_probe
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1571,7 +1571,7 @@
 						/// [`ChannelManager::send_probe`]: crate::ln::channelmanager::ChannelManager::send_probe
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1579,7 +1579,7 @@
 						/// The payment path that was successful.
 						public func getPath() -> [RouteHop] {
 							// return value (do some wrapping)
-							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).getValue()
+							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1635,7 +1635,7 @@
 						/// [`ChannelManager::send_probe`]: crate::ln::channelmanager::ChannelManager::send_probe
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1645,7 +1645,7 @@
 						/// [`ChannelManager::send_probe`]: crate::ln::channelmanager::ChannelManager::send_probe
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1653,7 +1653,7 @@
 						/// The payment path that failed.
 						public func getPath() -> [RouteHop] {
 							// return value (do some wrapping)
-							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).getValue()
+							let returnValue = Vec_RouteHopZ(cType: self.cType!.path).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1776,7 +1776,7 @@
 						/// The outputs which you should store as spendable by you.
 						public func getOutputs() -> [SpendableOutputDescriptor] {
 							// return value (do some wrapping)
-							let returnValue = Vec_SpendableOutputDescriptorZ(cType: self.cType!.outputs).getValue()
+							let returnValue = Vec_SpendableOutputDescriptorZ(cType: self.cType!.outputs).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1833,7 +1833,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getPrevChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.prev_channel_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.prev_channel_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1844,7 +1844,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getNextChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.next_channel_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.next_channel_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1928,7 +1928,7 @@
 						/// resolving the channel are likely still awaiting confirmation.
 						public func getChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1952,7 +1952,7 @@
 						/// The reason the channel was closed.
 						public func getReason() -> ClosureReason {
 							// return value (do some wrapping)
-							let returnValue = ClosureReason(cType: self.cType!.reason)
+							let returnValue = ClosureReason(cType: self.cType!.reason, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -2006,7 +2006,7 @@
 						/// The channel_id of the channel which has been closed.
 						public func getChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -2014,7 +2014,7 @@
 						/// The full transaction received from the user
 						public func getTransaction() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = Transaction(cType: self.cType!.transaction).getValue()
+							let returnValue = Transaction(cType: self.cType!.transaction).dangle().getValue()
 
 							return returnValue;
 						}
@@ -2075,7 +2075,7 @@
 						/// [`ChannelManager::force_close_without_broadcasting_txn`]: crate::ln::channelmanager::ChannelManager::force_close_without_broadcasting_txn
 						public func getTemporaryChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.temporary_channel_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.temporary_channel_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -2091,7 +2091,7 @@
 						/// [`ChannelManager::force_close_without_broadcasting_txn`]: crate::ln::channelmanager::ChannelManager::force_close_without_broadcasting_txn
 						public func getCounterpartyNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.counterparty_node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.counterparty_node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -2129,7 +2129,7 @@
 						/// [`ChannelManager`]: crate::ln::channelmanager::ChannelManager
 						public func getChannelType() -> Bindings.ChannelTypeFeatures {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ChannelTypeFeatures(cType: self.cType!.channel_type)
+							let returnValue = Bindings.ChannelTypeFeatures(cType: self.cType!.channel_type, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -2183,7 +2183,7 @@
 						/// The channel over which the HTLC was received.
 						public func getPrevChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.prev_channel_id).getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.prev_channel_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -2191,7 +2191,7 @@
 						/// Destination of the HTLC that failed to be processed.
 						public func getFailedNextDestination() -> HTLCDestination {
 							// return value (do some wrapping)
-							let returnValue = HTLCDestination(cType: self.cType!.failed_next_destination)
+							let returnValue = HTLCDestination(cType: self.cType!.failed_next_destination, anchor: self).dangle()
 
 							return returnValue;
 						}

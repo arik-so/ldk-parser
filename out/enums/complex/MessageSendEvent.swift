@@ -944,7 +944,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -952,7 +952,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> Bindings.AcceptChannel {
 							// return value (do some wrapping)
-							let returnValue = Bindings.AcceptChannel(cType: self.cType!.msg)
+							let returnValue = Bindings.AcceptChannel(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1006,7 +1006,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1014,7 +1014,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> Bindings.OpenChannel {
 							// return value (do some wrapping)
-							let returnValue = Bindings.OpenChannel(cType: self.cType!.msg)
+							let returnValue = Bindings.OpenChannel(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1068,7 +1068,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1076,7 +1076,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> Bindings.FundingCreated {
 							// return value (do some wrapping)
-							let returnValue = Bindings.FundingCreated(cType: self.cType!.msg)
+							let returnValue = Bindings.FundingCreated(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1130,7 +1130,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1138,7 +1138,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> Bindings.FundingSigned {
 							// return value (do some wrapping)
-							let returnValue = Bindings.FundingSigned(cType: self.cType!.msg)
+							let returnValue = Bindings.FundingSigned(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1192,7 +1192,7 @@
 						/// The node_id of the node which should receive these message(s)
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1200,7 +1200,7 @@
 						/// The channel_ready message which should be sent.
 						public func getMsg() -> Bindings.ChannelReady {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ChannelReady(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelReady(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1254,7 +1254,7 @@
 						/// The node_id of the node which should receive these message(s)
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1262,7 +1262,7 @@
 						/// The announcement_signatures message which should be sent.
 						public func getMsg() -> Bindings.AnnouncementSignatures {
 							// return value (do some wrapping)
-							let returnValue = Bindings.AnnouncementSignatures(cType: self.cType!.msg)
+							let returnValue = Bindings.AnnouncementSignatures(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1316,7 +1316,7 @@
 						/// The node_id of the node which should receive these message(s)
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1324,7 +1324,7 @@
 						/// The update messages which should be sent. ALL messages in the struct should be sent!
 						public func getUpdates() -> Bindings.CommitmentUpdate {
 							// return value (do some wrapping)
-							let returnValue = Bindings.CommitmentUpdate(cType: self.cType!.updates)
+							let returnValue = Bindings.CommitmentUpdate(cType: self.cType!.updates, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1378,7 +1378,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1386,7 +1386,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> Bindings.RevokeAndACK {
 							// return value (do some wrapping)
-							let returnValue = Bindings.RevokeAndACK(cType: self.cType!.msg)
+							let returnValue = Bindings.RevokeAndACK(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1440,7 +1440,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1448,7 +1448,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> Bindings.ClosingSigned {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ClosingSigned(cType: self.cType!.msg)
+							let returnValue = Bindings.ClosingSigned(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1502,7 +1502,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1510,7 +1510,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> Bindings.Shutdown {
 							// return value (do some wrapping)
-							let returnValue = Bindings.Shutdown(cType: self.cType!.msg)
+							let returnValue = Bindings.Shutdown(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1564,7 +1564,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1572,7 +1572,7 @@
 						/// The message which should be sent.
 						public func getMsg() -> Bindings.ChannelReestablish {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ChannelReestablish(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelReestablish(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1626,7 +1626,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1634,7 +1634,7 @@
 						/// The channel_announcement which should be sent.
 						public func getMsg() -> Bindings.ChannelAnnouncement {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ChannelAnnouncement(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelAnnouncement(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1642,7 +1642,7 @@
 						/// The followup channel_update which should be sent.
 						public func getUpdateMsg() -> Bindings.ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.update_msg)
+							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.update_msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1696,7 +1696,7 @@
 						/// The channel_announcement which should be sent.
 						public func getMsg() -> Bindings.ChannelAnnouncement {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ChannelAnnouncement(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelAnnouncement(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1704,7 +1704,7 @@
 						/// The followup channel_update which should be sent.
 						public func getUpdateMsg() -> Bindings.ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.update_msg)
+							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.update_msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1758,7 +1758,7 @@
 						/// The channel_update which should be sent.
 						public func getMsg() -> Bindings.ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1812,7 +1812,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1820,7 +1820,7 @@
 						/// The channel_update which should be sent.
 						public func getMsg() -> Bindings.ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.msg)
+							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1874,7 +1874,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1882,7 +1882,7 @@
 						/// The action which should be taken.
 						public func getAction() -> ErrorAction {
 							// return value (do some wrapping)
-							let returnValue = ErrorAction(cType: self.cType!.action)
+							let returnValue = ErrorAction(cType: self.cType!.action, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1936,7 +1936,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -1944,7 +1944,7 @@
 						/// The query_channel_range which should be sent.
 						public func getMsg() -> Bindings.QueryChannelRange {
 							// return value (do some wrapping)
-							let returnValue = Bindings.QueryChannelRange(cType: self.cType!.msg)
+							let returnValue = Bindings.QueryChannelRange(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -1998,7 +1998,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -2006,7 +2006,7 @@
 						/// The query_short_channel_ids which should be sent.
 						public func getMsg() -> Bindings.QueryShortChannelIds {
 							// return value (do some wrapping)
-							let returnValue = Bindings.QueryShortChannelIds(cType: self.cType!.msg)
+							let returnValue = Bindings.QueryShortChannelIds(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -2060,7 +2060,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -2068,7 +2068,7 @@
 						/// The reply_channel_range which should be sent.
 						public func getMsg() -> Bindings.ReplyChannelRange {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ReplyChannelRange(cType: self.cType!.msg)
+							let returnValue = Bindings.ReplyChannelRange(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -2122,7 +2122,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}
@@ -2130,7 +2130,7 @@
 						/// The gossip_timestamp_filter which should be sent.
 						public func getMsg() -> Bindings.GossipTimestampFilter {
 							// return value (do some wrapping)
-							let returnValue = Bindings.GossipTimestampFilter(cType: self.cType!.msg)
+							let returnValue = Bindings.GossipTimestampFilter(cType: self.cType!.msg, anchor: self).dangle()
 
 							return returnValue;
 						}

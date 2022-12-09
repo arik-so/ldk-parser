@@ -356,7 +356,7 @@
 						/// The funding outpoint of the [`ChannelMonitor`] that was updated
 						public func getFundingTxo() -> Bindings.OutPoint {
 							// return value (do some wrapping)
-							let returnValue = Bindings.OutPoint(cType: self.cType!.funding_txo)
+							let returnValue = Bindings.OutPoint(cType: self.cType!.funding_txo, anchor: self).dangle()
 
 							return returnValue;
 						}

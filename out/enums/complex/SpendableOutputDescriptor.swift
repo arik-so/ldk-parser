@@ -366,7 +366,7 @@
 						/// The outpoint which is spendable
 						public func getOutpoint() -> Bindings.OutPoint {
 							// return value (do some wrapping)
-							let returnValue = Bindings.OutPoint(cType: self.cType!.outpoint)
+							let returnValue = Bindings.OutPoint(cType: self.cType!.outpoint, anchor: self).dangle()
 
 							return returnValue;
 						}
@@ -374,7 +374,7 @@
 						/// The output which is referenced by the given outpoint.
 						public func getOutput() -> Bindings.TxOut {
 							// return value (do some wrapping)
-							let returnValue = Bindings.TxOut(cType: self.cType!.output)
+							let returnValue = Bindings.TxOut(cType: self.cType!.output, anchor: self).dangle()
 
 							return returnValue;
 						}

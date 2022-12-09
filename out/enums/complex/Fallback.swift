@@ -304,7 +304,7 @@
 						/// 
 						public func getVersion() -> UInt8 {
 							// return value (do some wrapping)
-							let returnValue = u5(cType: self.cType!.version).getValue()
+							let returnValue = u5(cType: self.cType!.version).dangle().getValue()
 
 							return returnValue;
 						}
@@ -312,7 +312,7 @@
 						/// 
 						public func getProgram() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = Vec_u8Z(cType: self.cType!.program).getValue()
+							let returnValue = Vec_u8Z(cType: self.cType!.program).dangle().getValue()
 
 							return returnValue;
 						}
