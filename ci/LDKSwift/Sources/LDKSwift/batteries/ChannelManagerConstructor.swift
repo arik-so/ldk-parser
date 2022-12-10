@@ -248,7 +248,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
             print("stopped TCP peer handler")
         }
         print("stopping background processor")
-        self.backgroundProcessor?.dangle().stop()
+        self.backgroundProcessor?.stop()
         print("stopped background processor")
         /*
         if let processor = self.backgroundProcessor {
