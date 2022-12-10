@@ -102,12 +102,17 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			// avoid elision
 			const iterateeSwiftTypeName = this.getPublicTypeSignature(type.iterateeField.type, type.iterateeField.type);
 
+			const artificialIntermediateContext = new RustFunctionArgument();
+			artificialIntermediateContext.contextualName = 'currentEntry';
+			artificialIntermediateContext.type = type.iterateeField.type;
+			const intermediateLayerRustValueUnwrapper = this.prepareSwiftArgumentForRust(artificialIntermediateContext, type);
+
 			dimensionalityReduction = `
 						var lowerDimension = [${iterateeRustTypeName}]()
 						for currentEntry in array {
-							let convertedEntry = ${iterateeSwiftTypeName}(array: currentEntry)
-							lowerDimension.append(convertedEntry.cType!)
-							try! self.addAnchor(anchor: convertedEntry)
+							${intermediateLayerRustValueUnwrapper.conversion}
+							lowerDimension.append(${intermediateLayerRustValueUnwrapper.accessor})
+							try! self.addAnchor(anchor: ${intermediateLayerRustValueUnwrapper.name})
 						}
 			`;
 			dataContainerInitializationArgumentName = 'lowerDimension';

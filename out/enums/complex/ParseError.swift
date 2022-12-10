@@ -507,7 +507,7 @@
 					public class func initWithInvalidSliceLength(a: String) -> ParseError {
 						// native call variable prep
 						
-						let aPrimitiveWrapper = Str(value: a).dangle()
+						let aPrimitiveWrapper = Str(value: a).setCFreeability(freeable: false)
 				
 						aPrimitiveWrapper.cType!.chars_is_owned = false
 					

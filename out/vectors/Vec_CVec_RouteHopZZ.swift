@@ -46,9 +46,11 @@
 						
 						var lowerDimension = [LDKCVec_RouteHopZ]()
 						for currentEntry in array {
-							let convertedEntry = Vec_RouteHopZ(array: currentEntry)
-							lowerDimension.append(convertedEntry.cType!)
-							try! self.addAnchor(anchor: convertedEntry)
+							
+						let currentEntryVector = Vec_RouteHopZ(array: currentEntry).dangle()
+				
+							lowerDimension.append(currentEntryVector.cType!)
+							try! self.addAnchor(anchor: currentEntryVector)
 						}
 			
 

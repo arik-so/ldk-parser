@@ -588,12 +588,24 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 		}
 
+		/**
+		 * TODO: explain
+		 * TODO: find out, such that I'm able to explain
+		 */
+		let isOwnershipFieldSafelyEditable = false;
+		if(argument.type instanceof RustPrimitiveWrapper){
+			isOwnershipFieldSafelyEditable = true;
+		}else if(argument.type.getName() === 'LDKChannelMonitor' && isElidedContainerContent){
+			isOwnershipFieldSafelyEditable = true;
+		}
+
 		let memoryManagementInfix = '';
 		if (!(argument.type instanceof RustTrait) && this.hasFreeMethod(argument.type) && argument.type !== containerType) {
+
 			if (this.hasCloneMethod(argument.type)) {
 				if (this.hasOwnershipField(argument.type)) {
 					memoryManagementInfix = '.dynamicallyDangledClone()';
-					if(isElidedContainerContent) {
+					if(isOwnershipFieldSafelyEditable) {
 						// normally we wanna avoid it, except for LDKChannelMonitors
 						memoryManagementInfix = '.clone().setCFreeability(freeable: false)'
 					}
@@ -604,7 +616,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else {
 				// just gotta hope for the best
 				memoryManagementInfix = '.dangle()';
-				if(isElidedContainerContent && this.hasOwnershipField(argument.type)){
+				if(isOwnershipFieldSafelyEditable && this.hasOwnershipField(argument.type)){
 					// normally we wanna avoid it, except for LDKChannelMonitors
 					memoryManagementInfix = '.setCFreeability(freeable: false)';
 				}

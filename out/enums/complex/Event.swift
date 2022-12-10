@@ -602,7 +602,7 @@
 						
 						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
 				
-						let transactionPrimitiveWrapper = Transaction(value: transaction).dangle()
+						let transactionPrimitiveWrapper = Transaction(value: transaction).setCFreeability(freeable: false)
 				
 						transactionPrimitiveWrapper.cType!.data_is_owned = false
 					

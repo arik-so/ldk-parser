@@ -162,7 +162,7 @@
 					public class func initWithCounterpartyForceClosed(peerMsg: String) -> ClosureReason {
 						// native call variable prep
 						
-						let peerMsgPrimitiveWrapper = Str(value: peerMsg).dangle()
+						let peerMsgPrimitiveWrapper = Str(value: peerMsg).setCFreeability(freeable: false)
 				
 						peerMsgPrimitiveWrapper.cType!.chars_is_owned = false
 					
@@ -261,7 +261,7 @@
 					public class func initWithProcessingError(err: String) -> ClosureReason {
 						// native call variable prep
 						
-						let errPrimitiveWrapper = Str(value: err).dangle()
+						let errPrimitiveWrapper = Str(value: err).setCFreeability(freeable: false)
 				
 						errPrimitiveWrapper.cType!.chars_is_owned = false
 					

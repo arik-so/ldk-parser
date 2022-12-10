@@ -71,7 +71,7 @@
 				
 
 						// native method call
-						let nativeCallResult = C2Tuple_OutPointScriptZ_new(a.clone().setCFreeability(freeable: false).cType!, bVector.cType!)
+						let nativeCallResult = C2Tuple_OutPointScriptZ_new(a.dynamicallyDangledClone().cType!, bVector.cType!)
 
 						// cleanup
 						

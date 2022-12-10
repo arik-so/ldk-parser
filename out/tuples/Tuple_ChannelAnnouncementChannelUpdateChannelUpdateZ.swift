@@ -69,7 +69,7 @@
 						
 
 						// native method call
-						let nativeCallResult = C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ_new(a.clone().setCFreeability(freeable: false).cType!, b.clone().setCFreeability(freeable: false).cType!, c.clone().setCFreeability(freeable: false).cType!)
+						let nativeCallResult = C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ_new(a.dynamicallyDangledClone().cType!, b.dynamicallyDangledClone().cType!, c.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						

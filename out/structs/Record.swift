@@ -131,7 +131,7 @@
 					public func setArgs(val: String) {
 						// native call variable prep
 						
-						let valPrimitiveWrapper = Str(value: val).dangle()
+						let valPrimitiveWrapper = Str(value: val).setCFreeability(freeable: false)
 				
 						valPrimitiveWrapper.cType!.chars_is_owned = false
 					
@@ -181,7 +181,7 @@
 					public func setModulePath(val: String) {
 						// native call variable prep
 						
-						let valPrimitiveWrapper = Str(value: val).dangle()
+						let valPrimitiveWrapper = Str(value: val).setCFreeability(freeable: false)
 				
 						valPrimitiveWrapper.cType!.chars_is_owned = false
 					
@@ -231,7 +231,7 @@
 					public func setFile(val: String) {
 						// native call variable prep
 						
-						let valPrimitiveWrapper = Str(value: val).dangle()
+						let valPrimitiveWrapper = Str(value: val).setCFreeability(freeable: false)
 				
 						valPrimitiveWrapper.cType!.chars_is_owned = false
 					

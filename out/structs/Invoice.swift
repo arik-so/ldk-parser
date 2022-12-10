@@ -605,7 +605,7 @@
 					public class func fromStr(s: String) -> Result_InvoiceParseOrSemanticErrorZ {
 						// native call variable prep
 						
-						let sPrimitiveWrapper = Str(value: s).dangle()
+						let sPrimitiveWrapper = Str(value: s).setCFreeability(freeable: false)
 				
 						sPrimitiveWrapper.cType!.chars_is_owned = false
 					

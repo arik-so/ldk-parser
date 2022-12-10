@@ -83,7 +83,7 @@
 					public func setErr(val: String) {
 						// native call variable prep
 						
-						let valPrimitiveWrapper = Str(value: val).dangle()
+						let valPrimitiveWrapper = Str(value: val).setCFreeability(freeable: false)
 				
 						valPrimitiveWrapper.cType!.chars_is_owned = false
 					
@@ -156,7 +156,7 @@
 					public init(errArg: String, actionArg: ErrorAction) {
 						// native call variable prep
 						
-						let errArgPrimitiveWrapper = Str(value: errArg).dangle()
+						let errArgPrimitiveWrapper = Str(value: errArg).setCFreeability(freeable: false)
 				
 						errArgPrimitiveWrapper.cType!.chars_is_owned = false
 					

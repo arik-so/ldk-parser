@@ -46,9 +46,11 @@
 						
 						var lowerDimension = [LDKCVec_u8Z]()
 						for currentEntry in array {
-							let convertedEntry = Vec_u8Z(array: currentEntry)
-							lowerDimension.append(convertedEntry.cType!)
-							try! self.addAnchor(anchor: convertedEntry)
+							
+						let currentEntryVector = Vec_u8Z(array: currentEntry).dangle()
+				
+							lowerDimension.append(currentEntryVector.cType!)
+							try! self.addAnchor(anchor: currentEntryVector)
 						}
 			
 

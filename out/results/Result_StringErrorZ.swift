@@ -43,7 +43,7 @@
 					public class func initWithOk(o: String) -> Result_StringErrorZ {
 						// native call variable prep
 						
-						let oPrimitiveWrapper = Str(value: o).dangle()
+						let oPrimitiveWrapper = Str(value: o).setCFreeability(freeable: false)
 				
 						oPrimitiveWrapper.cType!.chars_is_owned = false
 					

@@ -760,7 +760,7 @@
 					
 						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
 				
-						let fundingTransactionPrimitiveWrapper = Transaction(value: fundingTransaction).dangle()
+						let fundingTransactionPrimitiveWrapper = Transaction(value: fundingTransaction).setCFreeability(freeable: false)
 				
 						fundingTransactionPrimitiveWrapper.cType!.data_is_owned = false
 					
