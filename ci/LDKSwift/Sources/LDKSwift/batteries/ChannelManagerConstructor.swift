@@ -197,15 +197,15 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
 
         for (currentChannelMonitor, _) in self.channel_monitors {
             let chainMonitorWatch = self.chain_monitor.asWatch()
-            let monitorClone = currentChannelMonitor.clone()
-            monitorClone.cType?.is_owned = false
+            let monitorClone = currentChannelMonitor.dynamicallyDangledClone()
+            // monitorClone.cType?.is_owned = false
             let (outPoint, _) = monitorClone.getFundingTxo()
             print("watching channel")
             let monitorWatchResult = chainMonitorWatch.watchChannel(fundingTxo: outPoint, monitor: monitorClone)
             if monitorWatchResult != .Completed {
                 Bindings.print("Some issue occurred with a chainMonitorWatch.watch_channel call: \(monitorWatchResult)", severity: .WARNING)
             }
-            monitorClone.cType?.is_owned = true
+            // monitorClone.cType?.is_owned = true
         }
 
         self.customPersister = CustomChannelManagerPersister(handler: persister)

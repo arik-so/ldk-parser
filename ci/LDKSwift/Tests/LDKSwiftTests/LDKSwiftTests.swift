@@ -48,7 +48,7 @@ class LDKSwiftTests: XCTestCase {
 
         let keysManager = KeysManager(seed: seed, startingTimeSecs: timestamp_seconds, startingTimeNanos: timestamp_nanos)
         let config = UserConfig.initWithDefault()
-
+        
         let keysInterface = keysManager.asKeysInterface()
 
         let serialized_channel_manager = LDKTestFixtures.serializedChannelManager
@@ -56,7 +56,7 @@ class LDKSwiftTests: XCTestCase {
         let serializedChannelMonitors: [[UInt8]] = LDKTestFixtures.serializedChannelMonitors
 
         var monitors: [LDKChannelMonitor] = []
-
+        
         let channel_manager_constructor = try ChannelManagerConstructor(
                 channel_manager_serialized: serialized_channel_manager,
                 channel_monitors_serialized: serializedChannelMonitors,
@@ -122,6 +122,7 @@ class LDKSwiftTests: XCTestCase {
     }
 
     func testMemoryLeaksIncrementally() throws {
+        // Bindings.suspendFreedom = true
         try incrementalMemoryLeakTest()
     }
 

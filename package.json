@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"description": "Parser for LDK lightning.h header files",
 	"type": "module",
-	"main": "index.mjs",
+	"main": "src/index.mjs",
 	"scripts": {
 		"test": "./node_modules/mocha/bin/_mocha ./test",
 		"tsc": "./node_modules/typescript/bin/tsc --build tsconfig.json"
