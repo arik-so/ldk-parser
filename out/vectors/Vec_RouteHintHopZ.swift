@@ -44,7 +44,7 @@
 						
 						let rustArray = array.map { (currentValueDepth1) in
 							
-							return currentValueDepth1.danglingClone().cType!
+							return currentValueDepth1.clone().setCFreeability(freeable: false).cType!
 						}
 				
 

@@ -73,7 +73,7 @@
 				
 
 						// native method call
-						let nativeCallResult = C3Tuple_OutPointCVec_MonitorEventZPublicKeyZ_new(a.danglingClone().cType!, bVector.cType!, cPrimitiveWrapper.cType!)
+						let nativeCallResult = C3Tuple_OutPointCVec_MonitorEventZPublicKeyZ_new(a.clone().setCFreeability(freeable: false).cType!, bVector.cType!, cPrimitiveWrapper.cType!)
 
 						// cleanup
 						

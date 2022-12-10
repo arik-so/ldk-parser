@@ -584,9 +584,13 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				// the array is gonna get passed to C, and the array is gonna get cleaned
 				// to make sure this value doesn't also get freed after the array gets freed,
 				// the clone must be dangled
-				memoryManagementInfix = '.danglingClone()';
+				if (this.hasOwnershipField(nestedType)) {
+					memoryManagementInfix = '.clone().setCFreeability(freeable: false)'
+				}else {
+					memoryManagementInfix = '.danglingClone()';
+				}
 			} else if (this.hasFreeMethod(nestedType)) {
-				if(this.hasOwnershipField(argument.type)){
+				if (this.hasOwnershipField(argument.type)) {
 					// memoryManagementInfix += '.setCFreeability(freeable: false)'
 				} else {
 					// throw new Error(`Uncloneable, but freeable argument without an ownership field: ${nestedType.typeDescription}`);

@@ -71,7 +71,7 @@
 				
 
 						// native method call
-						let nativeCallResult = C3Tuple_RawInvoice_u832InvoiceSignatureZ_new(a.danglingClone().cType!, bPrimitiveWrapper.cType!, c.danglingClone().cType!)
+						let nativeCallResult = C3Tuple_RawInvoice_u832InvoiceSignatureZ_new(a.clone().setCFreeability(freeable: false).cType!, bPrimitiveWrapper.cType!, c.clone().setCFreeability(freeable: false).cType!)
 
 						// cleanup
 						
