@@ -79,6 +79,13 @@ export class OpaqueRustStruct extends RustType {
 export class RustStruct extends RustType {
 	fields: { [name: string]: RustStructField } = {};
 
+	/**
+	 * Some structs may have an ownership field, like LDKChannelMonitor
+	 * For those structs, when we instantiate them, we need to make sure we set owned to false.
+	 * Then, we might wanna consider setting it back to true immediately prior to freeing them.
+	 */
+	ownershipField: RustStructField | null;
+
 	public get name(): string {
 		return this._name!;
 	}

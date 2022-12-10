@@ -152,7 +152,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_TxidCVec_C2Tuple_u32TxOutZZZ \(self.instanceNumber).")
 							self.free()

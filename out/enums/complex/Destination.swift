@@ -148,7 +148,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Destination \(self.instanceNumber).")
 							self.free()

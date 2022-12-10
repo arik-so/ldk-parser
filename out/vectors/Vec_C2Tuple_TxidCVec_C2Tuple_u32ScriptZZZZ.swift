@@ -107,7 +107,7 @@ Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(cType: currentCType).dangle().getValue()
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Vec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ \(self.instanceNumber).")
 							self.free()

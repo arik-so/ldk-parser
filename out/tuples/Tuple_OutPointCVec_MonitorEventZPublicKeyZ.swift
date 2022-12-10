@@ -160,7 +160,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_OutPointCVec_MonitorEventZPublicKeyZ \(self.instanceNumber).")
 							self.free()

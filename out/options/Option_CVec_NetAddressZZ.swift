@@ -122,7 +122,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Option_CVec_NetAddressZZ \(self.instanceNumber).")
 							self.free()

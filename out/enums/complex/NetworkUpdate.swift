@@ -287,7 +287,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing NetworkUpdate \(self.instanceNumber).")
 							self.free()

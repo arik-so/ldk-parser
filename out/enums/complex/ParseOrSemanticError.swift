@@ -227,7 +227,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing ParseOrSemanticError \(self.instanceNumber).")
 							self.free()

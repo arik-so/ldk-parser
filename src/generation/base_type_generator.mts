@@ -881,6 +881,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 	protected renderDanglingCloneAndDeinitMethods(type: RustType): string {
 		let danglingCloneCode = '';
 		let freeCode = '';
+		let ownershipSetterCode = '';
 
 		const swiftTypeName = this.swiftTypeName(type);
 
@@ -892,6 +893,14 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					return dangledClone
 				}
 			`;
+		}
+
+		if(type instanceof RustStruct && type.ownershipField){
+			ownershipSetterCode = `
+				internal func setCFreeability(freeable: Bool) {
+					self.cType!.${type.ownershipField.contextualName} = freeable
+				}
+			`
 		}
 
 		if (this.hasFreeMethod(type)) {
@@ -911,7 +920,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			`;
 		}
 
-		return Generator.reindentCode(danglingCloneCode + freeCode, 5);
+
+
+		return Generator.reindentCode(danglingCloneCode + ownershipSetterCode + freeCode, 5);
 
 	}
 

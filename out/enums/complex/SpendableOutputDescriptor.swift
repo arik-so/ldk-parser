@@ -320,7 +320,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing SpendableOutputDescriptor \(self.instanceNumber).")
 							self.free()

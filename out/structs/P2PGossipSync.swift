@@ -199,11 +199,15 @@
 					}
 
 					
+					internal func setCFreeability(freeable: Bool) {
+						self.cType!.is_owned = freeable
+					}
+			
 					deinit {
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing P2PGossipSync \(self.instanceNumber).")
 							self.free()

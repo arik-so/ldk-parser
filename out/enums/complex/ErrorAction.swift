@@ -293,7 +293,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing ErrorAction \(self.instanceNumber).")
 							self.free()

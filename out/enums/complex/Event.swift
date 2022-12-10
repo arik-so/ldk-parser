@@ -856,7 +856,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Event \(self.instanceNumber).")
 							self.free()

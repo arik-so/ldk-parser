@@ -150,7 +150,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_PaymentHashPaymentSecretZ \(self.instanceNumber).")
 							self.free()

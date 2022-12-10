@@ -211,7 +211,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing PaymentError \(self.instanceNumber).")
 							self.free()

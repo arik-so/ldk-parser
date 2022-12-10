@@ -1485,11 +1485,15 @@
 						return dangledClone
 					}
 			
+					internal func setCFreeability(freeable: Bool) {
+						self.cType!.is_owned = freeable
+					}
+			
 					deinit {
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing InitFeatures \(self.instanceNumber).")
 							self.free()

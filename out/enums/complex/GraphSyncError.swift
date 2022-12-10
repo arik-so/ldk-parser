@@ -176,7 +176,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing GraphSyncError \(self.instanceNumber).")
 							self.free()

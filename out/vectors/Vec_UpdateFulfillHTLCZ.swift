@@ -105,7 +105,7 @@ UpdateFulfillHTLC(cType: currentCType, anchor: self).dangle()
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Vec_UpdateFulfillHTLCZ \(self.instanceNumber).")
 							self.free()

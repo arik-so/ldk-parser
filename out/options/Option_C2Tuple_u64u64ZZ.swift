@@ -122,7 +122,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Option_C2Tuple_u64u64ZZ \(self.instanceNumber).")
 							self.free()

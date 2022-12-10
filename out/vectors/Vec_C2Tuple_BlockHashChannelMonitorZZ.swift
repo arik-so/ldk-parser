@@ -107,7 +107,7 @@ Tuple_BlockHashChannelMonitorZ(cType: currentCType).dangle().getValue()
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Vec_C2Tuple_BlockHashChannelMonitorZZ \(self.instanceNumber).")
 							self.free()

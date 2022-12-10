@@ -288,7 +288,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing EffectiveCapacity \(self.instanceNumber).")
 							self.free()

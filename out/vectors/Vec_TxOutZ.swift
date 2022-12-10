@@ -105,7 +105,7 @@ TxOut(cType: currentCType, anchor: self).dangle()
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Vec_TxOutZ \(self.instanceNumber).")
 							self.free()

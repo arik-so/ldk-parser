@@ -116,7 +116,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Vec_CVec_u8ZZ \(self.instanceNumber).")
 							self.free()

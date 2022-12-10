@@ -166,7 +166,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Bech32Error \(self.instanceNumber).")
 							self.free()

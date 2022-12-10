@@ -156,7 +156,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_RawInvoice_u832InvoiceSignatureZ \(self.instanceNumber).")
 							self.free()

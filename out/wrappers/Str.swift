@@ -84,11 +84,15 @@
 					}
 
 					
+					internal func setCFreeability(freeable: Bool) {
+						self.cType!.chars_is_owned = freeable
+					}
+			
 					deinit {
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Str \(self.instanceNumber).")
 							self.free()

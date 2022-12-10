@@ -173,7 +173,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_BlockHashChannelMonitorZ \(self.instanceNumber).")
 							self.free()

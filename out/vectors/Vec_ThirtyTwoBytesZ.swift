@@ -107,7 +107,7 @@ ThirtyTwoBytes(cType: currentCType).dangle().getValue()
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Vec_ThirtyTwoBytesZ \(self.instanceNumber).")
 							self.free()

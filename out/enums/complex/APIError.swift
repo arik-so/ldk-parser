@@ -363,7 +363,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing APIError \(self.instanceNumber).")
 							self.free()

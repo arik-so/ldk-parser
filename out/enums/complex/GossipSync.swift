@@ -178,7 +178,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing GossipSync \(self.instanceNumber).")
 							self.free()

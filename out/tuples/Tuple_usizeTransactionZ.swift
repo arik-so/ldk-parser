@@ -150,7 +150,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_usizeTransactionZ \(self.instanceNumber).")
 							self.free()

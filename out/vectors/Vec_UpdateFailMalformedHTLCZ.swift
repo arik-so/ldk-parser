@@ -105,7 +105,7 @@ UpdateFailMalformedHTLC(cType: currentCType, anchor: self).dangle()
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Vec_UpdateFailMalformedHTLCZ \(self.instanceNumber).")
 							self.free()

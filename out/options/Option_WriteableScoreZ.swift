@@ -90,7 +90,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Option_WriteableScoreZ \(self.instanceNumber).")
 							self.free()

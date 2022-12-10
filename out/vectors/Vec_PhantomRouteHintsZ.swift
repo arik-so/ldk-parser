@@ -105,7 +105,7 @@ PhantomRouteHints(cType: currentCType, anchor: self).dangle()
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Vec_PhantomRouteHintsZ \(self.instanceNumber).")
 							self.free()

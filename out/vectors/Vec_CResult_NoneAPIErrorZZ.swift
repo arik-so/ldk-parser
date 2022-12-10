@@ -105,7 +105,7 @@ Result_NoneAPIErrorZ(cType: currentCType, anchor: self).dangle()
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Vec_CResult_NoneAPIErrorZZ \(self.instanceNumber).")
 							self.free()

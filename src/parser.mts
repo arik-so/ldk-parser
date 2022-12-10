@@ -335,6 +335,9 @@ export default class Parser {
 			} else if (descriptor instanceof RustStruct) {
 				for (const currentFieldLine of objectLines) {
 					const currentField = this.parseStructField(currentFieldLine);
+					if(currentField.contextualName.includes('owned') && currentField.type instanceof RustPrimitive){
+						descriptor.ownershipField = currentField;
+					}
 					if (descriptor instanceof RustVector) {
 						if (currentField.contextualName === 'data') {
 							descriptor.iterateeField = currentField;

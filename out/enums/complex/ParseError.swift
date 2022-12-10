@@ -655,7 +655,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing ParseError \(self.instanceNumber).")
 							self.free()

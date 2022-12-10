@@ -268,7 +268,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Fallback \(self.instanceNumber).")
 							self.free()

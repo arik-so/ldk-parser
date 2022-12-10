@@ -120,7 +120,7 @@
 						if Bindings.suspendFreedom {
 							return
 						}
-						
+
 						if !self.dangling {
 							Bindings.print("Freeing Option_MonitorEventZ \(self.instanceNumber).")
 							self.free()
