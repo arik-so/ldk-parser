@@ -214,7 +214,7 @@
 						
 
 						// native method call
-						let nativeCallResult = NetAddress_hostname(hostname.danglingClone().cType!, port)
+						let nativeCallResult = NetAddress_hostname(hostname.clone().cType!, port)
 
 						// cleanup
 						

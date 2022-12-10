@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRawDataPart>) in
-				RawDataPart_set_timestamp(thisPtrPointer, val.danglingClone().cType!)
+				RawDataPart_set_timestamp(thisPtrPointer, val.clone().cType!)
 						}
 				
 

@@ -242,7 +242,7 @@
 				
 
 						// native method call
-						let nativeCallResult = HolderCommitmentTransaction_new(commitmentTx.danglingClone().cType!, counterpartySigPrimitiveWrapper.cType!, counterpartyHtlcSigsVector.cType!, holderFundingKeyPrimitiveWrapper.cType!, counterpartyFundingKeyPrimitiveWrapper.cType!)
+						let nativeCallResult = HolderCommitmentTransaction_new(commitmentTx.clone().cType!, counterpartySigPrimitiveWrapper.cType!, counterpartyHtlcSigsVector.cType!, holderFundingKeyPrimitiveWrapper.cType!, counterpartyFundingKeyPrimitiveWrapper.cType!)
 
 						// cleanup
 						

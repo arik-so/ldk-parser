@@ -306,7 +306,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
-				CommitmentUpdate_set_update_fee(thisPtrPointer, val.danglingClone().cType!)
+				CommitmentUpdate_set_update_fee(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -352,7 +352,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
-				CommitmentUpdate_set_commitment_signed(thisPtrPointer, val.danglingClone().cType!)
+				CommitmentUpdate_set_commitment_signed(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -381,7 +381,7 @@
 				
 
 						// native method call
-						let nativeCallResult = CommitmentUpdate_new(updateAddHtlcsArgVector.cType!, updateFulfillHtlcsArgVector.cType!, updateFailHtlcsArgVector.cType!, updateFailMalformedHtlcsArgVector.cType!, updateFeeArg.danglingClone().cType!, commitmentSignedArg.danglingClone().cType!)
+						let nativeCallResult = CommitmentUpdate_new(updateAddHtlcsArgVector.cType!, updateFulfillHtlcsArgVector.cType!, updateFailHtlcsArgVector.cType!, updateFailMalformedHtlcsArgVector.cType!, updateFeeArg.clone().cType!, commitmentSignedArg.clone().cType!)
 
 						// cleanup
 						

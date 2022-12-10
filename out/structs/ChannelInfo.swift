@@ -89,7 +89,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_features(thisPtrPointer, val.danglingClone().cType!)
+				ChannelInfo_set_features(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -135,7 +135,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_node_one(thisPtrPointer, val.danglingClone().cType!)
+				ChannelInfo_set_node_one(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -198,7 +198,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_one_to_two(thisPtrPointer, val.danglingClone().cType!)
+				ChannelInfo_set_one_to_two(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -244,7 +244,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_node_two(thisPtrPointer, val.danglingClone().cType!)
+				ChannelInfo_set_node_two(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -307,7 +307,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_two_to_one(thisPtrPointer, val.danglingClone().cType!)
+				ChannelInfo_set_two_to_one(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -424,7 +424,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_announcement_message(thisPtrPointer, val.danglingClone().cType!)
+				ChannelInfo_set_announcement_message(thisPtrPointer, val.clone().cType!)
 						}
 				
 

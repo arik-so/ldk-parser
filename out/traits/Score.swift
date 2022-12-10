@@ -291,7 +291,7 @@
 						withUnsafePointer(to: source.cType!) { (sourcePointer: UnsafePointer<LDKNodeId>) in
 				
 						withUnsafePointer(to: target.cType!) { (targetPointer: UnsafePointer<LDKNodeId>) in
-				self.cType!.channel_penalty_msat(self.cType!.this_arg, shortChannelId, sourcePointer, targetPointer, usage.danglingClone().cType!)
+				self.cType!.channel_penalty_msat(self.cType!.this_arg, shortChannelId, sourcePointer, targetPointer, usage.clone().cType!)
 						}
 				
 						}

@@ -89,7 +89,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-				DelayedPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.danglingClone().cType!)
+				DelayedPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -233,7 +233,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-				DelayedPaymentOutputDescriptor_set_output(thisPtrPointer, val.danglingClone().cType!)
+				DelayedPaymentOutputDescriptor_set_output(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -412,7 +412,7 @@
 				
 
 						// native method call
-						let nativeCallResult = DelayedPaymentOutputDescriptor_new(outpointArg.danglingClone().cType!, perCommitmentPointArgPrimitiveWrapper.cType!, toSelfDelayArg, outputArg.danglingClone().cType!, revocationPubkeyArgPrimitiveWrapper.cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
+						let nativeCallResult = DelayedPaymentOutputDescriptor_new(outpointArg.clone().cType!, perCommitmentPointArgPrimitiveWrapper.cType!, toSelfDelayArg, outputArg.clone().cType!, revocationPubkeyArgPrimitiveWrapper.cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
 
 						// cleanup
 						

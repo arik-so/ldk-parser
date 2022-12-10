@@ -572,23 +572,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (!(argument.type instanceof RustTrait) && !argument.isAsteriskPointer && !this.isElidedType(argument.type) && this.hasFreeMethod(argument.type)) {
 			if (this.hasCloneMethod(argument.type)) {
 				// we're kinda relying here on Rust immediately freeing this object upon consumption
-				/*if (this.hasOwnershipField(argument.type)) {
-					cloneInfix = '.clone()';
-					freeabilityInfix = '.setCFreeability(freeable: false)';
-				} else {
-					cloneInfix = '.danglingClone()';
-				}*/
-				memoryManagementInfix = '.danglingClone()';
+				memoryManagementInfix = '.clone()';
 			} else if (this.hasFreeMethod(argument.type)) { // could just be else
 				// if we can't clone it, we never really want to release this object
 				memoryManagementInfix = '.dangle()';
-
-				// if we have an ownership field, no need to dangle this object. We can just release it later
-				// if (this.hasOwnershipField(argument.type)) {
-				// 	freeabilityInfix = '.setCFreeability(freeable: false)';
-				// } else {
-				// 	memoryManagementInfix = '.dangle()';
-				// }
 			}
 		}
 

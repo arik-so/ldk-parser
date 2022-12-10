@@ -137,7 +137,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-				RouteHop_set_node_features(thisPtrPointer, val.danglingClone().cType!)
+				RouteHop_set_node_features(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -231,7 +231,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-				RouteHop_set_channel_features(thisPtrPointer, val.danglingClone().cType!)
+				RouteHop_set_channel_features(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -352,7 +352,7 @@
 				
 
 						// native method call
-						let nativeCallResult = RouteHop_new(pubkeyArgPrimitiveWrapper.cType!, nodeFeaturesArg.danglingClone().cType!, shortChannelIdArg, channelFeaturesArg.danglingClone().cType!, feeMsatArg, cltvExpiryDeltaArg)
+						let nativeCallResult = RouteHop_new(pubkeyArgPrimitiveWrapper.cType!, nodeFeaturesArg.clone().cType!, shortChannelIdArg, channelFeaturesArg.clone().cType!, feeMsatArg, cltvExpiryDeltaArg)
 
 						// cleanup
 						

@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-				NodeAnnouncementInfo_set_features(thisPtrPointer, val.danglingClone().cType!)
+				NodeAnnouncementInfo_set_features(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -237,7 +237,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-				NodeAnnouncementInfo_set_alias(thisPtrPointer, val.danglingClone().cType!)
+				NodeAnnouncementInfo_set_alias(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -358,7 +358,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-				NodeAnnouncementInfo_set_announcement_message(thisPtrPointer, val.danglingClone().cType!)
+				NodeAnnouncementInfo_set_announcement_message(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -383,7 +383,7 @@
 				
 
 						// native method call
-						let nativeCallResult = NodeAnnouncementInfo_new(featuresArg.danglingClone().cType!, lastUpdateArg, rgbArgPrimitiveWrapper.cType!, aliasArg.danglingClone().cType!, addressesArgVector.cType!, announcementMessageArg.danglingClone().cType!)
+						let nativeCallResult = NodeAnnouncementInfo_new(featuresArg.clone().cType!, lastUpdateArg, rgbArgPrimitiveWrapper.cType!, aliasArg.clone().cType!, addressesArgVector.cType!, announcementMessageArg.clone().cType!)
 
 						// cleanup
 						

@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCounterpartyChannelTransactionParameters>) in
-				CounterpartyChannelTransactionParameters_set_pubkeys(thisPtrPointer, val.danglingClone().cType!)
+				CounterpartyChannelTransactionParameters_set_pubkeys(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -154,7 +154,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CounterpartyChannelTransactionParameters_new(pubkeysArg.danglingClone().cType!, selectedContestDelayArg)
+						let nativeCallResult = CounterpartyChannelTransactionParameters_new(pubkeysArg.clone().cType!, selectedContestDelayArg)
 
 						// cleanup
 						

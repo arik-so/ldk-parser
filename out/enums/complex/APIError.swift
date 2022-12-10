@@ -263,7 +263,7 @@
 						
 
 						// native method call
-						let nativeCallResult = APIError_incompatible_shutdown_script(script.danglingClone().cType!)
+						let nativeCallResult = APIError_incompatible_shutdown_script(script.clone().cType!)
 
 						// cleanup
 						

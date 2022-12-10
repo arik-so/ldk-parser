@@ -145,7 +145,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChainParameters>) in
-				ChainParameters_set_best_block(thisPtrPointer, val.danglingClone().cType!)
+				ChainParameters_set_best_block(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -166,7 +166,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChainParameters_new(networkArg.getCValue(), bestBlockArg.danglingClone().cType!)
+						let nativeCallResult = ChainParameters_new(networkArg.getCValue(), bestBlockArg.clone().cType!)
 
 						// cleanup
 						

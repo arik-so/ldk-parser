@@ -279,7 +279,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
-				ChannelAnnouncement_set_contents(thisPtrPointer, val.danglingClone().cType!)
+				ChannelAnnouncement_set_contents(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -308,7 +308,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelAnnouncement_new(nodeSignature_1ArgPrimitiveWrapper.cType!, nodeSignature_2ArgPrimitiveWrapper.cType!, bitcoinSignature_1ArgPrimitiveWrapper.cType!, bitcoinSignature_2ArgPrimitiveWrapper.cType!, contentsArg.danglingClone().cType!)
+						let nativeCallResult = ChannelAnnouncement_new(nodeSignature_1ArgPrimitiveWrapper.cType!, nodeSignature_2ArgPrimitiveWrapper.cType!, bitcoinSignature_1ArgPrimitiveWrapper.cType!, bitcoinSignature_2ArgPrimitiveWrapper.cType!, contentsArg.clone().cType!)
 
 						// cleanup
 						

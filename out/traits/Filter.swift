@@ -248,7 +248,7 @@
 						
 
 						// native method call
-						let nativeCallResult = self.cType!.register_output(self.cType!.this_arg, output.danglingClone().cType!)
+						let nativeCallResult = self.cType!.register_output(self.cType!.this_arg, output.clone().cType!)
 
 						// cleanup
 						

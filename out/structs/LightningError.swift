@@ -137,7 +137,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKLightningError>) in
-				LightningError_set_action(thisPtrPointer, val.danglingClone().cType!)
+				LightningError_set_action(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -162,7 +162,7 @@
 					
 
 						// native method call
-						let nativeCallResult = LightningError_new(errArgPrimitiveWrapper.cType!, actionArg.danglingClone().cType!)
+						let nativeCallResult = LightningError_new(errArgPrimitiveWrapper.cType!, actionArg.clone().cType!)
 
 						// cleanup
 						

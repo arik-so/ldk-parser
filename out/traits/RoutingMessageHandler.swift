@@ -619,7 +619,7 @@
 				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_reply_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.danglingClone().cType!)
+						let nativeCallResult = self.cType!.handle_reply_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
 
 						// cleanup
 						
@@ -641,7 +641,7 @@
 				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_reply_short_channel_ids_end(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.danglingClone().cType!)
+						let nativeCallResult = self.cType!.handle_reply_short_channel_ids_end(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
 
 						// cleanup
 						
@@ -661,7 +661,7 @@
 				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_query_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.danglingClone().cType!)
+						let nativeCallResult = self.cType!.handle_query_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
 
 						// cleanup
 						
@@ -681,7 +681,7 @@
 				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_query_short_channel_ids(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.danglingClone().cType!)
+						let nativeCallResult = self.cType!.handle_query_short_channel_ids(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
 
 						// cleanup
 						

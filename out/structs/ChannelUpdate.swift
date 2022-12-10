@@ -135,7 +135,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdate>) in
-				ChannelUpdate_set_contents(thisPtrPointer, val.danglingClone().cType!)
+				ChannelUpdate_set_contents(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -158,7 +158,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelUpdate_new(signatureArgPrimitiveWrapper.cType!, contentsArg.danglingClone().cType!)
+						let nativeCallResult = ChannelUpdate_new(signatureArgPrimitiveWrapper.cType!, contentsArg.clone().cType!)
 
 						// cleanup
 						

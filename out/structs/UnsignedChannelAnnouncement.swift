@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-				UnsignedChannelAnnouncement_set_features(thisPtrPointer, val.danglingClone().cType!)
+				UnsignedChannelAnnouncement_set_features(thisPtrPointer, val.clone().cType!)
 						}
 				
 

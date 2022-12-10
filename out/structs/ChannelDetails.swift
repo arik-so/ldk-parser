@@ -145,7 +145,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
-				ChannelDetails_set_counterparty(thisPtrPointer, val.danglingClone().cType!)
+				ChannelDetails_set_counterparty(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -216,7 +216,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
-				ChannelDetails_set_funding_txo(thisPtrPointer, val.danglingClone().cType!)
+				ChannelDetails_set_funding_txo(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -283,7 +283,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
-				ChannelDetails_set_channel_type(thisPtrPointer, val.danglingClone().cType!)
+				ChannelDetails_set_channel_type(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -1382,7 +1382,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
-				ChannelDetails_set_config(thisPtrPointer, val.danglingClone().cType!)
+				ChannelDetails_set_config(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -1421,7 +1421,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelDetails_new(channelIdArgPrimitiveWrapper.cType!, counterpartyArg.danglingClone().cType!, fundingTxoArg.danglingClone().cType!, channelTypeArg.danglingClone().cType!, shortChannelIdArgOption.cType!, outboundScidAliasArgOption.cType!, inboundScidAliasArgOption.cType!, channelValueSatoshisArg, unspendablePunishmentReserveArgOption.cType!, userChannelIdArg, balanceMsatArg, outboundCapacityMsatArg, nextOutboundHtlcLimitMsatArg, inboundCapacityMsatArg, confirmationsRequiredArgOption.cType!, forceCloseSpendDelayArgOption.cType!, isOutboundArg, isChannelReadyArg, isUsableArg, isPublicArg, inboundHtlcMinimumMsatArgOption.cType!, inboundHtlcMaximumMsatArgOption.cType!, configArg.danglingClone().cType!)
+						let nativeCallResult = ChannelDetails_new(channelIdArgPrimitiveWrapper.cType!, counterpartyArg.clone().cType!, fundingTxoArg.clone().cType!, channelTypeArg.clone().cType!, shortChannelIdArgOption.cType!, outboundScidAliasArgOption.cType!, inboundScidAliasArgOption.cType!, channelValueSatoshisArg, unspendablePunishmentReserveArgOption.cType!, userChannelIdArg, balanceMsatArg, outboundCapacityMsatArg, nextOutboundHtlcLimitMsatArg, inboundCapacityMsatArg, confirmationsRequiredArgOption.cType!, forceCloseSpendDelayArgOption.cType!, isOutboundArg, isChannelReadyArg, isUsableArg, isPublicArg, inboundHtlcMinimumMsatArgOption.cType!, inboundHtlcMaximumMsatArgOption.cType!, configArg.clone().cType!)
 
 						// cleanup
 						

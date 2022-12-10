@@ -262,7 +262,7 @@
 						
 
 						// native method call
-						let nativeCallResult = self.cType!.watch_channel(self.cType!.this_arg, fundingTxo.danglingClone().cType!, monitor.danglingClone().cType!)
+						let nativeCallResult = self.cType!.watch_channel(self.cType!.this_arg, fundingTxo.clone().cType!, monitor.clone().cType!)
 
 						// cleanup
 						
@@ -284,7 +284,7 @@
 						
 
 						// native method call
-						let nativeCallResult = self.cType!.update_channel(self.cType!.this_arg, fundingTxo.danglingClone().cType!, update.danglingClone().cType!)
+						let nativeCallResult = self.cType!.update_channel(self.cType!.this_arg, fundingTxo.clone().cType!, update.clone().cType!)
 
 						// cleanup
 						

@@ -252,7 +252,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSigned>) in
-				ClosingSigned_set_fee_range(thisPtrPointer, val.danglingClone().cType!)
+				ClosingSigned_set_fee_range(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -277,7 +277,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ClosingSigned_new(channelIdArgPrimitiveWrapper.cType!, feeSatoshisArg, signatureArgPrimitiveWrapper.cType!, feeRangeArg.danglingClone().cType!)
+						let nativeCallResult = ClosingSigned_new(channelIdArgPrimitiveWrapper.cType!, feeSatoshisArg, signatureArgPrimitiveWrapper.cType!, feeRangeArg.clone().cType!)
 
 						// cleanup
 						

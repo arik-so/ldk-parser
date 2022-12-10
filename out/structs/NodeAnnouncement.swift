@@ -135,7 +135,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncement>) in
-				NodeAnnouncement_set_contents(thisPtrPointer, val.danglingClone().cType!)
+				NodeAnnouncement_set_contents(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -158,7 +158,7 @@
 				
 
 						// native method call
-						let nativeCallResult = NodeAnnouncement_new(signatureArgPrimitiveWrapper.cType!, contentsArg.danglingClone().cType!)
+						let nativeCallResult = NodeAnnouncement_new(signatureArgPrimitiveWrapper.cType!, contentsArg.clone().cType!)
 
 						// cleanup
 						

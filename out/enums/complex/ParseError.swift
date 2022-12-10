@@ -205,7 +205,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ParseError_bech32_error(a.danglingClone().cType!)
+						let nativeCallResult = ParseError_bech32_error(a.clone().cType!)
 
 						// cleanup
 						

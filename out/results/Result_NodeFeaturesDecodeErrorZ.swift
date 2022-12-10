@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_NodeFeaturesDecodeErrorZ_ok(o.danglingClone().cType!)
+						let nativeCallResult = CResult_NodeFeaturesDecodeErrorZ_ok(o.clone().cType!)
 
 						// cleanup
 						
@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_NodeFeaturesDecodeErrorZ_err(e.danglingClone().cType!)
+						let nativeCallResult = CResult_NodeFeaturesDecodeErrorZ_err(e.clone().cType!)
 
 						// cleanup
 						

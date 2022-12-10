@@ -143,7 +143,7 @@
 						
 
 						// native method call
-						let nativeCallResult = PrivateRoute_new(hops.danglingClone().cType!)
+						let nativeCallResult = PrivateRoute_new(hops.clone().cType!)
 
 						// cleanup
 						

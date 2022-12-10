@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInit>) in
-				Init_set_features(thisPtrPointer, val.danglingClone().cType!)
+				Init_set_features(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -164,7 +164,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Init_new(featuresArg.danglingClone().cType!, remoteNetworkAddressArgOption.cType!)
+						let nativeCallResult = Init_new(featuresArg.clone().cType!, remoteNetworkAddressArgOption.cType!)
 
 						// cleanup
 						

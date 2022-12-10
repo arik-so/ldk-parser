@@ -141,7 +141,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChannelManager_new(feeEst.activate().cType!, chainMonitor.activate().cType!, txBroadcaster.activate().cType!, logger.activate().cType!, keysManager.activate().cType!, config.danglingClone().cType!, params.danglingClone().cType!)
+						let nativeCallResult = ChannelManager_new(feeEst.activate().cType!, chainMonitor.activate().cType!, txBroadcaster.activate().cType!, logger.activate().cType!, keysManager.activate().cType!, config.clone().cType!, params.clone().cType!)
 
 						// cleanup
 						
@@ -220,7 +220,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-				ChannelManager_create_channel(thisArgPointer, theirNetworkKeyPrimitiveWrapper.cType!, channelValueSatoshis, pushMsat, userChannelId, overrideConfig.danglingClone().cType!)
+				ChannelManager_create_channel(thisArgPointer, theirNetworkKeyPrimitiveWrapper.cType!, channelValueSatoshis, pushMsat, userChannelId, overrideConfig.clone().cType!)
 						}
 				
 

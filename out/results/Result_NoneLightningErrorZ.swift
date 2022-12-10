@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_NoneLightningErrorZ_err(e.danglingClone().cType!)
+						let nativeCallResult = CResult_NoneLightningErrorZ_err(e.clone().cType!)
 
 						// cleanup
 						

@@ -119,7 +119,7 @@
 						
 
 						// native method call
-						let nativeCallResult = NetworkUpdate_channel_update_message(msg.danglingClone().cType!)
+						let nativeCallResult = NetworkUpdate_channel_update_message(msg.clone().cType!)
 
 						// cleanup
 						

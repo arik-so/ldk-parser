@@ -208,7 +208,7 @@
 						
 
 						// native method call
-						let nativeCallResult = Invoice_from_signed(signedInvoice.danglingClone().cType!)
+						let nativeCallResult = Invoice_from_signed(signedInvoice.clone().cType!)
 
 						// cleanup
 						

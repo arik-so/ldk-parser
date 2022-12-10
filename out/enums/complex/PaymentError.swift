@@ -136,7 +136,7 @@
 						
 
 						// native method call
-						let nativeCallResult = PaymentError_routing(a.danglingClone().cType!)
+						let nativeCallResult = PaymentError_routing(a.clone().cType!)
 
 						// cleanup
 						
@@ -155,7 +155,7 @@
 						
 
 						// native method call
-						let nativeCallResult = PaymentError_sending(a.danglingClone().cType!)
+						let nativeCallResult = PaymentError_sending(a.clone().cType!)
 
 						// cleanup
 						

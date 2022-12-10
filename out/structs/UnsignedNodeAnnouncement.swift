@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
-				UnsignedNodeAnnouncement_set_features(thisPtrPointer, val.danglingClone().cType!)
+				UnsignedNodeAnnouncement_set_features(thisPtrPointer, val.clone().cType!)
 						}
 				
 

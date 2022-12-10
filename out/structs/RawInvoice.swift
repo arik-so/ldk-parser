@@ -95,7 +95,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRawInvoice>) in
-				RawInvoice_set_data(thisPtrPointer, val.danglingClone().cType!)
+				RawInvoice_set_data(thisPtrPointer, val.clone().cType!)
 						}
 				
 

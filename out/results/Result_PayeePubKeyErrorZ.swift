@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_PayeePubKeyErrorZ_ok(o.danglingClone().cType!)
+						let nativeCallResult = CResult_PayeePubKeyErrorZ_ok(o.clone().cType!)
 
 						// cleanup
 						

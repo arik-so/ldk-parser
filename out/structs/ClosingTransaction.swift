@@ -149,7 +149,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ClosingTransaction_new(toHolderValueSat, toCounterpartyValueSat, toHolderScriptVector.cType!, toCounterpartyScriptVector.cType!, fundingOutpoint.danglingClone().cType!)
+						let nativeCallResult = ClosingTransaction_new(toHolderValueSat, toCounterpartyValueSat, toHolderScriptVector.cType!, toCounterpartyScriptVector.cType!, fundingOutpoint.clone().cType!)
 
 						// cleanup
 						
@@ -213,7 +213,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
-				ClosingTransaction_verify(thisArgPointer, fundingOutpoint.danglingClone().cType!)
+				ClosingTransaction_verify(thisArgPointer, fundingOutpoint.clone().cType!)
 						}
 				
 

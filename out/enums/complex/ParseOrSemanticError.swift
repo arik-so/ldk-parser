@@ -109,7 +109,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ParseOrSemanticError_parse_error(a.danglingClone().cType!)
+						let nativeCallResult = ParseOrSemanticError_parse_error(a.clone().cType!)
 
 						// cleanup
 						

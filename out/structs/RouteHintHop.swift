@@ -181,7 +181,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
-				RouteHintHop_set_fees(thisPtrPointer, val.danglingClone().cType!)
+				RouteHintHop_set_fees(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -350,7 +350,7 @@
 				
 
 						// native method call
-						let nativeCallResult = RouteHintHop_new(srcNodeIdArgPrimitiveWrapper.cType!, shortChannelIdArg, feesArg.danglingClone().cType!, cltvExpiryDeltaArg, htlcMinimumMsatArgOption.cType!, htlcMaximumMsatArgOption.cType!)
+						let nativeCallResult = RouteHintHop_new(srcNodeIdArgPrimitiveWrapper.cType!, shortChannelIdArg, feesArg.clone().cType!, cltvExpiryDeltaArg, htlcMinimumMsatArgOption.cType!, htlcMaximumMsatArgOption.cType!)
 
 						// cleanup
 						

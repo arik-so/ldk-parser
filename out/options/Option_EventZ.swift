@@ -40,7 +40,7 @@
 
 						if let some = some {
 														
-							self.cType = COption_EventZ_some(some.danglingClone().cType!)
+							self.cType = COption_EventZ_some(some.clone().cType!)
 						} else {
 							self.cType = COption_EventZ_none()
 						}

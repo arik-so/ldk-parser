@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_StaticPaymentOutputDescriptorDecodeErrorZ_ok(o.danglingClone().cType!)
+						let nativeCallResult = CResult_StaticPaymentOutputDescriptorDecodeErrorZ_ok(o.clone().cType!)
 
 						// cleanup
 						
@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_StaticPaymentOutputDescriptorDecodeErrorZ_err(e.danglingClone().cType!)
+						let nativeCallResult = CResult_StaticPaymentOutputDescriptorDecodeErrorZ_err(e.clone().cType!)
 
 						// cleanup
 						

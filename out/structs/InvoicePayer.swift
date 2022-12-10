@@ -73,7 +73,7 @@
 						
 
 						// native method call
-						let nativeCallResult = InvoicePayer_new(payer.activate().cType!, router.activate().cType!, logger.activate().cType!, eventHandler.activate().cType!, retry.danglingClone().cType!)
+						let nativeCallResult = InvoicePayer_new(payer.activate().cType!, router.activate().cType!, logger.activate().cType!, eventHandler.activate().cType!, retry.clone().cType!)
 
 						// cleanup
 						

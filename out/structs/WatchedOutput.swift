@@ -167,7 +167,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
-				WatchedOutput_set_outpoint(thisPtrPointer, val.danglingClone().cType!)
+				WatchedOutput_set_outpoint(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -242,7 +242,7 @@
 				
 
 						// native method call
-						let nativeCallResult = WatchedOutput_new(blockHashArgPrimitiveWrapper.cType!, outpointArg.danglingClone().cType!, scriptPubkeyArgVector.cType!)
+						let nativeCallResult = WatchedOutput_new(blockHashArgPrimitiveWrapper.cType!, outpointArg.clone().cType!, scriptPubkeyArgVector.cType!)
 
 						// cleanup
 						

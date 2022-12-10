@@ -774,7 +774,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAcceptChannel>) in
-				AcceptChannel_set_channel_type(thisPtrPointer, val.danglingClone().cType!)
+				AcceptChannel_set_channel_type(thisPtrPointer, val.clone().cType!)
 						}
 				
 

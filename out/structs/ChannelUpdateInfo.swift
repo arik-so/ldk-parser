@@ -319,7 +319,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-				ChannelUpdateInfo_set_fees(thisPtrPointer, val.danglingClone().cType!)
+				ChannelUpdateInfo_set_fees(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -388,7 +388,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-				ChannelUpdateInfo_set_last_update_message(thisPtrPointer, val.danglingClone().cType!)
+				ChannelUpdateInfo_set_last_update_message(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -409,7 +409,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChannelUpdateInfo_new(lastUpdateArg, enabledArg, cltvExpiryDeltaArg, htlcMinimumMsatArg, htlcMaximumMsatArg, feesArg.danglingClone().cType!, lastUpdateMessageArg.danglingClone().cType!)
+						let nativeCallResult = ChannelUpdateInfo_new(lastUpdateArg, enabledArg, cltvExpiryDeltaArg, htlcMinimumMsatArg, htlcMaximumMsatArg, feesArg.clone().cType!, lastUpdateMessageArg.clone().cType!)
 
 						// cleanup
 						

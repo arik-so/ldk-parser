@@ -97,7 +97,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
-				RouteParameters_set_payment_params(thisPtrPointer, val.danglingClone().cType!)
+				RouteParameters_set_payment_params(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -210,7 +210,7 @@
 						
 
 						// native method call
-						let nativeCallResult = RouteParameters_new(paymentParamsArg.danglingClone().cType!, finalValueMsatArg, finalCltvExpiryDeltaArg)
+						let nativeCallResult = RouteParameters_new(paymentParamsArg.clone().cType!, finalValueMsatArg, finalCltvExpiryDeltaArg)
 
 						// cleanup
 						

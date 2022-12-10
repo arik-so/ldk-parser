@@ -310,7 +310,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_received(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.danglingClone().cType!)
+						let nativeCallResult = Event_payment_received(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.clone().cType!)
 
 						// cleanup
 						
@@ -331,7 +331,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_claimed(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.danglingClone().cType!)
+						let nativeCallResult = Event_payment_claimed(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.clone().cType!)
 
 						// cleanup
 						
@@ -437,7 +437,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_path_failed(paymentIdPrimitiveWrapper.cType!, paymentHashPrimitiveWrapper.cType!, paymentFailedPermanently, networkUpdateOption.cType!, allPathsFailed, pathVector.cType!, shortChannelIdOption.cType!, retry.danglingClone().cType!)
+						let nativeCallResult = Event_payment_path_failed(paymentIdPrimitiveWrapper.cType!, paymentHashPrimitiveWrapper.cType!, paymentFailedPermanently, networkUpdateOption.cType!, allPathsFailed, pathVector.cType!, shortChannelIdOption.cType!, retry.clone().cType!)
 
 						// cleanup
 						
@@ -583,7 +583,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_channel_closed(channelIdPrimitiveWrapper.cType!, userChannelId, reason.danglingClone().cType!)
+						let nativeCallResult = Event_channel_closed(channelIdPrimitiveWrapper.cType!, userChannelId, reason.clone().cType!)
 
 						// cleanup
 						
@@ -631,7 +631,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_open_channel_request(temporaryChannelIdPrimitiveWrapper.cType!, counterpartyNodeIdPrimitiveWrapper.cType!, fundingSatoshis, pushMsat, channelType.danglingClone().cType!)
+						let nativeCallResult = Event_open_channel_request(temporaryChannelIdPrimitiveWrapper.cType!, counterpartyNodeIdPrimitiveWrapper.cType!, fundingSatoshis, pushMsat, channelType.clone().cType!)
 
 						// cleanup
 						
@@ -652,7 +652,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_htlchandling_failed(prevChannelIdPrimitiveWrapper.cType!, failedNextDestination.danglingClone().cType!)
+						let nativeCallResult = Event_htlchandling_failed(prevChannelIdPrimitiveWrapper.cType!, failedNextDestination.clone().cType!)
 
 						// cleanup
 						

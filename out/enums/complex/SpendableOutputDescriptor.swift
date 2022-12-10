@@ -154,7 +154,7 @@
 						
 
 						// native method call
-						let nativeCallResult = SpendableOutputDescriptor_static_output(outpoint.danglingClone().cType!, output.danglingClone().cType!)
+						let nativeCallResult = SpendableOutputDescriptor_static_output(outpoint.clone().cType!, output.clone().cType!)
 
 						// cleanup
 						
@@ -173,7 +173,7 @@
 						
 
 						// native method call
-						let nativeCallResult = SpendableOutputDescriptor_delayed_payment_output(a.danglingClone().cType!)
+						let nativeCallResult = SpendableOutputDescriptor_delayed_payment_output(a.clone().cType!)
 
 						// cleanup
 						
@@ -192,7 +192,7 @@
 						
 
 						// native method call
-						let nativeCallResult = SpendableOutputDescriptor_static_payment_output(a.danglingClone().cType!)
+						let nativeCallResult = SpendableOutputDescriptor_static_payment_output(a.clone().cType!)
 
 						// cleanup
 						

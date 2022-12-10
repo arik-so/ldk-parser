@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_TxCreationKeysErrorZ_ok(o.danglingClone().cType!)
+						let nativeCallResult = CResult_TxCreationKeysErrorZ_ok(o.clone().cType!)
 
 						// cleanup
 						

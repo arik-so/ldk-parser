@@ -66,7 +66,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ_err(e.danglingClone().cType!)
+						let nativeCallResult = CResult_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ_err(e.clone().cType!)
 
 						// cleanup
 						

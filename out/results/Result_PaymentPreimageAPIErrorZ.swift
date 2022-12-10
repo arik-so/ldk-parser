@@ -66,7 +66,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_PaymentPreimageAPIErrorZ_err(e.danglingClone().cType!)
+						let nativeCallResult = CResult_PaymentPreimageAPIErrorZ_err(e.clone().cType!)
 
 						// cleanup
 						

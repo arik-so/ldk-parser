@@ -95,7 +95,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-				ChannelTransactionParameters_set_holder_pubkeys(thisPtrPointer, val.danglingClone().cType!)
+				ChannelTransactionParameters_set_holder_pubkeys(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -254,7 +254,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-				ChannelTransactionParameters_set_counterparty_parameters(thisPtrPointer, val.danglingClone().cType!)
+				ChannelTransactionParameters_set_counterparty_parameters(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -317,7 +317,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-				ChannelTransactionParameters_set_funding_outpoint(thisPtrPointer, val.danglingClone().cType!)
+				ChannelTransactionParameters_set_funding_outpoint(thisPtrPointer, val.clone().cType!)
 						}
 				
 
@@ -386,7 +386,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChannelTransactionParameters_new(holderPubkeysArg.danglingClone().cType!, holderSelectedContestDelayArg, isOutboundFromHolderArg, counterpartyParametersArg.danglingClone().cType!, fundingOutpointArg.danglingClone().cType!, optAnchorsArg.getCValue())
+						let nativeCallResult = ChannelTransactionParameters_new(holderPubkeysArg.clone().cType!, holderSelectedContestDelayArg, isOutboundFromHolderArg, counterpartyParametersArg.clone().cType!, fundingOutpointArg.clone().cType!, optAnchorsArg.getCValue())
 
 						// cleanup
 						
