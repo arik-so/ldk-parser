@@ -69,7 +69,7 @@
 						
 
 						// native method call
-						let nativeCallResult = C2Tuple_u32TxOutZ_new(a, b.cType!)
+						let nativeCallResult = C2Tuple_u32TxOutZ_new(a, b.danglingClone().cType!)
 
 						// cleanup
 						

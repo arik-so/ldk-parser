@@ -168,7 +168,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				if (isInstanceArgument) {
 					nonCloneableArguments.push('self');
 				} else {
-					nonCloneableArguments.push('`'+swiftArgumentName+'`');
+					nonCloneableArguments.push('`' + swiftArgumentName + '`');
 				}
 			}
 
@@ -575,26 +575,42 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						cloneInfix = '';
 					}
 				}
-			} else if(this.hasFreeMethod(argument.type)) {
+			} else if (this.hasFreeMethod(argument.type)) {
 				dangleInfix = '.dangle()';
 			}
 		}
 
-		if (containerType && this.isElidedType(containerType)) {
+		const handleElidedTypeContentCloneability = (nestedType: RustType) => {
+			if (this.hasCloneMethod(nestedType)) {
+				// the array is gonna get passed to C, and the array is gonna get cleaned
+				// to make sure this value doesn't also get freed after the array gets freed,
+				// the clone must be dangled
+				cloneInfix = '.danglingClone()';
+			} else if (this.hasFreeMethod(nestedType)) {
+				if (nestedType instanceof RustPrimitiveWrapper && !nestedType.ownershipField) {
+					throw new Error(`Uncloneable, but freeable argument without an ownership field: ${nestedType.typeDescription}`);
+				}
+			}
+		}
+		if (containerType && this.isElidedType(containerType) && (this.hasCloneMethod(argument.type) || this.hasFreeMethod(argument.type))) {
 			// determine whether this is an initialization of that container
 			if (containerType instanceof RustVector) {
-				if (argument.type === containerType.iterateeField.type) {
-					if (this.hasCloneMethod(argument.type)) {
-						// the array is gonna get passed to C, and the array is gonna get cleaned
-						// to make sure this value doesn't also get freed after the array gets freed,
-						// the clone must be dangled
-						cloneInfix = '.danglingClone()';
-					} else if (this.hasFreeMethod(argument.type)) {
-						if (argument.type instanceof RustPrimitiveWrapper && !argument.type.ownershipField) {
-							throw new Error(`Uncloneable, but freeable argument without an ownership field: ${argument.type.getName()} (${argument.type.constructor.name})`);
-						}
-					}
+				if (argument.type === containerType.iterateeField.type || argument.type === containerType.deepestIterateeType) {
+					handleElidedTypeContentCloneability(argument.type)
 				}
+			} else if (containerType instanceof RustPrimitiveWrapper) {
+				// nothing to do here
+			} else if (containerType instanceof RustNullableOption) {
+				if (argument.type === containerType.someVariant.type) {
+					handleElidedTypeContentCloneability(argument.type)
+				}
+			} else if (containerType instanceof RustTuple) {
+				const tupleContentTypes = containerType.orderedFields.map(f => f.type);
+				if (tupleContentTypes.includes(argument.type)) {
+					handleElidedTypeContentCloneability(argument.type)
+				}
+			} else {
+				throw new Error(`Some elided type is receiving arguments: ${argument.type.typeDescription}`);
 			}
 		}
 

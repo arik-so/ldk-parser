@@ -71,7 +71,7 @@
 				
 
 						// native method call
-						let nativeCallResult = C2Tuple_BlockHashChannelMonitorZ_new(aPrimitiveWrapper.cType!, b.cType!)
+						let nativeCallResult = C2Tuple_BlockHashChannelMonitorZ_new(aPrimitiveWrapper.cType!, b.danglingClone().cType!)
 
 						// cleanup
 						
