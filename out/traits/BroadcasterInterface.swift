@@ -51,7 +51,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.broadcastTransaction(tx: Transaction(cType: tx).getValue())
+							let swiftCallbackResult = instance.broadcastTransaction(tx: Transaction(cType: tx).dangle().getValue())
 
 							// cleanup
 							
@@ -142,6 +142,8 @@
 						txPrimitiveWrapper.cType!.data_is_owned = false
 					
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.broadcast_transaction(self.cType!.this_arg, txPrimitiveWrapper.cType!)
 
@@ -159,6 +161,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

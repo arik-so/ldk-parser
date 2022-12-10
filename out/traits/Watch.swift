@@ -87,7 +87,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.watchChannel(fundingTxo: OutPoint(cType: funding_txo), monitor: ChannelMonitor(cType: monitor))
+							let swiftCallbackResult = instance.watchChannel(fundingTxo: OutPoint(cType: funding_txo).dangle().dynamicallyDangledClone(), monitor: ChannelMonitor(cType: monitor).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -105,7 +105,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.updateChannel(fundingTxo: OutPoint(cType: funding_txo), update: ChannelMonitorUpdate(cType: update))
+							let swiftCallbackResult = instance.updateChannel(fundingTxo: OutPoint(cType: funding_txo).dangle().dynamicallyDangledClone(), update: ChannelMonitorUpdate(cType: update).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -261,6 +261,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.watch_channel(self.cType!.this_arg, fundingTxo.dynamicallyDangledClone().cType!, monitor.dynamicallyDangledClone().cType!)
 
@@ -281,6 +283,8 @@
 					/// [`update_monitor`]: channelmonitor::ChannelMonitor::update_monitor
 					public override func updateChannel(fundingTxo: OutPoint, update: ChannelMonitorUpdate) -> ChannelMonitorUpdateStatus {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -308,6 +312,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.release_pending_monitor_events(self.cType!.this_arg)
 
@@ -325,6 +331,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

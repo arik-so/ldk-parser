@@ -51,7 +51,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleEvent(event: Event(cType: event.pointee))
+							let swiftCallbackResult = instance.handleEvent(event: Event(cType: event.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -142,6 +142,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: event.danglingClone().cType!) { (eventPointer: UnsafePointer<LDKEvent>) in
@@ -163,6 +165,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

@@ -51,7 +51,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.log(record: Record(cType: record.pointee))
+							let swiftCallbackResult = instance.log(record: Record(cType: record.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -138,6 +138,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: record.dynamicallyDangledClone().cType!) { (recordPointer: UnsafePointer<LDKRecord>) in
@@ -159,6 +161,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

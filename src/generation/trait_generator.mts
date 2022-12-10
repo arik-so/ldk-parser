@@ -283,11 +283,24 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		const preparedReturnValue = this.prepareRustReturnValueForSwift(lambda.returnValue, type);
 
+		let freeBody = '';
+		if(swiftMethodName === 'free'){
+			// TODO: figure out how to handle potentially nullable natively implemented traits
+			freeBody = `
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			`;
+		}
+
 		return `
 					${this.renderDocComment(lambda.documentation, 5)}
 					public override func ${swiftMethodName}(${swiftMethodArguments.join(', ')}) ${returnTypeInfix}{
 						// native call variable prep
 						${nativeCallPrefix}
+
+						${freeBody}
 
 						// native method call
 						let nativeCallResult = ${nativeCallWrapperPrefix}self.cType!.${lambda.name}(${nativeCallValueAccessors.join(', ')})${nativeCallWrapperSuffix}
@@ -350,6 +363,20 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		let needsUnwrapping = argumentType.isAsteriskPointer && !argumentType.isNonnullablePointer;
 
+		let memoryManagementInfix = '';
+		if(!(type instanceof RustTrait) && this.hasFreeMethod(type)){
+			// we wanna dangle this value no matter what, because we don't know the longevity
+			memoryManagementInfix = '.dangle()';
+			if (this.hasCloneMethod(type)) {
+				if (this.hasOwnershipField(type)) {
+					memoryManagementInfix += '.dynamicallyDangledClone()';
+				} else {
+					// we have to assume that Rust will just eat this type
+					memoryManagementInfix += '.clone()';
+				}
+			}
+		}
+
 		if (argumentType.isAsteriskPointer && argumentType.isNonnullablePointer) {
 			// we can simply refer to the pointee without unwrapping it
 			preparedArgument.accessor += '.pointee';
@@ -357,13 +384,13 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		if (type instanceof RustVector || type instanceof RustPrimitiveWrapper || type instanceof RustNullableOption) {
 			preparedArgument.methodCallWrapperPrefix += `${this.swiftTypeName(type)}(cType: `;
-			preparedArgument.methodCallWrapperSuffix += `).getValue()`;
+			preparedArgument.methodCallWrapperSuffix += `)${memoryManagementInfix}.getValue()`;
 		} else if (type instanceof RustTrait) {
 			preparedArgument.methodCallWrapperPrefix += `NativelyImplemented${this.swiftTypeName(type)}(cType: `;
 			preparedArgument.methodCallWrapperSuffix += `)`;
 		} else if (type instanceof RustStruct || type instanceof RustResult || type instanceof RustTaggedValueEnum) {
 			preparedArgument.methodCallWrapperPrefix += `${this.swiftTypeName(type)}(cType: `;
-			preparedArgument.methodCallWrapperSuffix += `)`;
+			preparedArgument.methodCallWrapperSuffix += `)${memoryManagementInfix}`;
 		} else if (type instanceof RustPrimitive) {
 			// nothing to do here
 		} else if (type instanceof RustArray) {

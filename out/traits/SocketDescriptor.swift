@@ -300,6 +300,8 @@
 						let dataPrimitiveWrapper = u8slice(value: data)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.send_data(self.cType!.this_arg, dataPrimitiveWrapper.cType!, resumeRead)
 
@@ -320,6 +322,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.disconnect_socket(self.cType!.this_arg)
 
@@ -335,6 +339,8 @@
 					/// Checks if two objects are equal given this object's this_arg pointer and another object.
 					public override func eq(otherArg: SocketDescriptor) -> Bool {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -359,6 +365,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.hash(self.cType!.this_arg)
 
@@ -376,6 +384,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

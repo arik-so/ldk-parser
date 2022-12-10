@@ -160,6 +160,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.get_est_sat_per_1000_weight(self.cType!.this_arg, confirmationTarget.getCValue())
 
@@ -177,6 +179,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

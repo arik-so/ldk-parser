@@ -55,7 +55,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.channelPenaltyMsat(shortChannelId: short_channel_id, source: NodeId(cType: source.pointee), target: NodeId(cType: target.pointee), usage: ChannelUsage(cType: usage))
+							let swiftCallbackResult = instance.channelPenaltyMsat(shortChannelId: short_channel_id, source: NodeId(cType: source.pointee).dangle().dynamicallyDangledClone(), target: NodeId(cType: target.pointee).dangle().dynamicallyDangledClone(), usage: ChannelUsage(cType: usage).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -73,7 +73,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.paymentPathFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.paymentPathFailed(path: Vec_RouteHopZ(cType: path).dangle().getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -91,7 +91,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.paymentPathSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
+							let swiftCallbackResult = instance.paymentPathSuccessful(path: Vec_RouteHopZ(cType: path).dangle().getValue())
 
 							// cleanup
 							
@@ -109,7 +109,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.probeFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.probeFailed(path: Vec_RouteHopZ(cType: path).dangle().getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -127,7 +127,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.probeSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
+							let swiftCallbackResult = instance.probeSuccessful(path: Vec_RouteHopZ(cType: path).dangle().getValue())
 
 							// cleanup
 							
@@ -286,6 +286,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: source.dynamicallyDangledClone().cType!) { (sourcePointer: UnsafePointer<LDKNodeId>) in
@@ -313,6 +315,8 @@
 						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.payment_path_failed(self.cType!.this_arg, pathVector.cType!, shortChannelId)
 
@@ -333,6 +337,8 @@
 						
 						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
+
+						
 
 						// native method call
 						let nativeCallResult = self.cType!.payment_path_successful(self.cType!.this_arg, pathVector.cType!)
@@ -355,6 +361,8 @@
 						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.probe_failed(self.cType!.this_arg, pathVector.cType!, shortChannelId)
 
@@ -376,6 +384,8 @@
 						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.probe_successful(self.cType!.this_arg, pathVector.cType!)
 
@@ -395,6 +405,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.write(self.cType!.this_arg)
 
@@ -412,6 +424,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

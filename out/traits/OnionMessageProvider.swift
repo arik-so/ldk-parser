@@ -144,6 +144,8 @@
 						let peerNodeIdPrimitiveWrapper = PublicKey(value: peerNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.next_onion_message_for_peer(self.cType!.this_arg, peerNodeIdPrimitiveWrapper.cType!)
 
@@ -161,6 +163,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

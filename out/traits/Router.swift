@@ -56,12 +56,12 @@
 						
 							var first_hopsPointee: [ChannelDetails]? = nil
 							if let first_hopsUnwrapped = first_hops {
-								first_hopsPointee = Vec_ChannelDetailsZ(cType: first_hopsUnwrapped.pointee).getValue()
+								first_hopsPointee = Vec_ChannelDetailsZ(cType: first_hopsUnwrapped.pointee).dangle().getValue()
 							}
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.findRoute(payer: PublicKey(cType: payer).getValue(), routeParams: RouteParameters(cType: route_params.pointee), paymentHash: payment_hashPointee, firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(cType: inflight_htlcs))
+							let swiftCallbackResult = instance.findRoute(payer: PublicKey(cType: payer).getValue(), routeParams: RouteParameters(cType: route_params.pointee).dangle().dynamicallyDangledClone(), paymentHash: payment_hashPointee, firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(cType: inflight_htlcs).dangle())
 
 							// cleanup
 							
@@ -79,7 +79,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentPathFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.notifyPaymentPathFailed(path: Vec_RouteHopZ(cType: path).dangle().getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -97,7 +97,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentPathSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
+							let swiftCallbackResult = instance.notifyPaymentPathSuccessful(path: Vec_RouteHopZ(cType: path).dangle().getValue())
 
 							// cleanup
 							
@@ -115,7 +115,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentProbeSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
+							let swiftCallbackResult = instance.notifyPaymentProbeSuccessful(path: Vec_RouteHopZ(cType: path).dangle().getValue())
 
 							// cleanup
 							
@@ -133,7 +133,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentProbeFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.notifyPaymentProbeFailed(path: Vec_RouteHopZ(cType: path).dangle().getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -276,6 +276,8 @@
 					}
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: routeParams.dynamicallyDangledClone().cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
@@ -301,6 +303,8 @@
 						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.notify_payment_path_failed(self.cType!.this_arg, pathVector.cType!, shortChannelId)
 
@@ -321,6 +325,8 @@
 						
 						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
+
+						
 
 						// native method call
 						let nativeCallResult = self.cType!.notify_payment_path_successful(self.cType!.this_arg, pathVector.cType!)
@@ -343,6 +349,8 @@
 						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.notify_payment_probe_successful(self.cType!.this_arg, pathVector.cType!)
 
@@ -364,6 +372,8 @@
 						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.notify_payment_probe_failed(self.cType!.this_arg, pathVector.cType!, shortChannelId)
 
@@ -383,6 +393,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

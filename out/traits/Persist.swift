@@ -89,7 +89,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.persistNewChannel(channelId: OutPoint(cType: channel_id), data: ChannelMonitor(cType: data.pointee), updateId: MonitorUpdateId(cType: update_id))
+							let swiftCallbackResult = instance.persistNewChannel(channelId: OutPoint(cType: channel_id).dangle().dynamicallyDangledClone(), data: ChannelMonitor(cType: data.pointee).dangle().dynamicallyDangledClone(), updateId: MonitorUpdateId(cType: update_id).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -107,7 +107,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.updatePersistedChannel(channelId: OutPoint(cType: channel_id), update: ChannelMonitorUpdate(cType: update.pointee), data: ChannelMonitor(cType: data.pointee), updateId: MonitorUpdateId(cType: update_id))
+							let swiftCallbackResult = instance.updatePersistedChannel(channelId: OutPoint(cType: channel_id).dangle().dynamicallyDangledClone(), update: ChannelMonitorUpdate(cType: update.pointee).dangle().dynamicallyDangledClone(), data: ChannelMonitor(cType: data.pointee).dangle().dynamicallyDangledClone(), updateId: MonitorUpdateId(cType: update_id).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -264,6 +264,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: data.dynamicallyDangledClone().cType!) { (dataPointer: UnsafePointer<LDKChannelMonitor>) in
@@ -319,6 +321,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: update.dynamicallyDangledClone().cType!) { (updatePointer: UnsafePointer<LDKChannelMonitorUpdate>) in
@@ -344,6 +348,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

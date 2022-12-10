@@ -76,7 +76,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.filteredBlockConnected(header: headerPointee, txdata: Vec_C2Tuple_usizeTransactionZZ(cType: txdata).getValue(), height: height)
+							let swiftCallbackResult = instance.filteredBlockConnected(header: headerPointee, txdata: Vec_C2Tuple_usizeTransactionZZ(cType: txdata).dangle().getValue(), height: height)
 
 							// cleanup
 							
@@ -233,6 +233,8 @@
 						let txdataVector = Vec_C2Tuple_usizeTransactionZZ(array: txdata).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.filtered_block_connected(self.cType!.this_arg, tupledHeaderPointer, txdataVector.cType!, height)
 
@@ -253,6 +255,8 @@
 						
 						let blockPrimitiveWrapper = u8slice(value: block)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = self.cType!.block_connected(self.cType!.this_arg, blockPrimitiveWrapper.cType!, height)
@@ -280,6 +284,8 @@
 					}
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.block_disconnected(self.cType!.this_arg, tupledHeaderPointer, height)
 
@@ -297,6 +303,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

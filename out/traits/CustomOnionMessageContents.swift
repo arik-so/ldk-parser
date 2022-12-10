@@ -188,6 +188,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.tlv_type(self.cType!.this_arg)
 
@@ -203,6 +205,8 @@
 					/// Serialize the object into a byte array
 					public override func write() -> [UInt8] {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -222,6 +226,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

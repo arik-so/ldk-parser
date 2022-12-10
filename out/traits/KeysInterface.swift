@@ -87,7 +87,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.ecdh(recipient: Recipient(value: recipient), otherKey: PublicKey(cType: other_key).getValue(), tweak: Option_ScalarZ(cType: tweak).getValue())
+							let swiftCallbackResult = instance.ecdh(recipient: Recipient(value: recipient), otherKey: PublicKey(cType: other_key).getValue(), tweak: Option_ScalarZ(cType: tweak).dangle().getValue())
 
 							// cleanup
 							
@@ -195,7 +195,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signInvoice(hrpBytes: u8slice(cType: hrp_bytes).getValue(), invoiceData: Vec_u5Z(cType: invoice_data).getValue(), receipient: Recipient(value: receipient))
+							let swiftCallbackResult = instance.signInvoice(hrpBytes: u8slice(cType: hrp_bytes).getValue(), invoiceData: Vec_u5Z(cType: invoice_data).dangle().getValue(), receipient: Recipient(value: receipient))
 
 							// cleanup
 							
@@ -434,6 +434,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.get_node_secret(self.cType!.this_arg, recipient.getCValue())
 
@@ -457,6 +459,8 @@
 					/// [`get_node_secret`]: KeysInterface::get_node_secret
 					public override func getNodeId(recipient: Recipient) -> Result_PublicKeyNoneZ {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -486,6 +490,8 @@
 						let tweakOption = Option_ScalarZ(some: tweak).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.ecdh(self.cType!.this_arg, recipient.getCValue(), otherKeyPrimitiveWrapper.cType!, tweakOption.cType!)
 
@@ -504,6 +510,8 @@
 					/// on-chain funds across channels as controlled to the same user.
 					public override func getDestinationScript() -> [UInt8] {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -526,6 +534,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.get_shutdown_scriptpubkey(self.cType!.this_arg)
 
@@ -544,6 +554,8 @@
 					/// This method must return a different value each time it is called.
 					public override func getChannelSigner(inbound: Bool, channelValueSatoshis: UInt64) -> Sign {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -565,6 +577,8 @@
 					/// This method must return a different value each time it is called.
 					public override func getSecureRandomBytes() -> [UInt8] {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -590,6 +604,8 @@
 						
 						let readerPrimitiveWrapper = u8slice(value: reader)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = self.cType!.read_chan_signer(self.cType!.this_arg, readerPrimitiveWrapper.cType!)
@@ -620,6 +636,8 @@
 						let invoiceDataVector = Vec_u5Z(array: invoiceData).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.sign_invoice(self.cType!.this_arg, hrpBytesPrimitiveWrapper.cType!, invoiceDataVector.cType!, receipient.getCValue())
 
@@ -647,6 +665,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.get_inbound_payment_key_material(self.cType!.this_arg)
 
@@ -664,6 +684,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

@@ -51,7 +51,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.persistManager(channelManager: ChannelManager(cType: channel_manager.pointee))
+							let swiftCallbackResult = instance.persistManager(channelManager: ChannelManager(cType: channel_manager.pointee).dangle())
 
 							// cleanup
 							
@@ -69,7 +69,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.persistGraph(networkGraph: NetworkGraph(cType: network_graph.pointee))
+							let swiftCallbackResult = instance.persistGraph(networkGraph: NetworkGraph(cType: network_graph.pointee).dangle())
 
 							// cleanup
 							
@@ -190,6 +190,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: channelManager.dangle().cType!) { (channelManagerPointer: UnsafePointer<LDKChannelManager>) in
@@ -209,6 +211,8 @@
 					/// Persist the given [`NetworkGraph`] to disk, returning an error if persistence failed.
 					public override func persistGraph(networkGraph: NetworkGraph) -> Result_NoneErrorZ {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -232,6 +236,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: scorer.activate().cType!) { (scorerPointer: UnsafePointer<LDKWriteableScore>) in
@@ -253,6 +259,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

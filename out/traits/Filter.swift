@@ -112,7 +112,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.registerOutput(output: WatchedOutput(cType: output))
+							let swiftCallbackResult = instance.registerOutput(output: WatchedOutput(cType: output).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -225,6 +225,8 @@
 						let scriptPubkeyPrimitiveWrapper = u8slice(value: scriptPubkey)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.register_tx(self.cType!.this_arg, tupledTxidPointer, scriptPubkeyPrimitiveWrapper.cType!)
 
@@ -247,6 +249,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.register_output(self.cType!.this_arg, output.dynamicallyDangledClone().cType!)
 
@@ -264,6 +268,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

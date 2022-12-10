@@ -118,7 +118,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.transactionsConfirmed(header: headerPointee, txdata: Vec_C2Tuple_usizeTransactionZZ(cType: txdata).getValue(), height: height)
+							let swiftCallbackResult = instance.transactionsConfirmed(header: headerPointee, txdata: Vec_C2Tuple_usizeTransactionZZ(cType: txdata).dangle().getValue(), height: height)
 
 							// cleanup
 							
@@ -350,6 +350,8 @@
 						let txdataVector = Vec_C2Tuple_usizeTransactionZZ(array: txdata).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.transactions_confirmed(self.cType!.this_arg, tupledHeaderPointer, txdataVector.cType!, height)
 
@@ -385,6 +387,8 @@
 					}
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.transaction_unconfirmed(self.cType!.this_arg, tupledTxidPointer)
 
@@ -413,6 +417,8 @@
 						tupledHeaderPointer!.initialize(to: tupledHeader)
 					}
 				
+
+						
 
 						// native method call
 						let nativeCallResult = self.cType!.best_block_updated(self.cType!.this_arg, tupledHeaderPointer, height)
@@ -443,6 +449,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.get_relevant_txids(self.cType!.this_arg)
 
@@ -460,6 +468,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

@@ -183,6 +183,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.handle_custom_message(self.cType!.this_arg, msg.activate().cType!)
 
@@ -203,6 +205,8 @@
 						let bufferPrimitiveWrapper = u8slice(value: buffer)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.read_custom_message(self.cType!.this_arg, messageType, bufferPrimitiveWrapper.cType!)
 
@@ -220,6 +224,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

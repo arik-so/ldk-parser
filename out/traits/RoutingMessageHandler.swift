@@ -63,7 +63,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleNodeAnnouncement(msg: NodeAnnouncement(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleNodeAnnouncement(msg: NodeAnnouncement(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -81,7 +81,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelAnnouncement(msg: ChannelAnnouncement(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleChannelAnnouncement(msg: ChannelAnnouncement(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -99,7 +99,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelUpdate(msg: ChannelUpdate(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleChannelUpdate(msg: ChannelUpdate(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -153,7 +153,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), initArgument: BindingsInit(cType: initArgument.pointee))
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), initArgument: BindingsInit(cType: initArgument.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -171,7 +171,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleReplyChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyChannelRange(cType: msg))
+							let swiftCallbackResult = instance.handleReplyChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyChannelRange(cType: msg).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -189,7 +189,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleReplyShortChannelIdsEnd(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyShortChannelIdsEnd(cType: msg))
+							let swiftCallbackResult = instance.handleReplyShortChannelIdsEnd(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyShortChannelIdsEnd(cType: msg).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -207,7 +207,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleQueryChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryChannelRange(cType: msg))
+							let swiftCallbackResult = instance.handleQueryChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryChannelRange(cType: msg).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -225,7 +225,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleQueryShortChannelIds(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryShortChannelIds(cType: msg))
+							let swiftCallbackResult = instance.handleQueryShortChannelIds(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryShortChannelIds(cType: msg).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -476,6 +476,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKNodeAnnouncement>) in
@@ -496,6 +498,8 @@
 					/// or returning an Err otherwise.
 					public override func handleChannelAnnouncement(msg: ChannelAnnouncement) -> Result_boolLightningErrorZ {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -520,6 +524,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKChannelUpdate>) in
@@ -541,6 +547,8 @@
 					/// for a single channel.
 					public override func getNextChannelAnnouncement(startingPoint: UInt64) -> (ChannelAnnouncement, ChannelUpdate, ChannelUpdate)? {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -568,6 +576,8 @@
 						let startingPointPrimitiveWrapper = PublicKey(value: startingPoint)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.get_next_node_announcement(self.cType!.this_arg, startingPointPrimitiveWrapper.cType!)
 
@@ -592,6 +602,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -618,6 +630,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.handle_reply_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
@@ -640,6 +654,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.handle_reply_short_channel_ids_end(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
@@ -659,6 +675,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = self.cType!.handle_query_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
@@ -680,6 +698,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.handle_query_short_channel_ids(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
@@ -697,6 +717,8 @@
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
 					public override func providedNodeFeatures() -> NodeFeatures {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -722,6 +744,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.provided_init_features(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!)
 
@@ -739,6 +763,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

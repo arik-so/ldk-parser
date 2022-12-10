@@ -119,7 +119,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.validateHolderCommitment(holderTx: HolderCommitmentTransaction(cType: holder_tx.pointee), preimages: Vec_PaymentPreimageZ(cType: preimages).getValue())
+							let swiftCallbackResult = instance.validateHolderCommitment(holderTx: HolderCommitmentTransaction(cType: holder_tx.pointee).dangle().dynamicallyDangledClone(), preimages: Vec_PaymentPreimageZ(cType: preimages).dangle().getValue())
 
 							// cleanup
 							
@@ -155,7 +155,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signCounterpartyCommitment(commitmentTx: CommitmentTransaction(cType: commitment_tx.pointee), preimages: Vec_PaymentPreimageZ(cType: preimages).getValue())
+							let swiftCallbackResult = instance.signCounterpartyCommitment(commitmentTx: CommitmentTransaction(cType: commitment_tx.pointee).dangle().dynamicallyDangledClone(), preimages: Vec_PaymentPreimageZ(cType: preimages).dangle().getValue())
 
 							// cleanup
 							
@@ -196,7 +196,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction(cType: commitment_tx.pointee))
+							let swiftCallbackResult = instance.signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction(cType: commitment_tx.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -219,7 +219,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signJusticeRevokedOutput(justiceTx: Transaction(cType: justice_tx).getValue(), input: input, amount: amount, perCommitmentKey: per_commitment_keyPointee)
+							let swiftCallbackResult = instance.signJusticeRevokedOutput(justiceTx: Transaction(cType: justice_tx).dangle().getValue(), input: input, amount: amount, perCommitmentKey: per_commitment_keyPointee)
 
 							// cleanup
 							
@@ -242,7 +242,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signJusticeRevokedHtlc(justiceTx: Transaction(cType: justice_tx).getValue(), input: input, amount: amount, perCommitmentKey: per_commitment_keyPointee, htlc: HTLCOutputInCommitment(cType: htlc.pointee))
+							let swiftCallbackResult = instance.signJusticeRevokedHtlc(justiceTx: Transaction(cType: justice_tx).dangle().getValue(), input: input, amount: amount, perCommitmentKey: per_commitment_keyPointee, htlc: HTLCOutputInCommitment(cType: htlc.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -260,7 +260,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signCounterpartyHtlcTransaction(htlcTx: Transaction(cType: htlc_tx).getValue(), input: input, amount: amount, perCommitmentPoint: PublicKey(cType: per_commitment_point).getValue(), htlc: HTLCOutputInCommitment(cType: htlc.pointee))
+							let swiftCallbackResult = instance.signCounterpartyHtlcTransaction(htlcTx: Transaction(cType: htlc_tx).dangle().getValue(), input: input, amount: amount, perCommitmentPoint: PublicKey(cType: per_commitment_point).getValue(), htlc: HTLCOutputInCommitment(cType: htlc.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -278,7 +278,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signClosingTransaction(closingTx: ClosingTransaction(cType: closing_tx.pointee))
+							let swiftCallbackResult = instance.signClosingTransaction(closingTx: ClosingTransaction(cType: closing_tx.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -296,7 +296,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signHolderAnchorInput(anchorTx: Transaction(cType: anchor_tx).getValue(), input: input)
+							let swiftCallbackResult = instance.signHolderAnchorInput(anchorTx: Transaction(cType: anchor_tx).dangle().getValue(), input: input)
 
 							// cleanup
 							
@@ -314,7 +314,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signChannelAnnouncement(msg: UnsignedChannelAnnouncement(cType: msg.pointee))
+							let swiftCallbackResult = instance.signChannelAnnouncement(msg: UnsignedChannelAnnouncement(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -332,7 +332,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.readyChannel(channelParameters: ChannelTransactionParameters(cType: channel_parameters.pointee))
+							let swiftCallbackResult = instance.readyChannel(channelParameters: ChannelTransactionParameters(cType: channel_parameters.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -649,6 +649,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.get_per_commitment_point(self.cType!.this_arg, idx)
 
@@ -671,6 +673,8 @@
 					/// Note that the commitment number starts at (1 << 48) - 1 and counts backwards.
 					public override func releaseCommitmentSecret(idx: UInt64) -> [UInt8] {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -704,6 +708,8 @@
 						let preimagesVector = Vec_PaymentPreimageZ(array: preimages).dangle()
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: holderTx.dynamicallyDangledClone().cType!) { (holderTxPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
@@ -727,6 +733,8 @@
 					/// Sign object uniquely and lookup or re-derive its keys.
 					public override func channelKeysId() -> [UInt8] {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -759,6 +767,8 @@
 						
 						let preimagesVector = Vec_PaymentPreimageZ(array: preimages).dangle()
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -795,6 +805,8 @@
 					}
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.validate_counterparty_revocation(self.cType!.this_arg, idx, tupledSecretPointer)
 
@@ -820,6 +832,8 @@
 					/// May return Err if key derivation fails.  Callers, such as ChannelMonitor, will panic in such a case.
 					public override func signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction) -> Result_C2Tuple_SignatureCVec_SignatureZZNoneZ {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -869,6 +883,8 @@
 					}
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.sign_justice_revoked_output(self.cType!.this_arg, justiceTxPrimitiveWrapper.cType!, input, amount, tupledPerCommitmentKeyPointer)
 
@@ -915,6 +931,8 @@
 					}
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: htlc.dynamicallyDangledClone().cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
@@ -958,6 +976,8 @@
 						let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: htlc.dynamicallyDangledClone().cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
@@ -980,6 +1000,8 @@
 					/// chosen to forgo their output as dust.
 					public override func signClosingTransaction(closingTx: ClosingTransaction) -> Result_SignatureNoneZ {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -1008,6 +1030,8 @@
 						anchorTxPrimitiveWrapper.cType!.data_is_owned = false
 					
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.sign_holder_anchor_input(self.cType!.this_arg, anchorTxPrimitiveWrapper.cType!, input)
 
@@ -1031,6 +1055,8 @@
 					/// protocol.
 					public override func signChannelAnnouncement(msg: UnsignedChannelAnnouncement) -> Result_C2Tuple_SignatureSignatureZNoneZ {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -1063,6 +1089,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: channelParameters.dynamicallyDangledClone().cType!) { (channelParametersPointer: UnsafePointer<LDKChannelTransactionParameters>) in
@@ -1084,6 +1112,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

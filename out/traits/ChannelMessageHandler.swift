@@ -57,7 +57,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleOpenChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features), msg: OpenChannel(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleOpenChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features).dangle().dynamicallyDangledClone(), msg: OpenChannel(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -75,7 +75,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleAcceptChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features), msg: AcceptChannel(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleAcceptChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features).dangle().dynamicallyDangledClone(), msg: AcceptChannel(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -93,7 +93,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleFundingCreated(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: FundingCreated(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleFundingCreated(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: FundingCreated(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -111,7 +111,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleFundingSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: FundingSigned(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleFundingSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: FundingSigned(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -129,7 +129,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelReady(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelReady(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleChannelReady(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelReady(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -147,7 +147,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleShutdown(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features.pointee), msg: Shutdown(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleShutdown(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features.pointee).dangle().dynamicallyDangledClone(), msg: Shutdown(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -165,7 +165,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleClosingSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ClosingSigned(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleClosingSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ClosingSigned(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -183,7 +183,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateAddHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateAddHTLC(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleUpdateAddHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateAddHTLC(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -201,7 +201,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFulfillHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFulfillHTLC(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleUpdateFulfillHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFulfillHTLC(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -219,7 +219,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFailHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFailHTLC(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleUpdateFailHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFailHTLC(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -237,7 +237,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFailMalformedHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFailMalformedHTLC(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleUpdateFailMalformedHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFailMalformedHTLC(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -255,7 +255,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleCommitmentSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: CommitmentSigned(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleCommitmentSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: CommitmentSigned(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -273,7 +273,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleRevokeAndAck(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: RevokeAndACK(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleRevokeAndAck(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: RevokeAndACK(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -291,7 +291,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFee(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFee(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleUpdateFee(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFee(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -309,7 +309,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleAnnouncementSignatures(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: AnnouncementSignatures(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleAnnouncementSignatures(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: AnnouncementSignatures(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -345,7 +345,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: BindingsInit(cType: msg.pointee))
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: BindingsInit(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -363,7 +363,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelReestablish(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelReestablish(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleChannelReestablish(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelReestablish(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -381,7 +381,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelUpdate(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelUpdate(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleChannelUpdate(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelUpdate(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -399,7 +399,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleError(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ErrorMessage(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleError(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ErrorMessage(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -717,6 +717,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKOpenChannel>) in
@@ -739,6 +741,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -763,6 +767,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKFundingCreated>) in
@@ -785,6 +791,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -809,6 +817,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKChannelReady>) in
@@ -831,6 +841,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -859,6 +871,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKClosingSigned>) in
@@ -881,6 +895,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -905,6 +921,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUpdateFulfillHTLC>) in
@@ -927,6 +945,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -951,6 +971,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
@@ -973,6 +995,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -997,6 +1021,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKRevokeAndACK>) in
@@ -1020,6 +1046,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUpdateFee>) in
@@ -1042,6 +1070,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -1072,6 +1102,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.peer_disconnected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, noConnectionPossible)
 
@@ -1094,6 +1126,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -1118,6 +1152,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKChannelReestablish>) in
@@ -1140,6 +1176,8 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -1164,6 +1202,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKErrorMessage>) in
@@ -1185,6 +1225,8 @@
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
 					public override func providedNodeFeatures() -> NodeFeatures {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -1210,6 +1252,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.provided_init_features(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!)
 
@@ -1227,6 +1271,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

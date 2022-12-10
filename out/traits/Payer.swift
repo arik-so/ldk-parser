@@ -87,7 +87,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.sendPayment(route: Route(cType: route.pointee), paymentHash: ThirtyTwoBytes(cType: payment_hash).getValue(), paymentSecret: ThirtyTwoBytes(cType: payment_secret).getValue())
+							let swiftCallbackResult = instance.sendPayment(route: Route(cType: route.pointee).dangle().dynamicallyDangledClone(), paymentHash: ThirtyTwoBytes(cType: payment_hash).getValue(), paymentSecret: ThirtyTwoBytes(cType: payment_secret).getValue())
 
 							// cleanup
 							
@@ -105,7 +105,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.sendSpontaneousPayment(route: Route(cType: route.pointee), paymentPreimage: ThirtyTwoBytes(cType: payment_preimage).getValue())
+							let swiftCallbackResult = instance.sendSpontaneousPayment(route: Route(cType: route.pointee).dangle().dynamicallyDangledClone(), paymentPreimage: ThirtyTwoBytes(cType: payment_preimage).getValue())
 
 							// cleanup
 							
@@ -123,7 +123,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.retryPayment(route: Route(cType: route.pointee), paymentId: ThirtyTwoBytes(cType: payment_id).getValue())
+							let swiftCallbackResult = instance.retryPayment(route: Route(cType: route.pointee).dangle().dynamicallyDangledClone(), paymentId: ThirtyTwoBytes(cType: payment_id).getValue())
 
 							// cleanup
 							
@@ -270,6 +270,8 @@
 						// native call variable prep
 						
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.node_id(self.cType!.this_arg)
 
@@ -285,6 +287,8 @@
 					/// Returns the payer's channels.
 					public override func firstHops() -> [ChannelDetails] {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -310,6 +314,8 @@
 						let paymentSecretPrimitiveWrapper = ThirtyTwoBytes(value: paymentSecret)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: route.dynamicallyDangledClone().cType!) { (routePointer: UnsafePointer<LDKRoute>) in
@@ -332,6 +338,8 @@
 						
 						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
 				
+
+						
 
 						// native method call
 						let nativeCallResult = 
@@ -356,6 +364,8 @@
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: route.dynamicallyDangledClone().cType!) { (routePointer: UnsafePointer<LDKRoute>) in
@@ -379,6 +389,8 @@
 						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.abandon_payment(self.cType!.this_arg, paymentIdPrimitiveWrapper.cType!)
 
@@ -396,6 +408,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)

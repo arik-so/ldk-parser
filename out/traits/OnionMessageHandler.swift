@@ -51,7 +51,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleOnionMessage(peerNodeId: PublicKey(cType: peer_node_id).getValue(), msg: OnionMessage(cType: msg.pointee))
+							let swiftCallbackResult = instance.handleOnionMessage(peerNodeId: PublicKey(cType: peer_node_id).getValue(), msg: OnionMessage(cType: msg.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -69,7 +69,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), initArgument: BindingsInit(cType: initArgument.pointee))
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), initArgument: BindingsInit(cType: initArgument.pointee).dangle().dynamicallyDangledClone())
 
 							// cleanup
 							
@@ -268,6 +268,8 @@
 						let peerNodeIdPrimitiveWrapper = PublicKey(value: peerNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKOnionMessage>) in
@@ -296,6 +298,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: initArgument.dynamicallyDangledClone().cType!) { (initArgumentPointer: UnsafePointer<LDKInit>) in
@@ -323,6 +327,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.peer_disconnected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, noConnectionPossible)
 
@@ -340,6 +346,8 @@
 					/// which are broadcasted in our [`NodeAnnouncement`] message.
 					public override func providedNodeFeatures() -> NodeFeatures {
 						// native call variable prep
+						
+
 						
 
 						// native method call
@@ -365,6 +373,8 @@
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
 
+						
+
 						// native method call
 						let nativeCallResult = self.cType!.provided_init_features(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!)
 
@@ -382,6 +392,13 @@
 					public override func free() {
 						// native call variable prep
 						
+
+						
+				// natively wrapped traits may not necessarily be properly initialized
+				// for now just don't free these things
+				// self.cType?.free(self.cType?.this_arg)
+				return;
+			
 
 						// native method call
 						let nativeCallResult = self.cType!.free(self.cType!.this_arg)
