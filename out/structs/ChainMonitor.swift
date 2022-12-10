@@ -343,8 +343,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> ChainMonitor {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

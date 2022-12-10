@@ -181,8 +181,9 @@
 						return dangledClone
 					}
 			
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> HTLCUpdate {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

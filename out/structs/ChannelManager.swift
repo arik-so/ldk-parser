@@ -1657,8 +1657,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> ChannelManager {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

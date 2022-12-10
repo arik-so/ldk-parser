@@ -354,8 +354,9 @@
 						return dangledClone
 					}
 			
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> OutPoint {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

@@ -541,8 +541,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> PeerManager {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

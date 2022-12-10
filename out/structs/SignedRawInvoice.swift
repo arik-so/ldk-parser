@@ -352,8 +352,9 @@
 						return dangledClone
 					}
 			
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> SignedRawInvoice {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

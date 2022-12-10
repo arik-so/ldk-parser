@@ -96,6 +96,15 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return this.hasMethod(type, 'clone');
 	}
 
+	protected hasOwnershipField(type: RustType): boolean {
+		if (type instanceof RustStruct) {
+			if (type.ownershipField) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	protected persist(type: RustType, fileContents: string) {
 		const outputPath = this.outputFilePath(type);
 		const outputDirectory = path.dirname(outputPath);
@@ -581,23 +590,23 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					throw new Error(`Uncloneable, but freeable argument without an ownership field: ${nestedType.typeDescription}`);
 				}
 			}
-		}
+		};
 		if (containerType && this.isElidedType(containerType) && (this.hasCloneMethod(argument.type) || this.hasFreeMethod(argument.type))) {
 			// determine whether this is an initialization of that container
 			if (containerType instanceof RustVector) {
 				if (argument.type === containerType.iterateeField.type || argument.type === containerType.deepestIterateeType) {
-					handleElidedTypeContentCloneability(argument.type)
+					handleElidedTypeContentCloneability(argument.type);
 				}
 			} else if (containerType instanceof RustPrimitiveWrapper) {
 				// nothing to do here
 			} else if (containerType instanceof RustNullableOption) {
 				if (argument.type === containerType.someVariant.type) {
-					handleElidedTypeContentCloneability(argument.type)
+					handleElidedTypeContentCloneability(argument.type);
 				}
 			} else if (containerType instanceof RustTuple) {
 				const tupleContentTypes = containerType.orderedFields.map(f => f.type);
 				if (tupleContentTypes.includes(argument.type)) {
-					handleElidedTypeContentCloneability(argument.type)
+					handleElidedTypeContentCloneability(argument.type);
 				}
 			} else {
 				throw new Error(`Some elided type is receiving arguments: ${argument.type.typeDescription}`);
@@ -646,6 +655,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else if (argument.type instanceof RustTrait) {
 				preparedArgument.accessor = preparedArgument.name + '.activate().cType!';
 			} else if (argument.type instanceof RustStruct || argument.type instanceof RustTaggedValueEnum || argument.type instanceof RustResult) {
+				let ownershipInfix = '';
+				if (this.hasOwnershipField(argument.type)){
+					ownershipInfix = '.setCFreeability(freeable: false)'
+				}
 				preparedArgument.accessor = preparedArgument.name + `${cloneInfix}${dangleInfix}.cType!`;
 			} else if (argument.type instanceof RustPrimitiveEnum) {
 				preparedArgument.accessor = preparedArgument.name + '.getCValue()';
@@ -895,12 +908,13 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			`;
 		}
 
-		if(type instanceof RustStruct && type.ownershipField){
+		if (type instanceof RustStruct && type.ownershipField) {
 			ownershipSetterCode = `
-				internal func setCFreeability(freeable: Bool) {
+				internal func setCFreeability(freeable: Bool) -> ${swiftTypeName} {
 					self.cType!.${type.ownershipField.contextualName} = freeable
+					return self
 				}
-			`
+			`;
 		}
 
 		if (this.hasFreeMethod(type)) {
@@ -919,7 +933,6 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				}
 			`;
 		}
-
 
 
 		return Generator.reindentCode(danglingCloneCode + ownershipSetterCode + freeCode, 5);

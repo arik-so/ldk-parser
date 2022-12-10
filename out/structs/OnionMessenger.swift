@@ -322,8 +322,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> OnionMessenger {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

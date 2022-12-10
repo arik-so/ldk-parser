@@ -131,8 +131,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> DefaultRouter {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

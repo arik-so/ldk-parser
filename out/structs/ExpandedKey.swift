@@ -114,8 +114,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> ExpandedKey {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

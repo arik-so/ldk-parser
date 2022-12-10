@@ -231,8 +231,9 @@
 						return dangledClone
 					}
 			
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> PayeePubKey {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

@@ -81,8 +81,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> LockedChannelMonitor {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

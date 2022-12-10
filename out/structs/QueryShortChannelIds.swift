@@ -326,8 +326,9 @@
 						return dangledClone
 					}
 			
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> QueryShortChannelIds {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

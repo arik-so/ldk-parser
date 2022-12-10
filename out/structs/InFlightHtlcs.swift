@@ -157,8 +157,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> InFlightHtlcs {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

@@ -84,8 +84,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> Str {
 						self.cType!.chars_is_owned = freeable
+						return self
 					}
 			
 					deinit {

@@ -302,8 +302,9 @@
 						return dangledClone
 					}
 			
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> ClosingSignedFeeRange {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

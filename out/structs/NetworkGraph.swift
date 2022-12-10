@@ -597,8 +597,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> NetworkGraph {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

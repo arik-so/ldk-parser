@@ -296,8 +296,9 @@
 						return dangledClone
 					}
 			
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> Ping {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

@@ -264,8 +264,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> MessageHandler {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

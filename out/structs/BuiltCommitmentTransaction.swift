@@ -346,8 +346,9 @@
 						return dangledClone
 					}
 			
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> BuiltCommitmentTransaction {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

@@ -310,8 +310,9 @@
 						return dangledClone
 					}
 			
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> ReplyShortChannelIdsEnd {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

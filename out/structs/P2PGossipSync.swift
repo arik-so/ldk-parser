@@ -199,8 +199,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> P2PGossipSync {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

@@ -99,8 +99,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> Future {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

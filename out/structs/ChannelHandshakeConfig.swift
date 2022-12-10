@@ -750,8 +750,9 @@
 						return dangledClone
 					}
 			
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> ChannelHandshakeConfig {
 						self.cType!.is_owned = freeable
+						return self
 					}
 			
 					deinit {

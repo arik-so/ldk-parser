@@ -109,8 +109,9 @@
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) {
+					internal func setCFreeability(freeable: Bool) -> Transaction {
 						self.cType!.data_is_owned = freeable
+						return self
 					}
 			
 					deinit {
