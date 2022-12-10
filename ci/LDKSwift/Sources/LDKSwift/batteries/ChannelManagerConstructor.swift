@@ -67,10 +67,9 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
             guard let (blockHash, channelMonitor) = channelMonitorResult.getValue() else {
                 throw InvalidSerializedDataError.invalidSerializedChannelMonitor
             }
-            
-            let clonedChannelMonitor = channelMonitor.dangle().danglingClone()
-            let (channelFundingOutpoint, _) = clonedChannelMonitor.getFundingTxo()
-            
+
+            let (channelFundingOutpoint, _) = channelMonitor.getFundingTxo()
+
             // TODO: figure out what to do with txid nullability
             let fundingOutpointHash = "\(channelFundingOutpoint.getTxid()):\(channelFundingOutpoint.getIndex())"
             if monitorFundingSet.contains(fundingOutpointHash) {
@@ -79,22 +78,21 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
             }
             monitorFundingSet.insert(fundingOutpointHash)
 
-            clonedChannelMonitor.cType!.is_owned = false // is_owned should never have to be modified
-            monitors.append(clonedChannelMonitor)
-            self.channel_monitors.append((clonedChannelMonitor, blockHash))
+            monitors.append(channelMonitor)
+            self.channel_monitors.append((channelMonitor, blockHash))
         }
 
         print("Collected channel monitors, reading channel manager")
         let channelManagerReadArgs = ChannelManagerReadArgs(keysManager: keys_interface, feeEstimator: fee_estimator, chainMonitor: chain_monitor.asWatch(), txBroadcaster: tx_broadcaster, logger: logger, defaultConfig: UserConfig.initWithDefault(), channelMonitors: monitors)
 
-        
+
         guard let (latestBlockHash, channelManager) = Bindings.readBlockHashChannelManager(ser: channel_manager_serialized, arg: channelManagerReadArgs).getValue() else {
             throw InvalidSerializedDataError.invalidSerializedChannelManager
         }
-        
-        for clonedChannelMonitor in self.channel_monitors {
+
+        /* for clonedChannelMonitor in self.channel_monitors {
             clonedChannelMonitor.0.cType!.is_owned = true
-        }
+        } */
 
 
         self.channelManager = channelManager
@@ -197,11 +195,11 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
 
         for (currentChannelMonitor, _) in self.channel_monitors {
             let chainMonitorWatch = self.chain_monitor.asWatch()
-            let monitorClone = currentChannelMonitor.dynamicallyDangledClone()
+            // let monitorClone = currentChannelMonitor.dynamicallyDangledClone()
             // monitorClone.cType?.is_owned = false
-            let (outPoint, _) = monitorClone.getFundingTxo()
+            let (outPoint, _) = currentChannelMonitor.getFundingTxo()
             print("watching channel")
-            let monitorWatchResult = chainMonitorWatch.watchChannel(fundingTxo: outPoint, monitor: monitorClone)
+            let monitorWatchResult = chainMonitorWatch.watchChannel(fundingTxo: outPoint, monitor: currentChannelMonitor)
             if monitorWatchResult != .Completed {
                 Bindings.print("Some issue occurred with a chainMonitorWatch.watch_channel call: \(monitorWatchResult)", severity: .WARNING)
             }
@@ -215,10 +213,10 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
         if let netGraph = self.net_graph, let scorer = self.scorer {
             let router = DefaultRouter(networkGraph: netGraph, logger: self.logger, randomSeedBytes: self.keysInterface.getSecureRandomBytes(), scorer: scorer.asLockableScore())
             // either dangle router, or set is_owned to false
-            scorer.cType!.is_owned = false
-            router.cType!.is_owned = false
+            // scorer.cType!.is_owned = false
+            // router.cType!.is_owned = false
             self.payer = InvoicePayer(payer: self.channelManager.asPayer(), router: router.asRouter(), logger: self.logger, eventHandler: self.customEventHandler!, retry: Retry.initWithAttempts(a: UInt(3)))
-            router.cType!.is_owned = true
+            // router.cType!.is_owned = true
             self.customEventHandler = self.payer!.asEventHandler()
         }
 
@@ -298,11 +296,11 @@ fileprivate class CustomChannelManagerPersister: Persister {
     override func persistManager(channelManager: Bindings.ChannelManager) -> Bindings.Result_NoneErrorZ {
         return self.handler.persistManager(channelManager: channelManager)
     }
-    
+
     override func persistGraph(networkGraph: Bindings.NetworkGraph) -> Bindings.Result_NoneErrorZ {
         return self.handler.persistGraph(networkGraph: networkGraph)
     }
-    
+
     override func persistScorer(scorer: Bindings.WriteableScore) -> Bindings.Result_NoneErrorZ {
         return self.handler.persistScorer(scorer: scorer)
     }
@@ -318,7 +316,8 @@ fileprivate class CustomEventHandler: EventHandler {
     }
 
     override func handleEvent(event: Bindings.Event) {
-        self.handler.handle_event(event: event.clone())
+        // self.handler.handle_event(event: event.clone())
+        self.handler.handle_event(event: event)
     }
 
 }
