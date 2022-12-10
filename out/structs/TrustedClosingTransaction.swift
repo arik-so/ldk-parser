@@ -168,6 +168,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing TrustedClosingTransaction \(self.instanceNumber).")
 							self.free()

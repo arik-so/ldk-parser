@@ -93,7 +93,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-				UserConfig_set_channel_handshake_config(thisPtrPointer, val.cType!)
+				UserConfig_set_channel_handshake_config(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -139,7 +139,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-				UserConfig_set_channel_handshake_limits(thisPtrPointer, val.cType!)
+				UserConfig_set_channel_handshake_limits(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -185,7 +185,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-				UserConfig_set_channel_config(thisPtrPointer, val.cType!)
+				UserConfig_set_channel_config(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -400,7 +400,7 @@
 						
 
 						// native method call
-						let nativeCallResult = UserConfig_new(channelHandshakeConfigArg.cType!, channelHandshakeLimitsArg.cType!, channelConfigArg.cType!, acceptForwardsToPrivChannelsArg, acceptInboundChannelsArg, manuallyAcceptInboundChannelsArg)
+						let nativeCallResult = UserConfig_new(channelHandshakeConfigArg.danglingClone().cType!, channelHandshakeLimitsArg.danglingClone().cType!, channelConfigArg.danglingClone().cType!, acceptForwardsToPrivChannelsArg, acceptInboundChannelsArg, manuallyAcceptInboundChannelsArg)
 
 						// cleanup
 						
@@ -487,6 +487,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing UserConfig \(self.instanceNumber).")
 							self.free()

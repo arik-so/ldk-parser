@@ -307,6 +307,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing Confirm \(self.instanceNumber).")
 							self.free()

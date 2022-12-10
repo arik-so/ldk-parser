@@ -371,7 +371,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-				NetworkGraph_add_channel_from_partial_announcement(thisArgPointer, shortChannelId, timestamp, features.cType!, nodeId_1PrimitiveWrapper.cType!, nodeId_2PrimitiveWrapper.cType!)
+				NetworkGraph_add_channel_from_partial_announcement(thisArgPointer, shortChannelId, timestamp, features.danglingClone().cType!, nodeId_1PrimitiveWrapper.cType!, nodeId_2PrimitiveWrapper.cType!)
 						}
 				
 
@@ -598,6 +598,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing NetworkGraph \(self.instanceNumber).")
 							self.free()

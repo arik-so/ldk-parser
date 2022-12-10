@@ -102,6 +102,10 @@ NodeId(cType: currentCType, anchor: self).dangle()
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Vec_NodeIdZ \(self.instanceNumber).")
 							self.free()

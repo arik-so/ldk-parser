@@ -152,7 +152,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-				ChainMonitor_get_monitor(thisArgPointer, fundingTxo.cType!)
+				ChainMonitor_get_monitor(thisArgPointer, fundingTxo.danglingClone().cType!)
 						}
 				
 
@@ -213,7 +213,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-				ChainMonitor_channel_monitor_updated(thisArgPointer, fundingTxo.cType!, completedUpdateId.cType!)
+				ChainMonitor_channel_monitor_updated(thisArgPointer, fundingTxo.danglingClone().cType!, completedUpdateId.danglingClone().cType!)
 						}
 				
 
@@ -344,6 +344,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ChainMonitor \(self.instanceNumber).")
 							self.free()

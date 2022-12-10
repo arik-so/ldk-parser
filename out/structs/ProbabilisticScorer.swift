@@ -135,7 +135,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
-				ProbabilisticScorer_new(params.cType!, networkGraphPointer, logger.activate().cType!)
+				ProbabilisticScorer_new(params.danglingClone().cType!, networkGraphPointer, logger.activate().cType!)
 						}
 				
 
@@ -399,7 +399,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: argB.cType!) { (argBPointer: UnsafePointer<LDKNetworkGraph>) in
-				ProbabilisticScorer_read(serPrimitiveWrapper.cType!, argA.cType!, argBPointer, argC.activate().cType!)
+				ProbabilisticScorer_read(serPrimitiveWrapper.cType!, argA.danglingClone().cType!, argBPointer, argC.activate().cType!)
 						}
 				
 
@@ -434,6 +434,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ProbabilisticScorer \(self.instanceNumber).")
 							self.free()

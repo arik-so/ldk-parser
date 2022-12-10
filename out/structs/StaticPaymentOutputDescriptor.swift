@@ -89,7 +89,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
-				StaticPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.cType!)
+				StaticPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -137,7 +137,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
-				StaticPaymentOutputDescriptor_set_output(thisPtrPointer, val.cType!)
+				StaticPaymentOutputDescriptor_set_output(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -262,7 +262,7 @@
 				
 
 						// native method call
-						let nativeCallResult = StaticPaymentOutputDescriptor_new(outpointArg.cType!, outputArg.cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
+						let nativeCallResult = StaticPaymentOutputDescriptor_new(outpointArg.danglingClone().cType!, outputArg.danglingClone().cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
 
 						// cleanup
 						
@@ -403,6 +403,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing StaticPaymentOutputDescriptor \(self.instanceNumber).")
 							self.free()

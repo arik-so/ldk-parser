@@ -242,7 +242,7 @@
 				
 
 						// native method call
-						let nativeCallResult = HolderCommitmentTransaction_new(commitmentTx.cType!, counterpartySigPrimitiveWrapper.cType!, counterpartyHtlcSigsVector.cType!, holderFundingKeyPrimitiveWrapper.cType!, counterpartyFundingKeyPrimitiveWrapper.cType!)
+						let nativeCallResult = HolderCommitmentTransaction_new(commitmentTx.danglingClone().cType!, counterpartySigPrimitiveWrapper.cType!, counterpartyHtlcSigsVector.cType!, holderFundingKeyPrimitiveWrapper.cType!, counterpartyFundingKeyPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -289,6 +289,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing HolderCommitmentTransaction \(self.instanceNumber).")
 							self.free()

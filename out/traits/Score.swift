@@ -259,6 +259,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing Score \(self.instanceNumber).")
 							self.free()
@@ -287,7 +291,7 @@
 						withUnsafePointer(to: source.cType!) { (sourcePointer: UnsafePointer<LDKNodeId>) in
 				
 						withUnsafePointer(to: target.cType!) { (targetPointer: UnsafePointer<LDKNodeId>) in
-				self.cType!.channel_penalty_msat(self.cType!.this_arg, shortChannelId, sourcePointer, targetPointer, usage.cType!)
+				self.cType!.channel_penalty_msat(self.cType!.this_arg, shortChannelId, sourcePointer, targetPointer, usage.danglingClone().cType!)
 						}
 				
 						}

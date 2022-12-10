@@ -157,6 +157,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Sha256 \(self.instanceNumber).")
 							self.free()

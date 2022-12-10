@@ -960,7 +960,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOpenChannel>) in
-				OpenChannel_set_channel_type(thisPtrPointer, val.cType!)
+				OpenChannel_set_channel_type(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -1097,6 +1097,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing OpenChannel \(self.instanceNumber).")
 							self.free()

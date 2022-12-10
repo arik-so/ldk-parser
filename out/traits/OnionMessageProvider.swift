@@ -120,6 +120,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing OnionMessageProvider \(self.instanceNumber).")
 							self.free()

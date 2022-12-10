@@ -250,6 +250,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing Payer \(self.instanceNumber).")
 							self.free()

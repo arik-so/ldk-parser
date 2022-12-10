@@ -135,7 +135,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncement>) in
-				NodeAnnouncement_set_contents(thisPtrPointer, val.cType!)
+				NodeAnnouncement_set_contents(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -158,7 +158,7 @@
 				
 
 						// native method call
-						let nativeCallResult = NodeAnnouncement_new(signatureArgPrimitiveWrapper.cType!, contentsArg.cType!)
+						let nativeCallResult = NodeAnnouncement_new(signatureArgPrimitiveWrapper.cType!, contentsArg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -299,6 +299,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing NodeAnnouncement \(self.instanceNumber).")
 							self.free()

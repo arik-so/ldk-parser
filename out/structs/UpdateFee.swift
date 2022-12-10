@@ -303,6 +303,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing UpdateFee \(self.instanceNumber).")
 							self.free()

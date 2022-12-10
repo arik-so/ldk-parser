@@ -142,7 +142,7 @@
 						
 
 						// native method call
-						let nativeCallResult = PaymentSendFailure_parameter_error(a.cType!)
+						let nativeCallResult = PaymentSendFailure_parameter_error(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -211,7 +211,7 @@
 				
 
 						// native method call
-						let nativeCallResult = PaymentSendFailure_partial_failure(resultsVector.cType!, failedPathsRetry.cType!, paymentIdPrimitiveWrapper.cType!)
+						let nativeCallResult = PaymentSendFailure_partial_failure(resultsVector.cType!, failedPathsRetry.danglingClone().cType!, paymentIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -274,6 +274,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing PaymentSendFailure \(self.instanceNumber).")
 							self.free()

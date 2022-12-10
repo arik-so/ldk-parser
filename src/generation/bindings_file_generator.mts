@@ -153,7 +153,7 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 
 			public class Bindings {
 
-				${Generator.reindentCode(generatedTupleTypeAliases, 4)}
+				internal static var suspendFreedom = false
 
 				internal static var minimumPrintSeverity: PrintSeverity = .WARNING
 				// #if canImport(os)
@@ -279,6 +279,8 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 				}
 
 				${generatedMethods}
+
+				${Generator.reindentCode(generatedTupleTypeAliases, 4)}
 
 				${Generator.reindentCode(generatedTupleConverters, 4)}
 

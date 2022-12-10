@@ -561,21 +561,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 		let dangleInfix = ''; // the dangle must come before the clone
 		let cloneInfix = '';
-		if (!(argument.type instanceof RustTrait) && !argument.isAsteriskPointer && !this.isElidedType(argument.type)) {
+		if (!(argument.type instanceof RustTrait) && !argument.isAsteriskPointer && !this.isElidedType(argument.type) && this.hasFreeMethod(argument.type)) {
 			if (this.hasCloneMethod(argument.type)) {
-				// cloneInfix = '.clone()';
-				if (argument.type instanceof RustNullableOption) {
-					if (argument.type.someVariant.type instanceof RustPrimitive) {
-						// no need to clone options that are made right here
-						cloneInfix = '';
-					}
-				} else if (argument.type instanceof RustVector) {
-					if (argument.type.deepestIterateeType instanceof RustPrimitive) {
-						// no need to clone a vector that is made right in place
-						cloneInfix = '';
-					}
-				}
-			} else if (this.hasFreeMethod(argument.type)) {
+				// we're kinda relying here on Rust immediately freeing this object upon consumption
+				cloneInfix = '.danglingClone()';
+			} else if (this.hasFreeMethod(argument.type)) { // could just be else
 				dangleInfix = '.dangle()';
 			}
 		}
@@ -907,6 +897,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (this.hasFreeMethod(type)) {
 			freeCode = `
 				deinit {
+					if Bindings.suspendFreedom {
+						return
+					}
+
 					if !self.dangling {
 						Bindings.print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
 						self.free()

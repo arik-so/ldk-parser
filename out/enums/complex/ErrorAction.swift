@@ -134,7 +134,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ErrorAction_disconnect_peer(msg.cType!)
+						let nativeCallResult = ErrorAction_disconnect_peer(msg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -210,7 +210,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ErrorAction_send_error_message(msg.cType!)
+						let nativeCallResult = ErrorAction_send_error_message(msg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -229,7 +229,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ErrorAction_send_warning_message(msg.cType!, logLevel.getCValue())
+						let nativeCallResult = ErrorAction_send_warning_message(msg.danglingClone().cType!, logLevel.getCValue())
 
 						// cleanup
 						
@@ -290,6 +290,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ErrorAction \(self.instanceNumber).")
 							self.free()

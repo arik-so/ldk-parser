@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCounterpartyChannelTransactionParameters>) in
-				CounterpartyChannelTransactionParameters_set_pubkeys(thisPtrPointer, val.cType!)
+				CounterpartyChannelTransactionParameters_set_pubkeys(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -154,7 +154,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CounterpartyChannelTransactionParameters_new(pubkeysArg.cType!, selectedContestDelayArg)
+						let nativeCallResult = CounterpartyChannelTransactionParameters_new(pubkeysArg.danglingClone().cType!, selectedContestDelayArg)
 
 						// cleanup
 						
@@ -266,6 +266,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing CounterpartyChannelTransactionParameters \(self.instanceNumber).")
 							self.free()

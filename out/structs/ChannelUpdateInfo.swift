@@ -319,7 +319,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-				ChannelUpdateInfo_set_fees(thisPtrPointer, val.cType!)
+				ChannelUpdateInfo_set_fees(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -388,7 +388,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-				ChannelUpdateInfo_set_last_update_message(thisPtrPointer, val.cType!)
+				ChannelUpdateInfo_set_last_update_message(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -409,7 +409,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChannelUpdateInfo_new(lastUpdateArg, enabledArg, cltvExpiryDeltaArg, htlcMinimumMsatArg, htlcMaximumMsatArg, feesArg.cType!, lastUpdateMessageArg.cType!)
+						let nativeCallResult = ChannelUpdateInfo_new(lastUpdateArg, enabledArg, cltvExpiryDeltaArg, htlcMinimumMsatArg, htlcMaximumMsatArg, feesArg.danglingClone().cType!, lastUpdateMessageArg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -550,6 +550,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ChannelUpdateInfo \(self.instanceNumber).")
 							self.free()

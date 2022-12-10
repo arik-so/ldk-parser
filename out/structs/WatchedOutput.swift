@@ -167,7 +167,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
-				WatchedOutput_set_outpoint(thisPtrPointer, val.cType!)
+				WatchedOutput_set_outpoint(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -242,7 +242,7 @@
 				
 
 						// native method call
-						let nativeCallResult = WatchedOutput_new(blockHashArgPrimitiveWrapper.cType!, outpointArg.cType!, scriptPubkeyArgVector.cType!)
+						let nativeCallResult = WatchedOutput_new(blockHashArgPrimitiveWrapper.cType!, outpointArg.danglingClone().cType!, scriptPubkeyArgVector.cType!)
 
 						// cleanup
 						
@@ -364,6 +364,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing WatchedOutput \(self.instanceNumber).")
 							self.free()

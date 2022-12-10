@@ -149,7 +149,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ClosingTransaction_new(toHolderValueSat, toCounterpartyValueSat, toHolderScriptVector.cType!, toCounterpartyScriptVector.cType!, fundingOutpoint.cType!)
+						let nativeCallResult = ClosingTransaction_new(toHolderValueSat, toCounterpartyValueSat, toHolderScriptVector.cType!, toCounterpartyScriptVector.cType!, fundingOutpoint.danglingClone().cType!)
 
 						// cleanup
 						
@@ -213,7 +213,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
-				ClosingTransaction_verify(thisArgPointer, fundingOutpoint.cType!)
+				ClosingTransaction_verify(thisArgPointer, fundingOutpoint.danglingClone().cType!)
 						}
 				
 
@@ -346,6 +346,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ClosingTransaction \(self.instanceNumber).")
 							self.free()

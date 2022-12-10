@@ -311,6 +311,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ReplyShortChannelIdsEnd \(self.instanceNumber).")
 							self.free()

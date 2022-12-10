@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-				NodeAnnouncementInfo_set_features(thisPtrPointer, val.cType!)
+				NodeAnnouncementInfo_set_features(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -237,7 +237,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-				NodeAnnouncementInfo_set_alias(thisPtrPointer, val.cType!)
+				NodeAnnouncementInfo_set_alias(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -358,7 +358,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-				NodeAnnouncementInfo_set_announcement_message(thisPtrPointer, val.cType!)
+				NodeAnnouncementInfo_set_announcement_message(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -383,7 +383,7 @@
 				
 
 						// native method call
-						let nativeCallResult = NodeAnnouncementInfo_new(featuresArg.cType!, lastUpdateArg, rgbArgPrimitiveWrapper.cType!, aliasArg.cType!, addressesArgVector.cType!, announcementMessageArg.cType!)
+						let nativeCallResult = NodeAnnouncementInfo_new(featuresArg.danglingClone().cType!, lastUpdateArg, rgbArgPrimitiveWrapper.cType!, aliasArg.danglingClone().cType!, addressesArgVector.cType!, announcementMessageArg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -526,6 +526,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing NodeAnnouncementInfo \(self.instanceNumber).")
 							self.free()

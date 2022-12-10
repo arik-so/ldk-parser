@@ -117,6 +117,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Option_u16Z \(self.instanceNumber).")
 							self.free()

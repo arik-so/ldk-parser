@@ -208,7 +208,7 @@
 						
 
 						// native method call
-						let nativeCallResult = Invoice_from_signed(signedInvoice.cType!)
+						let nativeCallResult = Invoice_from_signed(signedInvoice.danglingClone().cType!)
 
 						// cleanup
 						
@@ -673,6 +673,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Invoice \(self.instanceNumber).")
 							self.free()

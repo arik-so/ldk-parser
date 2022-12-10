@@ -66,7 +66,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_COption_MonitorEventZDecodeErrorZ_err(e.cType!)
+						let nativeCallResult = CResult_COption_MonitorEventZDecodeErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

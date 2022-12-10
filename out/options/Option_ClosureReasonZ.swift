@@ -40,7 +40,7 @@
 
 						if let some = some {
 														
-							self.cType = COption_ClosureReasonZ_some(some.cType!)
+							self.cType = COption_ClosureReasonZ_some(some.danglingClone().cType!)
 						} else {
 							self.cType = COption_ClosureReasonZ_none()
 						}
@@ -117,6 +117,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Option_ClosureReasonZ \(self.instanceNumber).")
 							self.free()

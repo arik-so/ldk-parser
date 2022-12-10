@@ -125,7 +125,7 @@
 						
 
 						// native method call
-						let nativeCallResult = MonitorEvent_htlcevent(a.cType!)
+						let nativeCallResult = MonitorEvent_htlcevent(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -144,7 +144,7 @@
 						
 
 						// native method call
-						let nativeCallResult = MonitorEvent_commitment_tx_confirmed(a.cType!)
+						let nativeCallResult = MonitorEvent_commitment_tx_confirmed(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -163,7 +163,7 @@
 						
 
 						// native method call
-						let nativeCallResult = MonitorEvent_completed(fundingTxo.cType!, monitorUpdateId)
+						let nativeCallResult = MonitorEvent_completed(fundingTxo.danglingClone().cType!, monitorUpdateId)
 
 						// cleanup
 						
@@ -182,7 +182,7 @@
 						
 
 						// native method call
-						let nativeCallResult = MonitorEvent_update_failed(a.cType!)
+						let nativeCallResult = MonitorEvent_update_failed(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -315,6 +315,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing MonitorEvent \(self.instanceNumber).")
 							self.free()

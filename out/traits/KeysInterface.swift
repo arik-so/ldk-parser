@@ -407,6 +407,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing KeysInterface \(self.instanceNumber).")
 							self.free()

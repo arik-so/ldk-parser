@@ -154,7 +154,7 @@
 						
 
 						// native method call
-						let nativeCallResult = SpendableOutputDescriptor_static_output(outpoint.cType!, output.cType!)
+						let nativeCallResult = SpendableOutputDescriptor_static_output(outpoint.danglingClone().cType!, output.danglingClone().cType!)
 
 						// cleanup
 						
@@ -173,7 +173,7 @@
 						
 
 						// native method call
-						let nativeCallResult = SpendableOutputDescriptor_delayed_payment_output(a.cType!)
+						let nativeCallResult = SpendableOutputDescriptor_delayed_payment_output(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -192,7 +192,7 @@
 						
 
 						// native method call
-						let nativeCallResult = SpendableOutputDescriptor_static_payment_output(a.cType!)
+						let nativeCallResult = SpendableOutputDescriptor_static_payment_output(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -317,6 +317,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing SpendableOutputDescriptor \(self.instanceNumber).")
 							self.free()

@@ -297,6 +297,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Ping \(self.instanceNumber).")
 							self.free()

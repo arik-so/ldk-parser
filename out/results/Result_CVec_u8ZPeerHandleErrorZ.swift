@@ -68,7 +68,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_CVec_u8ZPeerHandleErrorZ_err(e.cType!)
+						let nativeCallResult = CResult_CVec_u8ZPeerHandleErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

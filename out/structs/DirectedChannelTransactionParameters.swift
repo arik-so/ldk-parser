@@ -226,6 +226,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing DirectedChannelTransactionParameters \(self.instanceNumber).")
 							self.free()

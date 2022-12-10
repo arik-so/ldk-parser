@@ -145,7 +145,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChainParameters>) in
-				ChainParameters_set_best_block(thisPtrPointer, val.cType!)
+				ChainParameters_set_best_block(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -166,7 +166,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChainParameters_new(networkArg.getCValue(), bestBlockArg.cType!)
+						let nativeCallResult = ChainParameters_new(networkArg.getCValue(), bestBlockArg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -234,6 +234,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ChainParameters \(self.instanceNumber).")
 							self.free()

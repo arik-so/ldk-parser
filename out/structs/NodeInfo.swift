@@ -160,7 +160,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
-				NodeInfo_set_lowest_inbound_channel_fees(thisPtrPointer, val.cType!)
+				NodeInfo_set_lowest_inbound_channel_fees(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -227,7 +227,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
-				NodeInfo_set_announcement_info(thisPtrPointer, val.cType!)
+				NodeInfo_set_announcement_info(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -250,7 +250,7 @@
 				
 
 						// native method call
-						let nativeCallResult = NodeInfo_new(channelsArgVector.cType!, lowestInboundChannelFeesArg.cType!, announcementInfoArg.cType!)
+						let nativeCallResult = NodeInfo_new(channelsArgVector.cType!, lowestInboundChannelFeesArg.danglingClone().cType!, announcementInfoArg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -393,6 +393,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing NodeInfo \(self.instanceNumber).")
 							self.free()

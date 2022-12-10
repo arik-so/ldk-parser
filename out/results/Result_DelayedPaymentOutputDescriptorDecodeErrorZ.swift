@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_DelayedPaymentOutputDescriptorDecodeErrorZ_ok(o.cType!)
+						let nativeCallResult = CResult_DelayedPaymentOutputDescriptorDecodeErrorZ_ok(o.danglingClone().cType!)
 
 						// cleanup
 						
@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_DelayedPaymentOutputDescriptorDecodeErrorZ_err(e.cType!)
+						let nativeCallResult = CResult_DelayedPaymentOutputDescriptorDecodeErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

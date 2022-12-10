@@ -97,7 +97,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
-				RouteParameters_set_payment_params(thisPtrPointer, val.cType!)
+				RouteParameters_set_payment_params(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -210,7 +210,7 @@
 						
 
 						// native method call
-						let nativeCallResult = RouteParameters_new(paymentParamsArg.cType!, finalValueMsatArg, finalCltvExpiryDeltaArg)
+						let nativeCallResult = RouteParameters_new(paymentParamsArg.danglingClone().cType!, finalValueMsatArg, finalCltvExpiryDeltaArg)
 
 						// cleanup
 						
@@ -322,6 +322,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing RouteParameters \(self.instanceNumber).")
 							self.free()

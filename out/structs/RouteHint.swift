@@ -280,6 +280,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing RouteHint \(self.instanceNumber).")
 							self.free()

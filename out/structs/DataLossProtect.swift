@@ -271,6 +271,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing DataLossProtect \(self.instanceNumber).")
 							self.free()

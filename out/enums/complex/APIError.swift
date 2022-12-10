@@ -263,7 +263,7 @@
 						
 
 						// native method call
-						let nativeCallResult = APIError_incompatible_shutdown_script(script.cType!)
+						let nativeCallResult = APIError_incompatible_shutdown_script(script.danglingClone().cType!)
 
 						// cleanup
 						
@@ -360,6 +360,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing APIError \(self.instanceNumber).")
 							self.free()

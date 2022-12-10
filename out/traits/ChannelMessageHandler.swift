@@ -695,6 +695,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing ChannelMessageHandler \(self.instanceNumber).")
 							self.free()
@@ -716,7 +720,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKOpenChannel>) in
-				self.cType!.handle_open_channel(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, theirFeatures.cType!, msgPointer)
+				self.cType!.handle_open_channel(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, theirFeatures.danglingClone().cType!, msgPointer)
 						}
 				
 
@@ -739,7 +743,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKAcceptChannel>) in
-				self.cType!.handle_accept_channel(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, theirFeatures.cType!, msgPointer)
+				self.cType!.handle_accept_channel(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, theirFeatures.danglingClone().cType!, msgPointer)
 						}
 				
 

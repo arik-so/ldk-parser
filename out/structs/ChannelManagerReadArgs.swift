@@ -423,7 +423,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelManagerReadArgs>) in
-				ChannelManagerReadArgs_set_default_config(thisPtrPointer, val.cType!)
+				ChannelManagerReadArgs_set_default_config(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -448,7 +448,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelManagerReadArgs_new(keysManager.activate().cType!, feeEstimator.activate().cType!, chainMonitor.activate().cType!, txBroadcaster.activate().cType!, logger.activate().cType!, defaultConfig.cType!, channelMonitorsVector.cType!)
+						let nativeCallResult = ChannelManagerReadArgs_new(keysManager.activate().cType!, feeEstimator.activate().cType!, chainMonitor.activate().cType!, txBroadcaster.activate().cType!, logger.activate().cType!, defaultConfig.danglingClone().cType!, channelMonitorsVector.cType!)
 
 						// cleanup
 						
@@ -489,6 +489,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ChannelManagerReadArgs \(self.instanceNumber).")
 							self.free()

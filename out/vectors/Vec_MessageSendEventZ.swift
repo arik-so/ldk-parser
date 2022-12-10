@@ -102,6 +102,10 @@ MessageSendEvent(cType: currentCType, anchor: self).dangle()
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Vec_MessageSendEventZ \(self.instanceNumber).")
 							self.free()

@@ -319,6 +319,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing DecodeError \(self.instanceNumber).")
 							self.free()

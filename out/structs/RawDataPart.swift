@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRawDataPart>) in
-				RawDataPart_set_timestamp(thisPtrPointer, val.cType!)
+				RawDataPart_set_timestamp(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -203,6 +203,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing RawDataPart \(self.instanceNumber).")
 							self.free()

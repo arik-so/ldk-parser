@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_CounterpartyChannelTransactionParametersDecodeErrorZ_ok(o.cType!)
+						let nativeCallResult = CResult_CounterpartyChannelTransactionParametersDecodeErrorZ_ok(o.danglingClone().cType!)
 
 						// cleanup
 						
@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_CounterpartyChannelTransactionParametersDecodeErrorZ_err(e.cType!)
+						let nativeCallResult = CResult_CounterpartyChannelTransactionParametersDecodeErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_PrivateRouteCreationErrorZ_ok(o.cType!)
+						let nativeCallResult = CResult_PrivateRouteCreationErrorZ_ok(o.danglingClone().cType!)
 
 						// cleanup
 						

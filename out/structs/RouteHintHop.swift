@@ -181,7 +181,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
-				RouteHintHop_set_fees(thisPtrPointer, val.cType!)
+				RouteHintHop_set_fees(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -350,7 +350,7 @@
 				
 
 						// native method call
-						let nativeCallResult = RouteHintHop_new(srcNodeIdArgPrimitiveWrapper.cType!, shortChannelIdArg, feesArg.cType!, cltvExpiryDeltaArg, htlcMinimumMsatArgOption.cType!, htlcMaximumMsatArgOption.cType!)
+						let nativeCallResult = RouteHintHop_new(srcNodeIdArgPrimitiveWrapper.cType!, shortChannelIdArg, feesArg.danglingClone().cType!, cltvExpiryDeltaArg, htlcMinimumMsatArgOption.cType!, htlcMaximumMsatArgOption.cType!)
 
 						// cleanup
 						
@@ -514,6 +514,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing RouteHintHop \(self.instanceNumber).")
 							self.free()

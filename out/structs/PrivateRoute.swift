@@ -143,7 +143,7 @@
 						
 
 						// native method call
-						let nativeCallResult = PrivateRoute_new(hops.cType!)
+						let nativeCallResult = PrivateRoute_new(hops.danglingClone().cType!)
 
 						// cleanup
 						
@@ -201,6 +201,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing PrivateRoute \(self.instanceNumber).")
 							self.free()

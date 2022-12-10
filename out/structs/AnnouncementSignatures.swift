@@ -403,6 +403,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing AnnouncementSignatures \(self.instanceNumber).")
 							self.free()

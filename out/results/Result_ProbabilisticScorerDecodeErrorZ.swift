@@ -65,7 +65,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_ProbabilisticScorerDecodeErrorZ_err(e.cType!)
+						let nativeCallResult = CResult_ProbabilisticScorerDecodeErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

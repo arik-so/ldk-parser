@@ -231,6 +231,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ChannelMonitorUpdate \(self.instanceNumber).")
 							self.free()

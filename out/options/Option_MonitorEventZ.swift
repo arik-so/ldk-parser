@@ -40,7 +40,7 @@
 
 						if let some = some {
 														
-							self.cType = COption_MonitorEventZ_some(some.cType!)
+							self.cType = COption_MonitorEventZ_some(some.danglingClone().cType!)
 						} else {
 							self.cType = COption_MonitorEventZ_none()
 						}
@@ -117,6 +117,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Option_MonitorEventZ \(self.instanceNumber).")
 							self.free()

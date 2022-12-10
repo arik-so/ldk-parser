@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_CounterpartyCommitmentSecretsDecodeErrorZ_ok(o.cType!)
+						let nativeCallResult = CResult_CounterpartyCommitmentSecretsDecodeErrorZ_ok(o.danglingClone().cType!)
 
 						// cleanup
 						
@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_CounterpartyCommitmentSecretsDecodeErrorZ_err(e.cType!)
+						let nativeCallResult = CResult_CounterpartyCommitmentSecretsDecodeErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

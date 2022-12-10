@@ -353,6 +353,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing SignedRawInvoice \(self.instanceNumber).")
 							self.free()

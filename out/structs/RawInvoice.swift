@@ -95,7 +95,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRawInvoice>) in
-				RawInvoice_set_data(thisPtrPointer, val.cType!)
+				RawInvoice_set_data(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -586,6 +586,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing RawInvoice \(self.instanceNumber).")
 							self.free()

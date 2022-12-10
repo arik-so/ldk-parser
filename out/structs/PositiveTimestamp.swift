@@ -305,6 +305,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing PositiveTimestamp \(self.instanceNumber).")
 							self.free()

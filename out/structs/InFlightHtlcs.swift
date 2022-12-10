@@ -158,6 +158,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing InFlightHtlcs \(self.instanceNumber).")
 							self.free()

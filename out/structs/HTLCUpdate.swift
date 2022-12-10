@@ -182,6 +182,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing HTLCUpdate \(self.instanceNumber).")
 							self.free()

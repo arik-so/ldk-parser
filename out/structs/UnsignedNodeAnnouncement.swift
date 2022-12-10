@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
-				UnsignedNodeAnnouncement_set_features(thisPtrPointer, val.cType!)
+				UnsignedNodeAnnouncement_set_features(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -478,6 +478,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing UnsignedNodeAnnouncement \(self.instanceNumber).")
 							self.free()

@@ -159,6 +159,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing Sign \(self.instanceNumber).")
 							self.free()

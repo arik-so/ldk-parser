@@ -89,6 +89,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Option_ScalarZ \(self.instanceNumber).")
 							self.free()

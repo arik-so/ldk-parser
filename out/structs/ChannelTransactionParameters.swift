@@ -95,7 +95,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-				ChannelTransactionParameters_set_holder_pubkeys(thisPtrPointer, val.cType!)
+				ChannelTransactionParameters_set_holder_pubkeys(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -254,7 +254,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-				ChannelTransactionParameters_set_counterparty_parameters(thisPtrPointer, val.cType!)
+				ChannelTransactionParameters_set_counterparty_parameters(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -317,7 +317,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-				ChannelTransactionParameters_set_funding_outpoint(thisPtrPointer, val.cType!)
+				ChannelTransactionParameters_set_funding_outpoint(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -386,7 +386,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChannelTransactionParameters_new(holderPubkeysArg.cType!, holderSelectedContestDelayArg, isOutboundFromHolderArg, counterpartyParametersArg.cType!, fundingOutpointArg.cType!, optAnchorsArg.getCValue())
+						let nativeCallResult = ChannelTransactionParameters_new(holderPubkeysArg.danglingClone().cType!, holderSelectedContestDelayArg, isOutboundFromHolderArg, counterpartyParametersArg.danglingClone().cType!, fundingOutpointArg.danglingClone().cType!, optAnchorsArg.getCValue())
 
 						// cleanup
 						
@@ -573,6 +573,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ChannelTransactionParameters \(self.instanceNumber).")
 							self.free()

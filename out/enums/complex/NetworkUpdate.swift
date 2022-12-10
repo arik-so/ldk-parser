@@ -119,7 +119,7 @@
 						
 
 						// native method call
-						let nativeCallResult = NetworkUpdate_channel_update_message(msg.cType!)
+						let nativeCallResult = NetworkUpdate_channel_update_message(msg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -284,6 +284,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing NetworkUpdate \(self.instanceNumber).")
 							self.free()

@@ -230,6 +230,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing Persist \(self.instanceNumber).")
 							self.free()
@@ -263,7 +267,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: data.cType!) { (dataPointer: UnsafePointer<LDKChannelMonitor>) in
-				self.cType!.persist_new_channel(self.cType!.this_arg, channelId.cType!, dataPointer, updateId.cType!)
+				self.cType!.persist_new_channel(self.cType!.this_arg, channelId.danglingClone().cType!, dataPointer, updateId.danglingClone().cType!)
 						}
 				
 
@@ -320,7 +324,7 @@
 						withUnsafePointer(to: update.cType!) { (updatePointer: UnsafePointer<LDKChannelMonitorUpdate>) in
 				
 						withUnsafePointer(to: data.cType!) { (dataPointer: UnsafePointer<LDKChannelMonitor>) in
-				self.cType!.update_persisted_channel(self.cType!.this_arg, channelId.cType!, updatePointer, dataPointer, updateId.cType!)
+				self.cType!.update_persisted_channel(self.cType!.this_arg, channelId.danglingClone().cType!, updatePointer, dataPointer, updateId.danglingClone().cType!)
 						}
 				
 						}

@@ -234,6 +234,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing Router \(self.instanceNumber).")
 							self.free()

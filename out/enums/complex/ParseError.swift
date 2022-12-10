@@ -205,7 +205,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ParseError_bech32_error(a.cType!)
+						let nativeCallResult = ParseError_bech32_error(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -652,6 +652,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ParseError \(self.instanceNumber).")
 							self.free()

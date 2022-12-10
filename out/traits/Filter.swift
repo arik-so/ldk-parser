@@ -193,6 +193,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing Filter \(self.instanceNumber).")
 							self.free()
@@ -244,7 +248,7 @@
 						
 
 						// native method call
-						let nativeCallResult = self.cType!.register_output(self.cType!.this_arg, output.cType!)
+						let nativeCallResult = self.cType!.register_output(self.cType!.this_arg, output.danglingClone().cType!)
 
 						// cleanup
 						

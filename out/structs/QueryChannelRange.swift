@@ -378,6 +378,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing QueryChannelRange \(self.instanceNumber).")
 							self.free()

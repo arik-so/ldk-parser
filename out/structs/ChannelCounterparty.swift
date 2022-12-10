@@ -141,7 +141,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-				ChannelCounterparty_set_features(thisPtrPointer, val.cType!)
+				ChannelCounterparty_set_features(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -264,7 +264,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-				ChannelCounterparty_set_forwarding_info(thisPtrPointer, val.cType!)
+				ChannelCounterparty_set_forwarding_info(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -391,7 +391,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelCounterparty_new(nodeIdArgPrimitiveWrapper.cType!, featuresArg.cType!, unspendablePunishmentReserveArg, forwardingInfoArg.cType!, outboundHtlcMinimumMsatArgOption.cType!, outboundHtlcMaximumMsatArgOption.cType!)
+						let nativeCallResult = ChannelCounterparty_new(nodeIdArgPrimitiveWrapper.cType!, featuresArg.danglingClone().cType!, unspendablePunishmentReserveArg, forwardingInfoArg.danglingClone().cType!, outboundHtlcMinimumMsatArgOption.cType!, outboundHtlcMaximumMsatArgOption.cType!)
 
 						// cleanup
 						
@@ -503,6 +503,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ChannelCounterparty \(self.instanceNumber).")
 							self.free()

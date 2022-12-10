@@ -137,7 +137,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-				RouteHop_set_node_features(thisPtrPointer, val.cType!)
+				RouteHop_set_node_features(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -231,7 +231,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-				RouteHop_set_channel_features(thisPtrPointer, val.cType!)
+				RouteHop_set_channel_features(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -352,7 +352,7 @@
 				
 
 						// native method call
-						let nativeCallResult = RouteHop_new(pubkeyArgPrimitiveWrapper.cType!, nodeFeaturesArg.cType!, shortChannelIdArg, channelFeaturesArg.cType!, feeMsatArg, cltvExpiryDeltaArg)
+						let nativeCallResult = RouteHop_new(pubkeyArgPrimitiveWrapper.cType!, nodeFeaturesArg.danglingClone().cType!, shortChannelIdArg, channelFeaturesArg.danglingClone().cType!, feeMsatArg, cltvExpiryDeltaArg)
 
 						// cleanup
 						
@@ -516,6 +516,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing RouteHop \(self.instanceNumber).")
 							self.free()

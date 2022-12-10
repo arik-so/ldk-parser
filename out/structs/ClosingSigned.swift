@@ -252,7 +252,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSigned>) in
-				ClosingSigned_set_fee_range(thisPtrPointer, val.cType!)
+				ClosingSigned_set_fee_range(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -277,7 +277,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ClosingSigned_new(channelIdArgPrimitiveWrapper.cType!, feeSatoshisArg, signatureArgPrimitiveWrapper.cType!, feeRangeArg.cType!)
+						let nativeCallResult = ClosingSigned_new(channelIdArgPrimitiveWrapper.cType!, feeSatoshisArg, signatureArgPrimitiveWrapper.cType!, feeRangeArg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -418,6 +418,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ClosingSigned \(self.instanceNumber).")
 							self.free()

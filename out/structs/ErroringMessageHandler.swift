@@ -151,6 +151,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ErroringMessageHandler \(self.instanceNumber).")
 							self.free()

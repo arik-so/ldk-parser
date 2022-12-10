@@ -230,6 +230,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing Watch \(self.instanceNumber).")
 							self.free()
@@ -258,7 +262,7 @@
 						
 
 						// native method call
-						let nativeCallResult = self.cType!.watch_channel(self.cType!.this_arg, fundingTxo.cType!, monitor.cType!)
+						let nativeCallResult = self.cType!.watch_channel(self.cType!.this_arg, fundingTxo.danglingClone().cType!, monitor.danglingClone().cType!)
 
 						// cleanup
 						
@@ -280,7 +284,7 @@
 						
 
 						// native method call
-						let nativeCallResult = self.cType!.update_channel(self.cType!.this_arg, fundingTxo.cType!, update.cType!)
+						let nativeCallResult = self.cType!.update_channel(self.cType!.this_arg, fundingTxo.danglingClone().cType!, update.danglingClone().cType!)
 
 						// cleanup
 						

@@ -102,6 +102,10 @@ UpdateFailHTLC(cType: currentCType, anchor: self).dangle()
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Vec_UpdateFailHTLCZ \(self.instanceNumber).")
 							self.free()

@@ -162,7 +162,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
-				PaymentParameters_set_features(thisPtrPointer, val.cType!)
+				PaymentParameters_set_features(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -511,7 +511,7 @@
 				
 
 						// native method call
-						let nativeCallResult = PaymentParameters_new(payeePubkeyArgPrimitiveWrapper.cType!, featuresArg.cType!, routeHintsArgVector.cType!, expiryTimeArgOption.cType!, maxTotalCltvExpiryDeltaArg, maxPathCountArg, maxChannelSaturationPowerOfHalfArg, previouslyFailedChannelsArgVector.cType!)
+						let nativeCallResult = PaymentParameters_new(payeePubkeyArgPrimitiveWrapper.cType!, featuresArg.danglingClone().cType!, routeHintsArgVector.cType!, expiryTimeArgOption.cType!, maxTotalCltvExpiryDeltaArg, maxPathCountArg, maxChannelSaturationPowerOfHalfArg, previouslyFailedChannelsArgVector.cType!)
 
 						// cleanup
 						
@@ -721,6 +721,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing PaymentParameters \(self.instanceNumber).")
 							self.free()

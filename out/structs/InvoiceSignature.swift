@@ -157,6 +157,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing InvoiceSignature \(self.instanceNumber).")
 							self.free()

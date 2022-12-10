@@ -73,7 +73,7 @@
 						
 
 						// native method call
-						let nativeCallResult = InvoicePayer_new(payer.activate().cType!, router.activate().cType!, logger.activate().cType!, eventHandler.activate().cType!, retry.cType!)
+						let nativeCallResult = InvoicePayer_new(payer.activate().cType!, router.activate().cType!, logger.activate().cType!, eventHandler.activate().cType!, retry.danglingClone().cType!)
 
 						// cleanup
 						
@@ -262,6 +262,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing InvoicePayer \(self.instanceNumber).")
 							self.free()

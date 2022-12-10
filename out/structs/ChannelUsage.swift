@@ -181,7 +181,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUsage>) in
-				ChannelUsage_set_effective_capacity(thisPtrPointer, val.cType!)
+				ChannelUsage_set_effective_capacity(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -202,7 +202,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChannelUsage_new(amountMsatArg, inflightHtlcMsatArg, effectiveCapacityArg.cType!)
+						let nativeCallResult = ChannelUsage_new(amountMsatArg, inflightHtlcMsatArg, effectiveCapacityArg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -270,6 +270,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ChannelUsage \(self.instanceNumber).")
 							self.free()

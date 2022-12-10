@@ -66,7 +66,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ_err(e.cType!)
+						let nativeCallResult = CResult_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

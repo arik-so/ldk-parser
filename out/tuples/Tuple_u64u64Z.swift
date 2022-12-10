@@ -143,6 +143,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_u64u64Z \(self.instanceNumber).")
 							self.free()

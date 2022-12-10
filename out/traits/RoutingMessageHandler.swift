@@ -455,6 +455,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing RoutingMessageHandler \(self.instanceNumber).")
 							self.free()
@@ -615,7 +619,7 @@
 				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_reply_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.cType!)
+						let nativeCallResult = self.cType!.handle_reply_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -637,7 +641,7 @@
 				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_reply_short_channel_ids_end(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.cType!)
+						let nativeCallResult = self.cType!.handle_reply_short_channel_ids_end(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -657,7 +661,7 @@
 				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_query_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.cType!)
+						let nativeCallResult = self.cType!.handle_query_channel_range(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -677,7 +681,7 @@
 				
 
 						// native method call
-						let nativeCallResult = self.cType!.handle_query_short_channel_ids(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.cType!)
+						let nativeCallResult = self.cType!.handle_query_short_channel_ids(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msg.danglingClone().cType!)
 
 						// cleanup
 						

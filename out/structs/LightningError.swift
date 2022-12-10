@@ -137,7 +137,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKLightningError>) in
-				LightningError_set_action(thisPtrPointer, val.cType!)
+				LightningError_set_action(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -162,7 +162,7 @@
 					
 
 						// native method call
-						let nativeCallResult = LightningError_new(errArgPrimitiveWrapper.cType!, actionArg.cType!)
+						let nativeCallResult = LightningError_new(errArgPrimitiveWrapper.cType!, actionArg.danglingClone().cType!)
 
 						// cleanup
 						
@@ -230,6 +230,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing LightningError \(self.instanceNumber).")
 							self.free()

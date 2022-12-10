@@ -141,7 +141,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChannelManager_new(feeEst.activate().cType!, chainMonitor.activate().cType!, txBroadcaster.activate().cType!, logger.activate().cType!, keysManager.activate().cType!, config.cType!, params.cType!)
+						let nativeCallResult = ChannelManager_new(feeEst.activate().cType!, chainMonitor.activate().cType!, txBroadcaster.activate().cType!, logger.activate().cType!, keysManager.activate().cType!, config.danglingClone().cType!, params.danglingClone().cType!)
 
 						// cleanup
 						
@@ -220,7 +220,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-				ChannelManager_create_channel(thisArgPointer, theirNetworkKeyPrimitiveWrapper.cType!, channelValueSatoshis, pushMsat, userChannelId, overrideConfig.cType!)
+				ChannelManager_create_channel(thisArgPointer, theirNetworkKeyPrimitiveWrapper.cType!, channelValueSatoshis, pushMsat, userChannelId, overrideConfig.danglingClone().cType!)
 						}
 				
 
@@ -1658,6 +1658,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ChannelManager \(self.instanceNumber).")
 							self.free()

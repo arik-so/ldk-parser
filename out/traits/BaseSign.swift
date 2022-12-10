@@ -367,7 +367,7 @@
 							get_per_commitment_point: getPerCommitmentPointLambda,
 							release_commitment_secret: releaseCommitmentSecretLambda,
 							validate_holder_commitment: validateHolderCommitmentLambda,
-							pubkeys: pubkeys.cType!,
+							pubkeys: pubkeys.danglingClone().cType!,
 							set_pubkeys: nil,
 							channel_keys_id: channelKeysIdLambda,
 							sign_counterparty_commitment: signCounterpartyCommitmentLambda,
@@ -627,6 +627,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing BaseSign \(self.instanceNumber).")
 							self.free()

@@ -109,7 +109,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ParseOrSemanticError_parse_error(a.cType!)
+						let nativeCallResult = ParseOrSemanticError_parse_error(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -224,6 +224,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ParseOrSemanticError \(self.instanceNumber).")
 							self.free()

@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_ChannelTypeFeaturesDecodeErrorZ_ok(o.cType!)
+						let nativeCallResult = CResult_ChannelTypeFeaturesDecodeErrorZ_ok(o.danglingClone().cType!)
 
 						// cleanup
 						
@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_ChannelTypeFeaturesDecodeErrorZ_err(e.cType!)
+						let nativeCallResult = CResult_ChannelTypeFeaturesDecodeErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

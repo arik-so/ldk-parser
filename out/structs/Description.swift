@@ -208,6 +208,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Description \(self.instanceNumber).")
 							self.free()

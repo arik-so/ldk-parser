@@ -95,6 +95,10 @@
 
 					
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Vec_u64Z \(self.instanceNumber).")
 							self.free()

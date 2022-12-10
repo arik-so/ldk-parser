@@ -136,7 +136,7 @@
 						
 
 						// native method call
-						let nativeCallResult = PaymentError_routing(a.cType!)
+						let nativeCallResult = PaymentError_routing(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -155,7 +155,7 @@
 						
 
 						// native method call
-						let nativeCallResult = PaymentError_sending(a.cType!)
+						let nativeCallResult = PaymentError_sending(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -208,6 +208,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing PaymentError \(self.instanceNumber).")
 							self.free()

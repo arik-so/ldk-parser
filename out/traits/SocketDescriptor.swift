@@ -262,6 +262,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing SocketDescriptor \(self.instanceNumber).")
 							self.free()

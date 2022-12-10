@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_PositiveTimestampCreationErrorZ_ok(o.cType!)
+						let nativeCallResult = CResult_PositiveTimestampCreationErrorZ_ok(o.danglingClone().cType!)
 
 						// cleanup
 						

@@ -89,7 +89,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-				DelayedPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.cType!)
+				DelayedPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -233,7 +233,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
-				DelayedPaymentOutputDescriptor_set_output(thisPtrPointer, val.cType!)
+				DelayedPaymentOutputDescriptor_set_output(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -412,7 +412,7 @@
 				
 
 						// native method call
-						let nativeCallResult = DelayedPaymentOutputDescriptor_new(outpointArg.cType!, perCommitmentPointArgPrimitiveWrapper.cType!, toSelfDelayArg, outputArg.cType!, revocationPubkeyArgPrimitiveWrapper.cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
+						let nativeCallResult = DelayedPaymentOutputDescriptor_new(outpointArg.danglingClone().cType!, perCommitmentPointArgPrimitiveWrapper.cType!, toSelfDelayArg, outputArg.danglingClone().cType!, revocationPubkeyArgPrimitiveWrapper.cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
 
 						// cleanup
 						
@@ -553,6 +553,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing DelayedPaymentOutputDescriptor \(self.instanceNumber).")
 							self.free()

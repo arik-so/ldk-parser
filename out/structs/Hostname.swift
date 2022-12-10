@@ -165,6 +165,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Hostname \(self.instanceNumber).")
 							self.free()

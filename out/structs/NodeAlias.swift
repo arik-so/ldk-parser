@@ -263,6 +263,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing NodeAlias \(self.instanceNumber).")
 							self.free()

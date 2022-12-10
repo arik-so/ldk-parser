@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_boolPeerHandleErrorZ_err(e.cType!)
+						let nativeCallResult = CResult_boolPeerHandleErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

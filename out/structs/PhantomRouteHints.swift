@@ -330,6 +330,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing PhantomRouteHints \(self.instanceNumber).")
 							self.free()

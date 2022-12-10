@@ -147,6 +147,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_OutPointScriptZ \(self.instanceNumber).")
 							self.free()

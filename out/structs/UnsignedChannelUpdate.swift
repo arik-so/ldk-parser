@@ -699,6 +699,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing UnsignedChannelUpdate \(self.instanceNumber).")
 							self.free()

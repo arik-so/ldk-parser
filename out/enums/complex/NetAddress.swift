@@ -214,7 +214,7 @@
 						
 
 						// native method call
-						let nativeCallResult = NetAddress_hostname(hostname.cType!, port)
+						let nativeCallResult = NetAddress_hostname(hostname.danglingClone().cType!, port)
 
 						// cleanup
 						
@@ -355,6 +355,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing NetAddress \(self.instanceNumber).")
 							self.free()

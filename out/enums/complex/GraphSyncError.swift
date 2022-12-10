@@ -109,7 +109,7 @@
 						
 
 						// native method call
-						let nativeCallResult = GraphSyncError_decode_error(a.cType!)
+						let nativeCallResult = GraphSyncError_decode_error(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -128,7 +128,7 @@
 						
 
 						// native method call
-						let nativeCallResult = GraphSyncError_lightning_error(a.cType!)
+						let nativeCallResult = GraphSyncError_lightning_error(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -173,6 +173,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing GraphSyncError \(self.instanceNumber).")
 							self.free()

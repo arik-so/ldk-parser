@@ -137,6 +137,10 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
 							self.free()

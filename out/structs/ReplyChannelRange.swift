@@ -463,6 +463,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing ReplyChannelRange \(self.instanceNumber).")
 							self.free()

@@ -170,6 +170,10 @@
 					}
 
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
 						if !self.dangling {
 							Bindings.print("Freeing Persister \(self.instanceNumber).")
 							self.free()

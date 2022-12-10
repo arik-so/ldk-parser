@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInit>) in
-				Init_set_features(thisPtrPointer, val.cType!)
+				Init_set_features(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -164,7 +164,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Init_new(featuresArg.cType!, remoteNetworkAddressArgOption.cType!)
+						let nativeCallResult = Init_new(featuresArg.danglingClone().cType!, remoteNetworkAddressArgOption.cType!)
 
 						// cleanup
 						
@@ -305,6 +305,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing BindingsInit \(self.instanceNumber).")
 							self.free()

@@ -232,6 +232,10 @@
 					}
 			
 					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+						
 						if !self.dangling {
 							Bindings.print("Freeing PayeePubKey \(self.instanceNumber).")
 							self.free()
