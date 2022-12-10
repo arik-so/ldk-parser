@@ -196,7 +196,7 @@
 						
 
 						// native method call
-						let nativeCallResult = BackgroundProcessor_join(self.cType!)
+						let nativeCallResult = BackgroundProcessor_join(self.dangle().cType!)
 
 						// cleanup
 						
@@ -224,7 +224,7 @@
 						
 
 						// native method call
-						let nativeCallResult = BackgroundProcessor_stop(self.cType!)
+						let nativeCallResult = BackgroundProcessor_stop(self.dangle().cType!)
 
 						// cleanup
 						

@@ -173,15 +173,23 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
 			}
 
+			var memoryContext: MemoryHandlingContext | undefined;
 			if (!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && swiftMethodName !== 'free' && !this.isElidedType(currentArgument.type) && !(currentArgument.type instanceof RustTrait) && this.hasFreeMethod(currentArgument.type)) {
 				if (isInstanceArgument) {
 					nonCloneableArguments.push('self');
+					memoryContext = {
+						isCloneMethod: false,
+						isConstructor: false,
+						isFreeMethod: false,
+						isStatic: false,
+						isValueAccessor: false
+					};
 				} else {
 					nonCloneableArguments.push('`' + swiftArgumentName + '`');
 				}
 			}
 
-			const preparedArgument = this.prepareSwiftArgumentForRust(currentArgument, containerType);
+			const preparedArgument = this.prepareSwiftArgumentForRust(currentArgument, containerType, memoryContext);
 			nativeCallPrefix += preparedArgument.conversion;
 			nativeCallWrapperPrefix += preparedArgument.methodCallWrapperPrefix;
 			nativeCallWrapperSuffix += preparedArgument.methodCallWrapperSuffix;
@@ -548,7 +556,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return typeName;
 	}
 
-	protected prepareSwiftArgumentForRust(argument: RustFunctionArgument, containerType?: RustType): PreparedArgument {
+	protected prepareSwiftArgumentForRust(argument: RustFunctionArgument, containerType?: RustType, memoryContext?: MemoryHandlingContext): PreparedArgument {
 		// this is the name of the variable that the method receives
 		const publicName = Generator.snakeCaseToCamelCase(argument.contextualName);
 		const preparedArgument: PreparedArgument = {
@@ -593,21 +601,27 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		 * TODO: find out, such that I'm able to explain
 		 */
 		let isOwnershipFieldSafelyEditable = false;
-		if(argument.type instanceof RustPrimitiveWrapper){
+		if (argument.type instanceof RustPrimitiveWrapper) {
 			isOwnershipFieldSafelyEditable = true;
-		}else if(argument.type.getName() === 'LDKChannelMonitor' && isElidedContainerContent){
+		} else if (argument.type.getName() === 'LDKChannelMonitor' && isElidedContainerContent) {
 			isOwnershipFieldSafelyEditable = true;
 		}
 
 		let memoryManagementInfix = '';
-		if (!(argument.type instanceof RustTrait) && this.hasFreeMethod(argument.type) && argument.type !== containerType) {
+		if (!(argument.type instanceof RustTrait) && this.hasFreeMethod(argument.type)) {
 
-			if (this.hasCloneMethod(argument.type)) {
+			if (argument.type === containerType) {
+				// normally, we don't really wanna do anything here
+				if (!this.hasCloneMethod(argument.type) && !this.isElidedType(argument.type) && !argument.isAsteriskPointer && memoryContext && !memoryContext.isFreeMethod) {
+					// except when the argument isn't cloneable, and it's not elided, and it's passed by value, in which case we dangle
+					memoryManagementInfix = '.dangle()';
+				}
+			} else if (this.hasCloneMethod(argument.type)) {
 				if (this.hasOwnershipField(argument.type)) {
 					memoryManagementInfix = '.dynamicallyDangledClone()';
-					if(isOwnershipFieldSafelyEditable) {
+					if (isOwnershipFieldSafelyEditable) {
 						// normally we wanna avoid it, except for LDKChannelMonitors
-						memoryManagementInfix = '.clone().setCFreeability(freeable: false)'
+						memoryManagementInfix = '.clone().setCFreeability(freeable: false)';
 					}
 				} else {
 					// we have to assume that Rust will just eat this type
@@ -616,7 +630,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else {
 				// just gotta hope for the best
 				memoryManagementInfix = '.dangle()';
-				if(isOwnershipFieldSafelyEditable && this.hasOwnershipField(argument.type)){
+				if (isOwnershipFieldSafelyEditable && this.hasOwnershipField(argument.type)) {
 					// normally we wanna avoid it, except for LDKChannelMonitors
 					memoryManagementInfix = '.setCFreeability(freeable: false)';
 				}
@@ -625,7 +639,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 		if (argument.type === containerType) {
 			// we're passing self
-			preparedArgument.accessor = 'self.cType!';
+			preparedArgument.accessor = `self${memoryManagementInfix}.cType!`;
 		} else {
 			// these type elision helpers only apply outside the context of the very eliding type
 			if (argument.type instanceof RustNullableOption) {
@@ -1072,4 +1086,6 @@ export interface MemoryHandlingContext {
 	 * True if the containing Swift method returns a close of its containing struct.
 	 */
 	isCloneMethod: boolean;
+
+	isFreeMethod: boolean;
 }
