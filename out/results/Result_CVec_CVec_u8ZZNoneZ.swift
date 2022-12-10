@@ -43,7 +43,7 @@
 					public class func initWithOk(o: [[UInt8]]) -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						
-						let oVector = Vec_CVec_u8ZZ(array: o)
+						let oVector = Vec_CVec_u8ZZ(array: o).dangle()
 				
 
 						// native method call

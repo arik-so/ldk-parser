@@ -83,7 +83,7 @@
 					public init(pathToChannelData: String) {
 						// native call variable prep
 						
-						let pathToChannelDataPrimitiveWrapper = Str(value: pathToChannelData)
+						let pathToChannelDataPrimitiveWrapper = Str(value: pathToChannelData).setCFreeability(freeable: false)
 				
 						pathToChannelDataPrimitiveWrapper.cType!.chars_is_owned = false
 					

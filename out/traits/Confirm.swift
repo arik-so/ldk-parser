@@ -347,7 +347,7 @@
 						tupledHeaderPointer!.initialize(to: tupledHeader)
 					}
 				
-						let txdataVector = Vec_C2Tuple_usizeTransactionZZ(array: txdata)
+						let txdataVector = Vec_C2Tuple_usizeTransactionZZ(array: txdata).dangle()
 				
 
 						// native method call

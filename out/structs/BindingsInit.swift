@@ -135,7 +135,7 @@
 					public func setRemoteNetworkAddress(val: NetAddress?) {
 						// native call variable prep
 						
-						let valOption = Option_NetAddressZ(some: val)
+						let valOption = Option_NetAddressZ(some: val).danglingClone()
 				
 
 						// native method call
@@ -160,7 +160,7 @@
 					public init(featuresArg: InitFeatures, remoteNetworkAddressArg: NetAddress?) {
 						// native call variable prep
 						
-						let remoteNetworkAddressArgOption = Option_NetAddressZ(some: remoteNetworkAddressArg)
+						let remoteNetworkAddressArgOption = Option_NetAddressZ(some: remoteNetworkAddressArg).danglingClone()
 				
 
 						// native method call

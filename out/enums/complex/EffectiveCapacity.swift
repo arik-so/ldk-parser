@@ -167,7 +167,7 @@
 					public class func initWithTotal(capacityMsat: UInt64, htlcMaximumMsat: UInt64?) -> EffectiveCapacity {
 						// native call variable prep
 						
-						let htlcMaximumMsatOption = Option_u64Z(some: htlcMaximumMsat)
+						let htlcMaximumMsatOption = Option_u64Z(some: htlcMaximumMsat).danglingClone()
 				
 
 						// native method call

@@ -43,7 +43,7 @@
 					public class func initWithOk(o: Event?) -> Result_COption_EventZDecodeErrorZ {
 						// native call variable prep
 						
-						let oOption = Option_EventZ(some: o)
+						let oOption = Option_EventZ(some: o).danglingClone()
 				
 
 						// native method call

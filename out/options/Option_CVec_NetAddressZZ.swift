@@ -40,7 +40,7 @@
 
 						if let some = some {
 							
-							let someVector = Vec_NetAddressZ(array: some)
+							let someVector = Vec_NetAddressZ(array: some).dangle()
 				
 							self.cType = COption_CVec_NetAddressZZ_some(someVector.cType!)
 						} else {

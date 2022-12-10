@@ -572,9 +572,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (!(argument.type instanceof RustTrait) && !argument.isAsteriskPointer && !this.isElidedType(argument.type) && this.hasFreeMethod(argument.type)) {
 			if (this.hasCloneMethod(argument.type)) {
 				// we're kinda relying here on Rust immediately freeing this object upon consumption
-				if(this.hasOwnershipField(argument.type)){
+				if (this.hasOwnershipField(argument.type)) {
 					memoryManagementInfix = '.dynamicallyDangledClone()';
-				}else {
+				} else {
 					memoryManagementInfix = '.clone()';
 				}
 			} else if (this.hasFreeMethod(argument.type)) { // could just be else
@@ -589,8 +589,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				// to make sure this value doesn't also get freed after the array gets freed,
 				// the clone must be dangled
 				if (this.hasOwnershipField(nestedType)) {
-					memoryManagementInfix = '.clone().setCFreeability(freeable: false)'
-				}else {
+					memoryManagementInfix = '.clone().setCFreeability(freeable: false)';
+				} else {
 					memoryManagementInfix = '.danglingClone()';
 				}
 			} else if (this.hasFreeMethod(nestedType)) {
@@ -602,6 +602,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				}
 			}
 		};
+
 		if (containerType && this.isElidedType(containerType) && (this.hasCloneMethod(argument.type) || this.hasFreeMethod(argument.type))) {
 			// determine whether this is an initialization of that container
 			if (containerType instanceof RustVector) {
@@ -628,6 +629,23 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			// we're passing self
 			preparedArgument.accessor = 'self.cType!';
 		} else {
+			if (this.isElidedType(argument.type) && this.hasFreeMethod(argument.type)) {
+				if (this.hasCloneMethod(argument.type)) {
+					if (this.hasOwnershipField(argument.type)) {
+						memoryManagementInfix = '.dynamicallyDangledClone()';
+					} else {
+						// we have to assume that Rust will just eat this type
+						memoryManagementInfix = '.danglingClone()';
+					}
+				} else {
+					if (this.hasOwnershipField(argument.type)) {
+						memoryManagementInfix = '.setCFreeability(freeable: false)';
+					} else {
+						// just gotta hope for the best
+						memoryManagementInfix = '.dangle()';
+					}
+				}
+			}
 			// these type elision helpers only apply outside the context of the very eliding type
 			if (argument.type instanceof RustNullableOption) {
 				preparedArgument.name += 'Option';
@@ -923,7 +941,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				}
 			`;
 
-			if(this.hasCloneMethod(type)){
+			if (this.hasCloneMethod(type)) {
 				danglingCloneCode += `
 					internal func dynamicallyDangledClone() -> ${swiftTypeName} {
 						let dangledClone = self.clone()

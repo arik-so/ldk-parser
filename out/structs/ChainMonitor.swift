@@ -82,7 +82,7 @@
 					public init(chainSource: Filter?, broadcaster: BroadcasterInterface, logger: Logger, feeest: FeeEstimator, persister: Persist) {
 						// native call variable prep
 						
-						let chainSourceOption = Option_FilterZ(some: chainSource)
+						let chainSourceOption = Option_FilterZ(some: chainSource).dangle()
 				
 
 						// native method call
@@ -117,7 +117,7 @@
 					public func getClaimableBalances(ignoredChannels: [ChannelDetails]) -> [Balance] {
 						// native call variable prep
 						
-						let ignoredChannelsVector = Vec_ChannelDetailsZ(array: ignoredChannels)
+						let ignoredChannelsVector = Vec_ChannelDetailsZ(array: ignoredChannels).dangle()
 				
 
 						// native method call

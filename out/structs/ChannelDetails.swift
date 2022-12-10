@@ -351,7 +351,7 @@
 					public func setShortChannelId(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(some: val)
+						let valOption = Option_u64Z(some: val).danglingClone()
 				
 
 						// native method call
@@ -415,7 +415,7 @@
 					public func setOutboundScidAlias(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(some: val)
+						let valOption = Option_u64Z(some: val).danglingClone()
 				
 
 						// native method call
@@ -479,7 +479,7 @@
 					public func setInboundScidAlias(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(some: val)
+						let valOption = Option_u64Z(some: val).danglingClone()
 				
 
 						// native method call
@@ -589,7 +589,7 @@
 					public func setUnspendablePunishmentReserve(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(some: val)
+						let valOption = Option_u64Z(some: val).danglingClone()
 				
 
 						// native method call
@@ -949,7 +949,7 @@
 					public func setConfirmationsRequired(val: UInt32?) {
 						// native call variable prep
 						
-						let valOption = Option_u32Z(some: val)
+						let valOption = Option_u32Z(some: val).danglingClone()
 				
 
 						// native method call
@@ -1009,7 +1009,7 @@
 					public func setForceCloseSpendDelay(val: UInt16?) {
 						// native call variable prep
 						
-						let valOption = Option_u16Z(some: val)
+						let valOption = Option_u16Z(some: val).danglingClone()
 				
 
 						// native method call
@@ -1261,7 +1261,7 @@
 					public func setInboundHtlcMinimumMsat(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(some: val)
+						let valOption = Option_u64Z(some: val).danglingClone()
 				
 
 						// native method call
@@ -1309,7 +1309,7 @@
 					public func setInboundHtlcMaximumMsat(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(some: val)
+						let valOption = Option_u64Z(some: val).danglingClone()
 				
 
 						// native method call
@@ -1403,21 +1403,21 @@
 						
 						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
 				
-						let shortChannelIdArgOption = Option_u64Z(some: shortChannelIdArg)
+						let shortChannelIdArgOption = Option_u64Z(some: shortChannelIdArg).danglingClone()
 				
-						let outboundScidAliasArgOption = Option_u64Z(some: outboundScidAliasArg)
+						let outboundScidAliasArgOption = Option_u64Z(some: outboundScidAliasArg).danglingClone()
 				
-						let inboundScidAliasArgOption = Option_u64Z(some: inboundScidAliasArg)
+						let inboundScidAliasArgOption = Option_u64Z(some: inboundScidAliasArg).danglingClone()
 				
-						let unspendablePunishmentReserveArgOption = Option_u64Z(some: unspendablePunishmentReserveArg)
+						let unspendablePunishmentReserveArgOption = Option_u64Z(some: unspendablePunishmentReserveArg).danglingClone()
 				
-						let confirmationsRequiredArgOption = Option_u32Z(some: confirmationsRequiredArg)
+						let confirmationsRequiredArgOption = Option_u32Z(some: confirmationsRequiredArg).danglingClone()
 				
-						let forceCloseSpendDelayArgOption = Option_u16Z(some: forceCloseSpendDelayArg)
+						let forceCloseSpendDelayArgOption = Option_u16Z(some: forceCloseSpendDelayArg).danglingClone()
 				
-						let inboundHtlcMinimumMsatArgOption = Option_u64Z(some: inboundHtlcMinimumMsatArg)
+						let inboundHtlcMinimumMsatArgOption = Option_u64Z(some: inboundHtlcMinimumMsatArg).danglingClone()
 				
-						let inboundHtlcMaximumMsatArgOption = Option_u64Z(some: inboundHtlcMaximumMsatArg)
+						let inboundHtlcMaximumMsatArgOption = Option_u64Z(some: inboundHtlcMaximumMsatArg).danglingClone()
 				
 
 						// native method call

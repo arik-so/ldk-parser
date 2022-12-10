@@ -287,7 +287,7 @@
 					public func setShortChannelIds(val: [UInt64]) {
 						// native call variable prep
 						
-						let valVector = Vec_u64Z(array: val)
+						let valVector = Vec_u64Z(array: val).dangle()
 				
 
 						// native method call
@@ -316,7 +316,7 @@
 						
 						let chainHashArgPrimitiveWrapper = ThirtyTwoBytes(value: chainHashArg)
 				
-						let shortChannelIdsArgVector = Vec_u64Z(array: shortChannelIdsArg)
+						let shortChannelIdsArgVector = Vec_u64Z(array: shortChannelIdsArg).dangle()
 				
 
 						// native method call

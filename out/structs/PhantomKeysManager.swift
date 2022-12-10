@@ -158,11 +158,11 @@
 					public func spendSpendableOutputs(descriptors: [SpendableOutputDescriptor], outputs: [TxOut], changeDestinationScript: [UInt8], feerateSatPer_1000Weight: UInt32) -> Result_TransactionNoneZ {
 						// native call variable prep
 						
-						let descriptorsVector = Vec_SpendableOutputDescriptorZ(array: descriptors)
+						let descriptorsVector = Vec_SpendableOutputDescriptorZ(array: descriptors).dangle()
 				
-						let outputsVector = Vec_TxOutZ(array: outputs)
+						let outputsVector = Vec_TxOutZ(array: outputs).dangle()
 				
-						let changeDestinationScriptVector = Vec_u8Z(array: changeDestinationScript)
+						let changeDestinationScriptVector = Vec_u8Z(array: changeDestinationScript).dangle()
 				
 
 						// native method call

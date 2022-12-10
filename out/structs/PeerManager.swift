@@ -180,7 +180,7 @@
 						
 						let theirNodeIdPrimitiveWrapper = PublicKey(value: theirNodeId)
 				
-						let remoteNetworkAddressOption = Option_NetAddressZ(some: remoteNetworkAddress)
+						let remoteNetworkAddressOption = Option_NetAddressZ(some: remoteNetworkAddress).danglingClone()
 				
 
 						// native method call
@@ -219,7 +219,7 @@
 					public func newInboundConnection(descriptor: SocketDescriptor, remoteNetworkAddress: NetAddress?) -> Result_NonePeerHandleErrorZ {
 						// native call variable prep
 						
-						let remoteNetworkAddressOption = Option_NetAddressZ(some: remoteNetworkAddress)
+						let remoteNetworkAddressOption = Option_NetAddressZ(some: remoteNetworkAddress).danglingClone()
 				
 
 						// native method call
@@ -499,7 +499,7 @@
 				
 						let aliasPrimitiveWrapper = ThirtyTwoBytes(value: alias)
 				
-						let addressesVector = Vec_NetAddressZ(array: addresses)
+						let addressesVector = Vec_NetAddressZ(array: addresses).dangle()
 				
 
 						// native method call

@@ -43,7 +43,7 @@
 					public class func initWithOk(o: ([UInt8], [UInt8])) -> Result_C2Tuple_SignatureSignatureZNoneZ {
 						// native call variable prep
 						
-						let oTuple = Tuple_SignatureSignatureZ(tuple: o)
+						let oTuple = Tuple_SignatureSignatureZ(tuple: o).danglingClone()
 				
 
 						// native method call

@@ -43,7 +43,7 @@
 					public class func initWithOk(o: HTLCDestination?) -> Result_COption_HTLCDestinationZDecodeErrorZ {
 						// native call variable prep
 						
-						let oOption = Option_HTLCDestinationZ(some: o)
+						let oOption = Option_HTLCDestinationZ(some: o).danglingClone()
 				
 
 						// native method call

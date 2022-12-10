@@ -283,7 +283,7 @@
 				
 						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
 				
-						let outputScriptVector = Vec_u8Z(array: outputScript)
+						let outputScriptVector = Vec_u8Z(array: outputScript).dangle()
 				
 
 						// native method call
@@ -354,7 +354,7 @@
 				
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let feePaidMsatOption = Option_u64Z(some: feePaidMsat)
+						let feePaidMsatOption = Option_u64Z(some: feePaidMsat).danglingClone()
 				
 
 						// native method call
@@ -402,7 +402,7 @@
 				
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
 						// native method call
@@ -429,11 +429,11 @@
 				
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let networkUpdateOption = Option_NetworkUpdateZ(some: networkUpdate)
+						let networkUpdateOption = Option_NetworkUpdateZ(some: networkUpdate).danglingClone()
 				
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
-						let shortChannelIdOption = Option_u64Z(some: shortChannelId)
+						let shortChannelIdOption = Option_u64Z(some: shortChannelId).danglingClone()
 				
 
 						// native method call
@@ -460,7 +460,7 @@
 				
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
 						// native method call
@@ -487,9 +487,9 @@
 				
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
-						let shortChannelIdOption = Option_u64Z(some: shortChannelId)
+						let shortChannelIdOption = Option_u64Z(some: shortChannelId).danglingClone()
 				
 
 						// native method call
@@ -531,7 +531,7 @@
 					public class func initWithSpendableOutputs(outputs: [SpendableOutputDescriptor]) -> Event {
 						// native call variable prep
 						
-						let outputsVector = Vec_SpendableOutputDescriptorZ(array: outputs)
+						let outputsVector = Vec_SpendableOutputDescriptorZ(array: outputs).dangle()
 				
 
 						// native method call
@@ -558,7 +558,7 @@
 				
 						let nextChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: nextChannelId)
 				
-						let feeEarnedMsatOption = Option_u64Z(some: feeEarnedMsat)
+						let feeEarnedMsatOption = Option_u64Z(some: feeEarnedMsat).danglingClone()
 				
 
 						// native method call
@@ -602,7 +602,7 @@
 						
 						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
 				
-						let transactionPrimitiveWrapper = Transaction(value: transaction)
+						let transactionPrimitiveWrapper = Transaction(value: transaction).setCFreeability(freeable: false)
 				
 						transactionPrimitiveWrapper.cType!.data_is_owned = false
 					

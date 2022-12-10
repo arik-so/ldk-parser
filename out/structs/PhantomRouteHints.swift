@@ -87,7 +87,7 @@
 					public func setChannels(val: [ChannelDetails]) {
 						// native call variable prep
 						
-						let valVector = Vec_ChannelDetailsZ(array: val)
+						let valVector = Vec_ChannelDetailsZ(array: val).dangle()
 				
 
 						// native method call
@@ -210,7 +210,7 @@
 					public init(channelsArg: [ChannelDetails], phantomScidArg: UInt64, realNodePubkeyArg: [UInt8]) {
 						// native call variable prep
 						
-						let channelsArgVector = Vec_ChannelDetailsZ(array: channelsArg)
+						let channelsArgVector = Vec_ChannelDetailsZ(array: channelsArg).dangle()
 				
 						let realNodePubkeyArgPrimitiveWrapper = PublicKey(value: realNodePubkeyArg)
 				

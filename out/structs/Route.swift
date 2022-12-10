@@ -93,7 +93,7 @@
 					public func setPaths(val: [[RouteHop]]) {
 						// native call variable prep
 						
-						let valVector = Vec_CVec_RouteHopZZ(array: val)
+						let valVector = Vec_CVec_RouteHopZZ(array: val).dangle()
 				
 
 						// native method call
@@ -191,7 +191,7 @@
 					public init(pathsArg: [[RouteHop]], paymentParamsArg: PaymentParameters) {
 						// native call variable prep
 						
-						let pathsArgVector = Vec_CVec_RouteHopZZ(array: pathsArg)
+						let pathsArgVector = Vec_CVec_RouteHopZZ(array: pathsArg).dangle()
 				
 
 						// native method call

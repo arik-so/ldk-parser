@@ -281,7 +281,7 @@
 					public func setAddresses(val: [NetAddress]) {
 						// native call variable prep
 						
-						let valVector = Vec_NetAddressZ(array: val)
+						let valVector = Vec_NetAddressZ(array: val).dangle()
 				
 
 						// native method call
@@ -379,7 +379,7 @@
 						
 						let rgbArgPrimitiveWrapper = ThreeBytes(value: rgbArg)
 				
-						let addressesArgVector = Vec_NetAddressZ(array: addressesArg)
+						let addressesArgVector = Vec_NetAddressZ(array: addressesArg).dangle()
 				
 
 						// native method call

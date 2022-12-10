@@ -523,7 +523,7 @@
 					public func setExcessData(val: [UInt8]) {
 						// native call variable prep
 						
-						let valVector = Vec_u8Z(array: val)
+						let valVector = Vec_u8Z(array: val).dangle()
 				
 
 						// native method call
@@ -552,7 +552,7 @@
 						
 						let chainHashArgPrimitiveWrapper = ThirtyTwoBytes(value: chainHashArg)
 				
-						let excessDataArgVector = Vec_u8Z(array: excessDataArg)
+						let excessDataArgVector = Vec_u8Z(array: excessDataArg).dangle()
 				
 
 						// native method call

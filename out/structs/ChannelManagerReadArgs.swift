@@ -444,7 +444,7 @@
 					public init(keysManager: KeysInterface, feeEstimator: FeeEstimator, chainMonitor: Watch, txBroadcaster: BroadcasterInterface, logger: Logger, defaultConfig: UserConfig, channelMonitors: [ChannelMonitor]) {
 						// native call variable prep
 						
-						let channelMonitorsVector = Vec_ChannelMonitorZ(array: channelMonitors)
+						let channelMonitorsVector = Vec_ChannelMonitorZ(array: channelMonitors).dangle()
 				
 
 						// native method call

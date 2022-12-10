@@ -83,7 +83,7 @@
 					public func setTransaction(val: [UInt8]) {
 						// native call variable prep
 						
-						let valPrimitiveWrapper = Transaction(value: val)
+						let valPrimitiveWrapper = Transaction(value: val).setCFreeability(freeable: false)
 				
 						valPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -168,7 +168,7 @@
 					public init(transactionArg: [UInt8], txidArg: [UInt8]) {
 						// native call variable prep
 						
-						let transactionArgPrimitiveWrapper = Transaction(value: transactionArg)
+						let transactionArgPrimitiveWrapper = Transaction(value: transactionArg).setCFreeability(freeable: false)
 				
 						transactionArgPrimitiveWrapper.cType!.data_is_owned = false
 					

@@ -83,7 +83,7 @@
 					public func setA(val: [RouteHintHop]) {
 						// native call variable prep
 						
-						let valVector = Vec_RouteHintHopZ(array: val)
+						let valVector = Vec_RouteHintHopZ(array: val).dangle()
 				
 
 						// native method call
@@ -110,7 +110,7 @@
 					public init(aArg: [RouteHintHop]) {
 						// native call variable prep
 						
-						let aArgVector = Vec_RouteHintHopZ(array: aArg)
+						let aArgVector = Vec_RouteHintHopZ(array: aArg).dangle()
 				
 
 						// native method call

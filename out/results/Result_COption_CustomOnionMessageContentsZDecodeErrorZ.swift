@@ -43,7 +43,7 @@
 					public class func initWithOk(o: CustomOnionMessageContents?) -> Result_COption_CustomOnionMessageContentsZDecodeErrorZ {
 						// native call variable prep
 						
-						let oOption = Option_CustomOnionMessageContentsZ(some: o)
+						let oOption = Option_CustomOnionMessageContentsZ(some: o).danglingClone()
 				
 
 						// native method call

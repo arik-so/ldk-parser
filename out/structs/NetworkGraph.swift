@@ -295,7 +295,7 @@
 					public func updateChannelFromAnnouncement(msg: ChannelAnnouncement, chainAccess: Access?) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
-						let chainAccessOption = Option_AccessZ(some: chainAccess)
+						let chainAccessOption = Option_AccessZ(some: chainAccess).dangle()
 				
 
 						// native method call
@@ -329,7 +329,7 @@
 					public func updateChannelFromUnsignedAnnouncement(msg: UnsignedChannelAnnouncement, chainAccess: Access?) -> Result_NoneLightningErrorZ {
 						// native call variable prep
 						
-						let chainAccessOption = Option_AccessZ(some: chainAccess)
+						let chainAccessOption = Option_AccessZ(some: chainAccess).dangle()
 				
 
 						// native method call

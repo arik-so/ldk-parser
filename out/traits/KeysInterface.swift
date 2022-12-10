@@ -483,7 +483,7 @@
 						
 						let otherKeyPrimitiveWrapper = PublicKey(value: otherKey)
 				
-						let tweakOption = Option_ScalarZ(some: tweak)
+						let tweakOption = Option_ScalarZ(some: tweak).dangle()
 				
 
 						// native method call
@@ -617,7 +617,7 @@
 						
 						let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes)
 				
-						let invoiceDataVector = Vec_u5Z(array: invoiceData)
+						let invoiceDataVector = Vec_u5Z(array: invoiceData).dangle()
 				
 
 						// native method call

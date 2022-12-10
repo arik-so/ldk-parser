@@ -40,7 +40,7 @@
 
 						if let some = some {
 							
-							let someTuple = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(tuple: some)
+							let someTuple = Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(tuple: some).danglingClone()
 				
 							self.cType = COption_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ_some(someTuple.cType!)
 						} else {

@@ -40,7 +40,7 @@
 
 						if let some = some {
 							
-							let someTuple = Tuple_u64u64Z(tuple: some)
+							let someTuple = Tuple_u64u64Z(tuple: some).danglingClone()
 				
 							self.cType = COption_C2Tuple_u64u64ZZ_some(someTuple.cType!)
 						} else {

@@ -137,7 +137,7 @@
 					public func setScriptpubkey(val: [UInt8]) {
 						// native call variable prep
 						
-						let valVector = Vec_u8Z(array: val)
+						let valVector = Vec_u8Z(array: val).dangle()
 				
 
 						// native method call
@@ -166,7 +166,7 @@
 						
 						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
 				
-						let scriptpubkeyArgVector = Vec_u8Z(array: scriptpubkeyArg)
+						let scriptpubkeyArgVector = Vec_u8Z(array: scriptpubkeyArg).dangle()
 				
 
 						// native method call

@@ -113,7 +113,7 @@
 						
 						let versionPrimitiveWrapper = u5(value: version)
 				
-						let programVector = Vec_u8Z(array: program)
+						let programVector = Vec_u8Z(array: program).dangle()
 				
 
 						// native method call

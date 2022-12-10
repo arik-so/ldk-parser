@@ -65,7 +65,7 @@
 					public class func new(nodePks: [[UInt8]], keysManager: KeysInterface) -> Result_BlindedRouteNoneZ {
 						// native call variable prep
 						
-						let nodePksVector = Vec_PublicKeyZ(array: nodePks)
+						let nodePksVector = Vec_PublicKeyZ(array: nodePks).dangle()
 				
 
 						// native method call

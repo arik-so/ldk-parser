@@ -43,7 +43,7 @@
 					public class func initWithOk(o: ([UInt8], ChannelMonitor)) -> Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ {
 						// native call variable prep
 						
-						let oTuple = Tuple_BlockHashChannelMonitorZ(tuple: o)
+						let oTuple = Tuple_BlockHashChannelMonitorZ(tuple: o).danglingClone()
 				
 
 						// native method call

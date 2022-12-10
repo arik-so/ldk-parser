@@ -43,7 +43,7 @@
 					public class func initWithOk(o: MonitorEvent?) -> Result_COption_MonitorEventZDecodeErrorZ {
 						// native call variable prep
 						
-						let oOption = Option_MonitorEventZ(some: o)
+						let oOption = Option_MonitorEventZ(some: o).danglingClone()
 				
 
 						// native method call

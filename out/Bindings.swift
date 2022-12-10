@@ -282,7 +282,7 @@
 					
 					let msgPrimitiveWrapper = u8slice(value: msg)
 				
-					let sigPrimitiveWrapper = Str(value: sig)
+					let sigPrimitiveWrapper = Str(value: sig).setCFreeability(freeable: false)
 				
 					sigPrimitiveWrapper.cType!.chars_is_owned = false
 				
@@ -308,7 +308,7 @@
 					
 					let msgPrimitiveWrapper = u8slice(value: msg)
 				
-					let sigPrimitiveWrapper = Str(value: sig)
+					let sigPrimitiveWrapper = Str(value: sig).setCFreeability(freeable: false)
 				
 					sigPrimitiveWrapper.cType!.chars_is_owned = false
 				
@@ -335,7 +335,7 @@
 					
 					let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes)
 				
-					let dataWithoutSignatureVector = Vec_u5Z(array: dataWithoutSignature)
+					let dataWithoutSignatureVector = Vec_u5Z(array: dataWithoutSignature).dangle()
 				
 
 					// native method call
@@ -428,7 +428,7 @@
 				public class func swiftCreate(keys: ExpandedKey, minValueMsat: UInt64?, invoiceExpiryDeltaSecs: UInt32, keysManager: KeysInterface, currentTime: UInt64) -> Result_C2Tuple_PaymentHashPaymentSecretZNoneZ {
 					// native call variable prep
 					
-					let minValueMsatOption = Option_u64Z(some: minValueMsat)
+					let minValueMsatOption = Option_u64Z(some: minValueMsat).danglingClone()
 				
 
 					// native method call
@@ -463,7 +463,7 @@
 				public class func swiftCreateFromHash(keys: ExpandedKey, minValueMsat: UInt64?, paymentHash: [UInt8], invoiceExpiryDeltaSecs: UInt32, currentTime: UInt64) -> Result_PaymentSecretNoneZ {
 					// native call variable prep
 					
-					let minValueMsatOption = Option_u64Z(some: minValueMsat)
+					let minValueMsatOption = Option_u64Z(some: minValueMsat).danglingClone()
 				
 					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
@@ -553,9 +553,9 @@
 				public class func swiftBuildClosingTransaction(toHolderValueSat: UInt64, toCounterpartyValueSat: UInt64, toHolderScript: [UInt8], toCounterpartyScript: [UInt8], fundingOutpoint: OutPoint) -> [UInt8] {
 					// native call variable prep
 					
-					let toHolderScriptVector = Vec_u8Z(array: toHolderScript)
+					let toHolderScriptVector = Vec_u8Z(array: toHolderScript).dangle()
 				
-					let toCounterpartyScriptVector = Vec_u8Z(array: toCounterpartyScript)
+					let toCounterpartyScriptVector = Vec_u8Z(array: toCounterpartyScript).dangle()
 				
 
 					// native method call
@@ -916,7 +916,7 @@
 				var firstHopsVectorPointer: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>? = nil
 				if let firstHops = firstHops {
 					
-					let firstHopsVector = Vec_ChannelDetailsZ(array: firstHops)
+					let firstHopsVector = Vec_ChannelDetailsZ(array: firstHops).dangle()
 				
 					firstHopsVectorPointer = UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>.allocate(capacity: 1)
 					firstHopsVectorPointer!.initialize(to: firstHopsVector.cType!)
@@ -966,7 +966,7 @@
 					
 					let ourNodePubkeyPrimitiveWrapper = PublicKey(value: ourNodePubkey)
 				
-					let hopsVector = Vec_PublicKeyZ(array: hops)
+					let hopsVector = Vec_PublicKeyZ(array: hops).dangle()
 				
 					let tupledRandomSeedBytes = Bindings.arrayToUInt8Tuple32(array: randomSeedBytes)
 				
@@ -1033,15 +1033,15 @@
 				public class func swiftCreatePhantomInvoice(amtMsat: UInt64?, paymentHash: [UInt8], description: String, invoiceExpiryDeltaSecs: UInt32, phantomRouteHints: [PhantomRouteHints], keysManager: KeysInterface, logger: Logger, network: Currency) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(some: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
 				
 					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-					let descriptionPrimitiveWrapper = Str(value: description)
+					let descriptionPrimitiveWrapper = Str(value: description).setCFreeability(freeable: false)
 				
 					descriptionPrimitiveWrapper.cType!.chars_is_owned = false
 				
-					let phantomRouteHintsVector = Vec_PhantomRouteHintsZ(array: phantomRouteHints)
+					let phantomRouteHintsVector = Vec_PhantomRouteHintsZ(array: phantomRouteHints).dangle()
 				
 
 					// native method call
@@ -1096,11 +1096,11 @@
 				public class func swiftCreatePhantomInvoiceWithDescriptionHash(amtMsat: UInt64?, paymentHash: [UInt8], invoiceExpiryDeltaSecs: UInt32, descriptionHash: Sha256, phantomRouteHints: [PhantomRouteHints], keysManager: KeysInterface, logger: Logger, network: Currency) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(some: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
 				
 					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-					let phantomRouteHintsVector = Vec_PhantomRouteHintsZ(array: phantomRouteHints)
+					let phantomRouteHintsVector = Vec_PhantomRouteHintsZ(array: phantomRouteHints).dangle()
 				
 
 					// native method call
@@ -1130,9 +1130,9 @@
 				public class func swiftCreateInvoiceFromChannelmanager(channelmanager: ChannelManager, keysManager: KeysInterface, logger: Logger, network: Currency, amtMsat: UInt64?, description: String, invoiceExpiryDeltaSecs: UInt32) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(some: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
 				
-					let descriptionPrimitiveWrapper = Str(value: description)
+					let descriptionPrimitiveWrapper = Str(value: description).setCFreeability(freeable: false)
 				
 					descriptionPrimitiveWrapper.cType!.chars_is_owned = false
 				
@@ -1167,7 +1167,7 @@
 				public class func swiftCreateInvoiceFromChannelmanagerWithDescriptionHash(channelmanager: ChannelManager, keysManager: KeysInterface, logger: Logger, network: Currency, amtMsat: UInt64?, descriptionHash: Sha256, invoiceExpiryDeltaSecs: UInt32) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(some: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
 				
 
 					// native method call
@@ -1194,7 +1194,7 @@
 				public class func swiftCreateInvoiceFromChannelmanagerWithDescriptionHashAndDurationSinceEpoch(channelmanager: ChannelManager, keysManager: KeysInterface, logger: Logger, network: Currency, amtMsat: UInt64?, descriptionHash: Sha256, durationSinceEpoch: UInt64, invoiceExpiryDeltaSecs: UInt32) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(some: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
 				
 
 					// native method call
@@ -1221,9 +1221,9 @@
 				public class func swiftCreateInvoiceFromChannelmanagerAndDurationSinceEpoch(channelmanager: ChannelManager, keysManager: KeysInterface, logger: Logger, network: Currency, amtMsat: UInt64?, description: String, durationSinceEpoch: UInt64, invoiceExpiryDeltaSecs: UInt32) -> Result_InvoiceSignOrCreationErrorZ {
 					// native call variable prep
 					
-					let amtMsatOption = Option_u64Z(some: amtMsat)
+					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
 				
-					let descriptionPrimitiveWrapper = Str(value: description)
+					let descriptionPrimitiveWrapper = Str(value: description).setCFreeability(freeable: false)
 				
 					descriptionPrimitiveWrapper.cType!.chars_is_owned = false
 				

@@ -204,7 +204,7 @@
 					public func setRouteHints(val: [RouteHint]) {
 						// native call variable prep
 						
-						let valVector = Vec_RouteHintZ(array: val)
+						let valVector = Vec_RouteHintZ(array: val).dangle()
 				
 
 						// native method call
@@ -254,7 +254,7 @@
 					public func setExpiryTime(val: UInt64?) {
 						// native call variable prep
 						
-						let valOption = Option_u64Z(some: val)
+						let valOption = Option_u64Z(some: val).danglingClone()
 				
 
 						// native method call
@@ -474,7 +474,7 @@
 					public func setPreviouslyFailedChannels(val: [UInt64]) {
 						// native call variable prep
 						
-						let valVector = Vec_u64Z(array: val)
+						let valVector = Vec_u64Z(array: val).dangle()
 				
 
 						// native method call
@@ -503,11 +503,11 @@
 						
 						let payeePubkeyArgPrimitiveWrapper = PublicKey(value: payeePubkeyArg)
 				
-						let routeHintsArgVector = Vec_RouteHintZ(array: routeHintsArg)
+						let routeHintsArgVector = Vec_RouteHintZ(array: routeHintsArg).dangle()
 				
-						let expiryTimeArgOption = Option_u64Z(some: expiryTimeArg)
+						let expiryTimeArgOption = Option_u64Z(some: expiryTimeArg).danglingClone()
 				
-						let previouslyFailedChannelsArgVector = Vec_u64Z(array: previouslyFailedChannelsArg)
+						let previouslyFailedChannelsArgVector = Vec_u64Z(array: previouslyFailedChannelsArg).dangle()
 				
 
 						// native method call

@@ -415,7 +415,7 @@
 						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
 					
-						let txdataVector = Vec_C2Tuple_usizeTransactionZZ(array: txdata)
+						let txdataVector = Vec_C2Tuple_usizeTransactionZZ(array: txdata).dangle()
 				
 
 						// native method call
@@ -484,7 +484,7 @@
 						
 						let tupledHeader = Bindings.arrayToUInt8Tuple80(array: header)
 					
-						let txdataVector = Vec_C2Tuple_usizeTransactionZZ(array: txdata)
+						let txdataVector = Vec_C2Tuple_usizeTransactionZZ(array: txdata).dangle()
 				
 
 						// native method call

@@ -150,7 +150,7 @@
 					public class func initWithApimisuseError(err: String) -> APIError {
 						// native call variable prep
 						
-						let errPrimitiveWrapper = Str(value: err)
+						let errPrimitiveWrapper = Str(value: err).setCFreeability(freeable: false)
 				
 						errPrimitiveWrapper.cType!.chars_is_owned = false
 					
@@ -173,7 +173,7 @@
 					public class func initWithFeeRateTooHigh(err: String, feerate: UInt32) -> APIError {
 						// native call variable prep
 						
-						let errPrimitiveWrapper = Str(value: err)
+						let errPrimitiveWrapper = Str(value: err).setCFreeability(freeable: false)
 				
 						errPrimitiveWrapper.cType!.chars_is_owned = false
 					
@@ -196,7 +196,7 @@
 					public class func initWithRouteError(err: String) -> APIError {
 						// native call variable prep
 						
-						let errPrimitiveWrapper = Str(value: err)
+						let errPrimitiveWrapper = Str(value: err).setCFreeability(freeable: false)
 				
 						errPrimitiveWrapper.cType!.chars_is_owned = false
 					
@@ -219,7 +219,7 @@
 					public class func initWithChannelUnavailable(err: String) -> APIError {
 						// native call variable prep
 						
-						let errPrimitiveWrapper = Str(value: err)
+						let errPrimitiveWrapper = Str(value: err).setCFreeability(freeable: false)
 				
 						errPrimitiveWrapper.cType!.chars_is_owned = false
 					

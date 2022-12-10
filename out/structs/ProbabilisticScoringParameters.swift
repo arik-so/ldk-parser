@@ -798,7 +798,7 @@
 					public func addBannedFromList(nodeIds: [NodeId]) {
 						// native call variable prep
 						
-						let nodeIdsVector = Vec_NodeIdZ(array: nodeIds)
+						let nodeIdsVector = Vec_NodeIdZ(array: nodeIds).dangle()
 				
 
 						// native method call

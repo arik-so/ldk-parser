@@ -209,7 +209,7 @@
 					public func setScriptPubkey(val: [UInt8]) {
 						// native call variable prep
 						
-						let valVector = Vec_u8Z(array: val)
+						let valVector = Vec_u8Z(array: val).dangle()
 				
 
 						// native method call
@@ -238,7 +238,7 @@
 						
 						let blockHashArgPrimitiveWrapper = ThirtyTwoBytes(value: blockHashArg)
 				
-						let scriptPubkeyArgVector = Vec_u8Z(array: scriptPubkeyArg)
+						let scriptPubkeyArgVector = Vec_u8Z(array: scriptPubkeyArg).dangle()
 				
 
 						// native method call

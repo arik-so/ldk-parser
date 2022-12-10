@@ -310,7 +310,7 @@
 					public override func paymentPathFailed(path: [RouteHop], shortChannelId: UInt64) {
 						// native call variable prep
 						
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
 						// native method call
@@ -331,7 +331,7 @@
 					public override func paymentPathSuccessful(path: [RouteHop]) {
 						// native call variable prep
 						
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
 						// native method call
@@ -352,7 +352,7 @@
 					public override func probeFailed(path: [RouteHop], shortChannelId: UInt64) {
 						// native call variable prep
 						
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
 						// native method call
@@ -373,7 +373,7 @@
 					public override func probeSuccessful(path: [RouteHop]) {
 						// native call variable prep
 						
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
 						// native method call

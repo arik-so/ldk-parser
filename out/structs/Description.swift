@@ -144,7 +144,7 @@
 					public class func new(description: String) -> Result_DescriptionCreationErrorZ {
 						// native call variable prep
 						
-						let descriptionPrimitiveWrapper = Str(value: description)
+						let descriptionPrimitiveWrapper = Str(value: description).setCFreeability(freeable: false)
 				
 						descriptionPrimitiveWrapper.cType!.chars_is_owned = false
 					

@@ -67,7 +67,7 @@
 					public init(a: UInt32, b: [UInt8]) {
 						// native call variable prep
 						
-						let bVector = Vec_u8Z(array: b)
+						let bVector = Vec_u8Z(array: b).dangle()
 				
 
 						// native method call

@@ -621,7 +621,7 @@
 					public func signCounterpartyPaymentInput(spendTx: [UInt8], inputIdx: UInt, descriptor: StaticPaymentOutputDescriptor) -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						
-						let spendTxPrimitiveWrapper = Transaction(value: spendTx)
+						let spendTxPrimitiveWrapper = Transaction(value: spendTx).setCFreeability(freeable: false)
 				
 						spendTxPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -658,7 +658,7 @@
 					public func signDynamicP2wshInput(spendTx: [UInt8], inputIdx: UInt, descriptor: DelayedPaymentOutputDescriptor) -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						
-						let spendTxPrimitiveWrapper = Transaction(value: spendTx)
+						let spendTxPrimitiveWrapper = Transaction(value: spendTx).setCFreeability(freeable: false)
 				
 						spendTxPrimitiveWrapper.cType!.data_is_owned = false
 					

@@ -87,7 +87,7 @@
 					public func setScript(val: [UInt8]) {
 						// native call variable prep
 						
-						let valVector = Vec_u8Z(array: val)
+						let valVector = Vec_u8Z(array: val).dangle()
 				
 
 						// native method call
@@ -114,7 +114,7 @@
 					public init(scriptArg: [UInt8]) {
 						// native call variable prep
 						
-						let scriptArgVector = Vec_u8Z(array: scriptArg)
+						let scriptArgVector = Vec_u8Z(array: scriptArg).dangle()
 				
 
 						// native method call

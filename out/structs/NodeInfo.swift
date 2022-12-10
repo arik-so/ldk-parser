@@ -85,7 +85,7 @@
 					public func setChannels(val: [UInt64]) {
 						// native call variable prep
 						
-						let valVector = Vec_u64Z(array: val)
+						let valVector = Vec_u64Z(array: val).dangle()
 				
 
 						// native method call
@@ -246,7 +246,7 @@
 					public init(channelsArg: [UInt64], lowestInboundChannelFeesArg: RoutingFees, announcementInfoArg: NodeAnnouncementInfo) {
 						// native call variable prep
 						
-						let channelsArgVector = Vec_u64Z(array: channelsArg)
+						let channelsArgVector = Vec_u64Z(array: channelsArg).dangle()
 				
 
 						// native method call

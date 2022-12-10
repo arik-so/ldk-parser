@@ -137,7 +137,7 @@
 					public func setCounterpartyHtlcSigs(val: [[UInt8]]) {
 						// native call variable prep
 						
-						let valVector = Vec_SignatureZ(array: val)
+						let valVector = Vec_SignatureZ(array: val).dangle()
 				
 
 						// native method call
@@ -234,7 +234,7 @@
 						
 						let counterpartySigPrimitiveWrapper = Signature(value: counterpartySig)
 				
-						let counterpartyHtlcSigsVector = Vec_SignatureZ(array: counterpartyHtlcSigs)
+						let counterpartyHtlcSigsVector = Vec_SignatureZ(array: counterpartyHtlcSigs).dangle()
 				
 						let holderFundingKeyPrimitiveWrapper = PublicKey(value: holderFundingKey)
 				

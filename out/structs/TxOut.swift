@@ -43,7 +43,7 @@
 					public init(scriptPubkey: [UInt8], value: UInt64) {
 						// native call variable prep
 						
-						let scriptPubkeyVector = Vec_u8Z(array: scriptPubkey)
+						let scriptPubkeyVector = Vec_u8Z(array: scriptPubkey).dangle()
 				
 
 						// native method call

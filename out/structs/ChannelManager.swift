@@ -700,7 +700,7 @@
 					public func sendProbe(hops: [RouteHop]) -> Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ {
 						// native call variable prep
 						
-						let hopsVector = Vec_RouteHopZ(array: hops)
+						let hopsVector = Vec_RouteHopZ(array: hops).dangle()
 				
 
 						// native method call
@@ -760,7 +760,7 @@
 					
 						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
 				
-						let fundingTransactionPrimitiveWrapper = Transaction(value: fundingTransaction)
+						let fundingTransactionPrimitiveWrapper = Transaction(value: fundingTransaction).setCFreeability(freeable: false)
 				
 						fundingTransactionPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -814,7 +814,7 @@
 						
 						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
 				
-						let channelIdsVector = Vec_ThirtyTwoBytesZ(array: channelIds)
+						let channelIdsVector = Vec_ThirtyTwoBytesZ(array: channelIds).dangle()
 				
 
 						// native method call
@@ -1130,7 +1130,7 @@
 					public func createInboundPayment(minValueMsat: UInt64?, invoiceExpiryDeltaSecs: UInt32) -> Result_C2Tuple_PaymentHashPaymentSecretZNoneZ {
 						// native call variable prep
 						
-						let minValueMsatOption = Option_u64Z(some: minValueMsat)
+						let minValueMsatOption = Option_u64Z(some: minValueMsat).danglingClone()
 				
 
 						// native method call
@@ -1163,7 +1163,7 @@
 					public func createInboundPaymentLegacy(minValueMsat: UInt64?, invoiceExpiryDeltaSecs: UInt32) -> Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ {
 						// native call variable prep
 						
-						let minValueMsatOption = Option_u64Z(some: minValueMsat)
+						let minValueMsatOption = Option_u64Z(some: minValueMsat).danglingClone()
 				
 
 						// native method call
@@ -1232,7 +1232,7 @@
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let minValueMsatOption = Option_u64Z(some: minValueMsat)
+						let minValueMsatOption = Option_u64Z(some: minValueMsat).danglingClone()
 				
 
 						// native method call
@@ -1267,7 +1267,7 @@
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-						let minValueMsatOption = Option_u64Z(some: minValueMsat)
+						let minValueMsatOption = Option_u64Z(some: minValueMsat).danglingClone()
 				
 
 						// native method call

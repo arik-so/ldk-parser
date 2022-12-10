@@ -269,7 +269,7 @@
 					var firstHopsVectorPointer: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>? = nil
 					if let firstHops = firstHops {
 						
-						let firstHopsVector = Vec_ChannelDetailsZ(array: firstHops)
+						let firstHopsVector = Vec_ChannelDetailsZ(array: firstHops).dangle()
 				
 						firstHopsVectorPointer = UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>.allocate(capacity: 1)
 						firstHopsVectorPointer!.initialize(to: firstHopsVector.cType!)
@@ -298,7 +298,7 @@
 					public override func notifyPaymentPathFailed(path: [RouteHop], shortChannelId: UInt64) {
 						// native call variable prep
 						
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
 						// native method call
@@ -319,7 +319,7 @@
 					public override func notifyPaymentPathSuccessful(path: [RouteHop]) {
 						// native call variable prep
 						
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
 						// native method call
@@ -340,7 +340,7 @@
 					public override func notifyPaymentProbeSuccessful(path: [RouteHop]) {
 						// native call variable prep
 						
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
 						// native method call
@@ -361,7 +361,7 @@
 					public override func notifyPaymentProbeFailed(path: [RouteHop], shortChannelId: UInt64) {
 						// native call variable prep
 						
-						let pathVector = Vec_RouteHopZ(array: path)
+						let pathVector = Vec_RouteHopZ(array: path).dangle()
 				
 
 						// native method call

@@ -78,7 +78,7 @@
 					public init(networkGraph: NetworkGraph, chainAccess: Access?, logger: Logger) {
 						// native call variable prep
 						
-						let chainAccessOption = Option_AccessZ(some: chainAccess)
+						let chainAccessOption = Option_AccessZ(some: chainAccess).dangle()
 				
 
 						// native method call
@@ -111,7 +111,7 @@
 					public func addChainAccess(chainAccess: Access?) {
 						// native call variable prep
 						
-						let chainAccessOption = Option_AccessZ(some: chainAccess)
+						let chainAccessOption = Option_AccessZ(some: chainAccess).dangle()
 				
 
 						// native method call

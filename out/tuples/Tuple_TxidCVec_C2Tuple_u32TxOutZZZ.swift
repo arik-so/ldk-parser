@@ -69,7 +69,7 @@
 						
 						let aPrimitiveWrapper = ThirtyTwoBytes(value: a)
 				
-						let bVector = Vec_C2Tuple_u32TxOutZZ(array: b)
+						let bVector = Vec_C2Tuple_u32TxOutZZ(array: b).dangle()
 				
 
 						// native method call

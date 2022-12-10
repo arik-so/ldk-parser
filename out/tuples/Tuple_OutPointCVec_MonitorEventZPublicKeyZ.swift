@@ -67,7 +67,7 @@
 					public init(a: OutPoint, b: [MonitorEvent], c: [UInt8]) {
 						// native call variable prep
 						
-						let bVector = Vec_MonitorEventZ(array: b)
+						let bVector = Vec_MonitorEventZ(array: b).dangle()
 				
 						let cPrimitiveWrapper = PublicKey(value: c)
 				

@@ -185,7 +185,7 @@
 					public func setHtlcSignatures(val: [[UInt8]]) {
 						// native call variable prep
 						
-						let valVector = Vec_SignatureZ(array: val)
+						let valVector = Vec_SignatureZ(array: val).dangle()
 				
 
 						// native method call
@@ -216,7 +216,7 @@
 				
 						let signatureArgPrimitiveWrapper = Signature(value: signatureArg)
 				
-						let htlcSignaturesArgVector = Vec_SignatureZ(array: htlcSignaturesArg)
+						let htlcSignaturesArgVector = Vec_SignatureZ(array: htlcSignaturesArg).dangle()
 				
 
 						// native method call

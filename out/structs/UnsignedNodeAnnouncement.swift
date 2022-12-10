@@ -333,7 +333,7 @@
 					public func setAddresses(val: [NetAddress]) {
 						// native call variable prep
 						
-						let valVector = Vec_NetAddressZ(array: val)
+						let valVector = Vec_NetAddressZ(array: val).dangle()
 				
 
 						// native method call

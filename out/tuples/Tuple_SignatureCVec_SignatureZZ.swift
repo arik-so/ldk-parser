@@ -69,7 +69,7 @@
 						
 						let aPrimitiveWrapper = Signature(value: a)
 				
-						let bVector = Vec_SignatureZ(array: b)
+						let bVector = Vec_SignatureZ(array: b).dangle()
 				
 
 						// native method call
