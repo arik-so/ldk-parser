@@ -568,14 +568,27 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			deferredCleanup: ''
 		};
 
-		let dangleInfix = ''; // the dangle must come before the clone
-		let cloneInfix = '';
+		let memoryManagementInfix = '';
 		if (!(argument.type instanceof RustTrait) && !argument.isAsteriskPointer && !this.isElidedType(argument.type) && this.hasFreeMethod(argument.type)) {
 			if (this.hasCloneMethod(argument.type)) {
 				// we're kinda relying here on Rust immediately freeing this object upon consumption
-				cloneInfix = '.danglingClone()';
+				/*if (this.hasOwnershipField(argument.type)) {
+					cloneInfix = '.clone()';
+					freeabilityInfix = '.setCFreeability(freeable: false)';
+				} else {
+					cloneInfix = '.danglingClone()';
+				}*/
+				memoryManagementInfix = '.danglingClone()';
 			} else if (this.hasFreeMethod(argument.type)) { // could just be else
-				dangleInfix = '.dangle()';
+				// if we can't clone it, we never really want to release this object
+				memoryManagementInfix = '.dangle()';
+
+				// if we have an ownership field, no need to dangle this object. We can just release it later
+				// if (this.hasOwnershipField(argument.type)) {
+				// 	freeabilityInfix = '.setCFreeability(freeable: false)';
+				// } else {
+				// 	memoryManagementInfix = '.dangle()';
+				// }
 			}
 		}
 
@@ -584,10 +597,13 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				// the array is gonna get passed to C, and the array is gonna get cleaned
 				// to make sure this value doesn't also get freed after the array gets freed,
 				// the clone must be dangled
-				cloneInfix = '.danglingClone()';
+				memoryManagementInfix = '.danglingClone()';
 			} else if (this.hasFreeMethod(nestedType)) {
-				if (nestedType instanceof RustPrimitiveWrapper && !nestedType.ownershipField) {
-					throw new Error(`Uncloneable, but freeable argument without an ownership field: ${nestedType.typeDescription}`);
+				if(this.hasOwnershipField(argument.type)){
+					// memoryManagementInfix += '.setCFreeability(freeable: false)'
+				} else {
+					// throw new Error(`Uncloneable, but freeable argument without an ownership field: ${nestedType.typeDescription}`);
+					console.log(`Potential danger: Uncloneable, but freeable argument without an ownership field: ${nestedType.typeDescription}`);
 				}
 			}
 		};
@@ -622,19 +638,19 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedArgument.name += 'Option';
 				// TODO: figure out when label should be `some: `
 				preparedArgument.conversion += `
-						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(some: ${publicName})${dangleInfix}${cloneInfix}
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(some: ${publicName})${memoryManagementInfix}
 				`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustTuple) {
 				preparedArgument.name += 'Tuple';
 				preparedArgument.conversion += `
-						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(tuple: ${publicName})${cloneInfix}
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(tuple: ${publicName})${memoryManagementInfix}
 				`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustPrimitiveWrapper) {
 				preparedArgument.name += 'PrimitiveWrapper';
 				preparedArgument.conversion += `
-						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})${cloneInfix}
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})${memoryManagementInfix}
 				`;
 				if (argument.type.ownershipField) {
 					preparedArgument.conversion += `
@@ -645,7 +661,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else if (argument.type instanceof RustVector) {
 				preparedArgument.name += 'Vector';
 				preparedArgument.conversion += `
-						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(array: ${publicName})${cloneInfix}
+						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(array: ${publicName})${memoryManagementInfix}
 				`;
 				// figure out when it needs to be dangled
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
@@ -655,11 +671,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else if (argument.type instanceof RustTrait) {
 				preparedArgument.accessor = preparedArgument.name + '.activate().cType!';
 			} else if (argument.type instanceof RustStruct || argument.type instanceof RustTaggedValueEnum || argument.type instanceof RustResult) {
-				let ownershipInfix = '';
-				if (this.hasOwnershipField(argument.type)){
-					ownershipInfix = '.setCFreeability(freeable: false)'
-				}
-				preparedArgument.accessor = preparedArgument.name + `${cloneInfix}${dangleInfix}.cType!`;
+				preparedArgument.accessor = preparedArgument.name + `${memoryManagementInfix}.cType!`;
 			} else if (argument.type instanceof RustPrimitiveEnum) {
 				preparedArgument.accessor = preparedArgument.name + '.getCValue()';
 			} else if (argument.type instanceof RustArray) {
