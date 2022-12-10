@@ -205,7 +205,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ParseError_bech32_error(a.clone().cType!)
+						let nativeCallResult = ParseError_bech32_error(a.danglingClone().cType!)
 
 						// cleanup
 						
@@ -507,7 +507,7 @@
 					public class func initWithInvalidSliceLength(a: String) -> ParseError {
 						// native call variable prep
 						
-						let aPrimitiveWrapper = Str(value: a).setCFreeability(freeable: false)
+						let aPrimitiveWrapper = Str(value: a).dangle()
 				
 						aPrimitiveWrapper.cType!.chars_is_owned = false
 					

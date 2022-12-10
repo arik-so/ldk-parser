@@ -621,7 +621,7 @@
 					public func signCounterpartyPaymentInput(spendTx: [UInt8], inputIdx: UInt, descriptor: StaticPaymentOutputDescriptor) -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						
-						let spendTxPrimitiveWrapper = Transaction(value: spendTx).setCFreeability(freeable: false)
+						let spendTxPrimitiveWrapper = Transaction(value: spendTx).dangle()
 				
 						spendTxPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -630,7 +630,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				
-						withUnsafePointer(to: descriptor.cType!) { (descriptorPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafePointer(to: descriptor.dynamicallyDangledClone().cType!) { (descriptorPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
 				InMemorySigner_sign_counterparty_payment_input(thisArgPointer, spendTxPrimitiveWrapper.cType!, inputIdx, descriptorPointer)
 						}
 				
@@ -658,7 +658,7 @@
 					public func signDynamicP2wshInput(spendTx: [UInt8], inputIdx: UInt, descriptor: DelayedPaymentOutputDescriptor) -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						
-						let spendTxPrimitiveWrapper = Transaction(value: spendTx).setCFreeability(freeable: false)
+						let spendTxPrimitiveWrapper = Transaction(value: spendTx).dangle()
 				
 						spendTxPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -667,7 +667,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				
-						withUnsafePointer(to: descriptor.cType!) { (descriptorPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: descriptor.dynamicallyDangledClone().cType!) { (descriptorPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				InMemorySigner_sign_dynamic_p2wsh_input(thisArgPointer, spendTxPrimitiveWrapper.cType!, inputIdx, descriptorPointer)
 						}
 				

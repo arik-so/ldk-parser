@@ -66,7 +66,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult__u832APIErrorZ_err(e.clone().cType!)
+						let nativeCallResult = CResult__u832APIErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

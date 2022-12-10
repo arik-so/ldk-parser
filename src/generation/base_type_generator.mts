@@ -569,17 +569,26 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		};
 
 		let memoryManagementInfix = '';
-		if (!(argument.type instanceof RustTrait) && !argument.isAsteriskPointer && !this.isElidedType(argument.type) && this.hasFreeMethod(argument.type)) {
+		if (!(argument.type instanceof RustTrait) && this.hasFreeMethod(argument.type) && argument.type !== containerType) {
 			if (this.hasCloneMethod(argument.type)) {
-				// we're kinda relying here on Rust immediately freeing this object upon consumption
 				if (this.hasOwnershipField(argument.type)) {
 					memoryManagementInfix = '.dynamicallyDangledClone()';
 				} else {
-					memoryManagementInfix = '.clone()';
+					// we have to assume that Rust will just eat this type
+					memoryManagementInfix = '.danglingClone()';
 				}
-			} else if (this.hasFreeMethod(argument.type)) { // could just be else
-				// if we can't clone it, we never really want to release this object
+			} else {
+				// just gotta hope for the best
 				memoryManagementInfix = '.dangle()';
+
+				// unfortunately sometimes Rust wants to own the object, so we can't always change
+				// the C freeability. To be super careful, we're just not gonna do it by default
+				// if (this.hasOwnershipField(argument.type)) {
+				// 	memoryManagementInfix = '.setCFreeability(freeable: false)';
+				// } else {
+				// 	// just gotta hope for the best
+				// 	memoryManagementInfix = '.dangle()';
+				// }
 			}
 		}
 
@@ -629,23 +638,6 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			// we're passing self
 			preparedArgument.accessor = 'self.cType!';
 		} else {
-			if (this.isElidedType(argument.type) && this.hasFreeMethod(argument.type)) {
-				if (this.hasCloneMethod(argument.type)) {
-					if (this.hasOwnershipField(argument.type)) {
-						memoryManagementInfix = '.dynamicallyDangledClone()';
-					} else {
-						// we have to assume that Rust will just eat this type
-						memoryManagementInfix = '.danglingClone()';
-					}
-				} else {
-					if (this.hasOwnershipField(argument.type)) {
-						memoryManagementInfix = '.setCFreeability(freeable: false)';
-					} else {
-						// just gotta hope for the best
-						memoryManagementInfix = '.dangle()';
-					}
-				}
-			}
 			// these type elision helpers only apply outside the context of the very eliding type
 			if (argument.type instanceof RustNullableOption) {
 				preparedArgument.name += 'Option';

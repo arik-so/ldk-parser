@@ -154,7 +154,7 @@
 						
 
 						// native method call
-						let nativeCallResult = SpendableOutputDescriptor_static_output(outpoint.dynamicallyDangledClone().cType!, output.clone().cType!)
+						let nativeCallResult = SpendableOutputDescriptor_static_output(outpoint.dynamicallyDangledClone().cType!, output.danglingClone().cType!)
 
 						// cleanup
 						

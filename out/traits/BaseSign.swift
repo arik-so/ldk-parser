@@ -706,7 +706,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: holderTx.cType!) { (holderTxPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
+						withUnsafePointer(to: holderTx.dynamicallyDangledClone().cType!) { (holderTxPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
 				self.cType!.validate_holder_commitment(self.cType!.this_arg, holderTxPointer, preimagesVector.cType!)
 						}
 				
@@ -762,7 +762,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: commitmentTx.cType!) { (commitmentTxPointer: UnsafePointer<LDKCommitmentTransaction>) in
+						withUnsafePointer(to: commitmentTx.dynamicallyDangledClone().cType!) { (commitmentTxPointer: UnsafePointer<LDKCommitmentTransaction>) in
 				self.cType!.sign_counterparty_commitment(self.cType!.this_arg, commitmentTxPointer, preimagesVector.cType!)
 						}
 				
@@ -824,7 +824,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: commitmentTx.cType!) { (commitmentTxPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
+						withUnsafePointer(to: commitmentTx.dynamicallyDangledClone().cType!) { (commitmentTxPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
 				self.cType!.sign_holder_commitment_and_htlcs(self.cType!.this_arg, commitmentTxPointer)
 						}
 				
@@ -855,7 +855,7 @@
 					public override func signJusticeRevokedOutput(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
-						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx).setCFreeability(freeable: false)
+						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx).dangle()
 				
 						justiceTxPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -901,7 +901,7 @@
 					public override func signJusticeRevokedHtlc(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?, htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
-						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx).setCFreeability(freeable: false)
+						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx).dangle()
 				
 						justiceTxPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -917,7 +917,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafePointer(to: htlc.dynamicallyDangledClone().cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				self.cType!.sign_justice_revoked_htlc(self.cType!.this_arg, justiceTxPrimitiveWrapper.cType!, input, amount, tupledPerCommitmentKeyPointer, htlcPointer)
 						}
 				
@@ -951,7 +951,7 @@
 					public override func signCounterpartyHtlcTransaction(htlcTx: [UInt8], input: UInt, amount: UInt64, perCommitmentPoint: [UInt8], htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
-						let htlcTxPrimitiveWrapper = Transaction(value: htlcTx).setCFreeability(freeable: false)
+						let htlcTxPrimitiveWrapper = Transaction(value: htlcTx).dangle()
 				
 						htlcTxPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -960,7 +960,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafePointer(to: htlc.dynamicallyDangledClone().cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				self.cType!.sign_counterparty_htlc_transaction(self.cType!.this_arg, htlcTxPrimitiveWrapper.cType!, input, amount, perCommitmentPointPrimitiveWrapper.cType!, htlcPointer)
 						}
 				
@@ -984,7 +984,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: closingTx.cType!) { (closingTxPointer: UnsafePointer<LDKClosingTransaction>) in
+						withUnsafePointer(to: closingTx.dynamicallyDangledClone().cType!) { (closingTxPointer: UnsafePointer<LDKClosingTransaction>) in
 				self.cType!.sign_closing_transaction(self.cType!.this_arg, closingTxPointer)
 						}
 				
@@ -1003,7 +1003,7 @@
 					public override func signHolderAnchorInput(anchorTx: [UInt8], input: UInt) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
-						let anchorTxPrimitiveWrapper = Transaction(value: anchorTx).setCFreeability(freeable: false)
+						let anchorTxPrimitiveWrapper = Transaction(value: anchorTx).dangle()
 				
 						anchorTxPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -1035,7 +1035,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
 				self.cType!.sign_channel_announcement(self.cType!.this_arg, msgPointer)
 						}
 				
@@ -1065,7 +1065,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: channelParameters.cType!) { (channelParametersPointer: UnsafePointer<LDKChannelTransactionParameters>) in
+						withUnsafePointer(to: channelParameters.dynamicallyDangledClone().cType!) { (channelParametersPointer: UnsafePointer<LDKChannelTransactionParameters>) in
 				self.cType!.ready_channel(self.cType!.this_arg, channelParametersPointer)
 						}
 				

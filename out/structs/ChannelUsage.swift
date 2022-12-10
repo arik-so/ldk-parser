@@ -181,7 +181,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUsage>) in
-				ChannelUsage_set_effective_capacity(thisPtrPointer, val.clone().cType!)
+				ChannelUsage_set_effective_capacity(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -202,7 +202,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChannelUsage_new(amountMsatArg, inflightHtlcMsatArg, effectiveCapacityArg.clone().cType!)
+						let nativeCallResult = ChannelUsage_new(amountMsatArg, inflightHtlcMsatArg, effectiveCapacityArg.danglingClone().cType!)
 
 						// cleanup
 						

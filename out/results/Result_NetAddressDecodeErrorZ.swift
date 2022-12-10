@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_NetAddressDecodeErrorZ_ok(o.clone().cType!)
+						let nativeCallResult = CResult_NetAddressDecodeErrorZ_ok(o.danglingClone().cType!)
 
 						// cleanup
 						
@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_NetAddressDecodeErrorZ_err(e.clone().cType!)
+						let nativeCallResult = CResult_NetAddressDecodeErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

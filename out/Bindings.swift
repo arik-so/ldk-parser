@@ -282,7 +282,7 @@
 					
 					let msgPrimitiveWrapper = u8slice(value: msg)
 				
-					let sigPrimitiveWrapper = Str(value: sig).setCFreeability(freeable: false)
+					let sigPrimitiveWrapper = Str(value: sig).dangle()
 				
 					sigPrimitiveWrapper.cType!.chars_is_owned = false
 				
@@ -308,7 +308,7 @@
 					
 					let msgPrimitiveWrapper = u8slice(value: msg)
 				
-					let sigPrimitiveWrapper = Str(value: sig).setCFreeability(freeable: false)
+					let sigPrimitiveWrapper = Str(value: sig).dangle()
 				
 					sigPrimitiveWrapper.cType!.chars_is_owned = false
 				
@@ -433,7 +433,7 @@
 
 					// native method call
 					let nativeCallResult = 
-					withUnsafePointer(to: keys.cType!) { (keysPointer: UnsafePointer<LDKExpandedKey>) in
+					withUnsafePointer(to: keys.dangle().cType!) { (keysPointer: UnsafePointer<LDKExpandedKey>) in
 				
 					withUnsafePointer(to: keysManager.activate().cType!) { (keysManagerPointer: UnsafePointer<LDKKeysInterface>) in
 				create(keysPointer, minValueMsatOption.cType!, invoiceExpiryDeltaSecs, keysManagerPointer, currentTime)
@@ -470,7 +470,7 @@
 
 					// native method call
 					let nativeCallResult = 
-					withUnsafePointer(to: keys.cType!) { (keysPointer: UnsafePointer<LDKExpandedKey>) in
+					withUnsafePointer(to: keys.dangle().cType!) { (keysPointer: UnsafePointer<LDKExpandedKey>) in
 				create_from_hash(keysPointer, minValueMsatOption.cType!, paymentHashPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs, currentTime)
 					}
 				
@@ -740,9 +740,9 @@
 
 					// native method call
 					let nativeCallResult = 
-					withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+					withUnsafePointer(to: htlc.dynamicallyDangledClone().cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				
-					withUnsafePointer(to: keys.cType!) { (keysPointer: UnsafePointer<LDKTxCreationKeys>) in
+					withUnsafePointer(to: keys.dynamicallyDangledClone().cType!) { (keysPointer: UnsafePointer<LDKTxCreationKeys>) in
 				get_htlc_redeemscript(htlcPointer, optAnchors, keysPointer)
 					}
 				
@@ -805,7 +805,7 @@
 					let nativeCallResult = 
 					withUnsafePointer(to: tupledCommitmentTxid) { (tupledCommitmentTxidPointer: UnsafePointer<UInt8Tuple32>) in
 				
-					withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+					withUnsafePointer(to: htlc.dynamicallyDangledClone().cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				build_htlc_transaction(tupledCommitmentTxidPointer, feeratePerKw, contestDelay, htlcPointer, optAnchors, broadcasterDelayedPaymentKeyPrimitiveWrapper.cType!, revocationKeyPrimitiveWrapper.cType!)
 					}
 				
@@ -927,9 +927,9 @@
 
 					// native method call
 					let nativeCallResult = 
-					withUnsafePointer(to: routeParams.cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
+					withUnsafePointer(to: routeParams.dynamicallyDangledClone().cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
 				
-					withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
+					withUnsafePointer(to: networkGraph.dangle().cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
 				
 					withUnsafePointer(to: scorer.activate().cType!) { (scorerPointer: UnsafePointer<LDKScore>) in
 				
@@ -973,9 +973,9 @@
 
 					// native method call
 					let nativeCallResult = 
-					withUnsafePointer(to: routeParams.cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
+					withUnsafePointer(to: routeParams.dynamicallyDangledClone().cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
 				
-					withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
+					withUnsafePointer(to: networkGraph.dangle().cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
 				
 					withUnsafePointer(to: tupledRandomSeedBytes) { (tupledRandomSeedBytesPointer: UnsafePointer<UInt8Tuple32>) in
 				build_route_from_hops(ourNodePubkeyPrimitiveWrapper.cType!, hopsVector.cType!, routeParamsPointer, networkGraphPointer, logger.activate().cType!, tupledRandomSeedBytesPointer)
@@ -1037,7 +1037,7 @@
 				
 					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-					let descriptionPrimitiveWrapper = Str(value: description).setCFreeability(freeable: false)
+					let descriptionPrimitiveWrapper = Str(value: description).dangle()
 				
 					descriptionPrimitiveWrapper.cType!.chars_is_owned = false
 				
@@ -1132,14 +1132,14 @@
 					
 					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
 				
-					let descriptionPrimitiveWrapper = Str(value: description).setCFreeability(freeable: false)
+					let descriptionPrimitiveWrapper = Str(value: description).dangle()
 				
 					descriptionPrimitiveWrapper.cType!.chars_is_owned = false
 				
 
 					// native method call
 					let nativeCallResult = 
-					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
+					withUnsafePointer(to: channelmanager.dangle().cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
 				create_invoice_from_channelmanager(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs)
 					}
 				
@@ -1172,7 +1172,7 @@
 
 					// native method call
 					let nativeCallResult = 
-					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
+					withUnsafePointer(to: channelmanager.dangle().cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
 				create_invoice_from_channelmanager_with_description_hash(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionHash.dynamicallyDangledClone().cType!, invoiceExpiryDeltaSecs)
 					}
 				
@@ -1199,7 +1199,7 @@
 
 					// native method call
 					let nativeCallResult = 
-					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
+					withUnsafePointer(to: channelmanager.dangle().cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
 				create_invoice_from_channelmanager_with_description_hash_and_duration_since_epoch(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionHash.dynamicallyDangledClone().cType!, durationSinceEpoch, invoiceExpiryDeltaSecs)
 					}
 				
@@ -1223,14 +1223,14 @@
 					
 					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
 				
-					let descriptionPrimitiveWrapper = Str(value: description).setCFreeability(freeable: false)
+					let descriptionPrimitiveWrapper = Str(value: description).dangle()
 				
 					descriptionPrimitiveWrapper.cType!.chars_is_owned = false
 				
 
 					// native method call
 					let nativeCallResult = 
-					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
+					withUnsafePointer(to: channelmanager.dangle().cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
 				create_invoice_from_channelmanager_and_duration_since_epoch(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionPrimitiveWrapper.cType!, durationSinceEpoch, invoiceExpiryDeltaSecs)
 					}
 				

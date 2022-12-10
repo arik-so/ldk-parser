@@ -548,7 +548,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_handle_error(nodeIdPrimitiveWrapper.cType!, action.clone().cType!)
+						let nativeCallResult = MessageSendEvent_handle_error(nodeIdPrimitiveWrapper.cType!, action.danglingClone().cType!)
 
 						// cleanup
 						

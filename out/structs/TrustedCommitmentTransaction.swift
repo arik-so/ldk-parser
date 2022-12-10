@@ -176,7 +176,7 @@
 				
 						withUnsafePointer(to: tupledHtlcBaseKey) { (tupledHtlcBaseKeyPointer: UnsafePointer<UInt8Tuple32>) in
 				
-						withUnsafePointer(to: channelParameters.cType!) { (channelParametersPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
+						withUnsafePointer(to: channelParameters.dangle().cType!) { (channelParametersPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
 				TrustedCommitmentTransaction_get_htlc_sigs(thisArgPointer, tupledHtlcBaseKeyPointer, channelParametersPointer)
 						}
 				

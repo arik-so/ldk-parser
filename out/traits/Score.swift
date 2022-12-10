@@ -288,9 +288,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: source.cType!) { (sourcePointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: source.dynamicallyDangledClone().cType!) { (sourcePointer: UnsafePointer<LDKNodeId>) in
 				
-						withUnsafePointer(to: target.cType!) { (targetPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: target.dynamicallyDangledClone().cType!) { (targetPointer: UnsafePointer<LDKNodeId>) in
 				self.cType!.channel_penalty_msat(self.cType!.this_arg, shortChannelId, sourcePointer, targetPointer, usage.dynamicallyDangledClone().cType!)
 						}
 				

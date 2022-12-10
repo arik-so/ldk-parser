@@ -145,7 +145,7 @@
 					public func setData(val: String) {
 						// native call variable prep
 						
-						let valPrimitiveWrapper = Str(value: val).setCFreeability(freeable: false)
+						let valPrimitiveWrapper = Str(value: val).dangle()
 				
 						valPrimitiveWrapper.cType!.chars_is_owned = false
 					
@@ -174,7 +174,7 @@
 						
 						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
 				
-						let dataArgPrimitiveWrapper = Str(value: dataArg).setCFreeability(freeable: false)
+						let dataArgPrimitiveWrapper = Str(value: dataArg).dangle()
 				
 						dataArgPrimitiveWrapper.cType!.chars_is_owned = false
 					

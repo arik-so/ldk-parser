@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_OutPointDecodeErrorZ_err(e.clone().cType!)
+						let nativeCallResult = CResult_OutPointDecodeErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

@@ -556,7 +556,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 				
-						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
+						withUnsafePointer(to: route.dynamicallyDangledClone().cType!) { (routePointer: UnsafePointer<LDKRoute>) in
 				ChannelManager_send_payment(thisArgPointer, routePointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
 						}
 				
@@ -594,7 +594,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 				
-						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
+						withUnsafePointer(to: route.dynamicallyDangledClone().cType!) { (routePointer: UnsafePointer<LDKRoute>) in
 				ChannelManager_retry_payment(thisArgPointer, routePointer, paymentIdPrimitiveWrapper.cType!)
 						}
 				
@@ -676,7 +676,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 				
-						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
+						withUnsafePointer(to: route.dynamicallyDangledClone().cType!) { (routePointer: UnsafePointer<LDKRoute>) in
 				ChannelManager_send_spontaneous_payment(thisArgPointer, routePointer, paymentPreimagePrimitiveWrapper.cType!)
 						}
 				
@@ -760,7 +760,7 @@
 					
 						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
 				
-						let fundingTransactionPrimitiveWrapper = Transaction(value: fundingTransaction).setCFreeability(freeable: false)
+						let fundingTransactionPrimitiveWrapper = Transaction(value: fundingTransaction).dangle()
 				
 						fundingTransactionPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -821,7 +821,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 				
-						withUnsafePointer(to: config.cType!) { (configPointer: UnsafePointer<LDKChannelConfig>) in
+						withUnsafePointer(to: config.dynamicallyDangledClone().cType!) { (configPointer: UnsafePointer<LDKChannelConfig>) in
 				ChannelManager_update_channel_config(thisArgPointer, counterpartyNodeIdPrimitiveWrapper.cType!, channelIdsVector.cType!, configPointer)
 						}
 				

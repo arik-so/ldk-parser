@@ -310,7 +310,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_received(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.clone().cType!)
+						let nativeCallResult = Event_payment_received(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.danglingClone().cType!)
 
 						// cleanup
 						
@@ -331,7 +331,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_claimed(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.clone().cType!)
+						let nativeCallResult = Event_payment_claimed(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.danglingClone().cType!)
 
 						// cleanup
 						
@@ -583,7 +583,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_channel_closed(channelIdPrimitiveWrapper.cType!, userChannelId, reason.clone().cType!)
+						let nativeCallResult = Event_channel_closed(channelIdPrimitiveWrapper.cType!, userChannelId, reason.danglingClone().cType!)
 
 						// cleanup
 						
@@ -602,7 +602,7 @@
 						
 						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
 				
-						let transactionPrimitiveWrapper = Transaction(value: transaction).setCFreeability(freeable: false)
+						let transactionPrimitiveWrapper = Transaction(value: transaction).dangle()
 				
 						transactionPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -652,7 +652,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Event_htlchandling_failed(prevChannelIdPrimitiveWrapper.cType!, failedNextDestination.clone().cType!)
+						let nativeCallResult = Event_htlchandling_failed(prevChannelIdPrimitiveWrapper.cType!, failedNextDestination.danglingClone().cType!)
 
 						// cleanup
 						

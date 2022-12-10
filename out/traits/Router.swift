@@ -278,7 +278,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: routeParams.cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
+						withUnsafePointer(to: routeParams.dynamicallyDangledClone().cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
 				self.cType!.find_route(self.cType!.this_arg, payerPrimitiveWrapper.cType!, routeParamsPointer, tupledPaymentHashPointer, firstHopsVectorPointer, inflightHtlcs.dangle().cType!)
 						}
 				

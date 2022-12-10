@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_TxOutAccessErrorZ_ok(o.clone().cType!)
+						let nativeCallResult = CResult_TxOutAccessErrorZ_ok(o.danglingClone().cType!)
 
 						// cleanup
 						

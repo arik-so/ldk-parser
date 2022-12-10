@@ -66,7 +66,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ_err(e.clone().cType!)
+						let nativeCallResult = CResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ_err(e.danglingClone().cType!)
 
 						// cleanup
 						

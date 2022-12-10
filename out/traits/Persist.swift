@@ -266,7 +266,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: data.cType!) { (dataPointer: UnsafePointer<LDKChannelMonitor>) in
+						withUnsafePointer(to: data.dynamicallyDangledClone().cType!) { (dataPointer: UnsafePointer<LDKChannelMonitor>) in
 				self.cType!.persist_new_channel(self.cType!.this_arg, channelId.dynamicallyDangledClone().cType!, dataPointer, updateId.dynamicallyDangledClone().cType!)
 						}
 				
@@ -321,9 +321,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: update.cType!) { (updatePointer: UnsafePointer<LDKChannelMonitorUpdate>) in
+						withUnsafePointer(to: update.dynamicallyDangledClone().cType!) { (updatePointer: UnsafePointer<LDKChannelMonitorUpdate>) in
 				
-						withUnsafePointer(to: data.cType!) { (dataPointer: UnsafePointer<LDKChannelMonitor>) in
+						withUnsafePointer(to: data.dynamicallyDangledClone().cType!) { (dataPointer: UnsafePointer<LDKChannelMonitor>) in
 				self.cType!.update_persisted_channel(self.cType!.this_arg, channelId.dynamicallyDangledClone().cType!, updatePointer, dataPointer, updateId.dynamicallyDangledClone().cType!)
 						}
 				

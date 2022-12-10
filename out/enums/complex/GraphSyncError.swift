@@ -109,7 +109,7 @@
 						
 
 						// native method call
-						let nativeCallResult = GraphSyncError_decode_error(a.clone().cType!)
+						let nativeCallResult = GraphSyncError_decode_error(a.danglingClone().cType!)
 
 						// cleanup
 						

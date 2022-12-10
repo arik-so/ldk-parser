@@ -40,7 +40,7 @@
 
 						if let some = some {
 														
-							self.cType = COption_NetAddressZ_some(some.clone().cType!)
+							self.cType = COption_NetAddressZ_some(some.danglingClone().cType!)
 						} else {
 							self.cType = COption_NetAddressZ_none()
 						}

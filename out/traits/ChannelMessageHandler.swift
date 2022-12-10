@@ -719,7 +719,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKOpenChannel>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKOpenChannel>) in
 				self.cType!.handle_open_channel(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, theirFeatures.dynamicallyDangledClone().cType!, msgPointer)
 						}
 				
@@ -742,7 +742,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKAcceptChannel>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKAcceptChannel>) in
 				self.cType!.handle_accept_channel(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, theirFeatures.dynamicallyDangledClone().cType!, msgPointer)
 						}
 				
@@ -765,7 +765,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKFundingCreated>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKFundingCreated>) in
 				self.cType!.handle_funding_created(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -788,7 +788,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKFundingSigned>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKFundingSigned>) in
 				self.cType!.handle_funding_signed(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -811,7 +811,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelReady>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKChannelReady>) in
 				self.cType!.handle_channel_ready(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -834,9 +834,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: theirFeatures.cType!) { (theirFeaturesPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: theirFeatures.dynamicallyDangledClone().cType!) { (theirFeaturesPointer: UnsafePointer<LDKInitFeatures>) in
 				
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKShutdown>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKShutdown>) in
 				self.cType!.handle_shutdown(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, theirFeaturesPointer, msgPointer)
 						}
 				
@@ -861,7 +861,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKClosingSigned>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKClosingSigned>) in
 				self.cType!.handle_closing_signed(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -884,7 +884,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUpdateAddHTLC>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUpdateAddHTLC>) in
 				self.cType!.handle_update_add_htlc(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -907,7 +907,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUpdateFulfillHTLC>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUpdateFulfillHTLC>) in
 				self.cType!.handle_update_fulfill_htlc(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -930,7 +930,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUpdateFailHTLC>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUpdateFailHTLC>) in
 				self.cType!.handle_update_fail_htlc(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -953,7 +953,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
 				self.cType!.handle_update_fail_malformed_htlc(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -976,7 +976,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKCommitmentSigned>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKCommitmentSigned>) in
 				self.cType!.handle_commitment_signed(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -999,7 +999,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKRevokeAndACK>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKRevokeAndACK>) in
 				self.cType!.handle_revoke_and_ack(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -1022,7 +1022,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUpdateFee>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUpdateFee>) in
 				self.cType!.handle_update_fee(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -1045,7 +1045,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKAnnouncementSignatures>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKAnnouncementSignatures>) in
 				self.cType!.handle_announcement_signatures(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -1097,7 +1097,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKInit>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKInit>) in
 				self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -1120,7 +1120,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelReestablish>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKChannelReestablish>) in
 				self.cType!.handle_channel_reestablish(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -1143,7 +1143,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelUpdate>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKChannelUpdate>) in
 				self.cType!.handle_channel_update(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -1166,7 +1166,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKErrorMessage>) in
+						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKErrorMessage>) in
 				self.cType!.handle_error(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				

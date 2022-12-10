@@ -137,7 +137,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
-				StaticPaymentOutputDescriptor_set_output(thisPtrPointer, val.clone().cType!)
+				StaticPaymentOutputDescriptor_set_output(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -262,7 +262,7 @@
 				
 
 						// native method call
-						let nativeCallResult = StaticPaymentOutputDescriptor_new(outpointArg.dynamicallyDangledClone().cType!, outputArg.clone().cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
+						let nativeCallResult = StaticPaymentOutputDescriptor_new(outpointArg.dynamicallyDangledClone().cType!, outputArg.danglingClone().cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
 
 						// cleanup
 						

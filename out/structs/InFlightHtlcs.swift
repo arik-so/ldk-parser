@@ -72,9 +72,9 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInFlightHtlcs>) in
 				
-						withUnsafePointer(to: source.cType!) { (sourcePointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: source.dynamicallyDangledClone().cType!) { (sourcePointer: UnsafePointer<LDKNodeId>) in
 				
-						withUnsafePointer(to: target.cType!) { (targetPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: target.dynamicallyDangledClone().cType!) { (targetPointer: UnsafePointer<LDKNodeId>) in
 				InFlightHtlcs_used_liquidity_msat(thisArgPointer, sourcePointer, targetPointer, channelScid)
 						}
 				

@@ -73,7 +73,7 @@
 						
 
 						// native method call
-						let nativeCallResult = InvoicePayer_new(payer.activate().cType!, router.activate().cType!, logger.activate().cType!, eventHandler.activate().cType!, retry.clone().cType!)
+						let nativeCallResult = InvoicePayer_new(payer.activate().cType!, router.activate().cType!, logger.activate().cType!, eventHandler.activate().cType!, retry.danglingClone().cType!)
 
 						// cleanup
 						
@@ -105,7 +105,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
 				
-						withUnsafePointer(to: invoice.cType!) { (invoicePointer: UnsafePointer<LDKInvoice>) in
+						withUnsafePointer(to: invoice.dynamicallyDangledClone().cType!) { (invoicePointer: UnsafePointer<LDKInvoice>) in
 				InvoicePayer_pay_invoice(thisArgPointer, invoicePointer)
 						}
 				
@@ -137,7 +137,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
 				
-						withUnsafePointer(to: invoice.cType!) { (invoicePointer: UnsafePointer<LDKInvoice>) in
+						withUnsafePointer(to: invoice.dynamicallyDangledClone().cType!) { (invoicePointer: UnsafePointer<LDKInvoice>) in
 				InvoicePayer_pay_zero_value_invoice(thisArgPointer, invoicePointer, amountMsats)
 						}
 				

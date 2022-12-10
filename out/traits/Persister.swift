@@ -192,7 +192,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: channelManager.cType!) { (channelManagerPointer: UnsafePointer<LDKChannelManager>) in
+						withUnsafePointer(to: channelManager.dangle().cType!) { (channelManagerPointer: UnsafePointer<LDKChannelManager>) in
 				self.cType!.persist_manager(self.cType!.this_arg, channelManagerPointer)
 						}
 				
@@ -213,7 +213,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
+						withUnsafePointer(to: networkGraph.dangle().cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
 				self.cType!.persist_graph(self.cType!.this_arg, networkGraphPointer)
 						}
 				

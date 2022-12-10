@@ -142,7 +142,7 @@
 						
 
 						// native method call
-						let nativeCallResult = PaymentSendFailure_parameter_error(a.clone().cType!)
+						let nativeCallResult = PaymentSendFailure_parameter_error(a.danglingClone().cType!)
 
 						// cleanup
 						

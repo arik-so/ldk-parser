@@ -83,7 +83,7 @@
 					public func setErr(val: String) {
 						// native call variable prep
 						
-						let valPrimitiveWrapper = Str(value: val).setCFreeability(freeable: false)
+						let valPrimitiveWrapper = Str(value: val).dangle()
 				
 						valPrimitiveWrapper.cType!.chars_is_owned = false
 					
@@ -137,7 +137,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKLightningError>) in
-				LightningError_set_action(thisPtrPointer, val.clone().cType!)
+				LightningError_set_action(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
 
@@ -156,13 +156,13 @@
 					public init(errArg: String, actionArg: ErrorAction) {
 						// native call variable prep
 						
-						let errArgPrimitiveWrapper = Str(value: errArg).setCFreeability(freeable: false)
+						let errArgPrimitiveWrapper = Str(value: errArg).dangle()
 				
 						errArgPrimitiveWrapper.cType!.chars_is_owned = false
 					
 
 						// native method call
-						let nativeCallResult = LightningError_new(errArgPrimitiveWrapper.cType!, actionArg.clone().cType!)
+						let nativeCallResult = LightningError_new(errArgPrimitiveWrapper.cType!, actionArg.danglingClone().cType!)
 
 						// cleanup
 						

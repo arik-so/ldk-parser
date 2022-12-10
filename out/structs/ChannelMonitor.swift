@@ -144,7 +144,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelMonitor>) in
 				
-						withUnsafePointer(to: updates.cType!) { (updatesPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
+						withUnsafePointer(to: updates.dynamicallyDangledClone().cType!) { (updatesPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
 				
 						withUnsafePointer(to: broadcaster.activate().cType!) { (broadcasterPointer: UnsafePointer<LDKBroadcasterInterface>) in
 				
