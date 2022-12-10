@@ -810,13 +810,7 @@ export default class Parser {
 
 		const returnedType = new ContextualRustType();
 		returnedType.type = rustType;
-
-		if (contextualName) {
-			returnedType.setContextualName(contextualName);
-		} else {
-			// this is likely a return value
-		}
-
+		returnedType.contextualName = contextualName;
 		returnedType.isConstant = isConstant;
 		returnedType.isNonnullablePointer = nonNullablePointer;
 		returnedType.isAsteriskPointer = isAsteriskPointer;

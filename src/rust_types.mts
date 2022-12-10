@@ -191,39 +191,18 @@ export class ContextualRustType {
 	/**
 	 * This is usually a variable name, an argument name, or a field name
 	 */
-	protected _contextualName: string | null;
-
-	getContextualName(): string | null {
-		return this._contextualName;
-	}
-
-	setContextualName(name: string) {
-		this._contextualName = name;
-	}
+	contextualName: string | null;
 }
 
 export class RustStructField extends ContextualRustType {
-	public get contextualName(): string {
-		return this._contextualName!;
-	}
-
-	public set contextualName(name: string) {
-		this._contextualName = name;
-	}
+	contextualName: string;
 }
 
 export class RustFunctionArgument extends ContextualRustType {
-	public get contextualName(): string {
-		return this._contextualName!;
-	}
-
-	public set contextualName(name: string) {
-		this._contextualName = name;
-	}
+	contextualName: string;
 }
 
 export class RustFunctionReturnValue extends ContextualRustType {
-
 }
 
 export enum RustKind {
