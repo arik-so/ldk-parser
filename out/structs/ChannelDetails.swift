@@ -145,7 +145,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
-				ChannelDetails_set_counterparty(thisPtrPointer, val.clone().cType!)
+				ChannelDetails_set_counterparty(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -216,7 +216,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
-				ChannelDetails_set_funding_txo(thisPtrPointer, val.clone().cType!)
+				ChannelDetails_set_funding_txo(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -283,7 +283,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
-				ChannelDetails_set_channel_type(thisPtrPointer, val.clone().cType!)
+				ChannelDetails_set_channel_type(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -1382,7 +1382,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
-				ChannelDetails_set_config(thisPtrPointer, val.clone().cType!)
+				ChannelDetails_set_config(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -1421,7 +1421,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelDetails_new(channelIdArgPrimitiveWrapper.cType!, counterpartyArg.clone().cType!, fundingTxoArg.clone().cType!, channelTypeArg.clone().cType!, shortChannelIdArgOption.cType!, outboundScidAliasArgOption.cType!, inboundScidAliasArgOption.cType!, channelValueSatoshisArg, unspendablePunishmentReserveArgOption.cType!, userChannelIdArg, balanceMsatArg, outboundCapacityMsatArg, nextOutboundHtlcLimitMsatArg, inboundCapacityMsatArg, confirmationsRequiredArgOption.cType!, forceCloseSpendDelayArgOption.cType!, isOutboundArg, isChannelReadyArg, isUsableArg, isPublicArg, inboundHtlcMinimumMsatArgOption.cType!, inboundHtlcMaximumMsatArgOption.cType!, configArg.clone().cType!)
+						let nativeCallResult = ChannelDetails_new(channelIdArgPrimitiveWrapper.cType!, counterpartyArg.dynamicallyDangledClone().cType!, fundingTxoArg.dynamicallyDangledClone().cType!, channelTypeArg.dynamicallyDangledClone().cType!, shortChannelIdArgOption.cType!, outboundScidAliasArgOption.cType!, inboundScidAliasArgOption.cType!, channelValueSatoshisArg, unspendablePunishmentReserveArgOption.cType!, userChannelIdArg, balanceMsatArg, outboundCapacityMsatArg, nextOutboundHtlcLimitMsatArg, inboundCapacityMsatArg, confirmationsRequiredArgOption.cType!, forceCloseSpendDelayArgOption.cType!, isOutboundArg, isChannelReadyArg, isUsableArg, isPublicArg, inboundHtlcMinimumMsatArgOption.cType!, inboundHtlcMaximumMsatArgOption.cType!, configArg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -1588,6 +1588,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> ChannelDetails {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> ChannelDetails {
 						self.cType!.is_owned = freeable
 						return self

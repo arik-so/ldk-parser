@@ -352,6 +352,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> SignedRawInvoice {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> SignedRawInvoice {
 						self.cType!.is_owned = freeable
 						return self

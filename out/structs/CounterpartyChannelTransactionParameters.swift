@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCounterpartyChannelTransactionParameters>) in
-				CounterpartyChannelTransactionParameters_set_pubkeys(thisPtrPointer, val.clone().cType!)
+				CounterpartyChannelTransactionParameters_set_pubkeys(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -154,7 +154,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CounterpartyChannelTransactionParameters_new(pubkeysArg.clone().cType!, selectedContestDelayArg)
+						let nativeCallResult = CounterpartyChannelTransactionParameters_new(pubkeysArg.dynamicallyDangledClone().cType!, selectedContestDelayArg)
 
 						// cleanup
 						
@@ -265,6 +265,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> CounterpartyChannelTransactionParameters {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> CounterpartyChannelTransactionParameters {
 						self.cType!.is_owned = freeable
 						return self

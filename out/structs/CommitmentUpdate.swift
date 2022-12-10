@@ -306,7 +306,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
-				CommitmentUpdate_set_update_fee(thisPtrPointer, val.clone().cType!)
+				CommitmentUpdate_set_update_fee(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -352,7 +352,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
-				CommitmentUpdate_set_commitment_signed(thisPtrPointer, val.clone().cType!)
+				CommitmentUpdate_set_commitment_signed(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -381,7 +381,7 @@
 				
 
 						// native method call
-						let nativeCallResult = CommitmentUpdate_new(updateAddHtlcsArgVector.cType!, updateFulfillHtlcsArgVector.cType!, updateFailHtlcsArgVector.cType!, updateFailMalformedHtlcsArgVector.cType!, updateFeeArg.clone().cType!, commitmentSignedArg.clone().cType!)
+						let nativeCallResult = CommitmentUpdate_new(updateAddHtlcsArgVector.cType!, updateFulfillHtlcsArgVector.cType!, updateFailHtlcsArgVector.cType!, updateFailMalformedHtlcsArgVector.cType!, updateFeeArg.dynamicallyDangledClone().cType!, commitmentSignedArg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -485,6 +485,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> CommitmentUpdate {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> CommitmentUpdate {
 						self.cType!.is_owned = freeable
 						return self

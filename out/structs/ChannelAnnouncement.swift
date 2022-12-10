@@ -279,7 +279,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
-				ChannelAnnouncement_set_contents(thisPtrPointer, val.clone().cType!)
+				ChannelAnnouncement_set_contents(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -308,7 +308,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelAnnouncement_new(nodeSignature_1ArgPrimitiveWrapper.cType!, nodeSignature_2ArgPrimitiveWrapper.cType!, bitcoinSignature_1ArgPrimitiveWrapper.cType!, bitcoinSignature_2ArgPrimitiveWrapper.cType!, contentsArg.clone().cType!)
+						let nativeCallResult = ChannelAnnouncement_new(nodeSignature_1ArgPrimitiveWrapper.cType!, nodeSignature_2ArgPrimitiveWrapper.cType!, bitcoinSignature_1ArgPrimitiveWrapper.cType!, bitcoinSignature_2ArgPrimitiveWrapper.cType!, contentsArg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -448,6 +448,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> ChannelAnnouncement {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> ChannelAnnouncement {
 						self.cType!.is_owned = freeable
 						return self

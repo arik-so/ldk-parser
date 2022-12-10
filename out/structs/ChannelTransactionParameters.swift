@@ -95,7 +95,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-				ChannelTransactionParameters_set_holder_pubkeys(thisPtrPointer, val.clone().cType!)
+				ChannelTransactionParameters_set_holder_pubkeys(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -254,7 +254,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-				ChannelTransactionParameters_set_counterparty_parameters(thisPtrPointer, val.clone().cType!)
+				ChannelTransactionParameters_set_counterparty_parameters(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -317,7 +317,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
-				ChannelTransactionParameters_set_funding_outpoint(thisPtrPointer, val.clone().cType!)
+				ChannelTransactionParameters_set_funding_outpoint(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -386,7 +386,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChannelTransactionParameters_new(holderPubkeysArg.clone().cType!, holderSelectedContestDelayArg, isOutboundFromHolderArg, counterpartyParametersArg.clone().cType!, fundingOutpointArg.clone().cType!, optAnchorsArg.getCValue())
+						let nativeCallResult = ChannelTransactionParameters_new(holderPubkeysArg.dynamicallyDangledClone().cType!, holderSelectedContestDelayArg, isOutboundFromHolderArg, counterpartyParametersArg.dynamicallyDangledClone().cType!, fundingOutpointArg.dynamicallyDangledClone().cType!, optAnchorsArg.getCValue())
 
 						// cleanup
 						
@@ -572,6 +572,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> ChannelTransactionParameters {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> ChannelTransactionParameters {
 						self.cType!.is_owned = freeable
 						return self

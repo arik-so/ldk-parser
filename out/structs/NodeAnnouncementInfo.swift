@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-				NodeAnnouncementInfo_set_features(thisPtrPointer, val.clone().cType!)
+				NodeAnnouncementInfo_set_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -237,7 +237,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-				NodeAnnouncementInfo_set_alias(thisPtrPointer, val.clone().cType!)
+				NodeAnnouncementInfo_set_alias(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -358,7 +358,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncementInfo>) in
-				NodeAnnouncementInfo_set_announcement_message(thisPtrPointer, val.clone().cType!)
+				NodeAnnouncementInfo_set_announcement_message(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -383,7 +383,7 @@
 				
 
 						// native method call
-						let nativeCallResult = NodeAnnouncementInfo_new(featuresArg.clone().cType!, lastUpdateArg, rgbArgPrimitiveWrapper.cType!, aliasArg.clone().cType!, addressesArgVector.cType!, announcementMessageArg.clone().cType!)
+						let nativeCallResult = NodeAnnouncementInfo_new(featuresArg.dynamicallyDangledClone().cType!, lastUpdateArg, rgbArgPrimitiveWrapper.cType!, aliasArg.dynamicallyDangledClone().cType!, addressesArgVector.cType!, announcementMessageArg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -525,6 +525,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> NodeAnnouncementInfo {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> NodeAnnouncementInfo {
 						self.cType!.is_owned = freeable
 						return self

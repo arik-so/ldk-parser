@@ -135,7 +135,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAnnouncement>) in
-				NodeAnnouncement_set_contents(thisPtrPointer, val.clone().cType!)
+				NodeAnnouncement_set_contents(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -158,7 +158,7 @@
 				
 
 						// native method call
-						let nativeCallResult = NodeAnnouncement_new(signatureArgPrimitiveWrapper.cType!, contentsArg.clone().cType!)
+						let nativeCallResult = NodeAnnouncement_new(signatureArgPrimitiveWrapper.cType!, contentsArg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -298,6 +298,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> NodeAnnouncement {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> NodeAnnouncement {
 						self.cType!.is_owned = freeable
 						return self

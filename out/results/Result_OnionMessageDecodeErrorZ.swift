@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_OnionMessageDecodeErrorZ_ok(o.clone().cType!)
+						let nativeCallResult = CResult_OnionMessageDecodeErrorZ_ok(o.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						

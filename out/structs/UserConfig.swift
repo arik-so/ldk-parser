@@ -93,7 +93,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-				UserConfig_set_channel_handshake_config(thisPtrPointer, val.clone().cType!)
+				UserConfig_set_channel_handshake_config(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -139,7 +139,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-				UserConfig_set_channel_handshake_limits(thisPtrPointer, val.clone().cType!)
+				UserConfig_set_channel_handshake_limits(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -185,7 +185,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
-				UserConfig_set_channel_config(thisPtrPointer, val.clone().cType!)
+				UserConfig_set_channel_config(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -400,7 +400,7 @@
 						
 
 						// native method call
-						let nativeCallResult = UserConfig_new(channelHandshakeConfigArg.clone().cType!, channelHandshakeLimitsArg.clone().cType!, channelConfigArg.clone().cType!, acceptForwardsToPrivChannelsArg, acceptInboundChannelsArg, manuallyAcceptInboundChannelsArg)
+						let nativeCallResult = UserConfig_new(channelHandshakeConfigArg.dynamicallyDangledClone().cType!, channelHandshakeLimitsArg.dynamicallyDangledClone().cType!, channelConfigArg.dynamicallyDangledClone().cType!, acceptForwardsToPrivChannelsArg, acceptInboundChannelsArg, manuallyAcceptInboundChannelsArg)
 
 						// cleanup
 						
@@ -486,6 +486,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> UserConfig {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> UserConfig {
 						self.cType!.is_owned = freeable
 						return self

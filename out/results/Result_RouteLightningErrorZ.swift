@@ -45,7 +45,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_RouteLightningErrorZ_ok(o.clone().cType!)
+						let nativeCallResult = CResult_RouteLightningErrorZ_ok(o.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -64,7 +64,7 @@
 						
 
 						// native method call
-						let nativeCallResult = CResult_RouteLightningErrorZ_err(e.clone().cType!)
+						let nativeCallResult = CResult_RouteLightningErrorZ_err(e.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						

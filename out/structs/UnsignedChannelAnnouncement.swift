@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelAnnouncement>) in
-				UnsignedChannelAnnouncement_set_features(thisPtrPointer, val.clone().cType!)
+				UnsignedChannelAnnouncement_set_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -513,6 +513,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> UnsignedChannelAnnouncement {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> UnsignedChannelAnnouncement {
 						self.cType!.is_owned = freeable
 						return self

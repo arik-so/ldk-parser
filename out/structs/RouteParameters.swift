@@ -97,7 +97,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
-				RouteParameters_set_payment_params(thisPtrPointer, val.clone().cType!)
+				RouteParameters_set_payment_params(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -210,7 +210,7 @@
 						
 
 						// native method call
-						let nativeCallResult = RouteParameters_new(paymentParamsArg.clone().cType!, finalValueMsatArg, finalCltvExpiryDeltaArg)
+						let nativeCallResult = RouteParameters_new(paymentParamsArg.dynamicallyDangledClone().cType!, finalValueMsatArg, finalCltvExpiryDeltaArg)
 
 						// cleanup
 						
@@ -321,6 +321,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> RouteParameters {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> RouteParameters {
 						self.cType!.is_owned = freeable
 						return self

@@ -125,7 +125,7 @@
 						
 
 						// native method call
-						let nativeCallResult = MonitorEvent_htlcevent(a.clone().cType!)
+						let nativeCallResult = MonitorEvent_htlcevent(a.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -144,7 +144,7 @@
 						
 
 						// native method call
-						let nativeCallResult = MonitorEvent_commitment_tx_confirmed(a.clone().cType!)
+						let nativeCallResult = MonitorEvent_commitment_tx_confirmed(a.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -163,7 +163,7 @@
 						
 
 						// native method call
-						let nativeCallResult = MonitorEvent_completed(fundingTxo.clone().cType!, monitorUpdateId)
+						let nativeCallResult = MonitorEvent_completed(fundingTxo.dynamicallyDangledClone().cType!, monitorUpdateId)
 
 						// cleanup
 						
@@ -182,7 +182,7 @@
 						
 
 						// native method call
-						let nativeCallResult = MonitorEvent_update_failed(a.clone().cType!)
+						let nativeCallResult = MonitorEvent_update_failed(a.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						

@@ -559,7 +559,7 @@
 				
 
 					// native method call
-					let nativeCallResult = build_closing_transaction(toHolderValueSat, toCounterpartyValueSat, toHolderScriptVector.cType!, toCounterpartyScriptVector.cType!, fundingOutpoint.clone().cType!)
+					let nativeCallResult = build_closing_transaction(toHolderValueSat, toCounterpartyValueSat, toHolderScriptVector.cType!, toCounterpartyScriptVector.cType!, fundingOutpoint.dynamicallyDangledClone().cType!)
 
 					// cleanup
 					
@@ -1104,7 +1104,7 @@
 				
 
 					// native method call
-					let nativeCallResult = create_phantom_invoice_with_description_hash(amtMsatOption.cType!, paymentHashPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs, descriptionHash.clone().cType!, phantomRouteHintsVector.cType!, keysManager.activate().cType!, logger.activate().cType!, network.getCValue())
+					let nativeCallResult = create_phantom_invoice_with_description_hash(amtMsatOption.cType!, paymentHashPrimitiveWrapper.cType!, invoiceExpiryDeltaSecs, descriptionHash.dynamicallyDangledClone().cType!, phantomRouteHintsVector.cType!, keysManager.activate().cType!, logger.activate().cType!, network.getCValue())
 
 					// cleanup
 					
@@ -1173,7 +1173,7 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
-				create_invoice_from_channelmanager_with_description_hash(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionHash.clone().cType!, invoiceExpiryDeltaSecs)
+				create_invoice_from_channelmanager_with_description_hash(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionHash.dynamicallyDangledClone().cType!, invoiceExpiryDeltaSecs)
 					}
 				
 
@@ -1200,7 +1200,7 @@
 					// native method call
 					let nativeCallResult = 
 					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
-				create_invoice_from_channelmanager_with_description_hash_and_duration_since_epoch(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionHash.clone().cType!, durationSinceEpoch, invoiceExpiryDeltaSecs)
+				create_invoice_from_channelmanager_with_description_hash_and_duration_since_epoch(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionHash.dynamicallyDangledClone().cType!, durationSinceEpoch, invoiceExpiryDeltaSecs)
 					}
 				
 

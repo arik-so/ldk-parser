@@ -87,7 +87,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInit>) in
-				Init_set_features(thisPtrPointer, val.clone().cType!)
+				Init_set_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -164,7 +164,7 @@
 				
 
 						// native method call
-						let nativeCallResult = Init_new(featuresArg.clone().cType!, remoteNetworkAddressArgOption.cType!)
+						let nativeCallResult = Init_new(featuresArg.dynamicallyDangledClone().cType!, remoteNetworkAddressArgOption.cType!)
 
 						// cleanup
 						
@@ -304,6 +304,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> BindingsInit {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> BindingsInit {
 						self.cType!.is_owned = freeable
 						return self

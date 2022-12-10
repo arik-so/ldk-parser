@@ -162,7 +162,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
-				PaymentParameters_set_features(thisPtrPointer, val.clone().cType!)
+				PaymentParameters_set_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -511,7 +511,7 @@
 				
 
 						// native method call
-						let nativeCallResult = PaymentParameters_new(payeePubkeyArgPrimitiveWrapper.cType!, featuresArg.clone().cType!, routeHintsArgVector.cType!, expiryTimeArgOption.cType!, maxTotalCltvExpiryDeltaArg, maxPathCountArg, maxChannelSaturationPowerOfHalfArg, previouslyFailedChannelsArgVector.cType!)
+						let nativeCallResult = PaymentParameters_new(payeePubkeyArgPrimitiveWrapper.cType!, featuresArg.dynamicallyDangledClone().cType!, routeHintsArgVector.cType!, expiryTimeArgOption.cType!, maxTotalCltvExpiryDeltaArg, maxPathCountArg, maxChannelSaturationPowerOfHalfArg, previouslyFailedChannelsArgVector.cType!)
 
 						// cleanup
 						
@@ -720,6 +720,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> PaymentParameters {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> PaymentParameters {
 						self.cType!.is_owned = freeable
 						return self

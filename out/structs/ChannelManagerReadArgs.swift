@@ -423,7 +423,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelManagerReadArgs>) in
-				ChannelManagerReadArgs_set_default_config(thisPtrPointer, val.clone().cType!)
+				ChannelManagerReadArgs_set_default_config(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -448,7 +448,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelManagerReadArgs_new(keysManager.activate().cType!, feeEstimator.activate().cType!, chainMonitor.activate().cType!, txBroadcaster.activate().cType!, logger.activate().cType!, defaultConfig.clone().cType!, channelMonitorsVector.cType!)
+						let nativeCallResult = ChannelManagerReadArgs_new(keysManager.activate().cType!, feeEstimator.activate().cType!, chainMonitor.activate().cType!, txBroadcaster.activate().cType!, logger.activate().cType!, defaultConfig.dynamicallyDangledClone().cType!, channelMonitorsVector.cType!)
 
 						// cleanup
 						

@@ -134,7 +134,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ErrorAction_disconnect_peer(msg.clone().cType!)
+						let nativeCallResult = ErrorAction_disconnect_peer(msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -210,7 +210,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ErrorAction_send_error_message(msg.clone().cType!)
+						let nativeCallResult = ErrorAction_send_error_message(msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -229,7 +229,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ErrorAction_send_warning_message(msg.clone().cType!, logLevel.getCValue())
+						let nativeCallResult = ErrorAction_send_warning_message(msg.dynamicallyDangledClone().cType!, logLevel.getCValue())
 
 						// cleanup
 						

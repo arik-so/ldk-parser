@@ -319,7 +319,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-				ChannelUpdateInfo_set_fees(thisPtrPointer, val.clone().cType!)
+				ChannelUpdateInfo_set_fees(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -388,7 +388,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
-				ChannelUpdateInfo_set_last_update_message(thisPtrPointer, val.clone().cType!)
+				ChannelUpdateInfo_set_last_update_message(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -409,7 +409,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChannelUpdateInfo_new(lastUpdateArg, enabledArg, cltvExpiryDeltaArg, htlcMinimumMsatArg, htlcMaximumMsatArg, feesArg.clone().cType!, lastUpdateMessageArg.clone().cType!)
+						let nativeCallResult = ChannelUpdateInfo_new(lastUpdateArg, enabledArg, cltvExpiryDeltaArg, htlcMinimumMsatArg, htlcMaximumMsatArg, feesArg.dynamicallyDangledClone().cType!, lastUpdateMessageArg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -549,6 +549,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> ChannelUpdateInfo {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> ChannelUpdateInfo {
 						self.cType!.is_owned = freeable
 						return self

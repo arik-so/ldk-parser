@@ -572,7 +572,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (!(argument.type instanceof RustTrait) && !argument.isAsteriskPointer && !this.isElidedType(argument.type) && this.hasFreeMethod(argument.type)) {
 			if (this.hasCloneMethod(argument.type)) {
 				// we're kinda relying here on Rust immediately freeing this object upon consumption
-				memoryManagementInfix = '.clone()';
+				if(this.hasOwnershipField(argument.type)){
+					memoryManagementInfix = '.dynamicallyDangledClone()';
+				}else {
+					memoryManagementInfix = '.clone()';
+				}
 			} else if (this.hasFreeMethod(argument.type)) { // could just be else
 				// if we can't clone it, we never really want to release this object
 				memoryManagementInfix = '.dangle()';
@@ -918,6 +922,17 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					return self
 				}
 			`;
+
+			if(this.hasCloneMethod(type)){
+				danglingCloneCode += `
+					internal func dynamicallyDangledClone() -> ${swiftTypeName} {
+						let dangledClone = self.clone()
+						// if it's owned, i. e. controlled by Rust, it should dangle on our end
+						dangledClone.dangling = dangledClone.cType!.${type.ownershipField.contextualName}
+						return dangledClone
+					}
+				`;
+			}
 		}
 
 		if (this.hasFreeMethod(type)) {

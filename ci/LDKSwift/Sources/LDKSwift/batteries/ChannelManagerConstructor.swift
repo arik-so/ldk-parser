@@ -68,7 +68,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
                 throw InvalidSerializedDataError.invalidSerializedChannelMonitor
             }
             
-            let clonedChannelMonitor = channelMonitor.dangle().clone()
+            let clonedChannelMonitor = channelMonitor.dangle().danglingClone()
             let (channelFundingOutpoint, _) = clonedChannelMonitor.getFundingTxo()
             
             // TODO: figure out what to do with txid nullability
@@ -78,7 +78,6 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
                 throw InvalidSerializedDataError.duplicateSerializedChannelMonitor
             }
             monitorFundingSet.insert(fundingOutpointHash)
-            
 
             clonedChannelMonitor.cType!.is_owned = false // is_owned should never have to be modified
             monitors.append(clonedChannelMonitor)
@@ -87,6 +86,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
 
         print("Collected channel monitors, reading channel manager")
         let channelManagerReadArgs = ChannelManagerReadArgs(keysManager: keys_interface, feeEstimator: fee_estimator, chainMonitor: chain_monitor.asWatch(), txBroadcaster: tx_broadcaster, logger: logger, defaultConfig: UserConfig.initWithDefault(), channelMonitors: monitors)
+
         
         guard let (latestBlockHash, channelManager) = Bindings.readBlockHashChannelManager(ser: channel_manager_serialized, arg: channelManagerReadArgs).getValue() else {
             throw InvalidSerializedDataError.invalidSerializedChannelManager

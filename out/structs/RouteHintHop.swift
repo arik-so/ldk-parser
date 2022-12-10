@@ -181,7 +181,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHintHop>) in
-				RouteHintHop_set_fees(thisPtrPointer, val.clone().cType!)
+				RouteHintHop_set_fees(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -350,7 +350,7 @@
 				
 
 						// native method call
-						let nativeCallResult = RouteHintHop_new(srcNodeIdArgPrimitiveWrapper.cType!, shortChannelIdArg, feesArg.clone().cType!, cltvExpiryDeltaArg, htlcMinimumMsatArgOption.cType!, htlcMaximumMsatArgOption.cType!)
+						let nativeCallResult = RouteHintHop_new(srcNodeIdArgPrimitiveWrapper.cType!, shortChannelIdArg, feesArg.dynamicallyDangledClone().cType!, cltvExpiryDeltaArg, htlcMinimumMsatArgOption.cType!, htlcMaximumMsatArgOption.cType!)
 
 						// cleanup
 						
@@ -513,6 +513,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> RouteHintHop {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> RouteHintHop {
 						self.cType!.is_owned = freeable
 						return self

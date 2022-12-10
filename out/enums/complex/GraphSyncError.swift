@@ -128,7 +128,7 @@
 						
 
 						// native method call
-						let nativeCallResult = GraphSyncError_lightning_error(a.clone().cType!)
+						let nativeCallResult = GraphSyncError_lightning_error(a.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						

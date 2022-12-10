@@ -89,7 +89,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_features(thisPtrPointer, val.clone().cType!)
+				ChannelInfo_set_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -135,7 +135,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_node_one(thisPtrPointer, val.clone().cType!)
+				ChannelInfo_set_node_one(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -198,7 +198,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_one_to_two(thisPtrPointer, val.clone().cType!)
+				ChannelInfo_set_one_to_two(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -244,7 +244,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_node_two(thisPtrPointer, val.clone().cType!)
+				ChannelInfo_set_node_two(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -307,7 +307,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_two_to_one(thisPtrPointer, val.clone().cType!)
+				ChannelInfo_set_two_to_one(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -424,7 +424,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelInfo>) in
-				ChannelInfo_set_announcement_message(thisPtrPointer, val.clone().cType!)
+				ChannelInfo_set_announcement_message(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -598,6 +598,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> ChannelInfo {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> ChannelInfo {
 						self.cType!.is_owned = freeable
 						return self

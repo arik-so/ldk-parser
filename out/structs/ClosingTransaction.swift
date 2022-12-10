@@ -149,7 +149,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ClosingTransaction_new(toHolderValueSat, toCounterpartyValueSat, toHolderScriptVector.cType!, toCounterpartyScriptVector.cType!, fundingOutpoint.clone().cType!)
+						let nativeCallResult = ClosingTransaction_new(toHolderValueSat, toCounterpartyValueSat, toHolderScriptVector.cType!, toCounterpartyScriptVector.cType!, fundingOutpoint.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -213,7 +213,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
-				ClosingTransaction_verify(thisArgPointer, fundingOutpoint.clone().cType!)
+				ClosingTransaction_verify(thisArgPointer, fundingOutpoint.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -345,6 +345,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> ClosingTransaction {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> ClosingTransaction {
 						self.cType!.is_owned = freeable
 						return self

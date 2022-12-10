@@ -152,7 +152,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-				ChainMonitor_get_monitor(thisArgPointer, fundingTxo.clone().cType!)
+				ChainMonitor_get_monitor(thisArgPointer, fundingTxo.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -213,7 +213,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
-				ChainMonitor_channel_monitor_updated(thisArgPointer, fundingTxo.clone().cType!, completedUpdateId.clone().cType!)
+				ChainMonitor_channel_monitor_updated(thisArgPointer, fundingTxo.dynamicallyDangledClone().cType!, completedUpdateId.dynamicallyDangledClone().cType!)
 						}
 				
 

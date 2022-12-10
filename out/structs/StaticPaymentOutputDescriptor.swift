@@ -89,7 +89,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
-				StaticPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.clone().cType!)
+				StaticPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -262,7 +262,7 @@
 				
 
 						// native method call
-						let nativeCallResult = StaticPaymentOutputDescriptor_new(outpointArg.clone().cType!, outputArg.clone().cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
+						let nativeCallResult = StaticPaymentOutputDescriptor_new(outpointArg.dynamicallyDangledClone().cType!, outputArg.clone().cType!, channelKeysIdArgPrimitiveWrapper.cType!, channelValueSatoshisArg)
 
 						// cleanup
 						
@@ -402,6 +402,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> StaticPaymentOutputDescriptor {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> StaticPaymentOutputDescriptor {
 						self.cType!.is_owned = freeable
 						return self

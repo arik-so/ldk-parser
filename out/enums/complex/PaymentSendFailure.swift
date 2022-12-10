@@ -211,7 +211,7 @@
 				
 
 						// native method call
-						let nativeCallResult = PaymentSendFailure_partial_failure(resultsVector.cType!, failedPathsRetry.clone().cType!, paymentIdPrimitiveWrapper.cType!)
+						let nativeCallResult = PaymentSendFailure_partial_failure(resultsVector.cType!, failedPathsRetry.dynamicallyDangledClone().cType!, paymentIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						

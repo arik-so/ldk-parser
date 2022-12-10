@@ -237,7 +237,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_accept_channel(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_accept_channel(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -258,7 +258,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_open_channel(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_open_channel(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -279,7 +279,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_funding_created(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_funding_created(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -300,7 +300,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_funding_signed(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_funding_signed(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -321,7 +321,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_channel_ready(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_channel_ready(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -342,7 +342,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_announcement_signatures(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_announcement_signatures(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -363,7 +363,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_update_htlcs(nodeIdPrimitiveWrapper.cType!, updates.clone().cType!)
+						let nativeCallResult = MessageSendEvent_update_htlcs(nodeIdPrimitiveWrapper.cType!, updates.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -384,7 +384,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_revoke_and_ack(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_revoke_and_ack(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -405,7 +405,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_closing_signed(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_closing_signed(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -426,7 +426,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_shutdown(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_shutdown(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -447,7 +447,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_channel_reestablish(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_channel_reestablish(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -468,7 +468,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_channel_announcement(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!, updateMsg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_channel_announcement(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!, updateMsg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -487,7 +487,7 @@
 						
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_broadcast_channel_announcement(msg.clone().cType!, updateMsg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_broadcast_channel_announcement(msg.dynamicallyDangledClone().cType!, updateMsg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -506,7 +506,7 @@
 						
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_broadcast_channel_update(msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_broadcast_channel_update(msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -527,7 +527,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_channel_update(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_channel_update(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -569,7 +569,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_channel_range_query(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_channel_range_query(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -590,7 +590,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_short_ids_query(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_short_ids_query(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -611,7 +611,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_reply_channel_range(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_reply_channel_range(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -632,7 +632,7 @@
 				
 
 						// native method call
-						let nativeCallResult = MessageSendEvent_send_gossip_timestamp_filter(nodeIdPrimitiveWrapper.cType!, msg.clone().cType!)
+						let nativeCallResult = MessageSendEvent_send_gossip_timestamp_filter(nodeIdPrimitiveWrapper.cType!, msg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						

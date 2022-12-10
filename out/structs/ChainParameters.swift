@@ -145,7 +145,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChainParameters>) in
-				ChainParameters_set_best_block(thisPtrPointer, val.clone().cType!)
+				ChainParameters_set_best_block(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -166,7 +166,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ChainParameters_new(networkArg.getCValue(), bestBlockArg.clone().cType!)
+						let nativeCallResult = ChainParameters_new(networkArg.getCValue(), bestBlockArg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -233,6 +233,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> ChainParameters {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> ChainParameters {
 						self.cType!.is_owned = freeable
 						return self

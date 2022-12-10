@@ -252,7 +252,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKClosingSigned>) in
-				ClosingSigned_set_fee_range(thisPtrPointer, val.clone().cType!)
+				ClosingSigned_set_fee_range(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -277,7 +277,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ClosingSigned_new(channelIdArgPrimitiveWrapper.cType!, feeSatoshisArg, signatureArgPrimitiveWrapper.cType!, feeRangeArg.clone().cType!)
+						let nativeCallResult = ClosingSigned_new(channelIdArgPrimitiveWrapper.cType!, feeSatoshisArg, signatureArgPrimitiveWrapper.cType!, feeRangeArg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -417,6 +417,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> ClosingSigned {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> ClosingSigned {
 						self.cType!.is_owned = freeable
 						return self

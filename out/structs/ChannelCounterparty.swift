@@ -141,7 +141,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-				ChannelCounterparty_set_features(thisPtrPointer, val.clone().cType!)
+				ChannelCounterparty_set_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -264,7 +264,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelCounterparty>) in
-				ChannelCounterparty_set_forwarding_info(thisPtrPointer, val.clone().cType!)
+				ChannelCounterparty_set_forwarding_info(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -391,7 +391,7 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelCounterparty_new(nodeIdArgPrimitiveWrapper.cType!, featuresArg.clone().cType!, unspendablePunishmentReserveArg, forwardingInfoArg.clone().cType!, outboundHtlcMinimumMsatArgOption.cType!, outboundHtlcMaximumMsatArgOption.cType!)
+						let nativeCallResult = ChannelCounterparty_new(nodeIdArgPrimitiveWrapper.cType!, featuresArg.dynamicallyDangledClone().cType!, unspendablePunishmentReserveArg, forwardingInfoArg.dynamicallyDangledClone().cType!, outboundHtlcMinimumMsatArgOption.cType!, outboundHtlcMaximumMsatArgOption.cType!)
 
 						// cleanup
 						
@@ -502,6 +502,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> ChannelCounterparty {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> ChannelCounterparty {
 						self.cType!.is_owned = freeable
 						return self

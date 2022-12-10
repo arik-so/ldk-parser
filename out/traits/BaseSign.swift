@@ -367,7 +367,7 @@
 							get_per_commitment_point: getPerCommitmentPointLambda,
 							release_commitment_secret: releaseCommitmentSecretLambda,
 							validate_holder_commitment: validateHolderCommitmentLambda,
-							pubkeys: pubkeys.clone().cType!,
+							pubkeys: pubkeys.dynamicallyDangledClone().cType!,
 							set_pubkeys: nil,
 							channel_keys_id: channelKeysIdLambda,
 							sign_counterparty_commitment: signCounterpartyCommitmentLambda,

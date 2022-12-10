@@ -137,7 +137,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-				RouteHop_set_node_features(thisPtrPointer, val.clone().cType!)
+				RouteHop_set_node_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -231,7 +231,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
-				RouteHop_set_channel_features(thisPtrPointer, val.clone().cType!)
+				RouteHop_set_channel_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -352,7 +352,7 @@
 				
 
 						// native method call
-						let nativeCallResult = RouteHop_new(pubkeyArgPrimitiveWrapper.cType!, nodeFeaturesArg.clone().cType!, shortChannelIdArg, channelFeaturesArg.clone().cType!, feeMsatArg, cltvExpiryDeltaArg)
+						let nativeCallResult = RouteHop_new(pubkeyArgPrimitiveWrapper.cType!, nodeFeaturesArg.dynamicallyDangledClone().cType!, shortChannelIdArg, channelFeaturesArg.dynamicallyDangledClone().cType!, feeMsatArg, cltvExpiryDeltaArg)
 
 						// cleanup
 						
@@ -515,6 +515,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> RouteHop {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> RouteHop {
 						self.cType!.is_owned = freeable
 						return self

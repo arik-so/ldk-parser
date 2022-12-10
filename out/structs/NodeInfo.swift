@@ -160,7 +160,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
-				NodeInfo_set_lowest_inbound_channel_fees(thisPtrPointer, val.clone().cType!)
+				NodeInfo_set_lowest_inbound_channel_fees(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -227,7 +227,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
-				NodeInfo_set_announcement_info(thisPtrPointer, val.clone().cType!)
+				NodeInfo_set_announcement_info(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -250,7 +250,7 @@
 				
 
 						// native method call
-						let nativeCallResult = NodeInfo_new(channelsArgVector.cType!, lowestInboundChannelFeesArg.clone().cType!, announcementInfoArg.clone().cType!)
+						let nativeCallResult = NodeInfo_new(channelsArgVector.cType!, lowestInboundChannelFeesArg.dynamicallyDangledClone().cType!, announcementInfoArg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -392,6 +392,13 @@
 						return dangledClone
 					}
 			
+						internal func dynamicallyDangledClone() -> NodeInfo {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
 					internal func setCFreeability(freeable: Bool) -> NodeInfo {
 						self.cType!.is_owned = freeable
 						return self
