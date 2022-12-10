@@ -195,7 +195,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 		}
 
-		throw new Error(`Unmapped raw type: ${type.getName()} (${type.constructor.name})`);
+		throw new Error(`Unmapped raw type: ${type.typeDescription}`);
 	}
 
 	protected generateCallbackStub(lambda: RustLambda, type: RustTrait): string {
@@ -408,7 +408,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 			preparedArgument.methodCallWrapperPrefix += `${this.swiftTypeName(type)}(value: `;
 			preparedArgument.methodCallWrapperSuffix += `)`;
 		} else {
-			throw new Error(`Unsupported return type ${type.getName()} of kind ${type.constructor.name}`);
+			throw new Error(`Unsupported return type ${type.typeDescription}`);
 		}
 
 		// we're dealing with a nullable UnsafePointer here
@@ -467,11 +467,11 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		} else if (type instanceof RustPrimitiveEnum) {
 			preparedReturnValue.wrapperSuffix = '.getCValue()';
 		} else {
-			throw new Error(`Unsupported native return type: ${returnType.type.getName()} (${returnType.type.constructor.name})`);
+			throw new Error(`Unsupported native return type: ${returnType.type.typeDescription}`);
 		}
 
 		if (returnType.isAsteriskPointer) {
-			throw new Error(`Unsupported native pointer return type: ${returnType.type.getName()} (${returnType.type.constructor.name})`);
+			throw new Error(`Unsupported native pointer return type: ${returnType.type.typeDescription}`);
 		}
 
 		return preparedReturnValue;

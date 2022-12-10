@@ -67,7 +67,7 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 				valueAccessor = `return Bindings.${tupleTypeName}ToArray(tuple: self.cType!.${dataFieldName})`;
 			}
 		} else {
-			throw new Error(`Unsupported primitive data type inside ${type.name}: ${type.dataField.type.getName()} (${type.dataField.type.constructor.name})`)
+			throw new Error(`Unsupported primitive data type inside ${type.name}: ${type.dataField.type.typeDescription})`)
 		}
 
 		return `

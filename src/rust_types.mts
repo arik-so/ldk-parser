@@ -18,31 +18,20 @@ export abstract class RustType {
 	 * may need to be generated therein
 	 */
 	parentType: RustType | null;
+
 	/**
 	 * Raw name of the struct/enum/function etc. Can be something like `LDKAccessError`
 	 * or `LockedChannelMonitor_free`
 	 *
 	 * Some types may be unnamed if they're simply generic arrays
 	 */
-	protected _name: string | null;
+	name: string | null;
 
 	get typeDescription(): string {
-		if (this._name) {
-			return `${this._name} (${this.constructor.name})`;
+		if (this.name) {
+			return `${this.name} (${this.constructor.name})`;
 		}
 		return this.constructor.name;
-	}
-
-	/**
-	 * This is a rather unfortunate workaround because some child types _definitely_ have
-	 * a nonnull name, but others may not have a name.
-	 */
-	getName(): string | null {
-		return this._name;
-	}
-
-	setName(name: string) {
-		this._name = name;
 	}
 }
 
@@ -57,23 +46,11 @@ export class RustPrimitive extends RustType {
 	 */
 	swiftRawSignature: string;
 
-	public get name(): string | null {
-		return this._name;
-	}
-
-	public set name(name: string | null) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class OpaqueRustStruct extends RustType {
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class RustStruct extends RustType {
@@ -86,13 +63,7 @@ export class RustStruct extends RustType {
 	 */
 	ownershipField: RustStructField | null;
 
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class RustTuple extends RustStruct {
@@ -137,23 +108,11 @@ export class RustPrimitiveWrapper extends RustStruct {
 export class RustPrimitiveEnum extends RustType {
 	variants: RustPrimitiveEnumVariant[] = [];
 
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class RustPrimitiveEnumVariant extends RustType {
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class RustArray extends RustType {
@@ -165,35 +124,17 @@ export class RustValueEnum extends RustType {
 	variantTag: RustStructField | null;
 	variants: { [name: string]: RustStructField } = {};
 
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class RustTaggedValueEnum extends RustValueEnum {
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class RustNullableOption extends RustTaggedValueEnum {
 	someVariant: RustStructField;
 
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 /**
@@ -205,51 +146,27 @@ export class RustResultValueEnum extends RustType {
 	resultVariant: RustStructField;
 	errorVariant: RustStructField;
 
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 class RustEnumVariant extends RustType {
 	associatedType: RustType | null;
 
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class RustResult extends RustType {
 	valueField: RustStructField;
 	tagField: RustStructField;
 
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class RustFunction extends RustType {
 	arguments: RustFunctionArgument[] = [];
 	returnValue: RustFunctionReturnValue;
 
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class RustLambda extends RustType {
@@ -257,13 +174,7 @@ export class RustLambda extends RustType {
 	arguments: RustFunctionArgument[] = [];
 	returnValue: RustFunctionReturnValue;
 
-	public get name(): string {
-		return this._name!;
-	}
-
-	public set name(name: string) {
-		this._name = name;
-	}
+	name: string;
 }
 
 export class ContextualRustType {

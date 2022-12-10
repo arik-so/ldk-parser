@@ -66,7 +66,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 
 			if (currentVariant.type.parentType === type) {
 				if (!(currentVariant.type instanceof RustStruct)) {
-					throw new Error(`Complex enum with odd child type: ${currentVariant.type.getName()} (${currentVariant.type.constructor.name})`);
+					throw new Error(`Complex enum with odd child type: ${currentVariant.type.typeDescription}`);
 				}
 				childStructs.push(currentVariant.type as RustStruct);
 			}
@@ -83,7 +83,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 			}
 
 			if (!matchingTagTypeVariant) {
-				throw new Error(`Unable to find matching tag variant in ${currentVariant.type.getName()} for ${currentVariant.contextualName}`);
+				throw new Error(`Unable to find matching tag variant in ${currentVariant.type.typeDescription} for ${currentVariant.contextualName}`);
 			}
 
 			polymorphicAccessors += `

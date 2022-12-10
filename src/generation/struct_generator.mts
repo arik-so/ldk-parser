@@ -21,7 +21,7 @@ export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
 		`;
 
 		if (type.parentType && type.parentType !== containerType) {
-			throw new Error(`Only orphan structs may be generated. ${type.name} belongs to ${type.parentType.getName()} (${type.parentType.constructor.name})`);
+			throw new Error(`Only orphan structs may be generated. ${type.name} belongs to ${type.parentType.typeDescription}`);
 		} else if (type.parentType) {
 			swiftTypeName = this.getPublicTypeSignature(type, containerType);
 			containerLessPrefix = `

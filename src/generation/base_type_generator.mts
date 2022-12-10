@@ -58,7 +58,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (type instanceof RustPrimitive) {
 			return type.swiftRawSignature;
 		}
-		const typeName = type.getName();
+		const typeName = type.name;
 		if (typeName && typeName.startsWith('LDK')) {
 			const ldkLessTypeName = typeName.substring('LDK'.length);
 			if (ldkLessTypeName.charAt(0) === 'C') {
@@ -262,7 +262,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			nativeCallSuffix += `
 				// COMMENT-DEDUCED OPTIONAL INFERENCE AND HANDLING:
 				// Type group: ${returnType.constructor.name}
-				// Type: ${returnType.getName()}
+				// Type: ${returnType.name}
 			`;
 
 			if (returnType instanceof RustPrimitiveWrapper) {
@@ -276,7 +276,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
             			}
 					`;
 				} else {
-					throw new Error(`Unhandled comment-deduced optional inference and handling: ${containerType?.getName()}::${swiftMethodName} -> ${returnType.getName()} (${returnType.constructor.name})`);
+					throw new Error(`Unhandled comment-deduced optional inference and handling: ${containerType?.typeDescription}::${swiftMethodName} -> ${returnType.typeDescription}`);
 				}
 			} else if (returnType instanceof RustStruct && returnType.fields['inner'] instanceof RustStructField) {
 				nativeCallSuffix += `
@@ -290,7 +290,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					}
 				`;
 			} else {
-				throw new Error(`Unhandled comment-deduced optional inference and handling: ${containerType?.getName()}::${swiftMethodName} -> ${returnType.getName()} (${returnType.constructor.name})`);
+				throw new Error(`Unhandled comment-deduced optional inference and handling: ${containerType?.typeDescription}::${swiftMethodName} -> ${returnType.typeDescription}`);
 			}
 		}
 
@@ -317,7 +317,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 	}
 
 	protected standaloneMethodName(method: RustFunction, containerType: RustType): string {
-		let typeNamePrefix = containerType.getName();
+		let typeNamePrefix = containerType.name;
 		if (typeNamePrefix && typeNamePrefix.startsWith('LDK')) {
 			typeNamePrefix = typeNamePrefix.substring('LDK'.length);
 		}
@@ -325,7 +325,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 	}
 
 	protected standaloneLambdaName(lambda: RustLambda, containerType: RustType): string {
-		let typeNamePrefix = containerType.getName();
+		let typeNamePrefix = containerType.name;
 		if (typeNamePrefix && typeNamePrefix.startsWith('LDK')) {
 			typeNamePrefix = typeNamePrefix.substring('LDK'.length);
 		}
@@ -522,7 +522,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			return `(${subTypes.join(', ')})`;
 		}
 
-		throw new Error(`Unmapped elided type: ${type.getName()} (${type.constructor.name})`);
+		throw new Error(`Unmapped elided type: ${type.typeDescription}`);
 	}
 
 	/**
@@ -546,10 +546,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				return `${type.iteratee.swiftRawSignature}Tuple${type.length}`;
 			}
 
-			throw new Error(`Unnamed raw type: ${type.getName()} (${type.constructor.name})`);
+			throw new Error(`Unnamed raw type: ${type.typeDescription}`);
 		}
 
-		const typeName = type.getName();
+		const typeName = type.name;
 		if (!typeName) {
 			throw new Error('Unnamed type of kind ' + type.constructor.name);
 		}
@@ -603,7 +603,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		let isOwnershipFieldSafelyEditable = false;
 		if (argument.type instanceof RustPrimitiveWrapper) {
 			isOwnershipFieldSafelyEditable = true;
-		} else if (argument.type.getName() === 'LDKChannelMonitor' && isElidedContainerContent) {
+		} else if (argument.type.name === 'LDKChannelMonitor' && isElidedContainerContent) {
 			isOwnershipFieldSafelyEditable = true;
 		}
 
@@ -699,7 +699,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else if (argument.type instanceof RustPrimitive) {
 				// nothing to do here
 			} else {
-				throw new Error(`Unsupported native argument type: ${argument.type.getName()} (${argument.type.constructor.name})`);
+				throw new Error(`Unsupported native argument type: ${argument.type.typeDescription}`);
 			}
 
 		}
@@ -876,13 +876,13 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				preparedReturnValue.wrapperSuffix += `)`;
 			}
 		} else {
-			throw new Error(`Unsupported return type ${returnType.type.getName()} of kind ${returnType.type.constructor.name}`);
+			throw new Error(`Unsupported return type ${returnType.type.typeDescription}`);
 		}
 		return preparedReturnValue;
 	}
 
 	protected inheritedInits(type: RustType): string {
-		const typeName = type.getName();
+		const typeName = type.name;
 		if (!typeName) {
 			throw new Error('Unnamed type of kind ' + type.constructor.name);
 		}

@@ -303,7 +303,7 @@ export default class Parser {
 					}
 				}
 			}
-			descriptor.setName(name);
+			descriptor.name = name;
 			descriptor.documentation = docComment;
 			this.typeGlossary[name] = descriptor;
 
@@ -322,7 +322,7 @@ export default class Parser {
 						if (currentField.contextualName === 'this_arg') {
 							descriptor.identifierField = currentField;
 						} else {
-							debug('Trait `%s` has transparent field `%s: %s`', descriptor.name, currentField.contextualName, currentField.type.getName());
+							debug('Trait `%s` has transparent field `%s: %s`', descriptor.name, currentField.contextualName, currentField.type.typeDescription);
 							descriptor.fields[currentField.contextualName] = currentField;
 						}
 						descriptor.orderedFields.push(currentField);
@@ -772,7 +772,7 @@ export default class Parser {
 				actualType.kind = RustKind.Array;
 
 				if (!(rustType instanceof RustPrimitive)) {
-					debug('Non-primitive fixed-length-array pointer: %s\n> %s', rustType.getName(), typeLine);
+					debug('Non-primitive fixed-length-array pointer: %s\n> %s', rustType.typeDescription, typeLine);
 				}
 
 				rustType = actualType;
@@ -798,7 +798,7 @@ export default class Parser {
 			actualType.kind = RustKind.Array;
 
 			if (!(rustType instanceof RustPrimitive)) {
-				debug('Non-primitive fixed-length-array: %s\n> %s', rustType.getName(), typeLine);
+				debug('Non-primitive fixed-length-array: %s\n> %s', rustType.typeDescription, typeLine);
 			}
 
 			rustType = actualType;

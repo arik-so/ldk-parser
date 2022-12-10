@@ -5,7 +5,7 @@ export default class PrimitiveEnumGenerator extends BaseTypeGenerator<RustPrimit
 
 	generateFileContents(type: RustPrimitiveEnum): string {
 		if (type.parentType) {
-			throw new Error(`Only orphan primitive enums may be generated. ${type.name} belongs to ${type.parentType.getName()} (${type.parentType.constructor.name})`);
+			throw new Error(`Only orphan primitive enums may be generated. ${type.name} belongs to ${type.parentType.typeDescription}`);
 		}
 
 		const swiftTypeName = this.swiftTypeName(type);

@@ -123,11 +123,11 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		}else if (type.iterateeField.type instanceof RustTuple || type.iterateeField.type instanceof RustPrimitiveWrapper || type.iterateeField.type instanceof RustTaggedValueEnum || type.iterateeField.type instanceof RustResult || type.iterateeField.type instanceof RustStruct) {
 			bracketedIterateeTypeName = `<${type.iterateeField.type.name}>`;
 		} else {
-			throw new Error(`Unsupported vector iteratee type in ${type.name}: ${type.iterateeField.type.getName()} (${type.iterateeField.type.constructor.name})`);
+			throw new Error(`Unsupported vector iteratee type in ${type.name}: ${type.iterateeField.type.typeDescription}`);
 		}
 
 		if (!bracketedIterateeTypeName) {
-			throw new Error(`Undetected vector iteratee type name in ${type.name}: ${type.iterateeField.type.getName()} (${type.iterateeField.type.constructor.name})`);
+			throw new Error(`Undetected vector iteratee type name in ${type.name}: ${type.iterateeField.type.typeDescription}`);
 		}
 
 		return `
@@ -228,7 +228,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		} else if (type instanceof RustPrimitive) {
 			return type.swiftRawSignature;
 		}
-		const typeName = type.getName();
+		const typeName = type.name;
 		if (!typeName) {
 			throw new Error('Unnamed type of kind ' + type.constructor.name);
 		}
