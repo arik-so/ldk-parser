@@ -568,11 +568,35 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			deferredCleanup: ''
 		};
 
+		// this argument is the content of an elided container, like the iteratee of a Vec
+		let isElidedContainerContent = false;
+		if (containerType && this.isElidedType(containerType)) {
+			// determine whether this is an initialization of that container
+			if (containerType instanceof RustVector) {
+				if (argument.type === containerType.iterateeField.type || argument.type === containerType.deepestIterateeType) {
+					isElidedContainerContent = true;
+				}
+			} else if (containerType instanceof RustNullableOption) {
+				if (argument.type === containerType.someVariant.type) {
+					isElidedContainerContent = true;
+				}
+			} else if (containerType instanceof RustTuple) {
+				const tupleContentTypes = containerType.orderedFields.map(f => f.type);
+				if (tupleContentTypes.includes(argument.type)) {
+					isElidedContainerContent = true;
+				}
+			}
+		}
+
 		let memoryManagementInfix = '';
 		if (!(argument.type instanceof RustTrait) && this.hasFreeMethod(argument.type) && argument.type !== containerType) {
 			if (this.hasCloneMethod(argument.type)) {
 				if (this.hasOwnershipField(argument.type)) {
 					memoryManagementInfix = '.dynamicallyDangledClone()';
+					if(isElidedContainerContent) {
+						// normally we wanna avoid it, except for LDKChannelMonitors
+						memoryManagementInfix = '.clone().setCFreeability(freeable: false)'
+					}
 				} else {
 					// we have to assume that Rust will just eat this type
 					memoryManagementInfix = '.danglingClone()';
@@ -580,57 +604,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			} else {
 				// just gotta hope for the best
 				memoryManagementInfix = '.dangle()';
-
-				// unfortunately sometimes Rust wants to own the object, so we can't always change
-				// the C freeability. To be super careful, we're just not gonna do it by default
-				// if (this.hasOwnershipField(argument.type)) {
-				// 	memoryManagementInfix = '.setCFreeability(freeable: false)';
-				// } else {
-				// 	// just gotta hope for the best
-				// 	memoryManagementInfix = '.dangle()';
-				// }
-			}
-		}
-
-		const handleElidedTypeContentCloneability = (nestedType: RustType) => {
-			if (this.hasCloneMethod(nestedType)) {
-				// the array is gonna get passed to C, and the array is gonna get cleaned
-				// to make sure this value doesn't also get freed after the array gets freed,
-				// the clone must be dangled
-				if (this.hasOwnershipField(nestedType)) {
-					memoryManagementInfix = '.clone().setCFreeability(freeable: false)';
-				} else {
-					memoryManagementInfix = '.danglingClone()';
+				if(isElidedContainerContent && this.hasOwnershipField(argument.type)){
+					// normally we wanna avoid it, except for LDKChannelMonitors
+					memoryManagementInfix = '.setCFreeability(freeable: false)';
 				}
-			} else if (this.hasFreeMethod(nestedType)) {
-				if (this.hasOwnershipField(argument.type)) {
-					// memoryManagementInfix += '.setCFreeability(freeable: false)'
-				} else {
-					// throw new Error(`Uncloneable, but freeable argument without an ownership field: ${nestedType.typeDescription}`);
-					console.log(`Potential danger: Uncloneable, but freeable argument without an ownership field: ${nestedType.typeDescription}`);
-				}
-			}
-		};
-
-		if (containerType && this.isElidedType(containerType) && (this.hasCloneMethod(argument.type) || this.hasFreeMethod(argument.type))) {
-			// determine whether this is an initialization of that container
-			if (containerType instanceof RustVector) {
-				if (argument.type === containerType.iterateeField.type || argument.type === containerType.deepestIterateeType) {
-					handleElidedTypeContentCloneability(argument.type);
-				}
-			} else if (containerType instanceof RustPrimitiveWrapper) {
-				// nothing to do here
-			} else if (containerType instanceof RustNullableOption) {
-				if (argument.type === containerType.someVariant.type) {
-					handleElidedTypeContentCloneability(argument.type);
-				}
-			} else if (containerType instanceof RustTuple) {
-				const tupleContentTypes = containerType.orderedFields.map(f => f.type);
-				if (tupleContentTypes.includes(argument.type)) {
-					handleElidedTypeContentCloneability(argument.type);
-				}
-			} else {
-				throw new Error(`Some elided type is receiving arguments: ${argument.type.typeDescription}`);
 			}
 		}
 

@@ -44,7 +44,7 @@
 						
 						let rustArray = array.map { (currentValueDepth1) in
 							
-						let currentValueDepth1PrimitiveWrapper = Transaction(value: currentValueDepth1).dangle()
+						let currentValueDepth1PrimitiveWrapper = Transaction(value: currentValueDepth1).setCFreeability(freeable: false)
 				
 						currentValueDepth1PrimitiveWrapper.cType!.data_is_owned = false
 					

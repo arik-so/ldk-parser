@@ -67,7 +67,7 @@
 					public init(a: UInt, b: [UInt8]) {
 						// native call variable prep
 						
-						let bPrimitiveWrapper = Transaction(value: b).dangle()
+						let bPrimitiveWrapper = Transaction(value: b).setCFreeability(freeable: false)
 				
 						bPrimitiveWrapper.cType!.data_is_owned = false
 					
