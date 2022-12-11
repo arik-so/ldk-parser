@@ -94,7 +94,7 @@
 			
 					}
 
-					public func getValueType() -> ParseErrorType? {
+					public func getValueType() -> ParseErrorType {
 						switch self.cType!.tag {
 							case LDKParseError_Bech32Error:
 								return .Bech32Error
@@ -147,13 +147,9 @@
 							case LDKParseError_InvalidSliceLength:
 								return .InvalidSliceLength
 			
-							case LDKParseError_Skip:
+							default:
 								return .Skip
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

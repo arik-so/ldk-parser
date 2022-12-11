@@ -45,18 +45,14 @@
 			
 					}
 
-					public func getValueType() -> SignOrCreationErrorType? {
+					public func getValueType() -> SignOrCreationErrorType {
 						switch self.cType!.tag {
 							case LDKSignOrCreationError_SignError:
 								return .SignError
 			
-							case LDKSignOrCreationError_CreationError:
+							default:
 								return .CreationError
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

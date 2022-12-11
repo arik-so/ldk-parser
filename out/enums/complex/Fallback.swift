@@ -47,7 +47,7 @@
 			
 					}
 
-					public func getValueType() -> FallbackType? {
+					public func getValueType() -> FallbackType {
 						switch self.cType!.tag {
 							case LDKFallback_SegWitProgram:
 								return .SegWitProgram
@@ -55,13 +55,9 @@
 							case LDKFallback_PubKeyHash:
 								return .PubKeyHash
 			
-							case LDKFallback_ScriptHash:
+							default:
 								return .ScriptHash
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

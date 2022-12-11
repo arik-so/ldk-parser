@@ -59,7 +59,7 @@
 			
 					}
 
-					public func getValueType() -> EffectiveCapacityType? {
+					public func getValueType() -> EffectiveCapacityType {
 						switch self.cType!.tag {
 							case LDKEffectiveCapacity_ExactLiquidity:
 								return .ExactLiquidity
@@ -73,13 +73,9 @@
 							case LDKEffectiveCapacity_Infinite:
 								return .Infinite
 			
-							case LDKEffectiveCapacity_Unknown:
+							default:
 								return .Unknown
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

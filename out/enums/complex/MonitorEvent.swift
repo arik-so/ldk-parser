@@ -56,7 +56,7 @@
 			
 					}
 
-					public func getValueType() -> MonitorEventType? {
+					public func getValueType() -> MonitorEventType {
 						switch self.cType!.tag {
 							case LDKMonitorEvent_HTLCEvent:
 								return .HTLCEvent
@@ -67,13 +67,9 @@
 							case LDKMonitorEvent_Completed:
 								return .Completed
 			
-							case LDKMonitorEvent_UpdateFailed:
+							default:
 								return .UpdateFailed
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

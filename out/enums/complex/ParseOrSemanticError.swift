@@ -46,18 +46,14 @@
 			
 					}
 
-					public func getValueType() -> ParseOrSemanticErrorType? {
+					public func getValueType() -> ParseOrSemanticErrorType {
 						switch self.cType!.tag {
 							case LDKParseOrSemanticError_ParseError:
 								return .ParseError
 			
-							case LDKParseOrSemanticError_SemanticError:
+							default:
 								return .SemanticError
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

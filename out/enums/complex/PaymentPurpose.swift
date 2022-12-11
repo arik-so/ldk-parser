@@ -46,18 +46,14 @@
 			
 					}
 
-					public func getValueType() -> PaymentPurposeType? {
+					public func getValueType() -> PaymentPurposeType {
 						switch self.cType!.tag {
 							case LDKPaymentPurpose_InvoicePayment:
 								return .InvoicePayment
 			
-							case LDKPaymentPurpose_SpontaneousPayment:
+							default:
 								return .SpontaneousPayment
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

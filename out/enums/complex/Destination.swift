@@ -44,18 +44,14 @@
 			
 					}
 
-					public func getValueType() -> DestinationType? {
+					public func getValueType() -> DestinationType {
 						switch self.cType!.tag {
 							case LDKDestination_Node:
 								return .Node
 			
-							case LDKDestination_BlindedRoute:
+							default:
 								return .BlindedRoute
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

@@ -76,7 +76,7 @@
 			
 					}
 
-					public func getValueType() -> BalanceType? {
+					public func getValueType() -> BalanceType {
 						switch self.cType!.tag {
 							case LDKBalance_ClaimableOnChannelClose:
 								return .ClaimableOnChannelClose
@@ -93,13 +93,9 @@
 							case LDKBalance_MaybePreimageClaimableHTLC:
 								return .MaybePreimageClaimableHTLC
 			
-							case LDKBalance_CounterpartyRevokedOutputClaimable:
+							default:
 								return .CounterpartyRevokedOutputClaimable
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

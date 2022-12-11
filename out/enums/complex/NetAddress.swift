@@ -58,7 +58,7 @@
 			
 					}
 
-					public func getValueType() -> NetAddressType? {
+					public func getValueType() -> NetAddressType {
 						switch self.cType!.tag {
 							case LDKNetAddress_IPv4:
 								return .IPv4
@@ -72,13 +72,9 @@
 							case LDKNetAddress_OnionV3:
 								return .OnionV3
 			
-							case LDKNetAddress_Hostname:
+							default:
 								return .Hostname
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

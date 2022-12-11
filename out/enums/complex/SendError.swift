@@ -60,7 +60,7 @@
 			
 					}
 
-					public func getValueType() -> SendErrorType? {
+					public func getValueType() -> SendErrorType {
 						switch self.cType!.tag {
 							case LDKSendError_Secp256k1:
 								return .Secp256k1
@@ -77,13 +77,9 @@
 							case LDKSendError_InvalidMessage:
 								return .InvalidMessage
 			
-							case LDKSendError_BufferFull:
+							default:
 								return .BufferFull
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

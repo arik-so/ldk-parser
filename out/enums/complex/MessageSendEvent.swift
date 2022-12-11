@@ -118,7 +118,7 @@
 			
 					}
 
-					public func getValueType() -> MessageSendEventType? {
+					public func getValueType() -> MessageSendEventType {
 						switch self.cType!.tag {
 							case LDKMessageSendEvent_SendAcceptChannel:
 								return .SendAcceptChannel
@@ -177,13 +177,9 @@
 							case LDKMessageSendEvent_SendReplyChannelRange:
 								return .SendReplyChannelRange
 			
-							case LDKMessageSendEvent_SendGossipTimestampFilter:
+							default:
 								return .SendGossipTimestampFilter
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

@@ -53,7 +53,7 @@
 			
 					}
 
-					public func getValueType() -> NetworkUpdateType? {
+					public func getValueType() -> NetworkUpdateType {
 						switch self.cType!.tag {
 							case LDKNetworkUpdate_ChannelUpdateMessage:
 								return .ChannelUpdateMessage
@@ -61,13 +61,9 @@
 							case LDKNetworkUpdate_ChannelFailure:
 								return .ChannelFailure
 			
-							case LDKNetworkUpdate_NodeFailure:
+							default:
 								return .NodeFailure
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

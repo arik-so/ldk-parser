@@ -31,23 +31,29 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 
 		let tagEnumVariants = '';
 		let valueTypeDetector = 'switch self.cType!.tag {';
-		for (const currentVariant of tagType.variants) {
+		for (const [index, currentVariant] of tagType.variants.entries()) {
 			const currentVariantSwiftName = currentVariant.name.replace(type.name + '_', '');
 			tagEnumVariants += `
 						${this.renderDocComment(currentVariant.documentation, 6)}
 						case ${currentVariantSwiftName}
 			`;
+
+			let caseSelector = `case ${currentVariant.name}`;
+			if(index === tagType.variants.length - 1){
+				caseSelector = 'default'
+			}
+
 			valueTypeDetector += `
-							case ${currentVariant.name}:
+							${caseSelector}:
 								return .${currentVariantSwiftName}
 			`;
 		}
 
-		valueTypeDetector += `
+		/*valueTypeDetector += `
 							default:
 								return nil
 						}
-		`;
+		`;*/
 
 		let polymorphicAccessors = '';
 		for (const [_, currentVariant] of Object.entries(type.variants)) {
@@ -128,7 +134,7 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 						${tagEnumVariants}
 					}
 
-					public func getValueType() -> ${swiftTypeName}Type? {
+					public func getValueType() -> ${swiftTypeName}Type {
 						${valueTypeDetector}
 					}
 

@@ -176,7 +176,7 @@
 			
 					}
 
-					public func getValueType() -> EventType? {
+					public func getValueType() -> EventType {
 						switch self.cType!.tag {
 							case LDKEvent_FundingGenerationReady:
 								return .FundingGenerationReady
@@ -223,13 +223,9 @@
 							case LDKEvent_OpenChannelRequest:
 								return .OpenChannelRequest
 			
-							case LDKEvent_HTLCHandlingFailed:
+							default:
 								return .HTLCHandlingFailed
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

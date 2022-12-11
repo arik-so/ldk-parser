@@ -62,7 +62,7 @@
 			
 					}
 
-					public func getValueType() -> DecodeErrorType? {
+					public func getValueType() -> DecodeErrorType {
 						switch self.cType!.tag {
 							case LDKDecodeError_UnknownVersion:
 								return .UnknownVersion
@@ -82,13 +82,9 @@
 							case LDKDecodeError_Io:
 								return .Io
 			
-							case LDKDecodeError_UnsupportedCompression:
+							default:
 								return .UnsupportedCompression
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

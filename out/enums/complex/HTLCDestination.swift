@@ -54,7 +54,7 @@
 			
 					}
 
-					public func getValueType() -> HTLCDestinationType? {
+					public func getValueType() -> HTLCDestinationType {
 						switch self.cType!.tag {
 							case LDKHTLCDestination_NextHopChannel:
 								return .NextHopChannel
@@ -62,13 +62,9 @@
 							case LDKHTLCDestination_UnknownNextHop:
 								return .UnknownNextHop
 			
-							case LDKHTLCDestination_FailedPayment:
+							default:
 								return .FailedPayment
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

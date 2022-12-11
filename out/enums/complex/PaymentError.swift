@@ -47,7 +47,7 @@
 			
 					}
 
-					public func getValueType() -> PaymentErrorType? {
+					public func getValueType() -> PaymentErrorType {
 						switch self.cType!.tag {
 							case LDKPaymentError_Invoice:
 								return .Invoice
@@ -55,13 +55,9 @@
 							case LDKPaymentError_Routing:
 								return .Routing
 			
-							case LDKPaymentError_Sending:
+							default:
 								return .Sending
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

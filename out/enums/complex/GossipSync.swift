@@ -47,7 +47,7 @@
 			
 					}
 
-					public func getValueType() -> GossipSyncType? {
+					public func getValueType() -> GossipSyncType {
 						switch self.cType!.tag {
 							case LDKGossipSync_P2P:
 								return .P2P
@@ -55,13 +55,9 @@
 							case LDKGossipSync_Rapid:
 								return .Rapid
 			
-							case LDKGossipSync_None:
+							default:
 								return .None
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

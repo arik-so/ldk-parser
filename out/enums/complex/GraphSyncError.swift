@@ -46,18 +46,14 @@
 			
 					}
 
-					public func getValueType() -> GraphSyncErrorType? {
+					public func getValueType() -> GraphSyncErrorType {
 						switch self.cType!.tag {
 							case LDKGraphSyncError_DecodeError:
 								return .DecodeError
 			
-							case LDKGraphSyncError_LightningError:
+							default:
 								return .LightningError
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

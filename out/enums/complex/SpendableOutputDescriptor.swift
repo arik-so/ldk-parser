@@ -88,7 +88,7 @@
 			
 					}
 
-					public func getValueType() -> SpendableOutputDescriptorType? {
+					public func getValueType() -> SpendableOutputDescriptorType {
 						switch self.cType!.tag {
 							case LDKSpendableOutputDescriptor_StaticOutput:
 								return .StaticOutput
@@ -96,13 +96,9 @@
 							case LDKSpendableOutputDescriptor_DelayedPaymentOutput:
 								return .DelayedPaymentOutput
 			
-							case LDKSpendableOutputDescriptor_StaticPaymentOutput:
+							default:
 								return .StaticPaymentOutput
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

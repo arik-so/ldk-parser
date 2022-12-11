@@ -77,7 +77,7 @@
 			
 					}
 
-					public func getValueType() -> APIErrorType? {
+					public func getValueType() -> APIErrorType {
 						switch self.cType!.tag {
 							case LDKAPIError_APIMisuseError:
 								return .APIMisuseError
@@ -94,13 +94,9 @@
 							case LDKAPIError_MonitorUpdateInProgress:
 								return .MonitorUpdateInProgress
 			
-							case LDKAPIError_IncompatibleShutdownScript:
+							default:
 								return .IncompatibleShutdownScript
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

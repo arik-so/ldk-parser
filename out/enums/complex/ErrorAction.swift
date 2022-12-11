@@ -59,7 +59,7 @@
 			
 					}
 
-					public func getValueType() -> ErrorActionType? {
+					public func getValueType() -> ErrorActionType {
 						switch self.cType!.tag {
 							case LDKErrorAction_DisconnectPeer:
 								return .DisconnectPeer
@@ -76,13 +76,9 @@
 							case LDKErrorAction_SendErrorMessage:
 								return .SendErrorMessage
 			
-							case LDKErrorAction_SendWarningMessage:
+							default:
 								return .SendWarningMessage
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

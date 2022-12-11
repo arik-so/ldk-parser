@@ -48,18 +48,14 @@
 			
 					}
 
-					public func getValueType() -> RetryType? {
+					public func getValueType() -> RetryType {
 						switch self.cType!.tag {
 							case LDKRetry_Attempts:
 								return .Attempts
 			
-							case LDKRetry_Timeout:
+							default:
 								return .Timeout
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

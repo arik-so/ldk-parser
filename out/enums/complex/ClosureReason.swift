@@ -83,7 +83,7 @@
 			
 					}
 
-					public func getValueType() -> ClosureReasonType? {
+					public func getValueType() -> ClosureReasonType {
 						switch self.cType!.tag {
 							case LDKClosureReason_CounterpartyForceClosed:
 								return .CounterpartyForceClosed
@@ -106,13 +106,9 @@
 							case LDKClosureReason_DisconnectedPeer:
 								return .DisconnectedPeer
 			
-							case LDKClosureReason_OutdatedChannelManager:
+							default:
 								return .OutdatedChannelManager
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

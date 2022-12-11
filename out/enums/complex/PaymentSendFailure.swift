@@ -73,7 +73,7 @@
 			
 					}
 
-					public func getValueType() -> PaymentSendFailureType? {
+					public func getValueType() -> PaymentSendFailureType {
 						switch self.cType!.tag {
 							case LDKPaymentSendFailure_ParameterError:
 								return .ParameterError
@@ -84,13 +84,9 @@
 							case LDKPaymentSendFailure_AllFailedRetrySafe:
 								return .AllFailedRetrySafe
 			
-							case LDKPaymentSendFailure_PartialFailure:
+							default:
 								return .PartialFailure
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					

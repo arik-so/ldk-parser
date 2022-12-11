@@ -59,7 +59,7 @@
 			
 					}
 
-					public func getValueType() -> Bech32ErrorType? {
+					public func getValueType() -> Bech32ErrorType {
 						switch self.cType!.tag {
 							case LDKBech32Error_MissingSeparator:
 								return .MissingSeparator
@@ -79,13 +79,9 @@
 							case LDKBech32Error_InvalidPadding:
 								return .InvalidPadding
 			
-							case LDKBech32Error_MixedCase:
+							default:
 								return .MixedCase
 			
-							default:
-								return nil
-						}
-		
 					}
 
 					
