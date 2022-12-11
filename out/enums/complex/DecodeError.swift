@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias DecodeError = Bindings.DecodeError
 
@@ -82,9 +84,14 @@
 							case LDKDecodeError_Io:
 								return .Io
 			
-							default:
+							case LDKDecodeError_UnsupportedCompression:
 								return .UnsupportedCompression
 			
+							default:
+								Bindings.print("Error: Invalid value type for DecodeError! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

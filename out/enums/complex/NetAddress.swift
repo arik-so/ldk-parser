@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias NetAddress = Bindings.NetAddress
 
@@ -72,9 +74,14 @@
 							case LDKNetAddress_OnionV3:
 								return .OnionV3
 			
-							default:
+							case LDKNetAddress_Hostname:
 								return .Hostname
 			
+							default:
+								Bindings.print("Error: Invalid value type for NetAddress! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

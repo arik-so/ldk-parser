@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias ParseOrSemanticError = Bindings.ParseOrSemanticError
 
@@ -51,9 +53,14 @@
 							case LDKParseOrSemanticError_ParseError:
 								return .ParseError
 			
-							default:
+							case LDKParseOrSemanticError_SemanticError:
 								return .SemanticError
 			
+							default:
+								Bindings.print("Error: Invalid value type for ParseOrSemanticError! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

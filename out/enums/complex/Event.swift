@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias Event = Bindings.Event
 
@@ -223,9 +225,14 @@
 							case LDKEvent_OpenChannelRequest:
 								return .OpenChannelRequest
 			
-							default:
+							case LDKEvent_HTLCHandlingFailed:
 								return .HTLCHandlingFailed
 			
+							default:
+								Bindings.print("Error: Invalid value type for Event! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

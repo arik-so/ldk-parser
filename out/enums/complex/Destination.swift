@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias Destination = Bindings.Destination
 
@@ -49,9 +51,14 @@
 							case LDKDestination_Node:
 								return .Node
 			
-							default:
+							case LDKDestination_BlindedRoute:
 								return .BlindedRoute
 			
+							default:
+								Bindings.print("Error: Invalid value type for Destination! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

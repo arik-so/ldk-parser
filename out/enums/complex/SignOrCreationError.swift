@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias SignOrCreationError = Bindings.SignOrCreationError
 
@@ -50,9 +52,14 @@
 							case LDKSignOrCreationError_SignError:
 								return .SignError
 			
-							default:
+							case LDKSignOrCreationError_CreationError:
 								return .CreationError
 			
+							default:
+								Bindings.print("Error: Invalid value type for SignOrCreationError! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

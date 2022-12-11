@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias ClosureReason = Bindings.ClosureReason
 
@@ -106,9 +108,14 @@
 							case LDKClosureReason_DisconnectedPeer:
 								return .DisconnectedPeer
 			
-							default:
+							case LDKClosureReason_OutdatedChannelManager:
 								return .OutdatedChannelManager
 			
+							default:
+								Bindings.print("Error: Invalid value type for ClosureReason! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

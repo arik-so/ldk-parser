@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias EffectiveCapacity = Bindings.EffectiveCapacity
 
@@ -73,9 +75,14 @@
 							case LDKEffectiveCapacity_Infinite:
 								return .Infinite
 			
-							default:
+							case LDKEffectiveCapacity_Unknown:
 								return .Unknown
 			
+							default:
+								Bindings.print("Error: Invalid value type for EffectiveCapacity! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

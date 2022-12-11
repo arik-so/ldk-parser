@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias PaymentPurpose = Bindings.PaymentPurpose
 
@@ -51,9 +53,14 @@
 							case LDKPaymentPurpose_InvoicePayment:
 								return .InvoicePayment
 			
-							default:
+							case LDKPaymentPurpose_SpontaneousPayment:
 								return .SpontaneousPayment
 			
+							default:
+								Bindings.print("Error: Invalid value type for PaymentPurpose! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

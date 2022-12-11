@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias Balance = Bindings.Balance
 
@@ -93,9 +95,14 @@
 							case LDKBalance_MaybePreimageClaimableHTLC:
 								return .MaybePreimageClaimableHTLC
 			
-							default:
+							case LDKBalance_CounterpartyRevokedOutputClaimable:
 								return .CounterpartyRevokedOutputClaimable
 			
+							default:
+								Bindings.print("Error: Invalid value type for Balance! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

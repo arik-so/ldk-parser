@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias NetworkUpdate = Bindings.NetworkUpdate
 
@@ -61,9 +63,14 @@
 							case LDKNetworkUpdate_ChannelFailure:
 								return .ChannelFailure
 			
-							default:
+							case LDKNetworkUpdate_NodeFailure:
 								return .NodeFailure
 			
+							default:
+								Bindings.print("Error: Invalid value type for NetworkUpdate! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

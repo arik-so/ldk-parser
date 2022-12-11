@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias PaymentSendFailure = Bindings.PaymentSendFailure
 
@@ -84,9 +86,14 @@
 							case LDKPaymentSendFailure_AllFailedRetrySafe:
 								return .AllFailedRetrySafe
 			
-							default:
+							case LDKPaymentSendFailure_PartialFailure:
 								return .PartialFailure
 			
+							default:
+								Bindings.print("Error: Invalid value type for PaymentSendFailure! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

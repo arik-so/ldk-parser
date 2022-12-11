@@ -38,22 +38,18 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 						case ${currentVariantSwiftName}
 			`;
 
-			let caseSelector = `case ${currentVariant.name}`;
-			if(index === tagType.variants.length - 1){
-				caseSelector = 'default'
-			}
-
 			valueTypeDetector += `
-							${caseSelector}:
+							case ${currentVariant.name}:
 								return .${currentVariantSwiftName}
 			`;
 		}
 
-		/*valueTypeDetector += `
+		valueTypeDetector += `
 							default:
-								return nil
+								Bindings.print("Error: Invalid value type for ${swiftTypeName}! Aborting.", severity: .ERROR)
+								abort()
 						}
-		`;*/
+		`;
 
 		let polymorphicAccessors = '';
 		for (const [_, currentVariant] of Object.entries(type.variants)) {
@@ -119,6 +115,8 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 			#if SWIFT_PACKAGE
 			import LDKHeaders
 			#endif
+
+			import Foundation
 
 			${this.renderDocComment(type.documentation, 3)}
 			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}

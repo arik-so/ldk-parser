@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias Bech32Error = Bindings.Bech32Error
 
@@ -79,9 +81,14 @@
 							case LDKBech32Error_InvalidPadding:
 								return .InvalidPadding
 			
-							default:
+							case LDKBech32Error_MixedCase:
 								return .MixedCase
 			
+							default:
+								Bindings.print("Error: Invalid value type for Bech32Error! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

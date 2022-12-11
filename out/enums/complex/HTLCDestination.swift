@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias HTLCDestination = Bindings.HTLCDestination
 
@@ -62,9 +64,14 @@
 							case LDKHTLCDestination_UnknownNextHop:
 								return .UnknownNextHop
 			
-							default:
+							case LDKHTLCDestination_FailedPayment:
 								return .FailedPayment
 			
+							default:
+								Bindings.print("Error: Invalid value type for HTLCDestination! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

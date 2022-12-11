@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias SendError = Bindings.SendError
 
@@ -77,9 +79,14 @@
 							case LDKSendError_InvalidMessage:
 								return .InvalidMessage
 			
-							default:
+							case LDKSendError_BufferFull:
 								return .BufferFull
 			
+							default:
+								Bindings.print("Error: Invalid value type for SendError! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

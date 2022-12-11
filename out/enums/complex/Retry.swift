@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias Retry = Bindings.Retry
 
@@ -53,9 +55,14 @@
 							case LDKRetry_Attempts:
 								return .Attempts
 			
-							default:
+							case LDKRetry_Timeout:
 								return .Timeout
 			
+							default:
+								Bindings.print("Error: Invalid value type for Retry! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

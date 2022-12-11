@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias ParseError = Bindings.ParseError
 
@@ -147,9 +149,14 @@
 							case LDKParseError_InvalidSliceLength:
 								return .InvalidSliceLength
 			
-							default:
+							case LDKParseError_Skip:
 								return .Skip
 			
+							default:
+								Bindings.print("Error: Invalid value type for ParseError! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

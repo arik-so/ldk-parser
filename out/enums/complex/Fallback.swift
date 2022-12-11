@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias Fallback = Bindings.Fallback
 
@@ -55,9 +57,14 @@
 							case LDKFallback_PubKeyHash:
 								return .PubKeyHash
 			
-							default:
+							case LDKFallback_ScriptHash:
 								return .ScriptHash
 			
+							default:
+								Bindings.print("Error: Invalid value type for Fallback! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

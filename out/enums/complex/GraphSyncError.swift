@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias GraphSyncError = Bindings.GraphSyncError
 
@@ -51,9 +53,14 @@
 							case LDKGraphSyncError_DecodeError:
 								return .DecodeError
 			
-							default:
+							case LDKGraphSyncError_LightningError:
 								return .LightningError
 			
+							default:
+								Bindings.print("Error: Invalid value type for GraphSyncError! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

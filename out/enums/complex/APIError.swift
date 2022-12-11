@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias APIError = Bindings.APIError
 
@@ -94,9 +96,14 @@
 							case LDKAPIError_MonitorUpdateInProgress:
 								return .MonitorUpdateInProgress
 			
-							default:
+							case LDKAPIError_IncompatibleShutdownScript:
 								return .IncompatibleShutdownScript
 			
+							default:
+								Bindings.print("Error: Invalid value type for APIError! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

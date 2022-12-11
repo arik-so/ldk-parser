@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias MonitorEvent = Bindings.MonitorEvent
 
@@ -67,9 +69,14 @@
 							case LDKMonitorEvent_Completed:
 								return .Completed
 			
-							default:
+							case LDKMonitorEvent_UpdateFailed:
 								return .UpdateFailed
 			
+							default:
+								Bindings.print("Error: Invalid value type for MonitorEvent! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias SpendableOutputDescriptor = Bindings.SpendableOutputDescriptor
 
@@ -96,9 +98,14 @@
 							case LDKSpendableOutputDescriptor_DelayedPaymentOutput:
 								return .DelayedPaymentOutput
 			
-							default:
+							case LDKSpendableOutputDescriptor_StaticPaymentOutput:
 								return .StaticPaymentOutput
 			
+							default:
+								Bindings.print("Error: Invalid value type for SpendableOutputDescriptor! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

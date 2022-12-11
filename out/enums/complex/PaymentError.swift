@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias PaymentError = Bindings.PaymentError
 
@@ -55,9 +57,14 @@
 							case LDKPaymentError_Routing:
 								return .Routing
 			
-							default:
+							case LDKPaymentError_Sending:
 								return .Sending
 			
+							default:
+								Bindings.print("Error: Invalid value type for PaymentError! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

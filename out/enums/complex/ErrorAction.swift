@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias ErrorAction = Bindings.ErrorAction
 
@@ -76,9 +78,14 @@
 							case LDKErrorAction_SendErrorMessage:
 								return .SendErrorMessage
 			
-							default:
+							case LDKErrorAction_SendWarningMessage:
 								return .SendWarningMessage
 			
+							default:
+								Bindings.print("Error: Invalid value type for ErrorAction! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

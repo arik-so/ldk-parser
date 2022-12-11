@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias MessageSendEvent = Bindings.MessageSendEvent
 
@@ -177,9 +179,14 @@
 							case LDKMessageSendEvent_SendReplyChannelRange:
 								return .SendReplyChannelRange
 			
-							default:
+							case LDKMessageSendEvent_SendGossipTimestampFilter:
 								return .SendGossipTimestampFilter
 			
+							default:
+								Bindings.print("Error: Invalid value type for MessageSendEvent! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					

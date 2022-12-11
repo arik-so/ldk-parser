@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// 
 			public typealias GossipSync = Bindings.GossipSync
 
@@ -55,9 +57,14 @@
 							case LDKGossipSync_Rapid:
 								return .Rapid
 			
-							default:
+							case LDKGossipSync_None:
 								return .None
 			
+							default:
+								Bindings.print("Error: Invalid value type for GossipSync! Aborting.", severity: .ERROR)
+								abort()
+						}
+		
 					}
 
 					
