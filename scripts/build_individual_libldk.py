@@ -20,7 +20,7 @@ def run(config: ScriptConfig):
 	llvm_target_triple_suffix = ldkBuildConfig.llvm_target_triple_suffix
 	architectures = ldkBuildConfig.architectures
 
-	build_products_directory = os.path.realpath(os.path.join(os.path.dirname(__file__), '../../bindings/bin'))
+	build_products_directory = os.path.realpath(os.path.join(os.path.dirname(__file__), '../bindings/bin'))
 
 	rust_target_os = 'ios'
 	if platform == 'macosx' and llvm_target_triple_suffix == '-macabi':

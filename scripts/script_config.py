@@ -101,7 +101,7 @@ class ScriptConfig:
 			# that means we might get a PROJECT_DIR and a PLATFORM, ARCHS, etc.
 
 			# parse C file destination directory
-			config.C_FILE_OUTPUT_DIRECTORY = os.path.join(os.path.dirname(__file__), '../../xcode/LDKFramework/headers')
+			config.C_FILE_OUTPUT_DIRECTORY = os.path.join(os.path.dirname(__file__), '../xcode/LDKFramework/headers')
 			project_directory = os.getenv('PROJECT_DIR')
 			if project_directory:
 				config.C_FILE_OUTPUT_DIRECTORY = os.path.join(os.path.realpath(project_directory), 'headers')

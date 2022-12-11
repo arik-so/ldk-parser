@@ -20,9 +20,9 @@ def parse_config() -> ScriptConfig:
 
 
 def run(config: ScriptConfig):
-	build_products_directory = os.path.realpath(os.path.join(os.path.dirname(__file__), '../../bindings/bin'))
+	build_products_directory = os.path.realpath(os.path.join(os.path.dirname(__file__), '../bindings/bin'))
 	xcode_project_path = os.path.realpath(
-		os.path.join(os.path.dirname(__file__), '../../xcode/LDKFramework/LDK.xcodeproj')
+		os.path.join(os.path.dirname(__file__), '../xcode/LDKFramework/LDK.xcodeproj')
 	)
 	framework_input_flags: [str] = []
 	xcframework_output_path = os.path.join(

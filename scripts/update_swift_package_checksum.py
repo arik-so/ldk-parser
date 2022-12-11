@@ -39,7 +39,7 @@ def run(new_checksum: str = None, new_tag: str = None):
 		{'variable_name': 'tag', 'value': new_tag},
 	]
 
-	package_file_path = os.path.realpath(os.path.join(os.path.dirname(__file__), '../../Package.swift'))
+	package_file_path = os.path.realpath(os.path.join(os.path.dirname(__file__), '../Package.swift'))
 	print(package_file_path)
 
 
