@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: [UInt8]) in
+						let rustArray = array.map { (currentValueDepth1: [UInt8]) -> LDKPublicKey in
 							
 						let currentValueDepth1PrimitiveWrapper = PublicKey(value: currentValueDepth1)
 				

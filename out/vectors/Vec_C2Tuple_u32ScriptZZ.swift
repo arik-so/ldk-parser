@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: (UInt32, [UInt8])) in
+						let rustArray = array.map { (currentValueDepth1: (UInt32, [UInt8])) -> LDKC2Tuple_u32ScriptZ in
 							
 						let currentValueDepth1Tuple = Tuple_u32ScriptZ(tuple: currentValueDepth1).danglingClone()
 				

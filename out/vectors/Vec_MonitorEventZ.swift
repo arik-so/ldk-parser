@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: MonitorEvent) in
+						let rustArray = array.map { (currentValueDepth1: MonitorEvent) -> LDKMonitorEvent in
 							
 							return currentValueDepth1.danglingClone().cType!
 						}

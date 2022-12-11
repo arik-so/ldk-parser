@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: RouteHintHop) in
+						let rustArray = array.map { (currentValueDepth1: RouteHintHop) -> LDKRouteHintHop in
 							
 							return currentValueDepth1.dynamicallyDangledClone().cType!
 						}

@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: [UInt8]) in
+						let rustArray = array.map { (currentValueDepth1: [UInt8]) -> LDKTransaction in
 							
 						let currentValueDepth1PrimitiveWrapper = Transaction(value: currentValueDepth1).setCFreeability(freeable: false)
 				

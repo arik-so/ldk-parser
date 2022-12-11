@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: Result_NoneAPIErrorZ) in
+						let rustArray = array.map { (currentValueDepth1: Result_NoneAPIErrorZ) -> LDKCResult_NoneAPIErrorZ in
 							
 							return currentValueDepth1.cType!
 						}

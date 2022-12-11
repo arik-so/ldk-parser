@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: (UInt32, TxOut)) in
+						let rustArray = array.map { (currentValueDepth1: (UInt32, TxOut)) -> LDKC2Tuple_u32TxOutZ in
 							
 						let currentValueDepth1Tuple = Tuple_u32TxOutZ(tuple: currentValueDepth1).danglingClone()
 				

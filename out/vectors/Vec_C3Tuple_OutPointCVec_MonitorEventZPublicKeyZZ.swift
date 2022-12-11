@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: (OutPoint, [MonitorEvent], [UInt8])) in
+						let rustArray = array.map { (currentValueDepth1: (OutPoint, [MonitorEvent], [UInt8])) -> LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ in
 							
 						let currentValueDepth1Tuple = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(tuple: currentValueDepth1).danglingClone()
 				

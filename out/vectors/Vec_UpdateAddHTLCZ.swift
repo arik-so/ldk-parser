@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: UpdateAddHTLC) in
+						let rustArray = array.map { (currentValueDepth1: UpdateAddHTLC) -> LDKUpdateAddHTLC in
 							
 							return currentValueDepth1.dynamicallyDangledClone().cType!
 						}

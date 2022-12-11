@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: ([UInt8], BindingsType)) in
+						let rustArray = array.map { (currentValueDepth1: ([UInt8], BindingsType)) -> LDKC2Tuple_PublicKeyTypeZ in
 							
 						let currentValueDepth1Tuple = Tuple_PublicKeyTypeZ(tuple: currentValueDepth1).danglingClone()
 				

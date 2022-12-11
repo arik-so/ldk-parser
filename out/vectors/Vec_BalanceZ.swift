@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: Balance) in
+						let rustArray = array.map { (currentValueDepth1: Balance) -> LDKBalance in
 							
 							return currentValueDepth1.danglingClone().cType!
 						}

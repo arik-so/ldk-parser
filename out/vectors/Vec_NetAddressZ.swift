@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: NetAddress) in
+						let rustArray = array.map { (currentValueDepth1: NetAddress) -> LDKNetAddress in
 							
 							return currentValueDepth1.danglingClone().cType!
 						}

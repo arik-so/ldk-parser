@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: ([UInt8], ChannelMonitor)) in
+						let rustArray = array.map { (currentValueDepth1: ([UInt8], ChannelMonitor)) -> LDKC2Tuple_BlockHashChannelMonitorZ in
 							
 						let currentValueDepth1Tuple = Tuple_BlockHashChannelMonitorZ(tuple: currentValueDepth1).danglingClone()
 				

@@ -43,8 +43,8 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		 */
 		if (!(type.deepestIterateeType instanceof RustPrimitive)) {
 			// we'll need to map the Rust types to Swift types because they're not primitive
-			let leftSquareBrackets = '['.repeat(type.depth - 1);
-			let rightSquareBrackets = ']'.repeat(type.depth - 1);
+			const leftSquareBrackets = '['.repeat(type.depth - 1);
+			const rightSquareBrackets = ']'.repeat(type.depth - 1);
 			const deepestIterateeName = type.deepestIterateeType.name;
 			rustArrayToSwiftArrayMapper = `let swiftArray = array.map { (currentCType: ${leftSquareBrackets}${deepestIterateeName}${rightSquareBrackets}) in\n`;
 
@@ -72,9 +72,12 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			} else {
 				// additionally, if the top level iteratee is not a rust vector, a Swift->Rust mapper is necessary
 				// (if it is a vector, a corresponding underlying vector can be trivially initiated)
+				// const leftSquareBrackets = '['.repeat(type.depth);
+				// const rightSquareBrackets = ']'.repeat(type.depth);
+
 				const deepestRustValueUnwrapper = this.prepareSwiftArgumentForRust(artificialDeepestContext, type);
 				swiftArrayToRustArrayMapper = `
-						let rustArray = array.map { (currentValueDepth1: ${this.getPublicTypeSignature(type.deepestIterateeType)}) in
+						let rustArray = array.map { (currentValueDepth1: ${this.getPublicTypeSignature(type.deepestIterateeType)}) -> ${leftSquareBrackets}${deepestIterateeName}${rightSquareBrackets} in
 							${deepestRustValueUnwrapper.conversion}
 							return ${deepestRustValueUnwrapper.methodCallWrapperPrefix}${deepestRustValueUnwrapper.accessor}${deepestRustValueUnwrapper.methodCallWrapperSuffix}
 						}

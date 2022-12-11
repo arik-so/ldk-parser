@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: ([UInt8], [(UInt32, TxOut)])) in
+						let rustArray = array.map { (currentValueDepth1: ([UInt8], [(UInt32, TxOut)])) -> LDKC2Tuple_TxidCVec_C2Tuple_u32TxOutZZZ in
 							
 						let currentValueDepth1Tuple = Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(tuple: currentValueDepth1).danglingClone()
 				

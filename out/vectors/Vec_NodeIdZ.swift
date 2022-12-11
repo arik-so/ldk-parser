@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: NodeId) in
+						let rustArray = array.map { (currentValueDepth1: NodeId) -> LDKNodeId in
 							
 							return currentValueDepth1.dynamicallyDangledClone().cType!
 						}

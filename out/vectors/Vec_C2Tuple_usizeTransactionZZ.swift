@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: (UInt, [UInt8])) in
+						let rustArray = array.map { (currentValueDepth1: (UInt, [UInt8])) -> LDKC2Tuple_usizeTransactionZ in
 							
 						let currentValueDepth1Tuple = Tuple_usizeTransactionZ(tuple: currentValueDepth1).danglingClone()
 				
