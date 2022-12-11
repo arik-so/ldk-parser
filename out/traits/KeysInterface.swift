@@ -90,7 +90,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.ecdh(recipient: Recipient(value: recipient), otherKey: PublicKey(cType: other_key).getValue(), tweak: Option_ScalarZ(cType: tweak).dangle().getValue())
+							let swiftCallbackResult = instance.ecdh(recipient: Recipient(value: recipient), otherKey: PublicKey(cType: other_key).dangle().getValue(), tweak: Option_ScalarZ(cType: tweak).dangle().getValue())
 
 							// cleanup
 							
@@ -180,7 +180,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.readChanSigner(reader: u8slice(cType: reader).getValue())
+							let swiftCallbackResult = instance.readChanSigner(reader: u8slice(cType: reader).dangle().getValue())
 
 							// cleanup
 							
@@ -198,7 +198,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signInvoice(hrpBytes: u8slice(cType: hrp_bytes).getValue(), invoiceData: Vec_u5Z(cType: invoice_data).dangle().getValue(), receipient: Recipient(value: receipient))
+							let swiftCallbackResult = instance.signInvoice(hrpBytes: u8slice(cType: hrp_bytes).dangle().getValue(), invoiceData: Vec_u5Z(cType: invoice_data).dangle().getValue(), receipient: Recipient(value: receipient))
 
 							// cleanup
 							

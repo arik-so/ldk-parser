@@ -227,7 +227,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		const swiftReturnType = this.getPublicTypeSignature(lambda.returnValue.type);
 
 		let isFreeBody = '';
-		if(isFreeCallback) {
+		if (isFreeCallback) {
 			isFreeBody = `
 				// TODO: figure out something smarter
 				return; // the semicolon is necessary because Swift is whitespace-agnostic
@@ -287,7 +287,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		const preparedReturnValue = this.prepareRustReturnValueForSwift(lambda.returnValue, type);
 
 		let freeBody = '';
-		if(swiftMethodName === 'free'){
+		if (swiftMethodName === 'free') {
 			// TODO: figure out how to handle potentially nullable natively implemented traits
 			freeBody = `
 				// natively wrapped traits may not necessarily be properly initialized
@@ -367,7 +367,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		let needsUnwrapping = argumentType.isAsteriskPointer && !argumentType.isNonnullablePointer;
 
 		let memoryManagementInfix = '';
-		if(!(type instanceof RustTrait) && this.hasFreeMethod(type)){
+		if (!(type instanceof RustTrait) && this.hasFreeMethod(type)) {
 			// we wanna dangle this value no matter what, because we don't know the longevity
 			memoryManagementInfix = '.dangle()';
 			if (this.hasCloneMethod(type)) {
@@ -381,8 +381,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					memoryManagementInfix += '.clone()';
 				}
 			}
-		}else if (type instanceof RustPrimitiveWrapper){
-
+		} else if (type instanceof RustPrimitiveWrapper) {
+			memoryManagementInfix = '.dangle()';
 		}
 
 		if (argumentType.isAsteriskPointer && argumentType.isNonnullablePointer) {

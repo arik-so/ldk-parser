@@ -90,7 +90,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.readCustomMessage(messageType: message_type, buffer: u8slice(cType: buffer).getValue())
+							let swiftCallbackResult = instance.readCustomMessage(messageType: message_type, buffer: u8slice(cType: buffer).dangle().getValue())
 
 							// cleanup
 							

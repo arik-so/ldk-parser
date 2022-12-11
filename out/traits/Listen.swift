@@ -97,7 +97,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.blockConnected(block: u8slice(cType: block).getValue(), height: height)
+							let swiftCallbackResult = instance.blockConnected(block: u8slice(cType: block).dangle().getValue(), height: height)
 
 							// cleanup
 							

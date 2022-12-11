@@ -97,7 +97,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.registerTx(txid: txidPointee, scriptPubkey: u8slice(cType: script_pubkey).getValue())
+							let swiftCallbackResult = instance.registerTx(txid: txidPointee, scriptPubkey: u8slice(cType: script_pubkey).dangle().getValue())
 
 							// cleanup
 							

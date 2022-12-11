@@ -54,7 +54,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.nextOnionMessageForPeer(peerNodeId: PublicKey(cType: peer_node_id).getValue())
+							let swiftCallbackResult = instance.nextOnionMessageForPeer(peerNodeId: PublicKey(cType: peer_node_id).dangle().getValue())
 
 							// cleanup
 							
