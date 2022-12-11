@@ -122,7 +122,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.validateHolderCommitment(holderTx: HolderCommitmentTransaction(cType: holder_tx.pointee).dangle().dynamicallyDangledClone(), preimages: Vec_PaymentPreimageZ(cType: preimages).dangle().getValue())
+							let swiftCallbackResult = instance.validateHolderCommitment(holderTx: HolderCommitmentTransaction(cType: holder_tx.pointee).dangle().clone(), preimages: Vec_PaymentPreimageZ(cType: preimages).dangle().getValue())
 
 							// cleanup
 							
@@ -158,7 +158,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signCounterpartyCommitment(commitmentTx: CommitmentTransaction(cType: commitment_tx.pointee).dangle().dynamicallyDangledClone(), preimages: Vec_PaymentPreimageZ(cType: preimages).dangle().getValue())
+							let swiftCallbackResult = instance.signCounterpartyCommitment(commitmentTx: CommitmentTransaction(cType: commitment_tx.pointee).dangle().clone(), preimages: Vec_PaymentPreimageZ(cType: preimages).dangle().getValue())
 
 							// cleanup
 							
@@ -199,7 +199,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction(cType: commitment_tx.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction(cType: commitment_tx.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -245,7 +245,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signJusticeRevokedHtlc(justiceTx: Transaction(cType: justice_tx).dangle().getValue(), input: input, amount: amount, perCommitmentKey: per_commitment_keyPointee, htlc: HTLCOutputInCommitment(cType: htlc.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.signJusticeRevokedHtlc(justiceTx: Transaction(cType: justice_tx).dangle().getValue(), input: input, amount: amount, perCommitmentKey: per_commitment_keyPointee, htlc: HTLCOutputInCommitment(cType: htlc.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -263,7 +263,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signCounterpartyHtlcTransaction(htlcTx: Transaction(cType: htlc_tx).dangle().getValue(), input: input, amount: amount, perCommitmentPoint: PublicKey(cType: per_commitment_point).getValue(), htlc: HTLCOutputInCommitment(cType: htlc.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.signCounterpartyHtlcTransaction(htlcTx: Transaction(cType: htlc_tx).dangle().getValue(), input: input, amount: amount, perCommitmentPoint: PublicKey(cType: per_commitment_point).getValue(), htlc: HTLCOutputInCommitment(cType: htlc.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -281,7 +281,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signClosingTransaction(closingTx: ClosingTransaction(cType: closing_tx.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.signClosingTransaction(closingTx: ClosingTransaction(cType: closing_tx.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -317,7 +317,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signChannelAnnouncement(msg: UnsignedChannelAnnouncement(cType: msg.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.signChannelAnnouncement(msg: UnsignedChannelAnnouncement(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -335,7 +335,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.readyChannel(channelParameters: ChannelTransactionParameters(cType: channel_parameters.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.readyChannel(channelParameters: ChannelTransactionParameters(cType: channel_parameters.pointee).dangle().clone())
 
 							// cleanup
 							

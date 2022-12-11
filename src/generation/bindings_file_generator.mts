@@ -304,7 +304,7 @@ export default class BindingsFileGenerator extends BaseTypeGenerator<GlobalBindi
 		`;
 	}
 
-	protected swiftTypeName(type: RustType): string {
+	protected override swiftTypeName(type: RustType): string {
 		if (type instanceof GlobalBindingsStruct) {
 			// make sure this is always saved to Bindings.swift
 			return 'Bindings';

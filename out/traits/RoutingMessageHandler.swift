@@ -66,7 +66,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleNodeAnnouncement(msg: NodeAnnouncement(cType: msg.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.handleNodeAnnouncement(msg: NodeAnnouncement(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -84,7 +84,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelAnnouncement(msg: ChannelAnnouncement(cType: msg.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.handleChannelAnnouncement(msg: ChannelAnnouncement(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -102,7 +102,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelUpdate(msg: ChannelUpdate(cType: msg.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.handleChannelUpdate(msg: ChannelUpdate(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -156,7 +156,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), initArgument: BindingsInit(cType: initArgument.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), initArgument: BindingsInit(cType: initArgument.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -174,7 +174,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleReplyChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyChannelRange(cType: msg).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.handleReplyChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyChannelRange(cType: msg).dangle().clone())
 
 							// cleanup
 							
@@ -192,7 +192,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleReplyShortChannelIdsEnd(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyShortChannelIdsEnd(cType: msg).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.handleReplyShortChannelIdsEnd(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyShortChannelIdsEnd(cType: msg).dangle().clone())
 
 							// cleanup
 							
@@ -210,7 +210,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleQueryChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryChannelRange(cType: msg).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.handleQueryChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryChannelRange(cType: msg).dangle().clone())
 
 							// cleanup
 							
@@ -228,7 +228,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleQueryShortChannelIds(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryShortChannelIds(cType: msg).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.handleQueryShortChannelIds(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryShortChannelIds(cType: msg).dangle().clone())
 
 							// cleanup
 							

@@ -54,7 +54,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.log(record: Record(cType: record.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.log(record: Record(cType: record.pointee).dangle().clone())
 
 							// cleanup
 							

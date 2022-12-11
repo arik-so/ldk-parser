@@ -90,7 +90,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.sendPayment(route: Route(cType: route.pointee).dangle().dynamicallyDangledClone(), paymentHash: ThirtyTwoBytes(cType: payment_hash).getValue(), paymentSecret: ThirtyTwoBytes(cType: payment_secret).getValue())
+							let swiftCallbackResult = instance.sendPayment(route: Route(cType: route.pointee).dangle().clone(), paymentHash: ThirtyTwoBytes(cType: payment_hash).getValue(), paymentSecret: ThirtyTwoBytes(cType: payment_secret).getValue())
 
 							// cleanup
 							
@@ -108,7 +108,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.sendSpontaneousPayment(route: Route(cType: route.pointee).dangle().dynamicallyDangledClone(), paymentPreimage: ThirtyTwoBytes(cType: payment_preimage).getValue())
+							let swiftCallbackResult = instance.sendSpontaneousPayment(route: Route(cType: route.pointee).dangle().clone(), paymentPreimage: ThirtyTwoBytes(cType: payment_preimage).getValue())
 
 							// cleanup
 							
@@ -126,7 +126,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.retryPayment(route: Route(cType: route.pointee).dangle().dynamicallyDangledClone(), paymentId: ThirtyTwoBytes(cType: payment_id).getValue())
+							let swiftCallbackResult = instance.retryPayment(route: Route(cType: route.pointee).dangle().clone(), paymentId: ThirtyTwoBytes(cType: payment_id).getValue())
 
 							// cleanup
 							

@@ -58,7 +58,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.channelPenaltyMsat(shortChannelId: short_channel_id, source: NodeId(cType: source.pointee).dangle().dynamicallyDangledClone(), target: NodeId(cType: target.pointee).dangle().dynamicallyDangledClone(), usage: ChannelUsage(cType: usage).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.channelPenaltyMsat(shortChannelId: short_channel_id, source: NodeId(cType: source.pointee).dangle().clone(), target: NodeId(cType: target.pointee).dangle().clone(), usage: ChannelUsage(cType: usage).dangle().clone())
 
 							// cleanup
 							

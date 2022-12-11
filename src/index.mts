@@ -19,3 +19,11 @@ import Generator from './generation/index.mjs';
 	await generator.generateTypes();
 	await generator.generateFunctions();
 })();
+
+interface NullTest {
+	someValue?: string
+}
+
+function nullInterpolationExample(someValue: NullTest){
+	console.log(`hello, ${someValue.someValue}`)
+}

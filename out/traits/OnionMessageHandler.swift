@@ -54,7 +54,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleOnionMessage(peerNodeId: PublicKey(cType: peer_node_id).getValue(), msg: OnionMessage(cType: msg.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.handleOnionMessage(peerNodeId: PublicKey(cType: peer_node_id).getValue(), msg: OnionMessage(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -72,7 +72,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), initArgument: BindingsInit(cType: initArgument.pointee).dangle().dynamicallyDangledClone())
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), initArgument: BindingsInit(cType: initArgument.pointee).dangle().clone())
 
 							// cleanup
 							

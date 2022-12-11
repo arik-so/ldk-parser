@@ -30,7 +30,7 @@ class TestConfig extends Config {
 		this.headerPath = headerPath;
 	}
 
-	getHeaderPath(): string {
+	override getHeaderPath(): string {
 		return this.headerPath;
 	}
 }

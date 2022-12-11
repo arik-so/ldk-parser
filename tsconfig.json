@@ -6,10 +6,18 @@
 		"sourceMap": true,
 		"esModuleInterop": false,
 		"allowSyntheticDefaultImports": true,
-
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noPropertyAccessFromIndexSignature": true,
+//		"noUncheckedIndexedAccess": true,
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,
-		"noImplicitAny": true,
+		"noImplicitAny": true
 		// "rootDir": "src",
 		// "resolveJsonModule": true
 	},

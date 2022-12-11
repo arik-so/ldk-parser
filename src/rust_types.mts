@@ -48,7 +48,7 @@ export class RustPrimitive extends RustType {
 }
 
 export class OpaqueRustStruct extends RustType {
-	name: string;
+	override name: string;
 }
 
 export class RustStruct extends RustType {
@@ -61,7 +61,7 @@ export class RustStruct extends RustType {
 	 */
 	ownershipField: RustStructField | null;
 
-	name: string;
+	override name: string;
 }
 
 export class RustTuple extends RustStruct {
@@ -101,7 +101,7 @@ export class RustTrait extends RustStruct {
 export class RustPrimitiveWrapper extends RustStruct {
 	dataField: RustStructField;
 	lengthField: RustStructField | null;
-	ownershipField: RustStructField | null;
+	// override ownershipField: RustStructField | null;
 
 	/**
 	 * To initialize a wrapper, all its fields must be provided in the order of their declaration
@@ -113,11 +113,11 @@ export class RustPrimitiveWrapper extends RustStruct {
 export class RustPrimitiveEnum extends RustType {
 	variants: RustPrimitiveEnumVariant[] = [];
 
-	name: string;
+	override name: string;
 }
 
 export class RustPrimitiveEnumVariant extends RustType {
-	name: string;
+	override name: string;
 }
 
 export class RustArray extends RustType {
@@ -129,17 +129,17 @@ export class RustValueEnum extends RustType {
 	variantTag: RustStructField | null;
 	variants: { [name: string]: RustStructField } = {};
 
-	name: string;
+	override name: string;
 }
 
 export class RustTaggedValueEnum extends RustValueEnum {
-	name: string;
+	override name: string;
 }
 
 export class RustNullableOption extends RustTaggedValueEnum {
 	someVariant: RustStructField;
 
-	name: string;
+	override name: string;
 }
 
 /**
@@ -151,27 +151,27 @@ export class RustResultValueEnum extends RustType {
 	resultVariant: RustStructField;
 	errorVariant: RustStructField;
 
-	name: string;
+	override name: string;
 }
 
 class RustEnumVariant extends RustType {
 	associatedType: RustType | null;
 
-	name: string;
+	override name: string;
 }
 
 export class RustResult extends RustType {
 	valueField: RustStructField;
 	tagField: RustStructField;
 
-	name: string;
+	override name: string;
 }
 
 export class RustFunction extends RustType {
 	arguments: RustFunctionArgument[] = [];
 	returnValue: RustFunctionReturnValue;
 
-	name: string;
+	override name: string;
 }
 
 export class RustLambda extends RustType {
@@ -179,7 +179,7 @@ export class RustLambda extends RustType {
 	arguments: RustFunctionArgument[] = [];
 	returnValue: RustFunctionReturnValue;
 
-	name: string;
+	override name: string;
 }
 
 export class ContextualRustType {
@@ -200,11 +200,11 @@ export class ContextualRustType {
 }
 
 export class RustStructField extends ContextualRustType {
-	contextualName: string;
+	override contextualName: string;
 }
 
 export class RustFunctionArgument extends ContextualRustType {
-	contextualName: string;
+	override contextualName: string;
 }
 
 export class RustFunctionReturnValue extends ContextualRustType {

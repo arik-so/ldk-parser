@@ -372,7 +372,10 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 			memoryManagementInfix = '.dangle()';
 			if (this.hasCloneMethod(type)) {
 				if (this.hasOwnershipField(type)) {
-					memoryManagementInfix += '.dynamicallyDangledClone()';
+					// we're always gonna clone it for now because we know this isn't being passed
+					// back into Rust
+					memoryManagementInfix += '.clone()';
+					// memoryManagementInfix += '.dynamicallyDangledClone()';
 				} else {
 					// we have to assume that Rust will just eat this type
 					memoryManagementInfix += '.clone()';
