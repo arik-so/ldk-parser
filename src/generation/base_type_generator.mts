@@ -875,7 +875,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				anchorInfix = ', anchor: self';
 			}
 
-			if(!this.isElidedType(containerType) && !this.isElidedType(returnType.type) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
+			if (!this.isElidedType(containerType) && !this.isElidedType(returnType.type) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
 				// TODO: determine whether this is precise enough
 				anchorInfix = ', anchor: self';
 			}
@@ -1006,6 +1006,23 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					}
 				}
 			`;
+		} else if (type instanceof RustPrimitiveWrapper) {
+			if (type.dataField.type instanceof RustArray && Number.isFinite(type.dataField.type.length)) {
+				// this is a tuple
+			} else if (type.dataField.type instanceof RustPrimitive && !type.dataField.isAsteriskPointer) {
+				// this is a singular value
+			} else {
+				freeCode = `
+					deinit {
+						if !self.dangling {
+							print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
+							self.cType!.${type.dataField.contextualName}.deallocate()
+						} else {
+							print("Not freeing LDKu8sliceWrapper \(self.instanceNumber) due to dangle.")
+						}
+					}
+				`;
+			}
 		}
 
 

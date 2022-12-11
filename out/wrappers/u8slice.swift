@@ -69,7 +69,16 @@
 						return self
 					}
 
-										
+					
+					deinit {
+						if !self.dangling {
+							print("Freeing u8slice \(self.instanceNumber).")
+							self.cType!.data.deallocate()
+						} else {
+							print("Not freeing LDKu8sliceWrapper (self.instanceNumber) due to dangle.")
+						}
+					}
+				
 
 				}
 

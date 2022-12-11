@@ -18,7 +18,8 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 
 		let ownershipInfix = '';
 		if (type.ownershipField) {
-			ownershipInfix = `, ${type.ownershipField.contextualName}: false`;
+			// TODO: determine if setting this value to true by default is wise
+			ownershipInfix = `, ${type.ownershipField.contextualName}: true`;
 		}
 
 		const dataFieldName = type.dataField.contextualName;
