@@ -1,0 +1,69 @@
+name: Release Framework
+permissions:
+    contents: write
+    statuses: read
+    pull-requests: read
+    actions: read
+    checks: write
+on:
+    workflow_dispatch:
+        inputs:
+            tag:
+                description: 'Tag for next release'
+                required: true
+                type: string
+
+jobs:
+    generate-xcframework:
+        name: Generate XCFramework
+        runs-on: macos-12
+        env:
+            DEVELOPER_DIR: /Applications/Xcode_13.2.1.app/Contents/Developer
+            LDK_C_BINDINGS_BASE: /Users/runner/work/ldk-swift/ldk-swift/bindings/artifacts/ldk-c-bindings
+        steps:
+            -   name: Configure Xcode
+                uses: maxim-lobanov/setup-xcode@v1
+                with:
+                    xcode-version: latest
+            -   name: Checkout
+                uses: actions/checkout@v2
+            -   name: Update Package.swift tag to ${{ github.event.inputs.tag }}
+                if: ${{ github.event.inputs.tag != null && github.event.inputs.tag != '' }}
+                run: |
+                    python3 ./src/scripts/update_swift_package_checksum.py --tag ${{ github.event.inputs.tag }}
+            -   name: Install Dependencies
+                uses: ./.github/actions/install-dependencies
+                with:
+                    destination: ./bindings/artifacts
+            -   name: Generate XCFramework
+                uses: ./.github/actions/generate-xcframework
+            -   name: Create XCFramework artifact
+                uses: ./.github/actions/upload-xcframework-artifact
+            -   name: Update Package.swift checksum
+                if: ${{ github.event.inputs.tag != null && github.event.inputs.tag != '' }}
+                run: |
+                    CHECKSUM=`swift package compute-checksum LightningDevKit.xcframework.zip`
+                    python3 ./src/scripts/update_swift_package_checksum.py --checksum "${CHECKSUM}"
+                    git commit -m "Update Package.swift for ${{ github.event.inputs.tag }} release." ./Package.swift
+            -   name: Push and tag commit
+                if: ${{ github.event.inputs.tag != null && github.event.inputs.tag != '' }}
+                run: |
+                    git tag ${{ github.event.inputs.tag }}
+                    git push -u origin HEAD:release-${{ github.event.inputs.tag }}
+                    git push --tags
+
+    release:
+        name: Publish Release
+        runs-on: ubuntu-latest
+        needs: [ generate-xcframework ]
+        steps:
+            -   name: Download Framework Artifact
+                uses: actions/download-artifact@v3
+                with:
+                    name: LightningDevKit
+            -   name: Create Release
+                uses: ncipollo/release-action@v1
+                if: ${{ github.event.inputs.tag != null && github.event.inputs.tag != '' }}
+                with:
+                    tag: ${{ github.event.inputs.tag }}
+                    artifacts: LightningDevKit.xcframework.zip,LightningDevKit-no-symlinks.xcframework.zip

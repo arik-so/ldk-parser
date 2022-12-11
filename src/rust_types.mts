@@ -45,8 +45,6 @@ export class RustPrimitive extends RustType {
 	 * The signature of the primitive type as the Swift compiler would access the C value
 	 */
 	swiftRawSignature: string;
-
-	name: string;
 }
 
 export class OpaqueRustStruct extends RustType {
