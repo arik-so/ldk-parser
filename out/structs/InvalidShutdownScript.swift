@@ -75,7 +75,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = u8slice(cType: nativeCallResult).getValue()
+						let returnValue = u8slice(cType: nativeCallResult).dangle().getValue()
 						
 
 						return returnValue

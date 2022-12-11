@@ -891,6 +891,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			// basically all the elided types
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
 			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
+			if(returnType.type instanceof RustPrimitiveWrapper){
+				// these objects might be short-lived
+				preparedReturnValue.wrapperSuffix += '.dangle()';
+			}
 			if (returnType.type !== containerType) {
 				// it's an elided type, so we pass it through
 				preparedReturnValue.wrapperSuffix += '.getValue()';

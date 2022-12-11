@@ -121,7 +121,7 @@
 					/// The element at position 0
 					public func getA() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: self.cType!.a).dangle().getValue()
+						let returnValue = PublicKey(cType: self.cType!.a).dangle().dangle().getValue()
 
 						return returnValue;
 					}

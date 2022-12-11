@@ -64,7 +64,7 @@
 
 						/*
 						// return value (do some wrapping)
-						let returnValue = BigEndianScalar(cType: nativeCallResult)
+						let returnValue = BigEndianScalar(cType: nativeCallResult).dangle()
 						*/
 
 						

@@ -73,7 +73,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Signature(cType: nativeCallResult).getValue()
+						let returnValue = Signature(cType: nativeCallResult).dangle().getValue()
 						
 
 						return returnValue
@@ -124,7 +124,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Signature(cType: nativeCallResult).getValue()
+						let returnValue = Signature(cType: nativeCallResult).dangle().getValue()
 						
 
 						return returnValue
@@ -175,7 +175,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Signature(cType: nativeCallResult).getValue()
+						let returnValue = Signature(cType: nativeCallResult).dangle().getValue()
 						
 
 						return returnValue
@@ -226,7 +226,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Signature(cType: nativeCallResult).getValue()
+						let returnValue = Signature(cType: nativeCallResult).dangle().getValue()
 						
 
 						return returnValue

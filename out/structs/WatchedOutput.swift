@@ -103,7 +103,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).dangle().getValue()
 						
 
 						return returnValue
@@ -202,7 +202,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = u8slice(cType: nativeCallResult).getValue()
+						let returnValue = u8slice(cType: nativeCallResult).dangle().getValue()
 						
 
 						return returnValue

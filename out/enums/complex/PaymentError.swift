@@ -181,7 +181,7 @@
 							return nil
 						}
 
-						return Str(cType: self.cType!.invoice).dangle().getValue()
+						return Str(cType: self.cType!.invoice).dangle().dangle().getValue()
 					}
 			
 					public func getValueAsRouting() -> Bindings.LightningError? {

@@ -929,7 +929,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -991,7 +991,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1053,7 +1053,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1115,7 +1115,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1177,7 +1177,7 @@
 						/// The node_id of the node which should receive these message(s)
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1239,7 +1239,7 @@
 						/// The node_id of the node which should receive these message(s)
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1301,7 +1301,7 @@
 						/// The node_id of the node which should receive these message(s)
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1363,7 +1363,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1425,7 +1425,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1487,7 +1487,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1549,7 +1549,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1611,7 +1611,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1797,7 +1797,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1859,7 +1859,7 @@
 						/// The node_id of the node which should receive this message
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1921,7 +1921,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -1983,7 +1983,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -2045,7 +2045,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -2107,7 +2107,7 @@
 						/// The node_id of this message recipient
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
 
 							return returnValue;
 						}

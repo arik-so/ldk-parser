@@ -381,6 +381,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					memoryManagementInfix += '.clone()';
 				}
 			}
+		}else if (type instanceof RustPrimitiveWrapper){
+
 		}
 
 		if (argumentType.isAsteriskPointer && argumentType.isNonnullablePointer) {

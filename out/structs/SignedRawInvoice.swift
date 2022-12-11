@@ -324,7 +324,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult).getValue()
+						let returnValue = Str(cType: nativeCallResult).dangle().getValue()
 						
 
 						return returnValue

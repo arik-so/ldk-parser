@@ -340,7 +340,7 @@
 							return nil
 						}
 
-						return TwelveBytes(cType: self.cType!.onion_v2).dangle().getValue()
+						return TwelveBytes(cType: self.cType!.onion_v2).dangle().dangle().getValue()
 					}
 			
 					public func getValueAsOnionV3() -> OnionV3? {
@@ -424,7 +424,7 @@
 						/// The 4-byte IPv4 address
 						public func getAddr() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = FourBytes(cType: self.cType!.addr).dangle().getValue()
+							let returnValue = FourBytes(cType: self.cType!.addr).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -486,7 +486,7 @@
 						/// The 16-byte IPv6 address
 						public func getAddr() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = SixteenBytes(cType: self.cType!.addr).dangle().getValue()
+							let returnValue = SixteenBytes(cType: self.cType!.addr).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -548,7 +548,7 @@
 						/// The ed25519 long-term public key of the peer
 						public func getEd25519Pubkey() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.ed25519_pubkey).dangle().getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.ed25519_pubkey).dangle().dangle().getValue()
 
 							return returnValue;
 						}

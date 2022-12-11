@@ -221,7 +221,7 @@
 							return nil
 						}
 
-						return ThirtyTwoBytes(cType: self.cType!.spontaneous_payment).dangle().getValue()
+						return ThirtyTwoBytes(cType: self.cType!.spontaneous_payment).dangle().dangle().getValue()
 					}
 			
 
@@ -296,7 +296,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getPaymentPreimage() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_preimage).dangle().getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_preimage).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -313,7 +313,7 @@
 						/// [`ChannelManager::create_inbound_payment_for_hash`]: crate::ln::channelmanager::ChannelManager::create_inbound_payment_for_hash
 						public func getPaymentSecret() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_secret).dangle().getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_secret).dangle().dangle().getValue()
 
 							return returnValue;
 						}

@@ -132,7 +132,7 @@
 							return nil
 						}
 
-						return PublicKey(cType: self.cType!.node).dangle().getValue()
+						return PublicKey(cType: self.cType!.node).dangle().dangle().getValue()
 					}
 			
 					public func getValueAsBlindedRoute() -> Bindings.BlindedRoute? {

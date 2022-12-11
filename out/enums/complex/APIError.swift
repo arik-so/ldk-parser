@@ -426,7 +426,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.err).dangle().getValue()
+							let returnValue = Str(cType: self.cType!.err).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -480,7 +480,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.err).dangle().getValue()
+							let returnValue = Str(cType: self.cType!.err).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -542,7 +542,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.err).dangle().getValue()
+							let returnValue = Str(cType: self.cType!.err).dangle().dangle().getValue()
 
 							return returnValue;
 						}
@@ -596,7 +596,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.err).dangle().getValue()
+							let returnValue = Str(cType: self.cType!.err).dangle().dangle().getValue()
 
 							return returnValue;
 						}
