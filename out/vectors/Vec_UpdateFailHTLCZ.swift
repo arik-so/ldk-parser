@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKUpdateFailHTLC) in
+						let swiftArray = array.map { (currentCType: LDKUpdateFailHTLC) -> UpdateFailHTLC in
 UpdateFailHTLC(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKChannelMonitor) in
+						let swiftArray = array.map { (currentCType: LDKChannelMonitor) -> ChannelMonitor in
 ChannelMonitor(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKMessageSendEvent) in
+						let swiftArray = array.map { (currentCType: LDKMessageSendEvent) -> MessageSendEvent in
 MessageSendEvent(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

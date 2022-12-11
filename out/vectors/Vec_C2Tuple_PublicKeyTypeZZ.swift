@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKC2Tuple_PublicKeyTypeZ) in
+						let swiftArray = array.map { (currentCType: LDKC2Tuple_PublicKeyTypeZ) -> ([UInt8], BindingsType) in
 Tuple_PublicKeyTypeZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

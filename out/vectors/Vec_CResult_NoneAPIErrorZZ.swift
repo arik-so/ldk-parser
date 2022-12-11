@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKCResult_NoneAPIErrorZ) in
+						let swiftArray = array.map { (currentCType: LDKCResult_NoneAPIErrorZ) -> Result_NoneAPIErrorZ in
 Result_NoneAPIErrorZ(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

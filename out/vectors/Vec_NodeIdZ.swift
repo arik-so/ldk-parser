@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKNodeId) in
+						let swiftArray = array.map { (currentCType: LDKNodeId) -> NodeId in
 NodeId(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

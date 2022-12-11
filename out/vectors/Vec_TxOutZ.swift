@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKTxOut) in
+						let swiftArray = array.map { (currentCType: LDKTxOut) -> TxOut in
 TxOut(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

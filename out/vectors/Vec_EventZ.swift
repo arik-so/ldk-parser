@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKEvent) in
+						let swiftArray = array.map { (currentCType: LDKEvent) -> Event in
 Event(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

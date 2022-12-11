@@ -46,7 +46,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			const leftSquareBrackets = '['.repeat(type.depth - 1);
 			const rightSquareBrackets = ']'.repeat(type.depth - 1);
 			const deepestIterateeName = type.deepestIterateeType.name;
-			rustArrayToSwiftArrayMapper = `let swiftArray = array.map { (currentCType: ${leftSquareBrackets}${deepestIterateeName}${rightSquareBrackets}) in\n`;
+			rustArrayToSwiftArrayMapper = `let swiftArray = array.map { (currentCType: ${leftSquareBrackets}${deepestIterateeName}${rightSquareBrackets}) -> ${this.getPublicTypeSignature(type.iterateeField.type)} in\n`;
 
 			let unwrapperSuffix = '';
 
@@ -63,7 +63,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 
 					let leftSquareBrackets = '['.repeat(type.depth - currentDepth - 1);
 					let rightSquareBrackets = ']'.repeat(type.depth - currentDepth - 1);
-					rustArrayToSwiftArrayMapper += `${indentation}currentCType.map { (currentCType: ${leftSquareBrackets}${deepestIterateeName}${rightSquareBrackets}) in\n`;
+					rustArrayToSwiftArrayMapper += `${indentation}currentCType.map { (currentCType: ${leftSquareBrackets}${deepestIterateeName}${rightSquareBrackets}) -> ${this.getPublicTypeSignature(currentIteratee.iterateeField.type)} in\n`;
 					unwrapperSuffix += `\n${indentation}}`;
 
 					currentIteratee = currentIteratee.iterateeField.type;

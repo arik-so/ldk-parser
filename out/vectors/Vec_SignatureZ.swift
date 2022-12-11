@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKSignature) in
+						let swiftArray = array.map { (currentCType: LDKSignature) -> [UInt8] in
 Signature(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKC2Tuple_usizeTransactionZ) in
+						let swiftArray = array.map { (currentCType: LDKC2Tuple_usizeTransactionZ) -> (UInt, [UInt8]) in
 Tuple_usizeTransactionZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKAPIError) in
+						let swiftArray = array.map { (currentCType: LDKAPIError) -> APIError in
 APIError(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

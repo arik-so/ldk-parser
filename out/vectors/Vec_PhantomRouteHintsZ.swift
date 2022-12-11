@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKPhantomRouteHints) in
+						let swiftArray = array.map { (currentCType: LDKPhantomRouteHints) -> PhantomRouteHints in
 PhantomRouteHints(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

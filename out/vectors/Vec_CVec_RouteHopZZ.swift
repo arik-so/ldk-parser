@@ -83,8 +83,8 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: [LDKRouteHop]) in
-							currentCType.map { (currentCType: LDKRouteHop) in
+						let swiftArray = array.map { (currentCType: [LDKRouteHop]) -> [RouteHop] in
+							currentCType.map { (currentCType: LDKRouteHop) -> RouteHop in
 RouteHop(cType: currentCType, anchor: self).dangle()
 							}
 						}

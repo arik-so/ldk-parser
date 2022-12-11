@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ) in
+						let swiftArray = array.map { (currentCType: LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ) -> (OutPoint, [MonitorEvent], [UInt8]) in
 Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

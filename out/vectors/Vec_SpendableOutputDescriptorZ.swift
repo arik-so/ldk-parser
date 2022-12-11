@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKSpendableOutputDescriptor) in
+						let swiftArray = array.map { (currentCType: LDKSpendableOutputDescriptor) -> SpendableOutputDescriptor in
 SpendableOutputDescriptor(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

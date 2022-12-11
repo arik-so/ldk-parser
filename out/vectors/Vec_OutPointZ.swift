@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKOutPoint) in
+						let swiftArray = array.map { (currentCType: LDKOutPoint) -> OutPoint in
 OutPoint(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

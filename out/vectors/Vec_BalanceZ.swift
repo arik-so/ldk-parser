@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKBalance) in
+						let swiftArray = array.map { (currentCType: LDKBalance) -> Balance in
 Balance(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

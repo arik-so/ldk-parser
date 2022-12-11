@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKRouteHint) in
+						let swiftArray = array.map { (currentCType: LDKRouteHint) -> RouteHint in
 RouteHint(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

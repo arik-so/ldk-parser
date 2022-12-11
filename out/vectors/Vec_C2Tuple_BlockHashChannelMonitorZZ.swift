@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKC2Tuple_BlockHashChannelMonitorZ) in
+						let swiftArray = array.map { (currentCType: LDKC2Tuple_BlockHashChannelMonitorZ) -> ([UInt8], ChannelMonitor) in
 Tuple_BlockHashChannelMonitorZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

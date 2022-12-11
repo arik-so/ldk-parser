@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKThirtyTwoBytes) in
+						let swiftArray = array.map { (currentCType: LDKThirtyTwoBytes) -> [UInt8] in
 ThirtyTwoBytes(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

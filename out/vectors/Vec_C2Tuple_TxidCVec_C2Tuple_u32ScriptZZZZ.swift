@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKC2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ) in
+						let swiftArray = array.map { (currentCType: LDKC2Tuple_TxidCVec_C2Tuple_u32ScriptZZZ) -> ([UInt8], [(UInt32, [UInt8])]) in
 Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

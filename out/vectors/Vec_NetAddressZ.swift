@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKNetAddress) in
+						let swiftArray = array.map { (currentCType: LDKNetAddress) -> NetAddress in
 NetAddress(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKu5) in
+						let swiftArray = array.map { (currentCType: LDKu5) -> UInt8 in
 u5(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

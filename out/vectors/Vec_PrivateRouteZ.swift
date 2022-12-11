@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKPrivateRoute) in
+						let swiftArray = array.map { (currentCType: LDKPrivateRoute) -> PrivateRoute in
 PrivateRoute(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
