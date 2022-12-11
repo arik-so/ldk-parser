@@ -29,7 +29,7 @@ jobs:
                     LDK_SWIFT_GENERATOR_OUTPUT_DIRECTORY_PATH: ci/LDKSwift/Sources/LDKSwift/bindings
             -   name: Copy new headers into bindings
                 run: |
-                    python3 ./src/scripts/copy_c_files.py
+                    python3 ./scripts/copy_c_files.py
                 env:
                     LDK_C_BINDINGS_BASE: /home/runner/work/ldk-swift/ldk-swift/ci/ldk-c-bindings
                     H_FILE_OUTPUT_DIRECTORY: /home/runner/work/ldk-swift/ldk-swift/ci/LDKSwift/Sources/LDKHeaders/include

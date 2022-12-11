@@ -55,7 +55,7 @@ jobs:
             -   name: Build libldk.a
                 shell: bash
                 run:
-                    python3 ./src/scripts/build_individual_libldk.py
+                    python3 ./scripts/build_individual_libldk.py
                 env:
                     PLATFORM_NAME: ${{ matrix.configuration['platform_name'] }}
                     LLVM_TARGET_TRIPLE_SUFFIX: ${{ matrix.configuration['llvm_target_triple_suffix'] }}
@@ -93,6 +93,6 @@ jobs:
             -   name: Generate xcframework
                 shell: bash
                 run:
-                    python3 ./src/scripts/generate_xcframework.py
+                    python3 ./scripts/generate_xcframework.py
             -   name: Create XCFramework artifact
                 uses: ./.github/actions/upload-xcframework-artifact

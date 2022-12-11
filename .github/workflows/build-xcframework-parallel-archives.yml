@@ -77,7 +77,7 @@ jobs:
             -   name: Generate xcframework
                 shell: bash
                 run:
-                    python3 ./src/scripts/generate_xcframework.py
+                    python3 ./scripts/generate_xcframework.py
                 env:
                     PRESERVE_XCARCHIVES: true
             -   name: Create XCFramework artifact
