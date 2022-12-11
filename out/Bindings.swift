@@ -267,6 +267,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					msgPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -292,6 +295,12 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					msgPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					sigPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -320,6 +329,15 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					msgPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					sigPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					pkPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -343,6 +361,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					hrpBytesPrimitiveWrapper.noOpRetain()
+				
 					// dataWithoutSignatureVector.noOpRetain()
 				
 
@@ -477,6 +498,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					paymentHashPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -598,6 +622,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					perCommitmentPointPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -626,6 +653,12 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					perCommitmentPointPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					basePointPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -698,6 +731,12 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					perCommitmentPointPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					countersignatoryRevocationBasePointPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -723,6 +762,12 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					revocationKeyPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					broadcasterDelayedPaymentKeyPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -775,6 +820,12 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					broadcasterPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					countersignatoryPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -814,6 +865,12 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					broadcasterDelayedPaymentKeyPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					revocationKeyPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -840,6 +897,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					fundingPubkeyPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -868,6 +928,12 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					broadcasterPaymentBasepointPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					countersignatoryPaymentBasepointPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -946,6 +1012,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					ourNodePubkeyPrimitiveWrapper.noOpRetain()
+				
 					// firstHopsVector.noOpRetain()
 				
 
@@ -988,6 +1057,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					ourNodePubkeyPrimitiveWrapper.noOpRetain()
+				
 					// hopsVector.noOpRetain()
 				
 
@@ -1049,6 +1121,12 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					paymentHashPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					descriptionPrimitiveWrapper.noOpRetain()
+				
 					// phantomRouteHintsVector.noOpRetain()
 				
 
@@ -1108,6 +1186,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					paymentHashPrimitiveWrapper.noOpRetain()
+				
 					// phantomRouteHintsVector.noOpRetain()
 				
 
@@ -1146,6 +1227,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					descriptionPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -1237,6 +1321,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					descriptionPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -1262,6 +1349,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					serPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)
@@ -1284,6 +1374,9 @@
 
 					// cleanup
 					
+					// for elided types, we need this
+					serPrimitiveWrapper.noOpRetain()
+				
 
 					
 					// return value (do some wrapping)

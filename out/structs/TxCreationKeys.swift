@@ -115,6 +115,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -167,6 +170,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -215,6 +221,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -263,6 +272,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -311,6 +323,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -340,6 +355,21 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						perCommitmentPointArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						revocationKeyArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						broadcasterHtlcKeyArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						countersignatoryHtlcKeyArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						broadcasterDelayedPaymentKeyArgPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)
@@ -442,6 +472,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						serPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -472,6 +505,21 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						perCommitmentPointPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						broadcasterDelayedPaymentBasePrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						broadcasterHtlcBasePrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						countersignatoryRevocationBasePrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						countersignatoryHtlcBasePrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -502,6 +550,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						perCommitmentPointPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

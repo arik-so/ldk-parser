@@ -115,6 +115,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						serPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -136,6 +139,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						genesisHashPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)
@@ -377,6 +383,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						nodeId_1PrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						nodeId_2PrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -429,6 +441,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						nodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

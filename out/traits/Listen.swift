@@ -266,6 +266,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						blockPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult

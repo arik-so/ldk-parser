@@ -175,6 +175,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						peerMsgPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -274,6 +277,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						errPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -384,6 +390,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						serPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

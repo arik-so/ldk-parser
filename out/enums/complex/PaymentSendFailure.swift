@@ -220,6 +220,9 @@
 						
 						// resultsVector.noOpRetain()
 				
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

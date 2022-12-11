@@ -97,6 +97,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -151,6 +154,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -203,6 +209,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -255,6 +264,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -305,6 +317,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -334,6 +349,21 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						fundingPubkeyArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						revocationBasepointArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentPointArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						delayedPaymentBasepointArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						htlcBasepointArgPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)
@@ -436,6 +466,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						serPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

@@ -290,6 +290,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						payerPrimitiveWrapper.noOpRetain()
+				
 						// firstHopsVector.noOpRetain()
 				
 

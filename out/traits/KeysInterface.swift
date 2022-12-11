@@ -500,6 +500,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						otherKeyPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_SharedSecretNoneZ(cType: nativeCallResult)
@@ -615,6 +618,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						readerPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_SignDecodeErrorZ(cType: nativeCallResult)
@@ -646,6 +652,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						hrpBytesPrimitiveWrapper.noOpRetain()
+				
 						// invoiceDataVector.noOpRetain()
 				
 

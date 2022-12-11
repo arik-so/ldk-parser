@@ -295,6 +295,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						sPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

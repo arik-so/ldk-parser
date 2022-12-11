@@ -154,6 +154,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						peerNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = OnionMessage(cType: nativeCallResult)

@@ -893,6 +893,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						justiceTxPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_SignatureNoneZ(cType: nativeCallResult)
@@ -945,6 +948,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						justiceTxPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_SignatureNoneZ(cType: nativeCallResult)
@@ -990,6 +996,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						htlcTxPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						perCommitmentPointPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_SignatureNoneZ(cType: nativeCallResult)
@@ -1040,6 +1052,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						anchorTxPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_SignatureNoneZ(cType: nativeCallResult)

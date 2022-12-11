@@ -79,6 +79,9 @@
 						
 						// bVector.noOpRetain()
 				
+						// for elided types, we need this
+						cPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)

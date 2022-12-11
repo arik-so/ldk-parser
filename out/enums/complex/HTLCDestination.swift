@@ -131,6 +131,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						nodeIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						channelIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -171,6 +177,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -243,6 +252,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						serPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

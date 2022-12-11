@@ -105,6 +105,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -157,6 +160,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -209,6 +215,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -261,6 +270,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -313,6 +325,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -365,6 +380,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -423,6 +441,30 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						nodeSecretPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						fundingKeyPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						revocationBaseKeyPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentKeyPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						delayedPaymentBaseKeyPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						htlcBaseKeyPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						commitmentSeedPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						channelKeysIdPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)
@@ -639,6 +681,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						spendTxPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -676,6 +721,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						spendTxPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -770,6 +818,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						serPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						argPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

@@ -158,6 +158,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						bufferPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_COption_TypeZDecodeErrorZ(cType: nativeCallResult)

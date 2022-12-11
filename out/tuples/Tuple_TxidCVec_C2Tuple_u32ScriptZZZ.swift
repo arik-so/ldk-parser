@@ -77,6 +77,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						aPrimitiveWrapper.noOpRetain()
+				
 						// bVector.noOpRetain()
 				
 

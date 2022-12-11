@@ -152,6 +152,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						txPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult

@@ -703,6 +703,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						${preparedArgument.name}.cType!.${argument.type.ownershipField!.contextualName} = false
 					`;
 				}
+				preparedArgument.deferredCleanup += `
+						// for elided types, we need this
+						${preparedArgument.name}.noOpRetain()
+				`;
 				preparedArgument.accessor = preparedArgument.name + '.cType!';
 			} else if (argument.type instanceof RustVector) {
 				preparedArgument.name += 'Vector';

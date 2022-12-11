@@ -114,6 +114,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						updateDataPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

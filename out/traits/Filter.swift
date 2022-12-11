@@ -235,6 +235,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						scriptPubkeyPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult

@@ -73,6 +73,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						randomSeedBytesPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)

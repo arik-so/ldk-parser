@@ -139,6 +139,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						addrPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -160,6 +163,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						addrPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -181,6 +187,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						aPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -202,6 +211,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						ed25519PubkeyPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -293,6 +305,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						serPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

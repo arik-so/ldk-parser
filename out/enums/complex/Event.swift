@@ -294,6 +294,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						temporaryChannelIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						counterpartyNodeIdPrimitiveWrapper.noOpRetain()
+				
 						// outputScriptVector.noOpRetain()
 				
 
@@ -317,6 +323,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -338,6 +347,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -365,6 +377,15 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentPreimagePrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -388,6 +409,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -413,6 +440,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
 						// pathVector.noOpRetain()
 				
 
@@ -444,6 +477,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
 						// pathVector.noOpRetain()
 				
 
@@ -471,6 +510,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
 						// pathVector.noOpRetain()
 				
 
@@ -500,6 +545,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
 						// pathVector.noOpRetain()
 				
 
@@ -569,6 +620,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						prevChannelIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						nextChannelIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -590,6 +647,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						channelIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -615,6 +675,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						channelIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						transactionPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -638,6 +704,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						temporaryChannelIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						counterpartyNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -659,6 +731,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						prevChannelIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -703,6 +778,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						serPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

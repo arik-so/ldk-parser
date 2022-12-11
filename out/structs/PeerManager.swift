@@ -118,6 +118,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						ourNodeSecretPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)
@@ -192,6 +195,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -311,6 +317,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						dataPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -410,6 +419,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						nodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -511,6 +523,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						rgbPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						aliasPrimitiveWrapper.noOpRetain()
+				
 						// addressesVector.noOpRetain()
 				
 

@@ -328,6 +328,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentSecretPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult)
@@ -353,6 +359,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentPreimagePrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult)
@@ -378,6 +387,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult)
@@ -399,6 +411,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult

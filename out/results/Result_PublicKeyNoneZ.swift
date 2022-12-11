@@ -51,6 +51,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						oPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

@@ -77,6 +77,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						bPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)

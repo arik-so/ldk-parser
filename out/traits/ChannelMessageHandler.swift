@@ -731,6 +731,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -756,6 +759,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -781,6 +787,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -806,6 +815,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -831,6 +843,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -860,6 +875,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -885,6 +903,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -910,6 +931,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -935,6 +959,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -960,6 +987,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -985,6 +1015,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -1010,6 +1043,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -1035,6 +1071,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -1060,6 +1099,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -1085,6 +1127,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -1112,6 +1157,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -1141,6 +1189,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_NoneNoneZ(cType: nativeCallResult)
@@ -1166,6 +1217,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -1191,6 +1245,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -1216,6 +1273,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
@@ -1262,6 +1322,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = InitFeatures(cType: nativeCallResult)

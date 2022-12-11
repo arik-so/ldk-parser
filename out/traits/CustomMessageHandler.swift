@@ -190,6 +190,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						senderNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)

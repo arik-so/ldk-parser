@@ -200,6 +200,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						pubkeyPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

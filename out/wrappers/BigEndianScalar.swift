@@ -58,6 +58,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						bigEndianBytesPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)

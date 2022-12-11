@@ -586,6 +586,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						startingPointPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = NodeAnnouncement(cType: nativeCallResult)
@@ -617,6 +620,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_NoneNoneZ(cType: nativeCallResult)
@@ -640,6 +646,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
@@ -664,6 +673,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
@@ -686,6 +698,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
@@ -708,6 +723,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
@@ -754,6 +772,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						theirNodeIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = InitFeatures(cType: nativeCallResult)

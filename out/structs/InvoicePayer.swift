@@ -177,6 +177,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						pubkeyPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentPreimagePrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

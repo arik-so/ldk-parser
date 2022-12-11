@@ -147,6 +147,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						serPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -227,6 +230,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						versionPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						programPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

@@ -140,6 +140,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						blockHashPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)

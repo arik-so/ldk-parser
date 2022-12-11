@@ -154,6 +154,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						descriptionPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

@@ -107,6 +107,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -155,6 +158,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -178,6 +184,12 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						yourLastPerCommitmentSecretArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						myCurrentPerCommitmentPointArgPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)

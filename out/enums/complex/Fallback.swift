@@ -124,6 +124,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						versionPrimitiveWrapper.noOpRetain()
+				
 						// programVector.noOpRetain()
 				
 
@@ -147,6 +150,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						aPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -168,6 +174,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						aPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

@@ -163,6 +163,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						errPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -186,6 +189,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						errPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -209,6 +215,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						errPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -232,6 +241,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						errPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)

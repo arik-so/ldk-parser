@@ -95,6 +95,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -143,6 +146,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -191,6 +197,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -239,6 +248,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -312,6 +324,18 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						nodeSignature_1ArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						nodeSignature_2ArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						bitcoinSignature_1ArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						bitcoinSignature_2ArgPrimitiveWrapper.noOpRetain()
+				
 
 						/*
 						// return value (do some wrapping)
@@ -414,6 +438,9 @@
 
 						// cleanup
 						
+						// for elided types, we need this
+						serPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
