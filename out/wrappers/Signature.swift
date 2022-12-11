@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation // necessary for Data for Strings
+
 			/// Represents a secp256k1 signature serialized as two 32-byte numbers
 			internal typealias Signature = Bindings.Signature
 

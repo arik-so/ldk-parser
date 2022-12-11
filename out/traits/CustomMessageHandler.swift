@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// Handler for BOLT1-compliant messages.
 			public typealias CustomMessageHandler = Bindings.CustomMessageHandler
 

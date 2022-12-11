@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation // necessary for Data for Strings
+
 			/// A Rust str object, ie a reference to a UTF8-valid string.
 			/// This is *not* null-terminated so cannot be used directly as a C string!
 			internal typealias Str = Bindings.Str

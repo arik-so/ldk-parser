@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// The `Listen` trait is used to notify when blocks have been connected or disconnected from the
 			/// chain.
 			/// 

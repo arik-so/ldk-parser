@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// Refers to a scorer that is accessible under lock and also writeable to disk
 			/// 
 			/// We need this trait to be able to pass in a scorer to `lightning-background-processor` that will enable us to

@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// An interface used to score payment channels for path finding.
 			/// 
 			/// \tScoring is in terms of fees willing to be paid in order to avoid routing through a channel.

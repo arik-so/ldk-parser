@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait to sign lightning channel transactions as described in BOLT 3.
 			/// 
 			/// Signing services could be implemented on a hardware wallet. In this case,

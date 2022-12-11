@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait to describe an object which can get user secrets and key material.
 			public typealias KeysInterface = Bindings.KeysInterface
 

@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// The `Filter` trait defines behavior for indicating chain activity of interest pertaining to
 			/// channels.
 			/// 

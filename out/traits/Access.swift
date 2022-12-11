@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// The `Access` trait defines behavior for accessing chain data and state, such as blocks and
 			/// UTXOs.
 			public typealias Access = Bindings.Access

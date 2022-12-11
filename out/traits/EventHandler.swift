@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait implemented for objects handling events from [`EventsProvider`].
 			public typealias EventHandler = Bindings.EventHandler
 

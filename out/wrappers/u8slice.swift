@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation // necessary for Data for Strings
+
 			/// A "slice" referencing some byte array. This is simply a length-tagged pointer which does not
 			/// own the memory pointed to by data.
 			internal typealias u8slice = Bindings.u8slice

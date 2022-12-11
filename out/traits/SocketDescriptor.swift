@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// Provides an object which can be used to send data to and which uniquely identifies a connection
 			/// to a remote host. You will need to be able to generate multiple of these which meet Eq and
 			/// implement Hash to meet the PeerManager API.

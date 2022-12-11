@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// Trait to be implemented by custom message (unrelated to the channel/gossip LN layers)
 			/// decoders.
 			public typealias CustomMessageReader = Bindings.CustomMessageReader

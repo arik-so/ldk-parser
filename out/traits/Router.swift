@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait defining behavior for routing an [`Invoice`] payment.
 			public typealias Router = Bindings.Router
 

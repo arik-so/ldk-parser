@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// Defines a type identifier for sending messages over the wire.
 			/// 
 			/// Messages implementing this trait specify a type and must be [`Writeable`].

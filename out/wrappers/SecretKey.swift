@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation // necessary for Data for Strings
+
 			/// Represents a valid secp256k1 secret key serialized as a 32 byte array.
 			internal typealias SecretKey = Bindings.SecretKey
 

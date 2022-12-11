@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait defining behavior of an [`Invoice`] payer.
 			public typealias Payer = Bindings.Payer
 

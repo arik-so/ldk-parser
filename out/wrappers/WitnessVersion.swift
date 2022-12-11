@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation // necessary for Data for Strings
+
 			/// Integer in the range `0..=16`
 			internal typealias WitnessVersion = Bindings.WitnessVersion
 

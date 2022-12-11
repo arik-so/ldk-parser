@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// Handler for custom onion messages. If you are using [`SimpleArcOnionMessenger`],
 			/// [`SimpleRefOnionMessenger`], or prefer to ignore inbound custom onion messages,
 			/// [`IgnoringMessageHandler`] must be provided to [`OnionMessenger::new`]. Otherwise, a custom

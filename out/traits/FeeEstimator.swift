@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait which should be implemented to provide feerate information on a number of time
 			/// horizons.
 			/// 

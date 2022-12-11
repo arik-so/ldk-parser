@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait indicating an object may generate message send events
 			public typealias MessageSendEventsProvider = Bindings.MessageSendEventsProvider
 

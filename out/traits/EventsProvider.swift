@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait indicating an object may generate events.
 			/// 
 			/// Events are processed by passing an [`EventHandler`] to [`process_pending_events`].

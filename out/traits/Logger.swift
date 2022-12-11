@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait encapsulating the operations required of a logger
 			public typealias Logger = Bindings.Logger
 

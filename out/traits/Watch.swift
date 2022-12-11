@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// The `Watch` trait defines behavior for watching on-chain activity pertaining to channels as
 			/// blocks are connected and disconnected.
 			/// 

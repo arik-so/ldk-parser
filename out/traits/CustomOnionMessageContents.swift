@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// The contents of a custom onion message.
 			public typealias CustomOnionMessageContents = Bindings.CustomOnionMessageContents
 

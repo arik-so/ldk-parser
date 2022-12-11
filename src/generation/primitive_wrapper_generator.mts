@@ -75,6 +75,8 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 			import LDKHeaders
 			#endif
 
+			import Foundation // necessary for Data for Strings
+
 			${this.renderDocComment(type.documentation, 3)}
 			internal typealias ${swiftTypeName} = Bindings.${swiftTypeName}
 

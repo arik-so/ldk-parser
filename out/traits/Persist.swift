@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// `Persist` defines behavior for persisting channel monitors: this could mean
 			/// writing once to disk, and/or uploading to one or more backup services.
 			/// 

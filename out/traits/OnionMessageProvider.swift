@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait indicating an object may generate onion messages to send
 			public typealias OnionMessageProvider = Bindings.OnionMessageProvider
 

@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation // necessary for Data for Strings
+
 			/// A serialized transaction, in (pointer, length) form.
 			/// 
 			/// This type optionally owns its own memory, and thus the semantics around access change based on

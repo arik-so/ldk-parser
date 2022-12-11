@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// An interface to send a transaction to the Bitcoin network.
 			public typealias BroadcasterInterface = Bindings.BroadcasterInterface
 

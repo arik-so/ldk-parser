@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation // necessary for Data for Strings
+
 			/// A 20-byte byte array.
 			internal typealias TwentyBytes = Bindings.TwentyBytes
 

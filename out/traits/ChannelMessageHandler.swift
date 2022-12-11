@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait to describe an object which can receive channel messages.
 			/// 
 			/// Messages MAY be called in parallel when they originate from different their_node_ids, however

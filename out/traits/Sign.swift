@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A cloneable signer.
 			/// 
 			/// Although we require signers to be cloneable, it may be useful for developers to be able to use

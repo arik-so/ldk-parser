@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A callback which is called when a [`Future`] completes.
 			/// 
 			/// Note that this MUST NOT call back into LDK directly, it must instead schedule actions to be

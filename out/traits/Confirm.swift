@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// The `Confirm` trait is used to notify when transactions have been confirmed on chain or
 			/// unconfirmed during a chain reorganization.
 			/// 

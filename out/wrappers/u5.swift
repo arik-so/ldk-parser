@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation // necessary for Data for Strings
+
 			/// Integer in the range `0..32`
 			internal typealias u5 = Bindings.u5
 

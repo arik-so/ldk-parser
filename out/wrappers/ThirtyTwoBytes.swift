@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation // necessary for Data for Strings
+
 			/// Arbitrary 32 bytes, which could represent one of a few different things. You probably want to
 			/// look up the corresponding function in rust-lightning's docs.
 			internal typealias ThirtyTwoBytes = Bindings.ThirtyTwoBytes

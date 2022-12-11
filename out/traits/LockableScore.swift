@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A scorer that is accessed under a lock.
 			/// 
 			/// Needed so that calls to [`Score::channel_penalty_msat`] in [`find_route`] can be made while

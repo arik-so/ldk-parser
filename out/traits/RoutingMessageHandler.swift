@@ -3,6 +3,9 @@
 			import LDKHeaders
 			#endif
 
+			// necessary for abort() calls
+			import Foundation
+
 			/// A trait to describe an object which can receive routing messages.
 			/// 
 			/// # Implementor DoS Warnings
