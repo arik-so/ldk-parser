@@ -122,7 +122,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NodeFeatures(cType: nativeCallResult)
+						let returnValue = NodeFeatures(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -216,7 +216,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelFeatures(cType: nativeCallResult)
+						let returnValue = ChannelFeatures(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

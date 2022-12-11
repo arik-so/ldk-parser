@@ -167,7 +167,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = EffectiveCapacity(cType: nativeCallResult)
+						let returnValue = EffectiveCapacity(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

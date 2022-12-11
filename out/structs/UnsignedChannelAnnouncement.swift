@@ -73,7 +73,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelFeatures(cType: nativeCallResult)
+						let returnValue = ChannelFeatures(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

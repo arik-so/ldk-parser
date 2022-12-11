@@ -117,7 +117,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -149,7 +149,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -180,7 +180,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

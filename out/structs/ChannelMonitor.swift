@@ -164,7 +164,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneNoneZ(cType: nativeCallResult)
+						let returnValue = Result_NoneNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -621,7 +621,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = BestBlock(cType: nativeCallResult)
+						let returnValue = BestBlock(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

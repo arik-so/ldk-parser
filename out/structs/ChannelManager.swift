@@ -177,7 +177,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = UserConfig(cType: nativeCallResult)
+						let returnValue = UserConfig(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -229,7 +229,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result__u832APIErrorZ(cType: nativeCallResult)
+						let returnValue = Result__u832APIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -330,7 +330,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -379,7 +379,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -413,7 +413,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -449,7 +449,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -568,7 +568,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult)
+						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -606,7 +606,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult)
+						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -688,7 +688,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(cType: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -717,7 +717,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(cType: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -781,7 +781,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -835,7 +835,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1047,7 +1047,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1095,7 +1095,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1145,7 +1145,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZNoneZ(cType: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1178,7 +1178,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1247,7 +1247,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentSecretNoneZ(cType: nativeCallResult)
+						let returnValue = Result_PaymentSecretNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1282,7 +1282,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentSecretAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_PaymentSecretAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1312,7 +1312,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentPreimageAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_PaymentPreimageAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1363,7 +1363,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PhantomRouteHints(cType: nativeCallResult)
+						let returnValue = PhantomRouteHints(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1537,7 +1537,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Future(cType: nativeCallResult)
+						let returnValue = Future(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1561,7 +1561,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = BestBlock(cType: nativeCallResult)
+						let returnValue = BestBlock(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

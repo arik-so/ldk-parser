@@ -249,7 +249,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneSendErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneSendErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

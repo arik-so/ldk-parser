@@ -177,7 +177,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneSemanticErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneSemanticErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -386,7 +386,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = InvoiceFeatures(cType: nativeCallResult)
+						let returnValue = InvoiceFeatures(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

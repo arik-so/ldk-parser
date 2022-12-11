@@ -408,7 +408,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = UserConfig(cType: nativeCallResult)
+						let returnValue = UserConfig(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

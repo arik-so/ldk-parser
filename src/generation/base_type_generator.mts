@@ -150,6 +150,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		let nativeCallWrapperPrefix = '', nativeCallWrapperSuffix = '';
 		let nativeCallSuffix = '';
 
+		const semantics = this.methodSemantics(method, containerType);
+		if (semantics.isConstructor && forceStaticConstructor) {
+			semantics.isStatic = true;
+		}
+
 		const nonCloneableArguments = [];
 
 		for (const currentArgument of method.arguments) {
@@ -171,11 +176,6 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			const swiftArgumentType = this.getPublicTypeSignature(currentArgument.type, containerType, currentArgument);
 			if (!isInstanceArgument) {
 				swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
-			}
-
-			const semantics = this.methodSemantics(method, containerType);
-			if (semantics.isConstructor && forceStaticConstructor) {
-				semantics.isStatic = true;
 			}
 
 			if (!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && !semantics.isFreeMethod && !this.isElidedType(currentArgument.type) && !(currentArgument.type instanceof RustTrait) && this.hasFreeMethod(currentArgument.type)) {
@@ -244,8 +244,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			returnValueHandlingSuffix = '*/';
 		}
 
-		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue, containerType);
-
+		const preparedReturnValue = this.prepareRustReturnValueForSwift(method.returnValue, containerType, semantics);
 
 		if (method.returnValue.isAsteriskPointer) {
 			nativeCallSuffix += `
@@ -335,7 +334,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			isConstructor: false,
 			isFreeMethod: false,
 			isStatic: false,
-			isValueAccessor: false
+			isValueAccessor: false,
+			needsInstancePointer: false
 		};
 
 		if (!containerType) {
@@ -353,6 +353,13 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				semantics.isStatic = true;
 			}
 		} else {
+			for (const currentArgument of method.arguments) {
+				if (currentArgument.type === containerType) {
+					semantics.needsInstancePointer = currentArgument.isAsteriskPointer;
+					break;
+				}
+			}
+
 			if (standaloneMethodName === 'free') {
 				semantics.isFreeMethod = true;
 			} else if (standaloneMethodName === 'clone' && returnsInstance) {
@@ -867,6 +874,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			if (containerType instanceof RustStruct && returnType.type instanceof RustTrait) {
 				anchorInfix = ', anchor: self';
 			}
+
+			if(!this.isElidedType(containerType) && !this.isElidedType(returnType.type) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
+				// TODO: determine whether this is precise enough
+				anchorInfix = ', anchor: self';
+			}
 		}
 
 
@@ -1119,4 +1131,9 @@ export interface MethodSemantics {
 	isCloneMethod: boolean;
 
 	isFreeMethod: boolean;
+
+	/**
+	 * True if the method arguments include a pointer to the container type
+	 */
+	needsInstancePointer: boolean;
 }

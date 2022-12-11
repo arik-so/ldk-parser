@@ -247,7 +247,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = TrustedCommitmentTransaction(cType: nativeCallResult)
+						let returnValue = TrustedCommitmentTransaction(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -287,7 +287,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_TrustedCommitmentTransactionNoneZ(cType: nativeCallResult)
+						let returnValue = Result_TrustedCommitmentTransactionNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

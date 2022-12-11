@@ -265,7 +265,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = UnsignedChannelAnnouncement(cType: nativeCallResult)
+						let returnValue = UnsignedChannelAnnouncement(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

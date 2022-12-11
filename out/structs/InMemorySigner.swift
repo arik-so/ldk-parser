@@ -456,7 +456,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -556,7 +556,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = OutPoint(cType: nativeCallResult)
+						let returnValue = OutPoint(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -582,7 +582,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelTransactionParameters(cType: nativeCallResult)
+						let returnValue = ChannelTransactionParameters(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -642,7 +642,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult)
+						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -679,7 +679,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult)
+						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

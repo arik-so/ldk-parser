@@ -178,7 +178,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = RawInvoice(cType: nativeCallResult)
+						let returnValue = RawInvoice(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -228,7 +228,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = InvoiceSignature(cType: nativeCallResult)
+						let returnValue = InvoiceSignature(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -251,7 +251,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PayeePubKeyErrorZ(cType: nativeCallResult)
+						let returnValue = Result_PayeePubKeyErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

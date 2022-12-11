@@ -168,7 +168,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ReadOnlyNetworkGraph(cType: nativeCallResult)
+						let returnValue = ReadOnlyNetworkGraph(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -248,7 +248,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -278,7 +278,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -314,7 +314,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -348,7 +348,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -380,7 +380,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -540,7 +540,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -572,7 +572,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

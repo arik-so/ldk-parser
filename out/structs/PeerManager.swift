@@ -195,7 +195,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(cType: nativeCallResult)
+						let returnValue = Result_CVec_u8ZPeerHandleErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -234,7 +234,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NonePeerHandleErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NonePeerHandleErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -272,7 +272,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NonePeerHandleErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NonePeerHandleErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -314,7 +314,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_boolPeerHandleErrorZ(cType: nativeCallResult)
+						let returnValue = Result_boolPeerHandleErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

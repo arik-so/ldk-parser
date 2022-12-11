@@ -148,7 +148,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(cType: nativeCallResult)
+						let returnValue = Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

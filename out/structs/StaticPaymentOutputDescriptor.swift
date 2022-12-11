@@ -75,7 +75,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = OutPoint(cType: nativeCallResult)
+						let returnValue = OutPoint(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -123,7 +123,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = TxOut(cType: nativeCallResult)
+						let returnValue = TxOut(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

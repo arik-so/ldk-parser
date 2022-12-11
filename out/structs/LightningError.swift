@@ -123,7 +123,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ErrorAction(cType: nativeCallResult)
+						let returnValue = ErrorAction(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

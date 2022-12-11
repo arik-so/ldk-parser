@@ -161,7 +161,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_LockedChannelMonitorNoneZ(cType: nativeCallResult)
+						let returnValue = Result_LockedChannelMonitorNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -222,7 +222,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
