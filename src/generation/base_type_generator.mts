@@ -173,23 +173,20 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				swiftMethodArguments.push(`${swiftArgumentName}: ${swiftArgumentType}`);
 			}
 
-			var memoryContext: MemoryHandlingContext | undefined;
-			if (!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && swiftMethodName !== 'free' && !this.isElidedType(currentArgument.type) && !(currentArgument.type instanceof RustTrait) && this.hasFreeMethod(currentArgument.type)) {
+			const semantics = this.methodSemantics(method, containerType);
+			if (semantics.isConstructor && forceStaticConstructor) {
+				semantics.isStatic = true;
+			}
+
+			if (!this.hasCloneMethod(currentArgument.type) && !currentArgument.isAsteriskPointer && !semantics.isFreeMethod && !this.isElidedType(currentArgument.type) && !(currentArgument.type instanceof RustTrait) && this.hasFreeMethod(currentArgument.type)) {
 				if (isInstanceArgument) {
 					nonCloneableArguments.push('self');
-					memoryContext = {
-						isCloneMethod: false,
-						isConstructor: false,
-						isFreeMethod: false,
-						isStatic: false,
-						isValueAccessor: false
-					};
 				} else {
 					nonCloneableArguments.push('`' + swiftArgumentName + '`');
 				}
 			}
 
-			const preparedArgument = this.prepareSwiftArgumentForRust(currentArgument, containerType, memoryContext);
+			const preparedArgument = this.prepareSwiftArgumentForRust(currentArgument, containerType, semantics);
 			nativeCallPrefix += preparedArgument.conversion;
 			nativeCallWrapperPrefix += preparedArgument.methodCallWrapperPrefix;
 			nativeCallWrapperSuffix += preparedArgument.methodCallWrapperSuffix;
@@ -332,12 +329,46 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return lambda.name.replace(typeNamePrefix + '_', '');
 	}
 
+	protected methodSemantics(method: RustFunction, containerType?: RustType): MethodSemantics {
+		const semantics: MethodSemantics = {
+			isCloneMethod: false,
+			isConstructor: false,
+			isFreeMethod: false,
+			isStatic: false,
+			isValueAccessor: false
+		};
+
+		if (!containerType) {
+			semantics.isStatic = true;
+			return semantics;
+		}
+
+		const standaloneMethodName = this.standaloneMethodName(method, containerType);
+		const returnsInstance = method.returnValue.type === containerType;
+		const argumentTypes = method.arguments.map(a => a.type);
+		if (!argumentTypes.includes(containerType)) {
+			if (returnsInstance) {
+				semantics.isConstructor = true;
+			} else {
+				semantics.isStatic = true;
+			}
+		} else {
+			if (standaloneMethodName === 'free') {
+				semantics.isFreeMethod = true;
+			} else if (standaloneMethodName === 'clone' && returnsInstance) {
+				semantics.isCloneMethod = true;
+			}
+		}
+		return semantics;
+	}
+
 	protected swiftMethodName(method: RustFunction, containerType?: RustType, forceStaticConstructor = false): string {
 		let standaloneMethodName = method.name;
 		if (containerType) {
 			standaloneMethodName = this.standaloneMethodName(method, containerType);
+			const semantics = this.methodSemantics(method, containerType);
 			// complex enums may have multiple variants of the same type, so those initializers should be static
-			if (method.returnValue.type === containerType && !['clone', 'none', 'start'].includes(standaloneMethodName)) {
+			if (semantics.isConstructor && !['clone', 'none', 'start'].includes(standaloneMethodName)) {
 				if (forceStaticConstructor || standaloneMethodName !== 'new') {
 					// if the method name isn't new, we want an `initWith` name. For now.
 					const suffix = Generator.snakeCaseToCamelCase(standaloneMethodName, true);
@@ -556,7 +587,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return typeName;
 	}
 
-	protected prepareSwiftArgumentForRust(argument: RustFunctionArgument, containerType?: RustType, memoryContext?: MemoryHandlingContext): PreparedArgument {
+	protected prepareSwiftArgumentForRust(argument: RustFunctionArgument, containerType?: RustType, memoryContext?: MethodSemantics): PreparedArgument {
 		// this is the name of the variable that the method receives
 		const publicName = Generator.snakeCaseToCamelCase(argument.contextualName);
 		const preparedArgument: PreparedArgument = {
@@ -742,7 +773,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		return preparedArgument;
 	}
 
-	protected prepareRustReturnValueForSwift(returnType: ContextualRustType, containerType?: RustType, memoryContext?: MemoryHandlingContext): PreparedReturnValue {
+	protected prepareRustReturnValueForSwift(returnType: ContextualRustType, containerType?: RustType, memoryContext?: MethodSemantics): PreparedReturnValue {
 		const preparedReturnValue: PreparedReturnValue = {
 			wrapperPrefix: '',
 			wrapperSuffix: ''
@@ -1066,7 +1097,7 @@ export interface PreparedReturnValue {
 	wrapperSuffix: string;
 }
 
-export interface MemoryHandlingContext {
+export interface MethodSemantics {
 	/**
 	 * True if the containing Swift method is accessing a struct's field.
 	 */
