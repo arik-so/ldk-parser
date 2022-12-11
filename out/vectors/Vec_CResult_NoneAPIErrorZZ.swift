@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1) in
+						let rustArray = array.map { (currentValueDepth1: Result_NoneAPIErrorZ) in
 							
 							return currentValueDepth1.cType!
 						}
@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType) in
+						let swiftArray = array.map { (currentCType: LDKCResult_NoneAPIErrorZ) in
 Result_NoneAPIErrorZ(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

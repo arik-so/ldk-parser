@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1) in
+						let rustArray = array.map { (currentValueDepth1: [UInt8]) in
 							
 						let currentValueDepth1PrimitiveWrapper = Transaction(value: currentValueDepth1).setCFreeability(freeable: false)
 				
@@ -72,7 +72,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType) in
+						let swiftArray = array.map { (currentCType: LDKTransaction) in
 Transaction(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

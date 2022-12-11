@@ -41,23 +41,27 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		 * If the deepest type is not a primitive, a Rust->Swift mapper is definitely necessary,
 		 * and a Swift->Rust mapper is potentially necessary
 		 */
-		if(!(type.deepestIterateeType instanceof RustPrimitive)){
+		if (!(type.deepestIterateeType instanceof RustPrimitive)) {
 			// we'll need to map the Rust types to Swift types because they're not primitive
-			rustArrayToSwiftArrayMapper = 'let swiftArray = array.map { (currentCType) in\n'
+			let leftSquareBrackets = '['.repeat(type.depth - 1);
+			let rightSquareBrackets = ']'.repeat(type.depth - 1);
+			rustArrayToSwiftArrayMapper = `let swiftArray = array.map { (currentCType: ${leftSquareBrackets}${type.deepestIterateeType.name}${rightSquareBrackets}) in\n`;
 
 			let unwrapperSuffix = '';
 			let depth = 1;
 			const artificialDeepestContext = new RustFunctionArgument();
-			artificialDeepestContext.contextualName = 'currentValueDepth'+depth;
+			artificialDeepestContext.contextualName = 'currentValueDepth' + depth;
 			artificialDeepestContext.type = type.deepestIterateeType;
 
-			if(type.iterateeField.type instanceof RustVector){
+			if (type.iterateeField.type instanceof RustVector) {
 				let currentIteratee: RustType = type.iterateeField.type;
 				while (currentIteratee instanceof RustVector) {
 					const indentationDepth = 6 + depth;
 					const indentation = `\t`.repeat(indentationDepth);
 
-					rustArrayToSwiftArrayMapper += `${indentation}currentCType.map { (currentCType) in\n`;
+					let leftSquareBrackets = '['.repeat(type.depth - depth - 1);
+					let rightSquareBrackets = ']'.repeat(type.depth - depth - 1);
+					rustArrayToSwiftArrayMapper += `${indentation}currentCType.map { (currentCType: ${leftSquareBrackets}${type.deepestIterateeType.name}${rightSquareBrackets}) in\n`;
 					unwrapperSuffix += `\n${indentation}}`;
 
 					currentIteratee = currentIteratee.iterateeField.type;
@@ -68,7 +72,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 				// (if it is a vector, a corresponding underlying vector can be trivially initiated)
 				const deepestRustValueUnwrapper = this.prepareSwiftArgumentForRust(artificialDeepestContext, type);
 				swiftArrayToRustArrayMapper = `
-						let rustArray = array.map { (currentValueDepth1) in
+						let rustArray = array.map { (currentValueDepth1: ${this.getPublicTypeSignature(type.deepestIterateeType)}) in
 							${deepestRustValueUnwrapper.conversion}
 							return ${deepestRustValueUnwrapper.methodCallWrapperPrefix}${deepestRustValueUnwrapper.accessor}${deepestRustValueUnwrapper.methodCallWrapperSuffix}
 						}
@@ -85,13 +89,13 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 			 * Additionally, because now the potential for double-free arises due to the combination
 			 * of both the individual objects and the vector getting dereferenced, this individual
 			 * objects must be .dangled().
- 			 */
-			artificialDeepestContext.contextualName = 'currentValueDepth'+depth;
+			 */
+			artificialDeepestContext.contextualName = 'currentValueDepth' + depth;
 			const deepestSwiftReturnValueWrapper = this.prepareRustReturnValueForSwift(artificialDeepestContext, type);
 			let deepestConstructor = `${deepestSwiftReturnValueWrapper.wrapperPrefix}currentCType${deepestSwiftReturnValueWrapper.wrapperSuffix}`;
 			rustArrayToSwiftArrayMapper += `${deepestConstructor}${unwrapperSuffix}`;
 		} else {
-			rustArrayToSwiftArrayMapper = 'let swiftArray = array'
+			rustArrayToSwiftArrayMapper = 'let swiftArray = array';
 		}
 
 		let bracketedIterateeTypeName = null;
@@ -120,7 +124,7 @@ export default class VectorGenerator extends BaseTypeGenerator<RustVector> {
 		} else if (type.iterateeField.type instanceof RustPrimitive) {
 			bracketedIterateeTypeName = `<${type.iterateeField.type.swiftRawSignature}>`;
 			dataContainerInitializationArgumentName = 'array';
-		}else if (type.iterateeField.type instanceof RustTuple || type.iterateeField.type instanceof RustPrimitiveWrapper || type.iterateeField.type instanceof RustTaggedValueEnum || type.iterateeField.type instanceof RustResult || type.iterateeField.type instanceof RustStruct) {
+		} else if (type.iterateeField.type instanceof RustTuple || type.iterateeField.type instanceof RustPrimitiveWrapper || type.iterateeField.type instanceof RustTaggedValueEnum || type.iterateeField.type instanceof RustResult || type.iterateeField.type instanceof RustStruct) {
 			bracketedIterateeTypeName = `<${type.iterateeField.type.name}>`;
 		} else {
 			throw new Error(`Unsupported vector iteratee type in ${type.name}: ${type.iterateeField.type.typeDescription}`);

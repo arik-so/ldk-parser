@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1) in
+						let rustArray = array.map { (currentValueDepth1: (UInt, [UInt8])) in
 							
 						let currentValueDepth1Tuple = Tuple_usizeTransactionZ(tuple: currentValueDepth1).danglingClone()
 				
@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType) in
+						let swiftArray = array.map { (currentCType: LDKC2Tuple_usizeTransactionZ) in
 Tuple_usizeTransactionZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

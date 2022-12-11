@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1) in
+						let rustArray = array.map { (currentValueDepth1: (OutPoint, [MonitorEvent], [UInt8])) in
 							
 						let currentValueDepth1Tuple = Tuple_OutPointCVec_MonitorEventZPublicKeyZ(tuple: currentValueDepth1).danglingClone()
 				
@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType) in
+						let swiftArray = array.map { (currentCType: LDKC3Tuple_OutPointCVec_MonitorEventZPublicKeyZ) in
 Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1) in
+						let rustArray = array.map { (currentValueDepth1: [UInt8]) in
 							
 						let currentValueDepth1PrimitiveWrapper = PublicKey(value: currentValueDepth1)
 				
@@ -70,7 +70,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType) in
+						let swiftArray = array.map { (currentCType: LDKPublicKey) in
 PublicKey(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray

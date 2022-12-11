@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1) in
+						let rustArray = array.map { (currentValueDepth1: RouteHop) in
 							
 							return currentValueDepth1.dynamicallyDangledClone().cType!
 						}
@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType) in
+						let swiftArray = array.map { (currentCType: LDKRouteHop) in
 RouteHop(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

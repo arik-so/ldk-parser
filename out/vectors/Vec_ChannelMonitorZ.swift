@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1) in
+						let rustArray = array.map { (currentValueDepth1: ChannelMonitor) in
 							
 							return currentValueDepth1.clone().setCFreeability(freeable: false).cType!
 						}
@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType) in
+						let swiftArray = array.map { (currentCType: LDKChannelMonitor) in
 ChannelMonitor(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

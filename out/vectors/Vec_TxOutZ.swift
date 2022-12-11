@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1) in
+						let rustArray = array.map { (currentValueDepth1: TxOut) in
 							
 							return currentValueDepth1.danglingClone().cType!
 						}
@@ -68,7 +68,7 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType) in
+						let swiftArray = array.map { (currentCType: LDKTxOut) in
 TxOut(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray

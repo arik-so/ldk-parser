@@ -78,6 +78,13 @@ export class RustVector extends RustStruct {
 		}
 		return this.iterateeField.type;
 	}
+
+	get depth(): number {
+		if(this.iterateeField.type instanceof RustVector){
+			return 1 + this.iterateeField.type.depth;
+		}
+		return 1;
+	}
 }
 
 export class RustTrait extends RustStruct {
