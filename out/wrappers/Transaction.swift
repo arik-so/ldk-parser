@@ -71,7 +71,7 @@
 						
 						let dataContainer = UnsafeMutablePointer<UInt8>.allocate(capacity: value.count)
 						dataContainer.initialize(from: value, count: value.count)
-						self.cType = LDKTransaction(data: dataContainer, datalen: UInt(value.count), data_is_owned: false)
+						self.cType = LDKTransaction(data: dataContainer, datalen: UInt(value.count), data_is_owned: true)
 				
 							self.initialCFreeability = self.cType!.data_is_owned
 			

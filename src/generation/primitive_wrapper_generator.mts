@@ -20,7 +20,7 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 		let initialCFreeabilityInfix = '';
 		if (type.ownershipField) {
 			// TODO: determine if setting this value to true by default is wise
-			ownershipInfix = `, ${type.ownershipField.contextualName}: false`;
+			ownershipInfix = `, ${type.ownershipField.contextualName}: true`;
 			initialCFreeabilityInfix = 'let initialCFreeability: Bool'
 		}
 

@@ -671,6 +671,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				if (isOwnershipFieldSafelyEditable && this.hasOwnershipField(argument.type)) {
 					// normally we wanna avoid it, except for LDKChannelMonitors
 					// memoryManagementInfix = '.setCFreeability(freeable: false)';
+					// if(argument.type instanceof RustPrimitiveWrapper && memoryContext && !memoryContext.isValueAccessor){
+						// memoryManagementInfix = ''
+					// }
 				}
 			}
 		}
@@ -894,7 +897,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				// these objects might be short-lived
 				if(returnType.type.ownershipField){
 					// for now, we still dangle these
-					dangleSuffix = '.dangle()';
+					// dangleSuffix = '.dangle()';
+					dangleSuffix = '';
 					// preparedReturnValue.wrapperSuffix += '.dynamicDangle()';
 					// preparedReturnValue.wrapperSuffix += '.dangle()';
 				} else {
