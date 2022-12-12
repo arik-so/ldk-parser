@@ -314,6 +314,8 @@
 					public class ExactLiquidity: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -371,6 +373,8 @@
 					public class MaximumHTLC: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -425,6 +429,8 @@
 
 					/// 
 					public class Total: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0

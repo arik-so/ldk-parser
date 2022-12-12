@@ -290,6 +290,12 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 		}
 
+		if(containerType instanceof RustStruct && containerType.ownershipField && swiftMethodName === 'init'){
+			nativeCallSuffix += `
+				self.initialCFreeability = nativeCallResult.${containerType.ownershipField.contextualName}
+			`
+		}
+
 		return `
 					${this.renderDocComment(method.documentation, 5)}${cloneabilityDeprecationWarning}
 					${methodDeclarationKeywords} ${swiftMethodName}(${swiftMethodArguments.join(', ')}) ${returnTypeInfix}{
@@ -353,7 +359,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				semantics.isStatic = true;
 			}
 		} else {
-			if(standaloneMethodName === 'eq'){
+			if (standaloneMethodName === 'eq') {
 				semantics.isStatic = true;
 			} else {
 				for (const currentArgument of method.arguments) {
@@ -644,7 +650,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		 */
 		let isOwnershipFieldSafelyEditable = false;
 		if (argument.type instanceof RustPrimitiveWrapper) {
-			isOwnershipFieldSafelyEditable = true;
+			// isOwnershipFieldSafelyEditable = true;
 		} else if (argument.type.name === 'LDKChannelMonitor' && isElidedContainerContent) {
 			isOwnershipFieldSafelyEditable = true;
 		}
@@ -657,16 +663,20 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				if (!this.hasCloneMethod(argument.type) && !this.isElidedType(argument.type) && !argument.isAsteriskPointer && memoryContext && !memoryContext.isFreeMethod) {
 					// except when the argument isn't cloneable, and it's not elided, and it's passed by value, in which case we dangle
 					memoryManagementInfix = '.dangle()';
-				}else if(this.hasCloneMethod(argument.type) && argument.isAsteriskPointer && memoryContext && !memoryContext?.isFreeMethod && !memoryContext.isCloneMethod){
+				} else if (this.hasCloneMethod(argument.type) && argument.isAsteriskPointer && memoryContext && !memoryContext?.isFreeMethod && !memoryContext.isCloneMethod) {
 					// if it's being passed as a pointer, we need to clone the object and forget about it
 					// memoryManagementInfix = '.danglingClone()'
 				}
 			} else if (this.hasCloneMethod(argument.type)) {
-				if (this.hasOwnershipField(argument.type)) {
+				if (argument.type instanceof RustStruct && argument.type.ownershipField) {
 					memoryManagementInfix = '.dynamicallyDangledClone()';
 					if (isOwnershipFieldSafelyEditable) {
 						// normally we wanna avoid it, except for LDKChannelMonitors
-						memoryManagementInfix = '.clone().setCFreeability(freeable: false)';
+						// memoryManagementInfix = '.clone().setCFreeability(freeable: false)';
+						memoryManagementInfix = '.setCFreeability(freeable: false)';
+						preparedArgument.deferredCleanup = `
+							${preparedArgument.name}.cType!.${argument.type.ownershipField.contextualName} = ${preparedArgument.name}.initialCFreeability
+						`;
 					}
 				} else {
 					// we have to assume that Rust will just eat this type
@@ -679,11 +689,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					// normally we wanna avoid it, except for LDKChannelMonitors
 					// memoryManagementInfix = '.setCFreeability(freeable: false)';
 					// if(argument.type instanceof RustPrimitiveWrapper && memoryContext && !memoryContext.isValueAccessor){
-						// memoryManagementInfix = ''
+					// memoryManagementInfix = ''
 					// }
 				}
 			}
-		} else if(argument.type instanceof RustPrimitiveWrapper && argument.type.isDeallocatable()){
+		} else if (argument.type instanceof RustPrimitiveWrapper && argument.type.isDeallocatable()) {
 			// memoryManagementInfix = '.dangle()';
 		}
 
@@ -909,15 +919,15 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple || returnType.type instanceof RustPrimitiveWrapper || returnType.type instanceof RustNullableOption) {
 			// basically all the elided types
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
-			if(returnType.type instanceof RustPrimitiveWrapper && !dangleSuffix){
+			if (returnType.type instanceof RustPrimitiveWrapper && !dangleSuffix) {
 				// these objects might be short-lived
-				if(returnType.type.ownershipField){
+				if (returnType.type.ownershipField) {
 					// for now, we still dangle these
 					// dangleSuffix = '.dangle()';
 					dangleSuffix = '';
 					// preparedReturnValue.wrapperSuffix += '.dynamicDangle()';
 					// preparedReturnValue.wrapperSuffix += '.dangle()';
-				} else if(returnType.type.isDeallocatable() || this.hasFreeMethod(returnType.type)) {
+				} else if (returnType.type.isDeallocatable() || this.hasFreeMethod(returnType.type)) {
 					// preparedReturnValue.wrapperSuffix += '.dangle()';
 					dangleSuffix = '.dangle()';
 				}
@@ -967,8 +977,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		}
 
 		let initialCFreeabilityInfix = '';
-		if(type instanceof RustPrimitiveWrapper && type.ownershipField){
-			initialCFreeabilityInfix = `self.initialCFreeability = self.cType!.${type.ownershipField.contextualName}`
+		if (type instanceof RustStruct && type.ownershipField) {
+			initialCFreeabilityInfix = `self.initialCFreeability = self.cType!.${type.ownershipField.contextualName}`;
 		}
 
 		return `
@@ -1040,7 +1050,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				`;
 			}
 
-			if(type instanceof RustPrimitiveWrapper){
+			if(type instanceof RustPrimitiveWrapper) {
+			// if (type.name === 'LDKChannelMonitor') {
 				// these types additionally store the original freeability value
 				freeabilityOverrideInfix = `
 						if !self.initialCFreeability {
@@ -1048,7 +1059,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 							// Bindings.print("Setting ${swiftTypeName} \\(self.instanceNumber)'s ${type.ownershipField?.contextualName}: \\(self.cType!.${ownershipName}) -> true")
 							// self.cType!.${ownershipName} = true
 						}
-				`
+				`;
 			}
 		}
 

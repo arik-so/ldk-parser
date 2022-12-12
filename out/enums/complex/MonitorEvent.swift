@@ -347,6 +347,8 @@
 					public class Completed: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 

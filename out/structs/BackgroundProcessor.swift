@@ -61,6 +61,8 @@
 				/// BackgroundProcessor will immediately stop on drop. It should be stored until shutdown.
 				public class BackgroundProcessor: NativeTypeWrapper {
 
+					let initialCFreeability: Bool
+
 					
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
@@ -71,7 +73,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
-						
+						self.initialCFreeability = self.cType!.is_owned
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
@@ -79,7 +81,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
-						
+						self.initialCFreeability = self.cType!.is_owned
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)

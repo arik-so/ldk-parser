@@ -73,13 +73,15 @@
 				
 
 						// native method call
-						let nativeCallResult = C2Tuple_BlockHashChannelMonitorZ_new(aPrimitiveWrapper.cType!, b.clone().setCFreeability(freeable: false).cType!)
+						let nativeCallResult = C2Tuple_BlockHashChannelMonitorZ_new(aPrimitiveWrapper.cType!, b.setCFreeability(freeable: false).cType!)
 
 						// cleanup
 						
 						// for elided types, we need this
 						aPrimitiveWrapper.noOpRetain()
 				
+							b.cType!.is_owned = b.initialCFreeability
+						
 
 						/*
 						// return value (do some wrapping)

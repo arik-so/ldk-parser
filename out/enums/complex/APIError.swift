@@ -393,6 +393,8 @@
 					public class APIMisuseError: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -447,6 +449,8 @@
 
 					/// 
 					public class FeeRateTooHigh: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -513,6 +517,8 @@
 					public class RouteError: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -569,6 +575,8 @@
 					public class ChannelUnavailable: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -623,6 +631,8 @@
 
 					/// 
 					public class IncompatibleShutdownScript: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0

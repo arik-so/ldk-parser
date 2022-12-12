@@ -16,6 +16,8 @@
 				public class TxOut: NativeTypeWrapper {
 
 					
+
+					
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
 

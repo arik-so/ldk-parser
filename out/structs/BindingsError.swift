@@ -14,6 +14,8 @@
 				public class BindingsError: NativeTypeWrapper {
 
 					
+
+					
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
 

@@ -319,6 +319,8 @@
 					public class DisconnectPeer: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -377,6 +379,8 @@
 					public class SendErrorMessage: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -431,6 +435,8 @@
 
 					/// 
 					public class SendWarningMessage: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0

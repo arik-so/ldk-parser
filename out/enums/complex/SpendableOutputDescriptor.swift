@@ -349,6 +349,8 @@
 					public class StaticOutput: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 

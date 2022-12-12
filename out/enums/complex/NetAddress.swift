@@ -399,6 +399,8 @@
 					public class IPv4: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -463,6 +465,8 @@
 					public class IPv6: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -525,6 +529,8 @@
 
 					/// 
 					public class OnionV3: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -605,6 +611,8 @@
 
 					/// 
 					public class Hostname: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0

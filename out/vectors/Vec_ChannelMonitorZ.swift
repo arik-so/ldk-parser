@@ -46,7 +46,7 @@
 						
 						let rustArray = array.map { (currentValueDepth1: ChannelMonitor) -> LDKChannelMonitor in
 							
-							return currentValueDepth1.clone().setCFreeability(freeable: false).cType!
+							return currentValueDepth1.setCFreeability(freeable: false).cType!
 						}
 				
 

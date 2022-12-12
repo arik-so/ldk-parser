@@ -456,6 +456,8 @@
 					public class CounterpartyForceClosed: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -514,6 +516,8 @@
 
 					/// 
 					public class ProcessingError: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0

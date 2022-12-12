@@ -330,6 +330,8 @@
 					public class NextHopChannel: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -398,6 +400,8 @@
 					public class UnknownNextHop: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -452,6 +456,8 @@
 
 					/// 
 					public class FailedPayment: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0

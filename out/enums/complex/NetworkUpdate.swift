@@ -319,6 +319,8 @@
 					public class ChannelUpdateMessage: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -373,6 +375,8 @@
 
 					/// 
 					public class ChannelFailure: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -438,6 +442,8 @@
 
 					/// 
 					public class NodeFailure: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0

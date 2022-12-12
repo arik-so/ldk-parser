@@ -34,6 +34,14 @@ export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
 		let fieldAccessors = '';
 		let generatedMethods = '';
 
+		let ownershipInfix = '';
+		let initialCFreeabilityInfix = '';
+		if (type.ownershipField) {
+			// TODO: determine if setting this value to true by default is wise
+			ownershipInfix = `, ${type.ownershipField.contextualName}: true`;
+			initialCFreeabilityInfix = 'let initialCFreeability: Bool'
+		}
+
 		for (const [_, currentField] of Object.entries(type.fields)) {
 			fieldAccessors += this.generateAccessor(currentField, type);
 		}
@@ -47,11 +55,14 @@ export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
 		}
 
 
+
 		return `
 				${containerLessPrefix}
 
 				${this.renderDocComment(type.documentation, 4)}
 				public class ${swiftTypeName}: NativeTypeWrapper {
+
+					${initialCFreeabilityInfix}
 
 					${this.inheritedInits(type)}
 

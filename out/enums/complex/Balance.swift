@@ -380,6 +380,8 @@
 					public class ClaimableOnChannelClose: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -435,6 +437,8 @@
 
 					/// 
 					public class ClaimableAwaitingConfirmations: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -503,6 +507,8 @@
 					public class ContentiousClaimable: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -567,6 +573,8 @@
 
 					/// 
 					public class MaybeTimeoutClaimableHTLC: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -635,6 +643,8 @@
 					public class MaybePreimageClaimableHTLC: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -699,6 +709,8 @@
 
 					/// 
 					public class CounterpartyRevokedOutputClaimable: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0

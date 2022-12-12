@@ -958,6 +958,8 @@
 					public class FundingGenerationReady: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1055,6 +1057,8 @@
 					public class PaymentReceived: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1129,6 +1133,8 @@
 					public class PaymentClaimed: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1201,6 +1207,8 @@
 
 					/// 
 					public class PaymentSent: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1301,6 +1309,8 @@
 					public class PaymentFailed: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1370,6 +1380,8 @@
 
 					/// 
 					public class PaymentPathSuccessful: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1452,6 +1464,8 @@
 
 					/// 
 					public class PaymentPathFailed: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1613,6 +1627,8 @@
 					public class ProbeSuccessful: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1687,6 +1703,8 @@
 
 					/// 
 					public class ProbeFailed: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1777,6 +1795,8 @@
 					public class PendingHTLCsForwardable: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1836,6 +1856,8 @@
 					public class SpendableOutputs: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1890,6 +1912,8 @@
 
 					/// 
 					public class PaymentForwarded: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1991,6 +2015,8 @@
 					public class ChannelClosed: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -2072,6 +2098,8 @@
 					public class DiscardFunding: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -2134,6 +2162,8 @@
 
 					/// 
 					public class OpenChannelRequest: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -2251,6 +2281,8 @@
 
 					/// 
 					public class HTLCHandlingFailed: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0

@@ -904,6 +904,8 @@
 					public class SendAcceptChannel: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -966,6 +968,8 @@
 
 					/// 
 					public class SendOpenChannel: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1032,6 +1036,8 @@
 					public class SendFundingCreated: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1094,6 +1100,8 @@
 
 					/// 
 					public class SendFundingSigned: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1160,6 +1168,8 @@
 					public class SendChannelReady: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1222,6 +1232,8 @@
 
 					/// 
 					public class SendAnnouncementSignatures: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1288,6 +1300,8 @@
 					public class UpdateHTLCs: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1350,6 +1364,8 @@
 
 					/// 
 					public class SendRevokeAndACK: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1416,6 +1432,8 @@
 					public class SendClosingSigned: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1478,6 +1496,8 @@
 
 					/// 
 					public class SendShutdown: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1544,6 +1564,8 @@
 					public class SendChannelReestablish: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1606,6 +1628,8 @@
 
 					/// 
 					public class SendChannelAnnouncement: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1680,6 +1704,8 @@
 					public class BroadcastChannelAnnouncement: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1744,6 +1770,8 @@
 					public class BroadcastChannelUpdate: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1798,6 +1826,8 @@
 
 					/// 
 					public class SendChannelUpdate: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1864,6 +1894,8 @@
 					public class HandleError: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -1926,6 +1958,8 @@
 
 					/// 
 					public class SendChannelRangeQuery: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
@@ -1992,6 +2026,8 @@
 					public class SendShortIdsQuery: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -2056,6 +2092,8 @@
 					public class SendReplyChannelRange: NativeTypeWrapper {
 
 						
+
+						
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
@@ -2118,6 +2156,8 @@
 
 					/// 
 					public class SendGossipTimestampFilter: NativeTypeWrapper {
+
+						
 
 						
 						private static var instanceCounter: UInt = 0
