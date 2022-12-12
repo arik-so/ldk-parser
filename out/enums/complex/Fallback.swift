@@ -254,7 +254,7 @@
 							return nil
 						}
 
-						return TwentyBytes(cType: self.cType!.pub_key_hash).dangle().dangle().getValue()
+						return TwentyBytes(cType: self.cType!.pub_key_hash).dangle().getValue()
 					}
 			
 					public func getValueAsScriptHash() -> [UInt8]? {
@@ -262,7 +262,7 @@
 							return nil
 						}
 
-						return TwentyBytes(cType: self.cType!.script_hash).dangle().dangle().getValue()
+						return TwentyBytes(cType: self.cType!.script_hash).dangle().getValue()
 					}
 			
 
@@ -333,7 +333,7 @@
 						/// 
 						public func getVersion() -> UInt8 {
 							// return value (do some wrapping)
-							let returnValue = u5(cType: self.cType!.version).dangle().dangle().getValue()
+							let returnValue = u5(cType: self.cType!.version).dangle().getValue()
 
 							return returnValue;
 						}

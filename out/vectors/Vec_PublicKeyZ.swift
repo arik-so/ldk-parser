@@ -73,7 +73,7 @@
 		
 
 						let swiftArray = array.map { (currentCType: LDKPublicKey) -> [UInt8] in
-PublicKey(cType: currentCType).dangle().dangle().getValue()
+PublicKey(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

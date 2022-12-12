@@ -304,8 +304,8 @@
 						internal func dynamicallyDangledClone() -> Ping {
 							let dangledClone = self.clone()
 							// if it's owned, i. e. controlled by Rust, it should dangle on our end
-							dangledClone.dangling = dangledClone.cType!.is_owned
-							return dangledClone
+							// dangledClone.dangling = dangledClone.cType!.is_owned
+							// return dangledClone
 						}
 					
 					internal func setCFreeability(freeable: Bool) -> Ping {

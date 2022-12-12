@@ -127,7 +127,7 @@
 					/// The element at position 0
 					public func getA() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = Signature(cType: self.cType!.a).dangle().dangle().getValue()
+						let returnValue = Signature(cType: self.cType!.a).dangle().getValue()
 
 						return returnValue;
 					}

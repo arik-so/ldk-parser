@@ -75,7 +75,7 @@
 		
 
 						let swiftArray = array.map { (currentCType: LDKTransaction) -> [UInt8] in
-Transaction(cType: currentCType).dangle().dangle().getValue()
+Transaction(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}

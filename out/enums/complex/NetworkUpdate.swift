@@ -470,7 +470,7 @@
 						/// The node id of the failed node.
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
 
 							return returnValue;
 						}

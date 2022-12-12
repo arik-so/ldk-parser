@@ -643,7 +643,7 @@
 							return nil
 						}
 
-						return Str(cType: self.cType!.invalid_slice_length).dangle().dangle().getValue()
+						return Str(cType: self.cType!.invalid_slice_length).dangle().getValue()
 					}
 			
 

@@ -890,17 +890,19 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (returnType.type instanceof RustVector || returnType.type instanceof RustTuple || returnType.type instanceof RustPrimitiveWrapper || returnType.type instanceof RustNullableOption) {
 			// basically all the elided types
 			preparedReturnValue.wrapperPrefix += `${this.swiftTypeName(returnType.type)}(cType: `;
-			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
-			if(returnType.type instanceof RustPrimitiveWrapper){
+			if(returnType.type instanceof RustPrimitiveWrapper && !dangleSuffix){
 				// these objects might be short-lived
 				if(returnType.type.ownershipField){
 					// for now, we still dangle these
+					dangleSuffix = '.dangle()';
 					// preparedReturnValue.wrapperSuffix += '.dynamicDangle()';
-					preparedReturnValue.wrapperSuffix += '.dangle()';
+					// preparedReturnValue.wrapperSuffix += '.dangle()';
 				} else {
-					preparedReturnValue.wrapperSuffix += '.dangle()';
+					// preparedReturnValue.wrapperSuffix += '.dangle()';
+					dangleSuffix = '.dangle()';
 				}
 			}
+			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
 			if (returnType.type !== containerType) {
 				// it's an elided type, so we pass it through
 				preparedReturnValue.wrapperSuffix += '.getValue()';
@@ -1012,8 +1014,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					internal func dynamicallyDangledClone() -> ${swiftTypeName} {
 						let dangledClone = self.clone()
 						// if it's owned, i. e. controlled by Rust, it should dangle on our end
-						dangledClone.dangling = dangledClone.cType!.${ownershipName}
-						return dangledClone
+						// dangledClone.dangling = dangledClone.cType!.${ownershipName}
+						// return dangledClone
 					}
 				`;
 			}
