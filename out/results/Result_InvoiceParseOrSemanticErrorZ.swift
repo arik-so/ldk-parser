@@ -25,6 +25,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
+						
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
@@ -32,6 +33,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
+						
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)

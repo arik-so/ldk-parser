@@ -15,6 +15,8 @@
 				/// This is *not* null-terminated so cannot be used directly as a C string!
 				internal class Str: NativeTypeWrapper {
 
+					let initialCFreeability: Bool
+
 					
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
@@ -25,6 +27,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
+						self.initialCFreeability = self.cType!.chars_is_owned
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
@@ -32,6 +35,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
+						self.initialCFreeability = self.cType!.chars_is_owned
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -43,6 +47,8 @@
 						self.instanceNumber = Self.instanceCounter
 
 						self.cType = LDKStr(chars: Bindings.string_to_unsafe_uint8_pointer(string: value), len: UInt(value.count), chars_is_owned: true)
+					self.initialCFreeability = self.cType!.chars_is_owned
+			
 
 						super.init(conflictAvoidingVariableName: 0)
 					}

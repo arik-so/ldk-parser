@@ -938,6 +938,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			throw new Error('Unnamed type of kind ' + type.constructor.name);
 		}
 
+		let initialCFreeabilityInfix = '';
+		if(type instanceof RustPrimitiveWrapper && type.ownershipField){
+			initialCFreeabilityInfix = `self.initialCFreeability = self.cType!.${type.ownershipField.contextualName}`
+		}
+
 		return `
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
@@ -948,6 +953,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
+						${initialCFreeabilityInfix}
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
@@ -955,6 +961,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
+						${initialCFreeabilityInfix}
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)

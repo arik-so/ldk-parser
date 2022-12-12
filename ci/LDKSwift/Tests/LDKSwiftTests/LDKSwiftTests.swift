@@ -39,7 +39,7 @@ class LDKSwiftTests: XCTestCase {
         let logger = TestLogger()
         let feeEstimator = TestFeeEstimator()
         let persister = TestPersister()
-        
+
         let chainMonitor = ChainMonitor(chainSource: filter, broadcaster: broadcaster, logger: logger, feeest: feeEstimator, persister: persister)
 
         let seed: [UInt8] = [UInt8](Data(base64Encoded: "//////////////////////////////////////////8=")!)
@@ -48,7 +48,7 @@ class LDKSwiftTests: XCTestCase {
 
         let keysManager = KeysManager(seed: seed, startingTimeSecs: timestamp_seconds, startingTimeNanos: timestamp_nanos)
         let config = UserConfig.initWithDefault()
-        
+
         let keysInterface = keysManager.asKeysInterface()
 
         let serialized_channel_manager = LDKTestFixtures.serializedChannelManager
@@ -56,7 +56,7 @@ class LDKSwiftTests: XCTestCase {
         let serializedChannelMonitors: [[UInt8]] = LDKTestFixtures.serializedChannelMonitors
 
         var monitors: [LDKChannelMonitor] = []
-        
+
         let channel_manager_constructor = try ChannelManagerConstructor(
                 channel_manager_serialized: serialized_channel_manager,
                 channel_monitors_serialized: serializedChannelMonitors,
@@ -172,7 +172,7 @@ class LDKSwiftTests: XCTestCase {
 
         let channelManagerAndNetworkGraphPersisterAndEventHandler = FloatingChannelManagerPersister(channelManager: channelManager)
     }
-    
+
     func testChannelCreationResultError() async throws {
         let reversedGenesisHashHex = "6fe28c0ab6f1b372c1a6a246ae63f74f931e8365e15a089c68d6190000000000"
         let reversedGenesisHash = Self.hexStringToBytes(hexString: reversedGenesisHashHex)!
@@ -203,21 +203,21 @@ class LDKSwiftTests: XCTestCase {
 
         let channelManagerConstructor = ChannelManagerConstructor(network: .Bitcoin, config: config, current_blockchain_tip_hash: reversedGenesisHash, current_blockchain_tip_height: 0, keys_interface: keysInterface, fee_estimator: feeEstimator, chain_monitor: chainMonitor, net_graph: networkGraph, tx_broadcaster: broadcaster, logger: logger)
         let channelManager = channelManagerConstructor.channelManager
-        
+
         let channelValue: UInt64 = 1_300_000 // 1.3 million satoshis, or 0.013 BTC
         let channelValueBtcString = "0.013"
         let reserveAmount: UInt64 = 1000 // a thousand satoshis rserve
         let peerPubkey = Self.hexStringToBytes(hexString: "02deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef")!
         let channelOpenResult = channelManager.createChannel(theirNetworkKey: peerPubkey, channelValueSatoshis: channelValue, pushMsat: reserveAmount, userChannelId: 42, overrideConfig: config)
-        
+
         let channelOpenError = channelOpenResult.getError()!
         print("error type: \(channelOpenError.getValueType())")
-        
+
         let channelUnavailableError = channelOpenError.getValueAsChannelUnavailable()!
         print("channel unavailable error: \(channelUnavailableError.getErr())")
     }
 
-    
+
 	func testMainnetGraphSync() async throws {
         let reversedGenesisHashHex = "6fe28c0ab6f1b372c1a6a246ae63f74f931e8365e15a089c68d6190000000000"
         let reversedGenesisHash = Self.hexStringToBytes(hexString: reversedGenesisHashHex)!
@@ -282,7 +282,7 @@ class LDKSwiftTests: XCTestCase {
 
 		Bindings.setLogThreshold(severity: .DEBUG)
     }
-    
+
 
     func testRouteConstruction() throws {
 
@@ -367,11 +367,11 @@ class LDKSwiftTests: XCTestCase {
         // let lockableScore = LockableScore()
         // let defaultRouter = DefaultRouter(network_graph: networkGraph, logger: logger, random_seed_bytes: [UInt8](repeating: 0, count: 32), scorer: lockableScore)
 		// let router = defaultRouter.as_Router()
-		
+
 		// let multiThreadedScorer = MultiThreadedLockableScore(score: score)
 
 
-        
+
         let payerPubkey = LDKSwiftTests.hexStringToBytes(hexString: "0242a4ae0c5bef18048fbecf995094b74bfb0f7391418d71ed394784373f41e4f3")!
         let recipientPubkey = LDKSwiftTests.hexStringToBytes(hexString: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f")!
 
@@ -385,11 +385,11 @@ class LDKSwiftTests: XCTestCase {
         let randomSeedBytes: [UInt8] = [UInt8](repeating: 0, count: 32)
         let foundRoute = Bindings.swiftFindRoute(ourNodePubkey: payerPubkey, routeParams: routeParameters, networkGraph: networkGraph, firstHops: [], logger: logger, scorer: score, randomSeedBytes: randomSeedBytes)
 //        let foundRoute = router.find_route(payer: payerPubkey, route_params: routeParameters, payment_hash: nil, first_hops: firstHops, inflight_htlcs: <#T##InFlightHtlcs#>)
-        
+
         if let routeError = foundRoute.getError() {
             print("routing error: \(routeError.getErr())")
         }
-        
+
         if let route = foundRoute.getValue() {
             let paths = route.getPaths()
             print("found route with \(paths.count) paths!")
@@ -400,7 +400,7 @@ class LDKSwiftTests: XCTestCase {
                 }
             }
         }
-        
+
 	}
     #endif
 
@@ -408,20 +408,20 @@ class LDKSwiftTests: XCTestCase {
 		// for i in 0...(1 << 7) {
         let combinationCount = HumanObjectPeerTestInstance.Configuration.combinationCount()
         for i in 0..<combinationCount { // only do one test run initially
-            
+
             print("Running test with flags \(i)");
-            
+
             let config = HumanObjectPeerTestInstance.Configuration()
-            
+
             config.shouldRecipientRejectPayment = (i & (1 << 0)) != 0
             print("shouldRecipientRejectPayment: \(config.shouldRecipientRejectPayment)")
-            
+
             config.useFilter = (i & (1 << 1)) != 0
             print("useFilter: \(config.useFilter)")
-            
+
             config.useRouter = (i & (1 << 2)) != 0
             print("useRouter: \(config.useRouter)")
-            
+
             /*
             config.nice_close = (i & (1 << 0)) != 0;
             config.use_km_wrapper = (i & (1 << 1)) != 0;

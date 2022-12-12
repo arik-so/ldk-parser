@@ -37,6 +37,8 @@
 				/// `data_is_owned` either set or unset at your discretion.
 				internal class Transaction: NativeTypeWrapper {
 
+					let initialCFreeability: Bool
+
 					
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
@@ -47,6 +49,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
+						self.initialCFreeability = self.cType!.data_is_owned
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
@@ -54,6 +57,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
+						self.initialCFreeability = self.cType!.data_is_owned
 						super.init(conflictAvoidingVariableName: 0)
 						self.dangling = true
 						try! self.addAnchor(anchor: anchor)
@@ -69,6 +73,8 @@
 						dataContainer.initialize(from: value, count: value.count)
 						self.cType = LDKTransaction(data: dataContainer, datalen: UInt(value.count), data_is_owned: true)
 				
+					self.initialCFreeability = self.cType!.data_is_owned
+			
 
 						super.init(conflictAvoidingVariableName: 0)
 					}

@@ -17,9 +17,11 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 		let valueAccessor = '';
 
 		let ownershipInfix = '';
+		let initialCFreeabilityInfix = '';
 		if (type.ownershipField) {
 			// TODO: determine if setting this value to true by default is wise
 			ownershipInfix = `, ${type.ownershipField.contextualName}: true`;
+			initialCFreeabilityInfix = 'let initialCFreeability: Bool'
 		}
 
 		const dataFieldName = type.dataField.contextualName;
@@ -71,6 +73,12 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 			throw new Error(`Unsupported primitive data type inside ${type.name}: ${type.dataField.type.typeDescription})`)
 		}
 
+		if (type.ownershipField) {
+			initializer += `
+							self.initialCFreeability = self.cType!.${type.ownershipField.contextualName}
+			`;
+		}
+
 		return `
 			#if SWIFT_PACKAGE
 			import LDKHeaders
@@ -85,6 +93,8 @@ export default class PrimitiveWrapperGenerator extends BaseTypeGenerator<RustPri
 
 				${this.renderDocComment(type.documentation, 4)}
 				internal class ${swiftTypeName}: NativeTypeWrapper {
+
+					${initialCFreeabilityInfix}
 
 					${this.inheritedInits(type)}
 
