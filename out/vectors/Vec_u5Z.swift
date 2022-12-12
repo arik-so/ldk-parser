@@ -112,6 +112,7 @@ u5(cType: currentCType).dangle().dangle().getValue()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_u5Z \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_u5Z \(self.instanceNumber) due to dangle.")

@@ -97,6 +97,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Option_ScalarZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Option_ScalarZ \(self.instanceNumber) due to dangle.")

@@ -185,6 +185,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Hostname \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Hostname \(self.instanceNumber) due to dangle.")

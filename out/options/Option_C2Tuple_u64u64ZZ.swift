@@ -127,6 +127,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Option_C2Tuple_u64u64ZZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Option_C2Tuple_u64u64ZZ \(self.instanceNumber) due to dangle.")

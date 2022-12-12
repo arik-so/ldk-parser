@@ -331,6 +331,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing SpendableOutputDescriptor \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing SpendableOutputDescriptor \(self.instanceNumber) due to dangle.")

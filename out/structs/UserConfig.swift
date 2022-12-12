@@ -507,6 +507,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing UserConfig \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing UserConfig \(self.instanceNumber) due to dangle.")

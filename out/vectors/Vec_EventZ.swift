@@ -110,6 +110,7 @@ Event(cType: currentCType, anchor: self).dangle()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_EventZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_EventZ \(self.instanceNumber) due to dangle.")

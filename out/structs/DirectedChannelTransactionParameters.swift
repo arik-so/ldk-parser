@@ -239,6 +239,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing DirectedChannelTransactionParameters \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing DirectedChannelTransactionParameters \(self.instanceNumber) due to dangle.")

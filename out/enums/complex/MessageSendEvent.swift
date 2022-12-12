@@ -886,6 +886,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing MessageSendEvent \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing MessageSendEvent \(self.instanceNumber) due to dangle.")

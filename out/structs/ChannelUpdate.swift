@@ -328,6 +328,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ChannelUpdate \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ChannelUpdate \(self.instanceNumber) due to dangle.")

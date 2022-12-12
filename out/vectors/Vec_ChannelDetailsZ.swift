@@ -110,6 +110,7 @@ ChannelDetails(cType: currentCType, anchor: self).dangle()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_ChannelDetailsZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_ChannelDetailsZ \(self.instanceNumber) due to dangle.")

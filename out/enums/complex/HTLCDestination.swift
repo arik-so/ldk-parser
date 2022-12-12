@@ -312,6 +312,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing HTLCDestination \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing HTLCDestination \(self.instanceNumber) due to dangle.")

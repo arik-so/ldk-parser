@@ -342,6 +342,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing FundingSigned \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing FundingSigned \(self.instanceNumber) due to dangle.")

@@ -303,6 +303,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing DataLossProtect \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing DataLossProtect \(self.instanceNumber) due to dangle.")

@@ -177,6 +177,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing InvoiceSignature \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing InvoiceSignature \(self.instanceNumber) due to dangle.")

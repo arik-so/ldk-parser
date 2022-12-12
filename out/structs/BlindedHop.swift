@@ -138,6 +138,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing BlindedHop \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing BlindedHop \(self.instanceNumber) due to dangle.")

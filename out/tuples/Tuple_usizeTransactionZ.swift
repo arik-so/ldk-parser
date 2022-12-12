@@ -158,6 +158,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_usizeTransactionZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_usizeTransactionZ \(self.instanceNumber) due to dangle.")

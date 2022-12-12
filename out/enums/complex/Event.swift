@@ -942,6 +942,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Event \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Event \(self.instanceNumber) due to dangle.")

@@ -510,6 +510,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing UnsignedNodeAnnouncement \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing UnsignedNodeAnnouncement \(self.instanceNumber) due to dangle.")

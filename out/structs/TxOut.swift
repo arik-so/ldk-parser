@@ -150,6 +150,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing TxOut \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing TxOut \(self.instanceNumber) due to dangle.")

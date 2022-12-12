@@ -357,6 +357,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ChainMonitor \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ChainMonitor \(self.instanceNumber) due to dangle.")

@@ -155,6 +155,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_u32ScriptZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_u32ScriptZ \(self.instanceNumber) due to dangle.")

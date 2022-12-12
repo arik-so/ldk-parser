@@ -666,6 +666,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ParseError \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ParseError \(self.instanceNumber) due to dangle.")

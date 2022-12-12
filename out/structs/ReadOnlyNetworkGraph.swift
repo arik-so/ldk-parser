@@ -245,6 +245,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ReadOnlyNetworkGraph \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ReadOnlyNetworkGraph \(self.instanceNumber) due to dangle.")

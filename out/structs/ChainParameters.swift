@@ -254,6 +254,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ChainParameters \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ChainParameters \(self.instanceNumber) due to dangle.")

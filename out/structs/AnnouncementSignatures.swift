@@ -444,6 +444,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing AnnouncementSignatures \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing AnnouncementSignatures \(self.instanceNumber) due to dangle.")

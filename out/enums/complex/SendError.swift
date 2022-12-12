@@ -306,6 +306,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing SendError \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing SendError \(self.instanceNumber) due to dangle.")

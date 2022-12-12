@@ -112,6 +112,7 @@ Signature(cType: currentCType).dangle().dangle().getValue()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_SignatureZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_SignatureZ \(self.instanceNumber) due to dangle.")

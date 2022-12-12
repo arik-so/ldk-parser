@@ -47,7 +47,7 @@
 						self.instanceNumber = Self.instanceCounter
 
 						self.cType = LDKStr(chars: Bindings.string_to_unsafe_uint8_pointer(string: value), len: UInt(value.count), chars_is_owned: true)
-					self.initialCFreeability = self.cType!.chars_is_owned
+							self.initialCFreeability = self.cType!.chars_is_owned
 			
 
 						super.init(conflictAvoidingVariableName: 0)
@@ -104,6 +104,13 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Str \(self.instanceNumber).")
+							
+							if !self.initialCFreeability {
+								// only set to freeable if it was originally false
+								Bindings.print("Setting Str \(self.instanceNumber)'s chars_is_owned: \(self.cType!.chars_is_owned) -> true")
+								self.cType!.chars_is_owned = true
+							}
+					
 							self.free()
 						} else {
 							Bindings.print("Not freeing Str \(self.instanceNumber) due to dangle.")

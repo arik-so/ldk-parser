@@ -177,6 +177,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Sha256 \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Sha256 \(self.instanceNumber) due to dangle.")

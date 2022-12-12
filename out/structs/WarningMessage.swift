@@ -356,6 +356,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing WarningMessage \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing WarningMessage \(self.instanceNumber) due to dangle.")

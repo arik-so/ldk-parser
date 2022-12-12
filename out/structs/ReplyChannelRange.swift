@@ -492,6 +492,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ReplyChannelRange \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ReplyChannelRange \(self.instanceNumber) due to dangle.")

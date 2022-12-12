@@ -407,6 +407,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing QueryChannelRange \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing QueryChannelRange \(self.instanceNumber) due to dangle.")

@@ -432,6 +432,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing StaticPaymentOutputDescriptor \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing StaticPaymentOutputDescriptor \(self.instanceNumber) due to dangle.")

@@ -151,6 +151,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_u32TxOutZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_u32TxOutZ \(self.instanceNumber) due to dangle.")

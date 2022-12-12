@@ -359,6 +359,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing PhantomRouteHints \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing PhantomRouteHints \(self.instanceNumber) due to dangle.")

@@ -221,6 +221,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing PrivateRoute \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing PrivateRoute \(self.instanceNumber) due to dangle.")

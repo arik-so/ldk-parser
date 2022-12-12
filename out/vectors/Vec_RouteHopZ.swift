@@ -110,6 +110,7 @@ RouteHop(cType: currentCType, anchor: self).dangle()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_RouteHopZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_RouteHopZ \(self.instanceNumber) due to dangle.")

@@ -168,6 +168,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_OutPointCVec_MonitorEventZPublicKeyZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_OutPointCVec_MonitorEventZPublicKeyZ \(self.instanceNumber) due to dangle.")

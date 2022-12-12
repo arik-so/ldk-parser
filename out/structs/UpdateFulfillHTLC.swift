@@ -392,6 +392,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing UpdateFulfillHTLC \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing UpdateFulfillHTLC \(self.instanceNumber) due to dangle.")

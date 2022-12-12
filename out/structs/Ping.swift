@@ -320,6 +320,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Ping \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Ping \(self.instanceNumber) due to dangle.")

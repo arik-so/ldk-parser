@@ -336,6 +336,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing OnionMessenger \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing OnionMessenger \(self.instanceNumber) due to dangle.")

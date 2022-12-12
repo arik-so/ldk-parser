@@ -1509,6 +1509,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing InitFeatures \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing InitFeatures \(self.instanceNumber) due to dangle.")

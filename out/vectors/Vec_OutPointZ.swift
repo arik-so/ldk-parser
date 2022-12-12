@@ -110,6 +110,7 @@ OutPoint(cType: currentCType, anchor: self).dangle()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_OutPointZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_OutPointZ \(self.instanceNumber) due to dangle.")

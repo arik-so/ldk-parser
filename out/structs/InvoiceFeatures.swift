@@ -520,6 +520,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing InvoiceFeatures \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing InvoiceFeatures \(self.instanceNumber) due to dangle.")

@@ -301,6 +301,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing NetworkUpdate \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing NetworkUpdate \(self.instanceNumber) due to dangle.")

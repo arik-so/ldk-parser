@@ -73,7 +73,7 @@
 						dataContainer.initialize(from: value, count: value.count)
 						self.cType = LDKTransaction(data: dataContainer, datalen: UInt(value.count), data_is_owned: true)
 				
-					self.initialCFreeability = self.cType!.data_is_owned
+							self.initialCFreeability = self.cType!.data_is_owned
 			
 
 						super.init(conflictAvoidingVariableName: 0)
@@ -129,6 +129,13 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Transaction \(self.instanceNumber).")
+							
+							if !self.initialCFreeability {
+								// only set to freeable if it was originally false
+								Bindings.print("Setting Transaction \(self.instanceNumber)'s data_is_owned: \(self.cType!.data_is_owned) -> true")
+								self.cType!.data_is_owned = true
+							}
+					
 							self.free()
 						} else {
 							Bindings.print("Not freeing Transaction \(self.instanceNumber) due to dangle.")

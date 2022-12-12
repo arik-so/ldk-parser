@@ -281,6 +281,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing InvoicePayer \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing InvoicePayer \(self.instanceNumber) due to dangle.")

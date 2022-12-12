@@ -168,6 +168,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing BlindedRoute \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing BlindedRoute \(self.instanceNumber) due to dangle.")

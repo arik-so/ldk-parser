@@ -110,6 +110,7 @@ ChannelMonitor(cType: currentCType, anchor: self).dangle()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_ChannelMonitorZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_ChannelMonitorZ \(self.instanceNumber) due to dangle.")

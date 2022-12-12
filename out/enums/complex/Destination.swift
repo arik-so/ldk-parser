@@ -159,6 +159,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Destination \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Destination \(self.instanceNumber) due to dangle.")

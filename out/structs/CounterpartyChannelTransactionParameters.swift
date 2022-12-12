@@ -289,6 +289,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing CounterpartyChannelTransactionParameters \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing CounterpartyChannelTransactionParameters \(self.instanceNumber) due to dangle.")

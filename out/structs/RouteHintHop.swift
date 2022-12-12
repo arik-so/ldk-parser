@@ -543,6 +543,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing RouteHintHop \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing RouteHintHop \(self.instanceNumber) due to dangle.")

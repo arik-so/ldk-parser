@@ -125,6 +125,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Option_u64Z \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Option_u64Z \(self.instanceNumber) due to dangle.")

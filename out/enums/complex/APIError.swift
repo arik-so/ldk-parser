@@ -383,6 +383,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing APIError \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing APIError \(self.instanceNumber) due to dangle.")

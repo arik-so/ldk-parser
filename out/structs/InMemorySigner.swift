@@ -879,6 +879,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing InMemorySigner \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing InMemorySigner \(self.instanceNumber) due to dangle.")

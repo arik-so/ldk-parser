@@ -125,6 +125,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Option_MonitorEventZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Option_MonitorEventZ \(self.instanceNumber) due to dangle.")

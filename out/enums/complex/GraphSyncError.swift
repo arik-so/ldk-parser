@@ -184,6 +184,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing GraphSyncError \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing GraphSyncError \(self.instanceNumber) due to dangle.")

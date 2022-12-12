@@ -161,6 +161,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_SignatureSignatureZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_SignatureSignatureZ \(self.instanceNumber) due to dangle.")

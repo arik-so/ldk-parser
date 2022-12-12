@@ -112,6 +112,7 @@ Tuple_usizeTransactionZ(cType: currentCType).dangle().getValue()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_C2Tuple_usizeTransactionZZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_C2Tuple_usizeTransactionZZ \(self.instanceNumber) due to dangle.")

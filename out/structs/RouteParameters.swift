@@ -345,6 +345,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing RouteParameters \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing RouteParameters \(self.instanceNumber) due to dangle.")

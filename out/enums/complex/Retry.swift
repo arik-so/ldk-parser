@@ -237,6 +237,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Retry \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Retry \(self.instanceNumber) due to dangle.")

@@ -606,6 +606,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing RawInvoice \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing RawInvoice \(self.instanceNumber) due to dangle.")

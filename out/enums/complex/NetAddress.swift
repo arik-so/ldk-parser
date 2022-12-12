@@ -381,6 +381,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing NetAddress \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing NetAddress \(self.instanceNumber) due to dangle.")

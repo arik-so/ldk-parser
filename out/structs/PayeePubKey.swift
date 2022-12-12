@@ -258,6 +258,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing PayeePubKey \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing PayeePubKey \(self.instanceNumber) due to dangle.")

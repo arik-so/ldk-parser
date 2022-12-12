@@ -110,6 +110,7 @@ MonitorEvent(cType: currentCType, anchor: self).dangle()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_MonitorEventZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_MonitorEventZ \(self.instanceNumber) due to dangle.")

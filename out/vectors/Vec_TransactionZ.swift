@@ -114,6 +114,7 @@ Transaction(cType: currentCType).dangle().dangle().getValue()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_TransactionZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_TransactionZ \(self.instanceNumber) due to dangle.")

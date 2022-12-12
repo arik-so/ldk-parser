@@ -95,6 +95,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Option_WriteableScoreZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Option_WriteableScoreZ \(self.instanceNumber) due to dangle.")

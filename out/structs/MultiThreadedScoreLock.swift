@@ -136,6 +136,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing MultiThreadedScoreLock \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing MultiThreadedScoreLock \(self.instanceNumber) due to dangle.")

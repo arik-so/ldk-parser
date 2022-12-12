@@ -378,6 +378,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Record \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Record \(self.instanceNumber) due to dangle.")

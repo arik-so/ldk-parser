@@ -339,6 +339,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing CounterpartyForwardingInfo \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing CounterpartyForwardingInfo \(self.instanceNumber) due to dangle.")

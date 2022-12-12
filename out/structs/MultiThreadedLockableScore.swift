@@ -185,6 +185,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing MultiThreadedLockableScore \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing MultiThreadedLockableScore \(self.instanceNumber) due to dangle.")

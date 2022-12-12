@@ -1532,6 +1532,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing NodeFeatures \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing NodeFeatures \(self.instanceNumber) due to dangle.")

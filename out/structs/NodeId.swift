@@ -242,6 +242,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing NodeId \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing NodeId \(self.instanceNumber) due to dangle.")

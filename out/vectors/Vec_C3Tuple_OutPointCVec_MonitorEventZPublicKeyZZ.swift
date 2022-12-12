@@ -112,6 +112,7 @@ Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: currentCType).dangle().getValu
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ \(self.instanceNumber) due to dangle.")

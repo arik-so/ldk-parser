@@ -296,6 +296,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing EffectiveCapacity \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing EffectiveCapacity \(self.instanceNumber) due to dangle.")

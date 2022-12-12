@@ -486,6 +486,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing HTLCOutputInCommitment \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing HTLCOutputInCommitment \(self.instanceNumber) due to dangle.")

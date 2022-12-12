@@ -110,6 +110,7 @@ UpdateFailHTLC(cType: currentCType, anchor: self).dangle()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_UpdateFailHTLCZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_UpdateFailHTLCZ \(self.instanceNumber) due to dangle.")

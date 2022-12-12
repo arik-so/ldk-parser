@@ -955,6 +955,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing AcceptChannel \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing AcceptChannel \(self.instanceNumber) due to dangle.")

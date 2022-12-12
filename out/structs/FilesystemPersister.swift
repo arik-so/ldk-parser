@@ -190,6 +190,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing FilesystemPersister \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing FilesystemPersister \(self.instanceNumber) due to dangle.")

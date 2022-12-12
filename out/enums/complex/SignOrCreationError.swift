@@ -226,6 +226,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing SignOrCreationError \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing SignOrCreationError \(self.instanceNumber) due to dangle.")

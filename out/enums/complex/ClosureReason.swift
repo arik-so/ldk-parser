@@ -442,6 +442,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ClosureReason \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ClosureReason \(self.instanceNumber) due to dangle.")

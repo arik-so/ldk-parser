@@ -128,6 +128,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ExpandedKey \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ExpandedKey \(self.instanceNumber) due to dangle.")

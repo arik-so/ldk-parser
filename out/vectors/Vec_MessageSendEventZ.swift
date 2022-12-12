@@ -110,6 +110,7 @@ MessageSendEvent(cType: currentCType, anchor: self).dangle()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_MessageSendEventZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_MessageSendEventZ \(self.instanceNumber) due to dangle.")

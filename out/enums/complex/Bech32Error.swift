@@ -174,6 +174,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Bech32Error \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Bech32Error \(self.instanceNumber) due to dangle.")

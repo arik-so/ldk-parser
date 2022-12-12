@@ -112,6 +112,7 @@ Tuple_TxidCVec_C2Tuple_u32TxOutZZZ(cType: currentCType).dangle().getValue()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_TransactionOutputsZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_TransactionOutputsZ \(self.instanceNumber) due to dangle.")

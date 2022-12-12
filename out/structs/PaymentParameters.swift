@@ -756,6 +756,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing PaymentParameters \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing PaymentParameters \(self.instanceNumber) due to dangle.")

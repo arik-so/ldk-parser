@@ -103,6 +103,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_u64Z \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_u64Z \(self.instanceNumber) due to dangle.")

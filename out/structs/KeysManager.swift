@@ -265,6 +265,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing KeysManager \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing KeysManager \(self.instanceNumber) due to dangle.")

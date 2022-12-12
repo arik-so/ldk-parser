@@ -223,6 +223,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing RawDataPart \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing RawDataPart \(self.instanceNumber) due to dangle.")

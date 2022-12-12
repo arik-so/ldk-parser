@@ -186,6 +186,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing GossipSync \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing GossipSync \(self.instanceNumber) due to dangle.")

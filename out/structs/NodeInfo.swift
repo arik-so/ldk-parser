@@ -416,6 +416,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing NodeInfo \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing NodeInfo \(self.instanceNumber) due to dangle.")

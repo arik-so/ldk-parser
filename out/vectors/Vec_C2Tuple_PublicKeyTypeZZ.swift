@@ -112,6 +112,7 @@ Tuple_PublicKeyTypeZ(cType: currentCType).dangle().getValue()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_C2Tuple_PublicKeyTypeZZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_C2Tuple_PublicKeyTypeZZ \(self.instanceNumber) due to dangle.")

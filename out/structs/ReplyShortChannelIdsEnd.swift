@@ -340,6 +340,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ReplyShortChannelIdsEnd \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ReplyShortChannelIdsEnd \(self.instanceNumber) due to dangle.")

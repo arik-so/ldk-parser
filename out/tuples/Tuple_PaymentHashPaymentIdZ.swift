@@ -161,6 +161,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_PaymentHashPaymentIdZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_PaymentHashPaymentIdZ \(self.instanceNumber) due to dangle.")

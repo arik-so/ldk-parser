@@ -292,6 +292,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing CounterpartyCommitmentSecrets \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing CounterpartyCommitmentSecrets \(self.instanceNumber) due to dangle.")

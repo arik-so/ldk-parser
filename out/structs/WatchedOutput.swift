@@ -390,6 +390,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing WatchedOutput \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing WatchedOutput \(self.instanceNumber) due to dangle.")

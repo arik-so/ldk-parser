@@ -270,6 +270,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing BackgroundProcessor \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing BackgroundProcessor \(self.instanceNumber) due to dangle.")

@@ -164,6 +164,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_RawInvoice_u832InvoiceSignatureZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_RawInvoice_u832InvoiceSignatureZ \(self.instanceNumber) due to dangle.")

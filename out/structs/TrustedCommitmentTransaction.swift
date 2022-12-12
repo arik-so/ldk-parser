@@ -229,6 +229,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing TrustedCommitmentTransaction \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing TrustedCommitmentTransaction \(self.instanceNumber) due to dangle.")

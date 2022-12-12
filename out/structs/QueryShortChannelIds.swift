@@ -356,6 +356,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing QueryShortChannelIds \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing QueryShortChannelIds \(self.instanceNumber) due to dangle.")

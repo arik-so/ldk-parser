@@ -325,6 +325,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing PositiveTimestamp \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing PositiveTimestamp \(self.instanceNumber) due to dangle.")

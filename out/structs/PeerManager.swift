@@ -573,6 +573,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing PeerManager \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing PeerManager \(self.instanceNumber) due to dangle.")

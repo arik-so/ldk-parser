@@ -212,6 +212,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing PeerHandleError \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing PeerHandleError \(self.instanceNumber) due to dangle.")

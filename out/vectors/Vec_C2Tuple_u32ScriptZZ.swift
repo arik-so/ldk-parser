@@ -112,6 +112,7 @@ Tuple_u32ScriptZ(cType: currentCType).dangle().getValue()
 
 						if !self.dangling {
 							Bindings.print("Freeing Vec_C2Tuple_u32ScriptZZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Vec_C2Tuple_u32ScriptZZ \(self.instanceNumber) due to dangle.")

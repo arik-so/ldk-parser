@@ -222,6 +222,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing PaymentError \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing PaymentError \(self.instanceNumber) due to dangle.")

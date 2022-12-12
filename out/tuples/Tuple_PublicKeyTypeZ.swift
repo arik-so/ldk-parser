@@ -156,6 +156,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_PublicKeyTypeZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_PublicKeyTypeZ \(self.instanceNumber) due to dangle.")

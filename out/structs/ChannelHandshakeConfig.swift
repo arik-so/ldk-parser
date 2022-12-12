@@ -771,6 +771,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ChannelHandshakeConfig \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ChannelHandshakeConfig \(self.instanceNumber) due to dangle.")

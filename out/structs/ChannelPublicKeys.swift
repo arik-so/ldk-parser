@@ -524,6 +524,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ChannelPublicKeys \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ChannelPublicKeys \(self.instanceNumber) due to dangle.")

@@ -113,6 +113,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Future \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Future \(self.instanceNumber) due to dangle.")

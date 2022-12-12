@@ -155,6 +155,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_OutPointScriptZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_OutPointScriptZ \(self.instanceNumber) due to dangle.")

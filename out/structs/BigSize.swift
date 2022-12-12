@@ -172,6 +172,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing BigSize \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing BigSize \(self.instanceNumber) due to dangle.")

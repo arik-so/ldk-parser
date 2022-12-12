@@ -215,6 +215,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing FixedPenaltyScorer \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing FixedPenaltyScorer \(self.instanceNumber) due to dangle.")

@@ -248,6 +248,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing MinFinalCltvExpiry \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing MinFinalCltvExpiry \(self.instanceNumber) due to dangle.")

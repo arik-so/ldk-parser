@@ -402,6 +402,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing RevokeAndACK \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing RevokeAndACK \(self.instanceNumber) due to dangle.")

@@ -284,6 +284,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing IgnoringMessageHandler \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing IgnoringMessageHandler \(self.instanceNumber) due to dangle.")

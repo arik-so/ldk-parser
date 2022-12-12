@@ -506,6 +506,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing CommitmentUpdate \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing CommitmentUpdate \(self.instanceNumber) due to dangle.")

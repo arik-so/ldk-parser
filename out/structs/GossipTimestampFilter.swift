@@ -382,6 +382,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing GossipTimestampFilter \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing GossipTimestampFilter \(self.instanceNumber) due to dangle.")

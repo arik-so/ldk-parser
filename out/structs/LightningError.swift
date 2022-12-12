@@ -256,6 +256,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing LightningError \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing LightningError \(self.instanceNumber) due to dangle.")

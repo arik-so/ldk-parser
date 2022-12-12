@@ -177,6 +177,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing MonitorUpdateId \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing MonitorUpdateId \(self.instanceNumber) due to dangle.")

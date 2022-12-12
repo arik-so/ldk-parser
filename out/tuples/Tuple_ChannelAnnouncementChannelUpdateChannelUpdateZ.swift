@@ -159,6 +159,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ \(self.instanceNumber) due to dangle.")

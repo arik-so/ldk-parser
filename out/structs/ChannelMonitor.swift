@@ -710,6 +710,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ChannelMonitor \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ChannelMonitor \(self.instanceNumber) due to dangle.")

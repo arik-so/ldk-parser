@@ -152,6 +152,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Tuple_BlockHashChannelManagerZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Tuple_BlockHashChannelManagerZ \(self.instanceNumber) due to dangle.")

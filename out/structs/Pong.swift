@@ -274,6 +274,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Pong \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Pong \(self.instanceNumber) due to dangle.")

@@ -332,6 +332,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing UpdateFee \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing UpdateFee \(self.instanceNumber) due to dangle.")

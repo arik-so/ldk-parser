@@ -330,6 +330,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing DecodeError \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing DecodeError \(self.instanceNumber) due to dangle.")

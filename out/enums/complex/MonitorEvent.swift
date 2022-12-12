@@ -329,6 +329,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing MonitorEvent \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing MonitorEvent \(self.instanceNumber) due to dangle.")

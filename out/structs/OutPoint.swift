@@ -384,6 +384,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing OutPoint \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing OutPoint \(self.instanceNumber) due to dangle.")

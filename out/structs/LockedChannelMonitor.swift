@@ -95,6 +95,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing LockedChannelMonitor \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing LockedChannelMonitor \(self.instanceNumber) due to dangle.")

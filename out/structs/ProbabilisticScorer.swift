@@ -450,6 +450,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing ProbabilisticScorer \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing ProbabilisticScorer \(self.instanceNumber) due to dangle.")

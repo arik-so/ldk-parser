@@ -127,6 +127,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Option_CVec_NetAddressZZ \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Option_CVec_NetAddressZZ \(self.instanceNumber) due to dangle.")

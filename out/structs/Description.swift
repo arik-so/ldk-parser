@@ -231,6 +231,7 @@
 
 						if !self.dangling {
 							Bindings.print("Freeing Description \(self.instanceNumber).")
+							
 							self.free()
 						} else {
 							Bindings.print("Not freeing Description \(self.instanceNumber) due to dangle.")

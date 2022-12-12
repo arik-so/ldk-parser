@@ -986,10 +986,12 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			`;
 		}
 
+		let freeabilityOverrideInfix = '';
 		if (type instanceof RustStruct && type.ownershipField) {
+			const ownershipName = type.ownershipField.contextualName;
 			ownershipSetterCode = `
 				internal func setCFreeability(freeable: Bool) -> ${swiftTypeName} {
-					self.cType!.${type.ownershipField.contextualName} = freeable
+					self.cType!.${ownershipName} = freeable
 					return self
 				}
 			`;
@@ -999,10 +1001,21 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					internal func dynamicallyDangledClone() -> ${swiftTypeName} {
 						let dangledClone = self.clone()
 						// if it's owned, i. e. controlled by Rust, it should dangle on our end
-						dangledClone.dangling = dangledClone.cType!.${type.ownershipField.contextualName}
+						dangledClone.dangling = dangledClone.cType!.${ownershipName}
 						return dangledClone
 					}
 				`;
+			}
+
+			if(type instanceof RustPrimitiveWrapper){
+				// these types additionally store the original freeability value
+				freeabilityOverrideInfix = `
+						if !self.initialCFreeability {
+							// only set to freeable if it was originally false
+							Bindings.print("Setting ${swiftTypeName} \\(self.instanceNumber)'s ${type.ownershipField?.contextualName}: \\(self.cType!.${ownershipName}) -> true")
+							self.cType!.${ownershipName} = true
+						}
+				`
 			}
 		}
 
@@ -1015,6 +1028,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 					if !self.dangling {
 						Bindings.print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
+						${freeabilityOverrideInfix}
 						self.free()
 					} else {
 						Bindings.print("Not freeing ${swiftTypeName} \\(self.instanceNumber) due to dangle.")
