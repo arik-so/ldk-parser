@@ -83,7 +83,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = RawDataPart(cType: nativeCallResult)
+						let returnValue = RawDataPart(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -240,7 +240,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Sha256(cType: nativeCallResult)
+						let returnValue = Sha256(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -276,7 +276,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Description(cType: nativeCallResult)
+						let returnValue = Description(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -312,7 +312,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PayeePubKey(cType: nativeCallResult)
+						let returnValue = PayeePubKey(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -348,7 +348,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Sha256(cType: nativeCallResult)
+						let returnValue = Sha256(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -384,7 +384,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ExpiryTime(cType: nativeCallResult)
+						let returnValue = ExpiryTime(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -420,7 +420,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = MinFinalCltvExpiry(cType: nativeCallResult)
+						let returnValue = MinFinalCltvExpiry(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -487,7 +487,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = InvoiceFeatures(cType: nativeCallResult)
+						let returnValue = InvoiceFeatures(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

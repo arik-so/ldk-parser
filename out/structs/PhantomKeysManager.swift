@@ -214,7 +214,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = InMemorySigner(cType: nativeCallResult)
+						let returnValue = InMemorySigner(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

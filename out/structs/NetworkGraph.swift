@@ -176,7 +176,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ReadOnlyNetworkGraph(cType: nativeCallResult)
+						let returnValue = ReadOnlyNetworkGraph(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

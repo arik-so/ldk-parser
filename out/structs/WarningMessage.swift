@@ -137,7 +137,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult).getValue()
+						let returnValue = Str(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue

@@ -179,7 +179,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = UserConfig(cType: nativeCallResult)
+						let returnValue = UserConfig(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1423,7 +1423,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PhantomRouteHints(cType: nativeCallResult)
+						let returnValue = PhantomRouteHints(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1597,7 +1597,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Future(cType: nativeCallResult)
+						let returnValue = Future(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -1621,7 +1621,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = BestBlock(cType: nativeCallResult)
+						let returnValue = BestBlock(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

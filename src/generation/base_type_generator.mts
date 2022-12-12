@@ -894,12 +894,13 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			// if (!this.isElidedType(containerType) && !this.isElidedType(returnType.type) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
 			if (!this.isElidedType(containerType) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
 				// TODO: determine whether this is precise enough
-				if(returnType.type instanceof RustStruct && returnType.type.ownershipField){
-					// if it has an ownership field, it will already tell us if it's safe to free
-					// hence, NO OP here
-				} else {
-					anchorInfix = ', anchor: self';
-				}
+				anchorInfix = ', anchor: self';
+				// if(returnType.type instanceof RustStruct && returnType.type.ownershipField){
+				// 	// if it has an ownership field, it will already tell us if it's safe to free
+				// 	// hence, NO OP here
+				// } else {
+				// 	// anchorInfix = ', anchor: self';
+				// }
 			}
 		}
 

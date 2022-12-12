@@ -108,7 +108,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = BuiltCommitmentTransaction(cType: nativeCallResult)
+						let returnValue = BuiltCommitmentTransaction(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -131,7 +131,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = TxCreationKeys(cType: nativeCallResult)
+						let returnValue = TxCreationKeys(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

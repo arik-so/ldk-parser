@@ -623,7 +623,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = BestBlock(cType: nativeCallResult)
+						let returnValue = BestBlock(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

@@ -75,7 +75,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

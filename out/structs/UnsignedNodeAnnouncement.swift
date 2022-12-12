@@ -75,7 +75,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NodeFeatures(cType: nativeCallResult)
+						let returnValue = NodeFeatures(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
