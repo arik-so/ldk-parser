@@ -62,7 +62,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleOpenChannel(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), theirFeatures: InitFeatures(cType: their_features).dangle().clone(), msg: OpenChannel(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleOpenChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features).dangle().clone(), msg: OpenChannel(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -80,7 +80,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleAcceptChannel(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), theirFeatures: InitFeatures(cType: their_features).dangle().clone(), msg: AcceptChannel(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleAcceptChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features).dangle().clone(), msg: AcceptChannel(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -98,7 +98,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleFundingCreated(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: FundingCreated(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleFundingCreated(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: FundingCreated(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -116,7 +116,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleFundingSigned(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: FundingSigned(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleFundingSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: FundingSigned(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -134,7 +134,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelReady(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: ChannelReady(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleChannelReady(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelReady(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -152,7 +152,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleShutdown(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), theirFeatures: InitFeatures(cType: their_features.pointee).dangle().clone(), msg: Shutdown(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleShutdown(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features.pointee).dangle().clone(), msg: Shutdown(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -170,7 +170,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleClosingSigned(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: ClosingSigned(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleClosingSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ClosingSigned(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -188,7 +188,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateAddHtlc(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: UpdateAddHTLC(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleUpdateAddHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateAddHTLC(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -206,7 +206,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFulfillHtlc(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: UpdateFulfillHTLC(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleUpdateFulfillHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFulfillHTLC(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -224,7 +224,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFailHtlc(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: UpdateFailHTLC(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleUpdateFailHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFailHTLC(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -242,7 +242,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFailMalformedHtlc(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: UpdateFailMalformedHTLC(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleUpdateFailMalformedHtlc(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFailMalformedHTLC(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -260,7 +260,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleCommitmentSigned(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: CommitmentSigned(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleCommitmentSigned(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: CommitmentSigned(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -278,7 +278,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleRevokeAndAck(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: RevokeAndACK(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleRevokeAndAck(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: RevokeAndACK(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -296,7 +296,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleUpdateFee(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: UpdateFee(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleUpdateFee(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: UpdateFee(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -314,7 +314,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleAnnouncementSignatures(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: AnnouncementSignatures(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleAnnouncementSignatures(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: AnnouncementSignatures(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -332,7 +332,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerDisconnected(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), noConnectionPossible: no_connection_possible)
+							let swiftCallbackResult = instance.peerDisconnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), noConnectionPossible: no_connection_possible)
 
 							// cleanup
 							
@@ -350,7 +350,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: BindingsInit(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: BindingsInit(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -368,7 +368,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelReestablish(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: ChannelReestablish(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleChannelReestablish(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelReestablish(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -386,7 +386,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleChannelUpdate(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: ChannelUpdate(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleChannelUpdate(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ChannelUpdate(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -404,7 +404,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleError(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), msg: ErrorMessage(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleError(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ErrorMessage(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -440,7 +440,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.providedInitFeatures(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue())
+							let swiftCallbackResult = instance.providedInitFeatures(theirNodeId: PublicKey(cType: their_node_id).getValue())
 
 							// cleanup
 							

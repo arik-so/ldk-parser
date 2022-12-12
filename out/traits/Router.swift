@@ -66,7 +66,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.findRoute(payer: PublicKey(cType: payer).dangle().getValue(), routeParams: RouteParameters(cType: route_params.pointee).dangle().clone(), paymentHash: payment_hashPointee, firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(cType: inflight_htlcs).dangle())
+							let swiftCallbackResult = instance.findRoute(payer: PublicKey(cType: payer).getValue(), routeParams: RouteParameters(cType: route_params.pointee).dangle().clone(), paymentHash: payment_hashPointee, firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(cType: inflight_htlcs).dangle())
 
 							// cleanup
 							

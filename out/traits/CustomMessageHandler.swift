@@ -56,7 +56,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleCustomMessage(msg: NativelyImplementedBindingsType(cType: msg), senderNodeId: PublicKey(cType: sender_node_id).dangle().getValue())
+							let swiftCallbackResult = instance.handleCustomMessage(msg: NativelyImplementedBindingsType(cType: msg), senderNodeId: PublicKey(cType: sender_node_id).getValue())
 
 							// cleanup
 							

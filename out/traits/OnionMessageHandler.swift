@@ -56,7 +56,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleOnionMessage(peerNodeId: PublicKey(cType: peer_node_id).dangle().getValue(), msg: OnionMessage(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleOnionMessage(peerNodeId: PublicKey(cType: peer_node_id).getValue(), msg: OnionMessage(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -74,7 +74,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), initArgument: BindingsInit(cType: initArgument.pointee).dangle().clone())
+							let swiftCallbackResult = instance.peerConnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), initArgument: BindingsInit(cType: initArgument.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -92,7 +92,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.peerDisconnected(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue(), noConnectionPossible: no_connection_possible)
+							let swiftCallbackResult = instance.peerDisconnected(theirNodeId: PublicKey(cType: their_node_id).getValue(), noConnectionPossible: no_connection_possible)
 
 							// cleanup
 							
@@ -128,7 +128,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.providedInitFeatures(theirNodeId: PublicKey(cType: their_node_id).dangle().getValue())
+							let swiftCallbackResult = instance.providedInitFeatures(theirNodeId: PublicKey(cType: their_node_id).getValue())
 
 							// cleanup
 							

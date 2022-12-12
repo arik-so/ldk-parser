@@ -92,7 +92,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.ecdh(recipient: Recipient(value: recipient), otherKey: PublicKey(cType: other_key).dangle().getValue(), tweak: Option_ScalarZ(cType: tweak).dangle().getValue())
+							let swiftCallbackResult = instance.ecdh(recipient: Recipient(value: recipient), otherKey: PublicKey(cType: other_key).getValue(), tweak: Option_ScalarZ(cType: tweak).dangle().getValue())
 
 							// cleanup
 							

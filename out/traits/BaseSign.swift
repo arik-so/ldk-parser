@@ -265,7 +265,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signCounterpartyHtlcTransaction(htlcTx: Transaction(cType: htlc_tx).dangle().getValue(), input: input, amount: amount, perCommitmentPoint: PublicKey(cType: per_commitment_point).dangle().getValue(), htlc: HTLCOutputInCommitment(cType: htlc.pointee).dangle().clone())
+							let swiftCallbackResult = instance.signCounterpartyHtlcTransaction(htlcTx: Transaction(cType: htlc_tx).dangle().getValue(), input: input, amount: amount, perCommitmentPoint: PublicKey(cType: per_commitment_point).getValue(), htlc: HTLCOutputInCommitment(cType: htlc.pointee).dangle().clone())
 
 							// cleanup
 							

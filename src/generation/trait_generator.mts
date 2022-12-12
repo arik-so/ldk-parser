@@ -381,7 +381,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 					memoryManagementInfix += '.clone()';
 				}
 			}
-		} else if (type instanceof RustPrimitiveWrapper && !type.ownershipField) {
+		} else if (type instanceof RustPrimitiveWrapper && type.isDeallocatable()) {
 			// if it doesn't have a free method, we may want to rely on Swift's built-in
 			// deallocation feature
 			memoryManagementInfix = '.dangle()';
@@ -455,7 +455,6 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		};
 
 		// these type elision helpers only apply outside the context of the very eliding type
-
 		let type = returnType.type;
 		if (type instanceof RustVector) {
 			preparedReturnValue.wrapperPrefix = `${this.swiftTypeName(type)}(array: `;
