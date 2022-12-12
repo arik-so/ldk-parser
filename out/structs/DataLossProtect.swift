@@ -138,7 +138,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: nativeCallResult).dangle().getValue()
+						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).dangle().getValue()
 						
 
 						return returnValue

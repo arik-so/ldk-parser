@@ -113,7 +113,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_u64Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u64Z(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -178,7 +178,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_NodeIdZ(cType: nativeCallResult).getValue()
+						let returnValue = Vec_NodeIdZ(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -208,7 +208,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Option_CVec_NetAddressZZ(cType: nativeCallResult).getValue()
+						let returnValue = Option_CVec_NetAddressZZ(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue

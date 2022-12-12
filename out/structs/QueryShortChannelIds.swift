@@ -146,7 +146,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_u64Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u64Z(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -306,7 +306,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue

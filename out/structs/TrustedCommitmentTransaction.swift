@@ -85,7 +85,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).dangle().getValue()
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult, anchor: self).dangle().getValue()
 						
 
 						return returnValue

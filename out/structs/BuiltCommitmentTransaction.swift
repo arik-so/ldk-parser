@@ -75,7 +75,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Transaction(cType: nativeCallResult).getValue()
+						let returnValue = Transaction(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -245,7 +245,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -299,7 +299,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).dangle().getValue()
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult, anchor: self).dangle().getValue()
 						
 
 						return returnValue
@@ -334,7 +334,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Signature(cType: nativeCallResult).dangle().getValue()
+						let returnValue = Signature(cType: nativeCallResult, anchor: self).dangle().getValue()
 						
 
 						return returnValue

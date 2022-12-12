@@ -85,7 +85,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Transaction(cType: nativeCallResult).getValue()
+						let returnValue = Transaction(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -115,7 +115,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).dangle().getValue()
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult, anchor: self).dangle().getValue()
 						
 
 						return returnValue
@@ -150,7 +150,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Signature(cType: nativeCallResult).dangle().getValue()
+						let returnValue = Signature(cType: nativeCallResult, anchor: self).dangle().getValue()
 						
 
 						return returnValue

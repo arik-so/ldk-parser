@@ -136,7 +136,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_BalanceZ(cType: nativeCallResult).getValue()
+						let returnValue = Vec_BalanceZ(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -189,7 +189,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_OutPointZ(cType: nativeCallResult).getValue()
+						let returnValue = Vec_OutPointZ(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue

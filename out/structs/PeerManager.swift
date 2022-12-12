@@ -159,7 +159,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_PublicKeyZ(cType: nativeCallResult).getValue()
+						let returnValue = Vec_PublicKeyZ(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue

@@ -891,8 +891,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				anchorInfix = ', anchor: self';
 			}
 
-			if (!this.isElidedType(containerType) && !this.isElidedType(returnType.type) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
+			// if (!this.isElidedType(containerType) && !this.isElidedType(returnType.type) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
+			if (!this.isElidedType(containerType) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
 				// TODO: determine whether this is precise enough
+				// if()
 				anchorInfix = ', anchor: self';
 			}
 		}
