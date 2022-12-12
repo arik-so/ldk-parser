@@ -85,7 +85,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_get_per_commitment_point(thisPtrPointer)
 						}
 				
@@ -110,7 +110,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_set_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -138,7 +138,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_get_revocation_key(thisPtrPointer)
 						}
 				
@@ -165,7 +165,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_set_revocation_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -191,7 +191,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_get_broadcaster_htlc_key(thisPtrPointer)
 						}
 				
@@ -216,7 +216,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_set_broadcaster_htlc_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -242,7 +242,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_get_countersignatory_htlc_key(thisPtrPointer)
 						}
 				
@@ -267,7 +267,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_set_countersignatory_htlc_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -293,7 +293,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_get_broadcaster_delayed_payment_key(thisPtrPointer)
 						}
 				
@@ -318,7 +318,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_set_broadcaster_delayed_payment_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -396,9 +396,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKTxCreationKeys>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_eq(aPointer, bPointer)
 						}
 				
@@ -446,7 +446,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKTxCreationKeys>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKTxCreationKeys>) in
 				TxCreationKeys_write(objPointer)
 						}
 				

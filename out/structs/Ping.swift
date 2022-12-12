@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPing>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPing>) in
 				Ping_get_ponglen(thisPtrPointer)
 						}
 				
@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPing>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPing>) in
 				Ping_set_ponglen(thisPtrPointer, val)
 						}
 				
@@ -112,7 +112,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPing>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPing>) in
 				Ping_get_byteslen(thisPtrPointer)
 						}
 				
@@ -136,7 +136,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPing>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPing>) in
 				Ping_set_byteslen(thisPtrPointer, val)
 						}
 				
@@ -209,9 +209,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKPing>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKPing>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKPing>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKPing>) in
 				Ping_eq(aPointer, bPointer)
 						}
 				
@@ -236,7 +236,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKPing>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKPing>) in
 				Ping_write(objPointer)
 						}
 				

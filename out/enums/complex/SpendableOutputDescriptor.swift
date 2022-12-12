@@ -218,9 +218,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
 				SpendableOutputDescriptor_eq(aPointer, bPointer)
 						}
 				
@@ -245,7 +245,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
 				SpendableOutputDescriptor_write(objPointer)
 						}
 				

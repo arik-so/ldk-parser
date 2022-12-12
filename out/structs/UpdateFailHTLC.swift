@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailHTLC>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailHTLC>) in
 				UpdateFailHTLC_get_channel_id(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailHTLC>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailHTLC>) in
 				UpdateFailHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -120,7 +120,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailHTLC>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailHTLC>) in
 				UpdateFailHTLC_get_htlc_id(thisPtrPointer)
 						}
 				
@@ -143,7 +143,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailHTLC>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailHTLC>) in
 				UpdateFailHTLC_set_htlc_id(thisPtrPointer, val)
 						}
 				
@@ -191,9 +191,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKUpdateFailHTLC>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKUpdateFailHTLC>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKUpdateFailHTLC>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKUpdateFailHTLC>) in
 				UpdateFailHTLC_eq(aPointer, bPointer)
 						}
 				
@@ -218,7 +218,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKUpdateFailHTLC>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUpdateFailHTLC>) in
 				UpdateFailHTLC_write(objPointer)
 						}
 				

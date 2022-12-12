@@ -68,7 +68,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_channel_id(thisPtrPointer)
 						}
 				
@@ -100,7 +100,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -126,7 +126,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_counterparty(thisPtrPointer)
 						}
 				
@@ -149,7 +149,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_counterparty(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -178,7 +178,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_funding_txo(thisPtrPointer)
 						}
 				
@@ -220,7 +220,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_funding_txo(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -247,7 +247,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_channel_type(thisPtrPointer)
 						}
 				
@@ -287,7 +287,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_channel_type(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -323,7 +323,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_short_channel_id(thisPtrPointer)
 						}
 				
@@ -361,7 +361,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_short_channel_id(thisPtrPointer, valOption.cType!)
 						}
 				
@@ -392,7 +392,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_outbound_scid_alias(thisPtrPointer)
 						}
 				
@@ -425,7 +425,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_outbound_scid_alias(thisPtrPointer, valOption.cType!)
 						}
 				
@@ -456,7 +456,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_inbound_scid_alias(thisPtrPointer)
 						}
 				
@@ -489,7 +489,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_inbound_scid_alias(thisPtrPointer, valOption.cType!)
 						}
 				
@@ -512,7 +512,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_channel_value_satoshis(thisPtrPointer)
 						}
 				
@@ -535,7 +535,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_channel_value_satoshis(thisPtrPointer, val)
 						}
 				
@@ -566,7 +566,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_unspendable_punishment_reserve(thisPtrPointer)
 						}
 				
@@ -599,7 +599,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_unspendable_punishment_reserve(thisPtrPointer, valOption.cType!)
 						}
 				
@@ -622,7 +622,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_user_channel_id(thisPtrPointer)
 						}
 				
@@ -645,7 +645,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_user_channel_id(thisPtrPointer, val)
 						}
 				
@@ -677,7 +677,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_balance_msat(thisPtrPointer)
 						}
 				
@@ -709,7 +709,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_balance_msat(thisPtrPointer, val)
 						}
 				
@@ -741,7 +741,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_outbound_capacity_msat(thisPtrPointer)
 						}
 				
@@ -773,7 +773,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_outbound_capacity_msat(thisPtrPointer, val)
 						}
 				
@@ -801,7 +801,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_next_outbound_htlc_limit_msat(thisPtrPointer)
 						}
 				
@@ -829,7 +829,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_next_outbound_htlc_limit_msat(thisPtrPointer, val)
 						}
 				
@@ -860,7 +860,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_inbound_capacity_msat(thisPtrPointer)
 						}
 				
@@ -891,7 +891,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_inbound_capacity_msat(thisPtrPointer, val)
 						}
 				
@@ -924,7 +924,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_confirmations_required(thisPtrPointer)
 						}
 				
@@ -959,7 +959,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_confirmations_required(thisPtrPointer, valOption.cType!)
 						}
 				
@@ -988,7 +988,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_force_close_spend_delay(thisPtrPointer)
 						}
 				
@@ -1019,7 +1019,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_force_close_spend_delay(thisPtrPointer, valOption.cType!)
 						}
 				
@@ -1042,7 +1042,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_is_outbound(thisPtrPointer)
 						}
 				
@@ -1065,7 +1065,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_is_outbound(thisPtrPointer, val)
 						}
 				
@@ -1094,7 +1094,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_is_channel_ready(thisPtrPointer)
 						}
 				
@@ -1123,7 +1123,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_is_channel_ready(thisPtrPointer, val)
 						}
 				
@@ -1149,7 +1149,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_is_usable(thisPtrPointer)
 						}
 				
@@ -1175,7 +1175,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_is_usable(thisPtrPointer, val)
 						}
 				
@@ -1198,7 +1198,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_is_public(thisPtrPointer)
 						}
 				
@@ -1221,7 +1221,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_is_public(thisPtrPointer, val)
 						}
 				
@@ -1245,7 +1245,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_inbound_htlc_minimum_msat(thisPtrPointer)
 						}
 				
@@ -1271,7 +1271,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_inbound_htlc_minimum_msat(thisPtrPointer, valOption.cType!)
 						}
 				
@@ -1294,7 +1294,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_inbound_htlc_maximum_msat(thisPtrPointer)
 						}
 				
@@ -1319,7 +1319,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_inbound_htlc_maximum_msat(thisPtrPointer, valOption.cType!)
 						}
 				
@@ -1346,7 +1346,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_config(thisPtrPointer)
 						}
 				
@@ -1386,7 +1386,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_config(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -1483,7 +1483,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_inbound_payment_scid(thisArgPointer)
 						}
 				
@@ -1511,7 +1511,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_get_outbound_payment_scid(thisArgPointer)
 						}
 				
@@ -1534,7 +1534,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKChannelDetails>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelDetails>) in
 				ChannelDetails_write(objPointer)
 						}
 				

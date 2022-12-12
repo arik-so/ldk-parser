@@ -69,7 +69,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKGossipTimestampFilter>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKGossipTimestampFilter>) in
 				GossipTimestampFilter_get_chain_hash(thisPtrPointer)
 						}
 				
@@ -98,7 +98,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKGossipTimestampFilter>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKGossipTimestampFilter>) in
 				GossipTimestampFilter_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -124,7 +124,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKGossipTimestampFilter>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKGossipTimestampFilter>) in
 				GossipTimestampFilter_get_first_timestamp(thisPtrPointer)
 						}
 				
@@ -147,7 +147,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKGossipTimestampFilter>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKGossipTimestampFilter>) in
 				GossipTimestampFilter_set_first_timestamp(thisPtrPointer, val)
 						}
 				
@@ -170,7 +170,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKGossipTimestampFilter>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKGossipTimestampFilter>) in
 				GossipTimestampFilter_get_timestamp_range(thisPtrPointer)
 						}
 				
@@ -193,7 +193,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKGossipTimestampFilter>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKGossipTimestampFilter>) in
 				GossipTimestampFilter_set_timestamp_range(thisPtrPointer, val)
 						}
 				
@@ -271,9 +271,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKGossipTimestampFilter>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKGossipTimestampFilter>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKGossipTimestampFilter>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKGossipTimestampFilter>) in
 				GossipTimestampFilter_eq(aPointer, bPointer)
 						}
 				
@@ -298,7 +298,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKGossipTimestampFilter>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKGossipTimestampFilter>) in
 				GossipTimestampFilter_write(objPointer)
 						}
 				

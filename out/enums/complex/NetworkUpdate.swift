@@ -188,9 +188,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKNetworkUpdate>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKNetworkUpdate>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKNetworkUpdate>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKNetworkUpdate>) in
 				NetworkUpdate_eq(aPointer, bPointer)
 						}
 				
@@ -215,7 +215,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKNetworkUpdate>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNetworkUpdate>) in
 				NetworkUpdate_write(objPointer)
 						}
 				

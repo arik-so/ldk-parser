@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKMonitorUpdateId>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKMonitorUpdateId>) in
 				MonitorUpdateId_hash(oPointer)
 						}
 				
@@ -113,9 +113,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKMonitorUpdateId>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKMonitorUpdateId>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKMonitorUpdateId>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKMonitorUpdateId>) in
 				MonitorUpdateId_eq(aPointer, bPointer)
 						}
 				

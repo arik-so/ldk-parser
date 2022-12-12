@@ -90,9 +90,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKBestBlock>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKBestBlock>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKBestBlock>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKBestBlock>) in
 				BestBlock_eq(aPointer, bPointer)
 						}
 				
@@ -167,7 +167,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKBestBlock>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKBestBlock>) in
 				BestBlock_block_hash(thisArgPointer)
 						}
 				
@@ -190,7 +190,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKBestBlock>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKBestBlock>) in
 				BestBlock_height(thisArgPointer)
 						}
 				

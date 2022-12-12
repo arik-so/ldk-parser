@@ -112,7 +112,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNodeId>) in
 				NodeId_as_slice(thisArgPointer)
 						}
 				
@@ -135,7 +135,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKNodeId>) in
 				NodeId_hash(oPointer)
 						}
 				
@@ -158,7 +158,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNodeId>) in
 				NodeId_write(objPointer)
 						}
 				

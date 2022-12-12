@@ -280,9 +280,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKDecodeError>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKDecodeError>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKDecodeError>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKDecodeError>) in
 				DecodeError_eq(aPointer, bPointer)
 						}
 				

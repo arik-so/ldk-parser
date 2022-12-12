@@ -71,7 +71,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKOutPoint>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKOutPoint>) in
 				OutPoint_get_txid(thisPtrPointer)
 						}
 				
@@ -100,7 +100,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOutPoint>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOutPoint>) in
 				OutPoint_set_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -126,7 +126,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKOutPoint>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKOutPoint>) in
 				OutPoint_get_index(thisPtrPointer)
 						}
 				
@@ -149,7 +149,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOutPoint>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKOutPoint>) in
 				OutPoint_set_index(thisPtrPointer, val)
 						}
 				
@@ -227,9 +227,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKOutPoint>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKOutPoint>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKOutPoint>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKOutPoint>) in
 				OutPoint_eq(aPointer, bPointer)
 						}
 				
@@ -254,7 +254,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKOutPoint>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKOutPoint>) in
 				OutPoint_hash(oPointer)
 						}
 				
@@ -277,7 +277,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKOutPoint>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKOutPoint>) in
 				OutPoint_to_channel_id(thisArgPointer)
 						}
 				
@@ -300,7 +300,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKOutPoint>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKOutPoint>) in
 				OutPoint_write(objPointer)
 						}
 				

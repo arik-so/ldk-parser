@@ -96,7 +96,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKClosingTransaction>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKClosingTransaction>) in
 				ClosingTransaction_hash(oPointer)
 						}
 				
@@ -121,9 +121,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKClosingTransaction>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKClosingTransaction>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKClosingTransaction>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKClosingTransaction>) in
 				ClosingTransaction_eq(aPointer, bPointer)
 						}
 				
@@ -186,7 +186,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
 				ClosingTransaction_trust(thisArgPointer)
 						}
 				
@@ -214,7 +214,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
 				ClosingTransaction_verify(thisArgPointer, fundingOutpoint.dynamicallyDangledClone().cType!)
 						}
 				
@@ -237,7 +237,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
 				ClosingTransaction_to_holder_value_sat(thisArgPointer)
 						}
 				
@@ -260,7 +260,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
 				ClosingTransaction_to_counterparty_value_sat(thisArgPointer)
 						}
 				
@@ -283,7 +283,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
 				ClosingTransaction_to_holder_script(thisArgPointer)
 						}
 				
@@ -306,7 +306,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKClosingTransaction>) in
 				ClosingTransaction_to_counterparty_script(thisArgPointer)
 						}
 				

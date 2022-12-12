@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPayeePubKey>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPayeePubKey>) in
 				PayeePubKey_get_a(thisPtrPointer)
 						}
 				
@@ -90,7 +90,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPayeePubKey>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPayeePubKey>) in
 				PayeePubKey_set_a(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -169,7 +169,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKPayeePubKey>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKPayeePubKey>) in
 				PayeePubKey_hash(oPointer)
 						}
 				
@@ -194,9 +194,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKPayeePubKey>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKPayeePubKey>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKPayeePubKey>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKPayeePubKey>) in
 				PayeePubKey_eq(aPointer, bPointer)
 						}
 				

@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_get_features(thisPtrPointer)
 						}
 				
@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_set_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -111,7 +111,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_get_timestamp(thisPtrPointer)
 						}
 				
@@ -134,7 +134,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_set_timestamp(thisPtrPointer, val)
 						}
 				
@@ -158,7 +158,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_get_node_id(thisPtrPointer)
 						}
 				
@@ -184,7 +184,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_set_node_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -210,7 +210,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_get_rgb(thisPtrPointer)
 						}
 				
@@ -239,7 +239,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_set_rgb(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -266,7 +266,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_get_alias(thisPtrPointer)
 						}
 				
@@ -296,7 +296,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_set_alias(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -324,7 +324,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_get_addresses(thisPtrPointer)
 						}
 				
@@ -349,7 +349,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_set_addresses(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -399,9 +399,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_eq(aPointer, bPointer)
 						}
 				
@@ -426,7 +426,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
 				UnsignedNodeAnnouncement_write(objPointer)
 						}
 				

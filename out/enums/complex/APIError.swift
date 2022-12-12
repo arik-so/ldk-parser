@@ -293,9 +293,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKAPIError>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKAPIError>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKAPIError>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKAPIError>) in
 				APIError_eq(aPointer, bPointer)
 						}
 				

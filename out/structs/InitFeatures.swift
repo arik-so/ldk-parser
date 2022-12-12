@@ -48,9 +48,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKInitFeatures>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_eq(aPointer, bPointer)
 						}
 				
@@ -137,7 +137,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_unknown_bits(thisArgPointer)
 						}
 				
@@ -160,7 +160,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_write(objPointer)
 						}
 				
@@ -207,7 +207,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_data_loss_protect_optional(thisArgPointer)
 						}
 				
@@ -230,7 +230,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_data_loss_protect_required(thisArgPointer)
 						}
 				
@@ -253,7 +253,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_data_loss_protect(thisArgPointer)
 						}
 				
@@ -276,7 +276,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_data_loss_protect(thisArgPointer)
 						}
 				
@@ -299,7 +299,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_initial_routing_sync_optional(thisArgPointer)
 						}
 				
@@ -322,7 +322,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_initial_routing_sync_required(thisArgPointer)
 						}
 				
@@ -345,7 +345,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_initial_routing_sync(thisArgPointer)
 						}
 				
@@ -368,7 +368,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_upfront_shutdown_script_optional(thisArgPointer)
 						}
 				
@@ -391,7 +391,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_upfront_shutdown_script_required(thisArgPointer)
 						}
 				
@@ -414,7 +414,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_upfront_shutdown_script(thisArgPointer)
 						}
 				
@@ -437,7 +437,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_upfront_shutdown_script(thisArgPointer)
 						}
 				
@@ -460,7 +460,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_gossip_queries_optional(thisArgPointer)
 						}
 				
@@ -483,7 +483,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_gossip_queries_required(thisArgPointer)
 						}
 				
@@ -506,7 +506,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_gossip_queries(thisArgPointer)
 						}
 				
@@ -529,7 +529,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_gossip_queries(thisArgPointer)
 						}
 				
@@ -552,7 +552,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_variable_length_onion_optional(thisArgPointer)
 						}
 				
@@ -575,7 +575,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_variable_length_onion_required(thisArgPointer)
 						}
 				
@@ -598,7 +598,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_variable_length_onion(thisArgPointer)
 						}
 				
@@ -621,7 +621,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_variable_length_onion(thisArgPointer)
 						}
 				
@@ -644,7 +644,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_static_remote_key_optional(thisArgPointer)
 						}
 				
@@ -667,7 +667,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_static_remote_key_required(thisArgPointer)
 						}
 				
@@ -690,7 +690,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_static_remote_key(thisArgPointer)
 						}
 				
@@ -713,7 +713,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_static_remote_key(thisArgPointer)
 						}
 				
@@ -736,7 +736,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_payment_secret_optional(thisArgPointer)
 						}
 				
@@ -759,7 +759,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_payment_secret_required(thisArgPointer)
 						}
 				
@@ -782,7 +782,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_payment_secret(thisArgPointer)
 						}
 				
@@ -805,7 +805,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_payment_secret(thisArgPointer)
 						}
 				
@@ -828,7 +828,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_basic_mpp_optional(thisArgPointer)
 						}
 				
@@ -851,7 +851,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_basic_mpp_required(thisArgPointer)
 						}
 				
@@ -874,7 +874,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_basic_mpp(thisArgPointer)
 						}
 				
@@ -897,7 +897,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_basic_mpp(thisArgPointer)
 						}
 				
@@ -920,7 +920,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_wumbo_optional(thisArgPointer)
 						}
 				
@@ -943,7 +943,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_wumbo_required(thisArgPointer)
 						}
 				
@@ -966,7 +966,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_wumbo(thisArgPointer)
 						}
 				
@@ -989,7 +989,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_wumbo(thisArgPointer)
 						}
 				
@@ -1012,7 +1012,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_shutdown_any_segwit_optional(thisArgPointer)
 						}
 				
@@ -1035,7 +1035,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_shutdown_any_segwit_required(thisArgPointer)
 						}
 				
@@ -1058,7 +1058,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_shutdown_anysegwit(thisArgPointer)
 						}
 				
@@ -1081,7 +1081,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_shutdown_anysegwit(thisArgPointer)
 						}
 				
@@ -1104,7 +1104,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_onion_messages_optional(thisArgPointer)
 						}
 				
@@ -1127,7 +1127,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_onion_messages_required(thisArgPointer)
 						}
 				
@@ -1150,7 +1150,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_onion_messages(thisArgPointer)
 						}
 				
@@ -1173,7 +1173,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_onion_messages(thisArgPointer)
 						}
 				
@@ -1196,7 +1196,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_channel_type_optional(thisArgPointer)
 						}
 				
@@ -1219,7 +1219,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_channel_type_required(thisArgPointer)
 						}
 				
@@ -1242,7 +1242,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_channel_type(thisArgPointer)
 						}
 				
@@ -1265,7 +1265,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_channel_type(thisArgPointer)
 						}
 				
@@ -1288,7 +1288,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_scid_privacy_optional(thisArgPointer)
 						}
 				
@@ -1311,7 +1311,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_scid_privacy_required(thisArgPointer)
 						}
 				
@@ -1334,7 +1334,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_scid_privacy(thisArgPointer)
 						}
 				
@@ -1357,7 +1357,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_scid_privacy(thisArgPointer)
 						}
 				
@@ -1380,7 +1380,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_zero_conf_optional(thisArgPointer)
 						}
 				
@@ -1403,7 +1403,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInitFeatures>) in
 				InitFeatures_set_zero_conf_required(thisArgPointer)
 						}
 				
@@ -1426,7 +1426,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_supports_zero_conf(thisArgPointer)
 						}
 				
@@ -1449,7 +1449,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInitFeatures>) in
 				InitFeatures_requires_zero_conf(thisArgPointer)
 						}
 				

@@ -153,9 +153,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKSignOrCreationError>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKSignOrCreationError>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKSignOrCreationError>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKSignOrCreationError>) in
 				SignOrCreationError_eq(aPointer, bPointer)
 						}
 				
@@ -180,7 +180,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKSignOrCreationError>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKSignOrCreationError>) in
 				SignOrCreationError_to_str(oPointer)
 						}
 				

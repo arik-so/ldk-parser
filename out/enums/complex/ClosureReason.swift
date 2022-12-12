@@ -333,9 +333,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKClosureReason>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKClosureReason>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKClosureReason>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKClosureReason>) in
 				ClosureReason_eq(aPointer, bPointer)
 						}
 				
@@ -360,7 +360,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKClosureReason>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKClosureReason>) in
 				ClosureReason_write(objPointer)
 						}
 				

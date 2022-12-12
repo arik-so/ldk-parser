@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
 				FundingCreated_get_temporary_channel_id(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
 				FundingCreated_set_temporary_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -120,7 +120,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
 				FundingCreated_get_funding_txid(thisPtrPointer)
 						}
 				
@@ -149,7 +149,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
 				FundingCreated_set_funding_txid(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -175,7 +175,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
 				FundingCreated_get_funding_output_index(thisPtrPointer)
 						}
 				
@@ -198,7 +198,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
 				FundingCreated_set_funding_output_index(thisPtrPointer, val)
 						}
 				
@@ -221,7 +221,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingCreated>) in
 				FundingCreated_get_signature(thisPtrPointer)
 						}
 				
@@ -246,7 +246,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingCreated>) in
 				FundingCreated_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -337,9 +337,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKFundingCreated>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKFundingCreated>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKFundingCreated>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKFundingCreated>) in
 				FundingCreated_eq(aPointer, bPointer)
 						}
 				
@@ -364,7 +364,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKFundingCreated>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKFundingCreated>) in
 				FundingCreated_write(objPointer)
 						}
 				

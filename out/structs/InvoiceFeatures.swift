@@ -48,9 +48,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKInvoiceFeatures>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKInvoiceFeatures>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKInvoiceFeatures>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_eq(aPointer, bPointer)
 						}
 				
@@ -137,7 +137,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_requires_unknown_bits(thisArgPointer)
 						}
 				
@@ -160,7 +160,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKInvoiceFeatures>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_write(objPointer)
 						}
 				
@@ -207,7 +207,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_set_variable_length_onion_optional(thisArgPointer)
 						}
 				
@@ -230,7 +230,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_set_variable_length_onion_required(thisArgPointer)
 						}
 				
@@ -253,7 +253,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_supports_variable_length_onion(thisArgPointer)
 						}
 				
@@ -276,7 +276,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_requires_variable_length_onion(thisArgPointer)
 						}
 				
@@ -299,7 +299,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_set_payment_secret_optional(thisArgPointer)
 						}
 				
@@ -322,7 +322,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_set_payment_secret_required(thisArgPointer)
 						}
 				
@@ -345,7 +345,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_supports_payment_secret(thisArgPointer)
 						}
 				
@@ -368,7 +368,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_requires_payment_secret(thisArgPointer)
 						}
 				
@@ -391,7 +391,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_set_basic_mpp_optional(thisArgPointer)
 						}
 				
@@ -414,7 +414,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_set_basic_mpp_required(thisArgPointer)
 						}
 				
@@ -437,7 +437,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_supports_basic_mpp(thisArgPointer)
 						}
 				
@@ -460,7 +460,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoiceFeatures>) in
 				InvoiceFeatures_requires_basic_mpp(thisArgPointer)
 						}
 				

@@ -195,7 +195,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKFallback>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKFallback>) in
 				Fallback_hash(oPointer)
 						}
 				
@@ -219,9 +219,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKFallback>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKFallback>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKFallback>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKFallback>) in
 				Fallback_eq(aPointer, bPointer)
 						}
 				

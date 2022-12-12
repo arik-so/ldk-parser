@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRawDataPart>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRawDataPart>) in
 				RawDataPart_get_timestamp(thisPtrPointer)
 						}
 				
@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRawDataPart>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRawDataPart>) in
 				RawDataPart_set_timestamp(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -113,9 +113,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKRawDataPart>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKRawDataPart>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKRawDataPart>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKRawDataPart>) in
 				RawDataPart_eq(aPointer, bPointer)
 						}
 				
@@ -163,7 +163,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKRawDataPart>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRawDataPart>) in
 				RawDataPart_hash(oPointer)
 						}
 				

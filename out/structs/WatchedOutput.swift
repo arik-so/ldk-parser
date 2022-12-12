@@ -87,7 +87,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKWatchedOutput>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKWatchedOutput>) in
 				WatchedOutput_get_block_hash(thisPtrPointer)
 						}
 				
@@ -122,7 +122,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
 				WatchedOutput_set_block_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -148,7 +148,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKWatchedOutput>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKWatchedOutput>) in
 				WatchedOutput_get_outpoint(thisPtrPointer)
 						}
 				
@@ -171,7 +171,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
 				WatchedOutput_set_outpoint(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -194,7 +194,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKWatchedOutput>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKWatchedOutput>) in
 				WatchedOutput_get_script_pubkey(thisPtrPointer)
 						}
 				
@@ -219,7 +219,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWatchedOutput>) in
 				WatchedOutput_set_script_pubkey(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -303,9 +303,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKWatchedOutput>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKWatchedOutput>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKWatchedOutput>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKWatchedOutput>) in
 				WatchedOutput_eq(aPointer, bPointer)
 						}
 				
@@ -330,7 +330,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKWatchedOutput>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKWatchedOutput>) in
 				WatchedOutput_hash(oPointer)
 						}
 				

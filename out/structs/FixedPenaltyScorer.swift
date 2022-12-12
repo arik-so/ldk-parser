@@ -108,7 +108,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKFixedPenaltyScorer>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKFixedPenaltyScorer>) in
 				FixedPenaltyScorer_as_Score(thisArgPointer)
 						}
 				
@@ -131,7 +131,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKFixedPenaltyScorer>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKFixedPenaltyScorer>) in
 				FixedPenaltyScorer_write(objPointer)
 						}
 				

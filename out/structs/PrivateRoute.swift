@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKPrivateRoute>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKPrivateRoute>) in
 				PrivateRoute_hash(oPointer)
 						}
 				
@@ -119,9 +119,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKPrivateRoute>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKPrivateRoute>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKPrivateRoute>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKPrivateRoute>) in
 				PrivateRoute_eq(aPointer, bPointer)
 						}
 				

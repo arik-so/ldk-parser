@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
 				MinFinalCltvExpiry_get_a(thisPtrPointer)
 						}
 				
@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMinFinalCltvExpiry>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKMinFinalCltvExpiry>) in
 				MinFinalCltvExpiry_set_a(thisPtrPointer, val)
 						}
 				
@@ -159,7 +159,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
 				MinFinalCltvExpiry_hash(oPointer)
 						}
 				
@@ -184,9 +184,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKMinFinalCltvExpiry>) in
 				MinFinalCltvExpiry_eq(aPointer, bPointer)
 						}
 				

@@ -256,9 +256,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKSendError>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKSendError>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKSendError>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKSendError>) in
 				SendError_eq(aPointer, bPointer)
 						}
 				

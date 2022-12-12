@@ -90,7 +90,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKExpiryTime>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKExpiryTime>) in
 				ExpiryTime_hash(oPointer)
 						}
 				
@@ -115,9 +115,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKExpiryTime>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKExpiryTime>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKExpiryTime>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKExpiryTime>) in
 				ExpiryTime_eq(aPointer, bPointer)
 						}
 				
@@ -180,7 +180,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKExpiryTime>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKExpiryTime>) in
 				ExpiryTime_as_seconds(thisArgPointer)
 						}
 				
@@ -203,7 +203,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKExpiryTime>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKExpiryTime>) in
 				ExpiryTime_as_duration(thisArgPointer)
 						}
 				

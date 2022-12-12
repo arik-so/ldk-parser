@@ -98,9 +98,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKHostname>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKHostname>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKHostname>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKHostname>) in
 				Hostname_eq(aPointer, bPointer)
 						}
 				
@@ -125,7 +125,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKHostname>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKHostname>) in
 				Hostname_len(thisArgPointer)
 						}
 				

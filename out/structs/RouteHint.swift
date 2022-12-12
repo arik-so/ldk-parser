@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHint>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHint>) in
 				RouteHint_get_a(thisPtrPointer)
 						}
 				
@@ -90,7 +90,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHint>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHint>) in
 				RouteHint_set_a(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -167,7 +167,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKRouteHint>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRouteHint>) in
 				RouteHint_hash(oPointer)
 						}
 				
@@ -192,9 +192,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKRouteHint>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKRouteHint>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKRouteHint>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKRouteHint>) in
 				RouteHint_eq(aPointer, bPointer)
 						}
 				
@@ -219,7 +219,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKRouteHint>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRouteHint>) in
 				RouteHint_write(objPointer)
 						}
 				

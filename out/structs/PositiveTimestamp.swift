@@ -77,9 +77,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKPositiveTimestamp>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKPositiveTimestamp>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKPositiveTimestamp>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKPositiveTimestamp>) in
 				PositiveTimestamp_eq(aPointer, bPointer)
 						}
 				
@@ -127,7 +127,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKPositiveTimestamp>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKPositiveTimestamp>) in
 				PositiveTimestamp_hash(oPointer)
 						}
 				
@@ -219,7 +219,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKPositiveTimestamp>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPositiveTimestamp>) in
 				PositiveTimestamp_as_unix_timestamp(thisArgPointer)
 						}
 				
@@ -242,7 +242,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKPositiveTimestamp>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPositiveTimestamp>) in
 				PositiveTimestamp_as_duration_since_epoch(thisArgPointer)
 						}
 				
@@ -265,7 +265,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKPositiveTimestamp>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKPositiveTimestamp>) in
 				PositiveTimestamp_as_time(thisArgPointer)
 						}
 				

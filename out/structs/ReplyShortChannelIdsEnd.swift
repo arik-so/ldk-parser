@@ -71,7 +71,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
 				ReplyShortChannelIdsEnd_get_chain_hash(thisPtrPointer)
 						}
 				
@@ -100,7 +100,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyShortChannelIdsEnd>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyShortChannelIdsEnd>) in
 				ReplyShortChannelIdsEnd_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -127,7 +127,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
 				ReplyShortChannelIdsEnd_get_full_information(thisPtrPointer)
 						}
 				
@@ -151,7 +151,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyShortChannelIdsEnd>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyShortChannelIdsEnd>) in
 				ReplyShortChannelIdsEnd_set_full_information(thisPtrPointer, val)
 						}
 				
@@ -229,9 +229,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
 				ReplyShortChannelIdsEnd_eq(aPointer, bPointer)
 						}
 				
@@ -256,7 +256,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKReplyShortChannelIdsEnd>) in
 				ReplyShortChannelIdsEnd_write(objPointer)
 						}
 				

@@ -94,9 +94,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKShutdownScript>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKShutdownScript>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKShutdownScript>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKShutdownScript>) in
 				ShutdownScript_eq(aPointer, bPointer)
 						}
 				
@@ -121,7 +121,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKShutdownScript>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKShutdownScript>) in
 				ShutdownScript_write(objPointer)
 						}
 				
@@ -275,7 +275,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKShutdownScript>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKShutdownScript>) in
 				ShutdownScript_as_legacy_pubkey(thisArgPointer)
 						}
 				
@@ -308,7 +308,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKShutdownScript>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKShutdownScript>) in
 				
 						withUnsafePointer(to: features.dynamicallyDangledClone().cType!) { (featuresPointer: UnsafePointer<LDKInitFeatures>) in
 				ShutdownScript_is_compatible(thisArgPointer, featuresPointer)

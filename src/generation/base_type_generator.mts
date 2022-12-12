@@ -659,7 +659,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					memoryManagementInfix = '.dangle()';
 				}else if(this.hasCloneMethod(argument.type) && argument.isAsteriskPointer && memoryContext && !memoryContext?.isFreeMethod && !memoryContext.isCloneMethod){
 					// if it's being passed as a pointer, we need to clone the object and forget about it
-					memoryManagementInfix = '.danglingClone()'
+					// memoryManagementInfix = '.danglingClone()'
 				}
 			} else if (this.hasCloneMethod(argument.type)) {
 				if (this.hasOwnershipField(argument.type)) {

@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFee>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFee>) in
 				UpdateFee_get_channel_id(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFee>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFee>) in
 				UpdateFee_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -120,7 +120,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFee>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFee>) in
 				UpdateFee_get_feerate_per_kw(thisPtrPointer)
 						}
 				
@@ -143,7 +143,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFee>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFee>) in
 				UpdateFee_set_feerate_per_kw(thisPtrPointer, val)
 						}
 				
@@ -221,9 +221,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKUpdateFee>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKUpdateFee>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKUpdateFee>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKUpdateFee>) in
 				UpdateFee_eq(aPointer, bPointer)
 						}
 				
@@ -248,7 +248,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKUpdateFee>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUpdateFee>) in
 				UpdateFee_write(objPointer)
 						}
 				

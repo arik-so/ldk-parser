@@ -272,9 +272,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKBalance>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKBalance>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKBalance>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKBalance>) in
 				Balance_eq(aPointer, bPointer)
 						}
 				

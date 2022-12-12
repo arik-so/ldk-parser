@@ -67,7 +67,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
 				StaticPaymentOutputDescriptor_get_outpoint(thisPtrPointer)
 						}
 				
@@ -90,7 +90,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
 				StaticPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -115,7 +115,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
 				StaticPaymentOutputDescriptor_get_output(thisPtrPointer)
 						}
 				
@@ -138,7 +138,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
 				StaticPaymentOutputDescriptor_set_output(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
@@ -163,7 +163,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
 				StaticPaymentOutputDescriptor_get_channel_keys_id(thisPtrPointer)
 						}
 				
@@ -194,7 +194,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
 				StaticPaymentOutputDescriptor_set_channel_keys_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -220,7 +220,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
 				StaticPaymentOutputDescriptor_get_channel_value_satoshis(thisPtrPointer)
 						}
 				
@@ -243,7 +243,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKStaticPaymentOutputDescriptor>) in
 				StaticPaymentOutputDescriptor_set_channel_value_satoshis(thisPtrPointer, val)
 						}
 				
@@ -321,9 +321,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
 				StaticPaymentOutputDescriptor_eq(aPointer, bPointer)
 						}
 				
@@ -348,7 +348,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
 				StaticPaymentOutputDescriptor_write(objPointer)
 						}
 				

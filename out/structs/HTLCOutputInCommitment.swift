@@ -68,7 +68,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_get_offered(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_set_offered(thisPtrPointer, val)
 						}
 				
@@ -118,7 +118,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_get_amount_msat(thisPtrPointer)
 						}
 				
@@ -142,7 +142,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_set_amount_msat(thisPtrPointer, val)
 						}
 				
@@ -165,7 +165,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_get_cltv_expiry(thisPtrPointer)
 						}
 				
@@ -188,7 +188,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_set_cltv_expiry(thisPtrPointer, val)
 						}
 				
@@ -211,7 +211,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_get_payment_hash(thisPtrPointer)
 						}
 				
@@ -240,7 +240,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_set_payment_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -268,7 +268,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_get_transaction_output_index(thisPtrPointer)
 						}
 				
@@ -295,7 +295,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_set_transaction_output_index(thisPtrPointer, valOption.cType!)
 						}
 				
@@ -375,9 +375,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_eq(aPointer, bPointer)
 						}
 				
@@ -402,7 +402,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
 				HTLCOutputInCommitment_write(objPointer)
 						}
 				

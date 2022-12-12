@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKShutdown>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKShutdown>) in
 				Shutdown_get_channel_id(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKShutdown>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKShutdown>) in
 				Shutdown_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -121,7 +121,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKShutdown>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKShutdown>) in
 				Shutdown_get_scriptpubkey(thisPtrPointer)
 						}
 				
@@ -147,7 +147,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKShutdown>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKShutdown>) in
 				Shutdown_set_scriptpubkey(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -231,9 +231,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKShutdown>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKShutdown>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKShutdown>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKShutdown>) in
 				Shutdown_eq(aPointer, bPointer)
 						}
 				
@@ -258,7 +258,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKShutdown>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKShutdown>) in
 				Shutdown_write(objPointer)
 						}
 				

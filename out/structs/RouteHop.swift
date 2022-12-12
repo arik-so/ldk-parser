@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
 				RouteHop_get_pubkey(thisPtrPointer)
 						}
 				
@@ -90,7 +90,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
 				RouteHop_set_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -117,7 +117,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
 				RouteHop_get_node_features(thisPtrPointer)
 						}
 				
@@ -141,7 +141,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
 				RouteHop_set_node_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -164,7 +164,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
 				RouteHop_get_short_channel_id(thisPtrPointer)
 						}
 				
@@ -187,7 +187,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
 				RouteHop_set_short_channel_id(thisPtrPointer, val)
 						}
 				
@@ -211,7 +211,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
 				RouteHop_get_channel_features(thisPtrPointer)
 						}
 				
@@ -235,7 +235,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
 				RouteHop_set_channel_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -260,7 +260,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
 				RouteHop_get_fee_msat(thisPtrPointer)
 						}
 				
@@ -285,7 +285,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
 				RouteHop_set_fee_msat(thisPtrPointer, val)
 						}
 				
@@ -309,7 +309,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteHop>) in
 				RouteHop_get_cltv_expiry_delta(thisPtrPointer)
 						}
 				
@@ -333,7 +333,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteHop>) in
 				RouteHop_set_cltv_expiry_delta(thisPtrPointer, val)
 						}
 				
@@ -409,7 +409,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKRouteHop>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRouteHop>) in
 				RouteHop_hash(oPointer)
 						}
 				
@@ -434,9 +434,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKRouteHop>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKRouteHop>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKRouteHop>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKRouteHop>) in
 				RouteHop_eq(aPointer, bPointer)
 						}
 				
@@ -461,7 +461,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKRouteHop>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRouteHop>) in
 				RouteHop_write(objPointer)
 						}
 				

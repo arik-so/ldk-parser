@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
 				CounterpartyChannelTransactionParameters_get_pubkeys(thisPtrPointer)
 						}
 				
@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCounterpartyChannelTransactionParameters>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCounterpartyChannelTransactionParameters>) in
 				CounterpartyChannelTransactionParameters_set_pubkeys(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -111,7 +111,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
 				CounterpartyChannelTransactionParameters_get_selected_contest_delay(thisPtrPointer)
 						}
 				
@@ -134,7 +134,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCounterpartyChannelTransactionParameters>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCounterpartyChannelTransactionParameters>) in
 				CounterpartyChannelTransactionParameters_set_selected_contest_delay(thisPtrPointer, val)
 						}
 				
@@ -205,7 +205,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKCounterpartyChannelTransactionParameters>) in
 				CounterpartyChannelTransactionParameters_write(objPointer)
 						}
 				

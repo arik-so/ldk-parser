@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRoutingFees>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRoutingFees>) in
 				RoutingFees_get_base_msat(thisPtrPointer)
 						}
 				
@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRoutingFees>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRoutingFees>) in
 				RoutingFees_set_base_msat(thisPtrPointer, val)
 						}
 				
@@ -112,7 +112,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRoutingFees>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRoutingFees>) in
 				RoutingFees_get_proportional_millionths(thisPtrPointer)
 						}
 				
@@ -136,7 +136,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRoutingFees>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRoutingFees>) in
 				RoutingFees_set_proportional_millionths(thisPtrPointer, val)
 						}
 				
@@ -186,9 +186,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKRoutingFees>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKRoutingFees>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKRoutingFees>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKRoutingFees>) in
 				RoutingFees_eq(aPointer, bPointer)
 						}
 				
@@ -236,7 +236,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKRoutingFees>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRoutingFees>) in
 				RoutingFees_hash(oPointer)
 						}
 				
@@ -259,7 +259,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKRoutingFees>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRoutingFees>) in
 				RoutingFees_write(objPointer)
 						}
 				

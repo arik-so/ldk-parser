@@ -77,7 +77,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_get_chain_hash(thisPtrPointer)
 						}
 				
@@ -106,7 +106,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -132,7 +132,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_get_first_blocknum(thisPtrPointer)
 						}
 				
@@ -155,7 +155,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_set_first_blocknum(thisPtrPointer, val)
 						}
 				
@@ -178,7 +178,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_get_number_of_blocks(thisPtrPointer)
 						}
 				
@@ -201,7 +201,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_set_number_of_blocks(thisPtrPointer, val)
 						}
 				
@@ -224,7 +224,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_get_sync_complete(thisPtrPointer)
 						}
 				
@@ -247,7 +247,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_set_sync_complete(thisPtrPointer, val)
 						}
 				
@@ -272,7 +272,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_get_short_channel_ids(thisPtrPointer)
 						}
 				
@@ -297,7 +297,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_set_short_channel_ids(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -381,9 +381,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKReplyChannelRange>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKReplyChannelRange>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKReplyChannelRange>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_eq(aPointer, bPointer)
 						}
 				
@@ -432,7 +432,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKReplyChannelRange>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKReplyChannelRange>) in
 				ReplyChannelRange_write(objPointer)
 						}
 				

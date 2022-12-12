@@ -67,7 +67,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKWarningMessage>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKWarningMessage>) in
 				WarningMessage_get_channel_id(thisPtrPointer)
 						}
 				
@@ -98,7 +98,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWarningMessage>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWarningMessage>) in
 				WarningMessage_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -127,7 +127,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKWarningMessage>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKWarningMessage>) in
 				WarningMessage_get_data(thisPtrPointer)
 						}
 				
@@ -155,7 +155,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWarningMessage>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKWarningMessage>) in
 				WarningMessage_set_data(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -241,9 +241,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKWarningMessage>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKWarningMessage>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKWarningMessage>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKWarningMessage>) in
 				WarningMessage_eq(aPointer, bPointer)
 						}
 				
@@ -268,7 +268,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKWarningMessage>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKWarningMessage>) in
 				WarningMessage_write(objPointer)
 						}
 				

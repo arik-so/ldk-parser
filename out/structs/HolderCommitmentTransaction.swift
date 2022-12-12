@@ -69,7 +69,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
 				HolderCommitmentTransaction_get_counterparty_sig(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHolderCommitmentTransaction>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHolderCommitmentTransaction>) in
 				HolderCommitmentTransaction_set_counterparty_sig(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -122,7 +122,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
 				HolderCommitmentTransaction_get_counterparty_htlc_sigs(thisPtrPointer)
 						}
 				
@@ -147,7 +147,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHolderCommitmentTransaction>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKHolderCommitmentTransaction>) in
 				HolderCommitmentTransaction_set_counterparty_htlc_sigs(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -195,7 +195,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKHolderCommitmentTransaction>) in
 				HolderCommitmentTransaction_write(objPointer)
 						}
 				

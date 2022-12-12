@@ -71,7 +71,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKNodeAlias>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeAlias>) in
 				NodeAlias_get_a(thisPtrPointer)
 						}
 				
@@ -100,7 +100,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAlias>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAlias>) in
 				NodeAlias_set_a(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -181,9 +181,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKNodeAlias>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKNodeAlias>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKNodeAlias>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKNodeAlias>) in
 				NodeAlias_eq(aPointer, bPointer)
 						}
 				
@@ -208,7 +208,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKNodeAlias>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNodeAlias>) in
 				NodeAlias_write(objPointer)
 						}
 				

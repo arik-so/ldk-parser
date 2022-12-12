@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_get_chain_hash(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -120,7 +120,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_get_short_channel_id(thisPtrPointer)
 						}
 				
@@ -143,7 +143,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_set_short_channel_id(thisPtrPointer, val)
 						}
 				
@@ -166,7 +166,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_get_timestamp(thisPtrPointer)
 						}
 				
@@ -189,7 +189,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_set_timestamp(thisPtrPointer, val)
 						}
 				
@@ -212,7 +212,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_get_flags(thisPtrPointer)
 						}
 				
@@ -235,7 +235,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_set_flags(thisPtrPointer, val)
 						}
 				
@@ -265,7 +265,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_get_cltv_expiry_delta(thisPtrPointer)
 						}
 				
@@ -295,7 +295,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_set_cltv_expiry_delta(thisPtrPointer, val)
 						}
 				
@@ -318,7 +318,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_get_htlc_minimum_msat(thisPtrPointer)
 						}
 				
@@ -341,7 +341,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_set_htlc_minimum_msat(thisPtrPointer, val)
 						}
 				
@@ -364,7 +364,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_get_htlc_maximum_msat(thisPtrPointer)
 						}
 				
@@ -387,7 +387,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_set_htlc_maximum_msat(thisPtrPointer, val)
 						}
 				
@@ -410,7 +410,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_get_fee_base_msat(thisPtrPointer)
 						}
 				
@@ -433,7 +433,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_set_fee_base_msat(thisPtrPointer, val)
 						}
 				
@@ -456,7 +456,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_get_fee_proportional_millionths(thisPtrPointer)
 						}
 				
@@ -479,7 +479,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_set_fee_proportional_millionths(thisPtrPointer, val)
 						}
 				
@@ -506,7 +506,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_get_excess_data(thisPtrPointer)
 						}
 				
@@ -533,7 +533,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_set_excess_data(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -617,9 +617,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_eq(aPointer, bPointer)
 						}
 				
@@ -644,7 +644,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				UnsignedChannelUpdate_write(objPointer)
 						}
 				

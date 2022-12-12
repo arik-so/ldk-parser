@@ -559,9 +559,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKParseError>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKParseError>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKParseError>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKParseError>) in
 				ParseError_eq(aPointer, bPointer)
 						}
 				
@@ -586,7 +586,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKParseError>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKParseError>) in
 				ParseError_to_str(oPointer)
 						}
 				

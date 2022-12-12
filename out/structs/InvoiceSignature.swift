@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKInvoiceSignature>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKInvoiceSignature>) in
 				InvoiceSignature_hash(oPointer)
 						}
 				
@@ -113,9 +113,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKInvoiceSignature>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKInvoiceSignature>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKInvoiceSignature>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKInvoiceSignature>) in
 				InvoiceSignature_eq(aPointer, bPointer)
 						}
 				

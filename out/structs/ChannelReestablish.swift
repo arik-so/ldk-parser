@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReestablish>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReestablish>) in
 				ChannelReestablish_get_channel_id(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReestablish>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReestablish>) in
 				ChannelReestablish_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -120,7 +120,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReestablish>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReestablish>) in
 				ChannelReestablish_get_next_local_commitment_number(thisPtrPointer)
 						}
 				
@@ -143,7 +143,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReestablish>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReestablish>) in
 				ChannelReestablish_set_next_local_commitment_number(thisPtrPointer, val)
 						}
 				
@@ -166,7 +166,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReestablish>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelReestablish>) in
 				ChannelReestablish_get_next_remote_commitment_number(thisPtrPointer)
 						}
 				
@@ -189,7 +189,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReestablish>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelReestablish>) in
 				ChannelReestablish_set_next_remote_commitment_number(thisPtrPointer, val)
 						}
 				
@@ -237,9 +237,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKChannelReestablish>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKChannelReestablish>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKChannelReestablish>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKChannelReestablish>) in
 				ChannelReestablish_eq(aPointer, bPointer)
 						}
 				
@@ -264,7 +264,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKChannelReestablish>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelReestablish>) in
 				ChannelReestablish_write(objPointer)
 						}
 				

@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKFundingSigned>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingSigned>) in
 				FundingSigned_get_channel_id(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingSigned>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingSigned>) in
 				FundingSigned_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -120,7 +120,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKFundingSigned>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKFundingSigned>) in
 				FundingSigned_get_signature(thisPtrPointer)
 						}
 				
@@ -145,7 +145,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingSigned>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKFundingSigned>) in
 				FundingSigned_set_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -231,9 +231,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKFundingSigned>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKFundingSigned>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKFundingSigned>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKFundingSigned>) in
 				FundingSigned_eq(aPointer, bPointer)
 						}
 				
@@ -258,7 +258,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKFundingSigned>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKFundingSigned>) in
 				FundingSigned_write(objPointer)
 						}
 				

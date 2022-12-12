@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKSha256>) in
+						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKSha256>) in
 				Sha256_hash(oPointer)
 						}
 				
@@ -113,9 +113,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKSha256>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKSha256>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKSha256>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKSha256>) in
 				Sha256_eq(aPointer, bPointer)
 						}
 				

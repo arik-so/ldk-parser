@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
 				RevokeAndACK_get_channel_id(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
 				RevokeAndACK_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -120,7 +120,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
 				RevokeAndACK_get_per_commitment_secret(thisPtrPointer)
 						}
 				
@@ -149,7 +149,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
 				RevokeAndACK_set_per_commitment_secret(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -175,7 +175,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRevokeAndACK>) in
 				RevokeAndACK_get_next_per_commitment_point(thisPtrPointer)
 						}
 				
@@ -200,7 +200,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRevokeAndACK>) in
 				RevokeAndACK_set_next_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -291,9 +291,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKRevokeAndACK>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKRevokeAndACK>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKRevokeAndACK>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKRevokeAndACK>) in
 				RevokeAndACK_eq(aPointer, bPointer)
 						}
 				
@@ -318,7 +318,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKRevokeAndACK>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRevokeAndACK>) in
 				RevokeAndACK_write(objPointer)
 						}
 				

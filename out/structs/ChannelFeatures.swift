@@ -48,9 +48,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKChannelFeatures>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKChannelFeatures>) in
 				
-						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKChannelFeatures>) in
+						withUnsafePointer(to: b.cType!) { (bPointer: UnsafePointer<LDKChannelFeatures>) in
 				ChannelFeatures_eq(aPointer, bPointer)
 						}
 				
@@ -137,7 +137,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKChannelFeatures>) in
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelFeatures>) in
 				ChannelFeatures_requires_unknown_bits(thisArgPointer)
 						}
 				
@@ -160,7 +160,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKChannelFeatures>) in
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelFeatures>) in
 				ChannelFeatures_write(objPointer)
 						}
 				
