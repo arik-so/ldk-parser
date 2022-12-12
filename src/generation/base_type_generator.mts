@@ -1014,8 +1014,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					internal func dynamicallyDangledClone() -> ${swiftTypeName} {
 						let dangledClone = self.clone()
 						// if it's owned, i. e. controlled by Rust, it should dangle on our end
-						// dangledClone.dangling = dangledClone.cType!.${ownershipName}
-						// return dangledClone
+						dangledClone.dangling = dangledClone.cType!.${ownershipName}
+						return dangledClone
 					}
 				`;
 			}
@@ -1025,8 +1025,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				freeabilityOverrideInfix = `
 						if !self.initialCFreeability {
 							// only set to freeable if it was originally false
-							Bindings.print("Setting ${swiftTypeName} \\(self.instanceNumber)'s ${type.ownershipField?.contextualName}: \\(self.cType!.${ownershipName}) -> true")
-							self.cType!.${ownershipName} = true
+							// Bindings.print("Setting ${swiftTypeName} \\(self.instanceNumber)'s ${type.ownershipField?.contextualName}: \\(self.cType!.${ownershipName}) -> true")
+							// self.cType!.${ownershipName} = true
 						}
 				`
 			}
