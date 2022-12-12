@@ -1064,7 +1064,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 							print("Freeing ${swiftTypeName} \\(self.instanceNumber).")
 							self.cType!.${type.dataField.contextualName}.deallocate()
 						} else {
-							print("Not freeing LDKu8sliceWrapper \(self.instanceNumber) due to dangle.")
+							print("Not freeing ${swiftTypeName} \\(self.instanceNumber) due to dangle.")
 						}
 					}
 				`;

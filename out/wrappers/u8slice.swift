@@ -79,7 +79,7 @@
 							print("Freeing u8slice \(self.instanceNumber).")
 							self.cType!.data.deallocate()
 						} else {
-							print("Not freeing LDKu8sliceWrapper (self.instanceNumber) due to dangle.")
+							print("Not freeing u8slice \(self.instanceNumber) due to dangle.")
 						}
 					}
 				
