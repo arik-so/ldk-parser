@@ -217,9 +217,16 @@ export default class Generator {
 		for (const currentSwiftFileName of childSwiftFiles) {
 			const currentPath = path.join(directoryPath, currentSwiftFileName);
 			const fileContents = fs.readFileSync(currentPath).toString('utf-8');
+			// remove all leading trailing whitespaces from every line, as well as any repetition of new lines
+			const canonicalFileContents = fileContents
+				.replaceAll(/^\s*/mg, '') // leading spaces
+				.replaceAll(/\s*$/mg, '') // trailing spaces
+				.replaceAll(/\n+/g, '\n') // multiple newlines
+				.replaceAll(/\s*\/\/.*/g, '') // comment lines
+				.replaceAll(/;+$/g, '') // trailing semicolons
 			// remove all whitespace so it produces the same output regardless of whether it got linted
-			const dewhitespacedContents = fileContents.replaceAll(whitespaceRegex, '');
-			const hash = crypto.createHash('sha256').update(dewhitespacedContents).digest('hex');
+			// const dewhitespacedContents = fileContents.replaceAll(whitespaceRegex, '');
+			const hash = crypto.createHash('sha256').update(canonicalFileContents).digest('hex');
 			tree.push([currentSwiftFileName, hash]);
 		}
 		return tree;
