@@ -255,7 +255,7 @@
 					public class func read(ser: [UInt8]) -> Result_BuiltCommitmentTransactionDecodeErrorZ {
 						// native call variable prep
 						
-						let serPrimitiveWrapper = u8slice(value: ser)
+						let serPrimitiveWrapper = u8slice(value: ser).dangle()
 				
 
 						// native method call
@@ -281,7 +281,7 @@
 					public func getSighashAll(fundingRedeemscript: [UInt8], channelValueSatoshis: UInt64) -> [UInt8] {
 						// native call variable prep
 						
-						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript)
+						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript).dangle()
 				
 
 						// native method call
@@ -312,7 +312,7 @@
 						
 						let tupledFundingKey = Bindings.arrayToUInt8Tuple32(array: fundingKey)
 					
-						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript)
+						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript).dangle()
 				
 
 						// native method call

@@ -676,6 +676,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					// }
 				}
 			}
+		} else if(argument.type instanceof RustPrimitiveWrapper && argument.type.isDeallocatable()){
+			memoryManagementInfix = '.dangle()';
 		}
 
 		if (argument.type === containerType) {

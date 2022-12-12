@@ -141,7 +141,7 @@
 					public class func read(ser: [UInt8]) -> Result_ShutdownScriptDecodeErrorZ {
 						// native call variable prep
 						
-						let serPrimitiveWrapper = u8slice(value: ser)
+						let serPrimitiveWrapper = u8slice(value: ser).dangle()
 				
 
 						// native method call
@@ -224,7 +224,7 @@
 						
 						let versionPrimitiveWrapper = WitnessVersion(value: version)
 				
-						let programPrimitiveWrapper = u8slice(value: program)
+						let programPrimitiveWrapper = u8slice(value: program).dangle()
 				
 
 						// native method call

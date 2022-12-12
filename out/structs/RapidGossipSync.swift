@@ -104,7 +104,7 @@
 					public func updateNetworkGraph(updateData: [UInt8]) -> Result_u32GraphSyncErrorZ {
 						// native call variable prep
 						
-						let updateDataPrimitiveWrapper = u8slice(value: updateData)
+						let updateDataPrimitiveWrapper = u8slice(value: updateData).dangle()
 				
 
 						// native method call

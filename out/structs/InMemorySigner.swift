@@ -806,7 +806,7 @@
 					public class func read(ser: [UInt8], arg: [UInt8]) -> Result_InMemorySignerDecodeErrorZ {
 						// native call variable prep
 						
-						let serPrimitiveWrapper = u8slice(value: ser)
+						let serPrimitiveWrapper = u8slice(value: ser).dangle()
 				
 						let argPrimitiveWrapper = SecretKey(value: arg)
 				

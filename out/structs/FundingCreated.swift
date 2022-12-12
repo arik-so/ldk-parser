@@ -384,7 +384,7 @@
 					public class func read(ser: [UInt8]) -> Result_FundingCreatedDecodeErrorZ {
 						// native call variable prep
 						
-						let serPrimitiveWrapper = u8slice(value: ser)
+						let serPrimitiveWrapper = u8slice(value: ser).dangle()
 				
 
 						// native method call

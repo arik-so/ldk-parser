@@ -80,7 +80,7 @@ export class RustVector extends RustStruct {
 	}
 
 	get depth(): number {
-		if(this.iterateeField.type instanceof RustVector){
+		if (this.iterateeField.type instanceof RustVector) {
 			return 1 + this.iterateeField.type.depth;
 		}
 		return 1;
@@ -108,6 +108,18 @@ export class RustPrimitiveWrapper extends RustStruct {
 	 * TODO: enforce!
 	 */
 	orderedFields: RustStructField[] = [];
+
+	/**
+	 * Some primitive wrappers can be deallocated even without a free method
+	 */
+	isDeallocatable(): boolean {
+		if (this.dataField.type instanceof RustArray && Number.isFinite(this.dataField.type.length)) {
+			return false;
+		} else if (this.dataField.type instanceof RustPrimitive && !this.dataField.isAsteriskPointer) {
+			return false;
+		}
+		return true;
+	}
 }
 
 export class RustPrimitiveEnum extends RustType {
