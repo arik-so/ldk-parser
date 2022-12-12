@@ -152,7 +152,7 @@
 					/// Implementation of BaseSign for this object.
 					public func getBaseSign() -> BaseSign {
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBaseSign(cType: self.cType!.BaseSign, anchor: self).dangle()
+						let returnValue = NativelyImplementedBaseSign(cType: self.cType!.BaseSign, anchor: self)
 
 						return returnValue;
 					}

@@ -407,7 +407,7 @@
 							return nil
 						}
 
-						return ClosureReason_LDKCounterpartyForceClosed_Body(cType: self.cType!.counterparty_force_closed, anchor: self).dangle()
+						return ClosureReason_LDKCounterpartyForceClosed_Body(cType: self.cType!.counterparty_force_closed, anchor: self)
 					}
 			
 					public func getValueAsProcessingError() -> ProcessingError? {
@@ -415,7 +415,7 @@
 							return nil
 						}
 
-						return ClosureReason_LDKProcessingError_Body(cType: self.cType!.processing_error, anchor: self).dangle()
+						return ClosureReason_LDKProcessingError_Body(cType: self.cType!.processing_error, anchor: self)
 					}
 			
 
@@ -492,7 +492,7 @@
 						/// a security vulnerability in the terminal emulator or the logging subsystem.
 						public func getPeerMsg() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.peer_msg).dangle().getValue()
+							let returnValue = Str(cType: self.cType!.peer_msg, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -550,7 +550,7 @@
 						/// A developer-readable error message which we generated.
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.err).dangle().getValue()
+							let returnValue = Str(cType: self.cType!.err, anchor: self).getValue()
 
 							return returnValue;
 						}

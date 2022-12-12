@@ -102,7 +102,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_C2Tuple_u64u64ZZ_Some {
-							return Tuple_u64u64Z(cType: self.cType!.some).dangle().getValue()
+							return Tuple_u64u64Z(cType: self.cType!.some, anchor: self).dangle().getValue()
 						}
 						assert(false, "invalid option enum value")
 						return nil

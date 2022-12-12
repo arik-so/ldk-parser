@@ -620,7 +620,7 @@
 					/// Gets the holder's channel public keys and basepoints
 					public func getPubkeys() -> ChannelPublicKeys {
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(cType: self.cType!.pubkeys, anchor: self).dangle()
+						let returnValue = ChannelPublicKeys(cType: self.cType!.pubkeys, anchor: self)
 
 						return returnValue;
 					}

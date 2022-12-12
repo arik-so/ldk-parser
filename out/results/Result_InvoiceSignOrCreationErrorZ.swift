@@ -130,7 +130,7 @@
 					
 					public func getError() -> SignOrCreationError? {
 						if self.cType?.result_ok == false {
-							return SignOrCreationError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return SignOrCreationError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -139,7 +139,7 @@
 					
 					public func getValue() -> Invoice? {
 						if self.cType?.result_ok == true {
-							return Invoice(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return Invoice(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

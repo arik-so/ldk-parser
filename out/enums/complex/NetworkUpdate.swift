@@ -262,7 +262,7 @@
 							return nil
 						}
 
-						return NetworkUpdate_LDKChannelUpdateMessage_Body(cType: self.cType!.channel_update_message, anchor: self).dangle()
+						return NetworkUpdate_LDKChannelUpdateMessage_Body(cType: self.cType!.channel_update_message, anchor: self)
 					}
 			
 					public func getValueAsChannelFailure() -> ChannelFailure? {
@@ -270,7 +270,7 @@
 							return nil
 						}
 
-						return NetworkUpdate_LDKChannelFailure_Body(cType: self.cType!.channel_failure, anchor: self).dangle()
+						return NetworkUpdate_LDKChannelFailure_Body(cType: self.cType!.channel_failure, anchor: self)
 					}
 			
 					public func getValueAsNodeFailure() -> NodeFailure? {
@@ -278,7 +278,7 @@
 							return nil
 						}
 
-						return NetworkUpdate_LDKNodeFailure_Body(cType: self.cType!.node_failure, anchor: self).dangle()
+						return NetworkUpdate_LDKNodeFailure_Body(cType: self.cType!.node_failure, anchor: self)
 					}
 			
 
@@ -351,7 +351,7 @@
 						/// The update to apply via [`NetworkGraph::update_channel`].
 						public func getMsg() -> Bindings.ChannelUpdate {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.msg, anchor: self).dangle()
+							let returnValue = Bindings.ChannelUpdate(cType: self.cType!.msg, anchor: self)
 
 							return returnValue;
 						}
@@ -476,7 +476,7 @@
 						/// The node id of the failed node.
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id, anchor: self).getValue()
 
 							return returnValue;
 						}

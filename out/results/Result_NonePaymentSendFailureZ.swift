@@ -130,7 +130,7 @@
 					
 					public func getError() -> PaymentSendFailure? {
 						if self.cType?.result_ok == false {
-							return PaymentSendFailure(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return PaymentSendFailure(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}

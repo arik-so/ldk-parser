@@ -882,10 +882,12 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			 * why the returned value must be dangled.
 			 */
 			if (returnType instanceof RustStructField) {
-				if (!this.isElidedType(returnType.type)) {
+				// it's a struct field accessor, meaning the memory must be anchored
+				anchorInfix = ', anchor: self';
+				/* if (!this.isElidedType(returnType.type)) {
 					anchorInfix = ', anchor: self';
 				}
-				dangleSuffix = '.dangle()';
+				dangleSuffix = '.dangle()'; */
 			}
 
 			/**

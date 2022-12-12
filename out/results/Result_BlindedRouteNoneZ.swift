@@ -116,7 +116,7 @@
 					
 					public func getValue() -> BlindedRoute? {
 						if self.cType?.result_ok == true {
-							return BlindedRoute(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return BlindedRoute(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

@@ -102,7 +102,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ_Some {
-							return Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(cType: self.cType!.some).dangle().getValue()
+							return Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ(cType: self.cType!.some, anchor: self).dangle().getValue()
 						}
 						assert(false, "invalid option enum value")
 						return nil

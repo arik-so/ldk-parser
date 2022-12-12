@@ -143,7 +143,7 @@
 					
 					public func getValue() -> [([UInt8], ChannelMonitor)]? {
 						if self.cType?.result_ok == true {
-							return Vec_C2Tuple_BlockHashChannelMonitorZZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
+							return Vec_C2Tuple_BlockHashChannelMonitorZZ(cType: self.cType!.contents.result.pointee, anchor: self).getValue()
 						}
 						return nil
 					}

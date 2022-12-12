@@ -119,7 +119,7 @@
 					/// The script_pubkey in this output
 					public func getScriptPubkey() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: self.cType!.script_pubkey).dangle().getValue()
+						let returnValue = Vec_u8Z(cType: self.cType!.script_pubkey, anchor: self).getValue()
 
 						return returnValue;
 					}

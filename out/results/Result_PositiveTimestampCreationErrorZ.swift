@@ -139,7 +139,7 @@
 					
 					public func getValue() -> PositiveTimestamp? {
 						if self.cType?.result_ok == true {
-							return PositiveTimestamp(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return PositiveTimestamp(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

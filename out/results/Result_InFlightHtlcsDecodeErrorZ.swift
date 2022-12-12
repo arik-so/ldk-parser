@@ -107,7 +107,7 @@
 					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -116,7 +116,7 @@
 					
 					public func getValue() -> InFlightHtlcs? {
 						if self.cType?.result_ok == true {
-							return InFlightHtlcs(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return InFlightHtlcs(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

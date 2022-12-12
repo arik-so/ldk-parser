@@ -161,7 +161,7 @@
 							return nil
 						}
 
-						return P2PGossipSync(cType: self.cType!.p2p, anchor: self).dangle()
+						return P2PGossipSync(cType: self.cType!.p2p, anchor: self)
 					}
 			
 					public func getValueAsRapid() -> Bindings.RapidGossipSync? {
@@ -169,7 +169,7 @@
 							return nil
 						}
 
-						return RapidGossipSync(cType: self.cType!.rapid, anchor: self).dangle()
+						return RapidGossipSync(cType: self.cType!.rapid, anchor: self)
 					}
 			
 

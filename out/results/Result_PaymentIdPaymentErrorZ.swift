@@ -135,7 +135,7 @@
 					
 					public func getError() -> PaymentError? {
 						if self.cType?.result_ok == false {
-							return PaymentError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return PaymentError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -144,7 +144,7 @@
 					
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
-							return ThirtyTwoBytes(cType: self.cType!.contents.result.pointee).dangle().getValue()
+							return ThirtyTwoBytes(cType: self.cType!.contents.result.pointee, anchor: self).getValue()
 						}
 						return nil
 					}

@@ -609,7 +609,7 @@
 							return nil
 						}
 
-						return Bech32Error(cType: self.cType!.bech32_error, anchor: self).dangle()
+						return Bech32Error(cType: self.cType!.bech32_error, anchor: self)
 					}
 			
 					public func getValueAsParseAmountError() -> Bindings.BindingsError? {
@@ -617,7 +617,7 @@
 							return nil
 						}
 
-						return BindingsError(cType: self.cType!.parse_amount_error, anchor: self).dangle()
+						return BindingsError(cType: self.cType!.parse_amount_error, anchor: self)
 					}
 			
 					public func getValueAsMalformedSignature() -> Secp256k1Error? {
@@ -633,7 +633,7 @@
 							return nil
 						}
 
-						return BindingsError(cType: self.cType!.description_decode_error, anchor: self).dangle()
+						return BindingsError(cType: self.cType!.description_decode_error, anchor: self)
 					}
 			
 					public func getValueAsInvalidSliceLength() -> String? {
@@ -641,7 +641,7 @@
 							return nil
 						}
 
-						return Str(cType: self.cType!.invalid_slice_length).dangle().getValue()
+						return Str(cType: self.cType!.invalid_slice_length, anchor: self).getValue()
 					}
 			
 

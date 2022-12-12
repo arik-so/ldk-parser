@@ -139,7 +139,7 @@
 					
 					public func getValue() -> TxOut? {
 						if self.cType?.result_ok == true {
-							return TxOut(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return TxOut(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

@@ -326,7 +326,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKIPv4_Body(cType: self.cType!.i_pv4, anchor: self).dangle()
+						return NetAddress_LDKIPv4_Body(cType: self.cType!.i_pv4, anchor: self)
 					}
 			
 					public func getValueAsIPv6() -> IPv6? {
@@ -334,7 +334,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKIPv6_Body(cType: self.cType!.i_pv6, anchor: self).dangle()
+						return NetAddress_LDKIPv6_Body(cType: self.cType!.i_pv6, anchor: self)
 					}
 			
 					public func getValueAsOnionV2() -> [UInt8]? {
@@ -342,7 +342,7 @@
 							return nil
 						}
 
-						return TwelveBytes(cType: self.cType!.onion_v2).dangle().getValue()
+						return TwelveBytes(cType: self.cType!.onion_v2, anchor: self).getValue()
 					}
 			
 					public func getValueAsOnionV3() -> OnionV3? {
@@ -350,7 +350,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKOnionV3_Body(cType: self.cType!.onion_v3, anchor: self).dangle()
+						return NetAddress_LDKOnionV3_Body(cType: self.cType!.onion_v3, anchor: self)
 					}
 			
 					public func getValueAsHostname() -> Hostname? {
@@ -358,7 +358,7 @@
 							return nil
 						}
 
-						return NetAddress_LDKHostname_Body(cType: self.cType!.hostname, anchor: self).dangle()
+						return NetAddress_LDKHostname_Body(cType: self.cType!.hostname, anchor: self)
 					}
 			
 
@@ -431,7 +431,7 @@
 						/// The 4-byte IPv4 address
 						public func getAddr() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = FourBytes(cType: self.cType!.addr).dangle().getValue()
+							let returnValue = FourBytes(cType: self.cType!.addr, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -497,7 +497,7 @@
 						/// The 16-byte IPv6 address
 						public func getAddr() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = SixteenBytes(cType: self.cType!.addr).dangle().getValue()
+							let returnValue = SixteenBytes(cType: self.cType!.addr, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -563,7 +563,7 @@
 						/// The ed25519 long-term public key of the peer
 						public func getEd25519Pubkey() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.ed25519_pubkey).dangle().getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.ed25519_pubkey, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -645,7 +645,7 @@
 						/// The hostname on which the node is listening.
 						public func getHostname() -> Bindings.Hostname {
 							// return value (do some wrapping)
-							let returnValue = Bindings.Hostname(cType: self.cType!.hostname, anchor: self).dangle()
+							let returnValue = Bindings.Hostname(cType: self.cType!.hostname, anchor: self)
 
 							return returnValue;
 						}

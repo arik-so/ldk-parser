@@ -241,7 +241,7 @@
 							return nil
 						}
 
-						return APIError(cType: self.cType!.parameter_error, anchor: self).dangle()
+						return APIError(cType: self.cType!.parameter_error, anchor: self)
 					}
 			
 					public func getValueAsPathParameterError() -> [Result_NoneAPIErrorZ]? {
@@ -249,7 +249,7 @@
 							return nil
 						}
 
-						return Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.path_parameter_error).dangle().getValue()
+						return Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.path_parameter_error, anchor: self).getValue()
 					}
 			
 					public func getValueAsAllFailedRetrySafe() -> [APIError]? {
@@ -257,7 +257,7 @@
 							return nil
 						}
 
-						return Vec_APIErrorZ(cType: self.cType!.all_failed_retry_safe).dangle().getValue()
+						return Vec_APIErrorZ(cType: self.cType!.all_failed_retry_safe, anchor: self).getValue()
 					}
 			
 					public func getValueAsPartialFailure() -> PartialFailure? {
@@ -265,7 +265,7 @@
 							return nil
 						}
 
-						return PaymentSendFailure_LDKPartialFailure_Body(cType: self.cType!.partial_failure, anchor: self).dangle()
+						return PaymentSendFailure_LDKPartialFailure_Body(cType: self.cType!.partial_failure, anchor: self)
 					}
 			
 
@@ -338,7 +338,7 @@
 						/// The errors themselves, in the same order as the route hops.
 						public func getResults() -> [Result_NoneAPIErrorZ] {
 							// return value (do some wrapping)
-							let returnValue = Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.results).dangle().getValue()
+							let returnValue = Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.results, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -350,7 +350,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getFailedPathsRetry() -> Bindings.RouteParameters {
 							// return value (do some wrapping)
-							let returnValue = Bindings.RouteParameters(cType: self.cType!.failed_paths_retry, anchor: self).dangle()
+							let returnValue = Bindings.RouteParameters(cType: self.cType!.failed_paths_retry, anchor: self)
 
 							return returnValue;
 						}
@@ -358,7 +358,7 @@
 						/// The payment id for the payment, which is now at least partially pending.
 						public func getPaymentId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id).dangle().getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_id, anchor: self).getValue()
 
 							return returnValue;
 						}

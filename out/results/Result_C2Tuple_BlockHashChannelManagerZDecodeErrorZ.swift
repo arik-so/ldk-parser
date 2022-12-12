@@ -108,7 +108,7 @@
 					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -117,7 +117,7 @@
 					
 					public func getValue() -> ([UInt8], ChannelManager)? {
 						if self.cType?.result_ok == true {
-							return Tuple_BlockHashChannelManagerZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
+							return Tuple_BlockHashChannelManagerZ(cType: self.cType!.contents.result.pointee, anchor: self).getValue()
 						}
 						return nil
 					}

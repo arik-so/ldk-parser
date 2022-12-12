@@ -282,7 +282,7 @@
 							return nil
 						}
 
-						return HTLCUpdate(cType: self.cType!.htlc_event, anchor: self).dangle()
+						return HTLCUpdate(cType: self.cType!.htlc_event, anchor: self)
 					}
 			
 					public func getValueAsCommitmentTxConfirmed() -> Bindings.OutPoint? {
@@ -290,7 +290,7 @@
 							return nil
 						}
 
-						return OutPoint(cType: self.cType!.commitment_tx_confirmed, anchor: self).dangle()
+						return OutPoint(cType: self.cType!.commitment_tx_confirmed, anchor: self)
 					}
 			
 					public func getValueAsCompleted() -> Completed? {
@@ -298,7 +298,7 @@
 							return nil
 						}
 
-						return MonitorEvent_LDKCompleted_Body(cType: self.cType!.completed, anchor: self).dangle()
+						return MonitorEvent_LDKCompleted_Body(cType: self.cType!.completed, anchor: self)
 					}
 			
 					public func getValueAsUpdateFailed() -> Bindings.OutPoint? {
@@ -306,7 +306,7 @@
 							return nil
 						}
 
-						return OutPoint(cType: self.cType!.update_failed, anchor: self).dangle()
+						return OutPoint(cType: self.cType!.update_failed, anchor: self)
 					}
 			
 
@@ -379,7 +379,7 @@
 						/// The funding outpoint of the [`ChannelMonitor`] that was updated
 						public func getFundingTxo() -> Bindings.OutPoint {
 							// return value (do some wrapping)
-							let returnValue = Bindings.OutPoint(cType: self.cType!.funding_txo, anchor: self).dangle()
+							let returnValue = Bindings.OutPoint(cType: self.cType!.funding_txo, anchor: self)
 
 							return returnValue;
 						}

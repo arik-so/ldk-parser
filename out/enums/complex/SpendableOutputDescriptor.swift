@@ -292,7 +292,7 @@
 							return nil
 						}
 
-						return SpendableOutputDescriptor_LDKStaticOutput_Body(cType: self.cType!.static_output, anchor: self).dangle()
+						return SpendableOutputDescriptor_LDKStaticOutput_Body(cType: self.cType!.static_output, anchor: self)
 					}
 			
 					public func getValueAsDelayedPaymentOutput() -> Bindings.DelayedPaymentOutputDescriptor? {
@@ -300,7 +300,7 @@
 							return nil
 						}
 
-						return DelayedPaymentOutputDescriptor(cType: self.cType!.delayed_payment_output, anchor: self).dangle()
+						return DelayedPaymentOutputDescriptor(cType: self.cType!.delayed_payment_output, anchor: self)
 					}
 			
 					public func getValueAsStaticPaymentOutput() -> Bindings.StaticPaymentOutputDescriptor? {
@@ -308,7 +308,7 @@
 							return nil
 						}
 
-						return StaticPaymentOutputDescriptor(cType: self.cType!.static_payment_output, anchor: self).dangle()
+						return StaticPaymentOutputDescriptor(cType: self.cType!.static_payment_output, anchor: self)
 					}
 			
 
@@ -381,7 +381,7 @@
 						/// The outpoint which is spendable
 						public func getOutpoint() -> Bindings.OutPoint {
 							// return value (do some wrapping)
-							let returnValue = Bindings.OutPoint(cType: self.cType!.outpoint, anchor: self).dangle()
+							let returnValue = Bindings.OutPoint(cType: self.cType!.outpoint, anchor: self)
 
 							return returnValue;
 						}
@@ -389,7 +389,7 @@
 						/// The output which is referenced by the given outpoint.
 						public func getOutput() -> Bindings.TxOut {
 							// return value (do some wrapping)
-							let returnValue = Bindings.TxOut(cType: self.cType!.output, anchor: self).dangle()
+							let returnValue = Bindings.TxOut(cType: self.cType!.output, anchor: self)
 
 							return returnValue;
 						}

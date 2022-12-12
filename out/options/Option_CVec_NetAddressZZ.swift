@@ -102,7 +102,7 @@
 							return nil
 						}
 						if self.cType!.tag == LDKCOption_CVec_NetAddressZZ_Some {
-							return Vec_NetAddressZ(cType: self.cType!.some).dangle().getValue()
+							return Vec_NetAddressZ(cType: self.cType!.some, anchor: self).dangle().getValue()
 						}
 						assert(false, "invalid option enum value")
 						return nil

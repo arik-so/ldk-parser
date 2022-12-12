@@ -134,7 +134,7 @@
 					
 					public func getError() -> PeerHandleError? {
 						if self.cType?.result_ok == false {
-							return PeerHandleError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return PeerHandleError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -143,7 +143,7 @@
 					
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
-							return Vec_u8Z(cType: self.cType!.contents.result.pointee).dangle().getValue()
+							return Vec_u8Z(cType: self.cType!.contents.result.pointee, anchor: self).getValue()
 						}
 						return nil
 					}

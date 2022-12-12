@@ -246,7 +246,7 @@
 							return nil
 						}
 
-						return Fallback_LDKSegWitProgram_Body(cType: self.cType!.seg_wit_program, anchor: self).dangle()
+						return Fallback_LDKSegWitProgram_Body(cType: self.cType!.seg_wit_program, anchor: self)
 					}
 			
 					public func getValueAsPubKeyHash() -> [UInt8]? {
@@ -254,7 +254,7 @@
 							return nil
 						}
 
-						return TwentyBytes(cType: self.cType!.pub_key_hash).dangle().getValue()
+						return TwentyBytes(cType: self.cType!.pub_key_hash, anchor: self).getValue()
 					}
 			
 					public func getValueAsScriptHash() -> [UInt8]? {
@@ -262,7 +262,7 @@
 							return nil
 						}
 
-						return TwentyBytes(cType: self.cType!.script_hash).dangle().getValue()
+						return TwentyBytes(cType: self.cType!.script_hash, anchor: self).getValue()
 					}
 			
 
@@ -335,7 +335,7 @@
 						/// 
 						public func getVersion() -> UInt8 {
 							// return value (do some wrapping)
-							let returnValue = u5(cType: self.cType!.version).dangle().getValue()
+							let returnValue = u5(cType: self.cType!.version, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -343,7 +343,7 @@
 						/// 
 						public func getProgram() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = Vec_u8Z(cType: self.cType!.program).dangle().getValue()
+							let returnValue = Vec_u8Z(cType: self.cType!.program, anchor: self).getValue()
 
 							return returnValue;
 						}

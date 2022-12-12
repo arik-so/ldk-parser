@@ -130,7 +130,7 @@
 					/// The element at position 1
 					public func getB() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: self.cType!.b).dangle().getValue()
+						let returnValue = Vec_u8Z(cType: self.cType!.b, anchor: self).dangle().getValue()
 
 						return returnValue;
 					}

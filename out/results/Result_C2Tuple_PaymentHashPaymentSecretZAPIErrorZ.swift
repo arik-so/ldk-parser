@@ -132,7 +132,7 @@
 					
 					public func getError() -> APIError? {
 						if self.cType?.result_ok == false {
-							return APIError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return APIError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -141,7 +141,7 @@
 					
 					public func getValue() -> ([UInt8], [UInt8])? {
 						if self.cType?.result_ok == true {
-							return Tuple_PaymentHashPaymentSecretZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
+							return Tuple_PaymentHashPaymentSecretZ(cType: self.cType!.contents.result.pointee, anchor: self).getValue()
 						}
 						return nil
 					}

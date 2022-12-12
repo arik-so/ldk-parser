@@ -204,7 +204,7 @@
 							return nil
 						}
 
-						return ParseError(cType: self.cType!.parse_error, anchor: self).dangle()
+						return ParseError(cType: self.cType!.parse_error, anchor: self)
 					}
 			
 					public func getValueAsSemanticError() -> SemanticError? {

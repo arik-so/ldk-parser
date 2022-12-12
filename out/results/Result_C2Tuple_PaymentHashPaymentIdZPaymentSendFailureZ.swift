@@ -132,7 +132,7 @@
 					
 					public func getError() -> PaymentSendFailure? {
 						if self.cType?.result_ok == false {
-							return PaymentSendFailure(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return PaymentSendFailure(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -141,7 +141,7 @@
 					
 					public func getValue() -> ([UInt8], [UInt8])? {
 						if self.cType?.result_ok == true {
-							return Tuple_PaymentHashPaymentIdZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
+							return Tuple_PaymentHashPaymentIdZ(cType: self.cType!.contents.result.pointee, anchor: self).getValue()
 						}
 						return nil
 					}

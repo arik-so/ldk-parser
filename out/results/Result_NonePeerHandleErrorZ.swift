@@ -130,7 +130,7 @@
 					
 					public func getError() -> PeerHandleError? {
 						if self.cType?.result_ok == false {
-							return PeerHandleError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return PeerHandleError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}

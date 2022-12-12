@@ -139,7 +139,7 @@
 					
 					public func getValue() -> Description? {
 						if self.cType?.result_ok == true {
-							return Description(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return Description(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

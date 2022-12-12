@@ -130,7 +130,7 @@
 					
 					public func getError() -> ParseError? {
 						if self.cType?.result_ok == false {
-							return ParseError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return ParseError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -139,7 +139,7 @@
 					
 					public func getValue() -> SignedRawInvoice? {
 						if self.cType?.result_ok == true {
-							return SignedRawInvoice(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return SignedRawInvoice(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

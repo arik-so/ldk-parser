@@ -135,7 +135,7 @@
 					/// The element at position 1
 					public func getB() -> [MonitorEvent] {
 						// return value (do some wrapping)
-						let returnValue = Vec_MonitorEventZ(cType: self.cType!.b).dangle().getValue()
+						let returnValue = Vec_MonitorEventZ(cType: self.cType!.b, anchor: self).dangle().getValue()
 
 						return returnValue;
 					}
@@ -143,7 +143,7 @@
 					/// The element at position 2
 					public func getC() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: self.cType!.c).dangle().getValue()
+						let returnValue = PublicKey(cType: self.cType!.c, anchor: self).dangle().getValue()
 
 						return returnValue;
 					}

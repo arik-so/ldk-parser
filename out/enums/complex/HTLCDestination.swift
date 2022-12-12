@@ -273,7 +273,7 @@
 							return nil
 						}
 
-						return HTLCDestination_LDKNextHopChannel_Body(cType: self.cType!.next_hop_channel, anchor: self).dangle()
+						return HTLCDestination_LDKNextHopChannel_Body(cType: self.cType!.next_hop_channel, anchor: self)
 					}
 			
 					public func getValueAsUnknownNextHop() -> UnknownNextHop? {
@@ -281,7 +281,7 @@
 							return nil
 						}
 
-						return HTLCDestination_LDKUnknownNextHop_Body(cType: self.cType!.unknown_next_hop, anchor: self).dangle()
+						return HTLCDestination_LDKUnknownNextHop_Body(cType: self.cType!.unknown_next_hop, anchor: self)
 					}
 			
 					public func getValueAsFailedPayment() -> FailedPayment? {
@@ -289,7 +289,7 @@
 							return nil
 						}
 
-						return HTLCDestination_LDKFailedPayment_Body(cType: self.cType!.failed_payment, anchor: self).dangle()
+						return HTLCDestination_LDKFailedPayment_Body(cType: self.cType!.failed_payment, anchor: self)
 					}
 			
 
@@ -366,7 +366,7 @@
 						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
 						public func getNodeId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = PublicKey(cType: self.cType!.node_id).dangle().getValue()
+							let returnValue = PublicKey(cType: self.cType!.node_id, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -374,7 +374,7 @@
 						/// The outgoing `channel_id` between us and the next node.
 						public func getChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id).dangle().getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -490,7 +490,7 @@
 						/// The payment hash of the payment we attempted to process.
 						public func getPaymentHash() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash).dangle().getValue()
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash, anchor: self).getValue()
 
 							return returnValue;
 						}

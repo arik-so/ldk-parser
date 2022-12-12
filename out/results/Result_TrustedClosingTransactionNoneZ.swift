@@ -116,7 +116,7 @@
 					
 					public func getValue() -> TrustedClosingTransaction? {
 						if self.cType?.result_ok == true {
-							return TrustedClosingTransaction(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return TrustedClosingTransaction(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

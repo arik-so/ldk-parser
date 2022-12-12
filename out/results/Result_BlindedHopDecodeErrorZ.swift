@@ -107,7 +107,7 @@
 					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -116,7 +116,7 @@
 					
 					public func getValue() -> BlindedHop? {
 						if self.cType?.result_ok == true {
-							return BlindedHop(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return BlindedHop(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

@@ -125,7 +125,7 @@
 					/// The element at position 0
 					public func getA() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: self.cType!.a).dangle().getValue()
+						let returnValue = ThirtyTwoBytes(cType: self.cType!.a, anchor: self).dangle().getValue()
 
 						return returnValue;
 					}

@@ -139,7 +139,7 @@
 					
 					public func getValue() -> PrivateRoute? {
 						if self.cType?.result_ok == true {
-							return PrivateRoute(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return PrivateRoute(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

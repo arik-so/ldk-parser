@@ -130,7 +130,7 @@
 					
 					public func getError() -> ParseError? {
 						if self.cType?.result_ok == false {
-							return ParseError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return ParseError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}

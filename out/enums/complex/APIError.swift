@@ -320,7 +320,7 @@
 							return nil
 						}
 
-						return APIError_LDKAPIMisuseError_Body(cType: self.cType!.api_misuse_error, anchor: self).dangle()
+						return APIError_LDKAPIMisuseError_Body(cType: self.cType!.api_misuse_error, anchor: self)
 					}
 			
 					public func getValueAsFeeRateTooHigh() -> FeeRateTooHigh? {
@@ -328,7 +328,7 @@
 							return nil
 						}
 
-						return APIError_LDKFeeRateTooHigh_Body(cType: self.cType!.fee_rate_too_high, anchor: self).dangle()
+						return APIError_LDKFeeRateTooHigh_Body(cType: self.cType!.fee_rate_too_high, anchor: self)
 					}
 			
 					public func getValueAsRouteError() -> RouteError? {
@@ -336,7 +336,7 @@
 							return nil
 						}
 
-						return APIError_LDKRouteError_Body(cType: self.cType!.route_error, anchor: self).dangle()
+						return APIError_LDKRouteError_Body(cType: self.cType!.route_error, anchor: self)
 					}
 			
 					public func getValueAsChannelUnavailable() -> ChannelUnavailable? {
@@ -344,7 +344,7 @@
 							return nil
 						}
 
-						return APIError_LDKChannelUnavailable_Body(cType: self.cType!.channel_unavailable, anchor: self).dangle()
+						return APIError_LDKChannelUnavailable_Body(cType: self.cType!.channel_unavailable, anchor: self)
 					}
 			
 					public func getValueAsIncompatibleShutdownScript() -> IncompatibleShutdownScript? {
@@ -352,7 +352,7 @@
 							return nil
 						}
 
-						return APIError_LDKIncompatibleShutdownScript_Body(cType: self.cType!.incompatible_shutdown_script, anchor: self).dangle()
+						return APIError_LDKIncompatibleShutdownScript_Body(cType: self.cType!.incompatible_shutdown_script, anchor: self)
 					}
 			
 
@@ -425,7 +425,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.err).dangle().getValue()
+							let returnValue = Str(cType: self.cType!.err, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -483,7 +483,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.err).dangle().getValue()
+							let returnValue = Str(cType: self.cType!.err, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -549,7 +549,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.err).dangle().getValue()
+							let returnValue = Str(cType: self.cType!.err, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -607,7 +607,7 @@
 						/// A human-readable error message
 						public func getErr() -> String {
 							// return value (do some wrapping)
-							let returnValue = Str(cType: self.cType!.err).dangle().getValue()
+							let returnValue = Str(cType: self.cType!.err, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -665,7 +665,7 @@
 						/// The incompatible shutdown script.
 						public func getScript() -> Bindings.ShutdownScript {
 							// return value (do some wrapping)
-							let returnValue = Bindings.ShutdownScript(cType: self.cType!.script, anchor: self).dangle()
+							let returnValue = Bindings.ShutdownScript(cType: self.cType!.script, anchor: self)
 
 							return returnValue;
 						}

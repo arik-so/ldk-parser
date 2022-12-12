@@ -257,7 +257,7 @@
 							return nil
 						}
 
-						return EffectiveCapacity_LDKExactLiquidity_Body(cType: self.cType!.exact_liquidity, anchor: self).dangle()
+						return EffectiveCapacity_LDKExactLiquidity_Body(cType: self.cType!.exact_liquidity, anchor: self)
 					}
 			
 					public func getValueAsMaximumHtlc() -> MaximumHTLC? {
@@ -265,7 +265,7 @@
 							return nil
 						}
 
-						return EffectiveCapacity_LDKMaximumHTLC_Body(cType: self.cType!.maximum_htlc, anchor: self).dangle()
+						return EffectiveCapacity_LDKMaximumHTLC_Body(cType: self.cType!.maximum_htlc, anchor: self)
 					}
 			
 					public func getValueAsTotal() -> Total? {
@@ -273,7 +273,7 @@
 							return nil
 						}
 
-						return EffectiveCapacity_LDKTotal_Body(cType: self.cType!.total, anchor: self).dangle()
+						return EffectiveCapacity_LDKTotal_Body(cType: self.cType!.total, anchor: self)
 					}
 			
 
@@ -471,7 +471,7 @@
 						/// The maximum HTLC amount denominated in millisatoshi.
 						public func getHtlcMaximumMsat() -> UInt64? {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(cType: self.cType!.htlc_maximum_msat).dangle().getValue()
+							let returnValue = Option_u64Z(cType: self.cType!.htlc_maximum_msat, anchor: self).getValue()
 
 							return returnValue;
 						}

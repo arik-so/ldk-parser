@@ -139,7 +139,7 @@
 					
 					public func getValue() -> TxCreationKeys? {
 						if self.cType?.result_ok == true {
-							return TxCreationKeys(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return TxCreationKeys(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

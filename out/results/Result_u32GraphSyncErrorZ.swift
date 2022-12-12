@@ -106,7 +106,7 @@
 					
 					public func getError() -> GraphSyncError? {
 						if self.cType?.result_ok == false {
-							return GraphSyncError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return GraphSyncError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}

@@ -130,7 +130,7 @@
 					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -139,7 +139,7 @@
 					
 					public func getValue() -> ChannelMonitorUpdate? {
 						if self.cType?.result_ok == true {
-							return ChannelMonitorUpdate(cType: self.cType!.contents.result.pointee, anchor: self).dangle()
+							return ChannelMonitorUpdate(cType: self.cType!.contents.result.pointee, anchor: self)
 						}
 						return nil
 					}

@@ -132,7 +132,7 @@
 					
 					public func getError() -> DecodeError? {
 						if self.cType?.result_ok == false {
-							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self).dangle()
+							return DecodeError(cType: self.cType!.contents.err.pointee, anchor: self)
 						}
 						return nil
 					}
@@ -141,7 +141,7 @@
 					
 					public func getValue() -> MonitorEvent? {
 						if self.cType?.result_ok == true {
-							return Option_MonitorEventZ(cType: self.cType!.contents.result.pointee).dangle().getValue()
+							return Option_MonitorEventZ(cType: self.cType!.contents.result.pointee, anchor: self).getValue()
 						}
 						return nil
 					}
