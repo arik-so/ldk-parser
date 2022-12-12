@@ -146,7 +146,7 @@
 					
 					public func getValue() -> [UInt8]? {
 						if self.cType?.result_ok == true {
-							return Transaction(cType: self.cType!.contents.result.pointee).dangle().dynamicDangle().getValue()
+							return Transaction(cType: self.cType!.contents.result.pointee).dangle().dangle().getValue()
 						}
 						return nil
 					}

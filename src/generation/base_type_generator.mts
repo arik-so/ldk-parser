@@ -894,7 +894,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			if(returnType.type instanceof RustPrimitiveWrapper){
 				// these objects might be short-lived
 				if(returnType.type.ownershipField){
-					preparedReturnValue.wrapperSuffix += '.dynamicDangle()';
+					// for now, we still dangle these
+					// preparedReturnValue.wrapperSuffix += '.dynamicDangle()';
+					preparedReturnValue.wrapperSuffix += '.dangle()';
 				} else {
 					preparedReturnValue.wrapperSuffix += '.dangle()';
 				}

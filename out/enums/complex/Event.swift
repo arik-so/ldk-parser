@@ -2112,7 +2112,7 @@
 						/// The full transaction received from the user
 						public func getTransaction() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = Transaction(cType: self.cType!.transaction).dangle().dynamicDangle().getValue()
+							let returnValue = Transaction(cType: self.cType!.transaction).dangle().dangle().getValue()
 
 							return returnValue;
 						}

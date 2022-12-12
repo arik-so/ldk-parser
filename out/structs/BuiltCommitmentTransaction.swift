@@ -75,7 +75,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Transaction(cType: nativeCallResult).dynamicDangle().getValue()
+						let returnValue = Transaction(cType: nativeCallResult).dangle().getValue()
 						
 
 						return returnValue

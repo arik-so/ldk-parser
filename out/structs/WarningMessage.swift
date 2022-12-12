@@ -137,7 +137,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult).dynamicDangle().getValue()
+						let returnValue = Str(cType: nativeCallResult).dangle().getValue()
 						
 
 						return returnValue
