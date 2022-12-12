@@ -133,7 +133,7 @@
 					/// The element at position 1
 					public func getB() -> [UInt8] {
 						// return value (do some wrapping)
-						let returnValue = Transaction(cType: self.cType!.b).dangle().dangle().getValue()
+						let returnValue = Transaction(cType: self.cType!.b).dangle().dynamicDangle().getValue()
 
 						return returnValue;
 					}

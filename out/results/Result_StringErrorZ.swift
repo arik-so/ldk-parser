@@ -146,7 +146,7 @@
 					
 					public func getValue() -> String? {
 						if self.cType?.result_ok == true {
-							return Str(cType: self.cType!.contents.result.pointee).dangle().dangle().getValue()
+							return Str(cType: self.cType!.contents.result.pointee).dangle().dynamicDangle().getValue()
 						}
 						return nil
 					}

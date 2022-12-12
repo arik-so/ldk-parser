@@ -893,7 +893,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			preparedReturnValue.wrapperSuffix += `${anchorInfix})${dangleSuffix}`;
 			if(returnType.type instanceof RustPrimitiveWrapper){
 				// these objects might be short-lived
-				preparedReturnValue.wrapperSuffix += '.dangle()';
+				if(returnType.type.ownershipField){
+					preparedReturnValue.wrapperSuffix += '.dynamicDangle()';
+				} else {
+					preparedReturnValue.wrapperSuffix += '.dangle()';
+				}
 			}
 			if (returnType.type !== containerType) {
 				// it's an elided type, so we pass it through
