@@ -126,7 +126,21 @@
 						return self
 					}
 
-										
+					
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result_NoneSendErrorZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result_NoneSendErrorZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 

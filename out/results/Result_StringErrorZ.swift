@@ -155,7 +155,27 @@
 						return self
 					}
 
-										
+					
+					internal func danglingClone() -> Result_StringErrorZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result_StringErrorZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result_StringErrorZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 

@@ -150,7 +150,27 @@
 						return self
 					}
 
-										
+					
+					internal func danglingClone() -> Result_SignDecodeErrorZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result_SignDecodeErrorZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result_SignDecodeErrorZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 

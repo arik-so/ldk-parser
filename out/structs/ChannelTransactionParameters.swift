@@ -362,6 +362,7 @@
 		
 					/// Are anchors (zero fee HTLC transaction variant) used for this channel. Boolean is
 					/// serialization backwards-compatible.
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `val`.")
 					public func setOptAnchors(val: Option_NoneZ) {
 						// native call variable prep
 						
@@ -385,6 +386,7 @@
 					}
 		
 					/// Constructs a new ChannelTransactionParameters given each field
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `optAnchorsArg`.")
 					public init(holderPubkeysArg: ChannelPublicKeys, holderSelectedContestDelayArg: UInt16, isOutboundFromHolderArg: Bool, counterpartyParametersArg: CounterpartyChannelTransactionParameters, fundingOutpointArg: OutPoint, optAnchorsArg: Option_NoneZ) {
 						// native call variable prep
 						

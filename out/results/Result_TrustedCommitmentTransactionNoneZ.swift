@@ -127,7 +127,21 @@
 						return self
 					}
 
-										
+					
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result_TrustedCommitmentTransactionNoneZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result_TrustedCommitmentTransactionNoneZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 

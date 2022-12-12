@@ -150,7 +150,27 @@
 						return self
 					}
 
-										
+					
+					internal func danglingClone() -> Result_NonePeerHandleErrorZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result_NonePeerHandleErrorZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result_NonePeerHandleErrorZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 

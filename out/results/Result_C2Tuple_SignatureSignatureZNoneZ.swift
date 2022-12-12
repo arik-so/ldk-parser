@@ -152,7 +152,27 @@
 						return self
 					}
 
-										
+					
+					internal func danglingClone() -> Result_C2Tuple_SignatureSignatureZNoneZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result_C2Tuple_SignatureSignatureZNoneZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result_C2Tuple_SignatureSignatureZNoneZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 

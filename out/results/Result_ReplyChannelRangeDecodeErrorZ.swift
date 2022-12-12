@@ -150,7 +150,27 @@
 						return self
 					}
 
-										
+					
+					internal func danglingClone() -> Result_ReplyChannelRangeDecodeErrorZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result_ReplyChannelRangeDecodeErrorZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result_ReplyChannelRangeDecodeErrorZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 

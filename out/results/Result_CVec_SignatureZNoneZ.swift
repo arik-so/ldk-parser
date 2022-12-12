@@ -154,7 +154,27 @@
 						return self
 					}
 
-										
+					
+					internal func danglingClone() -> Result_CVec_SignatureZNoneZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result_CVec_SignatureZNoneZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result_CVec_SignatureZNoneZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 

@@ -46,7 +46,7 @@
 						
 						let rustArray = array.map { (currentValueDepth1: Result_NoneAPIErrorZ) -> LDKCResult_NoneAPIErrorZ in
 							
-							return currentValueDepth1.cType!
+							return currentValueDepth1.danglingClone().cType!
 						}
 				
 

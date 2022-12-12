@@ -155,7 +155,27 @@
 						return self
 					}
 
-										
+					
+					internal func danglingClone() -> Result__u832APIErrorZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result__u832APIErrorZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result__u832APIErrorZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 

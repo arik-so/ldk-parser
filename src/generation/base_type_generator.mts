@@ -1135,12 +1135,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 	}
 
 	private hasMethod(type: RustType, methodName: string) {
-		let methods: RustFunction[] = [];
-		if (type instanceof RustStruct) {
-			methods = type.methods;
-		} else if (type instanceof RustTaggedValueEnum) {
-			methods = type.methods;
-		}
+		let methods = type.methods;
 		for (const currentMethod of methods) {
 			const standaloneName = this.standaloneMethodName(currentMethod, type);
 			if (standaloneName === methodName) {

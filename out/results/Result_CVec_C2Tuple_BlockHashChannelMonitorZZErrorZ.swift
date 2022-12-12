@@ -154,7 +154,27 @@
 						return self
 					}
 
-										
+					
+					internal func danglingClone() -> Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 

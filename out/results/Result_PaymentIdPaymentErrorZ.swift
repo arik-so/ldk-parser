@@ -155,7 +155,27 @@
 						return self
 					}
 
-										
+					
+					internal func danglingClone() -> Result_PaymentIdPaymentErrorZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+					deinit {
+						if Bindings.suspendFreedom {
+							return
+						}
+
+						if !self.dangling {
+							Bindings.print("Freeing Result_PaymentIdPaymentErrorZ \(self.instanceNumber).")
+							
+							self.free()
+						} else {
+							Bindings.print("Not freeing Result_PaymentIdPaymentErrorZ \(self.instanceNumber) due to dangle.")
+						}
+					}
+			
 
 				}
 
