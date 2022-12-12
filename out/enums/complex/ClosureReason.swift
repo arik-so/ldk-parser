@@ -169,8 +169,6 @@
 						
 						let peerMsgPrimitiveWrapper = Str(value: peerMsg).dangle()
 				
-						peerMsgPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = ClosureReason_counterparty_force_closed(peerMsgPrimitiveWrapper.cType!)
@@ -271,8 +269,6 @@
 						
 						let errPrimitiveWrapper = Str(value: err).dangle()
 				
-						errPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = ClosureReason_processing_error(errPrimitiveWrapper.cType!)

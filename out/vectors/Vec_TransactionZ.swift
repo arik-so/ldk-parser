@@ -48,8 +48,6 @@
 							
 						let currentValueDepth1PrimitiveWrapper = Transaction(value: currentValueDepth1).dangle()
 				
-						currentValueDepth1PrimitiveWrapper.cType!.data_is_owned = false
-					
 							return currentValueDepth1PrimitiveWrapper.cType!
 						}
 				

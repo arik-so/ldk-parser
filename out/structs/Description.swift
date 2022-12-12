@@ -148,8 +148,6 @@
 						
 						let descriptionPrimitiveWrapper = Str(value: description).dangle()
 				
-						descriptionPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = Description_new(descriptionPrimitiveWrapper.cType!)

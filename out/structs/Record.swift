@@ -135,8 +135,6 @@
 						
 						let valPrimitiveWrapper = Str(value: val).dangle()
 				
-						valPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = 
@@ -188,8 +186,6 @@
 						
 						let valPrimitiveWrapper = Str(value: val).dangle()
 				
-						valPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = 
@@ -241,8 +237,6 @@
 						
 						let valPrimitiveWrapper = Str(value: val).dangle()
 				
-						valPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = 

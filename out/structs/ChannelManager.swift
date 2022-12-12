@@ -794,8 +794,6 @@
 				
 						let fundingTransactionPrimitiveWrapper = Transaction(value: fundingTransaction).dangle()
 				
-						fundingTransactionPrimitiveWrapper.cType!.data_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = 

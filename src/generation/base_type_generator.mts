@@ -699,9 +699,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						let ${preparedArgument.name} = ${this.swiftTypeName(argument.type)}(value: ${publicName})${memoryManagementInfix}
 				`;
 				if (argument.type.ownershipField) {
-					preparedArgument.conversion += `
+					/* preparedArgument.conversion += `
 						${preparedArgument.name}.cType!.${argument.type.ownershipField!.contextualName} = false
-					`;
+					`; */
 				}
 				preparedArgument.deferredCleanup += `
 						// for elided types, we need this

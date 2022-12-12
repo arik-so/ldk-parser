@@ -876,8 +876,6 @@
 						
 						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx).dangle()
 				
-						justiceTxPrimitiveWrapper.cType!.data_is_owned = false
-					
 					var tupledPerCommitmentKeyPointer: UnsafeMutablePointer<UInt8Tuple32>? = nil
 					if let perCommitmentKey = perCommitmentKey {
 						
@@ -927,8 +925,6 @@
 						
 						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx).dangle()
 				
-						justiceTxPrimitiveWrapper.cType!.data_is_owned = false
-					
 					var tupledPerCommitmentKeyPointer: UnsafeMutablePointer<UInt8Tuple32>? = nil
 					if let perCommitmentKey = perCommitmentKey {
 						
@@ -982,8 +978,6 @@
 						
 						let htlcTxPrimitiveWrapper = Transaction(value: htlcTx).dangle()
 				
-						htlcTxPrimitiveWrapper.cType!.data_is_owned = false
-					
 						let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
 				
 
@@ -1044,8 +1038,6 @@
 						
 						let anchorTxPrimitiveWrapper = Transaction(value: anchorTx).dangle()
 				
-						anchorTxPrimitiveWrapper.cType!.data_is_owned = false
-					
 
 						
 

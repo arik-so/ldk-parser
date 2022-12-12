@@ -154,8 +154,6 @@
 						
 						let valPrimitiveWrapper = Str(value: val).dangle()
 				
-						valPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = 
@@ -186,8 +184,6 @@
 				
 						let dataArgPrimitiveWrapper = Str(value: dataArg).dangle()
 				
-						dataArgPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = ErrorMessage_new(channelIdArgPrimitiveWrapper.cType!, dataArgPrimitiveWrapper.cType!)

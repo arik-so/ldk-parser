@@ -667,8 +667,6 @@
 						
 						let spendTxPrimitiveWrapper = Transaction(value: spendTx).dangle()
 				
-						spendTxPrimitiveWrapper.cType!.data_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = 
@@ -707,8 +705,6 @@
 						
 						let spendTxPrimitiveWrapper = Transaction(value: spendTx).dangle()
 				
-						spendTxPrimitiveWrapper.cType!.data_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = 

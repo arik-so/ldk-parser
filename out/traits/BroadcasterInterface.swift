@@ -144,8 +144,6 @@
 						
 						let txPrimitiveWrapper = Transaction(value: tx).dangle()
 				
-						txPrimitiveWrapper.cType!.data_is_owned = false
-					
 
 						
 

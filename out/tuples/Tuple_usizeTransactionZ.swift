@@ -71,8 +71,6 @@
 						
 						let bPrimitiveWrapper = Transaction(value: b).dangle()
 				
-						bPrimitiveWrapper.cType!.data_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = C2Tuple_usizeTransactionZ_new(a, bPrimitiveWrapper.cType!)

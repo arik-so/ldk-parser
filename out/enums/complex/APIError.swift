@@ -157,8 +157,6 @@
 						
 						let errPrimitiveWrapper = Str(value: err).dangle()
 				
-						errPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = APIError_apimisuse_error(errPrimitiveWrapper.cType!)
@@ -183,8 +181,6 @@
 						
 						let errPrimitiveWrapper = Str(value: err).dangle()
 				
-						errPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = APIError_fee_rate_too_high(errPrimitiveWrapper.cType!, feerate)
@@ -209,8 +205,6 @@
 						
 						let errPrimitiveWrapper = Str(value: err).dangle()
 				
-						errPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = APIError_route_error(errPrimitiveWrapper.cType!)
@@ -235,8 +229,6 @@
 						
 						let errPrimitiveWrapper = Str(value: err).dangle()
 				
-						errPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = APIError_channel_unavailable(errPrimitiveWrapper.cType!)

@@ -47,8 +47,6 @@
 						
 						let oPrimitiveWrapper = Str(value: o).dangle()
 				
-						oPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = CResult_StringErrorZ_ok(oPrimitiveWrapper.cType!)

@@ -514,8 +514,6 @@
 						
 						let aPrimitiveWrapper = Str(value: a).dangle()
 				
-						aPrimitiveWrapper.cType!.chars_is_owned = false
-					
 
 						// native method call
 						let nativeCallResult = ParseError_invalid_slice_length(aPrimitiveWrapper.cType!)
