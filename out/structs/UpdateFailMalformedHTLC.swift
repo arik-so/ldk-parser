@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
 				UpdateFailMalformedHTLC_get_channel_id(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailMalformedHTLC>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailMalformedHTLC>) in
 				UpdateFailMalformedHTLC_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -120,7 +120,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
 				UpdateFailMalformedHTLC_get_htlc_id(thisPtrPointer)
 						}
 				
@@ -143,7 +143,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailMalformedHTLC>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailMalformedHTLC>) in
 				UpdateFailMalformedHTLC_set_htlc_id(thisPtrPointer, val)
 						}
 				
@@ -166,7 +166,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
 				UpdateFailMalformedHTLC_get_failure_code(thisPtrPointer)
 						}
 				
@@ -189,7 +189,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailMalformedHTLC>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUpdateFailMalformedHTLC>) in
 				UpdateFailMalformedHTLC_set_failure_code(thisPtrPointer, val)
 						}
 				
@@ -231,15 +231,15 @@
 					/// Checks if two UpdateFailMalformedHTLCs contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: UpdateFailMalformedHTLC, b: UpdateFailMalformedHTLC) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
 				UpdateFailMalformedHTLC_eq(aPointer, bPointer)
 						}
 				
@@ -264,7 +264,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKUpdateFailMalformedHTLC>) in
 				UpdateFailMalformedHTLC_write(objPointer)
 						}
 				

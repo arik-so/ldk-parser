@@ -75,7 +75,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRouteParameters>) in
 				RouteParameters_get_payment_params(thisPtrPointer)
 						}
 				
@@ -98,7 +98,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
 				RouteParameters_set_payment_params(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -121,7 +121,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRouteParameters>) in
 				RouteParameters_get_final_value_msat(thisPtrPointer)
 						}
 				
@@ -144,7 +144,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
 				RouteParameters_set_final_value_msat(thisPtrPointer, val)
 						}
 				
@@ -167,7 +167,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRouteParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRouteParameters>) in
 				RouteParameters_get_final_cltv_expiry_delta(thisPtrPointer)
 						}
 				
@@ -190,7 +190,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRouteParameters>) in
 				RouteParameters_set_final_cltv_expiry_delta(thisPtrPointer, val)
 						}
 				
@@ -261,7 +261,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKRouteParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKRouteParameters>) in
 				RouteParameters_write(objPointer)
 						}
 				

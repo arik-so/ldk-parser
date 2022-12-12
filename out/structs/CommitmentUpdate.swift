@@ -67,7 +67,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_get_update_add_htlcs(thisPtrPointer)
 						}
 				
@@ -92,7 +92,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_set_update_add_htlcs(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -117,7 +117,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_get_update_fulfill_htlcs(thisPtrPointer)
 						}
 				
@@ -142,7 +142,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_set_update_fulfill_htlcs(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -167,7 +167,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_get_update_fail_htlcs(thisPtrPointer)
 						}
 				
@@ -192,7 +192,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_set_update_fail_htlcs(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -217,7 +217,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_get_update_fail_malformed_htlcs(thisPtrPointer)
 						}
 				
@@ -242,7 +242,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_set_update_fail_malformed_htlcs(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -269,7 +269,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_get_update_fee(thisPtrPointer)
 						}
 				
@@ -307,7 +307,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_set_update_fee(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -330,7 +330,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_get_commitment_signed(thisPtrPointer)
 						}
 				
@@ -353,7 +353,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_set_commitment_signed(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -436,15 +436,15 @@
 					/// Checks if two CommitmentUpdates contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: CommitmentUpdate, b: CommitmentUpdate) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKCommitmentUpdate>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKCommitmentUpdate>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKCommitmentUpdate>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKCommitmentUpdate>) in
 				CommitmentUpdate_eq(aPointer, bPointer)
 						}
 				

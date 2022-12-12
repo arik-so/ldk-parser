@@ -88,15 +88,15 @@
 					/// Checks if two HTLCUpdates contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: HTLCUpdate, b: HTLCUpdate) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKHTLCUpdate>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKHTLCUpdate>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKHTLCUpdate>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKHTLCUpdate>) in
 				HTLCUpdate_eq(aPointer, bPointer)
 						}
 				
@@ -121,7 +121,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKHTLCUpdate>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKHTLCUpdate>) in
 				HTLCUpdate_write(objPointer)
 						}
 				

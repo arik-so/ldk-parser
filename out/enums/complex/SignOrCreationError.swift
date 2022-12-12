@@ -147,15 +147,15 @@
 		
 					/// Checks if two SignOrCreationErrors contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: SignOrCreationError, b: SignOrCreationError) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKSignOrCreationError>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKSignOrCreationError>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKSignOrCreationError>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKSignOrCreationError>) in
 				SignOrCreationError_eq(aPointer, bPointer)
 						}
 				
@@ -180,7 +180,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKSignOrCreationError>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKSignOrCreationError>) in
 				SignOrCreationError_to_str(oPointer)
 						}
 				

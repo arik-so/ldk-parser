@@ -42,15 +42,15 @@
 					/// Checks if two ChannelFeaturess contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: ChannelFeatures, b: ChannelFeatures) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKChannelFeatures>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKChannelFeatures>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKChannelFeatures>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKChannelFeatures>) in
 				ChannelFeatures_eq(aPointer, bPointer)
 						}
 				
@@ -137,7 +137,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelFeatures>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKChannelFeatures>) in
 				ChannelFeatures_requires_unknown_bits(thisArgPointer)
 						}
 				
@@ -160,7 +160,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelFeatures>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKChannelFeatures>) in
 				ChannelFeatures_write(objPointer)
 						}
 				

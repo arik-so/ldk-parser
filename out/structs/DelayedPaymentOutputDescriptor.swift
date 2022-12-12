@@ -67,7 +67,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_get_outpoint(thisPtrPointer)
 						}
 				
@@ -90,7 +90,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_set_outpoint(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -113,7 +113,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_get_per_commitment_point(thisPtrPointer)
 						}
 				
@@ -138,7 +138,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_set_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -165,7 +165,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_get_to_self_delay(thisPtrPointer)
 						}
 				
@@ -189,7 +189,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_set_to_self_delay(thisPtrPointer, val)
 						}
 				
@@ -214,7 +214,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_get_output(thisPtrPointer)
 						}
 				
@@ -237,7 +237,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_set_output(thisPtrPointer, val.danglingClone().cType!)
 						}
 				
@@ -261,7 +261,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_get_revocation_pubkey(thisPtrPointer)
 						}
 				
@@ -287,7 +287,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_set_revocation_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -315,7 +315,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_get_channel_keys_id(thisPtrPointer)
 						}
 				
@@ -346,7 +346,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_set_channel_keys_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -372,7 +372,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_get_channel_value_satoshis(thisPtrPointer)
 						}
 				
@@ -395,7 +395,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_set_channel_value_satoshis(thisPtrPointer, val)
 						}
 				
@@ -477,15 +477,15 @@
 					/// Checks if two DelayedPaymentOutputDescriptors contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: DelayedPaymentOutputDescriptor, b: DelayedPaymentOutputDescriptor) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_eq(aPointer, bPointer)
 						}
 				
@@ -510,7 +510,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				DelayedPaymentOutputDescriptor_write(objPointer)
 						}
 				

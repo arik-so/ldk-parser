@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKPrivateRoute>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKPrivateRoute>) in
 				PrivateRoute_hash(oPointer)
 						}
 				
@@ -113,15 +113,15 @@
 					/// Checks if two PrivateRoutes contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: PrivateRoute, b: PrivateRoute) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKPrivateRoute>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKPrivateRoute>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKPrivateRoute>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKPrivateRoute>) in
 				PrivateRoute_eq(aPointer, bPointer)
 						}
 				

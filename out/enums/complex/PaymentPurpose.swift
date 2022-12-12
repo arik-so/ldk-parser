@@ -168,7 +168,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKPaymentPurpose>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKPaymentPurpose>) in
 				PaymentPurpose_write(objPointer)
 						}
 				

@@ -182,15 +182,15 @@
 		
 					/// Checks if two NetworkUpdates contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: NetworkUpdate, b: NetworkUpdate) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKNetworkUpdate>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKNetworkUpdate>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKNetworkUpdate>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKNetworkUpdate>) in
 				NetworkUpdate_eq(aPointer, bPointer)
 						}
 				
@@ -215,7 +215,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNetworkUpdate>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKNetworkUpdate>) in
 				NetworkUpdate_write(objPointer)
 						}
 				

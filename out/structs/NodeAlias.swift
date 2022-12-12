@@ -71,7 +71,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeAlias>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKNodeAlias>) in
 				NodeAlias_get_a(thisPtrPointer)
 						}
 				
@@ -100,7 +100,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAlias>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeAlias>) in
 				NodeAlias_set_a(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -175,15 +175,15 @@
 					/// Checks if two NodeAliass contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: NodeAlias, b: NodeAlias) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKNodeAlias>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKNodeAlias>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKNodeAlias>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKNodeAlias>) in
 				NodeAlias_eq(aPointer, bPointer)
 						}
 				
@@ -208,7 +208,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNodeAlias>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKNodeAlias>) in
 				NodeAlias_write(objPointer)
 						}
 				

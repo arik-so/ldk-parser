@@ -148,15 +148,15 @@
 		
 					/// Checks if two ParseOrSemanticErrors contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: ParseOrSemanticError, b: ParseOrSemanticError) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKParseOrSemanticError>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKParseOrSemanticError>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKParseOrSemanticError>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKParseOrSemanticError>) in
 				ParseOrSemanticError_eq(aPointer, bPointer)
 						}
 				
@@ -181,7 +181,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKParseOrSemanticError>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKParseOrSemanticError>) in
 				ParseOrSemanticError_to_str(oPointer)
 						}
 				

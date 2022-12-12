@@ -79,7 +79,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKQueryShortChannelIds>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKQueryShortChannelIds>) in
 				QueryShortChannelIds_get_chain_hash(thisPtrPointer)
 						}
 				
@@ -108,7 +108,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryShortChannelIds>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryShortChannelIds>) in
 				QueryShortChannelIds_set_chain_hash(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -136,7 +136,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKQueryShortChannelIds>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKQueryShortChannelIds>) in
 				QueryShortChannelIds_get_short_channel_ids(thisPtrPointer)
 						}
 				
@@ -161,7 +161,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryShortChannelIds>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKQueryShortChannelIds>) in
 				QueryShortChannelIds_set_short_channel_ids(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -239,15 +239,15 @@
 					/// Checks if two QueryShortChannelIdss contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: QueryShortChannelIds, b: QueryShortChannelIds) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKQueryShortChannelIds>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKQueryShortChannelIds>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKQueryShortChannelIds>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKQueryShortChannelIds>) in
 				QueryShortChannelIds_eq(aPointer, bPointer)
 						}
 				
@@ -296,7 +296,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKQueryShortChannelIds>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKQueryShortChannelIds>) in
 				QueryShortChannelIds_write(objPointer)
 						}
 				

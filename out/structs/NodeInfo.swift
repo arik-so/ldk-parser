@@ -67,7 +67,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKNodeInfo>) in
 				NodeInfo_get_channels(thisPtrPointer)
 						}
 				
@@ -92,7 +92,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
 				NodeInfo_set_channels(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -121,7 +121,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKNodeInfo>) in
 				NodeInfo_get_lowest_inbound_channel_fees(thisPtrPointer)
 						}
 				
@@ -161,7 +161,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
 				NodeInfo_set_lowest_inbound_channel_fees(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -188,7 +188,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKNodeInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKNodeInfo>) in
 				NodeInfo_get_announcement_info(thisPtrPointer)
 						}
 				
@@ -228,7 +228,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKNodeInfo>) in
 				NodeInfo_set_announcement_info(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -299,15 +299,15 @@
 					/// Checks if two NodeInfos contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: NodeInfo, b: NodeInfo) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKNodeInfo>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKNodeInfo>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKNodeInfo>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKNodeInfo>) in
 				NodeInfo_eq(aPointer, bPointer)
 						}
 				
@@ -332,7 +332,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKNodeInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKNodeInfo>) in
 				NodeInfo_write(objPointer)
 						}
 				

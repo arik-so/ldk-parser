@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_get_node_signature_1(thisPtrPointer)
 						}
 				
@@ -90,7 +90,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_set_node_signature_1(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -116,7 +116,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_get_node_signature_2(thisPtrPointer)
 						}
 				
@@ -141,7 +141,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_set_node_signature_2(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -167,7 +167,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_get_bitcoin_signature_1(thisPtrPointer)
 						}
 				
@@ -192,7 +192,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_set_bitcoin_signature_1(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -218,7 +218,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_get_bitcoin_signature_2(thisPtrPointer)
 						}
 				
@@ -243,7 +243,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_set_bitcoin_signature_2(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -269,7 +269,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_get_contents(thisPtrPointer)
 						}
 				
@@ -292,7 +292,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_set_contents(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -379,15 +379,15 @@
 					/// Checks if two ChannelAnnouncements contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: ChannelAnnouncement, b: ChannelAnnouncement) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKChannelAnnouncement>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKChannelAnnouncement>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKChannelAnnouncement>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_eq(aPointer, bPointer)
 						}
 				
@@ -412,7 +412,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelAnnouncement>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKChannelAnnouncement>) in
 				ChannelAnnouncement_write(objPointer)
 						}
 				

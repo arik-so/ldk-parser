@@ -73,7 +73,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_get_data(thisPtrPointer)
 						}
 				
@@ -96,7 +96,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRawInvoice>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKRawInvoice>) in
 				RawInvoice_set_data(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -115,15 +115,15 @@
 					/// Checks if two RawInvoices contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: RawInvoice, b: RawInvoice) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKRawInvoice>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_eq(aPointer, bPointer)
 						}
 				
@@ -171,7 +171,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_hash(oPointer)
 						}
 				
@@ -194,7 +194,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_signable_hash(thisArgPointer)
 						}
 				
@@ -217,7 +217,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_payment_hash(thisArgPointer)
 						}
 				
@@ -253,7 +253,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_description(thisArgPointer)
 						}
 				
@@ -289,7 +289,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_payee_pub_key(thisArgPointer)
 						}
 				
@@ -325,7 +325,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_description_hash(thisArgPointer)
 						}
 				
@@ -361,7 +361,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_expiry_time(thisArgPointer)
 						}
 				
@@ -397,7 +397,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_min_final_cltv_expiry(thisArgPointer)
 						}
 				
@@ -433,7 +433,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_payment_secret(thisArgPointer)
 						}
 				
@@ -464,7 +464,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_features(thisArgPointer)
 						}
 				
@@ -500,7 +500,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_private_routes(thisArgPointer)
 						}
 				
@@ -523,7 +523,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_amount_pico_btc(thisArgPointer)
 						}
 				
@@ -546,7 +546,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKRawInvoice>) in
 				RawInvoice_currency(thisArgPointer)
 						}
 				

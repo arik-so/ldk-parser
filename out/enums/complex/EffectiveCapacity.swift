@@ -234,7 +234,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKEffectiveCapacity>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKEffectiveCapacity>) in
 				EffectiveCapacity_as_msat(thisArgPointer)
 						}
 				

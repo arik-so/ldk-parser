@@ -72,7 +72,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDataLossProtect>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKDataLossProtect>) in
 				DataLossProtect_get_your_last_per_commitment_secret(thisPtrPointer)
 						}
 				
@@ -102,7 +102,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDataLossProtect>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDataLossProtect>) in
 				DataLossProtect_set_your_last_per_commitment_secret(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -128,7 +128,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKDataLossProtect>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKDataLossProtect>) in
 				DataLossProtect_get_my_current_per_commitment_point(thisPtrPointer)
 						}
 				
@@ -153,7 +153,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDataLossProtect>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKDataLossProtect>) in
 				DataLossProtect_set_my_current_per_commitment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -233,15 +233,15 @@
 					/// Checks if two DataLossProtects contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: DataLossProtect, b: DataLossProtect) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKDataLossProtect>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKDataLossProtect>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKDataLossProtect>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKDataLossProtect>) in
 				DataLossProtect_eq(aPointer, bPointer)
 						}
 				

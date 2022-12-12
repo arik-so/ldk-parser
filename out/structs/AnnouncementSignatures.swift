@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
 				AnnouncementSignatures_get_channel_id(thisPtrPointer)
 						}
 				
@@ -94,7 +94,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
 				AnnouncementSignatures_set_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -120,7 +120,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
 				AnnouncementSignatures_get_short_channel_id(thisPtrPointer)
 						}
 				
@@ -143,7 +143,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
 				AnnouncementSignatures_set_short_channel_id(thisPtrPointer, val)
 						}
 				
@@ -166,7 +166,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
 				AnnouncementSignatures_get_node_signature(thisPtrPointer)
 						}
 				
@@ -191,7 +191,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
 				AnnouncementSignatures_set_node_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -217,7 +217,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKAnnouncementSignatures>) in
 				AnnouncementSignatures_get_bitcoin_signature(thisPtrPointer)
 						}
 				
@@ -242,7 +242,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKAnnouncementSignatures>) in
 				AnnouncementSignatures_set_bitcoin_signature(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -327,15 +327,15 @@
 					/// Checks if two AnnouncementSignaturess contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: AnnouncementSignatures, b: AnnouncementSignatures) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKAnnouncementSignatures>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKAnnouncementSignatures>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKAnnouncementSignatures>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKAnnouncementSignatures>) in
 				AnnouncementSignatures_eq(aPointer, bPointer)
 						}
 				
@@ -360,7 +360,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKAnnouncementSignatures>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKAnnouncementSignatures>) in
 				AnnouncementSignatures_write(objPointer)
 						}
 				

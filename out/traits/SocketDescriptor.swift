@@ -78,7 +78,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.sendData(data: u8slice(cType: data).dangle().getValue(), resumeRead: resume_read)
+							let swiftCallbackResult = instance.sendData(data: u8slice(cType: data).getValue(), resumeRead: resume_read)
 
 							// cleanup
 							

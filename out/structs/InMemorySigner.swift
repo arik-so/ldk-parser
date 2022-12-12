@@ -71,7 +71,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_get_funding_key(thisPtrPointer)
 						}
 				
@@ -100,7 +100,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 				InMemorySigner_set_funding_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -126,7 +126,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_get_revocation_base_key(thisPtrPointer)
 						}
 				
@@ -155,7 +155,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 				InMemorySigner_set_revocation_base_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -181,7 +181,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_get_payment_key(thisPtrPointer)
 						}
 				
@@ -210,7 +210,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 				InMemorySigner_set_payment_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -236,7 +236,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_get_delayed_payment_base_key(thisPtrPointer)
 						}
 				
@@ -265,7 +265,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 				InMemorySigner_set_delayed_payment_base_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -291,7 +291,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_get_htlc_base_key(thisPtrPointer)
 						}
 				
@@ -320,7 +320,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 				InMemorySigner_set_htlc_base_key(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -346,7 +346,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_get_commitment_seed(thisPtrPointer)
 						}
 				
@@ -375,7 +375,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKInMemorySigner>) in
 				InMemorySigner_set_commitment_seed(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -490,7 +490,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_counterparty_pubkeys(thisArgPointer)
 						}
 				
@@ -516,7 +516,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_counterparty_selected_contest_delay(thisArgPointer)
 						}
 				
@@ -542,7 +542,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_holder_selected_contest_delay(thisArgPointer)
 						}
 				
@@ -566,7 +566,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_is_outbound(thisArgPointer)
 						}
 				
@@ -590,7 +590,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_funding_outpoint(thisArgPointer)
 						}
 				
@@ -616,7 +616,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_get_channel_parameters(thisArgPointer)
 						}
 				
@@ -640,7 +640,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_opt_anchors(thisArgPointer)
 						}
 				
@@ -670,7 +670,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				
 						withUnsafePointer(to: descriptor.dynamicallyDangledClone().cType!) { (descriptorPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
 				InMemorySigner_sign_counterparty_payment_input(thisArgPointer, spendTxPrimitiveWrapper.cType!, inputIdx, descriptorPointer)
@@ -708,7 +708,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				
 						withUnsafePointer(to: descriptor.dynamicallyDangledClone().cType!) { (descriptorPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				InMemorySigner_sign_dynamic_p2wsh_input(thisArgPointer, spendTxPrimitiveWrapper.cType!, inputIdx, descriptorPointer)
@@ -739,7 +739,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_as_BaseSign(thisArgPointer)
 						}
 				
@@ -763,7 +763,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_as_Sign(thisArgPointer)
 						}
 				
@@ -786,7 +786,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKInMemorySigner>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKInMemorySigner>) in
 				InMemorySigner_write(objPointer)
 						}
 				

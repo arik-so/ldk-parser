@@ -195,7 +195,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKFallback>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKFallback>) in
 				Fallback_hash(oPointer)
 						}
 				
@@ -213,15 +213,15 @@
 		
 					/// Checks if two Fallbacks contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: Fallback, b: Fallback) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKFallback>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKFallback>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKFallback>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKFallback>) in
 				Fallback_eq(aPointer, bPointer)
 						}
 				

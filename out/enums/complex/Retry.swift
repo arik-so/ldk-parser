@@ -150,15 +150,15 @@
 		
 					/// Checks if two Retrys contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: Retry, b: Retry) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKRetry>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKRetry>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKRetry>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKRetry>) in
 				Retry_eq(aPointer, bPointer)
 						}
 				
@@ -183,7 +183,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKRetry>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKRetry>) in
 				Retry_hash(oPointer)
 						}
 				

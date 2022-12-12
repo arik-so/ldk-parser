@@ -69,15 +69,15 @@
 					/// Checks if two SignedRawInvoices contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: SignedRawInvoice, b: SignedRawInvoice) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKSignedRawInvoice>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKSignedRawInvoice>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKSignedRawInvoice>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKSignedRawInvoice>) in
 				SignedRawInvoice_eq(aPointer, bPointer)
 						}
 				
@@ -125,7 +125,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKSignedRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKSignedRawInvoice>) in
 				SignedRawInvoice_hash(oPointer)
 						}
 				
@@ -170,7 +170,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
 				SignedRawInvoice_raw_invoice(thisArgPointer)
 						}
 				
@@ -193,7 +193,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
 				SignedRawInvoice_signable_hash(thisArgPointer)
 						}
 				
@@ -220,7 +220,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
 				SignedRawInvoice_signature(thisArgPointer)
 						}
 				
@@ -243,7 +243,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
 				SignedRawInvoice_recover_payee_pub_key(thisArgPointer)
 						}
 				
@@ -267,7 +267,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKSignedRawInvoice>) in
 				SignedRawInvoice_check_signature(thisArgPointer)
 						}
 				
@@ -314,7 +314,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKSignedRawInvoice>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKSignedRawInvoice>) in
 				SignedRawInvoice_to_str(oPointer)
 						}
 				

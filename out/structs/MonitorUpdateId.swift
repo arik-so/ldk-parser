@@ -88,7 +88,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKMonitorUpdateId>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKMonitorUpdateId>) in
 				MonitorUpdateId_hash(oPointer)
 						}
 				
@@ -107,15 +107,15 @@
 					/// Checks if two MonitorUpdateIds contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: MonitorUpdateId, b: MonitorUpdateId) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKMonitorUpdateId>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKMonitorUpdateId>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKMonitorUpdateId>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKMonitorUpdateId>) in
 				MonitorUpdateId_eq(aPointer, bPointer)
 						}
 				

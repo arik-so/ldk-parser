@@ -122,7 +122,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCounterpartyCommitmentSecrets>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKCounterpartyCommitmentSecrets>) in
 				CounterpartyCommitmentSecrets_get_min_seen_secret(thisArgPointer)
 						}
 				
@@ -148,7 +148,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKCounterpartyCommitmentSecrets>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisArgPointer: UnsafeMutablePointer<LDKCounterpartyCommitmentSecrets>) in
 				CounterpartyCommitmentSecrets_provide_secret(thisArgPointer, idx, secretPrimitiveWrapper.cType!)
 						}
 				
@@ -177,7 +177,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCounterpartyCommitmentSecrets>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKCounterpartyCommitmentSecrets>) in
 				CounterpartyCommitmentSecrets_get_secret(thisArgPointer, idx)
 						}
 				
@@ -208,7 +208,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKCounterpartyCommitmentSecrets>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKCounterpartyCommitmentSecrets>) in
 				CounterpartyCommitmentSecrets_write(objPointer)
 						}
 				

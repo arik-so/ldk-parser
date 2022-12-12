@@ -89,7 +89,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
 				ChannelMonitorUpdate_get_update_id(thisPtrPointer)
 						}
 				
@@ -124,7 +124,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelMonitorUpdate>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelMonitorUpdate>) in
 				ChannelMonitorUpdate_set_update_id(thisPtrPointer, val)
 						}
 				
@@ -170,7 +170,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKChannelMonitorUpdate>) in
 				ChannelMonitorUpdate_write(objPointer)
 						}
 				

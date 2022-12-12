@@ -98,7 +98,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKCommitmentTransaction>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKCommitmentTransaction>) in
 				CommitmentTransaction_write(objPointer)
 						}
 				
@@ -145,7 +145,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
 				CommitmentTransaction_commitment_number(thisArgPointer)
 						}
 				
@@ -168,7 +168,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
 				CommitmentTransaction_to_broadcaster_value_sat(thisArgPointer)
 						}
 				
@@ -191,7 +191,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
 				CommitmentTransaction_to_countersignatory_value_sat(thisArgPointer)
 						}
 				
@@ -214,7 +214,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
 				CommitmentTransaction_feerate_per_kw(thisArgPointer)
 						}
 				
@@ -242,7 +242,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
 				CommitmentTransaction_trust(thisArgPointer)
 						}
 				
@@ -270,7 +270,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
 				
 						withUnsafePointer(to: channelParameters.dangle().cType!) { (channelParametersPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
 				

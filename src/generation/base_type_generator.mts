@@ -167,7 +167,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 
 			let isInstanceArgument = false;
-			if (currentArgument.type === containerType) {
+			if (currentArgument.type === containerType && !semantics.isStatic) {
 				isInstanceMethod = true;
 				isInstanceArgument = true;
 			}
@@ -353,17 +353,21 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				semantics.isStatic = true;
 			}
 		} else {
-			for (const currentArgument of method.arguments) {
-				if (currentArgument.type === containerType) {
-					semantics.needsInstancePointer = currentArgument.isAsteriskPointer;
-					break;
+			if(standaloneMethodName === 'eq'){
+				semantics.isStatic = true;
+			} else {
+				for (const currentArgument of method.arguments) {
+					if (currentArgument.type === containerType) {
+						semantics.needsInstancePointer = currentArgument.isAsteriskPointer;
+						break;
+					}
 				}
-			}
 
-			if (standaloneMethodName === 'free') {
-				semantics.isFreeMethod = true;
-			} else if (standaloneMethodName === 'clone' && returnsInstance) {
-				semantics.isCloneMethod = true;
+				if (standaloneMethodName === 'free') {
+					semantics.isFreeMethod = true;
+				} else if (standaloneMethodName === 'clone' && returnsInstance) {
+					semantics.isCloneMethod = true;
+				}
 			}
 		}
 		return semantics;
@@ -653,6 +657,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				if (!this.hasCloneMethod(argument.type) && !this.isElidedType(argument.type) && !argument.isAsteriskPointer && memoryContext && !memoryContext.isFreeMethod) {
 					// except when the argument isn't cloneable, and it's not elided, and it's passed by value, in which case we dangle
 					memoryManagementInfix = '.dangle()';
+				}else if(this.hasCloneMethod(argument.type) && argument.isAsteriskPointer && memoryContext && !memoryContext?.isFreeMethod && !memoryContext.isCloneMethod){
+					// if it's being passed as a pointer, we need to clone the object and forget about it
+					memoryManagementInfix = '.danglingClone()'
 				}
 			} else if (this.hasCloneMethod(argument.type)) {
 				if (this.hasOwnershipField(argument.type)) {
@@ -680,7 +687,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			memoryManagementInfix = '.dangle()';
 		}
 
-		if (argument.type === containerType) {
+		if (argument.type === containerType && !(memoryContext && memoryContext.isStatic)) {
 			// we're passing self
 			preparedArgument.accessor = `self${memoryManagementInfix}.cType!`;
 		} else {

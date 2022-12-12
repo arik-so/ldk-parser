@@ -287,15 +287,15 @@
 		
 					/// Checks if two APIErrors contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: APIError, b: APIError) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKAPIError>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKAPIError>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKAPIError>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKAPIError>) in
 				APIError_eq(aPointer, bPointer)
 						}
 				

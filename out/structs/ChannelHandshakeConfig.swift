@@ -81,7 +81,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_get_minimum_depth(thisPtrPointer)
 						}
 				
@@ -116,7 +116,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_set_minimum_depth(thisPtrPointer, val)
 						}
 				
@@ -153,7 +153,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_get_our_to_self_delay(thisPtrPointer)
 						}
 				
@@ -190,7 +190,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_set_our_to_self_delay(thisPtrPointer, val)
 						}
 				
@@ -219,7 +219,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_get_our_htlc_minimum_msat(thisPtrPointer)
 						}
 				
@@ -248,7 +248,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_set_our_htlc_minimum_msat(thisPtrPointer, val)
 						}
 				
@@ -293,7 +293,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_get_max_inbound_htlc_value_in_flight_percent_of_channel(thisPtrPointer)
 						}
 				
@@ -338,7 +338,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_set_max_inbound_htlc_value_in_flight_percent_of_channel(thisPtrPointer, val)
 						}
 				
@@ -381,7 +381,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_get_negotiate_scid_privacy(thisPtrPointer)
 						}
 				
@@ -424,7 +424,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_set_negotiate_scid_privacy(thisPtrPointer, val)
 						}
 				
@@ -455,7 +455,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_get_announced_channel(thisPtrPointer)
 						}
 				
@@ -486,7 +486,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_set_announced_channel(thisPtrPointer, val)
 						}
 				
@@ -521,7 +521,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_get_commit_upfront_shutdown_pubkey(thisPtrPointer)
 						}
 				
@@ -556,7 +556,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_set_commit_upfront_shutdown_pubkey(thisPtrPointer, val)
 						}
 				
@@ -600,7 +600,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_get_their_channel_reserve_proportional_millionths(thisPtrPointer)
 						}
 				
@@ -644,7 +644,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelHandshakeConfig>) in
 				ChannelHandshakeConfig_set_their_channel_reserve_proportional_millionths(thisPtrPointer, val)
 						}
 				

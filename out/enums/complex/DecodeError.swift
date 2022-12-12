@@ -274,15 +274,15 @@
 		
 					/// Checks if two DecodeErrors contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: DecodeError, b: DecodeError) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKDecodeError>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKDecodeError>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKDecodeError>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKDecodeError>) in
 				DecodeError_eq(aPointer, bPointer)
 						}
 				

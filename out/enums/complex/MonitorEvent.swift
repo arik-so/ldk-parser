@@ -202,15 +202,15 @@
 		
 					/// Checks if two MonitorEvents contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: MonitorEvent, b: MonitorEvent) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKMonitorEvent>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKMonitorEvent>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKMonitorEvent>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKMonitorEvent>) in
 				MonitorEvent_eq(aPointer, bPointer)
 						}
 				
@@ -235,7 +235,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKMonitorEvent>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKMonitorEvent>) in
 				MonitorEvent_write(objPointer)
 						}
 				

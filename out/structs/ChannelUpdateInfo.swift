@@ -66,7 +66,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_get_last_update(thisPtrPointer)
 						}
 				
@@ -90,7 +90,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_set_last_update(thisPtrPointer, val)
 						}
 				
@@ -113,7 +113,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_get_enabled(thisPtrPointer)
 						}
 				
@@ -136,7 +136,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_set_enabled(thisPtrPointer, val)
 						}
 				
@@ -159,7 +159,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_get_cltv_expiry_delta(thisPtrPointer)
 						}
 				
@@ -182,7 +182,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_set_cltv_expiry_delta(thisPtrPointer, val)
 						}
 				
@@ -205,7 +205,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_get_htlc_minimum_msat(thisPtrPointer)
 						}
 				
@@ -228,7 +228,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_set_htlc_minimum_msat(thisPtrPointer, val)
 						}
 				
@@ -251,7 +251,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_get_htlc_maximum_msat(thisPtrPointer)
 						}
 				
@@ -274,7 +274,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_set_htlc_maximum_msat(thisPtrPointer, val)
 						}
 				
@@ -297,7 +297,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_get_fees(thisPtrPointer)
 						}
 				
@@ -320,7 +320,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_set_fees(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -348,7 +348,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_get_last_update_message(thisPtrPointer)
 						}
 				
@@ -389,7 +389,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_set_last_update_message(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -456,15 +456,15 @@
 					/// Checks if two ChannelUpdateInfos contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: ChannelUpdateInfo, b: ChannelUpdateInfo) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKChannelUpdateInfo>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKChannelUpdateInfo>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKChannelUpdateInfo>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_eq(aPointer, bPointer)
 						}
 				
@@ -489,7 +489,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelUpdateInfo>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKChannelUpdateInfo>) in
 				ChannelUpdateInfo_write(objPointer)
 						}
 				

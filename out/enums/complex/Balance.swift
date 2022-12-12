@@ -266,15 +266,15 @@
 		
 					/// Checks if two Balances contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: Balance, b: Balance) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKBalance>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKBalance>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKBalance>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKBalance>) in
 				Balance_eq(aPointer, bPointer)
 						}
 				

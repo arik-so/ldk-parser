@@ -212,15 +212,15 @@
 		
 					/// Checks if two SpendableOutputDescriptors contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: SpendableOutputDescriptor, b: SpendableOutputDescriptor) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
 				SpendableOutputDescriptor_eq(aPointer, bPointer)
 						}
 				
@@ -245,7 +245,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKSpendableOutputDescriptor>) in
 				SpendableOutputDescriptor_write(objPointer)
 						}
 				

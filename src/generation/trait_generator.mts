@@ -384,7 +384,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		} else if (type instanceof RustPrimitiveWrapper && type.isDeallocatable()) {
 			// if it doesn't have a free method, we may want to rely on Swift's built-in
 			// deallocation feature
-			memoryManagementInfix = '.dangle()';
+			// memoryManagementInfix = '.dangle()';
 		}
 
 		if (argumentType.isAsteriskPointer && argumentType.isNonnullablePointer) {

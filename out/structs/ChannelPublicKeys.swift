@@ -66,7 +66,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_get_funding_pubkey(thisPtrPointer)
 						}
 				
@@ -92,7 +92,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_set_funding_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -121,7 +121,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_get_revocation_basepoint(thisPtrPointer)
 						}
 				
@@ -149,7 +149,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_set_revocation_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -177,7 +177,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_get_payment_point(thisPtrPointer)
 						}
 				
@@ -204,7 +204,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_set_payment_point(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -232,7 +232,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_get_delayed_payment_basepoint(thisPtrPointer)
 						}
 				
@@ -259,7 +259,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_set_delayed_payment_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -286,7 +286,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_get_htlc_basepoint(thisPtrPointer)
 						}
 				
@@ -312,7 +312,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_set_htlc_basepoint(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -407,15 +407,15 @@
 					/// Checks if two ChannelPublicKeyss contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: ChannelPublicKeys, b: ChannelPublicKeys) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_eq(aPointer, bPointer)
 						}
 				
@@ -440,7 +440,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				ChannelPublicKeys_write(objPointer)
 						}
 				

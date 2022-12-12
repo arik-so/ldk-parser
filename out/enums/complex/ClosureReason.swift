@@ -327,15 +327,15 @@
 		
 					/// Checks if two ClosureReasons contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
-					public func eq() -> Bool {
+					public class func eq(a: ClosureReason, b: ClosureReason) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKClosureReason>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKClosureReason>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKClosureReason>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKClosureReason>) in
 				ClosureReason_eq(aPointer, bPointer)
 						}
 				
@@ -360,7 +360,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKClosureReason>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKClosureReason>) in
 				ClosureReason_write(objPointer)
 						}
 				

@@ -65,7 +65,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_get_payee_pubkey(thisPtrPointer)
 						}
 				
@@ -90,7 +90,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 				PaymentParameters_set_payee_pubkey(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
@@ -123,7 +123,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_get_features(thisPtrPointer)
 						}
 				
@@ -166,7 +166,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 				PaymentParameters_set_features(thisPtrPointer, val.dynamicallyDangledClone().cType!)
 						}
 				
@@ -189,7 +189,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_get_route_hints(thisPtrPointer)
 						}
 				
@@ -214,7 +214,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 				PaymentParameters_set_route_hints(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -239,7 +239,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_get_expiry_time(thisPtrPointer)
 						}
 				
@@ -264,7 +264,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 				PaymentParameters_set_expiry_time(thisPtrPointer, valOption.cType!)
 						}
 				
@@ -288,7 +288,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_get_max_total_cltv_expiry_delta(thisPtrPointer)
 						}
 				
@@ -312,7 +312,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 				PaymentParameters_set_max_total_cltv_expiry_delta(thisPtrPointer, val)
 						}
 				
@@ -336,7 +336,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_get_max_path_count(thisPtrPointer)
 						}
 				
@@ -360,7 +360,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 				PaymentParameters_set_max_path_count(thisPtrPointer, val)
 						}
 				
@@ -395,7 +395,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_get_max_channel_saturation_power_of_half(thisPtrPointer)
 						}
 				
@@ -430,7 +430,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 				PaymentParameters_set_max_channel_saturation_power_of_half(thisPtrPointer, val)
 						}
 				
@@ -457,7 +457,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_get_previously_failed_channels(thisPtrPointer)
 						}
 				
@@ -484,7 +484,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPaymentParameters>) in
 				PaymentParameters_set_previously_failed_channels(thisPtrPointer, valVector.cType!)
 						}
 				
@@ -572,7 +572,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (oPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (oPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_hash(oPointer)
 						}
 				
@@ -591,15 +591,15 @@
 					/// Checks if two PaymentParameterss contain equal inner contents.
 					/// This ignores pointers and is_owned flags and looks at the values in fields.
 					/// Two objects with NULL inner values will be considered "equal" here.
-					public func eq() -> Bool {
+					public class func eq(a: PaymentParameters, b: PaymentParameters) -> Bool {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (aPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: a.danglingClone().cType!) { (aPointer: UnsafePointer<LDKPaymentParameters>) in
 				
-						withUnsafePointer(to: self.cType!) { (bPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: b.danglingClone().cType!) { (bPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_eq(aPointer, bPointer)
 						}
 				
@@ -624,7 +624,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKPaymentParameters>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (objPointer: UnsafePointer<LDKPaymentParameters>) in
 				PaymentParameters_write(objPointer)
 						}
 				

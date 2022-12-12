@@ -75,7 +75,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKPeerHandleError>) in
+						withUnsafePointer(to: self.danglingClone().cType!) { (thisPtrPointer: UnsafePointer<LDKPeerHandleError>) in
 				PeerHandleError_get_no_connection_possible(thisPtrPointer)
 						}
 				
@@ -104,7 +104,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPeerHandleError>) in
+						withUnsafeMutablePointer(to: &self.danglingClone().cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKPeerHandleError>) in
 				PeerHandleError_set_no_connection_possible(thisPtrPointer, val)
 						}
 				
