@@ -75,7 +75,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PositiveTimestamp(cType: nativeCallResult, anchor: self)
+						let returnValue = PositiveTimestamp(cType: nativeCallResult)
 						
 
 						return returnValue

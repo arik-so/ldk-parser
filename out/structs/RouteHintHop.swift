@@ -172,7 +172,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = RoutingFees(cType: nativeCallResult, anchor: self)
+						let returnValue = RoutingFees(cType: nativeCallResult)
 						
 
 						return returnValue

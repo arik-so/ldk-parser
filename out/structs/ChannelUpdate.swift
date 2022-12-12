@@ -126,7 +126,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = UnsignedChannelUpdate(cType: nativeCallResult, anchor: self)
+						let returnValue = UnsignedChannelUpdate(cType: nativeCallResult)
 						
 
 						return returnValue

@@ -83,7 +83,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -239,7 +239,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = CounterpartyChannelTransactionParameters(cType: nativeCallResult, anchor: self)
+						let returnValue = CounterpartyChannelTransactionParameters(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -303,7 +303,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = OutPoint(cType: nativeCallResult, anchor: self)
+						let returnValue = OutPoint(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -473,7 +473,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult, anchor: self)
+						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -499,7 +499,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult, anchor: self)
+						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult)
 						
 
 						return returnValue

@@ -388,7 +388,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = InvoiceFeatures(cType: nativeCallResult, anchor: self)
+						let returnValue = InvoiceFeatures(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -644,7 +644,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Str(cType: nativeCallResult).getValue()
 						
 
 						return returnValue

@@ -90,7 +90,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelInfo(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelInfo(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -155,7 +155,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NodeInfo(cType: nativeCallResult, anchor: self)
+						let returnValue = NodeInfo(cType: nativeCallResult)
 						
 
 						return returnValue

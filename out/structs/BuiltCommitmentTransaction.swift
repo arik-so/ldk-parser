@@ -75,7 +75,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Transaction(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Transaction(cType: nativeCallResult).getValue()
 						
 
 						return returnValue

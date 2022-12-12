@@ -243,7 +243,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ClosingSignedFeeRange(cType: nativeCallResult, anchor: self)
+						let returnValue = ClosingSignedFeeRange(cType: nativeCallResult)
 						
 
 						return returnValue

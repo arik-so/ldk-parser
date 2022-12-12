@@ -75,7 +75,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NodeFeatures(cType: nativeCallResult, anchor: self)
+						let returnValue = NodeFeatures(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -226,7 +226,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NodeAlias(cType: nativeCallResult, anchor: self)
+						let returnValue = NodeAlias(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -344,7 +344,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NodeAnnouncement(cType: nativeCallResult, anchor: self)
+						let returnValue = NodeAnnouncement(cType: nativeCallResult)
 						
 
 						return returnValue

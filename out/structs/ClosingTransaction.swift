@@ -196,7 +196,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = TrustedClosingTransaction(cType: nativeCallResult, anchor: self)
+						let returnValue = TrustedClosingTransaction(cType: nativeCallResult)
 						
 
 						return returnValue

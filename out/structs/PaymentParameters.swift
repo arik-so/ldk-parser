@@ -146,7 +146,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = InvoiceFeatures(cType: nativeCallResult, anchor: self)
+						let returnValue = InvoiceFeatures(cType: nativeCallResult)
 						
 
 						return returnValue

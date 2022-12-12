@@ -77,7 +77,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelFeatures(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelFeatures(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -123,7 +123,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NodeId(cType: nativeCallResult, anchor: self)
+						let returnValue = NodeId(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -184,7 +184,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdateInfo(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -232,7 +232,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NodeId(cType: nativeCallResult, anchor: self)
+						let returnValue = NodeId(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -293,7 +293,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdateInfo(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -407,7 +407,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelAnnouncement(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelAnnouncement(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -525,7 +525,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelUpdateInfo(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelUpdateInfo(cType: nativeCallResult)
 						
 
 						return returnValue

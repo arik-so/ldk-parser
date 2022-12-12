@@ -136,7 +136,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelCounterparty(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelCounterparty(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -201,7 +201,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = OutPoint(cType: nativeCallResult, anchor: self)
+						let returnValue = OutPoint(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -270,7 +270,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelTypeFeatures(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelTypeFeatures(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -1369,7 +1369,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelConfig(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelConfig(cType: nativeCallResult)
 						
 
 						return returnValue

@@ -144,7 +144,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = RoutingFees(cType: nativeCallResult, anchor: self)
+						let returnValue = RoutingFees(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -211,7 +211,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NodeAnnouncementInfo(cType: nativeCallResult, anchor: self)
+						let returnValue = NodeAnnouncementInfo(cType: nativeCallResult)
 						
 
 						return returnValue

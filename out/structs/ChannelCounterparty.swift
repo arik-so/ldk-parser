@@ -130,7 +130,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = InitFeatures(cType: nativeCallResult, anchor: self)
+						let returnValue = InitFeatures(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -252,7 +252,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = CounterpartyForwardingInfo(cType: nativeCallResult, anchor: self)
+						let returnValue = CounterpartyForwardingInfo(cType: nativeCallResult)
 						
 
 						return returnValue

@@ -154,7 +154,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PaymentParameters(cType: nativeCallResult, anchor: self)
+						let returnValue = PaymentParameters(cType: nativeCallResult)
 						
 
 						return returnValue

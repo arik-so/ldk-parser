@@ -126,7 +126,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = UnsignedNodeAnnouncement(cType: nativeCallResult, anchor: self)
+						let returnValue = UnsignedNodeAnnouncement(cType: nativeCallResult)
 						
 
 						return returnValue

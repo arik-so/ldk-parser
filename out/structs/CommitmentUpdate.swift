@@ -292,7 +292,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = UpdateFee(cType: nativeCallResult, anchor: self)
+						let returnValue = UpdateFee(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -340,7 +340,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = CommitmentSigned(cType: nativeCallResult, anchor: self)
+						let returnValue = CommitmentSigned(cType: nativeCallResult)
 						
 
 						return returnValue
