@@ -58,7 +58,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.read(messageType: message_type, buffer: u8slice(cType: buffer).getValue())
+							let swiftCallbackResult = instance.read(messageType: message_type, buffer: u8slice(cType: buffer).dangle().getValue())
 
 							// cleanup
 							
