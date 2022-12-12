@@ -303,7 +303,7 @@
 					public func readEvent(peerDescriptor: SocketDescriptor, data: [UInt8]) -> Result_boolPeerHandleErrorZ {
 						// native call variable prep
 						
-						let dataPrimitiveWrapper = u8slice(value: data).dangle()
+						let dataPrimitiveWrapper = u8slice(value: data)
 				
 
 						// native method call

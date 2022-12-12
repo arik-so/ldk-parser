@@ -610,7 +610,7 @@
 					public override func readChanSigner(reader: [UInt8]) -> Result_SignDecodeErrorZ {
 						// native call variable prep
 						
-						let readerPrimitiveWrapper = u8slice(value: reader).dangle()
+						let readerPrimitiveWrapper = u8slice(value: reader)
 				
 
 						
@@ -642,7 +642,7 @@
 					public override func signInvoice(hrpBytes: [UInt8], invoiceData: [UInt8], receipient: Recipient) -> Result_RecoverableSignatureNoneZ {
 						// native call variable prep
 						
-						let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes).dangle()
+						let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes)
 				
 						let invoiceDataVector = Vec_u5Z(array: invoiceData).dangle()
 				

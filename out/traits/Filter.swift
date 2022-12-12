@@ -227,7 +227,7 @@
 						tupledTxidPointer!.initialize(to: tupledTxid)
 					}
 				
-						let scriptPubkeyPrimitiveWrapper = u8slice(value: scriptPubkey).dangle()
+						let scriptPubkeyPrimitiveWrapper = u8slice(value: scriptPubkey)
 				
 
 						

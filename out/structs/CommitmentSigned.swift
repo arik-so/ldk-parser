@@ -334,7 +334,7 @@
 					public class func read(ser: [UInt8]) -> Result_CommitmentSignedDecodeErrorZ {
 						// native call variable prep
 						
-						let serPrimitiveWrapper = u8slice(value: ser).dangle()
+						let serPrimitiveWrapper = u8slice(value: ser)
 				
 
 						// native method call

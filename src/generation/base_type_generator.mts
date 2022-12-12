@@ -684,7 +684,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				}
 			}
 		} else if(argument.type instanceof RustPrimitiveWrapper && argument.type.isDeallocatable()){
-			memoryManagementInfix = '.dangle()';
+			// memoryManagementInfix = '.dangle()';
 		}
 
 		if (argument.type === containerType && !(memoryContext && memoryContext.isStatic)) {
@@ -916,7 +916,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					dangleSuffix = '';
 					// preparedReturnValue.wrapperSuffix += '.dynamicDangle()';
 					// preparedReturnValue.wrapperSuffix += '.dangle()';
-				} else if(returnType.type.isDeallocatable()) {
+				} else if(returnType.type.isDeallocatable() || this.hasFreeMethod(returnType.type)) {
 					// preparedReturnValue.wrapperSuffix += '.dangle()';
 					dangleSuffix = '.dangle()';
 				}

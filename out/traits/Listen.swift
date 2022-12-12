@@ -258,7 +258,7 @@
 					public override func blockConnected(block: [UInt8], height: UInt32) {
 						// native call variable prep
 						
-						let blockPrimitiveWrapper = u8slice(value: block).dangle()
+						let blockPrimitiveWrapper = u8slice(value: block)
 				
 
 						

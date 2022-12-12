@@ -97,7 +97,7 @@
 					public func getSighashAll(fundingRedeemscript: [UInt8], channelValueSatoshis: UInt64) -> [UInt8] {
 						// native call variable prep
 						
-						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript).dangle()
+						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript)
 				
 
 						// native method call
@@ -128,7 +128,7 @@
 						
 						let tupledFundingKey = Bindings.arrayToUInt8Tuple32(array: fundingKey)
 					
-						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript).dangle()
+						let fundingRedeemscriptPrimitiveWrapper = u8slice(value: fundingRedeemscript)
 				
 
 						// native method call

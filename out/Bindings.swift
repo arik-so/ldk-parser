@@ -253,7 +253,7 @@
 				public class func swiftSign(msg: [UInt8], sk: [UInt8]) -> Result_StringErrorZ {
 					// native call variable prep
 					
-					let msgPrimitiveWrapper = u8slice(value: msg).dangle()
+					let msgPrimitiveWrapper = u8slice(value: msg)
 				
 					let tupledSk = Bindings.arrayToUInt8Tuple32(array: sk)
 				
@@ -283,7 +283,7 @@
 				public class func swiftRecoverPk(msg: [UInt8], sig: String) -> Result_PublicKeyErrorZ {
 					// native call variable prep
 					
-					let msgPrimitiveWrapper = u8slice(value: msg).dangle()
+					let msgPrimitiveWrapper = u8slice(value: msg)
 				
 					let sigPrimitiveWrapper = Str(value: sig).dangle()
 				
@@ -313,7 +313,7 @@
 				public class func swiftVerify(msg: [UInt8], sig: String, pk: [UInt8]) -> Bool {
 					// native call variable prep
 					
-					let msgPrimitiveWrapper = u8slice(value: msg).dangle()
+					let msgPrimitiveWrapper = u8slice(value: msg)
 				
 					let sigPrimitiveWrapper = Str(value: sig).dangle()
 				
@@ -347,7 +347,7 @@
 				public class func swiftConstructInvoicePreimage(hrpBytes: [UInt8], dataWithoutSignature: [UInt8]) -> [UInt8] {
 					// native call variable prep
 					
-					let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes).dangle()
+					let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes)
 				
 					let dataWithoutSignatureVector = Vec_u5Z(array: dataWithoutSignature).dangle()
 				
@@ -1327,7 +1327,7 @@
 				public class func readBlockHashChannelMonitor(ser: [UInt8], arg: KeysInterface) -> Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ {
 					// native call variable prep
 					
-					let serPrimitiveWrapper = u8slice(value: ser).dangle()
+					let serPrimitiveWrapper = u8slice(value: ser)
 				
 
 					// native method call
@@ -1356,7 +1356,7 @@
 				public class func readBlockHashChannelManager(ser: [UInt8], arg: ChannelManagerReadArgs) -> Result_C2Tuple_BlockHashChannelManagerZDecodeErrorZ {
 					// native call variable prep
 					
-					let serPrimitiveWrapper = u8slice(value: ser).dangle()
+					let serPrimitiveWrapper = u8slice(value: ser)
 				
 
 					// native method call
