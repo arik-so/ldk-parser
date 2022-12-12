@@ -76,7 +76,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).dangle().getValue()
+						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -131,7 +131,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).dangle().getValue()
+						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -187,7 +187,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).dangle().getValue()
+						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -242,7 +242,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).dangle().getValue()
+						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -296,7 +296,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).dangle().getValue()
+						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue

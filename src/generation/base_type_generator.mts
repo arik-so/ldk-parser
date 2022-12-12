@@ -916,7 +916,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					dangleSuffix = '';
 					// preparedReturnValue.wrapperSuffix += '.dynamicDangle()';
 					// preparedReturnValue.wrapperSuffix += '.dangle()';
-				} else {
+				} else if(returnType.type.isDeallocatable()) {
 					// preparedReturnValue.wrapperSuffix += '.dangle()';
 					dangleSuffix = '.dangle()';
 				}
