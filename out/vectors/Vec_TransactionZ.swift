@@ -46,7 +46,7 @@
 						
 						let rustArray = array.map { (currentValueDepth1: [UInt8]) -> LDKTransaction in
 							
-						let currentValueDepth1PrimitiveWrapper = Transaction(value: currentValueDepth1).setCFreeability(freeable: false)
+						let currentValueDepth1PrimitiveWrapper = Transaction(value: currentValueDepth1).dangle()
 				
 						currentValueDepth1PrimitiveWrapper.cType!.data_is_owned = false
 					

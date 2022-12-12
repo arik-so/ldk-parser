@@ -285,7 +285,7 @@
 					
 					let msgPrimitiveWrapper = u8slice(value: msg)
 				
-					let sigPrimitiveWrapper = Str(value: sig).setCFreeability(freeable: false)
+					let sigPrimitiveWrapper = Str(value: sig).dangle()
 				
 					sigPrimitiveWrapper.cType!.chars_is_owned = false
 				
@@ -317,7 +317,7 @@
 					
 					let msgPrimitiveWrapper = u8slice(value: msg)
 				
-					let sigPrimitiveWrapper = Str(value: sig).setCFreeability(freeable: false)
+					let sigPrimitiveWrapper = Str(value: sig).dangle()
 				
 					sigPrimitiveWrapper.cType!.chars_is_owned = false
 				
@@ -1109,7 +1109,7 @@
 				
 					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
-					let descriptionPrimitiveWrapper = Str(value: description).setCFreeability(freeable: false)
+					let descriptionPrimitiveWrapper = Str(value: description).dangle()
 				
 					descriptionPrimitiveWrapper.cType!.chars_is_owned = false
 				
@@ -1213,7 +1213,7 @@
 					
 					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
 				
-					let descriptionPrimitiveWrapper = Str(value: description).setCFreeability(freeable: false)
+					let descriptionPrimitiveWrapper = Str(value: description).dangle()
 				
 					descriptionPrimitiveWrapper.cType!.chars_is_owned = false
 				
@@ -1307,7 +1307,7 @@
 					
 					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
 				
-					let descriptionPrimitiveWrapper = Str(value: description).setCFreeability(freeable: false)
+					let descriptionPrimitiveWrapper = Str(value: description).dangle()
 				
 					descriptionPrimitiveWrapper.cType!.chars_is_owned = false
 				

@@ -874,7 +874,7 @@
 					public override func signJusticeRevokedOutput(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
-						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx).setCFreeability(freeable: false)
+						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx).dangle()
 				
 						justiceTxPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -925,7 +925,7 @@
 					public override func signJusticeRevokedHtlc(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?, htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
-						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx).setCFreeability(freeable: false)
+						let justiceTxPrimitiveWrapper = Transaction(value: justiceTx).dangle()
 				
 						justiceTxPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -980,7 +980,7 @@
 					public override func signCounterpartyHtlcTransaction(htlcTx: [UInt8], input: UInt, amount: UInt64, perCommitmentPoint: [UInt8], htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
-						let htlcTxPrimitiveWrapper = Transaction(value: htlcTx).setCFreeability(freeable: false)
+						let htlcTxPrimitiveWrapper = Transaction(value: htlcTx).dangle()
 				
 						htlcTxPrimitiveWrapper.cType!.data_is_owned = false
 					
@@ -1042,7 +1042,7 @@
 					public override func signHolderAnchorInput(anchorTx: [UInt8], input: UInt) -> Result_SignatureNoneZ {
 						// native call variable prep
 						
-						let anchorTxPrimitiveWrapper = Transaction(value: anchorTx).setCFreeability(freeable: false)
+						let anchorTxPrimitiveWrapper = Transaction(value: anchorTx).dangle()
 				
 						anchorTxPrimitiveWrapper.cType!.data_is_owned = false
 					

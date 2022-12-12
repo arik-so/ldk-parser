@@ -137,8 +137,8 @@
 							
 							if !self.initialCFreeability {
 								// only set to freeable if it was originally false
-								// Bindings.print("Setting Transaction \(self.instanceNumber)'s data_is_owned: \(self.cType!.data_is_owned) -> true")
-								// self.cType!.data_is_owned = true
+								Bindings.print("Setting Transaction \(self.instanceNumber)'s data_is_owned: \(self.cType!.data_is_owned) -> true")
+								self.cType!.data_is_owned = true
 							}
 					
 							self.free()

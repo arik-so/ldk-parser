@@ -112,8 +112,8 @@
 							
 							if !self.initialCFreeability {
 								// only set to freeable if it was originally false
-								// Bindings.print("Setting Str \(self.instanceNumber)'s chars_is_owned: \(self.cType!.chars_is_owned) -> true")
-								// self.cType!.chars_is_owned = true
+								Bindings.print("Setting Str \(self.instanceNumber)'s chars_is_owned: \(self.cType!.chars_is_owned) -> true")
+								self.cType!.chars_is_owned = true
 							}
 					
 							self.free()

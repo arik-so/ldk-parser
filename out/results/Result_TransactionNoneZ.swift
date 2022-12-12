@@ -45,7 +45,7 @@
 					public class func initWithOk(o: [UInt8]) -> Result_TransactionNoneZ {
 						// native call variable prep
 						
-						let oPrimitiveWrapper = Transaction(value: o).setCFreeability(freeable: false)
+						let oPrimitiveWrapper = Transaction(value: o).dangle()
 				
 						oPrimitiveWrapper.cType!.data_is_owned = false
 					

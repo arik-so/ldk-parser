@@ -670,7 +670,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				memoryManagementInfix = '.dangle()';
 				if (isOwnershipFieldSafelyEditable && this.hasOwnershipField(argument.type)) {
 					// normally we wanna avoid it, except for LDKChannelMonitors
-					memoryManagementInfix = '.setCFreeability(freeable: false)';
+					// memoryManagementInfix = '.setCFreeability(freeable: false)';
 				}
 			}
 		}
@@ -1023,8 +1023,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				freeabilityOverrideInfix = `
 						if !self.initialCFreeability {
 							// only set to freeable if it was originally false
-							// Bindings.print("Setting ${swiftTypeName} \\(self.instanceNumber)'s ${type.ownershipField?.contextualName}: \\(self.cType!.${ownershipName}) -> true")
-							// self.cType!.${ownershipName} = true
+							Bindings.print("Setting ${swiftTypeName} \\(self.instanceNumber)'s ${type.ownershipField?.contextualName}: \\(self.cType!.${ownershipName}) -> true")
+							self.cType!.${ownershipName} = true
 						}
 				`
 			}
