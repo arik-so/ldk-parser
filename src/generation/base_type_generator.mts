@@ -994,6 +994,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					self.cType!.${ownershipName} = freeable
 					return self
 				}
+
+				internal func dynamicDangle() -> ${swiftTypeName} {
+					self.dangling = self.cType!.${ownershipName}
+					return self
+				}
 			`;
 
 			if (this.hasCloneMethod(type)) {

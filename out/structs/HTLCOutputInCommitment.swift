@@ -478,6 +478,11 @@
 						self.cType!.is_owned = freeable
 						return self
 					}
+
+					internal func dynamicDangle() -> HTLCOutputInCommitment {
+						self.dangling = self.cType!.is_owned
+						return self
+					}
 			
 					deinit {
 						if Bindings.suspendFreedom {

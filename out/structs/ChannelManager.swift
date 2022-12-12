@@ -1723,6 +1723,11 @@
 						self.cType!.is_owned = freeable
 						return self
 					}
+
+					internal func dynamicDangle() -> ChannelManager {
+						self.dangling = self.cType!.is_owned
+						return self
+					}
 			
 					deinit {
 						if Bindings.suspendFreedom {

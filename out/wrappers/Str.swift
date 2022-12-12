@@ -96,6 +96,11 @@
 						self.cType!.chars_is_owned = freeable
 						return self
 					}
+
+					internal func dynamicDangle() -> Str {
+						self.dangling = self.cType!.chars_is_owned
+						return self
+					}
 			
 					deinit {
 						if Bindings.suspendFreedom {

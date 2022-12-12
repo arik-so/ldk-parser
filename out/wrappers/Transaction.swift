@@ -121,6 +121,11 @@
 						self.cType!.data_is_owned = freeable
 						return self
 					}
+
+					internal func dynamicDangle() -> Transaction {
+						self.dangling = self.cType!.data_is_owned
+						return self
+					}
 			
 					deinit {
 						if Bindings.suspendFreedom {

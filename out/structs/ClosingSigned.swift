@@ -445,6 +445,11 @@
 						self.cType!.is_owned = freeable
 						return self
 					}
+
+					internal func dynamicDangle() -> ClosingSigned {
+						self.dangling = self.cType!.is_owned
+						return self
+					}
 			
 					deinit {
 						if Bindings.suspendFreedom {
