@@ -571,8 +571,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelTransactionParameters {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelTransactionParameters {
+						self.dangling = shouldDangle
 						return self
 					}
 

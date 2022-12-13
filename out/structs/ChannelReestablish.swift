@@ -319,8 +319,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelReestablish {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelReestablish {
+						self.dangling = shouldDangle
 						return self
 					}
 

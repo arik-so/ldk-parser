@@ -581,8 +581,8 @@
 					}
 		
 
-					internal func dangle() -> TxCreationKeys {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> TxCreationKeys {
+						self.dangling = shouldDangle
 						return self
 					}
 

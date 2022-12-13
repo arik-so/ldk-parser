@@ -343,8 +343,8 @@
 					}
 			
 
-					internal func dangle() -> Balance {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Balance {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -419,8 +419,8 @@
 						}
 		
 
-						internal func dangle() -> ClaimableOnChannelClose {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ClaimableOnChannelClose {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -487,8 +487,8 @@
 						}
 		
 
-						internal func dangle() -> ClaimableAwaitingConfirmations {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ClaimableAwaitingConfirmations {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -555,8 +555,8 @@
 						}
 		
 
-						internal func dangle() -> ContentiousClaimable {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ContentiousClaimable {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -623,8 +623,8 @@
 						}
 		
 
-						internal func dangle() -> MaybeTimeoutClaimableHTLC {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> MaybeTimeoutClaimableHTLC {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -691,8 +691,8 @@
 						}
 		
 
-						internal func dangle() -> MaybePreimageClaimableHTLC {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> MaybePreimageClaimableHTLC {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -752,8 +752,8 @@
 						}
 		
 
-						internal func dangle() -> CounterpartyRevokedOutputClaimable {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> CounterpartyRevokedOutputClaimable {
+							self.dangling = shouldDangle
 							return self
 						}
 

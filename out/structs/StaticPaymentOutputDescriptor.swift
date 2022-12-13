@@ -405,8 +405,8 @@
 					}
 		
 
-					internal func dangle() -> StaticPaymentOutputDescriptor {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> StaticPaymentOutputDescriptor {
+						self.dangling = shouldDangle
 						return self
 					}
 

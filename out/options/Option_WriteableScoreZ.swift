@@ -82,8 +82,8 @@
 						return nil
 					}
 
-					internal func dangle() -> Option_WriteableScoreZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Option_WriteableScoreZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

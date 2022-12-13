@@ -254,8 +254,8 @@
 					}
 		
 
-					internal func dangle() -> BackgroundProcessor {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> BackgroundProcessor {
+						self.dangling = shouldDangle
 						return self
 					}
 

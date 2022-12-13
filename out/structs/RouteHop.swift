@@ -518,8 +518,8 @@
 					}
 		
 
-					internal func dangle() -> RouteHop {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> RouteHop {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -480,8 +480,8 @@
 					}
 		
 
-					internal func dangle() -> UserConfig {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> UserConfig {
+						self.dangling = shouldDangle
 						return self
 					}
 

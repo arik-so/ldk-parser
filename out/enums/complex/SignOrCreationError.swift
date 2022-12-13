@@ -207,8 +207,8 @@
 					}
 			
 
-					internal func dangle() -> SignOrCreationError {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> SignOrCreationError {
+        				self.dangling = shouldDangle
 						return self
 					}
 

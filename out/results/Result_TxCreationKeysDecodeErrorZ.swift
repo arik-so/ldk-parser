@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_TxCreationKeysDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_TxCreationKeysDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

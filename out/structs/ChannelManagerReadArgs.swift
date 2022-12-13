@@ -488,8 +488,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelManagerReadArgs {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelManagerReadArgs {
+						self.dangling = shouldDangle
 						return self
 					}
 

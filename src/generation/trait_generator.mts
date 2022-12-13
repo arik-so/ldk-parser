@@ -134,8 +134,8 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 
 					${fieldAccessors}
 
-					internal func dangle() -> ${swiftTypeName} {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ${swiftTypeName} {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -454,8 +454,8 @@
 					}
 		
 
-					internal func dangle() -> RoutingMessageHandler {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> RoutingMessageHandler {
+        				self.dangling = shouldDangle
 						return self
 					}
 

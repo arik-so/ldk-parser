@@ -277,8 +277,8 @@
 					}
 			
 
-					internal func dangle() -> EffectiveCapacity {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> EffectiveCapacity {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -353,8 +353,8 @@
 						}
 		
 
-						internal func dangle() -> ExactLiquidity {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ExactLiquidity {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -411,8 +411,8 @@
 						}
 		
 
-						internal func dangle() -> MaximumHTLC {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> MaximumHTLC {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -477,8 +477,8 @@
 						}
 		
 
-						internal func dangle() -> Total {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> Total {
+							self.dangling = shouldDangle
 							return self
 						}
 

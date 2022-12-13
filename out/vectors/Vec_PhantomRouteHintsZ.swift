@@ -97,8 +97,8 @@ PhantomRouteHints(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_PhantomRouteHintsZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_PhantomRouteHintsZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

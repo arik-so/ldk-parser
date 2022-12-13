@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_HTLCOutputInCommitmentDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_HTLCOutputInCommitmentDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

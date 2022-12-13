@@ -505,8 +505,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelCounterparty {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelCounterparty {
+						self.dangling = shouldDangle
 						return self
 					}
 

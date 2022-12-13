@@ -301,8 +301,8 @@
 					}
 		
 
-					internal func dangle() -> BindingsInit {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> BindingsInit {
+						self.dangling = shouldDangle
 						return self
 					}
 

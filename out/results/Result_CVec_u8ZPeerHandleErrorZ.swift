@@ -149,8 +149,8 @@
 					}
 					
 
-					internal func dangle() -> Result_CVec_u8ZPeerHandleErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_CVec_u8ZPeerHandleErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

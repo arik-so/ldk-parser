@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_InvoiceSignOrCreationErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_InvoiceSignOrCreationErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

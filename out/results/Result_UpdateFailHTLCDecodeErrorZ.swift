@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_UpdateFailHTLCDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_UpdateFailHTLCDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

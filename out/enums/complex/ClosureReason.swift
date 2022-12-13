@@ -419,8 +419,8 @@
 					}
 			
 
-					internal func dangle() -> ClosureReason {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ClosureReason {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -498,8 +498,8 @@
 						}
 		
 
-						internal func dangle() -> CounterpartyForceClosed {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> CounterpartyForceClosed {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -556,8 +556,8 @@
 						}
 		
 
-						internal func dangle() -> ProcessingError {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ProcessingError {
+							self.dangling = shouldDangle
 							return self
 						}
 

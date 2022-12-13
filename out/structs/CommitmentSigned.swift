@@ -371,8 +371,8 @@
 					}
 		
 
-					internal func dangle() -> CommitmentSigned {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> CommitmentSigned {
+						self.dangling = shouldDangle
 						return self
 					}
 

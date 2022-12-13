@@ -97,8 +97,8 @@ ChannelMonitor(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_ChannelMonitorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_ChannelMonitorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

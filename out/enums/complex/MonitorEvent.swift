@@ -310,8 +310,8 @@
 					}
 			
 
-					internal func dangle() -> MonitorEvent {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> MonitorEvent {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -397,8 +397,8 @@
 						}
 		
 
-						internal func dangle() -> Completed {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> Completed {
+							self.dangling = shouldDangle
 							return self
 						}
 

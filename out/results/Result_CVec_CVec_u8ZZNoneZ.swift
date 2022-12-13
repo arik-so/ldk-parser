@@ -149,8 +149,8 @@
 					}
 					
 
-					internal func dangle() -> Result_CVec_CVec_u8ZZNoneZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_CVec_CVec_u8ZZNoneZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

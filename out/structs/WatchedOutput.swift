@@ -363,8 +363,8 @@
 					}
 		
 
-					internal func dangle() -> WatchedOutput {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> WatchedOutput {
+						self.dangling = shouldDangle
 						return self
 					}
 

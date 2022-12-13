@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_WarningMessageDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_WarningMessageDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -313,8 +313,8 @@
 					}
 		
 
-					internal func dangle() -> CommitmentTransaction {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> CommitmentTransaction {
+						self.dangling = shouldDangle
 						return self
 					}
 

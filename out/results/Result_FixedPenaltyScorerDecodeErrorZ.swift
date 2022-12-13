@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_FixedPenaltyScorerDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_FixedPenaltyScorerDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

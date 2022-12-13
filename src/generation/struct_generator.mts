@@ -70,8 +70,8 @@ export default class StructGenerator extends BaseTypeGenerator<RustStruct> {
 
 					${fieldAccessors}
 
-					internal func dangle() -> ${swiftTypeName} {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ${swiftTypeName} {
+						self.dangling = shouldDangle
 						return self
 					}
 

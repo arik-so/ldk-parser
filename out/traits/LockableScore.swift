@@ -131,8 +131,8 @@
 
 					
 
-					internal func dangle() -> LockableScore {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> LockableScore {
+        				self.dangling = shouldDangle
 						return self
 					}
 

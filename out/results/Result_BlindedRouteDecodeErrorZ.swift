@@ -122,8 +122,8 @@
 					}
 					
 
-					internal func dangle() -> Result_BlindedRouteDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_BlindedRouteDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

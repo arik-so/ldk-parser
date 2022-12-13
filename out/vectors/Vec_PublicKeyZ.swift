@@ -99,8 +99,8 @@ PublicKey(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle() -> Vec_PublicKeyZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_PublicKeyZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

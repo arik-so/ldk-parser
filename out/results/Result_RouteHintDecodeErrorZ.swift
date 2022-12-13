@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_RouteHintDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_RouteHintDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

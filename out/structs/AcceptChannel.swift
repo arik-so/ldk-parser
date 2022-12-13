@@ -926,8 +926,8 @@
 					}
 		
 
-					internal func dangle() -> AcceptChannel {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> AcceptChannel {
+						self.dangling = shouldDangle
 						return self
 					}
 

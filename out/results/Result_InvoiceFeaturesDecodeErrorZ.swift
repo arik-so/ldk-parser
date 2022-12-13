@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_InvoiceFeaturesDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_InvoiceFeaturesDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

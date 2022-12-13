@@ -559,8 +559,8 @@
 					}
 		
 
-					internal func dangle() -> PeerManager {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> PeerManager {
+						self.dangling = shouldDangle
 						return self
 					}
 

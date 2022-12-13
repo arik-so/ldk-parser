@@ -132,8 +132,8 @@
 
 					
 
-					internal func dangle() -> FeeEstimator {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> FeeEstimator {
+        				self.dangling = shouldDangle
 						return self
 					}
 

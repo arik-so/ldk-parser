@@ -158,8 +158,8 @@
 					}
 		
 
-					internal func dangle() -> InFlightHtlcs {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> InFlightHtlcs {
+						self.dangling = shouldDangle
 						return self
 					}
 

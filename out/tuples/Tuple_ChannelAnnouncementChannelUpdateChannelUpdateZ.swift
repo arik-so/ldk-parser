@@ -140,8 +140,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

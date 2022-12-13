@@ -251,8 +251,8 @@
 					}
 		
 
-					internal func dangle() -> KeysManager {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> KeysManager {
+						self.dangling = shouldDangle
 						return self
 					}
 

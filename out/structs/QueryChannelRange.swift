@@ -380,8 +380,8 @@
 					}
 		
 
-					internal func dangle() -> QueryChannelRange {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> QueryChannelRange {
+						self.dangling = shouldDangle
 						return self
 					}
 

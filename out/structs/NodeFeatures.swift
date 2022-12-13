@@ -1503,8 +1503,8 @@
 					}
 		
 
-					internal func dangle() -> NodeFeatures {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> NodeFeatures {
+						self.dangling = shouldDangle
 						return self
 					}
 

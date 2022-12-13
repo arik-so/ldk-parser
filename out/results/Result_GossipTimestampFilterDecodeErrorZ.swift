@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_GossipTimestampFilterDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_GossipTimestampFilterDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

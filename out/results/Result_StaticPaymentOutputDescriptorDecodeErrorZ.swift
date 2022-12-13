@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_StaticPaymentOutputDescriptorDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_StaticPaymentOutputDescriptorDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

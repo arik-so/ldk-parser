@@ -122,8 +122,8 @@
 					}
 					
 
-					internal func dangle() -> Result_LockedChannelMonitorNoneZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_LockedChannelMonitorNoneZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

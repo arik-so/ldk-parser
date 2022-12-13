@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_OnionMessageDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_OnionMessageDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

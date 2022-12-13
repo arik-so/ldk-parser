@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_PayeePubKeyErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_PayeePubKeyErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

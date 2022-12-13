@@ -343,8 +343,8 @@
 					}
 		
 
-					internal func dangle() -> ChainMonitor {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChainMonitor {
+						self.dangling = shouldDangle
 						return self
 					}
 

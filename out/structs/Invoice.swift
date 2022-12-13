@@ -665,8 +665,8 @@
 					}
 		
 
-					internal func dangle() -> Invoice {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Invoice {
+						self.dangling = shouldDangle
 						return self
 					}
 

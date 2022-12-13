@@ -233,8 +233,8 @@
 
 					
 
-					internal func dangle() -> Router {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Router {
+        				self.dangling = shouldDangle
 						return self
 					}
 

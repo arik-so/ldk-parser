@@ -200,8 +200,8 @@
 
 					
 
-					internal func dangle() -> Listen {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Listen {
+        				self.dangling = shouldDangle
 						return self
 					}
 

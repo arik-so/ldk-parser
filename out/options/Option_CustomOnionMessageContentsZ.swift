@@ -106,8 +106,8 @@
 						return nil
 					}
 
-					internal func dangle() -> Option_CustomOnionMessageContentsZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Option_CustomOnionMessageContentsZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -99,8 +99,8 @@ Tuple_TxidCVec_C2Tuple_u32ScriptZZZ(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle() -> Vec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

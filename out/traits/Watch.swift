@@ -229,8 +229,8 @@
 
 					
 
-					internal func dangle() -> Watch {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Watch {
+        				self.dangling = shouldDangle
 						return self
 					}
 

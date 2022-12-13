@@ -55,8 +55,8 @@
 						return Bindings.UInt8Tuple12ToArray(tuple: self.cType!.data)
 					}
 
-					internal func dangle() -> TwelveBytes {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> TwelveBytes {
+        				self.dangling = shouldDangle
 						return self
 					}
 

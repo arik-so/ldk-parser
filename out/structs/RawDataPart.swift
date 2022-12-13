@@ -194,8 +194,8 @@
 					}
 		
 
-					internal func dangle() -> RawDataPart {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> RawDataPart {
+						self.dangling = shouldDangle
 						return self
 					}
 

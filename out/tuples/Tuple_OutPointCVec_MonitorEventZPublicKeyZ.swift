@@ -149,8 +149,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_OutPointCVec_MonitorEventZPublicKeyZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_OutPointCVec_MonitorEventZPublicKeyZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -223,8 +223,8 @@
 					}
 		
 
-					internal func dangle() -> BestBlock {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> BestBlock {
+						self.dangling = shouldDangle
 						return self
 					}
 

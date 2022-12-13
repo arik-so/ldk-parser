@@ -355,8 +355,8 @@
 					}
 		
 
-					internal func dangle() -> GossipTimestampFilter {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> GossipTimestampFilter {
+						self.dangling = shouldDangle
 						return self
 					}
 

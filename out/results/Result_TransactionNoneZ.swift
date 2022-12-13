@@ -150,8 +150,8 @@
 					}
 					
 
-					internal func dangle() -> Result_TransactionNoneZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_TransactionNoneZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

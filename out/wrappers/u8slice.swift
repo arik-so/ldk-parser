@@ -68,8 +68,8 @@
 				
 					}
 
-					internal func dangle() -> u8slice {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> u8slice {
+        				self.dangling = shouldDangle
 						return self
 					}
 

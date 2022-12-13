@@ -99,8 +99,8 @@ Tuple_OutPointCVec_MonitorEventZPublicKeyZ(cType: currentCType).dangle().getValu
 					}
 		
 
-					internal func dangle() -> Vec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

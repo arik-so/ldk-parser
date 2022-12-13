@@ -122,8 +122,8 @@
 					}
 		
 
-					internal func dangle() -> BlindedHop {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> BlindedHop {
+						self.dangling = shouldDangle
 						return self
 					}
 

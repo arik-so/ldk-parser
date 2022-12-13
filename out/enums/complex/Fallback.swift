@@ -266,8 +266,8 @@
 					}
 			
 
-					internal func dangle() -> Fallback {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Fallback {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -349,8 +349,8 @@
 						}
 		
 
-						internal func dangle() -> SegWitProgram {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SegWitProgram {
+							self.dangling = shouldDangle
 							return self
 						}
 

@@ -121,8 +121,8 @@
 					}
 					
 
-					internal func dangle() -> Result_u32GraphSyncErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_u32GraphSyncErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

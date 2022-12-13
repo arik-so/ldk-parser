@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_SpendableOutputDescriptorDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_SpendableOutputDescriptorDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

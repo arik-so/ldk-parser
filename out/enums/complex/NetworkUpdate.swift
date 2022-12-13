@@ -282,8 +282,8 @@
 					}
 			
 
-					internal func dangle() -> NetworkUpdate {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> NetworkUpdate {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -357,8 +357,8 @@
 						}
 		
 
-						internal func dangle() -> ChannelUpdateMessage {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ChannelUpdateMessage {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -424,8 +424,8 @@
 						}
 		
 
-						internal func dangle() -> ChannelFailure {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ChannelFailure {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -491,8 +491,8 @@
 						}
 		
 
-						internal func dangle() -> NodeFailure {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> NodeFailure {
+							self.dangling = shouldDangle
 							return self
 						}
 

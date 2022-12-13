@@ -158,8 +158,8 @@
 					}
 		
 
-					internal func dangle() -> Sign {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Sign {
+        				self.dangling = shouldDangle
 						return self
 					}
 

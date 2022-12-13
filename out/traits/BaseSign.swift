@@ -626,8 +626,8 @@
 					}
 		
 
-					internal func dangle() -> BaseSign {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> BaseSign {
+        				self.dangling = shouldDangle
 						return self
 					}
 

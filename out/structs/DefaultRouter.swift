@@ -134,8 +134,8 @@
 					}
 		
 
-					internal func dangle() -> DefaultRouter {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> DefaultRouter {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -201,8 +201,8 @@
 					}
 			
 
-					internal func dangle() -> PaymentError {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> PaymentError {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -694,8 +694,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelMessageHandler {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelMessageHandler {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -318,8 +318,8 @@
 					}
 		
 
-					internal func dangle() -> RouteParameters {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> RouteParameters {
+						self.dangling = shouldDangle
 						return self
 					}
 

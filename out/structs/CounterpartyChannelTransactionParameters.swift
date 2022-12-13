@@ -262,8 +262,8 @@
 					}
 		
 
-					internal func dangle() -> CounterpartyChannelTransactionParameters {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> CounterpartyChannelTransactionParameters {
+						self.dangling = shouldDangle
 						return self
 					}
 

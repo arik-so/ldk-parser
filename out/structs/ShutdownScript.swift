@@ -343,8 +343,8 @@
 					}
 		
 
-					internal func dangle() -> ShutdownScript {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ShutdownScript {
+						self.dangling = shouldDangle
 						return self
 					}
 

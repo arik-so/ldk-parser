@@ -84,8 +84,8 @@
 						return nil
 					}
 
-					internal func dangle() -> Option_ScalarZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Option_ScalarZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

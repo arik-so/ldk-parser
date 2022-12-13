@@ -185,8 +185,8 @@
 					}
 		
 
-					internal func dangle() -> PeerHandleError {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> PeerHandleError {
+						self.dangling = shouldDangle
 						return self
 					}
 

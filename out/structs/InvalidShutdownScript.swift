@@ -181,8 +181,8 @@
 					}
 		
 
-					internal func dangle() -> InvalidShutdownScript {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> InvalidShutdownScript {
+						self.dangling = shouldDangle
 						return self
 					}
 

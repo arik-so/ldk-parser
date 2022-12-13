@@ -131,8 +131,8 @@
 
 					
 
-					internal func dangle() -> FutureCallback {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> FutureCallback {
+        				self.dangling = shouldDangle
 						return self
 					}
 

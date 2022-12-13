@@ -97,8 +97,8 @@
 					}
 		
 
-					internal func dangle() -> Future {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Future {
+						self.dangling = shouldDangle
 						return self
 					}
 

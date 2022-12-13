@@ -312,8 +312,8 @@
 					}
 		
 
-					internal func dangle() -> CounterpartyForwardingInfo {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> CounterpartyForwardingInfo {
+						self.dangling = shouldDangle
 						return self
 					}
 

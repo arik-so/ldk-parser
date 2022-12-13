@@ -97,8 +97,8 @@ OutPoint(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_OutPointZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_OutPointZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

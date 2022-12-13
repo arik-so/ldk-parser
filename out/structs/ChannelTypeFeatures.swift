@@ -509,8 +509,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelTypeFeatures {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelTypeFeatures {
+						self.dangling = shouldDangle
 						return self
 					}
 

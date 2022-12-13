@@ -99,8 +99,8 @@ Tuple_BlockHashChannelMonitorZ(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle() -> Vec_C2Tuple_BlockHashChannelMonitorZZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_C2Tuple_BlockHashChannelMonitorZZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

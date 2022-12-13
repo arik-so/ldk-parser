@@ -306,8 +306,8 @@
 
 					
 
-					internal func dangle() -> Confirm {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Confirm {
+        				self.dangling = shouldDangle
 						return self
 					}
 

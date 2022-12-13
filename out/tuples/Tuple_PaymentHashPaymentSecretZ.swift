@@ -142,8 +142,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_PaymentHashPaymentSecretZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_PaymentHashPaymentSecretZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

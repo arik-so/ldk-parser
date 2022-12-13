@@ -132,8 +132,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_u32TxOutZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_u32TxOutZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

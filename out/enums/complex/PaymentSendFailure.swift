@@ -269,8 +269,8 @@
 					}
 			
 
-					internal func dangle() -> PaymentSendFailure {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> PaymentSendFailure {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -364,8 +364,8 @@
 						}
 		
 
-						internal func dangle() -> PartialFailure {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> PartialFailure {
+							self.dangling = shouldDangle
 							return self
 						}
 

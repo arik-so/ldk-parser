@@ -141,8 +141,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_SignatureCVec_SignatureZZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_SignatureCVec_SignatureZZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

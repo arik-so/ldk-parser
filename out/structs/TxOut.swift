@@ -133,8 +133,8 @@
 					}
 		
 
-					internal func dangle() -> TxOut {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> TxOut {
+						self.dangling = shouldDangle
 						return self
 					}
 

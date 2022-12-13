@@ -218,8 +218,8 @@
 					}
 			
 
-					internal func dangle() -> Retry {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Retry {
+        				self.dangling = shouldDangle
 						return self
 					}
 

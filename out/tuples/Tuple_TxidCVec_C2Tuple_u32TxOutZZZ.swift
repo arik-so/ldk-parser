@@ -141,8 +141,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_TxidCVec_C2Tuple_u32TxOutZZZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_TxidCVec_C2Tuple_u32TxOutZZZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

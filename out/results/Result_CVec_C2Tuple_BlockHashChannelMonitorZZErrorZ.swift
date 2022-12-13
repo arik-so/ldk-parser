@@ -149,8 +149,8 @@
 					}
 					
 
-					internal func dangle() -> Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_CVec_C2Tuple_BlockHashChannelMonitorZZErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

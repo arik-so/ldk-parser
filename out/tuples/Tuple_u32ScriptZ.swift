@@ -136,8 +136,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_u32ScriptZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_u32ScriptZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -97,8 +97,8 @@ MessageSendEvent(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_MessageSendEventZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_MessageSendEventZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

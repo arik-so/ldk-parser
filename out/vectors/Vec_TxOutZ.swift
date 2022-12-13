@@ -97,8 +97,8 @@ TxOut(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_TxOutZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_TxOutZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

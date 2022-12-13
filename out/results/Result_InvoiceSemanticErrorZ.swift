@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_InvoiceSemanticErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_InvoiceSemanticErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

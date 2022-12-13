@@ -97,8 +97,8 @@ RouteHint(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_RouteHintZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_RouteHintZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

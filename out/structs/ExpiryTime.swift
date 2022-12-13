@@ -234,8 +234,8 @@
 					}
 		
 
-					internal func dangle() -> ExpiryTime {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ExpiryTime {
+						self.dangling = shouldDangle
 						return self
 					}
 

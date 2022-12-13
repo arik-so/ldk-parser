@@ -167,8 +167,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_BlockHashChannelMonitorZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_BlockHashChannelMonitorZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

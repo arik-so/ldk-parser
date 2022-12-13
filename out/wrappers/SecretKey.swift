@@ -55,8 +55,8 @@
 						return Bindings.UInt8Tuple32ToArray(tuple: self.cType!.bytes)
 					}
 
-					internal func dangle() -> SecretKey {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> SecretKey {
+        				self.dangling = shouldDangle
 						return self
 					}
 

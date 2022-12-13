@@ -150,8 +150,8 @@
 					}
 					
 
-					internal func dangle() -> Result_SecretKeyErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_SecretKeyErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

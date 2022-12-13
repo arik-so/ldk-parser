@@ -312,8 +312,8 @@
 					}
 			
 
-					internal func dangle() -> SpendableOutputDescriptor {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> SpendableOutputDescriptor {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -395,8 +395,8 @@
 						}
 		
 
-						internal func dangle() -> StaticOutput {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> StaticOutput {
+							self.dangling = shouldDangle
 							return self
 						}
 

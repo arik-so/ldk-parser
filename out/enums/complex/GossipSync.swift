@@ -173,8 +173,8 @@
 					}
 			
 
-					internal func dangle() -> GossipSync {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> GossipSync {
+        				self.dangling = shouldDangle
 						return self
 					}
 

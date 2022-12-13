@@ -231,8 +231,8 @@
 					}
 		
 
-					internal func dangle() -> PayeePubKey {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> PayeePubKey {
+						self.dangling = shouldDangle
 						return self
 					}
 

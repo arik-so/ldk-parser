@@ -199,8 +199,8 @@
 					}
 		
 
-					internal func dangle() -> P2PGossipSync {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> P2PGossipSync {
+						self.dangling = shouldDangle
 						return self
 					}
 

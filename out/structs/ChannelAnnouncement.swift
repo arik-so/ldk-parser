@@ -469,8 +469,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelAnnouncement {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelAnnouncement {
+						self.dangling = shouldDangle
 						return self
 					}
 

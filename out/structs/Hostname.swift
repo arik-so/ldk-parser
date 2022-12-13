@@ -156,8 +156,8 @@
 					}
 		
 
-					internal func dangle() -> Hostname {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Hostname {
+						self.dangling = shouldDangle
 						return self
 					}
 

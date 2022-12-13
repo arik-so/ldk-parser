@@ -97,8 +97,8 @@ APIError(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_APIErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_APIErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

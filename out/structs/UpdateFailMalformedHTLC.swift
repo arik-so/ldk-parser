@@ -319,8 +319,8 @@
 					}
 		
 
-					internal func dangle() -> UpdateFailMalformedHTLC {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> UpdateFailMalformedHTLC {
+						self.dangling = shouldDangle
 						return self
 					}
 

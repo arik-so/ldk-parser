@@ -148,8 +148,8 @@
 					}
 		
 
-					internal func dangle() -> InvoiceSignature {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> InvoiceSignature {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -744,8 +744,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelHandshakeConfig {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelHandshakeConfig {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_NodeInfoDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_NodeInfoDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -122,8 +122,8 @@
 					}
 					
 
-					internal func dangle() -> Result_NetworkGraphDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_NetworkGraphDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

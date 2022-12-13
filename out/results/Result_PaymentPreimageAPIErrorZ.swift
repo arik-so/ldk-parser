@@ -150,8 +150,8 @@
 					}
 					
 
-					internal func dangle() -> Result_PaymentPreimageAPIErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_PaymentPreimageAPIErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

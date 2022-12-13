@@ -389,8 +389,8 @@
 					}
 		
 
-					internal func dangle() -> NodeInfo {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> NodeInfo {
+						self.dangling = shouldDangle
 						return self
 					}
 

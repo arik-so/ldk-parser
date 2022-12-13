@@ -305,8 +305,8 @@
 					}
 		
 
-					internal func dangle() -> UpdateFee {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> UpdateFee {
+						self.dangling = shouldDangle
 						return self
 					}
 

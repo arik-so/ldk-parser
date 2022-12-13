@@ -150,8 +150,8 @@
 					}
 					
 
-					internal func dangle() -> Result__u832APIErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result__u832APIErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -516,8 +516,8 @@
 					}
 		
 
-					internal func dangle() -> RouteHintHop {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> RouteHintHop {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -497,8 +497,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelPublicKeys {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelPublicKeys {
+						self.dangling = shouldDangle
 						return self
 					}
 

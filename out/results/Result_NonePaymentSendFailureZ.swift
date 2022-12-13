@@ -145,8 +145,8 @@
 					}
 					*/
 
-					internal func dangle() -> Result_NonePaymentSendFailureZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_NonePaymentSendFailureZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

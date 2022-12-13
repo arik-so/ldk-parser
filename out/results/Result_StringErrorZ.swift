@@ -150,8 +150,8 @@
 					}
 					
 
-					internal func dangle() -> Result_StringErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_StringErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

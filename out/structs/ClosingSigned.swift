@@ -426,8 +426,8 @@
 					}
 		
 
-					internal func dangle() -> ClosingSigned {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ClosingSigned {
+						self.dangling = shouldDangle
 						return self
 					}
 

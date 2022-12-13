@@ -479,8 +479,8 @@
 					}
 		
 
-					internal func dangle() -> CommitmentUpdate {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> CommitmentUpdate {
+						self.dangling = shouldDangle
 						return self
 					}
 

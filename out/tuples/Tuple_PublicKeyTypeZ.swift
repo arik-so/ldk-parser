@@ -137,8 +137,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_PublicKeyTypeZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_PublicKeyTypeZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

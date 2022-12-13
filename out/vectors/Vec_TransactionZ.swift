@@ -99,8 +99,8 @@ Transaction(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle() -> Vec_TransactionZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_TransactionZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

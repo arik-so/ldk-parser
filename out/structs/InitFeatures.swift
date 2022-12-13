@@ -1480,8 +1480,8 @@
 					}
 		
 
-					internal func dangle() -> InitFeatures {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> InitFeatures {
+						self.dangling = shouldDangle
 						return self
 					}
 

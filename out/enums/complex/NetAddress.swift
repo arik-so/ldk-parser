@@ -362,8 +362,8 @@
 					}
 			
 
-					internal func dangle() -> NetAddress {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> NetAddress {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -445,8 +445,8 @@
 						}
 		
 
-						internal func dangle() -> IPv4 {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> IPv4 {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -511,8 +511,8 @@
 						}
 		
 
-						internal func dangle() -> IPv6 {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> IPv6 {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -593,8 +593,8 @@
 						}
 		
 
-						internal func dangle() -> OnionV3 {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> OnionV3 {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -659,8 +659,8 @@
 						}
 		
 
-						internal func dangle() -> Hostname {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> Hostname {
+							self.dangling = shouldDangle
 							return self
 						}
 

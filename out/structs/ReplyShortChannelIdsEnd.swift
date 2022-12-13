@@ -313,8 +313,8 @@
 					}
 		
 
-					internal func dangle() -> ReplyShortChannelIdsEnd {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ReplyShortChannelIdsEnd {
+						self.dangling = shouldDangle
 						return self
 					}
 

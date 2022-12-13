@@ -523,8 +523,8 @@
 					}
 		
 
-					internal func dangle() -> UnsignedChannelAnnouncement {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> UnsignedChannelAnnouncement {
+						self.dangling = shouldDangle
 						return self
 					}
 

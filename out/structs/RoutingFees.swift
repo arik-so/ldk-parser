@@ -316,8 +316,8 @@
 					}
 		
 
-					internal func dangle() -> RoutingFees {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> RoutingFees {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -287,8 +287,8 @@
 					}
 			
 
-					internal func dangle() -> SendError {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> SendError {
+        				self.dangling = shouldDangle
 						return self
 					}
 

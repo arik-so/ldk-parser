@@ -276,8 +276,8 @@
 					}
 		
 
-					internal func dangle() -> DataLossProtect {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> DataLossProtect {
+						self.dangling = shouldDangle
 						return self
 					}
 

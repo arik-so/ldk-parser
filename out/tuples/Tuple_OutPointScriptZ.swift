@@ -136,8 +136,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_OutPointScriptZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_OutPointScriptZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

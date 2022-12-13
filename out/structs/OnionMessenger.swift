@@ -322,8 +322,8 @@
 					}
 		
 
-					internal func dangle() -> OnionMessenger {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> OnionMessenger {
+						self.dangling = shouldDangle
 						return self
 					}
 

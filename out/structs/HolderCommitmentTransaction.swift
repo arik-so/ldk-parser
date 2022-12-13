@@ -297,8 +297,8 @@
 					}
 		
 
-					internal func dangle() -> HolderCommitmentTransaction {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> HolderCommitmentTransaction {
+						self.dangling = shouldDangle
 						return self
 					}
 

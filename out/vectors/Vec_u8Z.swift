@@ -90,8 +90,8 @@
 					}
 		
 
-					internal func dangle() -> Vec_u8Z {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_u8Z {
+        				self.dangling = shouldDangle
 						return self
 					}
 

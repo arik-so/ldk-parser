@@ -325,8 +325,8 @@
 					}
 		
 
-					internal func dangle() -> WarningMessage {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> WarningMessage {
+						self.dangling = shouldDangle
 						return self
 					}
 

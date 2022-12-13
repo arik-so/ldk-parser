@@ -150,8 +150,8 @@
 					}
 					
 
-					internal func dangle() -> Result_SignatureNoneZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_SignatureNoneZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

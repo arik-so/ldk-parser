@@ -301,8 +301,8 @@
 					}
 		
 
-					internal func dangle() -> NodeAnnouncement {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> NodeAnnouncement {
+						self.dangling = shouldDangle
 						return self
 					}
 

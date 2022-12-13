@@ -612,8 +612,8 @@
 					}
 		
 
-					internal func dangle() -> NetworkGraph {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> NetworkGraph {
+						self.dangling = shouldDangle
 						return self
 					}
 

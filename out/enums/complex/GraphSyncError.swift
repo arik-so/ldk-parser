@@ -165,8 +165,8 @@
 					}
 			
 
-					internal func dangle() -> GraphSyncError {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> GraphSyncError {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -156,8 +156,8 @@
 					}
 		
 
-					internal func dangle() -> CustomMessageHandler {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> CustomMessageHandler {
+        				self.dangling = shouldDangle
 						return self
 					}
 

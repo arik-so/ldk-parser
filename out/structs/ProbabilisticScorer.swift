@@ -436,8 +436,8 @@
 					}
 		
 
-					internal func dangle() -> ProbabilisticScorer {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ProbabilisticScorer {
+						self.dangling = shouldDangle
 						return self
 					}
 

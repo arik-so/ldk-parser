@@ -356,8 +356,8 @@
 					}
 			
 
-					internal func dangle() -> APIError {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> APIError {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -431,8 +431,8 @@
 						}
 		
 
-						internal func dangle() -> APIMisuseError {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> APIMisuseError {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -497,8 +497,8 @@
 						}
 		
 
-						internal func dangle() -> FeeRateTooHigh {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> FeeRateTooHigh {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -555,8 +555,8 @@
 						}
 		
 
-						internal func dangle() -> RouteError {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> RouteError {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -613,8 +613,8 @@
 						}
 		
 
-						internal func dangle() -> ChannelUnavailable {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ChannelUnavailable {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -671,8 +671,8 @@
 						}
 		
 
-						internal func dangle() -> IncompatibleShutdownScript {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> IncompatibleShutdownScript {
+							self.dangling = shouldDangle
 							return self
 						}
 

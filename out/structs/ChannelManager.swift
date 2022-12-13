@@ -1715,8 +1715,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelManager {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelManager {
+						self.dangling = shouldDangle
 						return self
 					}
 

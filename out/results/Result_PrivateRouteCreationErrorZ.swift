@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_PrivateRouteCreationErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_PrivateRouteCreationErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

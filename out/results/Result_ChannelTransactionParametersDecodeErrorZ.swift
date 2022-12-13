@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_ChannelTransactionParametersDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_ChannelTransactionParametersDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -145,8 +145,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_RawInvoice_u832InvoiceSignatureZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_RawInvoice_u832InvoiceSignatureZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

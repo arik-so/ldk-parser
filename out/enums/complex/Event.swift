@@ -921,8 +921,8 @@
 					}
 			
 
-					internal func dangle() -> Event {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Event {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -1037,8 +1037,8 @@
 						}
 		
 
-						internal func dangle() -> FundingGenerationReady {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> FundingGenerationReady {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1113,8 +1113,8 @@
 						}
 		
 
-						internal func dangle() -> PaymentReceived {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> PaymentReceived {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1189,8 +1189,8 @@
 						}
 		
 
-						internal func dangle() -> PaymentClaimed {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> PaymentClaimed {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1289,8 +1289,8 @@
 						}
 		
 
-						internal func dangle() -> PaymentSent {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> PaymentSent {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1362,8 +1362,8 @@
 						}
 		
 
-						internal func dangle() -> PaymentFailed {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> PaymentFailed {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1446,8 +1446,8 @@
 						}
 		
 
-						internal func dangle() -> PaymentPathSuccessful {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> PaymentPathSuccessful {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1607,8 +1607,8 @@
 						}
 		
 
-						internal func dangle() -> PaymentPathFailed {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> PaymentPathFailed {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1685,8 +1685,8 @@
 						}
 		
 
-						internal func dangle() -> ProbeSuccessful {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ProbeSuccessful {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1775,8 +1775,8 @@
 						}
 		
 
-						internal func dangle() -> ProbeFailed {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ProbeFailed {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1836,8 +1836,8 @@
 						}
 		
 
-						internal func dangle() -> PendingHTLCsForwardable {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> PendingHTLCsForwardable {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1894,8 +1894,8 @@
 						}
 		
 
-						internal func dangle() -> SpendableOutputs {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SpendableOutputs {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1995,8 +1995,8 @@
 						}
 		
 
-						internal func dangle() -> PaymentForwarded {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> PaymentForwarded {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -2078,8 +2078,8 @@
 						}
 		
 
-						internal func dangle() -> ChannelClosed {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> ChannelClosed {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -2144,8 +2144,8 @@
 						}
 		
 
-						internal func dangle() -> DiscardFunding {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> DiscardFunding {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -2263,8 +2263,8 @@
 						}
 		
 
-						internal func dangle() -> OpenChannelRequest {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> OpenChannelRequest {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -2329,8 +2329,8 @@
 						}
 		
 
-						internal func dangle() -> HTLCHandlingFailed {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> HTLCHandlingFailed {
+							self.dangling = shouldDangle
 							return self
 						}
 

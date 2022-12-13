@@ -339,8 +339,8 @@
 					}
 		
 
-					internal func dangle() -> ClosingTransaction {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ClosingTransaction {
+						self.dangling = shouldDangle
 						return self
 					}
 

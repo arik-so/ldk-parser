@@ -97,8 +97,8 @@ SpendableOutputDescriptor(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_SpendableOutputDescriptorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_SpendableOutputDescriptorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -293,8 +293,8 @@
 					}
 		
 
-					internal func dangle() -> Ping {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Ping {
+						self.dangling = shouldDangle
 						return self
 					}
 

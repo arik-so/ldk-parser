@@ -420,8 +420,8 @@
 					}
 		
 
-					internal func dangle() -> UpdateAddHTLC {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> UpdateAddHTLC {
+						self.dangling = shouldDangle
 						return self
 					}
 

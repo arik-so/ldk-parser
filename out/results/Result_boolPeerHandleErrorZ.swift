@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_boolPeerHandleErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_boolPeerHandleErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

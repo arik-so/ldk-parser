@@ -114,8 +114,8 @@ RouteHop(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_CVec_RouteHopZZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_CVec_RouteHopZZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

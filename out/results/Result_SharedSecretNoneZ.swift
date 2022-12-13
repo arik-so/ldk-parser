@@ -150,8 +150,8 @@
 					}
 					
 
-					internal func dangle() -> Result_SharedSecretNoneZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_SharedSecretNoneZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

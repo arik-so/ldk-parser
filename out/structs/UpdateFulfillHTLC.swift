@@ -365,8 +365,8 @@
 					}
 		
 
-					internal func dangle() -> UpdateFulfillHTLC {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> UpdateFulfillHTLC {
+						self.dangling = shouldDangle
 						return self
 					}
 

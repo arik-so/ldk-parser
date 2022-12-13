@@ -106,8 +106,8 @@
 						return nil
 					}
 
-					internal func dangle() -> Option_NetAddressZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Option_NetAddressZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

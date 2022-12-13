@@ -99,8 +99,8 @@ ThirtyTwoBytes(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle() -> Vec_PaymentPreimageZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_PaymentPreimageZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_AcceptChannelDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_AcceptChannelDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

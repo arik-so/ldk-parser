@@ -168,8 +168,8 @@
 					}
 		
 
-					internal func dangle() -> RapidGossipSync {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> RapidGossipSync {
+						self.dangling = shouldDangle
 						return self
 					}
 

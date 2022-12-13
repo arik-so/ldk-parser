@@ -171,8 +171,8 @@
 					}
 		
 
-					internal func dangle() -> MultiThreadedLockableScore {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> MultiThreadedLockableScore {
+						self.dangling = shouldDangle
 						return self
 					}
 

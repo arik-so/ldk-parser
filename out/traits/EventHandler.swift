@@ -119,8 +119,8 @@
 
 					
 
-					internal func dangle() -> EventHandler {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> EventHandler {
+        				self.dangling = shouldDangle
 						return self
 					}
 

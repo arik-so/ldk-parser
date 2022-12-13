@@ -249,8 +249,8 @@
 
 					
 
-					internal func dangle() -> Payer {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Payer {
+        				self.dangling = shouldDangle
 						return self
 					}
 

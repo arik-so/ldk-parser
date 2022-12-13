@@ -148,8 +148,8 @@
 					}
 		
 
-					internal func dangle() -> Sha256 {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Sha256 {
+						self.dangling = shouldDangle
 						return self
 					}
 

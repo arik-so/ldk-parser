@@ -200,8 +200,8 @@
 					}
 		
 
-					internal func dangle() -> Description {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Description {
+						self.dangling = shouldDangle
 						return self
 					}
 

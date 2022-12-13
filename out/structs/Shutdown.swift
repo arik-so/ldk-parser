@@ -315,8 +315,8 @@
 					}
 		
 
-					internal func dangle() -> Shutdown {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Shutdown {
+						self.dangling = shouldDangle
 						return self
 					}
 

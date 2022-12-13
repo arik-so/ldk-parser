@@ -270,8 +270,8 @@
 					}
 		
 
-					internal func dangle() -> IgnoringMessageHandler {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> IgnoringMessageHandler {
+						self.dangling = shouldDangle
 						return self
 					}
 

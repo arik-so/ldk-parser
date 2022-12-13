@@ -55,8 +55,8 @@
 						return self.cType!._0
 					}
 
-					internal func dangle() -> WitnessVersion {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> WitnessVersion {
+        				self.dangling = shouldDangle
 						return self
 					}
 

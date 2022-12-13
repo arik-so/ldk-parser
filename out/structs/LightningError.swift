@@ -225,8 +225,8 @@
 					}
 		
 
-					internal func dangle() -> LightningError {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> LightningError {
+						self.dangling = shouldDangle
 						return self
 					}
 

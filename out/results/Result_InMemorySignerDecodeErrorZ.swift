@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_InMemorySignerDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_InMemorySignerDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

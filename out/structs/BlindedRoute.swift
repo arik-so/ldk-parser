@@ -152,8 +152,8 @@
 					}
 		
 
-					internal func dangle() -> BlindedRoute {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> BlindedRoute {
+						self.dangling = shouldDangle
 						return self
 					}
 

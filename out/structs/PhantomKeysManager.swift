@@ -237,8 +237,8 @@
 					}
 		
 
-					internal func dangle() -> PhantomKeysManager {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> PhantomKeysManager {
+						self.dangling = shouldDangle
 						return self
 					}
 

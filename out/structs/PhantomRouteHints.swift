@@ -332,8 +332,8 @@
 					}
 		
 
-					internal func dangle() -> PhantomRouteHints {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> PhantomRouteHints {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -106,8 +106,8 @@
 						return nil
 					}
 
-					internal func dangle() -> Option_MonitorEventZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Option_MonitorEventZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

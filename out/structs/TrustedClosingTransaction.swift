@@ -171,8 +171,8 @@
 					}
 		
 
-					internal func dangle() -> TrustedClosingTransaction {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> TrustedClosingTransaction {
+						self.dangling = shouldDangle
 						return self
 					}
 

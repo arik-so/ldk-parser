@@ -216,8 +216,8 @@
 					}
 			
 
-					internal func dangle() -> ParseOrSemanticError {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ParseOrSemanticError {
+        				self.dangling = shouldDangle
 						return self
 					}
 

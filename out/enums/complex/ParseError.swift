@@ -645,8 +645,8 @@
 					}
 			
 
-					internal func dangle() -> ParseError {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ParseError {
+        				self.dangling = shouldDangle
 						return self
 					}
 

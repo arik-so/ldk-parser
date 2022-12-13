@@ -223,8 +223,8 @@
 					}
 		
 
-					internal func dangle() -> DirectedChannelTransactionParameters {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> DirectedChannelTransactionParameters {
+						self.dangling = shouldDangle
 						return self
 					}
 

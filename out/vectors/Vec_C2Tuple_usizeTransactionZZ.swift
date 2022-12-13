@@ -99,8 +99,8 @@ Tuple_usizeTransactionZ(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle() -> Vec_C2Tuple_usizeTransactionZZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_C2Tuple_usizeTransactionZZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

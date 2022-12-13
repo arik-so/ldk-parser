@@ -225,8 +225,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelMonitorUpdate {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelMonitorUpdate {
+						self.dangling = shouldDangle
 						return self
 					}
 

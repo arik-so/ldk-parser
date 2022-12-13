@@ -122,8 +122,8 @@
 
 					
 
-					internal func dangle() -> CustomMessageReader {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> CustomMessageReader {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -186,8 +186,8 @@
 					}
 		
 
-					internal func dangle() -> FixedPenaltyScorer {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> FixedPenaltyScorer {
+						self.dangling = shouldDangle
 						return self
 					}
 

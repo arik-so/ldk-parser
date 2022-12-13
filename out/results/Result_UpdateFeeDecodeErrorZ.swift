@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_UpdateFeeDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_UpdateFeeDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

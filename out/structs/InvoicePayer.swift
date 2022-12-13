@@ -267,8 +267,8 @@
 					}
 		
 
-					internal func dangle() -> InvoicePayer {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> InvoicePayer {
+						self.dangling = shouldDangle
 						return self
 					}
 

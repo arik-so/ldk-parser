@@ -192,8 +192,8 @@
 					}
 		
 
-					internal func dangle() -> PrivateRoute {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> PrivateRoute {
+						self.dangling = shouldDangle
 						return self
 					}
 

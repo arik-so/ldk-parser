@@ -117,8 +117,8 @@
 
 					
 
-					internal func dangle() -> Logger {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Logger {
+        				self.dangling = shouldDangle
 						return self
 					}
 

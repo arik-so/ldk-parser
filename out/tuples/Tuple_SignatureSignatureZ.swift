@@ -142,8 +142,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_SignatureSignatureZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_SignatureSignatureZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

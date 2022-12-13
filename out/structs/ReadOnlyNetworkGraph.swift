@@ -229,8 +229,8 @@
 					}
 		
 
-					internal func dangle() -> ReadOnlyNetworkGraph {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ReadOnlyNetworkGraph {
+						self.dangling = shouldDangle
 						return self
 					}
 

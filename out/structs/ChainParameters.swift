@@ -227,8 +227,8 @@
 					}
 		
 
-					internal func dangle() -> ChainParameters {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChainParameters {
+						self.dangling = shouldDangle
 						return self
 					}
 

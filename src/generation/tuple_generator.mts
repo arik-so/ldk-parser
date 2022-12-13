@@ -62,8 +62,8 @@ export default class TupleGenerator extends BaseTypeGenerator<RustTuple> {
 
 					${fieldAccessors}
 
-					internal func dangle() -> ${swiftTypeName} {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ${swiftTypeName} {
+						self.dangling = shouldDangle
 						return self
 					}
 

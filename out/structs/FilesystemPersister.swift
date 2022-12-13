@@ -174,8 +174,8 @@
 					}
 		
 
-					internal func dangle() -> FilesystemPersister {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> FilesystemPersister {
+						self.dangling = shouldDangle
 						return self
 					}
 

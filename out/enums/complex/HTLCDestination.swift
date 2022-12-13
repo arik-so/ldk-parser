@@ -293,8 +293,8 @@
 					}
 			
 
-					internal func dangle() -> HTLCDestination {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> HTLCDestination {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -380,8 +380,8 @@
 						}
 		
 
-						internal func dangle() -> NextHopChannel {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> NextHopChannel {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -438,8 +438,8 @@
 						}
 		
 
-						internal func dangle() -> UnknownNextHop {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> UnknownNextHop {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -496,8 +496,8 @@
 						}
 		
 
-						internal func dangle() -> FailedPayment {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> FailedPayment {
+							self.dangling = shouldDangle
 							return self
 						}
 

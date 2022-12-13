@@ -86,8 +86,8 @@
 				
 					}
 
-					internal func dangle() -> Str {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Str {
+        				self.dangling = shouldDangle
 						return self
 					}
 

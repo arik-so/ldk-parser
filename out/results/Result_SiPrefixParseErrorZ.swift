@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_SiPrefixParseErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_SiPrefixParseErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

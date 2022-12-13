@@ -221,8 +221,8 @@
 					}
 		
 
-					internal func dangle() -> MinFinalCltvExpiry {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> MinFinalCltvExpiry {
+						self.dangling = shouldDangle
 						return self
 					}
 

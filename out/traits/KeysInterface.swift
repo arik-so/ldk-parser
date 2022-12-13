@@ -406,8 +406,8 @@
 
 					
 
-					internal func dangle() -> KeysInterface {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> KeysInterface {
+        				self.dangling = shouldDangle
 						return self
 					}
 

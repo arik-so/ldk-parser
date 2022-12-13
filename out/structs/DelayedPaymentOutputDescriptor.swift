@@ -567,8 +567,8 @@
 					}
 		
 
-					internal func dangle() -> DelayedPaymentOutputDescriptor {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> DelayedPaymentOutputDescriptor {
+						self.dangling = shouldDangle
 						return self
 					}
 

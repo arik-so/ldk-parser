@@ -118,8 +118,8 @@
 
 					
 
-					internal func dangle() -> MessageSendEventsProvider {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> MessageSendEventsProvider {
+        				self.dangling = shouldDangle
 						return self
 					}
 

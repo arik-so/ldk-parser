@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_RouteHopDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_RouteHopDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

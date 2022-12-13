@@ -97,8 +97,8 @@ UpdateAddHTLC(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_UpdateAddHTLCZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_UpdateAddHTLCZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

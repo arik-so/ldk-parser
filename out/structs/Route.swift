@@ -406,8 +406,8 @@
 					}
 		
 
-					internal func dangle() -> Route {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Route {
+						self.dangling = shouldDangle
 						return self
 					}
 

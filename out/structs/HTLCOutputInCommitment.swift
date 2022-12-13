@@ -459,8 +459,8 @@
 					}
 		
 
-					internal func dangle() -> HTLCOutputInCommitment {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> HTLCOutputInCommitment {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -258,8 +258,8 @@
 
 					
 
-					internal func dangle() -> Score {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Score {
+        				self.dangling = shouldDangle
 						return self
 					}
 

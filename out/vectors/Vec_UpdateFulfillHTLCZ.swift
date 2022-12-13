@@ -97,8 +97,8 @@ UpdateFulfillHTLC(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_UpdateFulfillHTLCZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_UpdateFulfillHTLCZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

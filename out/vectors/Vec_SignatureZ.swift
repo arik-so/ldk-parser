@@ -99,8 +99,8 @@ Signature(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle() -> Vec_SignatureZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_SignatureZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

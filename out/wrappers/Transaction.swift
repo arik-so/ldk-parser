@@ -111,8 +111,8 @@
 				
 					}
 
-					internal func dangle() -> Transaction {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Transaction {
+        				self.dangling = shouldDangle
 						return self
 					}
 

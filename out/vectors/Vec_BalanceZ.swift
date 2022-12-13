@@ -97,8 +97,8 @@ Balance(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_BalanceZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_BalanceZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

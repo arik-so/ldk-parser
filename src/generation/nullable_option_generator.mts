@@ -86,8 +86,8 @@ export default class NullableOptionGenerator extends BaseTypeGenerator<RustNulla
 						return nil
 					}
 
-					internal func dangle() -> ${swiftTypeName} {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ${swiftTypeName} {
+        				self.dangling = shouldDangle
 						return self
 					}
 

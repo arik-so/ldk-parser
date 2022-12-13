@@ -857,8 +857,8 @@
 					}
 		
 
-					internal func dangle() -> ProbabilisticScoringParameters {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ProbabilisticScoringParameters {
+						self.dangling = shouldDangle
 						return self
 					}
 

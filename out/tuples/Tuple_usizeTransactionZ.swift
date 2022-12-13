@@ -137,8 +137,8 @@
 					}
 		
 
-					internal func dangle() -> Tuple_usizeTransactionZ {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Tuple_usizeTransactionZ {
+						self.dangling = shouldDangle
 						return self
 					}
 

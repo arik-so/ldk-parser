@@ -106,8 +106,8 @@
 						return nil
 					}
 
-					internal func dangle() -> Option_ClosureReasonZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Option_ClosureReasonZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

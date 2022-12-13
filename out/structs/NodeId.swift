@@ -213,8 +213,8 @@
 					}
 		
 
-					internal func dangle() -> NodeId {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> NodeId {
+						self.dangling = shouldDangle
 						return self
 					}
 

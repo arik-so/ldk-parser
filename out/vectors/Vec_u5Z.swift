@@ -99,8 +99,8 @@ u5(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle() -> Vec_u5Z {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_u5Z {
+        				self.dangling = shouldDangle
 						return self
 					}
 

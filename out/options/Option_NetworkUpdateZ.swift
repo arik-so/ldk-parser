@@ -106,8 +106,8 @@
 						return nil
 					}
 
-					internal func dangle() -> Option_NetworkUpdateZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Option_NetworkUpdateZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -108,8 +108,8 @@
 						return nil
 					}
 
-					internal func dangle() -> Option_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Option_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

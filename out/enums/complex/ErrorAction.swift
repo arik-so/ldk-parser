@@ -282,8 +282,8 @@
 					}
 			
 
-					internal func dangle() -> ErrorAction {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ErrorAction {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -359,8 +359,8 @@
 						}
 		
 
-						internal func dangle() -> DisconnectPeer {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> DisconnectPeer {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -417,8 +417,8 @@
 						}
 		
 
-						internal func dangle() -> SendErrorMessage {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendErrorMessage {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -485,8 +485,8 @@
 						}
 		
 
-						internal func dangle() -> SendWarningMessage {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendWarningMessage {
+							self.dangling = shouldDangle
 							return self
 						}
 

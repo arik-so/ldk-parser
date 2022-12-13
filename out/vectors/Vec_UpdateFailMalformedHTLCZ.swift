@@ -97,8 +97,8 @@ UpdateFailMalformedHTLC(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_UpdateFailMalformedHTLCZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_UpdateFailMalformedHTLCZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

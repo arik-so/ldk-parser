@@ -728,8 +728,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelHandshakeLimits {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelHandshakeLimits {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -701,8 +701,8 @@
 					}
 		
 
-					internal func dangle() -> UnsignedChannelUpdate {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> UnsignedChannelUpdate {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -299,8 +299,8 @@
 					}
 		
 
-					internal func dangle() -> ClosingSignedFeeRange {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ClosingSignedFeeRange {
+						self.dangling = shouldDangle
 						return self
 					}
 

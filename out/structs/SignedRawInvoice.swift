@@ -345,8 +345,8 @@
 					}
 		
 
-					internal func dangle() -> SignedRawInvoice {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> SignedRawInvoice {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -465,8 +465,8 @@
 					}
 		
 
-					internal func dangle() -> ReplyChannelRange {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ReplyChannelRange {
+						self.dangling = shouldDangle
 						return self
 					}
 

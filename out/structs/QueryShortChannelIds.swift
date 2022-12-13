@@ -329,8 +329,8 @@
 					}
 		
 
-					internal func dangle() -> QueryShortChannelIds {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> QueryShortChannelIds {
+						self.dangling = shouldDangle
 						return self
 					}
 

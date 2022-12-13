@@ -99,8 +99,8 @@ Tuple_u32TxOutZ(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle() -> Vec_C2Tuple_u32TxOutZZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_C2Tuple_u32TxOutZZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

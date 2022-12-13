@@ -600,8 +600,8 @@
 					}
 		
 
-					internal func dangle() -> ChannelConfig {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ChannelConfig {
+						self.dangling = shouldDangle
 						return self
 					}
 

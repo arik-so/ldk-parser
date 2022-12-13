@@ -176,8 +176,8 @@
 					}
 		
 
-					internal func dangle() -> HTLCUpdate {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> HTLCUpdate {
+						self.dangling = shouldDangle
 						return self
 					}
 

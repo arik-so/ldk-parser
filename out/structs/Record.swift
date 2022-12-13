@@ -343,8 +343,8 @@
 					}
 		
 
-					internal func dangle() -> Record {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Record {
+						self.dangling = shouldDangle
 						return self
 					}
 

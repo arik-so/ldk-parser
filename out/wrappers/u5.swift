@@ -55,8 +55,8 @@
 						return self.cType!._0
 					}
 
-					internal func dangle() -> u5 {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> u5 {
+        				self.dangling = shouldDangle
 						return self
 					}
 

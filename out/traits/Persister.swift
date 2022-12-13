@@ -169,8 +169,8 @@
 
 					
 
-					internal func dangle() -> Persister {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Persister {
+        				self.dangling = shouldDangle
 						return self
 					}
 

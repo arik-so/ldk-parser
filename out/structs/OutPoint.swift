@@ -357,8 +357,8 @@
 					}
 		
 
-					internal func dangle() -> OutPoint {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> OutPoint {
+						self.dangling = shouldDangle
 						return self
 					}
 

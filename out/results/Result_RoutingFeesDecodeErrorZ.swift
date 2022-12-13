@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_RoutingFeesDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_RoutingFeesDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

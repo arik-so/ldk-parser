@@ -261,8 +261,8 @@
 
 					
 
-					internal func dangle() -> SocketDescriptor {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> SocketDescriptor {
+        				self.dangling = shouldDangle
 						return self
 					}
 

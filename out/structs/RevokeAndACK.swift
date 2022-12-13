@@ -375,8 +375,8 @@
 					}
 		
 
-					internal func dangle() -> RevokeAndACK {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> RevokeAndACK {
+						self.dangling = shouldDangle
 						return self
 					}
 

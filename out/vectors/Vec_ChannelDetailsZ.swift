@@ -97,8 +97,8 @@ ChannelDetails(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_ChannelDetailsZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_ChannelDetailsZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

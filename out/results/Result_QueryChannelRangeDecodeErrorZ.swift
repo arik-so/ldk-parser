@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_QueryChannelRangeDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_QueryChannelRangeDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

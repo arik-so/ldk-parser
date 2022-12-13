@@ -150,8 +150,8 @@
 					}
 					
 
-					internal func dangle() -> Result_PaymentSecretAPIErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_PaymentSecretAPIErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

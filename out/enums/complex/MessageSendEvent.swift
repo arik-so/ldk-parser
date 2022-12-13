@@ -867,8 +867,8 @@
 					}
 			
 
-					internal func dangle() -> MessageSendEvent {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> MessageSendEvent {
+        				self.dangling = shouldDangle
 						return self
 					}
 
@@ -950,8 +950,8 @@
 						}
 		
 
-						internal func dangle() -> SendAcceptChannel {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendAcceptChannel {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1016,8 +1016,8 @@
 						}
 		
 
-						internal func dangle() -> SendOpenChannel {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendOpenChannel {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1082,8 +1082,8 @@
 						}
 		
 
-						internal func dangle() -> SendFundingCreated {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendFundingCreated {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1148,8 +1148,8 @@
 						}
 		
 
-						internal func dangle() -> SendFundingSigned {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendFundingSigned {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1214,8 +1214,8 @@
 						}
 		
 
-						internal func dangle() -> SendChannelReady {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendChannelReady {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1280,8 +1280,8 @@
 						}
 		
 
-						internal func dangle() -> SendAnnouncementSignatures {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendAnnouncementSignatures {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1346,8 +1346,8 @@
 						}
 		
 
-						internal func dangle() -> UpdateHTLCs {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> UpdateHTLCs {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1412,8 +1412,8 @@
 						}
 		
 
-						internal func dangle() -> SendRevokeAndACK {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendRevokeAndACK {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1478,8 +1478,8 @@
 						}
 		
 
-						internal func dangle() -> SendClosingSigned {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendClosingSigned {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1544,8 +1544,8 @@
 						}
 		
 
-						internal func dangle() -> SendShutdown {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendShutdown {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1610,8 +1610,8 @@
 						}
 		
 
-						internal func dangle() -> SendChannelReestablish {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendChannelReestablish {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1684,8 +1684,8 @@
 						}
 		
 
-						internal func dangle() -> SendChannelAnnouncement {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendChannelAnnouncement {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1750,8 +1750,8 @@
 						}
 		
 
-						internal func dangle() -> BroadcastChannelAnnouncement {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> BroadcastChannelAnnouncement {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1808,8 +1808,8 @@
 						}
 		
 
-						internal func dangle() -> BroadcastChannelUpdate {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> BroadcastChannelUpdate {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1874,8 +1874,8 @@
 						}
 		
 
-						internal func dangle() -> SendChannelUpdate {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendChannelUpdate {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -1940,8 +1940,8 @@
 						}
 		
 
-						internal func dangle() -> HandleError {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> HandleError {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -2006,8 +2006,8 @@
 						}
 		
 
-						internal func dangle() -> SendChannelRangeQuery {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendChannelRangeQuery {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -2072,8 +2072,8 @@
 						}
 		
 
-						internal func dangle() -> SendShortIdsQuery {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendShortIdsQuery {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -2138,8 +2138,8 @@
 						}
 		
 
-						internal func dangle() -> SendReplyChannelRange {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendReplyChannelRange {
+							self.dangling = shouldDangle
 							return self
 						}
 
@@ -2204,8 +2204,8 @@
 						}
 		
 
-						internal func dangle() -> SendGossipTimestampFilter {
-							self.dangling = true
+						internal func dangle(_ shouldDangle: Bool = true) -> SendGossipTimestampFilter {
+							self.dangling = shouldDangle
 							return self
 						}
 

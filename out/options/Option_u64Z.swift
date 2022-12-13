@@ -106,8 +106,8 @@
 						return nil
 					}
 
-					internal func dangle() -> Option_u64Z {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Option_u64Z {
+        				self.dangling = shouldDangle
 						return self
 					}
 

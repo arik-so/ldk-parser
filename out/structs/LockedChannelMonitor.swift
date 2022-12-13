@@ -79,8 +79,8 @@
 					}
 		
 
-					internal func dangle() -> LockedChannelMonitor {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> LockedChannelMonitor {
+						self.dangling = shouldDangle
 						return self
 					}
 

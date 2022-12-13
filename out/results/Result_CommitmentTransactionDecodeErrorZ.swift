@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_CommitmentTransactionDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_CommitmentTransactionDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

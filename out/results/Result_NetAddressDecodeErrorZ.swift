@@ -145,8 +145,8 @@
 					}
 					
 
-					internal func dangle() -> Result_NetAddressDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_NetAddressDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -192,8 +192,8 @@
 
 					
 
-					internal func dangle() -> Filter {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Filter {
+        				self.dangling = shouldDangle
 						return self
 					}
 

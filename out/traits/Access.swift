@@ -128,8 +128,8 @@
 
 					
 
-					internal func dangle() -> Access {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Access {
+        				self.dangling = shouldDangle
 						return self
 					}
 

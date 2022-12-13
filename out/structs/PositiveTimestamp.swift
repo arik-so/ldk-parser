@@ -296,8 +296,8 @@
 					}
 		
 
-					internal func dangle() -> PositiveTimestamp {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> PositiveTimestamp {
+						self.dangling = shouldDangle
 						return self
 					}
 

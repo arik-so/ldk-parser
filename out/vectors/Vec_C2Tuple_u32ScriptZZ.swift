@@ -99,8 +99,8 @@ Tuple_u32ScriptZ(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle() -> Vec_C2Tuple_u32ScriptZZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_C2Tuple_u32ScriptZZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

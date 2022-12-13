@@ -122,8 +122,8 @@
 					}
 					
 
-					internal func dangle() -> Result_ProbabilisticScorerDecodeErrorZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Result_ProbabilisticScorerDecodeErrorZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

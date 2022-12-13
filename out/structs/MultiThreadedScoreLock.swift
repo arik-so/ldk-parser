@@ -120,8 +120,8 @@
 					}
 		
 
-					internal func dangle() -> MultiThreadedScoreLock {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> MultiThreadedScoreLock {
+						self.dangling = shouldDangle
 						return self
 					}
 

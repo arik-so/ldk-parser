@@ -132,8 +132,8 @@
 					}
 		
 
-					internal func dangle() -> WriteableScore {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> WriteableScore {
+        				self.dangling = shouldDangle
 						return self
 					}
 

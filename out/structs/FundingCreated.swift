@@ -421,8 +421,8 @@
 					}
 		
 
-					internal func dangle() -> FundingCreated {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> FundingCreated {
+						self.dangling = shouldDangle
 						return self
 					}
 

@@ -97,8 +97,8 @@ NetAddress(cType: currentCType, anchor: self).dangle()
 					}
 		
 
-					internal func dangle() -> Vec_NetAddressZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_NetAddressZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

@@ -117,8 +117,8 @@
 
 					
 
-					internal func dangle() -> BroadcasterInterface {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> BroadcasterInterface {
+        				self.dangling = shouldDangle
 						return self
 					}
 

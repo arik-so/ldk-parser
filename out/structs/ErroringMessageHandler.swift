@@ -150,8 +150,8 @@
 					}
 		
 
-					internal func dangle() -> ErroringMessageHandler {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> ErroringMessageHandler {
+						self.dangling = shouldDangle
 						return self
 					}
 

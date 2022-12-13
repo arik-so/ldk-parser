@@ -273,8 +273,8 @@
 					}
 		
 
-					internal func dangle() -> UpdateFailHTLC {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> UpdateFailHTLC {
+						self.dangling = shouldDangle
 						return self
 					}
 

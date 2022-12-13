@@ -848,8 +848,8 @@
 					}
 		
 
-					internal func dangle() -> InMemorySigner {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> InMemorySigner {
+						self.dangling = shouldDangle
 						return self
 					}
 

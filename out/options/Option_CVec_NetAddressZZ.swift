@@ -108,8 +108,8 @@
 						return nil
 					}
 
-					internal func dangle() -> Option_CVec_NetAddressZZ {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Option_CVec_NetAddressZZ {
+        				self.dangling = shouldDangle
 						return self
 					}
 

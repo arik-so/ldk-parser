@@ -729,8 +729,8 @@
 					}
 		
 
-					internal func dangle() -> PaymentParameters {
-						self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> PaymentParameters {
+						self.dangling = shouldDangle
 						return self
 					}
 

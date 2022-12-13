@@ -155,8 +155,8 @@
 					}
 			
 
-					internal func dangle() -> Bech32Error {
-        				self.dangling = true
+					internal func dangle(_ shouldDangle: Bool = true) -> Bech32Error {
+        				self.dangling = shouldDangle
 						return self
 					}
 
