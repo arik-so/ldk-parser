@@ -824,6 +824,12 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		}
 
 		/**
+		 * If we have recursive ownership flag, we still need the anchor, but we don't need
+		 * to dangle the return type. TODO: add support for undangled anchors.
+		 */
+		const hasRecursiveOwnershipFlags = this.isRecursivelyPerpetuallySafelyFreeable(returnType.type);
+
+		/**
 		 * The returned object cannot live on its own. It needs the container to stick around.
 		 * Should not be used for elided types, however, because that will make even the Swift
 		 * object stick around forever. Instead, for elided types the object should merely be
@@ -912,12 +918,6 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 			// if (!this.isElidedType(containerType) && !this.isElidedType(returnType.type) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
 			if (!this.isElidedType(containerType) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext.isCloneMethod) {
-				/**
-				 * If we have recursive ownership flag, we still need the anchor, but we don't need
-				 * to dangle the return type. TODO: add support for undangled anchors.
-				 */
-				const hasRecursiveOwnershipFlags = this.isRecursivelyPerpetuallySafelyFreeable(returnType.type);
-
 				// TODO: determine whether this is precise enough
 				anchorInfix = ', anchor: self';
 
@@ -938,6 +938,12 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				// 	// anchorInfix = ', anchor: self';
 				// }
 			}
+		}
+
+		if(hasRecursiveOwnershipFlags && (anchorInfix || dangleSuffix) && returnType instanceof RustFunctionReturnValue) {
+			// this doesn't seem to be doing much anyway
+			// TODO: find instances in future releases where this might actually change something
+			dangleSuffix = '.dangle(false)';
 		}
 
 
