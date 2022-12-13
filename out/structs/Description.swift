@@ -174,7 +174,7 @@
 						
 
 						// native method call
-						let nativeCallResult = Description_into_inner(self.cType!)
+						let nativeCallResult = Description_into_inner(self.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						

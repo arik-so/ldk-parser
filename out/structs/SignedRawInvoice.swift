@@ -152,7 +152,7 @@
 						
 
 						// native method call
-						let nativeCallResult = SignedRawInvoice_into_parts(self.cType!)
+						let nativeCallResult = SignedRawInvoice_into_parts(self.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						

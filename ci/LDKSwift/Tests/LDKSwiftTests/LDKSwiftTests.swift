@@ -134,14 +134,14 @@ class LDKSwiftTests: XCTestCase {
 		let regeneratedInvoiceString = invoice.toStr()
 		print("restored invoice string: \(regeneratedInvoiceString)")
         
-        /*
         let signedRawInvoice = invoice.intoSignedRaw()
         let rawInvoice = signedRawInvoice.rawInvoice()
         let description = rawInvoice.description()
         let descriptionString = description?.intoInner()
+        XCTAssertEqual(descriptionString, "Invoice description")
         
         let singleLineDescriptionString = invoice.intoSignedRaw().rawInvoice().description()?.intoInner()
-        */
+        XCTAssertEqual(singleLineDescriptionString, "Invoice description")
 	}
 
 	func testWeirdChannelManagerMemoryLeak() async throws {

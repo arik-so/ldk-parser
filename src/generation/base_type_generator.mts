@@ -667,6 +667,12 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				} else if (this.hasCloneMethod(argument.type) && argument.isAsteriskPointer && memoryContext && !memoryContext?.isFreeMethod && !memoryContext.isCloneMethod) {
 					// if it's being passed as a pointer, we need to clone the object and forget about it
 					// memoryManagementInfix = '.danglingClone()'
+				} else if (this.hasCloneMethod(argument.type) && !argument.isAsteriskPointer && memoryContext && !memoryContext?.isFreeMethod) {
+					if (argument.type instanceof RustStruct && argument.type.ownershipField) {
+						memoryManagementInfix = '.dynamicallyDangledClone()';
+					} else {
+						memoryManagementInfix = '.danglingClone()';
+					}
 				}
 			} else if (this.hasCloneMethod(argument.type)) {
 				if (argument.type instanceof RustStruct && argument.type.ownershipField) {
@@ -920,10 +926,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				 * actually can still free the returned object – we simply need to make sure that
 				 * the returned object doesn't outlive its creating object.
 				 */
-				if(hasRecursiveOwnershipFlags) {
+				if (hasRecursiveOwnershipFlags) {
 					dangleSuffix = '.dangle(false)';
 				}
-
 
 
 				// if(returnType.type instanceof RustStruct && returnType.type.ownershipField){

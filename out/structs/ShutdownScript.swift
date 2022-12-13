@@ -255,7 +255,7 @@
 						
 
 						// native method call
-						let nativeCallResult = ShutdownScript_into_inner(self.cType!)
+						let nativeCallResult = ShutdownScript_into_inner(self.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						

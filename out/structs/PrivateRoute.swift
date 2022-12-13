@@ -166,7 +166,7 @@
 						
 
 						// native method call
-						let nativeCallResult = PrivateRoute_into_inner(self.cType!)
+						let nativeCallResult = PrivateRoute_into_inner(self.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						

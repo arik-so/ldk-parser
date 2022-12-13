@@ -151,7 +151,7 @@
 						
 
 						// native method call
-						let nativeCallResult = Invoice_into_signed_raw(self.cType!)
+						let nativeCallResult = Invoice_into_signed_raw(self.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
