@@ -10,6 +10,7 @@ import {
 	RustNullableOption,
 	RustPrimitive,
 	RustPrimitiveEnum,
+	RustPrimitiveEnumVariant,
 	RustPrimitiveWrapper,
 	RustResult,
 	RustStruct,
@@ -290,10 +291,10 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 		}
 
-		if(containerType instanceof RustStruct && containerType.ownershipField && swiftMethodName === 'init'){
+		if (containerType instanceof RustStruct && containerType.ownershipField && swiftMethodName === 'init') {
 			nativeCallSuffix += `
 				self.initialCFreeability = nativeCallResult.${containerType.ownershipField.contextualName}
-			`
+			`;
 		}
 
 		return `
@@ -904,9 +905,16 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 
 			// if (!this.isElidedType(containerType) && !this.isElidedType(returnType.type) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
-			if (!this.isElidedType(containerType) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext?.isCloneMethod) {
+			if (!this.isElidedType(containerType) && memoryContext && memoryContext.needsInstancePointer && !memoryContext.isFreeMethod && !memoryContext.isCloneMethod) {
+				/**
+				 * If we have recursive ownership flag, we still need the anchor, but we don't need
+				 * to dangle the return type. TODO: add support for undangled anchors.
+				 */
+				const hasRecursiveOwnershipFlags = this.isRecursivelyPerpetuallySafelyFreeable(returnType.type);
 				// TODO: determine whether this is precise enough
 				anchorInfix = ', anchor: self';
+
+
 				// if(returnType.type instanceof RustStruct && returnType.type.ownershipField){
 				// 	// if it has an ownership field, it will already tell us if it's safe to free
 				// 	// hence, NO OP here
@@ -1052,8 +1060,8 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				`;
 			}
 
-			if(type instanceof RustPrimitiveWrapper) {
-			// if (type.name === 'LDKChannelMonitor') {
+			if (type instanceof RustPrimitiveWrapper) {
+				// if (type.name === 'LDKChannelMonitor') {
 				// these types additionally store the original freeability value
 				freeabilityOverrideInfix = `
 						if !self.initialCFreeability {
@@ -1150,6 +1158,41 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					return true;
 				}
 			}
+		}
+		return false;
+	}
+
+	/**
+	 * When receiving a value from a method that would normally call for anchoring the container
+	 * inside the return value, there are yet sometimes exceptions, namely when despite passing
+	 * a pointer, the returned values still own their memory. This is a method to determine whether
+	 * a type truly owns its memory everywhere, or lets Rust know if it doesn't so there's no
+	 * risk in being freed.
+	 * @param type
+	 * @private
+	 */
+	private isRecursivelyPerpetuallySafelyFreeable(type: RustType): boolean {
+		if (type instanceof RustPrimitive) {
+			return true;
+		}
+		if (type instanceof RustTuple) {
+			for (const currentTupleValue of type.orderedFields) {
+				if (!this.isRecursivelyPerpetuallySafelyFreeable(currentTupleValue.type)) {
+					return false;
+				}
+			}
+			return true;
+		}
+		if (type instanceof RustVector) {
+			return this.isRecursivelyPerpetuallySafelyFreeable(type.deepestIterateeType);
+		}
+		if (type instanceof RustStruct) {
+			if (type.ownershipField) {
+				return true;
+			}
+		}
+		if (type instanceof RustPrimitiveEnum || type instanceof RustPrimitiveEnumVariant) {
+			return true;
 		}
 		return false;
 	}
