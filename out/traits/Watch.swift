@@ -92,7 +92,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.watchChannel(fundingTxo: OutPoint(cType: funding_txo).dangle().clone(), monitor: ChannelMonitor(cType: monitor).dangle().clone())
+							let swiftCallbackResult = instance.watchChannel(fundingTxo: OutPoint(cType: funding_txo), monitor: ChannelMonitor(cType: monitor))
 
 							// cleanup
 							
@@ -110,7 +110,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.updateChannel(fundingTxo: OutPoint(cType: funding_txo).dangle().clone(), update: ChannelMonitorUpdate(cType: update).dangle().clone())
+							let swiftCallbackResult = instance.updateChannel(fundingTxo: OutPoint(cType: funding_txo), update: ChannelMonitorUpdate(cType: update))
 
 							// cleanup
 							

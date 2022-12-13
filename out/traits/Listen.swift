@@ -81,7 +81,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.filteredBlockConnected(header: headerPointee, txdata: Vec_C2Tuple_usizeTransactionZZ(cType: txdata).dangle().getValue(), height: height)
+							let swiftCallbackResult = instance.filteredBlockConnected(header: headerPointee, txdata: Vec_C2Tuple_usizeTransactionZZ(cType: txdata).getValue(), height: height)
 
 							// cleanup
 							

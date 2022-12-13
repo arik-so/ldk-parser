@@ -60,7 +60,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.channelPenaltyMsat(shortChannelId: short_channel_id, source: NodeId(cType: source.pointee).dangle().clone(), target: NodeId(cType: target.pointee).dangle().clone(), usage: ChannelUsage(cType: usage).dangle().clone())
+							let swiftCallbackResult = instance.channelPenaltyMsat(shortChannelId: short_channel_id, source: NodeId(cType: source.pointee).dangle().clone(), target: NodeId(cType: target.pointee).dangle().clone(), usage: ChannelUsage(cType: usage))
 
 							// cleanup
 							
@@ -78,7 +78,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.paymentPathFailed(path: Vec_RouteHopZ(cType: path).dangle().getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.paymentPathFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -96,7 +96,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.paymentPathSuccessful(path: Vec_RouteHopZ(cType: path).dangle().getValue())
+							let swiftCallbackResult = instance.paymentPathSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
 
 							// cleanup
 							
@@ -114,7 +114,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.probeFailed(path: Vec_RouteHopZ(cType: path).dangle().getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.probeFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -132,7 +132,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.probeSuccessful(path: Vec_RouteHopZ(cType: path).dangle().getValue())
+							let swiftCallbackResult = instance.probeSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
 
 							// cleanup
 							

@@ -62,7 +62,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleOpenChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features).dangle().clone(), msg: OpenChannel(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleOpenChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features), msg: OpenChannel(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -80,7 +80,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleAcceptChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features).dangle().clone(), msg: AcceptChannel(cType: msg.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleAcceptChannel(theirNodeId: PublicKey(cType: their_node_id).getValue(), theirFeatures: InitFeatures(cType: their_features), msg: AcceptChannel(cType: msg.pointee).dangle().clone())
 
 							// cleanup
 							

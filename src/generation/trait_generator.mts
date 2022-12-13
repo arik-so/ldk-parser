@@ -367,7 +367,7 @@ export default class TraitGenerator extends BaseTypeGenerator<RustTrait> {
 		let needsUnwrapping = argumentType.isAsteriskPointer && !argumentType.isNonnullablePointer;
 
 		let memoryManagementInfix = '';
-		if (!(type instanceof RustTrait) && this.hasFreeMethod(type)) {
+		if (!(type instanceof RustTrait) && this.hasFreeMethod(type) && argumentType.isAsteriskPointer) {
 			// we wanna dangle this value no matter what, because we don't know the longevity
 			memoryManagementInfix = '.dangle()';
 			if (this.hasCloneMethod(type)) {

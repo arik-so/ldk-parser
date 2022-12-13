@@ -176,7 +176,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleReplyChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyChannelRange(cType: msg).dangle().clone())
+							let swiftCallbackResult = instance.handleReplyChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyChannelRange(cType: msg))
 
 							// cleanup
 							
@@ -194,7 +194,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleReplyShortChannelIdsEnd(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyShortChannelIdsEnd(cType: msg).dangle().clone())
+							let swiftCallbackResult = instance.handleReplyShortChannelIdsEnd(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: ReplyShortChannelIdsEnd(cType: msg))
 
 							// cleanup
 							
@@ -212,7 +212,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleQueryChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryChannelRange(cType: msg).dangle().clone())
+							let swiftCallbackResult = instance.handleQueryChannelRange(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryChannelRange(cType: msg))
 
 							// cleanup
 							
@@ -230,7 +230,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleQueryShortChannelIds(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryShortChannelIds(cType: msg).dangle().clone())
+							let swiftCallbackResult = instance.handleQueryShortChannelIds(theirNodeId: PublicKey(cType: their_node_id).getValue(), msg: QueryShortChannelIds(cType: msg))
 
 							// cleanup
 							

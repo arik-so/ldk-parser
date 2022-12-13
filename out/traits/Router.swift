@@ -66,7 +66,7 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.findRoute(payer: PublicKey(cType: payer).getValue(), routeParams: RouteParameters(cType: route_params.pointee).dangle().clone(), paymentHash: payment_hashPointee, firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(cType: inflight_htlcs).dangle())
+							let swiftCallbackResult = instance.findRoute(payer: PublicKey(cType: payer).getValue(), routeParams: RouteParameters(cType: route_params.pointee).dangle().clone(), paymentHash: payment_hashPointee, firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(cType: inflight_htlcs))
 
 							// cleanup
 							
@@ -84,7 +84,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentPathFailed(path: Vec_RouteHopZ(cType: path).dangle().getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.notifyPaymentPathFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							
@@ -102,7 +102,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentPathSuccessful(path: Vec_RouteHopZ(cType: path).dangle().getValue())
+							let swiftCallbackResult = instance.notifyPaymentPathSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
 
 							// cleanup
 							
@@ -120,7 +120,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentProbeSuccessful(path: Vec_RouteHopZ(cType: path).dangle().getValue())
+							let swiftCallbackResult = instance.notifyPaymentProbeSuccessful(path: Vec_RouteHopZ(cType: path).getValue())
 
 							// cleanup
 							
@@ -138,7 +138,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.notifyPaymentProbeFailed(path: Vec_RouteHopZ(cType: path).dangle().getValue(), shortChannelId: short_channel_id)
+							let swiftCallbackResult = instance.notifyPaymentProbeFailed(path: Vec_RouteHopZ(cType: path).getValue(), shortChannelId: short_channel_id)
 
 							// cleanup
 							

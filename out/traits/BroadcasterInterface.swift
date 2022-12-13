@@ -56,7 +56,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.broadcastTransaction(tx: Transaction(cType: tx).dangle().getValue())
+							let swiftCallbackResult = instance.broadcastTransaction(tx: Transaction(cType: tx).getValue())
 
 							// cleanup
 							

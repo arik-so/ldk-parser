@@ -94,7 +94,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.persistNewChannel(channelId: OutPoint(cType: channel_id).dangle().clone(), data: ChannelMonitor(cType: data.pointee).dangle().clone(), updateId: MonitorUpdateId(cType: update_id).dangle().clone())
+							let swiftCallbackResult = instance.persistNewChannel(channelId: OutPoint(cType: channel_id), data: ChannelMonitor(cType: data.pointee).dangle().clone(), updateId: MonitorUpdateId(cType: update_id))
 
 							// cleanup
 							
@@ -112,7 +112,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.updatePersistedChannel(channelId: OutPoint(cType: channel_id).dangle().clone(), update: ChannelMonitorUpdate(cType: update.pointee).dangle().clone(), data: ChannelMonitor(cType: data.pointee).dangle().clone(), updateId: MonitorUpdateId(cType: update_id).dangle().clone())
+							let swiftCallbackResult = instance.updatePersistedChannel(channelId: OutPoint(cType: channel_id), update: ChannelMonitorUpdate(cType: update.pointee).dangle().clone(), data: ChannelMonitor(cType: data.pointee).dangle().clone(), updateId: MonitorUpdateId(cType: update_id))
 
 							// cleanup
 							

@@ -117,7 +117,7 @@
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.registerOutput(output: WatchedOutput(cType: output).dangle().clone())
+							let swiftCallbackResult = instance.registerOutput(output: WatchedOutput(cType: output))
 
 							// cleanup
 							
