@@ -85,7 +85,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -241,7 +241,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = CounterpartyChannelTransactionParameters(cType: nativeCallResult, anchor: self)
+						let returnValue = CounterpartyChannelTransactionParameters(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -305,7 +305,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = OutPoint(cType: nativeCallResult, anchor: self)
+						let returnValue = OutPoint(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -479,7 +479,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult, anchor: self)
+						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -505,7 +505,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult, anchor: self)
+						let returnValue = DirectedChannelTransactionParameters(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -528,7 +528,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue

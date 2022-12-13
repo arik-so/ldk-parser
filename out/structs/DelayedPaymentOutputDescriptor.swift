@@ -79,7 +79,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = OutPoint(cType: nativeCallResult, anchor: self)
+						let returnValue = OutPoint(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -524,7 +524,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue

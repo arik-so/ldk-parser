@@ -85,7 +85,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -108,7 +108,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelPublicKeys(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelPublicKeys(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -181,7 +181,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = OutPoint(cType: nativeCallResult, anchor: self)
+						let returnValue = OutPoint(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

@@ -79,7 +79,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_UpdateAddHTLCZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_UpdateAddHTLCZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -129,7 +129,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_UpdateFulfillHTLCZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_UpdateFulfillHTLCZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -179,7 +179,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_UpdateFailHTLCZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_UpdateFailHTLCZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -229,7 +229,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_UpdateFailMalformedHTLCZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_UpdateFailMalformedHTLCZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -294,7 +294,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = UpdateFee(cType: nativeCallResult, anchor: self)
+						let returnValue = UpdateFee(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -342,7 +342,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = CommitmentSigned(cType: nativeCallResult, anchor: self)
+						let returnValue = CommitmentSigned(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

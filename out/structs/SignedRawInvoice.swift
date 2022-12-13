@@ -182,7 +182,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = RawInvoice(cType: nativeCallResult, anchor: self)
+						let returnValue = RawInvoice(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -232,7 +232,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = InvoiceSignature(cType: nativeCallResult, anchor: self)
+						let returnValue = InvoiceSignature(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -326,7 +326,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Str(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Str(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue

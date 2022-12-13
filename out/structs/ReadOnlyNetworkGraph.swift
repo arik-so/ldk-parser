@@ -92,7 +92,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelInfo(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelInfo(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -115,7 +115,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_u64Z(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_u64Z(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -157,7 +157,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NodeInfo(cType: nativeCallResult, anchor: self)
+						let returnValue = NodeInfo(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -180,7 +180,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_NodeIdZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_NodeIdZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue

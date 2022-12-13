@@ -85,7 +85,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = RawDataPart(cType: nativeCallResult, anchor: self)
+						let returnValue = RawDataPart(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -242,7 +242,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Sha256(cType: nativeCallResult, anchor: self)
+						let returnValue = Sha256(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -278,7 +278,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Description(cType: nativeCallResult, anchor: self)
+						let returnValue = Description(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -314,7 +314,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PayeePubKey(cType: nativeCallResult, anchor: self)
+						let returnValue = PayeePubKey(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -350,7 +350,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Sha256(cType: nativeCallResult, anchor: self)
+						let returnValue = Sha256(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -386,7 +386,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ExpiryTime(cType: nativeCallResult, anchor: self)
+						let returnValue = ExpiryTime(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -422,7 +422,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = MinFinalCltvExpiry(cType: nativeCallResult, anchor: self)
+						let returnValue = MinFinalCltvExpiry(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -489,7 +489,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = InvoiceFeatures(cType: nativeCallResult, anchor: self)
+						let returnValue = InvoiceFeatures(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -512,7 +512,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_PrivateRouteZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_PrivateRouteZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue

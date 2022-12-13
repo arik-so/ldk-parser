@@ -183,7 +183,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = UserConfig(cType: nativeCallResult, anchor: self)
+						let returnValue = UserConfig(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -262,7 +262,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_ChannelDetailsZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_ChannelDetailsZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -292,7 +292,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_ChannelDetailsZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_ChannelDetailsZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -1427,7 +1427,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PhantomRouteHints(cType: nativeCallResult, anchor: self)
+						let returnValue = PhantomRouteHints(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -1601,7 +1601,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Future(cType: nativeCallResult, anchor: self)
+						let returnValue = Future(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -1625,7 +1625,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = BestBlock(cType: nativeCallResult, anchor: self)
+						let returnValue = BestBlock(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -1672,7 +1672,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_u8Z(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_u8Z(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue

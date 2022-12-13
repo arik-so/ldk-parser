@@ -911,8 +911,19 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				 * to dangle the return type. TODO: add support for undangled anchors.
 				 */
 				const hasRecursiveOwnershipFlags = this.isRecursivelyPerpetuallySafelyFreeable(returnType.type);
+
 				// TODO: determine whether this is precise enough
 				anchorInfix = ', anchor: self';
+
+				/**
+				 * In this peculiar condition where an instance pointer needs to be passed, we
+				 * actually can still free the returned object – we simply need to make sure that
+				 * the returned object doesn't outlive its creating object.
+				 */
+				if(hasRecursiveOwnershipFlags) {
+					dangleSuffix = '.dangle(false)';
+				}
+
 
 
 				// if(returnType.type instanceof RustStruct && returnType.type.ownershipField){

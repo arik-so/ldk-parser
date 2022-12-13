@@ -83,7 +83,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelHandshakeConfig(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelHandshakeConfig(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -129,7 +129,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelHandshakeLimits(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelHandshakeLimits(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -175,7 +175,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ChannelConfig(cType: nativeCallResult, anchor: self)
+						let returnValue = ChannelConfig(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
