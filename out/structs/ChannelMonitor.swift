@@ -239,7 +239,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_C2Tuple_TxidCVec_C2Tuple_u32ScriptZZZZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -356,7 +356,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = PublicKey(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -601,7 +601,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_TxidZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_TxidZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue

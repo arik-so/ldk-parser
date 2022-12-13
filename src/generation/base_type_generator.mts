@@ -689,7 +689,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					// we have to assume that Rust will just eat this type
 					memoryManagementInfix = '.danglingClone()';
 				}
-			} else if(!argument.isAsteriskPointer) {
+			} else if (!argument.isAsteriskPointer) {
 				// just gotta hope for the best
 				memoryManagementInfix = '.dangle()';
 				if (isOwnershipFieldSafelyEditable && this.hasOwnershipField(argument.type)) {
@@ -1191,6 +1191,9 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (type instanceof RustPrimitive) {
 			return true;
 		}
+		if (type instanceof RustArray && Number.isFinite(type.length)) {
+			return true;
+		}
 		if (type instanceof RustTuple) {
 			for (const currentTupleValue of type.orderedFields) {
 				if (!this.isRecursivelyPerpetuallySafelyFreeable(currentTupleValue.type)) {
@@ -1205,6 +1208,11 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		if (type instanceof RustStruct) {
 			if (type.ownershipField) {
 				return true;
+			}
+			if (type instanceof RustPrimitiveWrapper) {
+				if (!type.dataField.isAsteriskPointer) {
+					return this.isRecursivelyPerpetuallySafelyFreeable(type.dataField.type);
+				}
 			}
 		}
 		if (type instanceof RustPrimitiveEnum || type instanceof RustPrimitiveEnumVariant) {

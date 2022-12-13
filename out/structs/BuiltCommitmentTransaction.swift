@@ -303,7 +303,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ThirtyTwoBytes(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -338,7 +338,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Signature(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Signature(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
