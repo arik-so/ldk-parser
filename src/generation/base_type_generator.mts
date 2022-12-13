@@ -13,6 +13,7 @@ import {
 	RustPrimitiveEnumVariant,
 	RustPrimitiveWrapper,
 	RustResult,
+	RustResultValueEnum,
 	RustStruct,
 	RustStructField,
 	RustTaggedValueEnum,
@@ -940,7 +941,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 		}
 
-		if(hasRecursiveOwnershipFlags && (anchorInfix || dangleSuffix) && returnType instanceof RustFunctionReturnValue) {
+		if (hasRecursiveOwnershipFlags && (anchorInfix || dangleSuffix) && returnType instanceof RustFunctionReturnValue) {
 			// this doesn't seem to be doing much anyway
 			// TODO: find instances in future releases where this might actually change something
 			dangleSuffix = '.dangle(false)';
@@ -1210,6 +1211,14 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 		}
 		if (type instanceof RustVector) {
 			return this.isRecursivelyPerpetuallySafelyFreeable(type.deepestIterateeType);
+		}
+		if (type instanceof RustResult) {
+			const valueType = type.valueField.type as RustResultValueEnum;
+			const isResultSafe = this.isRecursivelyPerpetuallySafelyFreeable(valueType.resultVariant.type);
+			const isErrorSafe = this.isRecursivelyPerpetuallySafelyFreeable(valueType.errorVariant.type);
+			if (isResultSafe && isErrorSafe) {
+				return true;
+			}
 		}
 		if (type instanceof RustStruct) {
 			if (type.ownershipField) {

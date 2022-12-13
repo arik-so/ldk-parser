@@ -168,7 +168,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneNoneZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_NoneNoneZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

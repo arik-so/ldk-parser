@@ -260,7 +260,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -290,7 +290,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -326,7 +326,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -360,7 +360,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -398,7 +398,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -561,7 +561,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -593,7 +593,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_NoneLightningErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

@@ -1197,7 +1197,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZNoneZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_C2Tuple_PaymentHashPaymentSecretZNoneZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -1302,7 +1302,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentSecretNoneZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_PaymentSecretNoneZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
