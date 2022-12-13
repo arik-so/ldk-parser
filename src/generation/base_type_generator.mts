@@ -1220,6 +1220,15 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 				return true;
 			}
 		}
+		if (type instanceof RustTaggedValueEnum) {
+			for (const [_, currentVariant] of Object.entries(type.variants)) {
+				const isCurrentVariantSafe = this.isRecursivelyPerpetuallySafelyFreeable(currentVariant.type);
+				if (!isCurrentVariantSafe) {
+					return false;
+				}
+			}
+			return true;
+		}
 		if (type instanceof RustStruct) {
 			if (type.ownershipField) {
 				return true;

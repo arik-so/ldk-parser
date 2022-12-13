@@ -210,7 +210,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Option_C2Tuple_u64u64ZZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Option_C2Tuple_u64u64ZZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
