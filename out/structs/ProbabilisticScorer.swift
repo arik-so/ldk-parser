@@ -138,7 +138,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: networkGraph.dangle().cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
+						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
 				ProbabilisticScorer_new(params.dynamicallyDangledClone().cType!, networkGraphPointer, logger.activate().cType!)
 						}
 				
@@ -198,7 +198,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKProbabilisticScorer>) in
 				
-						withUnsafePointer(to: target.dynamicallyDangledClone().cType!) { (targetPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: target.cType!) { (targetPointer: UnsafePointer<LDKNodeId>) in
 				ProbabilisticScorer_estimated_channel_liquidity_range(thisArgPointer, scid, targetPointer)
 						}
 				
@@ -226,7 +226,7 @@
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
 				
-						withUnsafePointer(to: nodeId.dynamicallyDangledClone().cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: nodeId.cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
 				ProbabilisticScorer_add_banned(thisArgPointer, nodeIdPointer)
 						}
 				
@@ -253,7 +253,7 @@
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
 				
-						withUnsafePointer(to: nodeId.dynamicallyDangledClone().cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: nodeId.cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
 				ProbabilisticScorer_remove_banned(thisArgPointer, nodeIdPointer)
 						}
 				
@@ -280,7 +280,7 @@
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
 				
-						withUnsafePointer(to: nodeId.dynamicallyDangledClone().cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: nodeId.cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
 				ProbabilisticScorer_set_manual_penalty(thisArgPointer, nodeIdPointer, penalty)
 						}
 				
@@ -307,7 +307,7 @@
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisArgPointer: UnsafeMutablePointer<LDKProbabilisticScorer>) in
 				
-						withUnsafePointer(to: nodeId.dynamicallyDangledClone().cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: nodeId.cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
 				ProbabilisticScorer_remove_manual_penalty(thisArgPointer, nodeIdPointer)
 						}
 				
@@ -404,7 +404,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: argB.dangle().cType!) { (argBPointer: UnsafePointer<LDKNetworkGraph>) in
+						withUnsafePointer(to: argB.cType!) { (argBPointer: UnsafePointer<LDKNetworkGraph>) in
 				ProbabilisticScorer_read(serPrimitiveWrapper.cType!, argA.dynamicallyDangledClone().cType!, argBPointer, argC.activate().cType!)
 						}
 				

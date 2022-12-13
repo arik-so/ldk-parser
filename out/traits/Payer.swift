@@ -323,7 +323,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: route.dynamicallyDangledClone().cType!) { (routePointer: UnsafePointer<LDKRoute>) in
+						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
 				self.cType!.send_payment(self.cType!.this_arg, routePointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
 						}
 				
@@ -354,7 +354,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: route.dynamicallyDangledClone().cType!) { (routePointer: UnsafePointer<LDKRoute>) in
+						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
 				self.cType!.send_spontaneous_payment(self.cType!.this_arg, routePointer, paymentPreimagePrimitiveWrapper.cType!)
 						}
 				
@@ -382,7 +382,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: route.dynamicallyDangledClone().cType!) { (routePointer: UnsafePointer<LDKRoute>) in
+						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
 				self.cType!.retry_payment(self.cType!.this_arg, routePointer, paymentIdPrimitiveWrapper.cType!)
 						}
 				

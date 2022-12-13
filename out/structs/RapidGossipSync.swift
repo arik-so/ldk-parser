@@ -75,7 +75,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: networkGraph.dangle().cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
+						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
 				RapidGossipSync_new(networkGraphPointer)
 						}
 				

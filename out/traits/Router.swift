@@ -274,7 +274,7 @@
 					var firstHopsVectorPointer: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>? = nil
 					if let firstHops = firstHops {
 						
-						let firstHopsVector = Vec_ChannelDetailsZ(array: firstHops).dangle()
+						let firstHopsVector = Vec_ChannelDetailsZ(array: firstHops)
 				
 						firstHopsVectorPointer = UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>.allocate(capacity: 1)
 						firstHopsVectorPointer!.initialize(to: firstHopsVector.cType!)
@@ -285,7 +285,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: routeParams.dynamicallyDangledClone().cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
+						withUnsafePointer(to: routeParams.cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
 				self.cType!.find_route(self.cType!.this_arg, payerPrimitiveWrapper.cType!, routeParamsPointer, tupledPaymentHashPointer, firstHopsVectorPointer, inflightHtlcs.dangle().cType!)
 						}
 				

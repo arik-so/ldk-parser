@@ -87,7 +87,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: networkGraph.dangle().cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
+						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
 				P2PGossipSync_new(networkGraphPointer, chainAccessOption.cType!, logger.activate().cType!)
 						}
 				

@@ -147,7 +147,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: record.dynamicallyDangledClone().cType!) { (recordPointer: UnsafePointer<LDKRecord>) in
+						withUnsafePointer(to: record.cType!) { (recordPointer: UnsafePointer<LDKRecord>) in
 				self.cType!.log(self.cType!.this_arg, recordPointer)
 						}
 				

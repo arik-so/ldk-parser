@@ -674,7 +674,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						memoryManagementInfix = '.danglingClone()';
 					}
 				}
-			} else if (this.hasCloneMethod(argument.type)) {
+			} else if (this.hasCloneMethod(argument.type) && !argument.isAsteriskPointer) {
 				if (argument.type instanceof RustStruct && argument.type.ownershipField) {
 					memoryManagementInfix = '.dynamicallyDangledClone()';
 					if (isOwnershipFieldSafelyEditable) {
@@ -689,7 +689,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 					// we have to assume that Rust will just eat this type
 					memoryManagementInfix = '.danglingClone()';
 				}
-			} else {
+			} else if(!argument.isAsteriskPointer) {
 				// just gotta hope for the best
 				memoryManagementInfix = '.dangle()';
 				if (isOwnershipFieldSafelyEditable && this.hasOwnershipField(argument.type)) {

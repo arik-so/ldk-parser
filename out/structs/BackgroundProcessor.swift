@@ -161,11 +161,11 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: chainMonitor.dangle().cType!) { (chainMonitorPointer: UnsafePointer<LDKChainMonitor>) in
+						withUnsafePointer(to: chainMonitor.cType!) { (chainMonitorPointer: UnsafePointer<LDKChainMonitor>) in
 				
-						withUnsafePointer(to: channelManager.dangle().cType!) { (channelManagerPointer: UnsafePointer<LDKChannelManager>) in
+						withUnsafePointer(to: channelManager.cType!) { (channelManagerPointer: UnsafePointer<LDKChannelManager>) in
 				
-						withUnsafePointer(to: peerManager.dangle().cType!) { (peerManagerPointer: UnsafePointer<LDKPeerManager>) in
+						withUnsafePointer(to: peerManager.cType!) { (peerManagerPointer: UnsafePointer<LDKPeerManager>) in
 				BackgroundProcessor_start(persister.activate().cType!, eventHandler.activate().cType!, chainMonitorPointer, channelManagerPointer, gossipSync.dangle().cType!, peerManagerPointer, logger.activate().cType!, scorerOption.cType!)
 						}
 				

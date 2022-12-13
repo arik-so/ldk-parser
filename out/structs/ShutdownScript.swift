@@ -312,7 +312,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKShutdownScript>) in
 				
-						withUnsafePointer(to: features.dynamicallyDangledClone().cType!) { (featuresPointer: UnsafePointer<LDKInitFeatures>) in
+						withUnsafePointer(to: features.cType!) { (featuresPointer: UnsafePointer<LDKInitFeatures>) in
 				ShutdownScript_is_compatible(thisArgPointer, featuresPointer)
 						}
 				

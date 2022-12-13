@@ -70,7 +70,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: networkGraph.dangle().cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
+						withUnsafePointer(to: networkGraph.cType!) { (networkGraphPointer: UnsafePointer<LDKNetworkGraph>) in
 				DefaultRouter_new(networkGraphPointer, logger.activate().cType!, randomSeedBytesPrimitiveWrapper.cType!, scorer.activate().cType!)
 						}
 				

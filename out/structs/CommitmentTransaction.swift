@@ -274,11 +274,11 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKCommitmentTransaction>) in
 				
-						withUnsafePointer(to: channelParameters.dangle().cType!) { (channelParametersPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
+						withUnsafePointer(to: channelParameters.cType!) { (channelParametersPointer: UnsafePointer<LDKDirectedChannelTransactionParameters>) in
 				
-						withUnsafePointer(to: broadcasterKeys.dynamicallyDangledClone().cType!) { (broadcasterKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: broadcasterKeys.cType!) { (broadcasterKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				
-						withUnsafePointer(to: countersignatoryKeys.dynamicallyDangledClone().cType!) { (countersignatoryKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: countersignatoryKeys.cType!) { (countersignatoryKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				CommitmentTransaction_verify(thisArgPointer, channelParametersPointer, broadcasterKeysPointer, countersignatoryKeysPointer)
 						}
 				

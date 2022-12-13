@@ -248,7 +248,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
 				
-						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKNodeAnnouncement>) in
+						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKNodeAnnouncement>) in
 				NetworkGraph_update_node_from_announcement(thisArgPointer, msgPointer)
 						}
 				
@@ -278,7 +278,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
 				
-						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
+						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUnsignedNodeAnnouncement>) in
 				NetworkGraph_update_node_from_unsigned_announcement(thisArgPointer, msgPointer)
 						}
 				
@@ -314,7 +314,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
 				
-						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKChannelAnnouncement>) in
+						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelAnnouncement>) in
 				NetworkGraph_update_channel_from_announcement(thisArgPointer, msgPointer, chainAccessOption.cType!)
 						}
 				
@@ -348,7 +348,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
 				
-						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
+						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUnsignedChannelAnnouncement>) in
 				NetworkGraph_update_channel_from_unsigned_announcement(thisArgPointer, msgPointer, chainAccessOption.cType!)
 						}
 				
@@ -549,7 +549,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
 				
-						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKChannelUpdate>) in
+						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKChannelUpdate>) in
 				NetworkGraph_update_channel(thisArgPointer, msgPointer)
 						}
 				
@@ -581,7 +581,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
 				
-						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
+						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKUnsignedChannelUpdate>) in
 				NetworkGraph_update_channel_unsigned(thisArgPointer, msgPointer)
 						}
 				

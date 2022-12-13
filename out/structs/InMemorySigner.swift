@@ -676,7 +676,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				
-						withUnsafePointer(to: descriptor.dynamicallyDangledClone().cType!) { (descriptorPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
+						withUnsafePointer(to: descriptor.cType!) { (descriptorPointer: UnsafePointer<LDKStaticPaymentOutputDescriptor>) in
 				InMemorySigner_sign_counterparty_payment_input(thisArgPointer, spendTxPrimitiveWrapper.cType!, inputIdx, descriptorPointer)
 						}
 				
@@ -714,7 +714,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInMemorySigner>) in
 				
-						withUnsafePointer(to: descriptor.dynamicallyDangledClone().cType!) { (descriptorPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
+						withUnsafePointer(to: descriptor.cType!) { (descriptorPointer: UnsafePointer<LDKDelayedPaymentOutputDescriptor>) in
 				InMemorySigner_sign_dynamic_p2wsh_input(thisArgPointer, spendTxPrimitiveWrapper.cType!, inputIdx, descriptorPointer)
 						}
 				

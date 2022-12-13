@@ -277,7 +277,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: msg.dynamicallyDangledClone().cType!) { (msgPointer: UnsafePointer<LDKOnionMessage>) in
+						withUnsafePointer(to: msg.cType!) { (msgPointer: UnsafePointer<LDKOnionMessage>) in
 				self.cType!.handle_onion_message(self.cType!.this_arg, peerNodeIdPrimitiveWrapper.cType!, msgPointer)
 						}
 				
@@ -310,7 +310,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: initArgument.dynamicallyDangledClone().cType!) { (initArgumentPointer: UnsafePointer<LDKInit>) in
+						withUnsafePointer(to: initArgument.cType!) { (initArgumentPointer: UnsafePointer<LDKInit>) in
 				self.cType!.peer_connected(self.cType!.this_arg, theirNodeIdPrimitiveWrapper.cType!, initArgumentPointer)
 						}
 				

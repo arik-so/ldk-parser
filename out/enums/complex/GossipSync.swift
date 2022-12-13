@@ -96,7 +96,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.dangle().cType!) { (aPointer: UnsafePointer<LDKP2PGossipSync>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKP2PGossipSync>) in
 				GossipSync_p2_p(aPointer)
 						}
 				
@@ -119,7 +119,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: a.dangle().cType!) { (aPointer: UnsafePointer<LDKRapidGossipSync>) in
+						withUnsafePointer(to: a.cType!) { (aPointer: UnsafePointer<LDKRapidGossipSync>) in
 				GossipSync_rapid(aPointer)
 						}
 				

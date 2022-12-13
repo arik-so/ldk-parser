@@ -132,7 +132,7 @@
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKReadOnlyNetworkGraph>) in
 				
-						withUnsafePointer(to: nodeId.dynamicallyDangledClone().cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
+						withUnsafePointer(to: nodeId.cType!) { (nodeIdPointer: UnsafePointer<LDKNodeId>) in
 				ReadOnlyNetworkGraph_node(thisArgPointer, nodeIdPointer)
 						}
 				

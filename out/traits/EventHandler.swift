@@ -151,7 +151,7 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: event.danglingClone().cType!) { (eventPointer: UnsafePointer<LDKEvent>) in
+						withUnsafePointer(to: event.cType!) { (eventPointer: UnsafePointer<LDKEvent>) in
 				self.cType!.handle_event(self.cType!.this_arg, eventPointer)
 						}
 				

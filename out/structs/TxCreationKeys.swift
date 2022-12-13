@@ -545,9 +545,9 @@
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: broadcasterKeys.dynamicallyDangledClone().cType!) { (broadcasterKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: broadcasterKeys.cType!) { (broadcasterKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				
-						withUnsafePointer(to: countersignatoryKeys.dynamicallyDangledClone().cType!) { (countersignatoryKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
+						withUnsafePointer(to: countersignatoryKeys.cType!) { (countersignatoryKeysPointer: UnsafePointer<LDKChannelPublicKeys>) in
 				TxCreationKeys_from_channel_static_keys(perCommitmentPointPrimitiveWrapper.cType!, broadcasterKeysPointer, countersignatoryKeysPointer)
 						}
 				
