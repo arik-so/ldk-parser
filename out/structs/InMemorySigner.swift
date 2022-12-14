@@ -691,7 +691,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -729,7 +729,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_CVec_CVec_u8ZZNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -753,7 +753,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBaseSign(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedBaseSign(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -777,7 +777,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedSign(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedSign(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

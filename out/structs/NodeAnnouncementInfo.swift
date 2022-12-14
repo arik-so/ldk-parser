@@ -278,7 +278,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_NetAddressZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
+						let returnValue = Vec_NetAddressZ(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue

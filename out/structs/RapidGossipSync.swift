@@ -126,7 +126,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_u32GraphSyncErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_u32GraphSyncErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

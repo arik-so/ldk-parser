@@ -123,7 +123,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -155,7 +155,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -192,7 +192,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -248,7 +248,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedEventHandler(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedEventHandler(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

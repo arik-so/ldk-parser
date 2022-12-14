@@ -208,7 +208,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_TransactionNoneZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_TransactionNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -232,7 +232,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

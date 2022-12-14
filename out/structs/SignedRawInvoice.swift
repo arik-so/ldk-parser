@@ -255,7 +255,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PayeePubKeyErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_PayeePubKeyErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

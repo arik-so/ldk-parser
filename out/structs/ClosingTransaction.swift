@@ -228,7 +228,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_TrustedClosingTransactionNoneZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_TrustedClosingTransactionNoneZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -297,7 +297,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = u8slice(cType: nativeCallResult, anchor: self).dangle(false).getValue()
+						let returnValue = u8slice(cType: nativeCallResult, anchor: self).dangle().getValue()
 						
 
 						return returnValue
@@ -320,7 +320,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = u8slice(cType: nativeCallResult, anchor: self).dangle(false).getValue()
+						let returnValue = u8slice(cType: nativeCallResult, anchor: self).dangle().getValue()
 						
 
 						return returnValue
