@@ -35,8 +35,8 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
     let logger: Logger
     fileprivate var customPersister: CustomChannelManagerPersister?
     fileprivate var customEventHandler: EventHandler?
-    public private(set) var net_graph: NetworkGraph?
-    fileprivate var graph_msg_handler: GossipSync?
+    public private(set) var netGraph: NetworkGraph?
+    fileprivate var graphMessageHandler: GossipSync?
     fileprivate var scorer: MultiThreadedLockableScore?
     fileprivate let keysInterface: KeysInterface!
     public private(set) var payer: InvoicePayer?
@@ -54,15 +54,15 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
     private let chain_monitor: ChainMonitor
 
 
-    public init(channel_manager_serialized: [UInt8], channel_monitors_serialized: [[UInt8]], keys_interface: KeysInterface, fee_estimator: FeeEstimator, chain_monitor: ChainMonitor, filter: Filter?, net_graph_serialized: [UInt8]?, tx_broadcaster: BroadcasterInterface, logger: Logger, enableP2PGossip: Bool = false) throws {
+    public init(channelManagerSerialized: [UInt8], channelMonitorsSerialized: [[UInt8]], keysInterface: KeysInterface, feeEstimator: FeeEstimator, chainMonitor: ChainMonitor, filter: Filter?, netGraphSerialized: [UInt8]?, txBroadcaster: BroadcasterInterface, logger: Logger, enableP2PGossip: Bool = false) throws {
 
         var monitors: [ChannelMonitor] = []
         self.channel_monitors = []
 
         var monitorFundingSet = Set<String>()
 
-        for currentSerializedChannelMonitor in channel_monitors_serialized {
-            let channelMonitorResult: Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ = Bindings.readBlockHashChannelMonitor(ser: currentSerializedChannelMonitor, arg: keys_interface)
+        for currentSerializedChannelMonitor in channelMonitorsSerialized {
+            let channelMonitorResult: Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ = Bindings.readBlockHashChannelMonitor(ser: currentSerializedChannelMonitor, arg: keysInterface)
 
             guard let (blockHash, channelMonitor) = channelMonitorResult.getValue() else {
                 throw InvalidSerializedDataError.invalidSerializedChannelMonitor
@@ -83,10 +83,10 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
         }
 
         print("Collected channel monitors, reading channel manager")
-        let channelManagerReadArgs = ChannelManagerReadArgs(keysManager: keys_interface, feeEstimator: fee_estimator, chainMonitor: chain_monitor.asWatch(), txBroadcaster: tx_broadcaster, logger: logger, defaultConfig: UserConfig.initWithDefault(), channelMonitors: monitors)
+        let channelManagerReadArgs = ChannelManagerReadArgs(keysManager: keysInterface, feeEstimator: feeEstimator, chainMonitor: chainMonitor.asWatch(), txBroadcaster: txBroadcaster, logger: logger, defaultConfig: UserConfig.initWithDefault(), channelMonitors: monitors)
 
 
-        guard let (latestBlockHash, channelManager) = Bindings.readBlockHashChannelManager(ser: channel_manager_serialized, arg: channelManagerReadArgs).getValue() else {
+        guard let (latestBlockHash, channelManager) = Bindings.readBlockHashChannelManager(ser: channelManagerSerialized, arg: channelManagerReadArgs).getValue() else {
             throw InvalidSerializedDataError.invalidSerializedChannelManager
         }
 
@@ -97,30 +97,30 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
 
         self.channelManager = channelManager
         self.channel_manager_latest_block_hash = latestBlockHash
-        self.chain_monitor = chain_monitor
-        self.keysInterface = keys_interface
+        self.chain_monitor = chainMonitor
+        self.keysInterface = keysInterface
         self.logger = logger
 
-        let random_data = keys_interface.getSecureRandomBytes();
+        let random_data = keysInterface.getSecureRandomBytes();
 
-        if let serializedNetworkGraph = net_graph_serialized {
+        if let serializedNetworkGraph = netGraphSerialized {
             let netGraphResult = NetworkGraph.read(ser: serializedNetworkGraph, arg: self.logger)
             if !netGraphResult.isOk(){
                 throw InvalidSerializedDataError.invalidSerializedNetworkGraph
             }
-            self.net_graph = netGraphResult.getValue()
+            self.netGraph = netGraphResult.getValue()
         }
 
         let noCustomMessages = IgnoringMessageHandler()
         var messageHandler: MessageHandler!
-        if let netGraph = net_graph, enableP2PGossip {
+        if let netGraph = netGraph, enableP2PGossip {
             let p2pGossipSync = P2PGossipSync(networkGraph: netGraph, chainAccess: nil, logger: logger)
-            self.graph_msg_handler = GossipSync.initWithP2P(a: p2pGossipSync)
+            self.graphMessageHandler = GossipSync.initWithP2P(a: p2pGossipSync)
             messageHandler = MessageHandler(chanHandlerArg: channelManager.asChannelMessageHandler(), routeHandlerArg: p2pGossipSync.asRoutingMessageHandler(), onionMessageHandlerArg: noCustomMessages.asOnionMessageHandler())
         } else {
             messageHandler = MessageHandler(chanHandlerArg: channelManager.asChannelMessageHandler(), routeHandlerArg: noCustomMessages.asRoutingMessageHandler(), onionMessageHandlerArg: noCustomMessages.asOnionMessageHandler())
         }
-        guard let nodeSecret = keys_interface.getNodeSecret(recipient: .Node).getValue() else {
+        guard let nodeSecret = keysInterface.getNodeSecret(recipient: .Node).getValue() else {
             throw InvalidSerializedDataError.badNodeSecret
         }
         let timestampSeconds = UInt32(NSDate().timeIntervalSince1970)
@@ -143,30 +143,30 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
     /**
      * Constructs a channel manager from the given interface implementations
      */
-    public init(network: Network, config: UserConfig, current_blockchain_tip_hash: [UInt8], current_blockchain_tip_height: UInt32, keys_interface: KeysInterface, fee_estimator: FeeEstimator, chain_monitor: ChainMonitor, net_graph: NetworkGraph?, tx_broadcaster: BroadcasterInterface, logger: Logger, enableP2PGossip: Bool = false) {
+    public init(network: Network, config: UserConfig, currentBlockchainTipHash: [UInt8], currentBlockchainTipHeight: UInt32, keysInterface: KeysInterface, feeEstimator: FeeEstimator, chainMonitor: ChainMonitor, netGraph: NetworkGraph?, txBroadcaster: BroadcasterInterface, logger: Logger, enableP2PGossip: Bool = false) {
 
         self.channel_monitors = []
         self.channel_manager_latest_block_hash = nil
-        self.chain_monitor = chain_monitor
-        let block = BestBlock(blockHash: current_blockchain_tip_hash, height: current_blockchain_tip_height)
+        self.chain_monitor = chainMonitor
+        let block = BestBlock(blockHash: currentBlockchainTipHash, height: currentBlockchainTipHeight)
         let chainParameters = ChainParameters(networkArg: network, bestBlockArg: block)
-        self.channelManager = ChannelManager(feeEst: fee_estimator, chainMonitor: chain_monitor.asWatch(), txBroadcaster: tx_broadcaster, logger: logger, keysManager: keys_interface, config: config, params: chainParameters)
+        self.channelManager = ChannelManager(feeEst: feeEstimator, chainMonitor: chainMonitor.asWatch(), txBroadcaster: txBroadcaster, logger: logger, keysManager: keysInterface, config: config, params: chainParameters)
         self.logger = logger
 
-        self.keysInterface = keys_interface
-        let random_data = keys_interface.getSecureRandomBytes();
+        self.keysInterface = keysInterface
+        let random_data = keysInterface.getSecureRandomBytes();
 
-        self.net_graph = net_graph
+        self.netGraph = netGraph
         let noCustomMessages = IgnoringMessageHandler()
         var messageHandler: MessageHandler!
-        if let netGraph = net_graph, enableP2PGossip {
+        if let netGraph = netGraph, enableP2PGossip {
             let p2pGossipSync = P2PGossipSync(networkGraph: netGraph, chainAccess: nil, logger: logger)
-            self.graph_msg_handler = GossipSync.initWithP2P(a: p2pGossipSync)
+            self.graphMessageHandler = GossipSync.initWithP2P(a: p2pGossipSync)
             messageHandler = MessageHandler(chanHandlerArg: channelManager.asChannelMessageHandler(), routeHandlerArg: p2pGossipSync.asRoutingMessageHandler(), onionMessageHandlerArg: noCustomMessages.asOnionMessageHandler())
         } else {
             messageHandler = MessageHandler(chanHandlerArg: channelManager.asChannelMessageHandler(), routeHandlerArg: noCustomMessages.asRoutingMessageHandler(), onionMessageHandlerArg: noCustomMessages.asOnionMessageHandler())
         }
-        let nodeSecret = keys_interface.getNodeSecret(recipient: .Node).getValue()!
+        let nodeSecret = keysInterface.getNodeSecret(recipient: .Node).getValue()!
         let timestampSeconds = UInt32(NSDate().timeIntervalSince1970)
         self.peerManager = PeerManager(messageHandler: messageHandler, ourNodeSecret: nodeSecret, currentTime: timestampSeconds, ephemeralRandomData: random_data, logger: logger, customMessageHandler: noCustomMessages.asCustomMessageHandler())
 
@@ -187,7 +187,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
      * This also spawns a background thread which will call the appropriate methods on the provided
      * ChannelManagerPersister as required.
      */
-    public func chain_sync_completed(persister: ExtendedChannelManagerPersister, scorer: MultiThreadedLockableScore?) {
+    public func chainSyncCompleted(persister: ExtendedChannelManagerPersister, scorer: MultiThreadedLockableScore?) {
 
         if self.backgroundProcessor != nil {
             return
@@ -210,7 +210,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
         self.customEventHandler = CustomEventHandler(handler: persister)
         self.scorer = scorer
 
-        if let netGraph = self.net_graph, let scorer = self.scorer {
+        if let netGraph = self.netGraph, let scorer = self.scorer {
             let router = DefaultRouter(networkGraph: netGraph, logger: self.logger, randomSeedBytes: self.keysInterface.getSecureRandomBytes(), scorer: scorer.asLockableScore())
             // either dangle router, or set is_owned to false
             // scorer.cType!.is_owned = false
@@ -223,7 +223,7 @@ public class ChannelManagerConstructor: NativeTypeWrapper {
         // if there is a graph msg handler, set its is_owned to false
         // self.graph_msg_handler?.cOpaqueStruct?.is_owned = false
 
-        self.backgroundProcessor = BackgroundProcessor.start(persister: self.customPersister!, eventHandler: self.customEventHandler!, chainMonitor: self.chain_monitor, channelManager: self.channelManager, gossipSync: self.graph_msg_handler ?? GossipSync.none(), peerManager: self.peerManager, logger: self.logger, scorer: self.scorer?.asWriteableScore())
+        self.backgroundProcessor = BackgroundProcessor.start(persister: self.customPersister!, eventHandler: self.customEventHandler!, chainMonitor: self.chain_monitor, channelManager: self.channelManager, gossipSync: self.graphMessageHandler ?? GossipSync.none(), peerManager: self.peerManager, logger: self.logger, scorer: self.scorer?.asWriteableScore())
 
         // restore it back to true
         // self.graph_msg_handler?.cOpaqueStruct?.is_owned = true
@@ -317,13 +317,13 @@ fileprivate class CustomEventHandler: EventHandler {
 
     override func handleEvent(event: Bindings.Event) {
         // self.handler.handle_event(event: event.clone())
-        self.handler.handle_event(event: event)
+        self.handler.handleEvent(event: event)
     }
 
 }
 
 public protocol ExtendedChannelManagerPersister: Persister {
-    func handle_event(event: Event) -> Void;
+    func handleEvent(event: Event) -> Void;
 }
 
 public class TCPPeerHandler {

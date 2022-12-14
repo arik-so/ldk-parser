@@ -222,7 +222,7 @@ public class HumanObjectPeerTestInstance {
                 super.init()
             }
 
-            func handle_event(event: Event) {
+            func handleEvent(event: Event) {
                 // let eventClone = event.clone()
                 print("peer \(self.master.seed) received event: \(event.getValueType())")
                 Task {
@@ -304,14 +304,14 @@ public class HumanObjectPeerTestInstance {
 
                 let graph = NetworkGraph(genesisHash: [UInt8](repeating: 0, count: 32), logger: self.logger)
 
-                self.constructor = ChannelManagerConstructor(network: .Bitcoin, config: UserConfig.initWithDefault(), current_blockchain_tip_hash: [UInt8](repeating: 0, count: 32), current_blockchain_tip_height: 0, keys_interface: self.keysInterface, fee_estimator: self.feeEstimator, chain_monitor: self.chainMonitor!, net_graph: graph, tx_broadcaster: self.txBroadcaster, logger: self.logger)
+                self.constructor = ChannelManagerConstructor(network: .Bitcoin, config: UserConfig.initWithDefault(), currentBlockchainTipHash: [UInt8](repeating: 0, count: 32), currentBlockchainTipHeight: 0, keysInterface: self.keysInterface, feeEstimator: self.feeEstimator, chainMonitor: self.chainMonitor!, netGraph: graph, txBroadcaster: self.txBroadcaster, logger: self.logger)
 
                 let scoringParams = ProbabilisticScoringParameters.initWithDefault()
                 let probabalisticScorer = ProbabilisticScorer(params: scoringParams, networkGraph: graph, logger: self.logger)
                 let score = probabalisticScorer.asScore()
                 let multiThreadedScorer = MultiThreadedLockableScore(score: score)
 
-                self.constructor?.chain_sync_completed(persister: TestChannelManagerPersister(master: self), scorer: multiThreadedScorer)
+                self.constructor?.chainSyncCompleted(persister: TestChannelManagerPersister(master: self), scorer: multiThreadedScorer)
                 self.channelManager = self.constructor!.channelManager
                 self.peerManager = self.constructor!.peerManager
             }
@@ -325,8 +325,8 @@ public class HumanObjectPeerTestInstance {
             do {
                 // channel manager constructor is mandatory
                 let graph = NetworkGraph(genesisHash: [UInt8](repeating: 0, count: 32), logger: self.logger)
-                self.constructor = ChannelManagerConstructor(network: .Bitcoin, config: UserConfig.initWithDefault(), current_blockchain_tip_hash: [UInt8](repeating: 0, count: 32), current_blockchain_tip_height: 0, keys_interface: self.keysInterface, fee_estimator: self.feeEstimator, chain_monitor: self.chainMonitor!, net_graph: graph, tx_broadcaster: self.txBroadcaster, logger: self.logger)
-                self.constructor?.chain_sync_completed(persister: TestChannelManagerPersister(master: self), scorer: nil)
+                self.constructor = ChannelManagerConstructor(network: .Bitcoin, config: UserConfig.initWithDefault(), currentBlockchainTipHash: [UInt8](repeating: 0, count: 32), currentBlockchainTipHeight: 0, keysInterface: self.keysInterface, feeEstimator: self.feeEstimator, chainMonitor: self.chainMonitor!, netGraph: graph, txBroadcaster: self.txBroadcaster, logger: self.logger)
+                self.constructor?.chainSyncCompleted(persister: TestChannelManagerPersister(master: self), scorer: nil)
                 self.channelManager = self.constructor!.channelManager
                 Task {
                     let events = await original.pendingEventTracker.getEvents()

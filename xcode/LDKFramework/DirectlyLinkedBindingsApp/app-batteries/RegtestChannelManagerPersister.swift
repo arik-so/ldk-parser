@@ -9,6 +9,7 @@ import Foundation
 
 class RegtestChannelManagerPersister : Persister, ExtendedChannelManagerPersister {
     
+    
     private let channelManager: ChannelManager?
     private let keysManager: KeysManager? = nil
     
@@ -17,10 +18,9 @@ class RegtestChannelManagerPersister : Persister, ExtendedChannelManagerPersiste
         super.init()
     }
     
-    func handle_event(event: Event) {
+    func handleEvent(event: Event) {
         privateHandleEvent(event: event)
     }
-    
     
     private func privateHandleEvent(event: Event) {
         if let spendableOutputEvent = event.getValueAsSpendableOutputs() {
@@ -50,7 +50,7 @@ class RegtestChannelManagerPersister : Persister, ExtendedChannelManagerPersiste
             
             
             
-        }else if let fundingReadyEvent = event.getValueAsFundingGenerationReady() {
+        } else if let fundingReadyEvent = event.getValueAsFundingGenerationReady() {
             let outputScript = fundingReadyEvent.getOutputScript()
             let amount = fundingReadyEvent.getChannelValueSatoshis()
             
