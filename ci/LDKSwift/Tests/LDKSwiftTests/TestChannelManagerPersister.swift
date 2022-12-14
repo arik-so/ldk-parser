@@ -19,7 +19,7 @@ class TestChannelManagerPersister : Persister, ExtendedChannelManagerPersister {
 		super.init()
 	}
 
-    func handle_event(event: Event) {
+    func handleEvent(event: Event) {
         // privateHandleEvent(event: event)
     }
     

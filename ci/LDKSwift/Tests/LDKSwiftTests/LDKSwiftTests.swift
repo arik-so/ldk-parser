@@ -58,14 +58,14 @@ class LDKSwiftTests: XCTestCase {
         var monitors: [LDKChannelMonitor] = []
 
         let channel_manager_constructor = try ChannelManagerConstructor(
-                channel_manager_serialized: serialized_channel_manager,
-                channel_monitors_serialized: serializedChannelMonitors,
-                keys_interface: keysInterface,
-                fee_estimator: feeEstimator,
-                chain_monitor: chainMonitor,
+                channelManagerSerialized: serialized_channel_manager,
+                channelMonitorsSerialized: serializedChannelMonitors,
+                keysInterface: keysInterface,
+                feeEstimator: feeEstimator,
+                chainMonitor: chainMonitor,
                 filter: filter,
-                net_graph_serialized: nil,
-                tx_broadcaster: broadcaster,
+                netGraphSerialized: nil,
+                txBroadcaster: broadcaster,
                 logger: logger
         )
 
@@ -117,7 +117,7 @@ class LDKSwiftTests: XCTestCase {
         }
         */
 
-        channel_manager_constructor.chain_sync_completed(persister: cmPersister, scorer: nil)
+        channel_manager_constructor.chainSyncCompleted(persister: cmPersister, scorer: nil)
         channel_manager_constructor.interrupt()
     }
 
@@ -171,11 +171,11 @@ class LDKSwiftTests: XCTestCase {
         let channelMonitorPersister = TestPersister()
         let chainMonitor = ChainMonitor(chainSource: nil, broadcaster: broadcaster, logger: logger, feeest: feeEstimator, persister: channelMonitorPersister)
 
-        let channelManagerConstructor = ChannelManagerConstructor(network: .Bitcoin, config: config, current_blockchain_tip_hash: reversedGenesisHash, current_blockchain_tip_height: 0, keys_interface: keysInterface, fee_estimator: feeEstimator, chain_monitor: chainMonitor, net_graph: networkGraph, tx_broadcaster: broadcaster, logger: logger)
+        let channelManagerConstructor = ChannelManagerConstructor(network: .Bitcoin, config: config, currentBlockchainTipHash: reversedGenesisHash, currentBlockchainTipHeight: 0, keysInterface: keysInterface, feeEstimator: feeEstimator, chainMonitor: chainMonitor, netGraph: networkGraph, txBroadcaster: broadcaster, logger: logger)
         let channelManager = channelManagerConstructor.channelManager
         let peerManager = channelManagerConstructor.peerManager
         let tcpPeerHandler = channelManagerConstructor.getTCPPeerHandler()
-        if channelManagerConstructor.net_graph != nil {
+        if channelManagerConstructor.netGraph != nil {
             print("net graph available!")
         }
 
@@ -210,7 +210,7 @@ class LDKSwiftTests: XCTestCase {
         let channelMonitorPersister = TestPersister()
         let chainMonitor = ChainMonitor(chainSource: nil, broadcaster: broadcaster, logger: logger, feeest: feeEstimator, persister: channelMonitorPersister)
 
-        let channelManagerConstructor = ChannelManagerConstructor(network: .Bitcoin, config: config, current_blockchain_tip_hash: reversedGenesisHash, current_blockchain_tip_height: 0, keys_interface: keysInterface, fee_estimator: feeEstimator, chain_monitor: chainMonitor, net_graph: networkGraph, tx_broadcaster: broadcaster, logger: logger)
+        let channelManagerConstructor = ChannelManagerConstructor(network: .Bitcoin, config: config, currentBlockchainTipHash: reversedGenesisHash, currentBlockchainTipHeight: 0, keysInterface: keysInterface, feeEstimator: feeEstimator, chainMonitor: chainMonitor, netGraph: networkGraph, txBroadcaster: broadcaster, logger: logger)
         let channelManager = channelManagerConstructor.channelManager
 
         let channelValue: UInt64 = 1_300_000 // 1.3 million satoshis, or 0.013 BTC
@@ -254,11 +254,11 @@ class LDKSwiftTests: XCTestCase {
         let channelMonitorPersister = TestPersister()
         let chainMonitor = ChainMonitor(chainSource: nil, broadcaster: broadcaster, logger: logger, feeest: feeEstimator, persister: channelMonitorPersister)
 
-        let channelManagerConstructor = ChannelManagerConstructor(network: lightningNetwork, config: config, current_blockchain_tip_hash: reversedGenesisHash, current_blockchain_tip_height: 0, keys_interface: keysInterface, fee_estimator: feeEstimator, chain_monitor: chainMonitor, net_graph: networkGraph, tx_broadcaster: broadcaster, logger: logger)
+        let channelManagerConstructor = ChannelManagerConstructor(network: lightningNetwork, config: config, currentBlockchainTipHash: reversedGenesisHash, currentBlockchainTipHeight: 0, keysInterface: keysInterface, feeEstimator: feeEstimator, chainMonitor: chainMonitor, netGraph: networkGraph, txBroadcaster: broadcaster, logger: logger)
         let channelManager = channelManagerConstructor.channelManager
         let peerManager = channelManagerConstructor.peerManager
         let tcpPeerHandler = channelManagerConstructor.getTCPPeerHandler()
-        if channelManagerConstructor.net_graph != nil {
+        if channelManagerConstructor.netGraph != nil {
             print("net graph available!")
         }
 
@@ -281,7 +281,7 @@ class LDKSwiftTests: XCTestCase {
 
 
         let channelManagerAndNetworkGraphPersisterAndEventHandler = TestChannelManagerPersister()
-        channelManagerConstructor.chain_sync_completed(persister: channelManagerAndNetworkGraphPersisterAndEventHandler, scorer: multiThreadedScorer)
+        channelManagerConstructor.chainSyncCompleted(persister: channelManagerAndNetworkGraphPersisterAndEventHandler, scorer: multiThreadedScorer)
 
         // run this for one minute
         for _ in 0..<600 {

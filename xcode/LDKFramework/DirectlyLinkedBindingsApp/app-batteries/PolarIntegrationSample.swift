@@ -73,11 +73,11 @@ public class PolarIntegrationSample {
         let channelManagerAndNetworkGraphPersisterAndEventHandler = LDKTraitImplementations.PolarChannelManagerAndNetworkGraphPersisterAndEventHandler()
         let chainMonitor = ChainMonitor(chainSource: nil, broadcaster: broadcaster, logger: logger, feeest: feeEstimator, persister: channelMonitorPersister)
 
-        let channelManagerConstructor = ChannelManagerConstructor(network: lightningNetwork, config: config, current_blockchain_tip_hash: reversedChaintipHash, current_blockchain_tip_height: UInt32(chaintipHeight), keys_interface: keysInterface, fee_estimator: feeEstimator, chain_monitor: chainMonitor, net_graph: networkGraph, tx_broadcaster: broadcaster, logger: logger)
+        let channelManagerConstructor = ChannelManagerConstructor(network: lightningNetwork, config: config, currentBlockchainTipHash: reversedChaintipHash, currentBlockchainTipHeight: UInt32(chaintipHeight), keysInterface: keysInterface, feeEstimator: feeEstimator, chainMonitor: chainMonitor, netGraph: networkGraph, txBroadcaster: broadcaster, logger: logger)
         let channelManager = channelManagerConstructor.channelManager
         let peerManager = channelManagerConstructor.peerManager
         let tcpPeerHandler = channelManagerConstructor.getTCPPeerHandler()
-        if let netGraph = channelManagerConstructor.net_graph {
+        if let netGraph = channelManagerConstructor.netGraph {
             print("net graph available!")
         }
         
@@ -107,7 +107,7 @@ public class PolarIntegrationSample {
         let listener = Listener(channelManager: channelManager, chainMonitor: chainMonitor)
         rpcInterface.registerListener(listener);
         async let monitor = try rpcInterface.monitorBlockchain()
-        channelManagerConstructor.chain_sync_completed(persister: channelManagerAndNetworkGraphPersisterAndEventHandler, scorer: multiThreadedScorer)
+        channelManagerConstructor.chainSyncCompleted(persister: channelManagerAndNetworkGraphPersisterAndEventHandler, scorer: multiThreadedScorer)
 
         guard let lndPubkey = PolarIntegrationSample.hexStringToBytes(hexString: PolarIntegrationSample.POLAR_LND_PEER_PUBKEY_HEX) else {
             throw TestFlowExceptions.hexParsingError
@@ -339,7 +339,7 @@ public class PolarIntegrationSample {
                 }
             }
 
-            func handle_event(event: Event) {
+            func handleEvent(event: Event) {
                 Task {
                     await self.eventTracker.addEvent(event: event)
                 }
@@ -472,12 +472,12 @@ public class PolarIntegrationSample {
             let channelManagerAndNetworkGraphPersisterAndEventHandler = LDKTraitImplementations.PolarChannelManagerAndNetworkGraphPersisterAndEventHandler()
             let chainMonitor = ChainMonitor(chainSource: nil, broadcaster: broadcaster, logger: logger, feeest: feeEstimator, persister: channelMonitorPersister)
 
-            channelManagerConstructor = ChannelManagerConstructor(network: lightningNetwork, config: config, current_blockchain_tip_hash: reversedChaintipHash, current_blockchain_tip_height: UInt32(chaintipHeight), keys_interface: keysInterface, fee_estimator: feeEstimator, chain_monitor: chainMonitor, net_graph: networkGraph, tx_broadcaster: broadcaster, logger: logger)
+            channelManagerConstructor = ChannelManagerConstructor(network: lightningNetwork, config: config, currentBlockchainTipHash: reversedChaintipHash, currentBlockchainTipHeight: UInt32(chaintipHeight), keysInterface: keysInterface, feeEstimator: feeEstimator, chainMonitor: chainMonitor, netGraph: networkGraph, txBroadcaster: broadcaster, logger: logger)
             let channelManager = channelManagerConstructor.channelManager
             let peerManager = channelManagerConstructor.peerManager
             let tcpPeerHandler = channelManagerConstructor.getTCPPeerHandler()
             
-            channelManagerConstructor.chain_sync_completed(persister: channelManagerAndNetworkGraphPersisterAndEventHandler, scorer: multiThreadedScorer)
+            channelManagerConstructor.chainSyncCompleted(persister: channelManagerAndNetworkGraphPersisterAndEventHandler, scorer: multiThreadedScorer)
             
             let interPeerConnectionInterval = 0
             let pauseForNextPeer = { () async in
