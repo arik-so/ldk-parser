@@ -210,7 +210,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Option_C2Tuple_u64u64ZZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
+						let returnValue = Option_C2Tuple_u64u64ZZ(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue
@@ -366,7 +366,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedScore(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedScore(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

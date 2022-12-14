@@ -181,7 +181,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneSemanticErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_NoneSemanticErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -599,7 +599,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Option_u64Z(cType: nativeCallResult, anchor: self).dangle(false).getValue()
+						let returnValue = Option_u64Z(cType: nativeCallResult, anchor: self).getValue()
 						
 
 						return returnValue

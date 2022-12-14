@@ -78,7 +78,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedLockableScore(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedLockableScore(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -125,7 +125,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedWriteableScore(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedWriteableScore(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

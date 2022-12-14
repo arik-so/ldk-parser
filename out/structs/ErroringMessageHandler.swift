@@ -107,7 +107,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -131,7 +131,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

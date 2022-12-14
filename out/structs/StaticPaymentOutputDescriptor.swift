@@ -127,7 +127,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = TxOut(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = TxOut(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

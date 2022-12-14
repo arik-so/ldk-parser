@@ -128,7 +128,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = ErrorAction(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = ErrorAction(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

@@ -255,7 +255,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneSendErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = Result_NoneSendErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -279,7 +279,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -303,7 +303,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageProvider(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedOnionMessageProvider(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

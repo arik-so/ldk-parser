@@ -107,7 +107,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -131,7 +131,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -155,7 +155,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageProvider(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedOnionMessageProvider(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -179,7 +179,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -203,7 +203,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedCustomOnionMessageHandler(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedCustomOnionMessageHandler(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -227,7 +227,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedCustomMessageReader(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedCustomMessageReader(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -251,7 +251,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedCustomMessageHandler(cType: nativeCallResult, anchor: self).dangle(false)
+						let returnValue = NativelyImplementedCustomMessageHandler(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
