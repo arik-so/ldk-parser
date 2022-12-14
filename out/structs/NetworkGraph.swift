@@ -78,7 +78,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedEventHandler(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedEventHandler(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

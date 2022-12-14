@@ -156,7 +156,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -180,7 +180,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedMessageSendEventsProvider(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

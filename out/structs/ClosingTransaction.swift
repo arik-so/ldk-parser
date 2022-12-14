@@ -297,7 +297,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = u8slice(cType: nativeCallResult, anchor: self).dangle().getValue()
+						let returnValue = u8slice(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -320,7 +320,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = u8slice(cType: nativeCallResult, anchor: self).dangle().getValue()
+						let returnValue = u8slice(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue

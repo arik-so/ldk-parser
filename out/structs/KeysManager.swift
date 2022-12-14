@@ -232,7 +232,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

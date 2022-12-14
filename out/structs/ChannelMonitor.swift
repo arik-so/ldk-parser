@@ -292,7 +292,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_MonitorEventZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_MonitorEventZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -320,7 +320,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_EventZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_EventZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -440,7 +440,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_TransactionOutputsZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_TransactionOutputsZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -509,7 +509,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_TransactionOutputsZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_TransactionOutputsZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -578,7 +578,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_TransactionOutputsZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_TransactionOutputsZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -662,7 +662,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_BalanceZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_BalanceZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue

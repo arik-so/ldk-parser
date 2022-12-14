@@ -145,7 +145,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult.pointee, anchor: self)
+						let returnValue = NativelyImplementedKeysInterface(cType: nativeCallResult.pointee, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -199,7 +199,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedFeeEstimator(cType: nativeCallResult.pointee, anchor: self)
+						let returnValue = NativelyImplementedFeeEstimator(cType: nativeCallResult.pointee, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -255,7 +255,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedWatch(cType: nativeCallResult.pointee, anchor: self)
+						let returnValue = NativelyImplementedWatch(cType: nativeCallResult.pointee, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -311,7 +311,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBroadcasterInterface(cType: nativeCallResult.pointee, anchor: self)
+						let returnValue = NativelyImplementedBroadcasterInterface(cType: nativeCallResult.pointee, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -364,7 +364,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedLogger(cType: nativeCallResult.pointee, anchor: self)
+						let returnValue = NativelyImplementedLogger(cType: nativeCallResult.pointee, anchor: self).dangle(false)
 						
 
 						return returnValue

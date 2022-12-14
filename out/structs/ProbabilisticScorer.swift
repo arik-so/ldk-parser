@@ -366,7 +366,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedScore(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedScore(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

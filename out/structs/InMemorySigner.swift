@@ -753,7 +753,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedBaseSign(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedBaseSign(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -777,7 +777,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedSign(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedSign(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

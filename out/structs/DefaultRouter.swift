@@ -115,7 +115,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedRouter(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedRouter(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

@@ -140,7 +140,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Vec_BalanceZ(cType: nativeCallResult, anchor: self).getValue()
+						let returnValue = Vec_BalanceZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
@@ -228,7 +228,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -252,7 +252,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedListen(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedListen(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -276,7 +276,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedConfirm(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedConfirm(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -300,7 +300,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedWatch(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedWatch(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -324,7 +324,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedEventsProvider(cType: nativeCallResult, anchor: self)
+						let returnValue = NativelyImplementedEventsProvider(cType: nativeCallResult, anchor: self).dangle(false)
 						
 
 						return returnValue

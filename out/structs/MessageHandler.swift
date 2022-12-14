@@ -84,7 +84,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult.pointee, anchor: self)
+						let returnValue = NativelyImplementedChannelMessageHandler(cType: nativeCallResult.pointee, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -140,7 +140,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult.pointee, anchor: self)
+						let returnValue = NativelyImplementedRoutingMessageHandler(cType: nativeCallResult.pointee, anchor: self).dangle(false)
 						
 
 						return returnValue
@@ -194,7 +194,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult.pointee, anchor: self)
+						let returnValue = NativelyImplementedOnionMessageHandler(cType: nativeCallResult.pointee, anchor: self).dangle(false)
 						
 
 						return returnValue

@@ -941,7 +941,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 			}
 		}
 
-		if (hasRecursiveOwnershipFlags && (anchorInfix || dangleSuffix) && returnType instanceof RustFunctionReturnValue) {
+		if (/*hasRecursiveOwnershipFlags && */(anchorInfix || dangleSuffix) && returnType instanceof RustFunctionReturnValue && memoryContext && memoryContext.needsInstancePointer) {
 			// this doesn't seem to be doing much anyway
 			// TODO: find instances in future releases where this might actually change something
 			dangleSuffix = '.dangle(false)';
