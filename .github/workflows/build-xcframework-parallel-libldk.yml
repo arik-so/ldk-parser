@@ -47,7 +47,7 @@ jobs:
                 with:
                     xcode-version: latest
             -   name: Checkout
-                uses: actions/checkout@v2
+                uses: actions/checkout@v3
             -   name: Install Dependencies
                 uses: ./.github/actions/install-dependencies
                 with:
@@ -81,7 +81,7 @@ jobs:
                 with:
                     xcode-version: latest
             -   name: Checkout
-                uses: actions/checkout@v2
+                uses: actions/checkout@v3
             -   name: Download libldks
                 uses: actions/download-artifact@v3
             -   name: Generate Swift Bindings
