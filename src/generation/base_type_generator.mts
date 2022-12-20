@@ -1020,7 +1020,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 
 					internal var cType: ${typeName}?
 
-					public init(cType: ${typeName}) {
+					internal init(cType: ${typeName}) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -1028,7 +1028,7 @@ export abstract class BaseTypeGenerator<Type extends RustType> {
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: ${typeName}, anchor: NativeTypeWrapper) {
+					internal init(cType: ${typeName}, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
