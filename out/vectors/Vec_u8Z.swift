@@ -19,7 +19,7 @@
 
 					internal var cType: LDKCVec_u8Z?
 
-					public init(cType: LDKCVec_u8Z) {
+					internal init(cType: LDKCVec_u8Z) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCVec_u8Z, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_u8Z, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

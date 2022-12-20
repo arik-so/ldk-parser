@@ -23,7 +23,7 @@
 
 					internal var cType: LDKDelayedPaymentOutputDescriptor?
 
-					public init(cType: LDKDelayedPaymentOutputDescriptor) {
+					internal init(cType: LDKDelayedPaymentOutputDescriptor) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -31,7 +31,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKDelayedPaymentOutputDescriptor, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKDelayedPaymentOutputDescriptor, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

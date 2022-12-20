@@ -52,7 +52,7 @@
 
 					internal var cType: LDKBaseSign?
 
-					public init(cType: LDKBaseSign) {
+					internal init(cType: LDKBaseSign) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -60,7 +60,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKBaseSign, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKBaseSign, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

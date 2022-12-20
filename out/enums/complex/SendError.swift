@@ -21,7 +21,7 @@
 
 					internal var cType: LDKSendError?
 
-					public init(cType: LDKSendError) {
+					internal init(cType: LDKSendError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKSendError, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKSendError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

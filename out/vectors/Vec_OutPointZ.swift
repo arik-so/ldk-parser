@@ -19,7 +19,7 @@
 
 					internal var cType: LDKCVec_OutPointZ?
 
-					public init(cType: LDKCVec_OutPointZ) {
+					internal init(cType: LDKCVec_OutPointZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCVec_OutPointZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_OutPointZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

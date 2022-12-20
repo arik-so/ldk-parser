@@ -56,7 +56,7 @@
 
 					internal var cType: LDKWatch?
 
-					public init(cType: LDKWatch) {
+					internal init(cType: LDKWatch) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -64,7 +64,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKWatch, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKWatch, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

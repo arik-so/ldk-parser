@@ -19,7 +19,7 @@
 
 					internal var cType: LDKHTLCDestination?
 
-					public init(cType: LDKHTLCDestination) {
+					internal init(cType: LDKHTLCDestination) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKHTLCDestination, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKHTLCDestination, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -337,7 +337,7 @@
 
 						internal var cType: LDKHTLCDestination_LDKNextHopChannel_Body?
 
-						fileprivate init(cType: LDKHTLCDestination_LDKNextHopChannel_Body) {
+						internal init(cType: LDKHTLCDestination_LDKNextHopChannel_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -345,7 +345,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKHTLCDestination_LDKNextHopChannel_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKHTLCDestination_LDKNextHopChannel_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -407,7 +407,7 @@
 
 						internal var cType: LDKHTLCDestination_LDKUnknownNextHop_Body?
 
-						fileprivate init(cType: LDKHTLCDestination_LDKUnknownNextHop_Body) {
+						internal init(cType: LDKHTLCDestination_LDKUnknownNextHop_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -415,7 +415,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKHTLCDestination_LDKUnknownNextHop_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKHTLCDestination_LDKUnknownNextHop_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -465,7 +465,7 @@
 
 						internal var cType: LDKHTLCDestination_LDKFailedPayment_Body?
 
-						fileprivate init(cType: LDKHTLCDestination_LDKFailedPayment_Body) {
+						internal init(cType: LDKHTLCDestination_LDKFailedPayment_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -473,7 +473,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKHTLCDestination_LDKFailedPayment_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKHTLCDestination_LDKFailedPayment_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

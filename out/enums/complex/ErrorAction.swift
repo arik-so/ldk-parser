@@ -19,7 +19,7 @@
 
 					internal var cType: LDKErrorAction?
 
-					public init(cType: LDKErrorAction) {
+					internal init(cType: LDKErrorAction) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKErrorAction, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKErrorAction, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -326,7 +326,7 @@
 
 						internal var cType: LDKErrorAction_LDKDisconnectPeer_Body?
 
-						fileprivate init(cType: LDKErrorAction_LDKDisconnectPeer_Body) {
+						internal init(cType: LDKErrorAction_LDKDisconnectPeer_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -334,7 +334,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKErrorAction_LDKDisconnectPeer_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKErrorAction_LDKDisconnectPeer_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -386,7 +386,7 @@
 
 						internal var cType: LDKErrorAction_LDKSendErrorMessage_Body?
 
-						fileprivate init(cType: LDKErrorAction_LDKSendErrorMessage_Body) {
+						internal init(cType: LDKErrorAction_LDKSendErrorMessage_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -394,7 +394,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKErrorAction_LDKSendErrorMessage_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKErrorAction_LDKSendErrorMessage_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -444,7 +444,7 @@
 
 						internal var cType: LDKErrorAction_LDKSendWarningMessage_Body?
 
-						fileprivate init(cType: LDKErrorAction_LDKSendWarningMessage_Body) {
+						internal init(cType: LDKErrorAction_LDKSendWarningMessage_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -452,7 +452,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKErrorAction_LDKSendWarningMessage_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKErrorAction_LDKSendWarningMessage_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

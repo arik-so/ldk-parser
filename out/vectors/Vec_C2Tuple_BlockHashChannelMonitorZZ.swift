@@ -19,7 +19,7 @@
 
 					internal var cType: LDKCVec_C2Tuple_BlockHashChannelMonitorZZ?
 
-					public init(cType: LDKCVec_C2Tuple_BlockHashChannelMonitorZZ) {
+					internal init(cType: LDKCVec_C2Tuple_BlockHashChannelMonitorZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCVec_C2Tuple_BlockHashChannelMonitorZZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_C2Tuple_BlockHashChannelMonitorZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

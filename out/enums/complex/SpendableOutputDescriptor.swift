@@ -23,7 +23,7 @@
 
 					internal var cType: LDKSpendableOutputDescriptor?
 
-					public init(cType: LDKSpendableOutputDescriptor) {
+					internal init(cType: LDKSpendableOutputDescriptor) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -31,7 +31,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKSpendableOutputDescriptor, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKSpendableOutputDescriptor, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -356,7 +356,7 @@
 
 						internal var cType: LDKSpendableOutputDescriptor_LDKStaticOutput_Body?
 
-						fileprivate init(cType: LDKSpendableOutputDescriptor_LDKStaticOutput_Body) {
+						internal init(cType: LDKSpendableOutputDescriptor_LDKStaticOutput_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -364,7 +364,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKSpendableOutputDescriptor_LDKStaticOutput_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKSpendableOutputDescriptor_LDKStaticOutput_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

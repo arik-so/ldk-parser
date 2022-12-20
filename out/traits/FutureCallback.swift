@@ -34,7 +34,7 @@
 
 					internal var cType: LDKFutureCallback?
 
-					public init(cType: LDKFutureCallback) {
+					internal init(cType: LDKFutureCallback) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -42,7 +42,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKFutureCallback, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKFutureCallback, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

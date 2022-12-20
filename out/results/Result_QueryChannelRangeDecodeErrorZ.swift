@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_QueryChannelRangeDecodeErrorZ?
 
-					public init(cType: LDKCResult_QueryChannelRangeDecodeErrorZ) {
+					internal init(cType: LDKCResult_QueryChannelRangeDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_QueryChannelRangeDecodeErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_QueryChannelRangeDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

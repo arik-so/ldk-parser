@@ -19,7 +19,7 @@
 
 					internal var cType: LDKGraphSyncError?
 
-					public init(cType: LDKGraphSyncError) {
+					internal init(cType: LDKGraphSyncError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKGraphSyncError, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKGraphSyncError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

@@ -23,7 +23,7 @@
 
 					internal var cType: LDKExpiryTime?
 
-					public init(cType: LDKExpiryTime) {
+					internal init(cType: LDKExpiryTime) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -31,7 +31,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKExpiryTime, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKExpiryTime, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

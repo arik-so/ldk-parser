@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_NodeIdDecodeErrorZ?
 
-					public init(cType: LDKCResult_NodeIdDecodeErrorZ) {
+					internal init(cType: LDKCResult_NodeIdDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_NodeIdDecodeErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_NodeIdDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

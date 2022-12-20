@@ -37,7 +37,7 @@
 
 					internal var cType: LDKChainMonitor?
 
-					public init(cType: LDKChainMonitor) {
+					internal init(cType: LDKChainMonitor) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -45,7 +45,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKChainMonitor, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKChainMonitor, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

@@ -22,7 +22,7 @@
 
 					internal var cType: LDKBalance?
 
-					public init(cType: LDKBalance) {
+					internal init(cType: LDKBalance) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -30,7 +30,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKBalance, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKBalance, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -387,7 +387,7 @@
 
 						internal var cType: LDKBalance_LDKClaimableOnChannelClose_Body?
 
-						fileprivate init(cType: LDKBalance_LDKClaimableOnChannelClose_Body) {
+						internal init(cType: LDKBalance_LDKClaimableOnChannelClose_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -395,7 +395,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKBalance_LDKClaimableOnChannelClose_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKBalance_LDKClaimableOnChannelClose_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -446,7 +446,7 @@
 
 						internal var cType: LDKBalance_LDKClaimableAwaitingConfirmations_Body?
 
-						fileprivate init(cType: LDKBalance_LDKClaimableAwaitingConfirmations_Body) {
+						internal init(cType: LDKBalance_LDKClaimableAwaitingConfirmations_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -454,7 +454,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKBalance_LDKClaimableAwaitingConfirmations_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKBalance_LDKClaimableAwaitingConfirmations_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -514,7 +514,7 @@
 
 						internal var cType: LDKBalance_LDKContentiousClaimable_Body?
 
-						fileprivate init(cType: LDKBalance_LDKContentiousClaimable_Body) {
+						internal init(cType: LDKBalance_LDKContentiousClaimable_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -522,7 +522,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKBalance_LDKContentiousClaimable_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKBalance_LDKContentiousClaimable_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -582,7 +582,7 @@
 
 						internal var cType: LDKBalance_LDKMaybeTimeoutClaimableHTLC_Body?
 
-						fileprivate init(cType: LDKBalance_LDKMaybeTimeoutClaimableHTLC_Body) {
+						internal init(cType: LDKBalance_LDKMaybeTimeoutClaimableHTLC_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -590,7 +590,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKBalance_LDKMaybeTimeoutClaimableHTLC_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKBalance_LDKMaybeTimeoutClaimableHTLC_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -650,7 +650,7 @@
 
 						internal var cType: LDKBalance_LDKMaybePreimageClaimableHTLC_Body?
 
-						fileprivate init(cType: LDKBalance_LDKMaybePreimageClaimableHTLC_Body) {
+						internal init(cType: LDKBalance_LDKMaybePreimageClaimableHTLC_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -658,7 +658,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKBalance_LDKMaybePreimageClaimableHTLC_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKBalance_LDKMaybePreimageClaimableHTLC_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -718,7 +718,7 @@
 
 						internal var cType: LDKBalance_LDKCounterpartyRevokedOutputClaimable_Body?
 
-						fileprivate init(cType: LDKBalance_LDKCounterpartyRevokedOutputClaimable_Body) {
+						internal init(cType: LDKBalance_LDKCounterpartyRevokedOutputClaimable_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -726,7 +726,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKBalance_LDKCounterpartyRevokedOutputClaimable_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKBalance_LDKCounterpartyRevokedOutputClaimable_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_CVec_SignatureZNoneZ?
 
-					public init(cType: LDKCResult_CVec_SignatureZNoneZ) {
+					internal init(cType: LDKCResult_CVec_SignatureZNoneZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_CVec_SignatureZNoneZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_CVec_SignatureZNoneZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

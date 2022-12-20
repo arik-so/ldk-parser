@@ -25,7 +25,7 @@
 
 					internal var cType: LDKClosingSignedFeeRange?
 
-					public init(cType: LDKClosingSignedFeeRange) {
+					internal init(cType: LDKClosingSignedFeeRange) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -33,7 +33,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKClosingSignedFeeRange, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKClosingSignedFeeRange, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

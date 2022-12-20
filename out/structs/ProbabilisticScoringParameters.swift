@@ -33,7 +33,7 @@
 
 					internal var cType: LDKProbabilisticScoringParameters?
 
-					public init(cType: LDKProbabilisticScoringParameters) {
+					internal init(cType: LDKProbabilisticScoringParameters) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -41,7 +41,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKProbabilisticScoringParameters, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKProbabilisticScoringParameters, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

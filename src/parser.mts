@@ -998,4 +998,3 @@ interface ObjectLine {
 	comments: string,
 	code: string
 }
-

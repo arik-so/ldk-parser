@@ -19,7 +19,7 @@
 
 					internal var cType: LDKNetAddress?
 
-					public init(cType: LDKNetAddress) {
+					internal init(cType: LDKNetAddress) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKNetAddress, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKNetAddress, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -406,7 +406,7 @@
 
 						internal var cType: LDKNetAddress_LDKIPv4_Body?
 
-						fileprivate init(cType: LDKNetAddress_LDKIPv4_Body) {
+						internal init(cType: LDKNetAddress_LDKIPv4_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -414,7 +414,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKNetAddress_LDKIPv4_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKNetAddress_LDKIPv4_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -472,7 +472,7 @@
 
 						internal var cType: LDKNetAddress_LDKIPv6_Body?
 
-						fileprivate init(cType: LDKNetAddress_LDKIPv6_Body) {
+						internal init(cType: LDKNetAddress_LDKIPv6_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -480,7 +480,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKNetAddress_LDKIPv6_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKNetAddress_LDKIPv6_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -538,7 +538,7 @@
 
 						internal var cType: LDKNetAddress_LDKOnionV3_Body?
 
-						fileprivate init(cType: LDKNetAddress_LDKOnionV3_Body) {
+						internal init(cType: LDKNetAddress_LDKOnionV3_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -546,7 +546,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKNetAddress_LDKOnionV3_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKNetAddress_LDKOnionV3_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -620,7 +620,7 @@
 
 						internal var cType: LDKNetAddress_LDKHostname_Body?
 
-						fileprivate init(cType: LDKNetAddress_LDKHostname_Body) {
+						internal init(cType: LDKNetAddress_LDKHostname_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -628,7 +628,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKNetAddress_LDKHostname_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKNetAddress_LDKHostname_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

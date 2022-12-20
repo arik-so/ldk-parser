@@ -33,7 +33,7 @@
 
 					internal var cType: LDKReplyChannelRange?
 
-					public init(cType: LDKReplyChannelRange) {
+					internal init(cType: LDKReplyChannelRange) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -41,7 +41,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKReplyChannelRange, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKReplyChannelRange, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

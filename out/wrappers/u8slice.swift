@@ -23,7 +23,7 @@
 
 					internal var cType: LDKu8slice?
 
-					public init(cType: LDKu8slice) {
+					internal init(cType: LDKu8slice) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -31,7 +31,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKu8slice, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKu8slice, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

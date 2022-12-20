@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_HolderCommitmentTransactionDecodeErrorZ?
 
-					public init(cType: LDKCResult_HolderCommitmentTransactionDecodeErrorZ) {
+					internal init(cType: LDKCResult_HolderCommitmentTransactionDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_HolderCommitmentTransactionDecodeErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_HolderCommitmentTransactionDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

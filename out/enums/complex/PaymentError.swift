@@ -19,7 +19,7 @@
 
 					internal var cType: LDKPaymentError?
 
-					public init(cType: LDKPaymentError) {
+					internal init(cType: LDKPaymentError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKPaymentError, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKPaymentError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

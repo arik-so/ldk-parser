@@ -19,7 +19,7 @@
 
 					internal var cType: LDKBech32Error?
 
-					public init(cType: LDKBech32Error) {
+					internal init(cType: LDKBech32Error) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKBech32Error, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKBech32Error, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

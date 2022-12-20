@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_InvoiceFeaturesDecodeErrorZ?
 
-					public init(cType: LDKCResult_InvoiceFeaturesDecodeErrorZ) {
+					internal init(cType: LDKCResult_InvoiceFeaturesDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_InvoiceFeaturesDecodeErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_InvoiceFeaturesDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

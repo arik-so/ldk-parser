@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_COption_NetworkUpdateZDecodeErrorZ?
 
-					public init(cType: LDKCResult_COption_NetworkUpdateZDecodeErrorZ) {
+					internal init(cType: LDKCResult_COption_NetworkUpdateZDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_COption_NetworkUpdateZDecodeErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_COption_NetworkUpdateZDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

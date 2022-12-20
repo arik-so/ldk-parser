@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_u32GraphSyncErrorZ?
 
-					public init(cType: LDKCResult_u32GraphSyncErrorZ) {
+					internal init(cType: LDKCResult_u32GraphSyncErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_u32GraphSyncErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_u32GraphSyncErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

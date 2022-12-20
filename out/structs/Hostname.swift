@@ -29,7 +29,7 @@
 
 					internal var cType: LDKHostname?
 
-					public init(cType: LDKHostname) {
+					internal init(cType: LDKHostname) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -37,7 +37,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKHostname, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKHostname, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

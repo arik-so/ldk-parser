@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ?
 
-					public init(cType: LDKCResult_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ) {
+					internal init(cType: LDKCResult_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

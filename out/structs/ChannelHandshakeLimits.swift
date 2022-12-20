@@ -41,7 +41,7 @@
 
 					internal var cType: LDKChannelHandshakeLimits?
 
-					public init(cType: LDKChannelHandshakeLimits) {
+					internal init(cType: LDKChannelHandshakeLimits) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -49,7 +49,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKChannelHandshakeLimits, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKChannelHandshakeLimits, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

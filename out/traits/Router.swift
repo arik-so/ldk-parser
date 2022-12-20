@@ -20,7 +20,7 @@
 
 					internal var cType: LDKRouter?
 
-					public init(cType: LDKRouter) {
+					internal init(cType: LDKRouter) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -28,7 +28,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKRouter, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKRouter, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

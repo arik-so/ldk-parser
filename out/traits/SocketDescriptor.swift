@@ -42,7 +42,7 @@
 
 					internal var cType: LDKSocketDescriptor?
 
-					public init(cType: LDKSocketDescriptor) {
+					internal init(cType: LDKSocketDescriptor) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -50,7 +50,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKSocketDescriptor, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKSocketDescriptor, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

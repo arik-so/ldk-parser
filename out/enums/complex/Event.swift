@@ -23,7 +23,7 @@
 
 					internal var cType: LDKEvent?
 
-					public init(cType: LDKEvent) {
+					internal init(cType: LDKEvent) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -31,7 +31,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKEvent, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKEvent, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -965,7 +965,7 @@
 
 						internal var cType: LDKEvent_LDKFundingGenerationReady_Body?
 
-						fileprivate init(cType: LDKEvent_LDKFundingGenerationReady_Body) {
+						internal init(cType: LDKEvent_LDKFundingGenerationReady_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -973,7 +973,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKFundingGenerationReady_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKFundingGenerationReady_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1064,7 +1064,7 @@
 
 						internal var cType: LDKEvent_LDKPaymentReceived_Body?
 
-						fileprivate init(cType: LDKEvent_LDKPaymentReceived_Body) {
+						internal init(cType: LDKEvent_LDKPaymentReceived_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1072,7 +1072,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKPaymentReceived_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKPaymentReceived_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1140,7 +1140,7 @@
 
 						internal var cType: LDKEvent_LDKPaymentClaimed_Body?
 
-						fileprivate init(cType: LDKEvent_LDKPaymentClaimed_Body) {
+						internal init(cType: LDKEvent_LDKPaymentClaimed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1148,7 +1148,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKPaymentClaimed_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKPaymentClaimed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1216,7 +1216,7 @@
 
 						internal var cType: LDKEvent_LDKPaymentSent_Body?
 
-						fileprivate init(cType: LDKEvent_LDKPaymentSent_Body) {
+						internal init(cType: LDKEvent_LDKPaymentSent_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1224,7 +1224,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKPaymentSent_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKPaymentSent_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1316,7 +1316,7 @@
 
 						internal var cType: LDKEvent_LDKPaymentFailed_Body?
 
-						fileprivate init(cType: LDKEvent_LDKPaymentFailed_Body) {
+						internal init(cType: LDKEvent_LDKPaymentFailed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1324,7 +1324,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKPaymentFailed_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKPaymentFailed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1389,7 +1389,7 @@
 
 						internal var cType: LDKEvent_LDKPaymentPathSuccessful_Body?
 
-						fileprivate init(cType: LDKEvent_LDKPaymentPathSuccessful_Body) {
+						internal init(cType: LDKEvent_LDKPaymentPathSuccessful_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1397,7 +1397,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKPaymentPathSuccessful_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKPaymentPathSuccessful_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1473,7 +1473,7 @@
 
 						internal var cType: LDKEvent_LDKPaymentPathFailed_Body?
 
-						fileprivate init(cType: LDKEvent_LDKPaymentPathFailed_Body) {
+						internal init(cType: LDKEvent_LDKPaymentPathFailed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1481,7 +1481,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKPaymentPathFailed_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKPaymentPathFailed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1634,7 +1634,7 @@
 
 						internal var cType: LDKEvent_LDKProbeSuccessful_Body?
 
-						fileprivate init(cType: LDKEvent_LDKProbeSuccessful_Body) {
+						internal init(cType: LDKEvent_LDKProbeSuccessful_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1642,7 +1642,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKProbeSuccessful_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKProbeSuccessful_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1712,7 +1712,7 @@
 
 						internal var cType: LDKEvent_LDKProbeFailed_Body?
 
-						fileprivate init(cType: LDKEvent_LDKProbeFailed_Body) {
+						internal init(cType: LDKEvent_LDKProbeFailed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1720,7 +1720,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKProbeFailed_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKProbeFailed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1802,7 +1802,7 @@
 
 						internal var cType: LDKEvent_LDKPendingHTLCsForwardable_Body?
 
-						fileprivate init(cType: LDKEvent_LDKPendingHTLCsForwardable_Body) {
+						internal init(cType: LDKEvent_LDKPendingHTLCsForwardable_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1810,7 +1810,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKPendingHTLCsForwardable_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKPendingHTLCsForwardable_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1863,7 +1863,7 @@
 
 						internal var cType: LDKEvent_LDKSpendableOutputs_Body?
 
-						fileprivate init(cType: LDKEvent_LDKSpendableOutputs_Body) {
+						internal init(cType: LDKEvent_LDKSpendableOutputs_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1871,7 +1871,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKSpendableOutputs_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKSpendableOutputs_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1921,7 +1921,7 @@
 
 						internal var cType: LDKEvent_LDKPaymentForwarded_Body?
 
-						fileprivate init(cType: LDKEvent_LDKPaymentForwarded_Body) {
+						internal init(cType: LDKEvent_LDKPaymentForwarded_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1929,7 +1929,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKPaymentForwarded_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKPaymentForwarded_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2022,7 +2022,7 @@
 
 						internal var cType: LDKEvent_LDKChannelClosed_Body?
 
-						fileprivate init(cType: LDKEvent_LDKChannelClosed_Body) {
+						internal init(cType: LDKEvent_LDKChannelClosed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2030,7 +2030,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKChannelClosed_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKChannelClosed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2105,7 +2105,7 @@
 
 						internal var cType: LDKEvent_LDKDiscardFunding_Body?
 
-						fileprivate init(cType: LDKEvent_LDKDiscardFunding_Body) {
+						internal init(cType: LDKEvent_LDKDiscardFunding_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2113,7 +2113,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKDiscardFunding_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKDiscardFunding_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2171,7 +2171,7 @@
 
 						internal var cType: LDKEvent_LDKOpenChannelRequest_Body?
 
-						fileprivate init(cType: LDKEvent_LDKOpenChannelRequest_Body) {
+						internal init(cType: LDKEvent_LDKOpenChannelRequest_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2179,7 +2179,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKOpenChannelRequest_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKOpenChannelRequest_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2290,7 +2290,7 @@
 
 						internal var cType: LDKEvent_LDKHTLCHandlingFailed_Body?
 
-						fileprivate init(cType: LDKEvent_LDKHTLCHandlingFailed_Body) {
+						internal init(cType: LDKEvent_LDKHTLCHandlingFailed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2298,7 +2298,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEvent_LDKHTLCHandlingFailed_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKHTLCHandlingFailed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

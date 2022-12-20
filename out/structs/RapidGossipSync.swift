@@ -29,7 +29,7 @@
 
 					internal var cType: LDKRapidGossipSync?
 
-					public init(cType: LDKRapidGossipSync) {
+					internal init(cType: LDKRapidGossipSync) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -37,7 +37,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKRapidGossipSync, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKRapidGossipSync, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

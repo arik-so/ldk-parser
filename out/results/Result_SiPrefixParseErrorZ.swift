@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_SiPrefixParseErrorZ?
 
-					public init(cType: LDKCResult_SiPrefixParseErrorZ) {
+					internal init(cType: LDKCResult_SiPrefixParseErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_SiPrefixParseErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_SiPrefixParseErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_SecretKeyNoneZ?
 
-					public init(cType: LDKCResult_SecretKeyNoneZ) {
+					internal init(cType: LDKCResult_SecretKeyNoneZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_SecretKeyNoneZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_SecretKeyNoneZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

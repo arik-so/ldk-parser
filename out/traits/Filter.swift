@@ -58,7 +58,7 @@
 
 					internal var cType: LDKFilter?
 
-					public init(cType: LDKFilter) {
+					internal init(cType: LDKFilter) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -66,7 +66,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKFilter, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKFilter, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

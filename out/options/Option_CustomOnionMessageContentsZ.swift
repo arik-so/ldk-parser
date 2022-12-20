@@ -17,7 +17,7 @@
 
 					internal var cType: LDKCOption_CustomOnionMessageContentsZ?
 
-					public init(cType: LDKCOption_CustomOnionMessageContentsZ) {
+					internal init(cType: LDKCOption_CustomOnionMessageContentsZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -25,7 +25,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCOption_CustomOnionMessageContentsZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCOption_CustomOnionMessageContentsZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

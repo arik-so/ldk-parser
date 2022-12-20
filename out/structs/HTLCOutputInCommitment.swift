@@ -21,7 +21,7 @@
 
 					internal var cType: LDKHTLCOutputInCommitment?
 
-					public init(cType: LDKHTLCOutputInCommitment) {
+					internal init(cType: LDKHTLCOutputInCommitment) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKHTLCOutputInCommitment, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKHTLCOutputInCommitment, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

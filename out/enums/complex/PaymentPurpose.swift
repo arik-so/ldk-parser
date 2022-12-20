@@ -20,7 +20,7 @@
 
 					internal var cType: LDKPaymentPurpose?
 
-					public init(cType: LDKPaymentPurpose) {
+					internal init(cType: LDKPaymentPurpose) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -28,7 +28,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKPaymentPurpose, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKPaymentPurpose, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -271,7 +271,7 @@
 
 						internal var cType: LDKPaymentPurpose_LDKInvoicePayment_Body?
 
-						fileprivate init(cType: LDKPaymentPurpose_LDKInvoicePayment_Body) {
+						internal init(cType: LDKPaymentPurpose_LDKInvoicePayment_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -279,7 +279,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKPaymentPurpose_LDKInvoicePayment_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKPaymentPurpose_LDKInvoicePayment_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

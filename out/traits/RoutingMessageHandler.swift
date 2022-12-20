@@ -32,7 +32,7 @@
 
 					internal var cType: LDKRoutingMessageHandler?
 
-					public init(cType: LDKRoutingMessageHandler) {
+					internal init(cType: LDKRoutingMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -40,7 +40,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKRoutingMessageHandler, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKRoutingMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

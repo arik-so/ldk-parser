@@ -19,7 +19,7 @@
 
 					internal var cType: LDKCVec_UpdateFailMalformedHTLCZ?
 
-					public init(cType: LDKCVec_UpdateFailMalformedHTLCZ) {
+					internal init(cType: LDKCVec_UpdateFailMalformedHTLCZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCVec_UpdateFailMalformedHTLCZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_UpdateFailMalformedHTLCZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

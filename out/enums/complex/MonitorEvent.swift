@@ -19,7 +19,7 @@
 
 					internal var cType: LDKMonitorEvent?
 
-					public init(cType: LDKMonitorEvent) {
+					internal init(cType: LDKMonitorEvent) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKMonitorEvent, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKMonitorEvent, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -354,7 +354,7 @@
 
 						internal var cType: LDKMonitorEvent_LDKCompleted_Body?
 
-						fileprivate init(cType: LDKMonitorEvent_LDKCompleted_Body) {
+						internal init(cType: LDKMonitorEvent_LDKCompleted_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -362,7 +362,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMonitorEvent_LDKCompleted_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMonitorEvent_LDKCompleted_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

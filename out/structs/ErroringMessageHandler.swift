@@ -23,7 +23,7 @@
 
 					internal var cType: LDKErroringMessageHandler?
 
-					public init(cType: LDKErroringMessageHandler) {
+					internal init(cType: LDKErroringMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -31,7 +31,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKErroringMessageHandler, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKErroringMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
