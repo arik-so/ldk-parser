@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCounterpartyForwardingInfo?
 
-					public init(cType: LDKCounterpartyForwardingInfo) {
+					internal init(cType: LDKCounterpartyForwardingInfo) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCounterpartyForwardingInfo, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCounterpartyForwardingInfo, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

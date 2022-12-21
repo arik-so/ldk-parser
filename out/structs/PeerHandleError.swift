@@ -25,7 +25,7 @@
 
 					internal var cType: LDKPeerHandleError?
 
-					public init(cType: LDKPeerHandleError) {
+					internal init(cType: LDKPeerHandleError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -33,7 +33,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKPeerHandleError, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKPeerHandleError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

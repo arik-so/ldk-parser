@@ -22,7 +22,7 @@
 
 					internal var cType: LDKEffectiveCapacity?
 
-					public init(cType: LDKEffectiveCapacity) {
+					internal init(cType: LDKEffectiveCapacity) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -30,7 +30,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKEffectiveCapacity, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKEffectiveCapacity, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -321,7 +321,7 @@
 
 						internal var cType: LDKEffectiveCapacity_LDKExactLiquidity_Body?
 
-						fileprivate init(cType: LDKEffectiveCapacity_LDKExactLiquidity_Body) {
+						internal init(cType: LDKEffectiveCapacity_LDKExactLiquidity_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -329,7 +329,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEffectiveCapacity_LDKExactLiquidity_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEffectiveCapacity_LDKExactLiquidity_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -380,7 +380,7 @@
 
 						internal var cType: LDKEffectiveCapacity_LDKMaximumHTLC_Body?
 
-						fileprivate init(cType: LDKEffectiveCapacity_LDKMaximumHTLC_Body) {
+						internal init(cType: LDKEffectiveCapacity_LDKMaximumHTLC_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -388,7 +388,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEffectiveCapacity_LDKMaximumHTLC_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEffectiveCapacity_LDKMaximumHTLC_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -438,7 +438,7 @@
 
 						internal var cType: LDKEffectiveCapacity_LDKTotal_Body?
 
-						fileprivate init(cType: LDKEffectiveCapacity_LDKTotal_Body) {
+						internal init(cType: LDKEffectiveCapacity_LDKTotal_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -446,7 +446,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKEffectiveCapacity_LDKTotal_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEffectiveCapacity_LDKTotal_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

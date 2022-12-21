@@ -19,7 +19,7 @@
 
 					internal var cType: LDKCVec_C2Tuple_usizeTransactionZZ?
 
-					public init(cType: LDKCVec_C2Tuple_usizeTransactionZZ) {
+					internal init(cType: LDKCVec_C2Tuple_usizeTransactionZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCVec_C2Tuple_usizeTransactionZZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_C2Tuple_usizeTransactionZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

@@ -21,7 +21,7 @@
 
 					internal var cType: LDKRouteHintHop?
 
-					public init(cType: LDKRouteHintHop) {
+					internal init(cType: LDKRouteHintHop) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKRouteHintHop, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKRouteHintHop, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

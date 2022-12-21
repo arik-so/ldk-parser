@@ -19,7 +19,7 @@
 
 					internal var cType: LDKClosureReason?
 
-					public init(cType: LDKClosureReason) {
+					internal init(cType: LDKClosureReason) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKClosureReason, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKClosureReason, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -463,7 +463,7 @@
 
 						internal var cType: LDKClosureReason_LDKCounterpartyForceClosed_Body?
 
-						fileprivate init(cType: LDKClosureReason_LDKCounterpartyForceClosed_Body) {
+						internal init(cType: LDKClosureReason_LDKCounterpartyForceClosed_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -471,7 +471,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKClosureReason_LDKCounterpartyForceClosed_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKClosureReason_LDKCounterpartyForceClosed_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -525,7 +525,7 @@
 
 						internal var cType: LDKClosureReason_LDKProcessingError_Body?
 
-						fileprivate init(cType: LDKClosureReason_LDKProcessingError_Body) {
+						internal init(cType: LDKClosureReason_LDKProcessingError_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -533,7 +533,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKClosureReason_LDKProcessingError_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKClosureReason_LDKProcessingError_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

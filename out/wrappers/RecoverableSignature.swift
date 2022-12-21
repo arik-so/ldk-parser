@@ -23,7 +23,7 @@
 
 					internal var cType: LDKRecoverableSignature?
 
-					public init(cType: LDKRecoverableSignature) {
+					internal init(cType: LDKRecoverableSignature) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -31,7 +31,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKRecoverableSignature, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKRecoverableSignature, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

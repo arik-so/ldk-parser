@@ -19,7 +19,7 @@
 
 					internal var cType: LDKCVec_CVec_RouteHopZZ?
 
-					public init(cType: LDKCVec_CVec_RouteHopZZ) {
+					internal init(cType: LDKCVec_CVec_RouteHopZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCVec_CVec_RouteHopZZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_CVec_RouteHopZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

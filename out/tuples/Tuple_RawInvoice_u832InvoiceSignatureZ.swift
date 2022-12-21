@@ -17,7 +17,7 @@
 
 					internal var cType: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ?
 
-					public init(cType: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ) {
+					internal init(cType: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -25,7 +25,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKC3Tuple_RawInvoice_u832InvoiceSignatureZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

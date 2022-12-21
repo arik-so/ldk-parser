@@ -82,7 +82,7 @@
 
 					internal var cType: LDKConfirm?
 
-					public init(cType: LDKConfirm) {
+					internal init(cType: LDKConfirm) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -90,7 +90,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKConfirm, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKConfirm, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

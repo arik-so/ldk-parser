@@ -17,7 +17,7 @@
 
 					internal var cType: LDKCOption_EventZ?
 
-					public init(cType: LDKCOption_EventZ) {
+					internal init(cType: LDKCOption_EventZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -25,7 +25,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCOption_EventZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCOption_EventZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

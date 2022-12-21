@@ -21,7 +21,7 @@
 
 					internal var cType: LDKRawDataPart?
 
-					public init(cType: LDKRawDataPart) {
+					internal init(cType: LDKRawDataPart) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKRawDataPart, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKRawDataPart, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

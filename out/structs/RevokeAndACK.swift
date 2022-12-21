@@ -21,7 +21,7 @@
 
 					internal var cType: LDKRevokeAndACK?
 
-					public init(cType: LDKRevokeAndACK) {
+					internal init(cType: LDKRevokeAndACK) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKRevokeAndACK, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKRevokeAndACK, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

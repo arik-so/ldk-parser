@@ -35,7 +35,7 @@
 
 					internal var cType: LDKP2PGossipSync?
 
-					public init(cType: LDKP2PGossipSync) {
+					internal init(cType: LDKP2PGossipSync) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -43,7 +43,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKP2PGossipSync, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKP2PGossipSync, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

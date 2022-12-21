@@ -23,7 +23,7 @@
 
 					internal var cType: LDKBlindedHop?
 
-					public init(cType: LDKBlindedHop) {
+					internal init(cType: LDKBlindedHop) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -31,7 +31,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKBlindedHop, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKBlindedHop, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

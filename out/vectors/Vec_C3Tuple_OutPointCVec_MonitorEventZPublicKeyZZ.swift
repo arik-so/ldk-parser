@@ -19,7 +19,7 @@
 
 					internal var cType: LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ?
 
-					public init(cType: LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ) {
+					internal init(cType: LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_C3Tuple_OutPointCVec_MonitorEventZPublicKeyZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

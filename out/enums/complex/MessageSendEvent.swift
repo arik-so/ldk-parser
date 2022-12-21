@@ -21,7 +21,7 @@
 
 					internal var cType: LDKMessageSendEvent?
 
-					public init(cType: LDKMessageSendEvent) {
+					internal init(cType: LDKMessageSendEvent) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKMessageSendEvent, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKMessageSendEvent, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -911,7 +911,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendAcceptChannel_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendAcceptChannel_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendAcceptChannel_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -919,7 +919,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendAcceptChannel_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendAcceptChannel_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -977,7 +977,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendOpenChannel_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendOpenChannel_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendOpenChannel_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -985,7 +985,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendOpenChannel_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendOpenChannel_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1043,7 +1043,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendFundingCreated_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendFundingCreated_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendFundingCreated_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1051,7 +1051,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendFundingCreated_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendFundingCreated_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1109,7 +1109,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendFundingSigned_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendFundingSigned_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendFundingSigned_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1117,7 +1117,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendFundingSigned_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendFundingSigned_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1175,7 +1175,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendChannelReady_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelReady_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendChannelReady_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1183,7 +1183,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelReady_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendChannelReady_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1241,7 +1241,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendAnnouncementSignatures_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendAnnouncementSignatures_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendAnnouncementSignatures_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1249,7 +1249,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendAnnouncementSignatures_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendAnnouncementSignatures_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1307,7 +1307,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKUpdateHTLCs_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKUpdateHTLCs_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKUpdateHTLCs_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1315,7 +1315,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKUpdateHTLCs_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKUpdateHTLCs_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1373,7 +1373,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendRevokeAndACK_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendRevokeAndACK_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendRevokeAndACK_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1381,7 +1381,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendRevokeAndACK_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendRevokeAndACK_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1439,7 +1439,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendClosingSigned_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendClosingSigned_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendClosingSigned_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1447,7 +1447,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendClosingSigned_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendClosingSigned_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1505,7 +1505,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendShutdown_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendShutdown_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendShutdown_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1513,7 +1513,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendShutdown_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendShutdown_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1571,7 +1571,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendChannelReestablish_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelReestablish_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendChannelReestablish_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1579,7 +1579,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelReestablish_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendChannelReestablish_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1637,7 +1637,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendChannelAnnouncement_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelAnnouncement_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendChannelAnnouncement_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1645,7 +1645,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelAnnouncement_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendChannelAnnouncement_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1711,7 +1711,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKBroadcastChannelAnnouncement_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKBroadcastChannelAnnouncement_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKBroadcastChannelAnnouncement_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1719,7 +1719,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKBroadcastChannelAnnouncement_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKBroadcastChannelAnnouncement_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1777,7 +1777,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKBroadcastChannelUpdate_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKBroadcastChannelUpdate_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKBroadcastChannelUpdate_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1785,7 +1785,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKBroadcastChannelUpdate_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKBroadcastChannelUpdate_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1835,7 +1835,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendChannelUpdate_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelUpdate_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendChannelUpdate_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1843,7 +1843,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelUpdate_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendChannelUpdate_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1901,7 +1901,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKHandleError_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKHandleError_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKHandleError_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1909,7 +1909,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKHandleError_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKHandleError_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1967,7 +1967,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendChannelRangeQuery_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelRangeQuery_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendChannelRangeQuery_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1975,7 +1975,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendChannelRangeQuery_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendChannelRangeQuery_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2033,7 +2033,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendShortIdsQuery_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendShortIdsQuery_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendShortIdsQuery_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2041,7 +2041,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendShortIdsQuery_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendShortIdsQuery_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2099,7 +2099,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendReplyChannelRange_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendReplyChannelRange_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendReplyChannelRange_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2107,7 +2107,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendReplyChannelRange_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendReplyChannelRange_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2165,7 +2165,7 @@
 
 						internal var cType: LDKMessageSendEvent_LDKSendGossipTimestampFilter_Body?
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendGossipTimestampFilter_Body) {
+						internal init(cType: LDKMessageSendEvent_LDKSendGossipTimestampFilter_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -2173,7 +2173,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKMessageSendEvent_LDKSendGossipTimestampFilter_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKMessageSendEvent_LDKSendGossipTimestampFilter_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

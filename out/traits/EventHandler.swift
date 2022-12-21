@@ -20,7 +20,7 @@
 
 					internal var cType: LDKEventHandler?
 
-					public init(cType: LDKEventHandler) {
+					internal init(cType: LDKEventHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -28,7 +28,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKEventHandler, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKEventHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

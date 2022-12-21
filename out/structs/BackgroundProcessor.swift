@@ -69,7 +69,7 @@
 
 					internal var cType: LDKBackgroundProcessor?
 
-					public init(cType: LDKBackgroundProcessor) {
+					internal init(cType: LDKBackgroundProcessor) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -77,7 +77,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKBackgroundProcessor, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKBackgroundProcessor, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

@@ -27,7 +27,7 @@
 
 					internal var cType: LDKInMemorySigner?
 
-					public init(cType: LDKInMemorySigner) {
+					internal init(cType: LDKInMemorySigner) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -35,7 +35,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKInMemorySigner, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKInMemorySigner, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

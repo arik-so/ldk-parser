@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_RouteLightningErrorZ?
 
-					public init(cType: LDKCResult_RouteLightningErrorZ) {
+					internal init(cType: LDKCResult_RouteLightningErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_RouteLightningErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_RouteLightningErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

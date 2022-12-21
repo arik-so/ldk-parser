@@ -17,7 +17,7 @@
 
 					internal var cType: LDKCOption_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ?
 
-					public init(cType: LDKCOption_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ) {
+					internal init(cType: LDKCOption_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -25,7 +25,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCOption_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCOption_C3Tuple_ChannelAnnouncementChannelUpdateChannelUpdateZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

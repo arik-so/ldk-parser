@@ -163,7 +163,7 @@
 
 					internal var cType: LDKOnionMessenger?
 
-					public init(cType: LDKOnionMessenger) {
+					internal init(cType: LDKOnionMessenger) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -171,7 +171,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKOnionMessenger, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKOnionMessenger, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

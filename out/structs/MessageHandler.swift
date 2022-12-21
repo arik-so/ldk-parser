@@ -21,7 +21,7 @@
 
 					internal var cType: LDKMessageHandler?
 
-					public init(cType: LDKMessageHandler) {
+					internal init(cType: LDKMessageHandler) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKMessageHandler, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKMessageHandler, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

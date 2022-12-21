@@ -19,7 +19,7 @@
 
 					internal var cType: LDKFallback?
 
-					public init(cType: LDKFallback) {
+					internal init(cType: LDKFallback) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKFallback, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKFallback, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -310,7 +310,7 @@
 
 						internal var cType: LDKFallback_LDKSegWitProgram_Body?
 
-						fileprivate init(cType: LDKFallback_LDKSegWitProgram_Body) {
+						internal init(cType: LDKFallback_LDKSegWitProgram_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -318,7 +318,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKFallback_LDKSegWitProgram_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKFallback_LDKSegWitProgram_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

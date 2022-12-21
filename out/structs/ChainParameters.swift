@@ -29,7 +29,7 @@
 
 					internal var cType: LDKChainParameters?
 
-					public init(cType: LDKChainParameters) {
+					internal init(cType: LDKChainParameters) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -37,7 +37,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKChainParameters, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKChainParameters, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

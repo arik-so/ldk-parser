@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_PhantomRouteHintsDecodeErrorZ?
 
-					public init(cType: LDKCResult_PhantomRouteHintsDecodeErrorZ) {
+					internal init(cType: LDKCResult_PhantomRouteHintsDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_PhantomRouteHintsDecodeErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_PhantomRouteHintsDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

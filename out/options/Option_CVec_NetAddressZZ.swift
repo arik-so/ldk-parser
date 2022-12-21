@@ -17,7 +17,7 @@
 
 					internal var cType: LDKCOption_CVec_NetAddressZZ?
 
-					public init(cType: LDKCOption_CVec_NetAddressZZ) {
+					internal init(cType: LDKCOption_CVec_NetAddressZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -25,7 +25,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCOption_CVec_NetAddressZZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCOption_CVec_NetAddressZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

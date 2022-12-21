@@ -22,7 +22,7 @@
 
 					internal var cType: LDKAccess?
 
-					public init(cType: LDKAccess) {
+					internal init(cType: LDKAccess) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -30,7 +30,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKAccess, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKAccess, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

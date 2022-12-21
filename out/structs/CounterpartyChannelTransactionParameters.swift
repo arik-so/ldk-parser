@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCounterpartyChannelTransactionParameters?
 
-					public init(cType: LDKCounterpartyChannelTransactionParameters) {
+					internal init(cType: LDKCounterpartyChannelTransactionParameters) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCounterpartyChannelTransactionParameters, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCounterpartyChannelTransactionParameters, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

@@ -19,7 +19,7 @@
 
 					internal var cType: LDKCVec_C2Tuple_u32ScriptZZ?
 
-					public init(cType: LDKCVec_C2Tuple_u32ScriptZZ) {
+					internal init(cType: LDKCVec_C2Tuple_u32ScriptZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCVec_C2Tuple_u32ScriptZZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_C2Tuple_u32ScriptZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

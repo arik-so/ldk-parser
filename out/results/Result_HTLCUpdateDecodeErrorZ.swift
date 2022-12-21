@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_HTLCUpdateDecodeErrorZ?
 
-					public init(cType: LDKCResult_HTLCUpdateDecodeErrorZ) {
+					internal init(cType: LDKCResult_HTLCUpdateDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_HTLCUpdateDecodeErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_HTLCUpdateDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

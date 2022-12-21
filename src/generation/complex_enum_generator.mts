@@ -158,5 +158,4 @@ export default class ComplexEnumGenerator extends BaseTypeGenerator<RustTaggedVa
 	outputDirectorySuffix(): string {
 		return 'enums/complex';
 	}
-
 }

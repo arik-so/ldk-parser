@@ -21,7 +21,7 @@
 
 					internal var cType: LDKSha256?
 
-					public init(cType: LDKSha256) {
+					internal init(cType: LDKSha256) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKSha256, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKSha256, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

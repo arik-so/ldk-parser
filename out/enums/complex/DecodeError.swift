@@ -19,7 +19,7 @@
 
 					internal var cType: LDKDecodeError?
 
-					public init(cType: LDKDecodeError) {
+					internal init(cType: LDKDecodeError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKDecodeError, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKDecodeError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

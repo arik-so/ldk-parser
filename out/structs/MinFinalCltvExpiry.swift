@@ -21,7 +21,7 @@
 
 					internal var cType: LDKMinFinalCltvExpiry?
 
-					public init(cType: LDKMinFinalCltvExpiry) {
+					internal init(cType: LDKMinFinalCltvExpiry) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKMinFinalCltvExpiry, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKMinFinalCltvExpiry, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

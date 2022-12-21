@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_COption_EventZDecodeErrorZ?
 
-					public init(cType: LDKCResult_COption_EventZDecodeErrorZ) {
+					internal init(cType: LDKCResult_COption_EventZDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_COption_EventZDecodeErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_COption_EventZDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

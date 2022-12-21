@@ -22,7 +22,7 @@
 
 					internal var cType: LDKNetworkUpdate?
 
-					public init(cType: LDKNetworkUpdate) {
+					internal init(cType: LDKNetworkUpdate) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -30,7 +30,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKNetworkUpdate, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKNetworkUpdate, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -326,7 +326,7 @@
 
 						internal var cType: LDKNetworkUpdate_LDKChannelUpdateMessage_Body?
 
-						fileprivate init(cType: LDKNetworkUpdate_LDKChannelUpdateMessage_Body) {
+						internal init(cType: LDKNetworkUpdate_LDKChannelUpdateMessage_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -334,7 +334,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKNetworkUpdate_LDKChannelUpdateMessage_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKNetworkUpdate_LDKChannelUpdateMessage_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -384,7 +384,7 @@
 
 						internal var cType: LDKNetworkUpdate_LDKChannelFailure_Body?
 
-						fileprivate init(cType: LDKNetworkUpdate_LDKChannelFailure_Body) {
+						internal init(cType: LDKNetworkUpdate_LDKChannelFailure_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -392,7 +392,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKNetworkUpdate_LDKChannelFailure_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKNetworkUpdate_LDKChannelFailure_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -451,7 +451,7 @@
 
 						internal var cType: LDKNetworkUpdate_LDKNodeFailure_Body?
 
-						fileprivate init(cType: LDKNetworkUpdate_LDKNodeFailure_Body) {
+						internal init(cType: LDKNetworkUpdate_LDKNodeFailure_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -459,7 +459,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKNetworkUpdate_LDKNodeFailure_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKNetworkUpdate_LDKNodeFailure_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

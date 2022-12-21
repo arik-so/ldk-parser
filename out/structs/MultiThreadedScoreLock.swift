@@ -21,7 +21,7 @@
 
 					internal var cType: LDKMultiThreadedScoreLock?
 
-					public init(cType: LDKMultiThreadedScoreLock) {
+					internal init(cType: LDKMultiThreadedScoreLock) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKMultiThreadedScoreLock, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKMultiThreadedScoreLock, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

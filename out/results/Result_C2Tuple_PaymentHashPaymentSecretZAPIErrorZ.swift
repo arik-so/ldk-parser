@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ?
 
-					public init(cType: LDKCResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ) {
+					internal init(cType: LDKCResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_C2Tuple_PaymentHashPaymentSecretZAPIErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

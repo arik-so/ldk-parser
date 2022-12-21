@@ -20,7 +20,7 @@
 
 					internal var cType: LDKBroadcasterInterface?
 
-					public init(cType: LDKBroadcasterInterface) {
+					internal init(cType: LDKBroadcasterInterface) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -28,7 +28,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKBroadcasterInterface, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKBroadcasterInterface, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

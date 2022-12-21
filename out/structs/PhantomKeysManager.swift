@@ -49,7 +49,7 @@
 
 					internal var cType: LDKPhantomKeysManager?
 
-					public init(cType: LDKPhantomKeysManager) {
+					internal init(cType: LDKPhantomKeysManager) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -57,7 +57,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKPhantomKeysManager, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKPhantomKeysManager, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

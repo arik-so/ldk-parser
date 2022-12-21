@@ -21,7 +21,7 @@
 
 					internal var cType: LDKAcceptChannel?
 
-					public init(cType: LDKAcceptChannel) {
+					internal init(cType: LDKAcceptChannel) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKAcceptChannel, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKAcceptChannel, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

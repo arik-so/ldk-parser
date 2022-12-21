@@ -31,7 +31,7 @@
 
 					internal var cType: LDKPositiveTimestamp?
 
-					public init(cType: LDKPositiveTimestamp) {
+					internal init(cType: LDKPositiveTimestamp) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -39,7 +39,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKPositiveTimestamp, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKPositiveTimestamp, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

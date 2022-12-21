@@ -31,7 +31,7 @@
 
 					internal var cType: LDKTrustedCommitmentTransaction?
 
-					public init(cType: LDKTrustedCommitmentTransaction) {
+					internal init(cType: LDKTrustedCommitmentTransaction) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -39,7 +39,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKTrustedCommitmentTransaction, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKTrustedCommitmentTransaction, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

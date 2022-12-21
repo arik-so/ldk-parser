@@ -21,7 +21,7 @@
 
 					internal var cType: LDKCResult_FundingSignedDecodeErrorZ?
 
-					public init(cType: LDKCResult_FundingSignedDecodeErrorZ) {
+					internal init(cType: LDKCResult_FundingSignedDecodeErrorZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCResult_FundingSignedDecodeErrorZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCResult_FundingSignedDecodeErrorZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

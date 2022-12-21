@@ -21,7 +21,7 @@
 
 					internal var cType: LDKPaymentSendFailure?
 
-					public init(cType: LDKPaymentSendFailure) {
+					internal init(cType: LDKPaymentSendFailure) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKPaymentSendFailure, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKPaymentSendFailure, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -313,7 +313,7 @@
 
 						internal var cType: LDKPaymentSendFailure_LDKPartialFailure_Body?
 
-						fileprivate init(cType: LDKPaymentSendFailure_LDKPartialFailure_Body) {
+						internal init(cType: LDKPaymentSendFailure_LDKPartialFailure_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -321,7 +321,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKPaymentSendFailure_LDKPartialFailure_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKPaymentSendFailure_LDKPartialFailure_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType

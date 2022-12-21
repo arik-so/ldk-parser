@@ -19,7 +19,7 @@
 
 					internal var cType: LDKCVec_MonitorEventZ?
 
-					public init(cType: LDKCVec_MonitorEventZ) {
+					internal init(cType: LDKCVec_MonitorEventZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKCVec_MonitorEventZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_MonitorEventZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType

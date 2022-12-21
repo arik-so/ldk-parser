@@ -20,7 +20,7 @@
 
 					internal var cType: LDKAPIError?
 
-					public init(cType: LDKAPIError) {
+					internal init(cType: LDKAPIError) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -28,7 +28,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					public init(cType: LDKAPIError, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKAPIError, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -400,7 +400,7 @@
 
 						internal var cType: LDKAPIError_LDKAPIMisuseError_Body?
 
-						fileprivate init(cType: LDKAPIError_LDKAPIMisuseError_Body) {
+						internal init(cType: LDKAPIError_LDKAPIMisuseError_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -408,7 +408,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKAPIError_LDKAPIMisuseError_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKAPIError_LDKAPIMisuseError_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -458,7 +458,7 @@
 
 						internal var cType: LDKAPIError_LDKFeeRateTooHigh_Body?
 
-						fileprivate init(cType: LDKAPIError_LDKFeeRateTooHigh_Body) {
+						internal init(cType: LDKAPIError_LDKFeeRateTooHigh_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -466,7 +466,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKAPIError_LDKFeeRateTooHigh_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKAPIError_LDKFeeRateTooHigh_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -524,7 +524,7 @@
 
 						internal var cType: LDKAPIError_LDKRouteError_Body?
 
-						fileprivate init(cType: LDKAPIError_LDKRouteError_Body) {
+						internal init(cType: LDKAPIError_LDKRouteError_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -532,7 +532,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKAPIError_LDKRouteError_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKAPIError_LDKRouteError_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -582,7 +582,7 @@
 
 						internal var cType: LDKAPIError_LDKChannelUnavailable_Body?
 
-						fileprivate init(cType: LDKAPIError_LDKChannelUnavailable_Body) {
+						internal init(cType: LDKAPIError_LDKChannelUnavailable_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -590,7 +590,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKAPIError_LDKChannelUnavailable_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKAPIError_LDKChannelUnavailable_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -640,7 +640,7 @@
 
 						internal var cType: LDKAPIError_LDKIncompatibleShutdownScript_Body?
 
-						fileprivate init(cType: LDKAPIError_LDKIncompatibleShutdownScript_Body) {
+						internal init(cType: LDKAPIError_LDKIncompatibleShutdownScript_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -648,7 +648,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						fileprivate init(cType: LDKAPIError_LDKIncompatibleShutdownScript_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKAPIError_LDKIncompatibleShutdownScript_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
