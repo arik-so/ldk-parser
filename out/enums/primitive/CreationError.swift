@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// Errors that may occur when constructing a new `RawInvoice` or `Invoice`
 			public typealias CreationError = Bindings.CreationError
 
@@ -46,9 +48,13 @@
 							case LDKCreationError_InvalidAmount:
 								self = .InvalidAmount
 			
-							default:
+							case LDKCreationError_MissingRouteHints:
 								self = .MissingRouteHints
 			
+							default:
+								Bindings.print("Error: Invalid value type for CreationError! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 

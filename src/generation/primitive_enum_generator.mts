@@ -32,22 +32,26 @@ export default class PrimitiveEnumGenerator extends BaseTypeGenerator<RustPrimit
 								return ${currentVariant.name}
 			`;
 
-			let swiftCase = `case ${currentVariant.name}`;
-			if (isLast) {
-				swiftCase = 'default';
-			}
 			swiftValueInitializer += `
-							${swiftCase}:
+							case ${currentVariant.name}:
 								self = .${currentVariantSwiftName}
 			`;
 
 			lastSwiftVariantName = currentVariantSwiftName;
 		}
 
+		swiftValueInitializer += `
+							default:
+								Bindings.print("Error: Invalid value type for ${swiftTypeName}! Aborting.", severity: .ERROR)
+								abort()
+				`;
+
 		return `
 			#if SWIFT_PACKAGE
 			import LDKHeaders
 			#endif
+
+			import Foundation
 
 			${this.renderDocComment(type.documentation, 3)}
 			public typealias ${swiftTypeName} = Bindings.${swiftTypeName}

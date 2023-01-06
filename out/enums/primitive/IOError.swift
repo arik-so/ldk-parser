@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// Represents an IO Error. Note that some information is lost in the conversion from Rust.
 			public typealias IOError = Bindings.IOError
 
@@ -121,9 +123,13 @@
 							case LDKIOError_Other:
 								self = .Other
 			
-							default:
+							case LDKIOError_UnexpectedEof:
 								self = .UnexpectedEof
 			
+							default:
+								Bindings.print("Error: Invalid value type for IOError! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 

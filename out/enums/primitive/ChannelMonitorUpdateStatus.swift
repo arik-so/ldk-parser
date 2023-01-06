@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// An enum representing the status of a channel monitor update persistence.
 			public typealias ChannelMonitorUpdateStatus = Bindings.ChannelMonitorUpdateStatus
 
@@ -98,9 +100,13 @@
 							case LDKChannelMonitorUpdateStatus_InProgress:
 								self = .InProgress
 			
-							default:
+							case LDKChannelMonitorUpdateStatus_PermanentFailure:
 								self = .PermanentFailure
 			
+							default:
+								Bindings.print("Error: Invalid value type for ChannelMonitorUpdateStatus! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 

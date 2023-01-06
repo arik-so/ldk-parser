@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// An enum which can either contain a  or not
 			public typealias Option_NoneZ = Bindings.Option_NoneZ
 
@@ -25,9 +27,13 @@
 							case LDKCOption_NoneZ_Some:
 								self = .Some
 			
-							default:
+							case LDKCOption_NoneZ_None:
 								self = .None
 			
+							default:
+								Bindings.print("Error: Invalid value type for Option_NoneZ! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 

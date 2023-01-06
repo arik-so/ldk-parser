@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// SI prefixes for the human readable part
 			public typealias SiPrefix = Bindings.SiPrefix
 
@@ -37,9 +39,13 @@
 							case LDKSiPrefix_Nano:
 								self = .Nano
 			
-							default:
+							case LDKSiPrefix_Pico:
 								self = .Pico
 			
+							default:
+								Bindings.print("Error: Invalid value type for SiPrefix! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 
