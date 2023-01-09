@@ -9,7 +9,7 @@ on:
 jobs:
     check_bindings:
         name: Swift Package Manager Tests
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
         env:
             TOOLCHAIN: stable
         steps:
@@ -18,7 +18,7 @@ jobs:
             -   name: Install native Rust toolchain, Valgrind, and build utilities
                 run: |
                     sudo apt-get update
-                    sudo apt-get -y dist-upgrade
+                    sudo apt-get -y upgrade
                     sudo apt-get -y install cargo valgrind lld git g++ clang curl
             -   name: Install Dependencies
                 uses: ./.github/actions/install-dependencies
