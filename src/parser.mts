@@ -960,7 +960,7 @@ export default class Parser {
 		 *
 		 */
 
-		const METHOD_TYPE_ASSOCIATION_PREFIX_REGEX = /^([A-Z][a-zA-Z0-9]*)(_([A-Z_][a-zA-Z0-9]*))*(_(u5|u8|u16|u32|u64|usize|bool)[a-zA-Z0-9]+)?/;
+		const METHOD_TYPE_ASSOCIATION_PREFIX_REGEX = /^([A-Z][a-zA-Z0-9]*)(_([A-Z_][a-zA-Z0-9]*))*(_(u5|u8|u16|u32|u64|u128|usize|bool)[a-zA-Z0-9]+)?/;
 		const prefixMatches = METHOD_TYPE_ASSOCIATION_PREFIX_REGEX.exec(name);
 		if (!prefixMatches) {
 			// debug('object-unassociated method name: %s', name);
