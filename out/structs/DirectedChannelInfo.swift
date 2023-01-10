@@ -108,44 +108,6 @@
 						return returnValue
 					}
 		
-					/// Returns information for the direction.
-					/// 
-					/// Note that the return value (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public func direction() -> ChannelUpdateInfo? {
-						// native call variable prep
-						
-
-						// native method call
-						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKDirectedChannelInfo>) in
-				DirectedChannelInfo_direction(thisArgPointer)
-						}
-				
-
-						// cleanup
-						
-				// COMMENT-DEDUCED OPTIONAL INFERENCE AND HANDLING:
-				// Type group: RustStruct
-				// Type: LDKChannelUpdateInfo
-			
-					if nativeCallResult.inner == nil {
-						return nil
-					}
-
-					let pointerValue = UInt(bitPattern: nativeCallResult.inner)
-					if pointerValue == 0 {
-						return nil
-					}
-				
-
-						
-						// return value (do some wrapping)
-						let returnValue = ChannelUpdateInfo(cType: nativeCallResult, anchor: self).dangle(false)
-						
-
-						return returnValue
-					}
-		
 					/// Returns the maximum HTLC amount allowed over the channel in the direction.
 					public func htlcMaximumMsat() -> UInt64 {
 						// native call variable prep

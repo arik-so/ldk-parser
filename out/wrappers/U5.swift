@@ -6,12 +6,12 @@
 			import Foundation // necessary for Data for Strings
 
 			/// Integer in the range `0..32`
-			internal typealias u5 = Bindings.u5
+			internal typealias U5 = Bindings.U5
 
 			extension Bindings {
 
 				/// Integer in the range `0..32`
-				internal class u5: NativeTypeWrapper {
+				internal class U5: NativeTypeWrapper {
 
 					
 
@@ -19,9 +19,9 @@
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
 
-					internal var cType: LDKu5?
+					internal var cType: LDKU5?
 
-					internal init(cType: LDKu5) {
+					internal init(cType: LDKU5) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -29,7 +29,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					internal init(cType: LDKu5, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKU5, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -44,7 +44,7 @@
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 
-						self.cType = LDKu5(_0: value)
+						self.cType = LDKU5(_0: value)
 
 						super.init(conflictAvoidingVariableName: 0)
 					}
@@ -55,7 +55,7 @@
 						return self.cType!._0
 					}
 
-					internal func dangle(_ shouldDangle: Bool = true) -> u5 {
+					internal func dangle(_ shouldDangle: Bool = true) -> U5 {
         				self.dangling = shouldDangle
 						return self
 					}

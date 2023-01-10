@@ -3,23 +3,23 @@
 			import LDKHeaders
 			#endif
 
-			/// A dynamically-allocated array of crate::c_types::u5s of arbitrary size.
+			/// A dynamically-allocated array of crate::c_types::derived::C2Tuple_TxidBlockHashZs of arbitrary size.
 			/// This corresponds to std::vector in C++
-			internal typealias Vec_u5Z = Bindings.Vec_u5Z
+			internal typealias Vec_C2Tuple_TxidBlockHashZZ = Bindings.Vec_C2Tuple_TxidBlockHashZZ
 
 			extension Bindings {
 
-				/// A dynamically-allocated array of crate::c_types::u5s of arbitrary size.
+				/// A dynamically-allocated array of crate::c_types::derived::C2Tuple_TxidBlockHashZs of arbitrary size.
 				/// This corresponds to std::vector in C++
-				internal class Vec_u5Z: NativeTypeWrapper {
+				internal class Vec_C2Tuple_TxidBlockHashZZ: NativeTypeWrapper {
 
 					
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
 
-					internal var cType: LDKCVec_u5Z?
+					internal var cType: LDKCVec_C2Tuple_TxidBlockHashZZ?
 
-					internal init(cType: LDKCVec_u5Z) {
+					internal init(cType: LDKCVec_C2Tuple_TxidBlockHashZZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					internal init(cType: LDKCVec_u5Z, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_C2Tuple_TxidBlockHashZZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -38,32 +38,32 @@
 					}
 		
 
-					public init(array: [UInt8]) {
+					public init(array: [([UInt8], [UInt8])]) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: UInt8) -> LDKu5 in
+						let rustArray = array.map { (currentValueDepth1: ([UInt8], [UInt8])) -> LDKC2Tuple_TxidBlockHashZ in
 							
-						let currentValueDepth1PrimitiveWrapper = u5(value: currentValueDepth1)
+						let currentValueDepth1Tuple = Tuple_TxidBlockHashZ(tuple: currentValueDepth1).danglingClone()
 				
-							return currentValueDepth1PrimitiveWrapper.cType!
+							return currentValueDepth1Tuple.cType!
 						}
 				
 
 						
 
-						let dataContainer = UnsafeMutablePointer<LDKu5>.allocate(capacity: array.count)
+						let dataContainer = UnsafeMutablePointer<LDKC2Tuple_TxidBlockHashZ>.allocate(capacity: array.count)
 						dataContainer.initialize(from: rustArray, count: array.count)
 
-        				let vector = LDKCVec_u5Z(data: dataContainer, datalen: UInt(array.count))
+        				let vector = LDKCVec_C2Tuple_TxidBlockHashZZ(data: dataContainer, datalen: UInt(array.count))
         				self.cType = vector
 					}
 
-					public func getValue() -> [UInt8] {
+					public func getValue() -> [([UInt8], [UInt8])] {
 
-						var array = [LDKu5]()
+						var array = [LDKC2Tuple_TxidBlockHashZ]()
 
 						
 						for index1 in 0..<Int(self.cType!.datalen) {
@@ -72,8 +72,8 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKu5) -> UInt8 in
-u5(cType: currentCType).dangle().getValue()
+						let swiftArray = array.map { (currentCType: LDKC2Tuple_TxidBlockHashZ) -> ([UInt8], [UInt8]) in
+Tuple_TxidBlockHashZ(cType: currentCType).dangle().getValue()
 						}
 						return swiftArray
 					}
@@ -85,7 +85,7 @@ u5(cType: currentCType).dangle().getValue()
 						
 
 						// native method call
-						let nativeCallResult = CVec_u5Z_free(self.cType!)
+						let nativeCallResult = CVec_C2Tuple_TxidBlockHashZZ_free(self.cType!)
 
 						// cleanup
 						
@@ -99,7 +99,7 @@ u5(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle(_ shouldDangle: Bool = true) -> Vec_u5Z {
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_C2Tuple_TxidBlockHashZZ {
         				self.dangling = shouldDangle
 						return self
 					}
@@ -111,11 +111,11 @@ u5(cType: currentCType).dangle().getValue()
 						}
 
 						if !self.dangling {
-							Bindings.print("Freeing Vec_u5Z \(self.instanceNumber).")
+							Bindings.print("Freeing Vec_C2Tuple_TxidBlockHashZZ \(self.instanceNumber).")
 							
 							self.free()
 						} else {
-							Bindings.print("Not freeing Vec_u5Z \(self.instanceNumber) due to dangle.")
+							Bindings.print("Not freeing Vec_C2Tuple_TxidBlockHashZZ \(self.instanceNumber) due to dangle.")
 						}
 					}
 			

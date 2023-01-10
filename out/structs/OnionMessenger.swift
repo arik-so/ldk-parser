@@ -17,9 +17,8 @@
 			/// # use lightning::chain::keysinterface::{InMemorySigner, KeysManager, KeysInterface};
 			/// # use lightning::ln::msgs::DecodeError;
 			/// # use lightning::ln::peer_handler::IgnoringMessageHandler;
-			/// # use lightning::onion_message::messenger::{Destination, OnionMessenger};
-			/// # use lightning::onion_message::packet::CustomOnionMessageContents;
-			/// # use lightning::onion_message::blinded_route::BlindedRoute;
+			/// # use lightning::onion_message::blinded_path::BlindedPath;
+			/// # use lightning::onion_message::messenger::{CustomOnionMessageContents, Destination, OnionMessageContents, OnionMessenger};
 			/// # use lightning::util::logger::{Logger, Record};
 			/// # use lightning::util::ser::{Writeable, Writer};
 			/// # use lightning::io;
@@ -60,18 +59,20 @@
 			/// let intermediate_hops = [hop_node_id1, hop_node_id2];
 			/// let reply_path = None;
 			/// # let your_custom_message = YourCustomMessage {};
-			/// onion_messenger.send_custom_onion_message(&intermediate_hops, Destination::Node(destination_node_id), your_custom_message, reply_path);
+			/// let message = OnionMessageContents::Custom(your_custom_message);
+			/// onion_messenger.send_onion_message(&intermediate_hops, Destination::Node(destination_node_id), message, reply_path);
 			/// 
-			/// // Create a blinded route to yourself, for someone to send an onion message to.
+			/// // Create a blinded path to yourself, for someone to send an onion message to.
 			/// # let your_node_id = hop_node_id1;
 			/// let hops = [hop_node_id3, hop_node_id4, your_node_id];
-			/// let blinded_route = BlindedRoute::new(&hops, &keys_manager, &secp_ctx).unwrap();
+			/// let blinded_path = BlindedPath::new(&hops, &keys_manager, &secp_ctx).unwrap();
 			/// 
-			/// // Send a custom onion message to a blinded route.
+			/// // Send a custom onion message to a blinded path.
 			/// # let intermediate_hops = [hop_node_id1, hop_node_id2];
 			/// let reply_path = None;
 			/// # let your_custom_message = YourCustomMessage {};
-			/// onion_messenger.send_custom_onion_message(&intermediate_hops, Destination::BlindedRoute(blinded_route), your_custom_message, reply_path);
+			/// let message = OnionMessageContents::Custom(your_custom_message);
+			/// onion_messenger.send_onion_message(&intermediate_hops, Destination::BlindedPath(blinded_path), message, reply_path);
 			/// ```
 			/// 
 			/// [offers]: <https://github.com/lightning/bolts/pull/798>
@@ -94,9 +95,8 @@
 				/// # use lightning::chain::keysinterface::{InMemorySigner, KeysManager, KeysInterface};
 				/// # use lightning::ln::msgs::DecodeError;
 				/// # use lightning::ln::peer_handler::IgnoringMessageHandler;
-				/// # use lightning::onion_message::messenger::{Destination, OnionMessenger};
-				/// # use lightning::onion_message::packet::CustomOnionMessageContents;
-				/// # use lightning::onion_message::blinded_route::BlindedRoute;
+				/// # use lightning::onion_message::blinded_path::BlindedPath;
+				/// # use lightning::onion_message::messenger::{CustomOnionMessageContents, Destination, OnionMessageContents, OnionMessenger};
 				/// # use lightning::util::logger::{Logger, Record};
 				/// # use lightning::util::ser::{Writeable, Writer};
 				/// # use lightning::io;
@@ -137,18 +137,20 @@
 				/// let intermediate_hops = [hop_node_id1, hop_node_id2];
 				/// let reply_path = None;
 				/// # let your_custom_message = YourCustomMessage {};
-				/// onion_messenger.send_custom_onion_message(&intermediate_hops, Destination::Node(destination_node_id), your_custom_message, reply_path);
+				/// let message = OnionMessageContents::Custom(your_custom_message);
+				/// onion_messenger.send_onion_message(&intermediate_hops, Destination::Node(destination_node_id), message, reply_path);
 				/// 
-				/// // Create a blinded route to yourself, for someone to send an onion message to.
+				/// // Create a blinded path to yourself, for someone to send an onion message to.
 				/// # let your_node_id = hop_node_id1;
 				/// let hops = [hop_node_id3, hop_node_id4, your_node_id];
-				/// let blinded_route = BlindedRoute::new(&hops, &keys_manager, &secp_ctx).unwrap();
+				/// let blinded_path = BlindedPath::new(&hops, &keys_manager, &secp_ctx).unwrap();
 				/// 
-				/// // Send a custom onion message to a blinded route.
+				/// // Send a custom onion message to a blinded path.
 				/// # let intermediate_hops = [hop_node_id1, hop_node_id2];
 				/// let reply_path = None;
 				/// # let your_custom_message = YourCustomMessage {};
-				/// onion_messenger.send_custom_onion_message(&intermediate_hops, Destination::BlindedRoute(blinded_route), your_custom_message, reply_path);
+				/// let message = OnionMessageContents::Custom(your_custom_message);
+				/// onion_messenger.send_onion_message(&intermediate_hops, Destination::BlindedPath(blinded_path), message, reply_path);
 				/// ```
 				/// 
 				/// [offers]: <https://github.com/lightning/bolts/pull/798>
@@ -234,8 +236,7 @@
 					/// See [`OnionMessenger`] for example usage.
 					/// 
 					/// Note that reply_path (or a relevant inner pointer) may be NULL or all-0s to represent None
-					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `destination`, `replyPath`.")
-					public func sendCustomOnionMessage(intermediateNodes: [[UInt8]], destination: Destination, msg: CustomOnionMessageContents, replyPath: BlindedRoute) -> Result_NoneSendErrorZ {
+					public func sendOnionMessage(intermediateNodes: [[UInt8]], destination: Destination, message: OnionMessageContents, replyPath: BlindedPath) -> Result_NoneSendErrorZ {
 						// native call variable prep
 						
 						let intermediateNodesVector = Vec_PublicKeyZ(array: intermediateNodes).dangle()
@@ -244,7 +245,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKOnionMessenger>) in
-				OnionMessenger_send_custom_onion_message(thisArgPointer, intermediateNodesVector.cType!, destination.dangle().cType!, msg.activate().cType!, replyPath.dangle().cType!)
+				OnionMessenger_send_onion_message(thisArgPointer, intermediateNodesVector.cType!, destination.danglingClone().cType!, message.danglingClone().cType!, replyPath.dynamicallyDangledClone().cType!)
 						}
 				
 

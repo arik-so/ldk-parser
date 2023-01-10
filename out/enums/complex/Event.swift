@@ -54,8 +54,8 @@
 						/// [`ChannelManager::funding_transaction_generated`]: crate::ln::channelmanager::ChannelManager::funding_transaction_generated
 						case FundingGenerationReady
 			
-						/// Indicates we've received (an offer of) money! Just gotta dig out that payment preimage and
-						/// feed it to [`ChannelManager::claim_funds`] to get it....
+						/// Indicates that we've been offered a payment and it needs to be claimed via calling
+						/// [`ChannelManager::claim_funds`] with the preimage given in [`PaymentPurpose`].
 						/// 
 						/// Note that if the preimage is not known, you should call
 						/// [`ChannelManager::fail_htlc_backwards`] to free up resources for this HTLC and avoid
@@ -66,23 +66,26 @@
 						/// 
 						/// # Note
 						/// LDK will not stop an inbound payment from being paid multiple times, so multiple
-						/// `PaymentReceived` events may be generated for the same payment.
+						/// `PaymentClaimable` events may be generated for the same payment.
+						/// 
+						/// # Note
+						/// This event used to be called `PaymentReceived` in LDK versions 0.0.112 and earlier.
 						/// 
 						/// [`ChannelManager::claim_funds`]: crate::ln::channelmanager::ChannelManager::claim_funds
 						/// [`ChannelManager::fail_htlc_backwards`]: crate::ln::channelmanager::ChannelManager::fail_htlc_backwards
-						case PaymentReceived
+						case PaymentClaimable
 			
 						/// Indicates a payment has been claimed and we've received money!
 						/// 
 						/// This most likely occurs when [`ChannelManager::claim_funds`] has been called in response
-						/// to an [`Event::PaymentReceived`]. However, if we previously crashed during a
+						/// to an [`Event::PaymentClaimable`]. However, if we previously crashed during a
 						/// [`ChannelManager::claim_funds`] call you may see this event without a corresponding
-						/// [`Event::PaymentReceived`] event.
+						/// [`Event::PaymentClaimable`] event.
 						/// 
 						/// # Note
 						/// LDK will not stop an inbound payment from being paid multiple times, so multiple
-						/// `PaymentReceived` events may be generated for the same payment. If you then call
-						/// [`ChannelManager::claim_funds`] twice for the same [`Event::PaymentReceived`] you may get
+						/// `PaymentClaimable` events may be generated for the same payment. If you then call
+						/// [`ChannelManager::claim_funds`] twice for the same [`Event::PaymentClaimable`] you may get
 						/// multiple `PaymentClaimed` events.
 						/// 
 						/// [`ChannelManager::claim_funds`]: crate::ln::channelmanager::ChannelManager::claim_funds
@@ -99,8 +102,8 @@
 						/// provide failure information for each MPP part in the payment.
 						/// 
 						/// This event is provided once there are no further pending HTLCs for the payment and the
-						/// payment is no longer retryable, either due to a several-block timeout or because
-						/// [`ChannelManager::abandon_payment`] was previously called for the corresponding payment.
+						/// payment is no longer retryable due to [`ChannelManager::abandon_payment`] having been
+						/// called for the corresponding payment.
 						/// 
 						/// [`ChannelManager::abandon_payment`]: crate::ln::channelmanager::ChannelManager::abandon_payment
 						case PaymentFailed
@@ -114,9 +117,14 @@
 						/// Indicates an outbound HTLC we sent failed. Probably some intermediary node dropped
 						/// something. You may wish to retry with a different route.
 						/// 
+						/// If you have given up retrying this payment and wish to fail it, you MUST call
+						/// [`ChannelManager::abandon_payment`] at least once for a given [`PaymentId`] or memory
+						/// related to payment tracking will leak.
+						/// 
 						/// Note that this does *not* indicate that all paths for an MPP payment have failed, see
 						/// [`Event::PaymentFailed`] and [`all_paths_failed`].
 						/// 
+						/// [`ChannelManager::abandon_payment`]: crate::ln::channelmanager::ChannelManager::abandon_payment
 						/// [`all_paths_failed`]: Self::PaymentPathFailed::all_paths_failed
 						case PaymentPathFailed
 			
@@ -132,6 +140,20 @@
 						/// [`ChannelManager::process_pending_htlc_forwards`]: crate::ln::channelmanager::ChannelManager::process_pending_htlc_forwards
 						case PendingHTLCsForwardable
 			
+						/// Used to indicate that we've intercepted an HTLC forward. This event will only be generated if
+						/// you've encoded an intercept scid in the receiver's invoice route hints using
+						/// [`ChannelManager::get_intercept_scid`] and have set [`UserConfig::accept_intercept_htlcs`].
+						/// 
+						/// [`ChannelManager::forward_intercepted_htlc`] or
+						/// [`ChannelManager::fail_intercepted_htlc`] MUST be called in response to this event. See
+						/// their docs for more information.
+						/// 
+						/// [`ChannelManager::get_intercept_scid`]: crate::ln::channelmanager::ChannelManager::get_intercept_scid
+						/// [`UserConfig::accept_intercept_htlcs`]: crate::util::config::UserConfig::accept_intercept_htlcs
+						/// [`ChannelManager::forward_intercepted_htlc`]: crate::ln::channelmanager::ChannelManager::forward_intercepted_htlc
+						/// [`ChannelManager::fail_intercepted_htlc`]: crate::ln::channelmanager::ChannelManager::fail_intercepted_htlc
+						case HTLCIntercepted
+			
 						/// Used to indicate that an output which you should know how to spend was confirmed on chain
 						/// and is now spendable.
 						/// Such an output will *not* ever be spent by rust-lightning, and are not at risk of your
@@ -142,6 +164,12 @@
 						/// This event is generated when a payment has been successfully forwarded through us and a
 						/// forwarding fee earned.
 						case PaymentForwarded
+			
+						/// Used to indicate that a channel with the given `channel_id` is ready to
+						/// be used. This event is emitted either when the funding transaction has been confirmed
+						/// on-chain, or, in case of a 0conf channel, when both parties have confirmed the channel
+						/// establishment.
+						case ChannelReady
 			
 						/// Used to indicate that a previously opened channel with the given `channel_id` is in the
 						/// process of closure.
@@ -185,8 +213,8 @@
 							case LDKEvent_FundingGenerationReady:
 								return .FundingGenerationReady
 			
-							case LDKEvent_PaymentReceived:
-								return .PaymentReceived
+							case LDKEvent_PaymentClaimable:
+								return .PaymentClaimable
 			
 							case LDKEvent_PaymentClaimed:
 								return .PaymentClaimed
@@ -212,11 +240,17 @@
 							case LDKEvent_PendingHTLCsForwardable:
 								return .PendingHTLCsForwardable
 			
+							case LDKEvent_HTLCIntercepted:
+								return .HTLCIntercepted
+			
 							case LDKEvent_SpendableOutputs:
 								return .SpendableOutputs
 			
 							case LDKEvent_PaymentForwarded:
 								return .PaymentForwarded
+			
+							case LDKEvent_ChannelReady:
+								return .ChannelReady
 			
 							case LDKEvent_ChannelClosed:
 								return .ChannelClosed
@@ -281,7 +315,7 @@
 					}
 		
 					/// Utility method to constructs a new FundingGenerationReady-variant Event
-					public class func initWithFundingGenerationReady(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], channelValueSatoshis: UInt64, outputScript: [UInt8], userChannelId: UInt64) -> Event {
+					public class func initWithFundingGenerationReady(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], channelValueSatoshis: UInt64, outputScript: [UInt8], userChannelId: [UInt8]) -> Event {
 						// native call variable prep
 						
 						let temporaryChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: temporaryChannelId)
@@ -290,9 +324,11 @@
 				
 						let outputScriptVector = Vec_u8Z(array: outputScript).dangle()
 				
+						let userChannelIdPrimitiveWrapper = U128(value: userChannelId)
+				
 
 						// native method call
-						let nativeCallResult = Event_funding_generation_ready(temporaryChannelIdPrimitiveWrapper.cType!, counterpartyNodeIdPrimitiveWrapper.cType!, channelValueSatoshis, outputScriptVector.cType!, userChannelId)
+						let nativeCallResult = Event_funding_generation_ready(temporaryChannelIdPrimitiveWrapper.cType!, counterpartyNodeIdPrimitiveWrapper.cType!, channelValueSatoshis, outputScriptVector.cType!, userChannelIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -304,6 +340,9 @@
 				
 						// outputScriptVector.noOpRetain()
 				
+						// for elided types, we need this
+						userChannelIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -313,20 +352,32 @@
 						return returnValue
 					}
 		
-					/// Utility method to constructs a new PaymentReceived-variant Event
-					public class func initWithPaymentReceived(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
+					/// Utility method to constructs a new PaymentClaimable-variant Event
+					public class func initWithPaymentClaimable(receiverNodeId: [UInt8], paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose, viaChannelId: [UInt8], viaUserChannelId: [UInt8]?) -> Event {
 						// native call variable prep
 						
+						let receiverNodeIdPrimitiveWrapper = PublicKey(value: receiverNodeId)
+				
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
+						let viaChannelIdPrimitiveWrapper = ThirtyTwoBytes(value: viaChannelId)
+				
+						let viaUserChannelIdOption = Option_u128Z(some: viaUserChannelId).danglingClone()
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_received(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.danglingClone().cType!)
+						let nativeCallResult = Event_payment_claimable(receiverNodeIdPrimitiveWrapper.cType!, paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.danglingClone().cType!, viaChannelIdPrimitiveWrapper.cType!, viaUserChannelIdOption.cType!)
 
 						// cleanup
 						
 						// for elided types, we need this
+						receiverNodeIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
 						paymentHashPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						viaChannelIdPrimitiveWrapper.noOpRetain()
 				
 
 						
@@ -338,17 +389,22 @@
 					}
 		
 					/// Utility method to constructs a new PaymentClaimed-variant Event
-					public class func initWithPaymentClaimed(paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
+					public class func initWithPaymentClaimed(receiverNodeId: [UInt8], paymentHash: [UInt8], amountMsat: UInt64, purpose: PaymentPurpose) -> Event {
 						// native call variable prep
 						
+						let receiverNodeIdPrimitiveWrapper = PublicKey(value: receiverNodeId)
+				
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
 
 						// native method call
-						let nativeCallResult = Event_payment_claimed(paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.danglingClone().cType!)
+						let nativeCallResult = Event_payment_claimed(receiverNodeIdPrimitiveWrapper.cType!, paymentHashPrimitiveWrapper.cType!, amountMsat, purpose.danglingClone().cType!)
 
 						// cleanup
 						
+						// for elided types, we need this
+						receiverNodeIdPrimitiveWrapper.noOpRetain()
+				
 						// for elided types, we need this
 						paymentHashPrimitiveWrapper.noOpRetain()
 				
@@ -583,6 +639,35 @@
 						return returnValue
 					}
 		
+					/// Utility method to constructs a new HTLCIntercepted-variant Event
+					public class func initWithHtlcintercepted(interceptId: [UInt8], requestedNextHopScid: UInt64, paymentHash: [UInt8], inboundAmountMsat: UInt64, expectedOutboundAmountMsat: UInt64) -> Event {
+						// native call variable prep
+						
+						let interceptIdPrimitiveWrapper = ThirtyTwoBytes(value: interceptId)
+				
+						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
+
+						// native method call
+						let nativeCallResult = Event_htlcintercepted(interceptIdPrimitiveWrapper.cType!, requestedNextHopScid, paymentHashPrimitiveWrapper.cType!, inboundAmountMsat, expectedOutboundAmountMsat)
+
+						// cleanup
+						
+						// for elided types, we need this
+						interceptIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentHashPrimitiveWrapper.noOpRetain()
+				
+
+						
+						// return value (do some wrapping)
+						let returnValue = Event(cType: nativeCallResult)
+						
+
+						return returnValue
+					}
+		
 					/// Utility method to constructs a new SpendableOutputs-variant Event
 					public class func initWithSpendableOutputs(outputs: [SpendableOutputDescriptor]) -> Event {
 						// native call variable prep
@@ -637,20 +722,59 @@
 						return returnValue
 					}
 		
-					/// Utility method to constructs a new ChannelClosed-variant Event
-					public class func initWithChannelClosed(channelId: [UInt8], userChannelId: UInt64, reason: ClosureReason) -> Event {
+					/// Utility method to constructs a new ChannelReady-variant Event
+					public class func initWithChannelReady(channelId: [UInt8], userChannelId: [UInt8], counterpartyNodeId: [UInt8], channelType: Bindings.ChannelTypeFeatures) -> Event {
 						// native call variable prep
 						
 						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
 				
+						let userChannelIdPrimitiveWrapper = U128(value: userChannelId)
+				
+						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
 
 						// native method call
-						let nativeCallResult = Event_channel_closed(channelIdPrimitiveWrapper.cType!, userChannelId, reason.danglingClone().cType!)
+						let nativeCallResult = Event_channel_ready(channelIdPrimitiveWrapper.cType!, userChannelIdPrimitiveWrapper.cType!, counterpartyNodeIdPrimitiveWrapper.cType!, channelType.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
 						// for elided types, we need this
 						channelIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						userChannelIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						counterpartyNodeIdPrimitiveWrapper.noOpRetain()
+				
+
+						
+						// return value (do some wrapping)
+						let returnValue = Event(cType: nativeCallResult)
+						
+
+						return returnValue
+					}
+		
+					/// Utility method to constructs a new ChannelClosed-variant Event
+					public class func initWithChannelClosed(channelId: [UInt8], userChannelId: [UInt8], reason: ClosureReason) -> Event {
+						// native call variable prep
+						
+						let channelIdPrimitiveWrapper = ThirtyTwoBytes(value: channelId)
+				
+						let userChannelIdPrimitiveWrapper = U128(value: userChannelId)
+				
+
+						// native method call
+						let nativeCallResult = Event_channel_closed(channelIdPrimitiveWrapper.cType!, userChannelIdPrimitiveWrapper.cType!, reason.danglingClone().cType!)
+
+						// cleanup
+						
+						// for elided types, we need this
+						channelIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						userChannelIdPrimitiveWrapper.noOpRetain()
 				
 
 						
@@ -800,12 +924,12 @@
 						return Event_LDKFundingGenerationReady_Body(cType: self.cType!.funding_generation_ready, anchor: self)
 					}
 			
-					public func getValueAsPaymentReceived() -> PaymentReceived? {
-						if self.cType?.tag != LDKEvent_PaymentReceived {
+					public func getValueAsPaymentClaimable() -> PaymentClaimable? {
+						if self.cType?.tag != LDKEvent_PaymentClaimable {
 							return nil
 						}
 
-						return Event_LDKPaymentReceived_Body(cType: self.cType!.payment_received, anchor: self)
+						return Event_LDKPaymentClaimable_Body(cType: self.cType!.payment_claimable, anchor: self)
 					}
 			
 					public func getValueAsPaymentClaimed() -> PaymentClaimed? {
@@ -872,6 +996,14 @@
 						return Event_LDKPendingHTLCsForwardable_Body(cType: self.cType!.pending_htl_cs_forwardable, anchor: self)
 					}
 			
+					public func getValueAsHtlcIntercepted() -> HTLCIntercepted? {
+						if self.cType?.tag != LDKEvent_HTLCIntercepted {
+							return nil
+						}
+
+						return Event_LDKHTLCIntercepted_Body(cType: self.cType!.htlc_intercepted, anchor: self)
+					}
+			
 					public func getValueAsSpendableOutputs() -> SpendableOutputs? {
 						if self.cType?.tag != LDKEvent_SpendableOutputs {
 							return nil
@@ -886,6 +1018,14 @@
 						}
 
 						return Event_LDKPaymentForwarded_Body(cType: self.cType!.payment_forwarded, anchor: self)
+					}
+			
+					public func getValueAsChannelReady() -> ChannelReady? {
+						if self.cType?.tag != LDKEvent_ChannelReady {
+							return nil
+						}
+
+						return Event_LDKChannelReady_Body(cType: self.cType!.channel_ready, anchor: self)
 					}
 			
 					public func getValueAsChannelClosed() -> ChannelClosed? {
@@ -1025,13 +1165,14 @@
 							return returnValue;
 						}
 		
-						/// The `user_channel_id` value passed in to [`ChannelManager::create_channel`], or 0 for
-						/// an inbound channel.
+						/// The `user_channel_id` value passed in to [`ChannelManager::create_channel`], or a
+						/// random value for an inbound channel. This may be zero for objects serialized with LDK
+						/// versions prior to 0.0.113.
 						/// 
 						/// [`ChannelManager::create_channel`]: crate::ln::channelmanager::ChannelManager::create_channel
-						public func getUserChannelId() -> UInt64 {
+						public func getUserChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = self.cType!.user_channel_id
+							let returnValue = U128(cType: self.cType!.user_channel_id, anchor: self).getValue()
 
 							return returnValue;
 						}
@@ -1050,11 +1191,11 @@
 		
 					
 					/// 
-					internal typealias Event_LDKPaymentReceived_Body = PaymentReceived
+					internal typealias Event_LDKPaymentClaimable_Body = PaymentClaimable
 			
 
 					/// 
-					public class PaymentReceived: NativeTypeWrapper {
+					public class PaymentClaimable: NativeTypeWrapper {
 
 						
 
@@ -1062,9 +1203,9 @@
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
-						internal var cType: LDKEvent_LDKPaymentReceived_Body?
+						internal var cType: LDKEvent_LDKPaymentClaimable_Body?
 
-						internal init(cType: LDKEvent_LDKPaymentReceived_Body) {
+						internal init(cType: LDKEvent_LDKPaymentClaimable_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1072,7 +1213,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						internal init(cType: LDKEvent_LDKPaymentReceived_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKEvent_LDKPaymentClaimable_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -1086,6 +1227,21 @@
 						
 
 						
+						/// The node that will receive the payment after it has been claimed.
+						/// This is useful to identify payments received via [phantom nodes].
+						/// This field will always be filled in when the event was generated by LDK versions
+						/// 0.0.113 and above.
+						/// 
+						/// [phantom nodes]: crate::chain::keysinterface::PhantomKeysManager
+						/// 
+						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
+						public func getReceiverNodeId() -> [UInt8] {
+							// return value (do some wrapping)
+							let returnValue = PublicKey(cType: self.cType!.receiver_node_id, anchor: self).getValue()
+
+							return returnValue;
+						}
+		
 						/// The hash for which the preimage should be handed to the ChannelManager. Note that LDK will
 						/// not stop you from registering duplicate payment hashes for inbound payments.
 						public func getPaymentHash() -> [UInt8] {
@@ -1112,8 +1268,26 @@
 							return returnValue;
 						}
 		
+						/// The `channel_id` indicating over which channel we received the payment.
+						/// 
+						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
+						public func getViaChannelId() -> [UInt8] {
+							// return value (do some wrapping)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.via_channel_id, anchor: self).getValue()
 
-						internal func dangle(_ shouldDangle: Bool = true) -> PaymentReceived {
+							return returnValue;
+						}
+		
+						/// The `user_channel_id` indicating over which channel we received the payment.
+						public func getViaUserChannelId() -> [UInt8]? {
+							// return value (do some wrapping)
+							let returnValue = Option_u128Z(cType: self.cType!.via_user_channel_id, anchor: self).getValue()
+
+							return returnValue;
+						}
+		
+
+						internal func dangle(_ shouldDangle: Bool = true) -> PaymentClaimable {
 							self.dangling = shouldDangle
 							return self
 						}
@@ -1162,6 +1336,21 @@
 						
 
 						
+						/// The node that received the payment.
+						/// This is useful to identify payments which were received via [phantom nodes].
+						/// This field will always be filled in when the event was generated by LDK versions
+						/// 0.0.113 and above.
+						/// 
+						/// [phantom nodes]: crate::chain::keysinterface::PhantomKeysManager
+						/// 
+						/// Note that this (or a relevant inner pointer) may be NULL or all-0s to represent None
+						public func getReceiverNodeId() -> [UInt8] {
+							// return value (do some wrapping)
+							let returnValue = PublicKey(cType: self.cType!.receiver_node_id, anchor: self).getValue()
+
+							return returnValue;
+						}
+		
 						/// The payment hash of the claimed payment. Note that LDK will not stop you from
 						/// registering duplicate payment hashes for inbound payments.
 						public func getPaymentHash() -> [UInt8] {
@@ -1179,7 +1368,7 @@
 							return returnValue;
 						}
 		
-						/// The purpose of this claimed payment, i.e. whether the payment was for an invoice or a
+						/// The purpose of the claimed payment, i.e. whether the payment was for an invoice or a
 						/// spontaneous payment.
 						public func getPurpose() -> PaymentPurpose {
 							// return value (do some wrapping)
@@ -1849,6 +2038,104 @@
 		
 					
 					/// 
+					internal typealias Event_LDKHTLCIntercepted_Body = HTLCIntercepted
+			
+
+					/// 
+					public class HTLCIntercepted: NativeTypeWrapper {
+
+						
+
+						
+						private static var instanceCounter: UInt = 0
+						internal let instanceNumber: UInt
+
+						internal var cType: LDKEvent_LDKHTLCIntercepted_Body?
+
+						internal init(cType: LDKEvent_LDKHTLCIntercepted_Body) {
+							Self.instanceCounter += 1
+							self.instanceNumber = Self.instanceCounter
+							self.cType = cType
+							
+							super.init(conflictAvoidingVariableName: 0)
+						}
+
+						internal init(cType: LDKEvent_LDKHTLCIntercepted_Body, anchor: NativeTypeWrapper) {
+							Self.instanceCounter += 1
+							self.instanceNumber = Self.instanceCounter
+							self.cType = cType
+							
+							super.init(conflictAvoidingVariableName: 0)
+							self.dangling = true
+							try! self.addAnchor(anchor: anchor)
+						}
+		
+
+						
+
+						
+						/// An id to help LDK identify which HTLC is being forwarded or failed.
+						public func getInterceptId() -> [UInt8] {
+							// return value (do some wrapping)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.intercept_id, anchor: self).getValue()
+
+							return returnValue;
+						}
+		
+						/// The fake scid that was programmed as the next hop's scid, generated using
+						/// [`ChannelManager::get_intercept_scid`].
+						/// 
+						/// [`ChannelManager::get_intercept_scid`]: crate::ln::channelmanager::ChannelManager::get_intercept_scid
+						public func getRequestedNextHopScid() -> UInt64 {
+							// return value (do some wrapping)
+							let returnValue = self.cType!.requested_next_hop_scid
+
+							return returnValue;
+						}
+		
+						/// The payment hash used for this HTLC.
+						public func getPaymentHash() -> [UInt8] {
+							// return value (do some wrapping)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.payment_hash, anchor: self).getValue()
+
+							return returnValue;
+						}
+		
+						/// How many msats were received on the inbound edge of this HTLC.
+						public func getInboundAmountMsat() -> UInt64 {
+							// return value (do some wrapping)
+							let returnValue = self.cType!.inbound_amount_msat
+
+							return returnValue;
+						}
+		
+						/// How many msats the payer intended to route to the next node. Depending on the reason you are
+						/// intercepting this payment, you might take a fee by forwarding less than this amount.
+						/// 
+						/// Note that LDK will NOT check that expected fees were factored into this value. You MUST
+						/// check that whatever fee you want has been included here or subtract it as required. Further,
+						/// LDK will not stop you from forwarding more than you received.
+						public func getExpectedOutboundAmountMsat() -> UInt64 {
+							// return value (do some wrapping)
+							let returnValue = self.cType!.expected_outbound_amount_msat
+
+							return returnValue;
+						}
+		
+
+						internal func dangle(_ shouldDangle: Bool = true) -> HTLCIntercepted {
+							self.dangling = shouldDangle
+							return self
+						}
+
+											
+
+					}
+
+					
+		
+					
+					/// 
 					internal typealias Event_LDKSpendableOutputs_Body = SpendableOutputs
 			
 
@@ -2008,6 +2295,95 @@
 		
 					
 					/// 
+					internal typealias Event_LDKChannelReady_Body = ChannelReady
+			
+
+					/// 
+					public class ChannelReady: NativeTypeWrapper {
+
+						
+
+						
+						private static var instanceCounter: UInt = 0
+						internal let instanceNumber: UInt
+
+						internal var cType: LDKEvent_LDKChannelReady_Body?
+
+						internal init(cType: LDKEvent_LDKChannelReady_Body) {
+							Self.instanceCounter += 1
+							self.instanceNumber = Self.instanceCounter
+							self.cType = cType
+							
+							super.init(conflictAvoidingVariableName: 0)
+						}
+
+						internal init(cType: LDKEvent_LDKChannelReady_Body, anchor: NativeTypeWrapper) {
+							Self.instanceCounter += 1
+							self.instanceNumber = Self.instanceCounter
+							self.cType = cType
+							
+							super.init(conflictAvoidingVariableName: 0)
+							self.dangling = true
+							try! self.addAnchor(anchor: anchor)
+						}
+		
+
+						
+
+						
+						/// The channel_id of the channel that is ready.
+						public func getChannelId() -> [UInt8] {
+							// return value (do some wrapping)
+							let returnValue = ThirtyTwoBytes(cType: self.cType!.channel_id, anchor: self).getValue()
+
+							return returnValue;
+						}
+		
+						/// The `user_channel_id` value passed in to [`ChannelManager::create_channel`] for outbound
+						/// channels, or to [`ChannelManager::accept_inbound_channel`] for inbound channels if
+						/// [`UserConfig::manually_accept_inbound_channels`] config flag is set to true. Otherwise
+						/// `user_channel_id` will be randomized for an inbound channel.
+						/// 
+						/// [`ChannelManager::create_channel`]: crate::ln::channelmanager::ChannelManager::create_channel
+						/// [`ChannelManager::accept_inbound_channel`]: crate::ln::channelmanager::ChannelManager::accept_inbound_channel
+						/// [`UserConfig::manually_accept_inbound_channels`]: crate::util::config::UserConfig::manually_accept_inbound_channels
+						public func getUserChannelId() -> [UInt8] {
+							// return value (do some wrapping)
+							let returnValue = U128(cType: self.cType!.user_channel_id, anchor: self).getValue()
+
+							return returnValue;
+						}
+		
+						/// The node_id of the channel counterparty.
+						public func getCounterpartyNodeId() -> [UInt8] {
+							// return value (do some wrapping)
+							let returnValue = PublicKey(cType: self.cType!.counterparty_node_id, anchor: self).getValue()
+
+							return returnValue;
+						}
+		
+						/// The features that this channel will operate with.
+						public func getChannelType() -> Bindings.ChannelTypeFeatures {
+							// return value (do some wrapping)
+							let returnValue = Bindings.ChannelTypeFeatures(cType: self.cType!.channel_type, anchor: self)
+
+							return returnValue;
+						}
+		
+
+						internal func dangle(_ shouldDangle: Bool = true) -> ChannelReady {
+							self.dangling = shouldDangle
+							return self
+						}
+
+											
+
+					}
+
+					
+		
+					
+					/// 
 					internal typealias Event_LDKChannelClosed_Body = ChannelClosed
 			
 
@@ -2056,15 +2432,16 @@
 						/// The `user_channel_id` value passed in to [`ChannelManager::create_channel`] for outbound
 						/// channels, or to [`ChannelManager::accept_inbound_channel`] for inbound channels if
 						/// [`UserConfig::manually_accept_inbound_channels`] config flag is set to true. Otherwise
-						/// `user_channel_id` will be 0 for an inbound channel.
-						/// This will always be zero for objects serialized with LDK versions prior to 0.0.102.
+						/// `user_channel_id` will be randomized for inbound channels.
+						/// This may be zero for inbound channels serialized prior to 0.0.113 and will always be
+						/// zero for objects serialized with LDK versions prior to 0.0.102.
 						/// 
 						/// [`ChannelManager::create_channel`]: crate::ln::channelmanager::ChannelManager::create_channel
 						/// [`ChannelManager::accept_inbound_channel`]: crate::ln::channelmanager::ChannelManager::accept_inbound_channel
 						/// [`UserConfig::manually_accept_inbound_channels`]: crate::util::config::UserConfig::manually_accept_inbound_channels
-						public func getUserChannelId() -> UInt64 {
+						public func getUserChannelId() -> [UInt8] {
 							// return value (do some wrapping)
-							let returnValue = self.cType!.user_channel_id
+							let returnValue = U128(cType: self.cType!.user_channel_id, anchor: self).getValue()
 
 							return returnValue;
 						}

@@ -3,23 +3,23 @@
 			import LDKHeaders
 			#endif
 
-			/// A dynamically-allocated array of crate::c_types::ThirtyTwoBytess of arbitrary size.
+			/// A dynamically-allocated array of crate::lightning::chain::chainmonitor::MonitorUpdateIds of arbitrary size.
 			/// This corresponds to std::vector in C++
-			internal typealias Vec_TxidZ = Bindings.Vec_TxidZ
+			internal typealias Vec_MonitorUpdateIdZ = Bindings.Vec_MonitorUpdateIdZ
 
 			extension Bindings {
 
-				/// A dynamically-allocated array of crate::c_types::ThirtyTwoBytess of arbitrary size.
+				/// A dynamically-allocated array of crate::lightning::chain::chainmonitor::MonitorUpdateIds of arbitrary size.
 				/// This corresponds to std::vector in C++
-				internal class Vec_TxidZ: NativeTypeWrapper {
+				internal class Vec_MonitorUpdateIdZ: NativeTypeWrapper {
 
 					
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
 
-					internal var cType: LDKCVec_TxidZ?
+					internal var cType: LDKCVec_MonitorUpdateIdZ?
 
-					internal init(cType: LDKCVec_TxidZ) {
+					internal init(cType: LDKCVec_MonitorUpdateIdZ) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -27,7 +27,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					internal init(cType: LDKCVec_TxidZ, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKCVec_MonitorUpdateIdZ, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -38,32 +38,30 @@
 					}
 		
 
-					public init(array: [[UInt8]]) {
+					public init(array: [MonitorUpdateId]) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						super.init(conflictAvoidingVariableName: 0)
 
 						
-						let rustArray = array.map { (currentValueDepth1: [UInt8]) -> LDKThirtyTwoBytes in
+						let rustArray = array.map { (currentValueDepth1: MonitorUpdateId) -> LDKMonitorUpdateId in
 							
-						let currentValueDepth1PrimitiveWrapper = ThirtyTwoBytes(value: currentValueDepth1)
-				
-							return currentValueDepth1PrimitiveWrapper.cType!
+							return currentValueDepth1.dynamicallyDangledClone().cType!
 						}
 				
 
 						
 
-						let dataContainer = UnsafeMutablePointer<LDKThirtyTwoBytes>.allocate(capacity: array.count)
+						let dataContainer = UnsafeMutablePointer<LDKMonitorUpdateId>.allocate(capacity: array.count)
 						dataContainer.initialize(from: rustArray, count: array.count)
 
-        				let vector = LDKCVec_TxidZ(data: dataContainer, datalen: UInt(array.count))
+        				let vector = LDKCVec_MonitorUpdateIdZ(data: dataContainer, datalen: UInt(array.count))
         				self.cType = vector
 					}
 
-					public func getValue() -> [[UInt8]] {
+					public func getValue() -> [MonitorUpdateId] {
 
-						var array = [LDKThirtyTwoBytes]()
+						var array = [LDKMonitorUpdateId]()
 
 						
 						for index1 in 0..<Int(self.cType!.datalen) {
@@ -72,8 +70,8 @@
 						}
 		
 
-						let swiftArray = array.map { (currentCType: LDKThirtyTwoBytes) -> [UInt8] in
-ThirtyTwoBytes(cType: currentCType).dangle().getValue()
+						let swiftArray = array.map { (currentCType: LDKMonitorUpdateId) -> MonitorUpdateId in
+MonitorUpdateId(cType: currentCType, anchor: self).dangle()
 						}
 						return swiftArray
 					}
@@ -85,7 +83,7 @@ ThirtyTwoBytes(cType: currentCType).dangle().getValue()
 						
 
 						// native method call
-						let nativeCallResult = CVec_TxidZ_free(self.cType!)
+						let nativeCallResult = CVec_MonitorUpdateIdZ_free(self.cType!)
 
 						// cleanup
 						
@@ -99,7 +97,7 @@ ThirtyTwoBytes(cType: currentCType).dangle().getValue()
 					}
 		
 
-					internal func dangle(_ shouldDangle: Bool = true) -> Vec_TxidZ {
+					internal func dangle(_ shouldDangle: Bool = true) -> Vec_MonitorUpdateIdZ {
         				self.dangling = shouldDangle
 						return self
 					}
@@ -111,11 +109,11 @@ ThirtyTwoBytes(cType: currentCType).dangle().getValue()
 						}
 
 						if !self.dangling {
-							Bindings.print("Freeing Vec_TxidZ \(self.instanceNumber).")
+							Bindings.print("Freeing Vec_MonitorUpdateIdZ \(self.instanceNumber).")
 							
 							self.free()
 						} else {
-							Bindings.print("Not freeing Vec_TxidZ \(self.instanceNumber) due to dangle.")
+							Bindings.print("Not freeing Vec_MonitorUpdateIdZ \(self.instanceNumber) due to dangle.")
 						}
 					}
 			

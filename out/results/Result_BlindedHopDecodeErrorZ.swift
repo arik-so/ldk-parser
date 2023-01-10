@@ -4,14 +4,14 @@
 			#endif
 
 			/// A CResult_BlindedHopDecodeErrorZ represents the result of a fallible operation,
-			/// containing a crate::lightning::onion_message::blinded_route::BlindedHop on success and a crate::lightning::ln::msgs::DecodeError on failure.
+			/// containing a crate::lightning::onion_message::blinded_path::BlindedHop on success and a crate::lightning::ln::msgs::DecodeError on failure.
 			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_BlindedHopDecodeErrorZ = Bindings.Result_BlindedHopDecodeErrorZ
 
 			extension Bindings {
 
 				/// A CResult_BlindedHopDecodeErrorZ represents the result of a fallible operation,
-				/// containing a crate::lightning::onion_message::blinded_route::BlindedHop on success and a crate::lightning::ln::msgs::DecodeError on failure.
+				/// containing a crate::lightning::onion_message::blinded_path::BlindedHop on success and a crate::lightning::ln::msgs::DecodeError on failure.
 				/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 				public class Result_BlindedHopDecodeErrorZ: NativeTypeWrapper {
 
@@ -42,13 +42,12 @@
 
 					
 					/// Creates a new CResult_BlindedHopDecodeErrorZ in the success state.
-					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `o`.")
 					public class func initWithOk(o: BlindedHop) -> Result_BlindedHopDecodeErrorZ {
 						// native call variable prep
 						
 
 						// native method call
-						let nativeCallResult = CResult_BlindedHopDecodeErrorZ_ok(o.dangle().cType!)
+						let nativeCallResult = CResult_BlindedHopDecodeErrorZ_ok(o.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -99,6 +98,30 @@
 						return returnValue
 					}
 		
+					/// Creates a new CResult_BlindedHopDecodeErrorZ which has the same data as `orig`
+					/// but with all dynamically-allocated buffers duplicated in new buffers.
+					internal func clone() -> Result_BlindedHopDecodeErrorZ {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_BlindedHopDecodeErrorZ>) in
+				CResult_BlindedHopDecodeErrorZ_clone(origPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = Result_BlindedHopDecodeErrorZ(cType: nativeCallResult)
+						
+
+						return returnValue
+					}
+		
 
 					public func isOk() -> Bool {
 						return self.cType?.result_ok == true
@@ -128,6 +151,12 @@
 					}
 
 					
+					internal func danglingClone() -> Result_BlindedHopDecodeErrorZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
 					deinit {
 						if Bindings.suspendFreedom {
 							return

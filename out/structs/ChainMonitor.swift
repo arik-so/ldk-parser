@@ -199,6 +199,29 @@
 						return returnValue
 					}
 		
+					/// Lists the pending updates for each [`ChannelMonitor`] (by `OutPoint` being monitored).
+					public func listPendingMonitorUpdates() -> [(OutPoint, [MonitorUpdateId])] {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChainMonitor>) in
+				ChainMonitor_list_pending_monitor_updates(thisArgPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = Vec_C2Tuple_OutPointCVec_MonitorUpdateIdZZZ(cType: nativeCallResult, anchor: self).dangle(false).getValue()
+						
+
+						return returnValue
+					}
+		
 					/// Indicates the persistence of a [`ChannelMonitor`] has completed after
 					/// [`ChannelMonitorUpdateStatus::InProgress`] was returned from an update operation.
 					/// 

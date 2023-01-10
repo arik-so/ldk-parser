@@ -4,15 +4,17 @@
 			import LDKHeaders
 			#endif
 
-			/// Information about a spendable output to a P2WSH script. See
-			/// SpendableOutputDescriptor::DelayedPaymentOutput for more details on how to spend this.
+			/// Information about a spendable output to a P2WSH script.
+			/// 
+			/// See [`SpendableOutputDescriptor::DelayedPaymentOutput`] for more details on how to spend this.
 			public typealias DelayedPaymentOutputDescriptor = Bindings.DelayedPaymentOutputDescriptor
 
 			extension Bindings {
 		
 
-				/// Information about a spendable output to a P2WSH script. See
-				/// SpendableOutputDescriptor::DelayedPaymentOutput for more details on how to spend this.
+				/// Information about a spendable output to a P2WSH script.
+				/// 
+				/// See [`SpendableOutputDescriptor::DelayedPaymentOutput`] for more details on how to spend this.
 				public class DelayedPaymentOutputDescriptor: NativeTypeWrapper {
 
 					let initialCFreeability: Bool
@@ -62,7 +64,7 @@
 						return returnValue
 					}
 		
-					/// The outpoint which is spendable
+					/// The outpoint which is spendable.
 					public func getOutpoint() -> OutPoint {
 						// native call variable prep
 						
@@ -85,7 +87,7 @@
 						return returnValue
 					}
 		
-					/// The outpoint which is spendable
+					/// The outpoint which is spendable.
 					public func setOutpoint(val: OutPoint) {
 						// native call variable prep
 						
@@ -108,7 +110,7 @@
 						return returnValue
 					}
 		
-					/// Per commitment point to derive delayed_payment_key by key holder
+					/// Per commitment point to derive the delayed payment key by key holder.
 					public func getPerCommitmentPoint() -> [UInt8] {
 						// native call variable prep
 						
@@ -131,7 +133,7 @@
 						return returnValue
 					}
 		
-					/// Per commitment point to derive delayed_payment_key by key holder
+					/// Per commitment point to derive the delayed payment key by key holder.
 					public func setPerCommitmentPoint(val: [UInt8]) {
 						// native call variable prep
 						
@@ -159,7 +161,7 @@
 						return returnValue
 					}
 		
-					/// The nSequence value which must be set in the spending input to satisfy the OP_CSV in
+					/// The `nSequence` value which must be set in the spending input to satisfy the `OP_CSV` in
 					/// the witness_script.
 					public func getToSelfDelay() -> UInt16 {
 						// native call variable prep
@@ -183,7 +185,7 @@
 						return returnValue
 					}
 		
-					/// The nSequence value which must be set in the spending input to satisfy the OP_CSV in
+					/// The `nSequence` value which must be set in the spending input to satisfy the `OP_CSV` in
 					/// the witness_script.
 					public func setToSelfDelay(val: UInt16) {
 						// native call variable prep
@@ -207,7 +209,7 @@
 						return returnValue
 					}
 		
-					/// The output which is referenced by the given outpoint
+					/// The output which is referenced by the given outpoint.
 					/// 
 					/// Returns a copy of the field.
 					public func getOutput() -> TxOut {
@@ -232,7 +234,7 @@
 						return returnValue
 					}
 		
-					/// The output which is referenced by the given outpoint
+					/// The output which is referenced by the given outpoint.
 					public func setOutput(val: TxOut) {
 						// native call variable prep
 						
@@ -308,9 +310,8 @@
 						return returnValue
 					}
 		
-					/// Arbitrary identification information returned by a call to
-					/// `Sign::channel_keys_id()`. This may be useful in re-deriving keys used in
-					/// the channel to spend the output.
+					/// Arbitrary identification information returned by a call to [`BaseSign::channel_keys_id`].
+					/// This may be useful in re-deriving keys used in the channel to spend the output.
 					public func getChannelKeysId() -> [UInt8]? {
 						// native call variable prep
 						
@@ -337,9 +338,8 @@
 						return returnValue
 					}
 		
-					/// Arbitrary identification information returned by a call to
-					/// `Sign::channel_keys_id()`. This may be useful in re-deriving keys used in
-					/// the channel to spend the output.
+					/// Arbitrary identification information returned by a call to [`BaseSign::channel_keys_id`].
+					/// This may be useful in re-deriving keys used in the channel to spend the output.
 					public func setChannelKeysId(val: [UInt8]) {
 						// native call variable prep
 						

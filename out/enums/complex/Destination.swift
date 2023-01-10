@@ -43,8 +43,8 @@
 						/// We're sending this onion message to a node.
 						case Node
 			
-						/// We're sending this onion message to a blinded route.
-						case BlindedRoute
+						/// We're sending this onion message to a blinded path.
+						case BlindedPath
 			
 					}
 
@@ -53,8 +53,8 @@
 							case LDKDestination_Node:
 								return .Node
 			
-							case LDKDestination_BlindedRoute:
-								return .BlindedRoute
+							case LDKDestination_BlindedPath:
+								return .BlindedPath
 			
 							default:
 								Bindings.print("Error: Invalid value type for Destination! Aborting.", severity: .ERROR)
@@ -78,6 +78,29 @@
 						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
+
+						return returnValue
+					}
+		
+					/// Creates a copy of the Destination
+					internal func clone() -> Destination {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKDestination>) in
+				Destination_clone(origPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = Destination(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -107,14 +130,13 @@
 						return returnValue
 					}
 		
-					/// Utility method to constructs a new BlindedRoute-variant Destination
-					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `a`.")
-					public class func initWithBlindedRoute(a: Bindings.BlindedRoute) -> Destination {
+					/// Utility method to constructs a new BlindedPath-variant Destination
+					public class func initWithBlindedPath(a: Bindings.BlindedPath) -> Destination {
 						// native call variable prep
 						
 
 						// native method call
-						let nativeCallResult = Destination_blinded_route(a.dangle().cType!)
+						let nativeCallResult = Destination_blinded_path(a.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -137,12 +159,12 @@
 						return PublicKey(cType: self.cType!.node, anchor: self).getValue()
 					}
 			
-					public func getValueAsBlindedRoute() -> Bindings.BlindedRoute? {
-						if self.cType?.tag != LDKDestination_BlindedRoute {
+					public func getValueAsBlindedPath() -> Bindings.BlindedPath? {
+						if self.cType?.tag != LDKDestination_BlindedPath {
 							return nil
 						}
 
-						return BlindedRoute(cType: self.cType!.blinded_route, anchor: self)
+						return BlindedPath(cType: self.cType!.blinded_path, anchor: self)
 					}
 			
 
@@ -152,6 +174,12 @@
 					}
 
 					
+					internal func danglingClone() -> Destination {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
 					deinit {
 						if Bindings.suspendFreedom {
 							return

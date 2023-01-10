@@ -340,7 +340,7 @@
 					}
 		
 					/// Constructs a new TxCreationKeys given each field
-					public init(perCommitmentPointArg: [UInt8], revocationKeyArg: [UInt8], broadcasterHtlcKeyArg: [UInt8], countersignatoryHtlcKeyArg: [UInt8], broadcasterDelayedPaymentKeyArg: [UInt8]) {
+					public class func initWith(perCommitmentPointArg: [UInt8], revocationKeyArg: [UInt8], broadcasterHtlcKeyArg: [UInt8], countersignatoryHtlcKeyArg: [UInt8], broadcasterDelayedPaymentKeyArg: [UInt8]) -> TxCreationKeys {
 						// native call variable prep
 						
 						let perCommitmentPointArgPrimitiveWrapper = PublicKey(value: perCommitmentPointArg)
@@ -374,21 +374,13 @@
 						// for elided types, we need this
 						broadcasterDelayedPaymentKeyArgPrimitiveWrapper.noOpRetain()
 				
-				self.initialCFreeability = nativeCallResult.is_owned
-			
-
-						/*
-						// return value (do some wrapping)
-						let returnValue = TxCreationKeys(cType: nativeCallResult)
-						*/
 
 						
-				self.cType = nativeCallResult
+						// return value (do some wrapping)
+						let returnValue = TxCreationKeys(cType: nativeCallResult)
+						
 
-				Self.instanceCounter += 1
-				self.instanceNumber = Self.instanceCounter
-				super.init(conflictAvoidingVariableName: 0)
-			
+						return returnValue
 					}
 		
 					/// Checks if two TxCreationKeyss contain equal inner contents.
@@ -492,7 +484,7 @@
 		
 					/// Create per-state keys from channel base points and the per-commitment point.
 					/// Key set is asymmetric and can't be used as part of counter-signatory set of transactions.
-					public class func deriveNew(perCommitmentPoint: [UInt8], broadcasterDelayedPaymentBase: [UInt8], broadcasterHtlcBase: [UInt8], countersignatoryRevocationBase: [UInt8], countersignatoryHtlcBase: [UInt8]) -> Result_TxCreationKeysErrorZ {
+					public class func initWithDeriveNew(perCommitmentPoint: [UInt8], broadcasterDelayedPaymentBase: [UInt8], broadcasterHtlcBase: [UInt8], countersignatoryRevocationBase: [UInt8], countersignatoryHtlcBase: [UInt8]) -> TxCreationKeys {
 						// native call variable prep
 						
 						let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
@@ -529,7 +521,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_TxCreationKeysErrorZ(cType: nativeCallResult)
+						let returnValue = TxCreationKeys(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -537,7 +529,7 @@
 		
 					/// Generate per-state keys from channel static keys.
 					/// Key set is asymmetric and can't be used as part of counter-signatory set of transactions.
-					public class func fromChannelStaticKeys(perCommitmentPoint: [UInt8], broadcasterKeys: ChannelPublicKeys, countersignatoryKeys: ChannelPublicKeys) -> Result_TxCreationKeysErrorZ {
+					public class func initWithChannelStaticKeys(perCommitmentPoint: [UInt8], broadcasterKeys: ChannelPublicKeys, countersignatoryKeys: ChannelPublicKeys) -> TxCreationKeys {
 						// native call variable prep
 						
 						let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
@@ -562,7 +554,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_TxCreationKeysErrorZ(cType: nativeCallResult)
+						let returnValue = TxCreationKeys(cType: nativeCallResult)
 						
 
 						return returnValue

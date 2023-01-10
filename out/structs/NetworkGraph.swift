@@ -60,16 +60,21 @@
 						return returnValue
 					}
 		
-					/// Constructs a new EventHandler which calls the relevant methods on this_arg.
-					/// This copies the `inner` pointer in this_arg and thus the returned EventHandler must be freed before this_arg is
-					public func asEventHandler() -> EventHandler {
+					/// Handles any network updates originating from [`Event`]s.
+					/// 
+					/// [`Event`]: crate::util::events::Event
+					public func handleNetworkUpdate(networkUpdate: NetworkUpdate) {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKNetworkGraph>) in
-				NetworkGraph_as_EventHandler(thisArgPointer)
+				
+						withUnsafePointer(to: networkUpdate.cType!) { (networkUpdatePointer: UnsafePointer<LDKNetworkUpdate>) in
+				NetworkGraph_handle_network_update(thisArgPointer, networkUpdatePointer)
+						}
+				
 						}
 				
 
@@ -78,7 +83,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = NativelyImplementedEventHandler(cType: nativeCallResult, anchor: self)
+						let returnValue = nativeCallResult
 						
 
 						return returnValue

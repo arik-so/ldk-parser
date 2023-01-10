@@ -4,16 +4,16 @@
 			import LDKHeaders
 			#endif
 
-			/// Onion messages can be sent and received to blinded routes, which serve to hide the identity of
+			/// Onion messages can be sent and received to blinded paths, which serve to hide the identity of
 			/// the recipient.
-			public typealias BlindedRoute = Bindings.BlindedRoute
+			public typealias BlindedPath = Bindings.BlindedPath
 
 			extension Bindings {
 		
 
-				/// Onion messages can be sent and received to blinded routes, which serve to hide the identity of
+				/// Onion messages can be sent and received to blinded paths, which serve to hide the identity of
 				/// the recipient.
-				public class BlindedRoute: NativeTypeWrapper {
+				public class BlindedPath: NativeTypeWrapper {
 
 					let initialCFreeability: Bool
 
@@ -21,9 +21,9 @@
 					private static var instanceCounter: UInt = 0
 					internal let instanceNumber: UInt
 
-					internal var cType: LDKBlindedRoute?
+					internal var cType: LDKBlindedPath?
 
-					internal init(cType: LDKBlindedRoute) {
+					internal init(cType: LDKBlindedPath) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -31,7 +31,7 @@
 						super.init(conflictAvoidingVariableName: 0)
 					}
 
-					internal init(cType: LDKBlindedRoute, anchor: NativeTypeWrapper) {
+					internal init(cType: LDKBlindedPath, anchor: NativeTypeWrapper) {
 						Self.instanceCounter += 1
 						self.instanceNumber = Self.instanceCounter
 						self.cType = cType
@@ -43,13 +43,13 @@
 		
 
 					
-					/// Frees any resources used by the BlindedRoute, if is_owned is set and inner is non-NULL.
+					/// Frees any resources used by the BlindedPath, if is_owned is set and inner is non-NULL.
 					internal func free() {
 						// native call variable prep
 						
 
 						// native method call
-						let nativeCallResult = BlindedRoute_free(self.cType!)
+						let nativeCallResult = BlindedPath_free(self.cType!)
 
 						// cleanup
 						
@@ -62,11 +62,34 @@
 						return returnValue
 					}
 		
-					/// Create a blinded route to be forwarded along `node_pks`. The last node pubkey in `node_pks`
+					/// Creates a copy of the BlindedPath
+					internal func clone() -> BlindedPath {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKBlindedPath>) in
+				BlindedPath_clone(origPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = BlindedPath(cType: nativeCallResult)
+						
+
+						return returnValue
+					}
+		
+					/// Create a blinded path to be forwarded along `node_pks`. The last node pubkey in `node_pks`
 					/// will be the destination node.
 					/// 
 					/// Errors if less than two hops are provided or if `node_pk`(s) are invalid.
-					public class func new(nodePks: [[UInt8]], keysManager: KeysInterface) -> Result_BlindedRouteNoneZ {
+					public class func new(nodePks: [[UInt8]], keysManager: KeysInterface) -> Result_BlindedPathNoneZ {
 						// native call variable prep
 						
 						let nodePksVector = Vec_PublicKeyZ(array: nodePks).dangle()
@@ -75,7 +98,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: keysManager.activate().cType!) { (keysManagerPointer: UnsafePointer<LDKKeysInterface>) in
-				BlindedRoute_new(nodePksVector.cType!, keysManagerPointer)
+				BlindedPath_new(nodePksVector.cType!, keysManagerPointer)
 						}
 				
 
@@ -86,21 +109,21 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_BlindedRouteNoneZ(cType: nativeCallResult)
+						let returnValue = Result_BlindedPathNoneZ(cType: nativeCallResult)
 						
 
 						return returnValue
 					}
 		
-					/// Serialize the BlindedRoute object into a byte array which can be read by BlindedRoute_read
+					/// Serialize the BlindedPath object into a byte array which can be read by BlindedPath_read
 					public func write() -> [UInt8] {
 						// native call variable prep
 						
 
 						// native method call
 						let nativeCallResult = 
-						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKBlindedRoute>) in
-				BlindedRoute_write(objPointer)
+						withUnsafePointer(to: self.cType!) { (objPointer: UnsafePointer<LDKBlindedPath>) in
+				BlindedPath_write(objPointer)
 						}
 				
 
@@ -115,15 +138,15 @@
 						return returnValue
 					}
 		
-					/// Read a BlindedRoute from a byte array, created by BlindedRoute_write
-					public class func read(ser: [UInt8]) -> Result_BlindedRouteDecodeErrorZ {
+					/// Read a BlindedPath from a byte array, created by BlindedPath_write
+					public class func read(ser: [UInt8]) -> Result_BlindedPathDecodeErrorZ {
 						// native call variable prep
 						
 						let serPrimitiveWrapper = u8slice(value: ser)
 				
 
 						// native method call
-						let nativeCallResult = BlindedRoute_read(serPrimitiveWrapper.cType!)
+						let nativeCallResult = BlindedPath_read(serPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -133,7 +156,7 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_BlindedRouteDecodeErrorZ(cType: nativeCallResult)
+						let returnValue = Result_BlindedPathDecodeErrorZ(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -152,18 +175,31 @@
 					}
 		
 
-					internal func dangle(_ shouldDangle: Bool = true) -> BlindedRoute {
+					internal func dangle(_ shouldDangle: Bool = true) -> BlindedPath {
 						self.dangling = shouldDangle
 						return self
 					}
 
 					
-					internal func setCFreeability(freeable: Bool) -> BlindedRoute {
+					internal func danglingClone() -> BlindedPath {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+						internal func dynamicallyDangledClone() -> BlindedPath {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
+					
+					internal func setCFreeability(freeable: Bool) -> BlindedPath {
 						self.cType!.is_owned = freeable
 						return self
 					}
 
-					internal func dynamicDangle() -> BlindedRoute {
+					internal func dynamicDangle() -> BlindedPath {
 						self.dangling = self.cType!.is_owned
 						return self
 					}
@@ -174,11 +210,11 @@
 						}
 
 						if !self.dangling {
-							Bindings.print("Freeing BlindedRoute \(self.instanceNumber).")
+							Bindings.print("Freeing BlindedPath \(self.instanceNumber).")
 							
 							self.free()
 						} else {
-							Bindings.print("Not freeing BlindedRoute \(self.instanceNumber) due to dangle.")
+							Bindings.print("Not freeing BlindedPath \(self.instanceNumber) due to dangle.")
 						}
 					}
 			

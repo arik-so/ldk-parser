@@ -5,14 +5,18 @@
 
 			import Foundation
 
-			/// Specifies the recipient of an invoice, to indicate to [`KeysInterface::sign_invoice`] what node
-			/// secret key should be used to sign the invoice.
+			/// Specifies the recipient of an invoice.
+			/// 
+			/// This indicates to [`KeysInterface::sign_invoice`] what node secret key should be used to sign
+			/// the invoice.
 			public typealias Recipient = Bindings.Recipient
 
 			extension Bindings {
 
-				/// Specifies the recipient of an invoice, to indicate to [`KeysInterface::sign_invoice`] what node
-				/// secret key should be used to sign the invoice.
+				/// Specifies the recipient of an invoice.
+				/// 
+				/// This indicates to [`KeysInterface::sign_invoice`] what node secret key should be used to sign
+				/// the invoice.
 				public enum Recipient {
 
 					

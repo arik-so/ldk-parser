@@ -47,6 +47,10 @@
 						/// Scenario where we are unsure of the next node to forward the HTLC to.
 						case UnknownNextHop
 			
+						/// We couldn't forward to the outgoing scid. An example would be attempting to send a duplicate
+						/// intercept HTLC.
+						case InvalidForward
+			
 						/// Failure scenario where an HTLC may have been forwarded to be intended for us,
 						/// but is invalid for some reason, so we reject it.
 						/// 
@@ -65,6 +69,9 @@
 			
 							case LDKHTLCDestination_UnknownNextHop:
 								return .UnknownNextHop
+			
+							case LDKHTLCDestination_InvalidForward:
+								return .InvalidForward
 			
 							case LDKHTLCDestination_FailedPayment:
 								return .FailedPayment
@@ -155,6 +162,25 @@
 
 						// native method call
 						let nativeCallResult = HTLCDestination_unknown_next_hop(requestedForwardScid)
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = HTLCDestination(cType: nativeCallResult)
+						
+
+						return returnValue
+					}
+		
+					/// Utility method to constructs a new InvalidForward-variant HTLCDestination
+					public class func initWithInvalidForward(requestedForwardScid: UInt64) -> HTLCDestination {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = HTLCDestination_invalid_forward(requestedForwardScid)
 
 						// cleanup
 						
@@ -282,6 +308,14 @@
 						}
 
 						return HTLCDestination_LDKUnknownNextHop_Body(cType: self.cType!.unknown_next_hop, anchor: self)
+					}
+			
+					public func getValueAsInvalidForward() -> InvalidForward? {
+						if self.cType?.tag != LDKHTLCDestination_InvalidForward {
+							return nil
+						}
+
+						return HTLCDestination_LDKInvalidForward_Body(cType: self.cType!.invalid_forward, anchor: self)
 					}
 			
 					public func getValueAsFailedPayment() -> FailedPayment? {
@@ -439,6 +473,64 @@
 		
 
 						internal func dangle(_ shouldDangle: Bool = true) -> UnknownNextHop {
+							self.dangling = shouldDangle
+							return self
+						}
+
+											
+
+					}
+
+					
+		
+					
+					/// 
+					internal typealias HTLCDestination_LDKInvalidForward_Body = InvalidForward
+			
+
+					/// 
+					public class InvalidForward: NativeTypeWrapper {
+
+						
+
+						
+						private static var instanceCounter: UInt = 0
+						internal let instanceNumber: UInt
+
+						internal var cType: LDKHTLCDestination_LDKInvalidForward_Body?
+
+						internal init(cType: LDKHTLCDestination_LDKInvalidForward_Body) {
+							Self.instanceCounter += 1
+							self.instanceNumber = Self.instanceCounter
+							self.cType = cType
+							
+							super.init(conflictAvoidingVariableName: 0)
+						}
+
+						internal init(cType: LDKHTLCDestination_LDKInvalidForward_Body, anchor: NativeTypeWrapper) {
+							Self.instanceCounter += 1
+							self.instanceNumber = Self.instanceCounter
+							self.cType = cType
+							
+							super.init(conflictAvoidingVariableName: 0)
+							self.dangling = true
+							try! self.addAnchor(anchor: anchor)
+						}
+		
+
+						
+
+						
+						/// Short channel id we are requesting to forward an HTLC to.
+						public func getRequestedForwardScid() -> UInt64 {
+							// return value (do some wrapping)
+							let returnValue = self.cType!.requested_forward_scid
+
+							return returnValue;
+						}
+		
+
+						internal func dangle(_ shouldDangle: Bool = true) -> InvalidForward {
 							self.dangling = shouldDangle
 							return self
 						}

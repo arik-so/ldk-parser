@@ -6,31 +6,35 @@
 			// necessary for abort() calls
 			import Foundation
 
-			/// The `Confirm` trait is used to notify when transactions have been confirmed on chain or
-			/// unconfirmed during a chain reorganization.
+			/// The `Confirm` trait is used to notify LDK when relevant transactions have been confirmed on
+			/// chain or unconfirmed during a chain reorganization.
 			/// 
 			/// Clients sourcing chain data using a transaction-oriented API should prefer this interface over
-			/// [`Listen`]. For instance, an Electrum client may implement [`Filter`] by subscribing to activity
-			/// related to registered transactions and outputs. Upon notification, it would pass along the
-			/// matching transactions using this interface.
+			/// [`Listen`]. For instance, an Electrum-based transaction sync implementation may implement
+			/// [`Filter`] to subscribe to relevant transactions and unspent outputs it should monitor for
+			/// on-chain activity. Then, it needs to notify LDK via this interface upon observing any changes
+			/// with reference to the confirmation status of the monitored objects.
 			/// 
 			/// # Use
-			/// 
 			/// The intended use is as follows:
-			/// - Call [`transactions_confirmed`] to process any on-chain activity of interest.
-			/// - Call [`transaction_unconfirmed`] to process any transaction returned by [`get_relevant_txids`]
-			/// that has been reorganized out of the chain.
-			/// - Call [`best_block_updated`] whenever a new chain tip becomes available.
+			/// - Call [`transactions_confirmed`] to notify LDK whenever any of the registered transactions or
+			/// outputs are, respectively, confirmed or spent on chain.
+			/// - Call [`transaction_unconfirmed`] to notify LDK whenever any transaction returned by
+			/// [`get_relevant_txids`] is no longer confirmed in the block with the given block hash.
+			/// - Call [`best_block_updated`] to notify LDK whenever a new chain tip becomes available.
 			/// 
 			/// # Order
 			/// 
 			/// Clients must call these methods in chain order. Specifically:
-			/// - Transactions confirmed in a block must be given before transactions confirmed in a later
-			/// block.
+			/// - Transactions which are confirmed in a particular block must be given before transactions
+			/// confirmed in a later block.
 			/// - Dependent transactions within the same block must be given in topological order, possibly in
 			/// separate calls.
-			/// - Unconfirmed transactions must be given after the original confirmations and before any
-			/// reconfirmation.
+			/// - All unconfirmed transactions must be given after the original confirmations and before *any*
+			/// reconfirmations, i.e., [`transactions_confirmed`] and [`transaction_unconfirmed`] calls should
+			/// never be interleaved, but always conduced *en bloc*.
+			/// - Any reconfirmed transactions need to be explicitly unconfirmed before they are reconfirmed
+			/// in regard to the new block.
 			/// 
 			/// See individual method documentation for further details.
 			/// 
@@ -42,31 +46,35 @@
 
 			extension Bindings {
 
-				/// The `Confirm` trait is used to notify when transactions have been confirmed on chain or
-				/// unconfirmed during a chain reorganization.
+				/// The `Confirm` trait is used to notify LDK when relevant transactions have been confirmed on
+				/// chain or unconfirmed during a chain reorganization.
 				/// 
 				/// Clients sourcing chain data using a transaction-oriented API should prefer this interface over
-				/// [`Listen`]. For instance, an Electrum client may implement [`Filter`] by subscribing to activity
-				/// related to registered transactions and outputs. Upon notification, it would pass along the
-				/// matching transactions using this interface.
+				/// [`Listen`]. For instance, an Electrum-based transaction sync implementation may implement
+				/// [`Filter`] to subscribe to relevant transactions and unspent outputs it should monitor for
+				/// on-chain activity. Then, it needs to notify LDK via this interface upon observing any changes
+				/// with reference to the confirmation status of the monitored objects.
 				/// 
 				/// # Use
-				/// 
 				/// The intended use is as follows:
-				/// - Call [`transactions_confirmed`] to process any on-chain activity of interest.
-				/// - Call [`transaction_unconfirmed`] to process any transaction returned by [`get_relevant_txids`]
-				/// that has been reorganized out of the chain.
-				/// - Call [`best_block_updated`] whenever a new chain tip becomes available.
+				/// - Call [`transactions_confirmed`] to notify LDK whenever any of the registered transactions or
+				/// outputs are, respectively, confirmed or spent on chain.
+				/// - Call [`transaction_unconfirmed`] to notify LDK whenever any transaction returned by
+				/// [`get_relevant_txids`] is no longer confirmed in the block with the given block hash.
+				/// - Call [`best_block_updated`] to notify LDK whenever a new chain tip becomes available.
 				/// 
 				/// # Order
 				/// 
 				/// Clients must call these methods in chain order. Specifically:
-				/// - Transactions confirmed in a block must be given before transactions confirmed in a later
-				/// block.
+				/// - Transactions which are confirmed in a particular block must be given before transactions
+				/// confirmed in a later block.
 				/// - Dependent transactions within the same block must be given in topological order, possibly in
 				/// separate calls.
-				/// - Unconfirmed transactions must be given after the original confirmations and before any
-				/// reconfirmation.
+				/// - All unconfirmed transactions must be given after the original confirmations and before *any*
+				/// reconfirmations, i.e., [`transactions_confirmed`] and [`transaction_unconfirmed`] calls should
+				/// never be interleaved, but always conduced *en bloc*.
+				/// - Any reconfirmed transactions need to be explicitly unconfirmed before they are reconfirmed
+				/// in regard to the new block.
 				/// 
 				/// See individual method documentation for further details.
 				/// 
@@ -180,7 +188,7 @@
 							return returnValue
 						}
 		
-						func getRelevantTxidsLambda(this_arg: UnsafeRawPointer?) -> LDKCVec_TxidZ {
+						func getRelevantTxidsLambda(this_arg: UnsafeRawPointer?) -> LDKCVec_C2Tuple_TxidBlockHashZZ {
 							let instance: Confirm = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "Confirm::getRelevantTxidsLambda")
 
 							// Swift callback variable prep
@@ -193,7 +201,7 @@
 							
 
 							// return value (do some wrapping)
-							let returnValue = Vec_TxidZ(array: swiftCallbackResult).dangle().cType!
+							let returnValue = Vec_C2Tuple_TxidBlockHashZZ(array: swiftCallbackResult).dangle().cType!
 
 							return returnValue
 						}
@@ -228,9 +236,9 @@
 					}
 
 					
-					/// Processes transactions confirmed in a block with a given header and height.
+					/// Notifies LDK of transactions confirmed in a block with a given header and height.
 					/// 
-					/// Should be called for any transactions registered by [`Filter::register_tx`] or any
+					/// Must be called for any transactions registered by [`Filter::register_tx`] or any
 					/// transactions spending an output registered by [`Filter::register_output`]. Such transactions
 					/// appearing in the same block do not need to be included in the same call; instead, multiple
 					/// calls with additional transactions may be made so long as they are made in [chain order].
@@ -247,10 +255,11 @@
 						abort()
 					}
 		
-					/// Processes a transaction that is no longer confirmed as result of a chain reorganization.
+					/// Notifies LDK of a transaction that is no longer confirmed as result of a chain reorganization.
 					/// 
-					/// Should be called for any transaction returned by [`get_relevant_txids`] if it has been
-					/// reorganized out of the best chain. Once called, the given transaction will not be returned
+					/// Must be called for any transaction returned by [`get_relevant_txids`] if it has been
+					/// reorganized out of the best chain or if it is no longer confirmed in the block with the
+					/// given block hash. Once called, the given transaction will not be returned
 					/// by [`get_relevant_txids`], unless it has been reconfirmed via [`transactions_confirmed`].
 					/// 
 					/// [`get_relevant_txids`]: Self::get_relevant_txids
@@ -261,30 +270,35 @@
 						abort()
 					}
 		
-					/// Processes an update to the best header connected at the given height.
+					/// Notifies LDK of an update to the best header connected at the given height.
 					/// 
-					/// Should be called when a new header is available but may be skipped for intermediary blocks
-					/// if they become available at the same time.
+					/// Must be called whenever a new chain tip becomes available. May be skipped for intermediary
+					/// blocks.
 					open func bestBlockUpdated(header: [UInt8]?, height: UInt32) -> Void {
 						
 						Bindings.print("Error: Confirm::bestBlockUpdated MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
-					/// Returns transactions that should be monitored for reorganization out of the chain.
+					/// Returns transactions that must be monitored for reorganization out of the chain along
+					/// with the hash of the block as part of which it had been previously confirmed.
 					/// 
 					/// Will include any transactions passed to [`transactions_confirmed`] that have insufficient
 					/// confirmations to be safe from a chain reorganization. Will not include any transactions
 					/// passed to [`transaction_unconfirmed`], unless later reconfirmed.
 					/// 
-					/// May be called to determine the subset of transactions that must still be monitored for
+					/// Must be called to determine the subset of transactions that must be monitored for
 					/// reorganization. Will be idempotent between calls but may change as a result of calls to the
-					/// other interface methods. Thus, this is useful to determine which transactions may need to be
+					/// other interface methods. Thus, this is useful to determine which transactions must be
 					/// given to [`transaction_unconfirmed`].
+					/// 
+					/// If any of the returned transactions are confirmed in a block other than the one with the
+					/// given hash, they need to be unconfirmed and reconfirmed via [`transaction_unconfirmed`] and
+					/// [`transactions_confirmed`], respectively.
 					/// 
 					/// [`transactions_confirmed`]: Self::transactions_confirmed
 					/// [`transaction_unconfirmed`]: Self::transaction_unconfirmed
-					open func getRelevantTxids() -> [[UInt8]] {
+					open func getRelevantTxids() -> [([UInt8], [UInt8])] {
 						
 						Bindings.print("Error: Confirm::getRelevantTxids MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
@@ -327,9 +341,9 @@
 
 				internal class NativelyImplementedConfirm: Confirm {
 					
-					/// Processes transactions confirmed in a block with a given header and height.
+					/// Notifies LDK of transactions confirmed in a block with a given header and height.
 					/// 
-					/// Should be called for any transactions registered by [`Filter::register_tx`] or any
+					/// Must be called for any transactions registered by [`Filter::register_tx`] or any
 					/// transactions spending an output registered by [`Filter::register_output`]. Such transactions
 					/// appearing in the same block do not need to be included in the same call; instead, multiple
 					/// calls with additional transactions may be made so long as they are made in [chain order].
@@ -371,10 +385,11 @@
 						return returnValue
 					}
 		
-					/// Processes a transaction that is no longer confirmed as result of a chain reorganization.
+					/// Notifies LDK of a transaction that is no longer confirmed as result of a chain reorganization.
 					/// 
-					/// Should be called for any transaction returned by [`get_relevant_txids`] if it has been
-					/// reorganized out of the best chain. Once called, the given transaction will not be returned
+					/// Must be called for any transaction returned by [`get_relevant_txids`] if it has been
+					/// reorganized out of the best chain or if it is no longer confirmed in the block with the
+					/// given block hash. Once called, the given transaction will not be returned
 					/// by [`get_relevant_txids`], unless it has been reconfirmed via [`transactions_confirmed`].
 					/// 
 					/// [`get_relevant_txids`]: Self::get_relevant_txids
@@ -406,10 +421,10 @@
 						return returnValue
 					}
 		
-					/// Processes an update to the best header connected at the given height.
+					/// Notifies LDK of an update to the best header connected at the given height.
 					/// 
-					/// Should be called when a new header is available but may be skipped for intermediary blocks
-					/// if they become available at the same time.
+					/// Must be called whenever a new chain tip becomes available. May be skipped for intermediary
+					/// blocks.
 					public override func bestBlockUpdated(header: [UInt8]?, height: UInt32) {
 						// native call variable prep
 						
@@ -437,20 +452,25 @@
 						return returnValue
 					}
 		
-					/// Returns transactions that should be monitored for reorganization out of the chain.
+					/// Returns transactions that must be monitored for reorganization out of the chain along
+					/// with the hash of the block as part of which it had been previously confirmed.
 					/// 
 					/// Will include any transactions passed to [`transactions_confirmed`] that have insufficient
 					/// confirmations to be safe from a chain reorganization. Will not include any transactions
 					/// passed to [`transaction_unconfirmed`], unless later reconfirmed.
 					/// 
-					/// May be called to determine the subset of transactions that must still be monitored for
+					/// Must be called to determine the subset of transactions that must be monitored for
 					/// reorganization. Will be idempotent between calls but may change as a result of calls to the
-					/// other interface methods. Thus, this is useful to determine which transactions may need to be
+					/// other interface methods. Thus, this is useful to determine which transactions must be
 					/// given to [`transaction_unconfirmed`].
+					/// 
+					/// If any of the returned transactions are confirmed in a block other than the one with the
+					/// given hash, they need to be unconfirmed and reconfirmed via [`transaction_unconfirmed`] and
+					/// [`transactions_confirmed`], respectively.
 					/// 
 					/// [`transactions_confirmed`]: Self::transactions_confirmed
 					/// [`transaction_unconfirmed`]: Self::transaction_unconfirmed
-					public override func getRelevantTxids() -> [[UInt8]] {
+					public override func getRelevantTxids() -> [([UInt8], [UInt8])] {
 						// native call variable prep
 						
 
@@ -463,7 +483,7 @@
 						
 
 						// return value (do some wrapping)
-						let returnValue = Vec_TxidZ(cType: nativeCallResult).getValue()
+						let returnValue = Vec_C2Tuple_TxidBlockHashZZ(cType: nativeCallResult).getValue()
 
 						return returnValue
 					}

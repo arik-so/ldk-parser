@@ -12,7 +12,7 @@
 
 				/// Errors that may occur when [sending an onion message].
 				/// 
-				/// [sending an onion message]: OnionMessenger::send_custom_onion_message
+				/// [sending an onion message]: OnionMessenger::send_onion_message
 				public class SendError: NativeTypeWrapper {
 
 					
@@ -49,7 +49,7 @@
 						/// exceeds 32834 bytes, we refuse to send messages where the packet exceeds this size.
 						case TooBigPacket
 			
-						/// The provided [`Destination`] was an invalid [`BlindedRoute`], due to having fewer than two
+						/// The provided [`Destination`] was an invalid [`BlindedPath`], due to having fewer than two
 						/// blinded hops.
 						case TooFewBlindedHops
 			
@@ -61,6 +61,17 @@
 			
 						/// Our next-hop peer's buffer was full or our total outbound buffer was full.
 						case BufferFull
+			
+						/// Failed to retrieve our node id from the provided [`KeysInterface`].
+						/// 
+						/// [`KeysInterface`]: crate::chain::keysinterface::KeysInterface
+						case GetNodeIdFailed
+			
+						/// We attempted to send to a blinded path where we are the introduction node, and failed to
+						/// advance the blinded path to make the second hop the new introduction node. Either
+						/// [`KeysInterface::ecdh`] failed, we failed to tweak the current blinding point to get the
+						/// new blinding point, or we were attempting to send to ourselves.
+						case BlindedPathAdvanceFailed
 			
 					}
 
@@ -83,6 +94,12 @@
 			
 							case LDKSendError_BufferFull:
 								return .BufferFull
+			
+							case LDKSendError_GetNodeIdFailed:
+								return .GetNodeIdFailed
+			
+							case LDKSendError_BlindedPathAdvanceFailed:
+								return .BlindedPathAdvanceFailed
 			
 							default:
 								Bindings.print("Error: Invalid value type for SendError! Aborting.", severity: .ERROR)
@@ -236,6 +253,44 @@
 
 						// native method call
 						let nativeCallResult = SendError_buffer_full()
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = SendError(cType: nativeCallResult)
+						
+
+						return returnValue
+					}
+		
+					/// Utility method to constructs a new GetNodeIdFailed-variant SendError
+					public class func initWithGetNodeIdFailed() -> SendError {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = SendError_get_node_id_failed()
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = SendError(cType: nativeCallResult)
+						
+
+						return returnValue
+					}
+		
+					/// Utility method to constructs a new BlindedPathAdvanceFailed-variant SendError
+					public class func initWithBlindedPathAdvanceFailed() -> SendError {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = SendError_blinded_path_advance_failed()
 
 						// cleanup
 						

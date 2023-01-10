@@ -617,8 +617,10 @@
 						return returnValue
 					}
 		
-					/// The `user_channel_id` passed in to create_channel, or 0 if the channel was inbound.
-					public func getUserChannelId() -> UInt64 {
+					/// The `user_channel_id` passed in to create_channel, or a random value if the channel was
+					/// inbound. This may be zero for inbound channels serialized with LDK versions prior to
+					/// 0.0.113.
+					public func getUserChannelId() -> [UInt8] {
 						// native call variable prep
 						
 
@@ -634,26 +636,33 @@
 
 						
 						// return value (do some wrapping)
-						let returnValue = nativeCallResult
+						let returnValue = U128(cType: nativeCallResult, anchor: self).dangle(false).getValue()
 						
 
 						return returnValue
 					}
 		
-					/// The `user_channel_id` passed in to create_channel, or 0 if the channel was inbound.
-					public func setUserChannelId(val: UInt64) {
+					/// The `user_channel_id` passed in to create_channel, or a random value if the channel was
+					/// inbound. This may be zero for inbound channels serialized with LDK versions prior to
+					/// 0.0.113.
+					public func setUserChannelId(val: [UInt8]) {
 						// native call variable prep
 						
+						let valPrimitiveWrapper = U128(value: val)
+				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
-				ChannelDetails_set_user_channel_id(thisPtrPointer, val)
+				ChannelDetails_set_user_channel_id(thisPtrPointer, valPrimitiveWrapper.cType!)
 						}
 				
 
 						// cleanup
 						
+						// for elided types, we need this
+						valPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
@@ -963,6 +972,58 @@
 						let nativeCallResult = 
 						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
 				ChannelDetails_set_confirmations_required(thisPtrPointer, valOption.cType!)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+						
+
+						return returnValue
+					}
+		
+					/// The current number of confirmations on the funding transaction.
+					/// 
+					/// This value will be `None` for objects serialized with LDK versions prior to 0.0.113.
+					public func getConfirmations() -> UInt32? {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelDetails>) in
+				ChannelDetails_get_confirmations(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = Option_u32Z(cType: nativeCallResult, anchor: self).getValue()
+						
+
+						return returnValue
+					}
+		
+					/// The current number of confirmations on the funding transaction.
+					/// 
+					/// This value will be `None` for objects serialized with LDK versions prior to 0.0.113.
+					public func setConfirmations(val: UInt32?) {
+						// native call variable prep
+						
+						let valOption = Option_u32Z(some: val).danglingClone()
+				
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelDetails>) in
+				ChannelDetails_set_confirmations(thisPtrPointer, valOption.cType!)
 						}
 				
 
@@ -1405,7 +1466,7 @@
 					}
 		
 					/// Constructs a new ChannelDetails given each field
-					public init(channelIdArg: [UInt8], counterpartyArg: ChannelCounterparty, fundingTxoArg: OutPoint, channelTypeArg: ChannelTypeFeatures, shortChannelIdArg: UInt64?, outboundScidAliasArg: UInt64?, inboundScidAliasArg: UInt64?, channelValueSatoshisArg: UInt64, unspendablePunishmentReserveArg: UInt64?, userChannelIdArg: UInt64, balanceMsatArg: UInt64, outboundCapacityMsatArg: UInt64, nextOutboundHtlcLimitMsatArg: UInt64, inboundCapacityMsatArg: UInt64, confirmationsRequiredArg: UInt32?, forceCloseSpendDelayArg: UInt16?, isOutboundArg: Bool, isChannelReadyArg: Bool, isUsableArg: Bool, isPublicArg: Bool, inboundHtlcMinimumMsatArg: UInt64?, inboundHtlcMaximumMsatArg: UInt64?, configArg: ChannelConfig) {
+					public init(channelIdArg: [UInt8], counterpartyArg: ChannelCounterparty, fundingTxoArg: OutPoint, channelTypeArg: ChannelTypeFeatures, shortChannelIdArg: UInt64?, outboundScidAliasArg: UInt64?, inboundScidAliasArg: UInt64?, channelValueSatoshisArg: UInt64, unspendablePunishmentReserveArg: UInt64?, userChannelIdArg: [UInt8], balanceMsatArg: UInt64, outboundCapacityMsatArg: UInt64, nextOutboundHtlcLimitMsatArg: UInt64, inboundCapacityMsatArg: UInt64, confirmationsRequiredArg: UInt32?, confirmationsArg: UInt32?, forceCloseSpendDelayArg: UInt16?, isOutboundArg: Bool, isChannelReadyArg: Bool, isUsableArg: Bool, isPublicArg: Bool, inboundHtlcMinimumMsatArg: UInt64?, inboundHtlcMaximumMsatArg: UInt64?, configArg: ChannelConfig) {
 						// native call variable prep
 						
 						let channelIdArgPrimitiveWrapper = ThirtyTwoBytes(value: channelIdArg)
@@ -1418,7 +1479,11 @@
 				
 						let unspendablePunishmentReserveArgOption = Option_u64Z(some: unspendablePunishmentReserveArg).danglingClone()
 				
+						let userChannelIdArgPrimitiveWrapper = U128(value: userChannelIdArg)
+				
 						let confirmationsRequiredArgOption = Option_u32Z(some: confirmationsRequiredArg).danglingClone()
+				
+						let confirmationsArgOption = Option_u32Z(some: confirmationsArg).danglingClone()
 				
 						let forceCloseSpendDelayArgOption = Option_u16Z(some: forceCloseSpendDelayArg).danglingClone()
 				
@@ -1428,12 +1493,15 @@
 				
 
 						// native method call
-						let nativeCallResult = ChannelDetails_new(channelIdArgPrimitiveWrapper.cType!, counterpartyArg.dynamicallyDangledClone().cType!, fundingTxoArg.dynamicallyDangledClone().cType!, channelTypeArg.dynamicallyDangledClone().cType!, shortChannelIdArgOption.cType!, outboundScidAliasArgOption.cType!, inboundScidAliasArgOption.cType!, channelValueSatoshisArg, unspendablePunishmentReserveArgOption.cType!, userChannelIdArg, balanceMsatArg, outboundCapacityMsatArg, nextOutboundHtlcLimitMsatArg, inboundCapacityMsatArg, confirmationsRequiredArgOption.cType!, forceCloseSpendDelayArgOption.cType!, isOutboundArg, isChannelReadyArg, isUsableArg, isPublicArg, inboundHtlcMinimumMsatArgOption.cType!, inboundHtlcMaximumMsatArgOption.cType!, configArg.dynamicallyDangledClone().cType!)
+						let nativeCallResult = ChannelDetails_new(channelIdArgPrimitiveWrapper.cType!, counterpartyArg.dynamicallyDangledClone().cType!, fundingTxoArg.dynamicallyDangledClone().cType!, channelTypeArg.dynamicallyDangledClone().cType!, shortChannelIdArgOption.cType!, outboundScidAliasArgOption.cType!, inboundScidAliasArgOption.cType!, channelValueSatoshisArg, unspendablePunishmentReserveArgOption.cType!, userChannelIdArgPrimitiveWrapper.cType!, balanceMsatArg, outboundCapacityMsatArg, nextOutboundHtlcLimitMsatArg, inboundCapacityMsatArg, confirmationsRequiredArgOption.cType!, confirmationsArgOption.cType!, forceCloseSpendDelayArgOption.cType!, isOutboundArg, isChannelReadyArg, isUsableArg, isPublicArg, inboundHtlcMinimumMsatArgOption.cType!, inboundHtlcMaximumMsatArgOption.cType!, configArg.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
 						// for elided types, we need this
 						channelIdArgPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						userChannelIdArgPrimitiveWrapper.noOpRetain()
 				
 				self.initialCFreeability = nativeCallResult.is_owned
 			

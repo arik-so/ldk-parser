@@ -385,14 +385,65 @@
 						return returnValue
 					}
 		
-					/// Constructs a new ChannelTransactionParameters given each field
-					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `optAnchorsArg`.")
-					public init(holderPubkeysArg: ChannelPublicKeys, holderSelectedContestDelayArg: UInt16, isOutboundFromHolderArg: Bool, counterpartyParametersArg: CounterpartyChannelTransactionParameters, fundingOutpointArg: OutPoint, optAnchorsArg: Option_NoneZ) {
+					/// Are non-zero-fee anchors are enabled (used in conjuction with opt_anchors)
+					/// It is intended merely for backwards compatibility with signers that need it.
+					/// There is no support for this feature in LDK channel negotiation.
+					public func getOptNonZeroFeeAnchors() -> Option_NoneZ {
 						// native call variable prep
 						
 
 						// native method call
-						let nativeCallResult = ChannelTransactionParameters_new(holderPubkeysArg.dynamicallyDangledClone().cType!, holderSelectedContestDelayArg, isOutboundFromHolderArg, counterpartyParametersArg.dynamicallyDangledClone().cType!, fundingOutpointArg.dynamicallyDangledClone().cType!, optAnchorsArg.getCValue())
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKChannelTransactionParameters>) in
+				ChannelTransactionParameters_get_opt_non_zero_fee_anchors(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = Option_NoneZ(value: nativeCallResult)
+						
+
+						return returnValue
+					}
+		
+					/// Are non-zero-fee anchors are enabled (used in conjuction with opt_anchors)
+					/// It is intended merely for backwards compatibility with signers that need it.
+					/// There is no support for this feature in LDK channel negotiation.
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `val`.")
+					public func setOptNonZeroFeeAnchors(val: Option_NoneZ) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKChannelTransactionParameters>) in
+				ChannelTransactionParameters_set_opt_non_zero_fee_anchors(thisPtrPointer, val.getCValue())
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+						
+
+						return returnValue
+					}
+		
+					/// Constructs a new ChannelTransactionParameters given each field
+					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `optAnchorsArg`, `optNonZeroFeeAnchorsArg`.")
+					public init(holderPubkeysArg: ChannelPublicKeys, holderSelectedContestDelayArg: UInt16, isOutboundFromHolderArg: Bool, counterpartyParametersArg: CounterpartyChannelTransactionParameters, fundingOutpointArg: OutPoint, optAnchorsArg: Option_NoneZ, optNonZeroFeeAnchorsArg: Option_NoneZ) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = ChannelTransactionParameters_new(holderPubkeysArg.dynamicallyDangledClone().cType!, holderSelectedContestDelayArg, isOutboundFromHolderArg, counterpartyParametersArg.dynamicallyDangledClone().cType!, fundingOutpointArg.dynamicallyDangledClone().cType!, optAnchorsArg.getCValue(), optNonZeroFeeAnchorsArg.getCValue())
 
 						// cleanup
 						

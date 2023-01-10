@@ -169,14 +169,12 @@
 					}
 		
 					/// Utility method to constructs a new Total-variant EffectiveCapacity
-					public class func initWithTotal(capacityMsat: UInt64, htlcMaximumMsat: UInt64?) -> EffectiveCapacity {
+					public class func initWithTotal(capacityMsat: UInt64, htlcMaximumMsat: UInt64) -> EffectiveCapacity {
 						// native call variable prep
 						
-						let htlcMaximumMsatOption = Option_u64Z(some: htlcMaximumMsat).danglingClone()
-				
 
 						// native method call
-						let nativeCallResult = EffectiveCapacity_total(capacityMsat, htlcMaximumMsatOption.cType!)
+						let nativeCallResult = EffectiveCapacity_total(capacityMsat, htlcMaximumMsat)
 
 						// cleanup
 						
@@ -469,9 +467,9 @@
 						}
 		
 						/// The maximum HTLC amount denominated in millisatoshi.
-						public func getHtlcMaximumMsat() -> UInt64? {
+						public func getHtlcMaximumMsat() -> UInt64 {
 							// return value (do some wrapping)
-							let returnValue = Option_u64Z(cType: self.cType!.htlc_maximum_msat, anchor: self).getValue()
+							let returnValue = self.cType!.htlc_maximum_msat
 
 							return returnValue;
 						}

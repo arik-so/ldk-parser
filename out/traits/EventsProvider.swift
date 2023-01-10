@@ -10,6 +10,10 @@
 			/// 
 			/// Events are processed by passing an [`EventHandler`] to [`process_pending_events`].
 			/// 
+			/// Implementations of this trait may also feature an async version of event handling, as shown with
+			/// [`ChannelManager::process_pending_events_async`] and
+			/// [`ChainMonitor::process_pending_events_async`].
+			/// 
 			/// # Requirements
 			/// 
 			/// When using this trait, [`process_pending_events`] will call [`handle_event`] for each pending
@@ -36,6 +40,8 @@
 			/// [`handle_event`]: EventHandler::handle_event
 			/// [`ChannelManager::process_pending_events`]: crate::ln::channelmanager::ChannelManager#method.process_pending_events
 			/// [`ChainMonitor::process_pending_events`]: crate::chain::chainmonitor::ChainMonitor#method.process_pending_events
+			/// [`ChannelManager::process_pending_events_async`]: crate::ln::channelmanager::ChannelManager::process_pending_events_async
+			/// [`ChainMonitor::process_pending_events_async`]: crate::chain::chainmonitor::ChainMonitor::process_pending_events_async
 			public typealias EventsProvider = Bindings.EventsProvider
 
 			extension Bindings {
@@ -43,6 +49,10 @@
 				/// A trait indicating an object may generate events.
 				/// 
 				/// Events are processed by passing an [`EventHandler`] to [`process_pending_events`].
+				/// 
+				/// Implementations of this trait may also feature an async version of event handling, as shown with
+				/// [`ChannelManager::process_pending_events_async`] and
+				/// [`ChainMonitor::process_pending_events_async`].
 				/// 
 				/// # Requirements
 				/// 
@@ -70,6 +80,8 @@
 				/// [`handle_event`]: EventHandler::handle_event
 				/// [`ChannelManager::process_pending_events`]: crate::ln::channelmanager::ChannelManager#method.process_pending_events
 				/// [`ChainMonitor::process_pending_events`]: crate::chain::chainmonitor::ChainMonitor#method.process_pending_events
+				/// [`ChannelManager::process_pending_events_async`]: crate::ln::channelmanager::ChannelManager::process_pending_events_async
+				/// [`ChainMonitor::process_pending_events_async`]: crate::chain::chainmonitor::ChainMonitor::process_pending_events_async
 				open class EventsProvider: NativeTraitWrapper {
 
 					

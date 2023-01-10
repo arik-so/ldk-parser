@@ -122,7 +122,8 @@ public class PolarIntegrationSample {
         let channelValue: UInt64 = 1_300_000 // 1.3 million satoshis, or 0.013 BTC
         let channelValueBtcString = "0.013"
         let reserveAmount: UInt64 = 1000 // a thousand satoshis rserve
-        let channelOpenResult = channelManager.createChannel(theirNetworkKey: lndPubkey, channelValueSatoshis: channelValue, pushMsat: reserveAmount, userChannelId: 42, overrideConfig: config)
+		let userChannelId: [UInt8] = [UInt8](repeating: 42, count: 16);
+		let channelOpenResult = channelManager.createChannel(theirNetworkKey: lndPubkey, channelValueSatoshis: channelValue, pushMsat: reserveAmount, userChannelId: userChannelId, overrideConfig: config)
 
         if let channelOpenError = channelOpenResult.getError() {
             print("error type: \(channelOpenError.getValueType())")
@@ -135,8 +136,8 @@ public class PolarIntegrationSample {
                 print("excessive fee rate error: \(error.getErr())")
             } else if let error = channelOpenError.getValueAsIncompatibleShutdownScript() {
                 print("incompatible shutdown script: \(error.getScript())")
-            } else if let error = channelOpenError.getValueAsRouteError() {
-                print("route error: \(error.getErr())")
+            } else if let error = channelOpenError.getValueAsInvalidRoute() {
+                print("invalid route error: \(error.getErr())")
             }
             return
         }

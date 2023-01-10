@@ -4,14 +4,14 @@
 			#endif
 
 			/// A CResult_InFlightHtlcsDecodeErrorZ represents the result of a fallible operation,
-			/// containing a crate::lightning_invoice::payment::InFlightHtlcs on success and a crate::lightning::ln::msgs::DecodeError on failure.
+			/// containing a crate::lightning::routing::router::InFlightHtlcs on success and a crate::lightning::ln::msgs::DecodeError on failure.
 			/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 			public typealias Result_InFlightHtlcsDecodeErrorZ = Bindings.Result_InFlightHtlcsDecodeErrorZ
 
 			extension Bindings {
 
 				/// A CResult_InFlightHtlcsDecodeErrorZ represents the result of a fallible operation,
-				/// containing a crate::lightning_invoice::payment::InFlightHtlcs on success and a crate::lightning::ln::msgs::DecodeError on failure.
+				/// containing a crate::lightning::routing::router::InFlightHtlcs on success and a crate::lightning::ln::msgs::DecodeError on failure.
 				/// `result_ok` indicates the overall state, and the contents are provided via `contents`.
 				public class Result_InFlightHtlcsDecodeErrorZ: NativeTypeWrapper {
 
@@ -42,13 +42,12 @@
 
 					
 					/// Creates a new CResult_InFlightHtlcsDecodeErrorZ in the success state.
-					@available(*, deprecated, message: "This method passes the following non-cloneable, but freeable objects by value: `o`.")
 					public class func initWithOk(o: InFlightHtlcs) -> Result_InFlightHtlcsDecodeErrorZ {
 						// native call variable prep
 						
 
 						// native method call
-						let nativeCallResult = CResult_InFlightHtlcsDecodeErrorZ_ok(o.dangle().cType!)
+						let nativeCallResult = CResult_InFlightHtlcsDecodeErrorZ_ok(o.dynamicallyDangledClone().cType!)
 
 						// cleanup
 						
@@ -99,6 +98,30 @@
 						return returnValue
 					}
 		
+					/// Creates a new CResult_InFlightHtlcsDecodeErrorZ which has the same data as `orig`
+					/// but with all dynamically-allocated buffers duplicated in new buffers.
+					internal func clone() -> Result_InFlightHtlcsDecodeErrorZ {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKCResult_InFlightHtlcsDecodeErrorZ>) in
+				CResult_InFlightHtlcsDecodeErrorZ_clone(origPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = Result_InFlightHtlcsDecodeErrorZ(cType: nativeCallResult)
+						
+
+						return returnValue
+					}
+		
 
 					public func isOk() -> Bool {
 						return self.cType?.result_ok == true
@@ -128,6 +151,12 @@
 					}
 
 					
+					internal func danglingClone() -> Result_InFlightHtlcsDecodeErrorZ {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
 					deinit {
 						if Bindings.suspendFreedom {
 							return
