@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// An enum representing the available verbosity levels of the logger.
 			public typealias Level = Bindings.Level
 
@@ -49,9 +51,13 @@
 							case LDKLevel_Warn:
 								self = .Warn
 			
-							default:
+							case LDKLevel_Error:
 								self = .Error
 			
+							default:
+								Bindings.print("Error: Invalid value type for Level! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 

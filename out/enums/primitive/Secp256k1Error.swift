@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// Represents an error returned from libsecp256k1 during validation of some secp256k1 data
 			public typealias Secp256k1Error = Bindings.Secp256k1Error
 
@@ -79,9 +81,13 @@
 							case LDKSecp256k1Error_InvalidPublicKeySum:
 								self = .InvalidPublicKeySum
 			
-							default:
+							case LDKSecp256k1Error_InvalidParityValue:
 								self = .InvalidParityValue
 			
+							default:
+								Bindings.print("Error: Invalid value type for Secp256k1Error! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 

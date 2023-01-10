@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// An enum representing the possible Bitcoin or test networks which we can run on
 			public typealias Network = Bindings.Network
 
@@ -37,9 +39,13 @@
 							case LDKNetwork_Regtest:
 								self = .Regtest
 			
-							default:
+							case LDKNetwork_Signet:
 								self = .Signet
 			
+							default:
+								Bindings.print("Error: Invalid value type for Network! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 

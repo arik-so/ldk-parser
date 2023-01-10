@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// An error when accessing the chain via [`Access`].
 			public typealias AccessError = Bindings.AccessError
 
@@ -25,9 +27,13 @@
 							case LDKAccessError_UnknownChain:
 								self = .UnknownChain
 			
-							default:
+							case LDKAccessError_UnknownTx:
 								self = .UnknownTx
 			
+							default:
+								Bindings.print("Error: Invalid value type for AccessError! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 

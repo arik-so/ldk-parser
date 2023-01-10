@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// Enum representing the crypto currencies (or networks) supported by this library
 			public typealias Currency = Bindings.Currency
 
@@ -43,9 +45,13 @@
 							case LDKCurrency_Simnet:
 								self = .Simnet
 			
-							default:
+							case LDKCurrency_Signet:
 								self = .Signet
 			
+							default:
+								Bindings.print("Error: Invalid value type for Currency! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 

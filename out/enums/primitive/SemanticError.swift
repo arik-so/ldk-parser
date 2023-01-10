@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// Errors that may occur when converting a `RawInvoice` to an `Invoice`. They relate to the
 			/// requirements sections in BOLT #11
 			public typealias SemanticError = Bindings.SemanticError
@@ -76,9 +78,13 @@
 							case LDKSemanticError_InvalidSignature:
 								self = .InvalidSignature
 			
-							default:
+							case LDKSemanticError_ImpreciseAmount:
 								self = .ImpreciseAmount
 			
+							default:
+								Bindings.print("Error: Invalid value type for SemanticError! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 

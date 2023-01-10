@@ -3,6 +3,8 @@
 			import LDKHeaders
 			#endif
 
+			import Foundation
+
 			/// Specifies the recipient of an invoice, to indicate to [`KeysInterface::sign_invoice`] what node
 			/// secret key should be used to sign the invoice.
 			public typealias Recipient = Bindings.Recipient
@@ -30,9 +32,13 @@
 							case LDKRecipient_Node:
 								self = .Node
 			
-							default:
+							case LDKRecipient_PhantomNode:
 								self = .PhantomNode
 			
+							default:
+								Bindings.print("Error: Invalid value type for Recipient! Aborting.", severity: .ERROR)
+								abort()
+				
 						}
 					}
 
