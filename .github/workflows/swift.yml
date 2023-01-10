@@ -35,12 +35,7 @@ jobs:
                     H_FILE_OUTPUT_DIRECTORY: /home/runner/work/ldk-parser/ldk-parser/ci/LDKSwift/Sources/LDKHeaders/include
                     C_FILE_OUTPUT_DIRECTORY: /home/runner/work/ldk-parser/ldk-parser/ci/LDKSwift/Sources/LDKHeaders
             -   name: Check that the latest auto-generated Swift files are in the repo
-                run: |
-                    npm install
-                    # python3 ./ # Generate bindings into local directory
-                    npm run tsc
-                    node ./src/index.mjs
-                    # git diff --exit-code ci/LDKSwift/Sources/LDKSwift ':(exclude)ci/LDKSwift/Sources/LDKSwift/bindings/Bindings.swift'
+                uses: ./.github/actions/bindings-codegen
                 env:
                     LDK_SWIFT_GENERATOR_INPUT_HEADER_PATH: ci/ldk-c-bindings/lightning-c-bindings/include/lightning.h
             -   name: Install Swift Toolchain

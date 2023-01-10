@@ -1,0 +1,11 @@
+name: Bindings Codegen
+description: Runs bindings generator
+runs:
+  steps:
+    - shell: bash
+      working-directory: ./src
+      run: |
+        npm install
+        npm run tsc
+        node index.mjs
+
