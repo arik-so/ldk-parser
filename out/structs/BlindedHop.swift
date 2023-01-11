@@ -4,14 +4,14 @@
 			import LDKHeaders
 			#endif
 
-			/// Used to construct the blinded hops portion of a blinded route. These hops cannot be identified
+			/// Used to construct the blinded hops portion of a blinded path. These hops cannot be identified
 			/// by outside observers and thus can be used to hide the identity of the recipient.
 			public typealias BlindedHop = Bindings.BlindedHop
 
 			extension Bindings {
 		
 
-				/// Used to construct the blinded hops portion of a blinded route. These hops cannot be identified
+				/// Used to construct the blinded hops portion of a blinded path. These hops cannot be identified
 				/// by outside observers and thus can be used to hide the identity of the recipient.
 				public class BlindedHop: NativeTypeWrapper {
 
@@ -57,6 +57,29 @@
 						
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+						
+
+						return returnValue
+					}
+		
+					/// Creates a copy of the BlindedHop
+					internal func clone() -> BlindedHop {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (origPointer: UnsafePointer<LDKBlindedHop>) in
+				BlindedHop_clone(origPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = BlindedHop(cType: nativeCallResult)
 						
 
 						return returnValue
@@ -127,6 +150,19 @@
 						return self
 					}
 
+					
+					internal func danglingClone() -> BlindedHop {
+						let dangledClone = self.clone()
+						dangledClone.dangling = true
+						return dangledClone
+					}
+			
+						internal func dynamicallyDangledClone() -> BlindedHop {
+							let dangledClone = self.clone()
+							// if it's owned, i. e. controlled by Rust, it should dangle on our end
+							dangledClone.dangling = dangledClone.cType!.is_owned
+							return dangledClone
+						}
 					
 					internal func setCFreeability(freeable: Bool) -> BlindedHop {
 						self.cType!.is_owned = freeable

@@ -60,8 +60,7 @@
 						return returnValue
 					}
 		
-					/// Creates a new router using the given [`NetworkGraph`], a [`Logger`], and a randomness source
-					/// `random_seed_bytes`.
+					/// Creates a new router.
 					public init(networkGraph: NetworkGraph, logger: Logger, randomSeedBytes: [UInt8], scorer: LockableScore) {
 						// native call variable prep
 						

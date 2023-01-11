@@ -6,12 +6,12 @@
 			// necessary for abort() calls
 			import Foundation
 
-			/// A trait defining behavior for routing an [`Invoice`] payment.
+			/// A trait defining behavior for routing a payment.
 			public typealias Router = Bindings.Router
 
 			extension Bindings {
 
-				/// A trait defining behavior for routing an [`Invoice`] payment.
+				/// A trait defining behavior for routing a payment.
 				open class Router: NativeTraitWrapper {
 
 					
@@ -49,16 +49,11 @@
 						
 
 						
-						func findRouteLambda(this_arg: UnsafeRawPointer?, payer: LDKPublicKey, route_params: UnsafePointer<LDKRouteParameters>, payment_hash: UnsafePointer<UInt8Tuple32>?, first_hops: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>?, inflight_htlcs: LDKInFlightHtlcs) -> LDKCResult_RouteLightningErrorZ {
+						func findRouteLambda(this_arg: UnsafeRawPointer?, payer: LDKPublicKey, route_params: UnsafePointer<LDKRouteParameters>, first_hops: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>?, inflight_htlcs: LDKInFlightHtlcs) -> LDKCResult_RouteLightningErrorZ {
 							let instance: Router = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "Router::findRouteLambda")
 
 							// Swift callback variable prep
 							
-							var payment_hashPointee: [UInt8]? = nil
-							if let payment_hashUnwrapped = payment_hash {
-								payment_hashPointee = Bindings.UInt8Tuple32ToArray(tuple: payment_hashUnwrapped.pointee)
-							}
-						
 							var first_hopsPointee: [ChannelDetails]? = nil
 							if let first_hopsUnwrapped = first_hops {
 								first_hopsPointee = Vec_ChannelDetailsZ(cType: first_hopsUnwrapped.pointee).dangle().getValue()
@@ -66,7 +61,30 @@
 						
 
 							// Swift callback call
-							let swiftCallbackResult = instance.findRoute(payer: PublicKey(cType: payer).getValue(), routeParams: RouteParameters(cType: route_params.pointee).dangle().clone(), paymentHash: payment_hashPointee, firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(cType: inflight_htlcs))
+							let swiftCallbackResult = instance.findRoute(payer: PublicKey(cType: payer).getValue(), routeParams: RouteParameters(cType: route_params.pointee).dangle().clone(), firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(cType: inflight_htlcs))
+
+							// cleanup
+							
+
+							// return value (do some wrapping)
+							let returnValue = swiftCallbackResult.cType!
+
+							return returnValue
+						}
+		
+						func findRouteWithIdLambda(this_arg: UnsafeRawPointer?, payer: LDKPublicKey, route_params: UnsafePointer<LDKRouteParameters>, first_hops: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>?, inflight_htlcs: LDKInFlightHtlcs, _payment_hash: LDKThirtyTwoBytes, _payment_id: LDKThirtyTwoBytes) -> LDKCResult_RouteLightningErrorZ {
+							let instance: Router = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "Router::findRouteWithIdLambda")
+
+							// Swift callback variable prep
+							
+							var first_hopsPointee: [ChannelDetails]? = nil
+							if let first_hopsUnwrapped = first_hops {
+								first_hopsPointee = Vec_ChannelDetailsZ(cType: first_hopsUnwrapped.pointee).dangle().getValue()
+							}
+						
+
+							// Swift callback call
+							let swiftCallbackResult = instance.findRouteWithId(payer: PublicKey(cType: payer).getValue(), routeParams: RouteParameters(cType: route_params.pointee).dangle().clone(), firstHops: first_hopsPointee, inflightHtlcs: InFlightHtlcs(cType: inflight_htlcs), PaymentHash: ThirtyTwoBytes(cType: _payment_hash).getValue(), PaymentId: ThirtyTwoBytes(cType: _payment_id).getValue())
 
 							// cleanup
 							
@@ -171,6 +189,7 @@
 						self.cType = LDKRouter(							
 							this_arg: thisArg,
 							find_route: findRouteLambda,
+							find_route_with_id: findRouteWithIdLambda,
 							notify_payment_path_failed: notifyPaymentPathFailedLambda,
 							notify_payment_path_successful: notifyPaymentPathSuccessfulLambda,
 							notify_payment_probe_successful: notifyPaymentProbeSuccessfulLambda,
@@ -183,9 +202,19 @@
 					/// Finds a [`Route`] between `payer` and `payee` for a payment with the given values.
 					/// 
 					/// Note that first_hops (or a relevant inner pointer) may be NULL or all-0s to represent None
-					open func findRoute(payer: [UInt8], routeParams: RouteParameters, paymentHash: [UInt8]?, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs) -> Result_RouteLightningErrorZ {
+					open func findRoute(payer: [UInt8], routeParams: RouteParameters, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs) -> Result_RouteLightningErrorZ {
 						
 						Bindings.print("Error: Router::findRoute MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
+						abort()
+					}
+		
+					/// Finds a [`Route`] between `payer` and `payee` for a payment with the given values. Includes
+					/// `PaymentHash` and `PaymentId` to be able to correlate the request with a specific payment.
+					/// 
+					/// Note that first_hops (or a relevant inner pointer) may be NULL or all-0s to represent None
+					open func findRouteWithId(payer: [UInt8], routeParams: RouteParameters, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs, PaymentHash: [UInt8], PaymentId: [UInt8]) -> Result_RouteLightningErrorZ {
+						
+						Bindings.print("Error: Router::findRouteWithId MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -257,19 +286,10 @@
 					/// Finds a [`Route`] between `payer` and `payee` for a payment with the given values.
 					/// 
 					/// Note that first_hops (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public override func findRoute(payer: [UInt8], routeParams: RouteParameters, paymentHash: [UInt8]?, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs) -> Result_RouteLightningErrorZ {
+					public override func findRoute(payer: [UInt8], routeParams: RouteParameters, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs) -> Result_RouteLightningErrorZ {
 						// native call variable prep
 						
 						let payerPrimitiveWrapper = PublicKey(value: payer)
-				
-					var tupledPaymentHashPointer: UnsafeMutablePointer<UInt8Tuple32>? = nil
-					if let paymentHash = paymentHash {
-						
-						let tupledPaymentHash = Bindings.arrayToUInt8Tuple32(array: paymentHash)
-					
-						tupledPaymentHashPointer = UnsafeMutablePointer<UInt8Tuple32>.allocate(capacity: 1)
-						tupledPaymentHashPointer!.initialize(to: tupledPaymentHash)
-					}
 				
 					var firstHopsVectorPointer: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>? = nil
 					if let firstHops = firstHops {
@@ -286,7 +306,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: routeParams.cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
-				self.cType!.find_route(self.cType!.this_arg, payerPrimitiveWrapper.cType!, routeParamsPointer, tupledPaymentHashPointer, firstHopsVectorPointer, inflightHtlcs.dangle().cType!)
+				self.cType!.find_route(self.cType!.this_arg, payerPrimitiveWrapper.cType!, routeParamsPointer, firstHopsVectorPointer, inflightHtlcs.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -296,6 +316,58 @@
 						payerPrimitiveWrapper.noOpRetain()
 				
 						// firstHopsVector.noOpRetain()
+				
+
+						// return value (do some wrapping)
+						let returnValue = Result_RouteLightningErrorZ(cType: nativeCallResult)
+
+						return returnValue
+					}
+		
+					/// Finds a [`Route`] between `payer` and `payee` for a payment with the given values. Includes
+					/// `PaymentHash` and `PaymentId` to be able to correlate the request with a specific payment.
+					/// 
+					/// Note that first_hops (or a relevant inner pointer) may be NULL or all-0s to represent None
+					public override func findRouteWithId(payer: [UInt8], routeParams: RouteParameters, firstHops: [ChannelDetails]?, inflightHtlcs: InFlightHtlcs, PaymentHash: [UInt8], PaymentId: [UInt8]) -> Result_RouteLightningErrorZ {
+						// native call variable prep
+						
+						let payerPrimitiveWrapper = PublicKey(value: payer)
+				
+					var firstHopsVectorPointer: UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>? = nil
+					if let firstHops = firstHops {
+						
+						let firstHopsVector = Vec_ChannelDetailsZ(array: firstHops)
+				
+						firstHopsVectorPointer = UnsafeMutablePointer<LDKCVec_ChannelDetailsZ>.allocate(capacity: 1)
+						firstHopsVectorPointer!.initialize(to: firstHopsVector.cType!)
+					}
+				
+						let PaymentHashPrimitiveWrapper = ThirtyTwoBytes(value: PaymentHash)
+				
+						let PaymentIdPrimitiveWrapper = ThirtyTwoBytes(value: PaymentId)
+				
+
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: routeParams.cType!) { (routeParamsPointer: UnsafePointer<LDKRouteParameters>) in
+				self.cType!.find_route_with_id(self.cType!.this_arg, payerPrimitiveWrapper.cType!, routeParamsPointer, firstHopsVectorPointer, inflightHtlcs.dynamicallyDangledClone().cType!, PaymentHashPrimitiveWrapper.cType!, PaymentIdPrimitiveWrapper.cType!)
+						}
+				
+
+						// cleanup
+						
+						// for elided types, we need this
+						payerPrimitiveWrapper.noOpRetain()
+				
+						// firstHopsVector.noOpRetain()
+				
+						// for elided types, we need this
+						PaymentHashPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						PaymentIdPrimitiveWrapper.noOpRetain()
 				
 
 						// return value (do some wrapping)

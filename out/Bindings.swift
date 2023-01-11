@@ -349,7 +349,7 @@
 					
 					let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes)
 				
-					let dataWithoutSignatureVector = Vec_u5Z(array: dataWithoutSignature).dangle()
+					let dataWithoutSignatureVector = Vec_U5Z(array: dataWithoutSignature).dangle()
 				
 
 					// native method call
@@ -598,10 +598,7 @@
 		
 				/// Derives a per-commitment-transaction private key (eg an htlc key or delayed_payment key)
 				/// from the base secret and the per_commitment_point.
-				/// 
-				/// Note that this is infallible iff we trust that at least one of the two input keys are randomly
-				/// generated (ie our own).
-				public class func swiftDerivePrivateKey(perCommitmentPoint: [UInt8], baseSecret: [UInt8]) -> Result_SecretKeyErrorZ {
+				public class func swiftDerivePrivateKey(perCommitmentPoint: [UInt8], baseSecret: [UInt8]) -> [UInt8] {
 					// native call variable prep
 					
 					let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
@@ -624,7 +621,7 @@
 
 					
 					// return value (do some wrapping)
-					let returnValue = Result_SecretKeyErrorZ(cType: nativeCallResult)
+					let returnValue = SecretKey(cType: nativeCallResult).getValue()
 					
 
 					return returnValue
@@ -633,10 +630,7 @@
 				/// Derives a per-commitment-transaction public key (eg an htlc key or a delayed_payment key)
 				/// from the base point and the per_commitment_key. This is the public equivalent of
 				/// derive_private_key - using only public keys to derive a public key instead of private keys.
-				/// 
-				/// Note that this is infallible iff we trust that at least one of the two input keys are randomly
-				/// generated (ie our own).
-				public class func swiftDerivePublicKey(perCommitmentPoint: [UInt8], basePoint: [UInt8]) -> Result_PublicKeyErrorZ {
+				public class func swiftDerivePublicKey(perCommitmentPoint: [UInt8], basePoint: [UInt8]) -> [UInt8] {
 					// native call variable prep
 					
 					let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
@@ -658,7 +652,7 @@
 
 					
 					// return value (do some wrapping)
-					let returnValue = Result_PublicKeyErrorZ(cType: nativeCallResult)
+					let returnValue = PublicKey(cType: nativeCallResult).getValue()
 					
 
 					return returnValue
@@ -670,10 +664,7 @@
 				/// commitment transaction, thus per_commitment_secret always come from cheater
 				/// and revocation_base_secret always come from punisher, which is the broadcaster
 				/// of the transaction spending with this key knowledge.
-				/// 
-				/// Note that this is infallible iff we trust that at least one of the two input keys are randomly
-				/// generated (ie our own).
-				public class func swiftDerivePrivateRevocationKey(perCommitmentSecret: [UInt8], countersignatoryRevocationBaseSecret: [UInt8]) -> Result_SecretKeyErrorZ {
+				public class func swiftDerivePrivateRevocationKey(perCommitmentSecret: [UInt8], countersignatoryRevocationBaseSecret: [UInt8]) -> [UInt8] {
 					// native call variable prep
 					
 					let tupledPerCommitmentSecret = Bindings.arrayToUInt8Tuple32(array: perCommitmentSecret)
@@ -697,7 +688,7 @@
 
 					
 					// return value (do some wrapping)
-					let returnValue = Result_SecretKeyErrorZ(cType: nativeCallResult)
+					let returnValue = SecretKey(cType: nativeCallResult).getValue()
 					
 
 					return returnValue
@@ -714,7 +705,7 @@
 				/// 
 				/// Note that this is infallible iff we trust that at least one of the two input keys are randomly
 				/// generated (ie our own).
-				public class func swiftDerivePublicRevocationKey(perCommitmentPoint: [UInt8], countersignatoryRevocationBasePoint: [UInt8]) -> Result_PublicKeyErrorZ {
+				public class func swiftDerivePublicRevocationKey(perCommitmentPoint: [UInt8], countersignatoryRevocationBasePoint: [UInt8]) -> [UInt8] {
 					// native call variable prep
 					
 					let perCommitmentPointPrimitiveWrapper = PublicKey(value: perCommitmentPoint)
@@ -736,7 +727,7 @@
 
 					
 					// return value (do some wrapping)
-					let returnValue = Result_PublicKeyErrorZ(cType: nativeCallResult)
+					let returnValue = PublicKey(cType: nativeCallResult).getValue()
 					
 
 					return returnValue
@@ -838,7 +829,7 @@
 				/// 
 				/// Panics if htlc.transaction_output_index.is_none() (as such HTLCs do not appear in the
 				/// commitment transaction).
-				public class func swiftBuildHtlcTransaction(commitmentTxid: [UInt8], feeratePerKw: UInt32, contestDelay: UInt16, htlc: HTLCOutputInCommitment, optAnchors: Bool, broadcasterDelayedPaymentKey: [UInt8], revocationKey: [UInt8]) -> [UInt8] {
+				public class func swiftBuildHtlcTransaction(commitmentTxid: [UInt8], feeratePerKw: UInt32, contestDelay: UInt16, htlc: HTLCOutputInCommitment, optAnchors: Bool, useNonZeroFeeAnchors: Bool, broadcasterDelayedPaymentKey: [UInt8], revocationKey: [UInt8]) -> [UInt8] {
 					// native call variable prep
 					
 					let tupledCommitmentTxid = Bindings.arrayToUInt8Tuple32(array: commitmentTxid)
@@ -853,7 +844,7 @@
 					withUnsafePointer(to: tupledCommitmentTxid) { (tupledCommitmentTxidPointer: UnsafePointer<UInt8Tuple32>) in
 				
 					withUnsafePointer(to: htlc.cType!) { (htlcPointer: UnsafePointer<LDKHTLCOutputInCommitment>) in
-				build_htlc_transaction(tupledCommitmentTxidPointer, feeratePerKw, contestDelay, htlcPointer, optAnchors, broadcasterDelayedPaymentKeyPrimitiveWrapper.cType!, revocationKeyPrimitiveWrapper.cType!)
+				build_htlc_transaction(tupledCommitmentTxidPointer, feeratePerKw, contestDelay, htlcPointer, optAnchors, useNonZeroFeeAnchors, broadcasterDelayedPaymentKeyPrimitiveWrapper.cType!, revocationKeyPrimitiveWrapper.cType!)
 					}
 				
 					}
@@ -871,6 +862,71 @@
 					
 					// return value (do some wrapping)
 					let returnValue = Transaction(cType: nativeCallResult).getValue()
+					
+
+					return returnValue
+				}
+		
+				/// Returns the witness required to satisfy and spend a HTLC input.
+				/// 
+				/// Note that preimage (or a relevant inner pointer) may be NULL or all-0s to represent None
+				public class func swiftBuildHtlcInputWitness(localSig: [UInt8], remoteSig: [UInt8], preimage: [UInt8], redeemScript: [UInt8], optAnchors: Bool) -> [UInt8] {
+					// native call variable prep
+					
+					let localSigPrimitiveWrapper = Signature(value: localSig)
+				
+					let remoteSigPrimitiveWrapper = Signature(value: remoteSig)
+				
+					let preimagePrimitiveWrapper = ThirtyTwoBytes(value: preimage)
+				
+					let redeemScriptPrimitiveWrapper = u8slice(value: redeemScript)
+				
+
+					// native method call
+					let nativeCallResult = build_htlc_input_witness(localSigPrimitiveWrapper.cType!, remoteSigPrimitiveWrapper.cType!, preimagePrimitiveWrapper.cType!, redeemScriptPrimitiveWrapper.cType!, optAnchors)
+
+					// cleanup
+					
+					// for elided types, we need this
+					localSigPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					remoteSigPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					preimagePrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					redeemScriptPrimitiveWrapper.noOpRetain()
+				
+
+					
+					// return value (do some wrapping)
+					let returnValue = Witness(cType: nativeCallResult).getValue()
+					
+
+					return returnValue
+				}
+		
+				/// Gets the witnessScript for the to_remote output when anchors are enabled.
+				public class func swiftGetToCountersignatoryWithAnchorsRedeemscript(paymentPoint: [UInt8]) -> [UInt8] {
+					// native call variable prep
+					
+					let paymentPointPrimitiveWrapper = PublicKey(value: paymentPoint)
+				
+
+					// native method call
+					let nativeCallResult = get_to_countersignatory_with_anchors_redeemscript(paymentPointPrimitiveWrapper.cType!)
+
+					// cleanup
+					
+					// for elided types, we need this
+					paymentPointPrimitiveWrapper.noOpRetain()
+				
+
+					
+					// return value (do some wrapping)
+					let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
 					
 
 					return returnValue
@@ -900,6 +956,35 @@
 					
 					// return value (do some wrapping)
 					let returnValue = Vec_u8Z(cType: nativeCallResult).getValue()
+					
+
+					return returnValue
+				}
+		
+				/// Returns the witness required to satisfy and spend an anchor input.
+				public class func swiftBuildAnchorInputWitness(fundingKey: [UInt8], fundingSig: [UInt8]) -> [UInt8] {
+					// native call variable prep
+					
+					let fundingKeyPrimitiveWrapper = PublicKey(value: fundingKey)
+				
+					let fundingSigPrimitiveWrapper = Signature(value: fundingSig)
+				
+
+					// native method call
+					let nativeCallResult = build_anchor_input_witness(fundingKeyPrimitiveWrapper.cType!, fundingSigPrimitiveWrapper.cType!)
+
+					// cleanup
+					
+					// for elided types, we need this
+					fundingKeyPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					fundingSigPrimitiveWrapper.noOpRetain()
+				
+
+					
+					// return value (do some wrapping)
+					let returnValue = Witness(cType: nativeCallResult).getValue()
 					
 
 					return returnValue
@@ -1323,6 +1408,44 @@
 					return returnValue
 				}
 		
+				/// See [`create_invoice_from_channelmanager_and_duration_since_epoch`]
+				/// This version allows for providing a custom [`PaymentHash`] for the invoice.
+				/// This may be useful if you're building an on-chain swap or involving another protocol where
+				/// the payment hash is also involved outside the scope of lightning.
+				public class func swiftCreateInvoiceFromChannelmanagerAndDurationSinceEpochWithPaymentHash(channelmanager: ChannelManager, keysManager: KeysInterface, logger: Logger, network: Currency, amtMsat: UInt64?, description: String, durationSinceEpoch: UInt64, invoiceExpiryDeltaSecs: UInt32, paymentHash: [UInt8]) -> Result_InvoiceSignOrCreationErrorZ {
+					// native call variable prep
+					
+					let amtMsatOption = Option_u64Z(some: amtMsat).danglingClone()
+				
+					let descriptionPrimitiveWrapper = Str(value: description).dangle()
+				
+					let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
+				
+
+					// native method call
+					let nativeCallResult = 
+					withUnsafePointer(to: channelmanager.cType!) { (channelmanagerPointer: UnsafePointer<LDKChannelManager>) in
+				create_invoice_from_channelmanager_and_duration_since_epoch_with_payment_hash(channelmanagerPointer, keysManager.activate().cType!, logger.activate().cType!, network.getCValue(), amtMsatOption.cType!, descriptionPrimitiveWrapper.cType!, durationSinceEpoch, invoiceExpiryDeltaSecs, paymentHashPrimitiveWrapper.cType!)
+					}
+				
+
+					// cleanup
+					
+					// for elided types, we need this
+					descriptionPrimitiveWrapper.noOpRetain()
+				
+					// for elided types, we need this
+					paymentHashPrimitiveWrapper.noOpRetain()
+				
+
+					
+					// return value (do some wrapping)
+					let returnValue = Result_InvoiceSignOrCreationErrorZ(cType: nativeCallResult)
+					
+
+					return returnValue
+				}
+		
 				/// Read a C2Tuple_BlockHashChannelMonitorZ from a byte array, created by C2Tuple_BlockHashChannelMonitorZ_write
 				public class func readBlockHashChannelMonitor(ser: [UInt8], arg: KeysInterface) -> Result_C2Tuple_BlockHashChannelMonitorZDecodeErrorZ {
 					// native call variable prep
@@ -1378,17 +1501,17 @@
 		
 
 				
-				internal typealias UInt8Tuple32 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
+				internal typealias UInt8Tuple16 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
 				
-				internal typealias UInt8Tuple33 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
+				internal typealias UInt8Tuple32 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
 				
 				internal typealias UInt8Tuple64 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
 				
 				internal typealias UInt8Tuple20 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
 				
-				internal typealias UInt8Tuple4 = (UInt8, UInt8, UInt8, UInt8)
+				internal typealias UInt8Tuple33 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
 				
-				internal typealias UInt8Tuple16 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
+				internal typealias UInt8Tuple4 = (UInt8, UInt8, UInt8, UInt8)
 				
 				internal typealias UInt8Tuple12 = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
 				
@@ -1400,20 +1523,20 @@
 				
 
 				
+				internal class func arrayToUInt8Tuple16(array: [UInt8]) -> UInt8Tuple16 {
+					return (array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12], array[13], array[14], array[15])
+				}
+
+				internal class func UInt8Tuple16ToArray(tuple: UInt8Tuple16) -> [UInt8] {
+					return [tuple.0, tuple.1, tuple.2, tuple.3, tuple.4, tuple.5, tuple.6, tuple.7, tuple.8, tuple.9, tuple.10, tuple.11, tuple.12, tuple.13, tuple.14, tuple.15]
+				}
+				
 				internal class func arrayToUInt8Tuple32(array: [UInt8]) -> UInt8Tuple32 {
 					return (array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12], array[13], array[14], array[15], array[16], array[17], array[18], array[19], array[20], array[21], array[22], array[23], array[24], array[25], array[26], array[27], array[28], array[29], array[30], array[31])
 				}
 
 				internal class func UInt8Tuple32ToArray(tuple: UInt8Tuple32) -> [UInt8] {
 					return [tuple.0, tuple.1, tuple.2, tuple.3, tuple.4, tuple.5, tuple.6, tuple.7, tuple.8, tuple.9, tuple.10, tuple.11, tuple.12, tuple.13, tuple.14, tuple.15, tuple.16, tuple.17, tuple.18, tuple.19, tuple.20, tuple.21, tuple.22, tuple.23, tuple.24, tuple.25, tuple.26, tuple.27, tuple.28, tuple.29, tuple.30, tuple.31]
-				}
-				
-				internal class func arrayToUInt8Tuple33(array: [UInt8]) -> UInt8Tuple33 {
-					return (array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12], array[13], array[14], array[15], array[16], array[17], array[18], array[19], array[20], array[21], array[22], array[23], array[24], array[25], array[26], array[27], array[28], array[29], array[30], array[31], array[32])
-				}
-
-				internal class func UInt8Tuple33ToArray(tuple: UInt8Tuple33) -> [UInt8] {
-					return [tuple.0, tuple.1, tuple.2, tuple.3, tuple.4, tuple.5, tuple.6, tuple.7, tuple.8, tuple.9, tuple.10, tuple.11, tuple.12, tuple.13, tuple.14, tuple.15, tuple.16, tuple.17, tuple.18, tuple.19, tuple.20, tuple.21, tuple.22, tuple.23, tuple.24, tuple.25, tuple.26, tuple.27, tuple.28, tuple.29, tuple.30, tuple.31, tuple.32]
 				}
 				
 				internal class func arrayToUInt8Tuple64(array: [UInt8]) -> UInt8Tuple64 {
@@ -1432,20 +1555,20 @@
 					return [tuple.0, tuple.1, tuple.2, tuple.3, tuple.4, tuple.5, tuple.6, tuple.7, tuple.8, tuple.9, tuple.10, tuple.11, tuple.12, tuple.13, tuple.14, tuple.15, tuple.16, tuple.17, tuple.18, tuple.19]
 				}
 				
+				internal class func arrayToUInt8Tuple33(array: [UInt8]) -> UInt8Tuple33 {
+					return (array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12], array[13], array[14], array[15], array[16], array[17], array[18], array[19], array[20], array[21], array[22], array[23], array[24], array[25], array[26], array[27], array[28], array[29], array[30], array[31], array[32])
+				}
+
+				internal class func UInt8Tuple33ToArray(tuple: UInt8Tuple33) -> [UInt8] {
+					return [tuple.0, tuple.1, tuple.2, tuple.3, tuple.4, tuple.5, tuple.6, tuple.7, tuple.8, tuple.9, tuple.10, tuple.11, tuple.12, tuple.13, tuple.14, tuple.15, tuple.16, tuple.17, tuple.18, tuple.19, tuple.20, tuple.21, tuple.22, tuple.23, tuple.24, tuple.25, tuple.26, tuple.27, tuple.28, tuple.29, tuple.30, tuple.31, tuple.32]
+				}
+				
 				internal class func arrayToUInt8Tuple4(array: [UInt8]) -> UInt8Tuple4 {
 					return (array[0], array[1], array[2], array[3])
 				}
 
 				internal class func UInt8Tuple4ToArray(tuple: UInt8Tuple4) -> [UInt8] {
 					return [tuple.0, tuple.1, tuple.2, tuple.3]
-				}
-				
-				internal class func arrayToUInt8Tuple16(array: [UInt8]) -> UInt8Tuple16 {
-					return (array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12], array[13], array[14], array[15])
-				}
-
-				internal class func UInt8Tuple16ToArray(tuple: UInt8Tuple16) -> [UInt8] {
-					return [tuple.0, tuple.1, tuple.2, tuple.3, tuple.4, tuple.5, tuple.6, tuple.7, tuple.8, tuple.9, tuple.10, tuple.11, tuple.12, tuple.13, tuple.14, tuple.15]
 				}
 				
 				internal class func arrayToUInt8Tuple12(array: [UInt8]) -> UInt8Tuple12 {
@@ -1497,12 +1620,12 @@
 			}
 
 			
-						func == (tupleA: Bindings.UInt8Tuple32, tupleB: Bindings.UInt8Tuple32) -> Bool {
-   							return tupleA.0 == tupleB.0 && tupleA.1 == tupleB.1 && tupleA.2 == tupleB.2 && tupleA.3 == tupleB.3 && tupleA.4 == tupleB.4 && tupleA.5 == tupleB.5 && tupleA.6 == tupleB.6 && tupleA.7 == tupleB.7 && tupleA.8 == tupleB.8 && tupleA.9 == tupleB.9 && tupleA.10 == tupleB.10 && tupleA.11 == tupleB.11 && tupleA.12 == tupleB.12 && tupleA.13 == tupleB.13 && tupleA.14 == tupleB.14 && tupleA.15 == tupleB.15 && tupleA.16 == tupleB.16 && tupleA.17 == tupleB.17 && tupleA.18 == tupleB.18 && tupleA.19 == tupleB.19 && tupleA.20 == tupleB.20 && tupleA.21 == tupleB.21 && tupleA.22 == tupleB.22 && tupleA.23 == tupleB.23 && tupleA.24 == tupleB.24 && tupleA.25 == tupleB.25 && tupleA.26 == tupleB.26 && tupleA.27 == tupleB.27 && tupleA.28 == tupleB.28 && tupleA.29 == tupleB.29 && tupleA.30 == tupleB.30 && tupleA.31 == tupleB.31
+						func == (tupleA: Bindings.UInt8Tuple16, tupleB: Bindings.UInt8Tuple16) -> Bool {
+   							return tupleA.0 == tupleB.0 && tupleA.1 == tupleB.1 && tupleA.2 == tupleB.2 && tupleA.3 == tupleB.3 && tupleA.4 == tupleB.4 && tupleA.5 == tupleB.5 && tupleA.6 == tupleB.6 && tupleA.7 == tupleB.7 && tupleA.8 == tupleB.8 && tupleA.9 == tupleB.9 && tupleA.10 == tupleB.10 && tupleA.11 == tupleB.11 && tupleA.12 == tupleB.12 && tupleA.13 == tupleB.13 && tupleA.14 == tupleB.14 && tupleA.15 == tupleB.15
 						}
 					
-						func == (tupleA: Bindings.UInt8Tuple33, tupleB: Bindings.UInt8Tuple33) -> Bool {
-   							return tupleA.0 == tupleB.0 && tupleA.1 == tupleB.1 && tupleA.2 == tupleB.2 && tupleA.3 == tupleB.3 && tupleA.4 == tupleB.4 && tupleA.5 == tupleB.5 && tupleA.6 == tupleB.6 && tupleA.7 == tupleB.7 && tupleA.8 == tupleB.8 && tupleA.9 == tupleB.9 && tupleA.10 == tupleB.10 && tupleA.11 == tupleB.11 && tupleA.12 == tupleB.12 && tupleA.13 == tupleB.13 && tupleA.14 == tupleB.14 && tupleA.15 == tupleB.15 && tupleA.16 == tupleB.16 && tupleA.17 == tupleB.17 && tupleA.18 == tupleB.18 && tupleA.19 == tupleB.19 && tupleA.20 == tupleB.20 && tupleA.21 == tupleB.21 && tupleA.22 == tupleB.22 && tupleA.23 == tupleB.23 && tupleA.24 == tupleB.24 && tupleA.25 == tupleB.25 && tupleA.26 == tupleB.26 && tupleA.27 == tupleB.27 && tupleA.28 == tupleB.28 && tupleA.29 == tupleB.29 && tupleA.30 == tupleB.30 && tupleA.31 == tupleB.31 && tupleA.32 == tupleB.32
+						func == (tupleA: Bindings.UInt8Tuple32, tupleB: Bindings.UInt8Tuple32) -> Bool {
+   							return tupleA.0 == tupleB.0 && tupleA.1 == tupleB.1 && tupleA.2 == tupleB.2 && tupleA.3 == tupleB.3 && tupleA.4 == tupleB.4 && tupleA.5 == tupleB.5 && tupleA.6 == tupleB.6 && tupleA.7 == tupleB.7 && tupleA.8 == tupleB.8 && tupleA.9 == tupleB.9 && tupleA.10 == tupleB.10 && tupleA.11 == tupleB.11 && tupleA.12 == tupleB.12 && tupleA.13 == tupleB.13 && tupleA.14 == tupleB.14 && tupleA.15 == tupleB.15 && tupleA.16 == tupleB.16 && tupleA.17 == tupleB.17 && tupleA.18 == tupleB.18 && tupleA.19 == tupleB.19 && tupleA.20 == tupleB.20 && tupleA.21 == tupleB.21 && tupleA.22 == tupleB.22 && tupleA.23 == tupleB.23 && tupleA.24 == tupleB.24 && tupleA.25 == tupleB.25 && tupleA.26 == tupleB.26 && tupleA.27 == tupleB.27 && tupleA.28 == tupleB.28 && tupleA.29 == tupleB.29 && tupleA.30 == tupleB.30 && tupleA.31 == tupleB.31
 						}
 					
 						func == (tupleA: Bindings.UInt8Tuple64, tupleB: Bindings.UInt8Tuple64) -> Bool {
@@ -1513,8 +1636,8 @@
    							return tupleA.0 == tupleB.0 && tupleA.1 == tupleB.1 && tupleA.2 == tupleB.2 && tupleA.3 == tupleB.3 && tupleA.4 == tupleB.4 && tupleA.5 == tupleB.5 && tupleA.6 == tupleB.6 && tupleA.7 == tupleB.7 && tupleA.8 == tupleB.8 && tupleA.9 == tupleB.9 && tupleA.10 == tupleB.10 && tupleA.11 == tupleB.11 && tupleA.12 == tupleB.12 && tupleA.13 == tupleB.13 && tupleA.14 == tupleB.14 && tupleA.15 == tupleB.15 && tupleA.16 == tupleB.16 && tupleA.17 == tupleB.17 && tupleA.18 == tupleB.18 && tupleA.19 == tupleB.19
 						}
 					
-						func == (tupleA: Bindings.UInt8Tuple16, tupleB: Bindings.UInt8Tuple16) -> Bool {
-   							return tupleA.0 == tupleB.0 && tupleA.1 == tupleB.1 && tupleA.2 == tupleB.2 && tupleA.3 == tupleB.3 && tupleA.4 == tupleB.4 && tupleA.5 == tupleB.5 && tupleA.6 == tupleB.6 && tupleA.7 == tupleB.7 && tupleA.8 == tupleB.8 && tupleA.9 == tupleB.9 && tupleA.10 == tupleB.10 && tupleA.11 == tupleB.11 && tupleA.12 == tupleB.12 && tupleA.13 == tupleB.13 && tupleA.14 == tupleB.14 && tupleA.15 == tupleB.15
+						func == (tupleA: Bindings.UInt8Tuple33, tupleB: Bindings.UInt8Tuple33) -> Bool {
+   							return tupleA.0 == tupleB.0 && tupleA.1 == tupleB.1 && tupleA.2 == tupleB.2 && tupleA.3 == tupleB.3 && tupleA.4 == tupleB.4 && tupleA.5 == tupleB.5 && tupleA.6 == tupleB.6 && tupleA.7 == tupleB.7 && tupleA.8 == tupleB.8 && tupleA.9 == tupleB.9 && tupleA.10 == tupleB.10 && tupleA.11 == tupleB.11 && tupleA.12 == tupleB.12 && tupleA.13 == tupleB.13 && tupleA.14 == tupleB.14 && tupleA.15 == tupleB.15 && tupleA.16 == tupleB.16 && tupleA.17 == tupleB.17 && tupleA.18 == tupleB.18 && tupleA.19 == tupleB.19 && tupleA.20 == tupleB.20 && tupleA.21 == tupleB.21 && tupleA.22 == tupleB.22 && tupleA.23 == tupleB.23 && tupleA.24 == tupleB.24 && tupleA.25 == tupleB.25 && tupleA.26 == tupleB.26 && tupleA.27 == tupleB.27 && tupleA.28 == tupleB.28 && tupleA.29 == tupleB.29 && tupleA.30 == tupleB.30 && tupleA.31 == tupleB.31 && tupleA.32 == tupleB.32
 						}
 					
 						func == (tupleA: Bindings.UInt8Tuple12, tupleB: Bindings.UInt8Tuple12) -> Bool {

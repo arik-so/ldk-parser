@@ -7,11 +7,19 @@
 			import Foundation
 
 			/// A trait implemented for objects handling events from [`EventsProvider`].
+			/// 
+			/// An async variation also exists for implementations of [`EventsProvider`] that support async
+			/// event handling. The async event handler should satisfy the generic bounds: `F:
+			/// core::future::Future, H: Fn(Event) -> F`.
 			public typealias EventHandler = Bindings.EventHandler
 
 			extension Bindings {
 
 				/// A trait implemented for objects handling events from [`EventsProvider`].
+				/// 
+				/// An async variation also exists for implementations of [`EventsProvider`] that support async
+				/// event handling. The async event handler should satisfy the generic bounds: `F:
+				/// core::future::Future, H: Fn(Event) -> F`.
 				open class EventHandler: NativeTraitWrapper {
 
 					
@@ -49,14 +57,14 @@
 						
 
 						
-						func handleEventLambda(this_arg: UnsafeRawPointer?, event: UnsafePointer<LDKEvent>) -> Void {
+						func handleEventLambda(this_arg: UnsafeRawPointer?, event: LDKEvent) -> Void {
 							let instance: EventHandler = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "EventHandler::handleEventLambda")
 
 							// Swift callback variable prep
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.handleEvent(event: Event(cType: event.pointee).dangle().clone())
+							let swiftCallbackResult = instance.handleEvent(event: Event(cType: event))
 
 							// cleanup
 							
@@ -150,11 +158,7 @@
 						
 
 						// native method call
-						let nativeCallResult = 
-						withUnsafePointer(to: event.cType!) { (eventPointer: UnsafePointer<LDKEvent>) in
-				self.cType!.handle_event(self.cType!.this_arg, eventPointer)
-						}
-				
+						let nativeCallResult = self.cType!.handle_event(self.cType!.this_arg, event.danglingClone().cType!)
 
 						// cleanup
 						

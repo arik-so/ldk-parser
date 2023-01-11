@@ -398,13 +398,77 @@
 						return returnValue
 					}
 		
-					/// Constructs a new UserConfig given each field
-					public init(channelHandshakeConfigArg: ChannelHandshakeConfig, channelHandshakeLimitsArg: ChannelHandshakeLimits, channelConfigArg: ChannelConfig, acceptForwardsToPrivChannelsArg: Bool, acceptInboundChannelsArg: Bool, manuallyAcceptInboundChannelsArg: Bool) {
+					/// If this is set to true, LDK will intercept HTLCs that are attempting to be forwarded over
+					/// fake short channel ids generated via [`ChannelManager::get_intercept_scid`]. Upon HTLC
+					/// intercept, LDK will generate an [`Event::HTLCIntercepted`] which MUST be handled by the user.
+					/// 
+					/// Setting this to true may break backwards compatibility with LDK versions < 0.0.113.
+					/// 
+					/// Default value: false.
+					/// 
+					/// [`ChannelManager::get_intercept_scid`]: crate::ln::channelmanager::ChannelManager::get_intercept_scid
+					/// [`Event::HTLCIntercepted`]: crate::util::events::Event::HTLCIntercepted
+					public func getAcceptInterceptHtlcs() -> Bool {
 						// native call variable prep
 						
 
 						// native method call
-						let nativeCallResult = UserConfig_new(channelHandshakeConfigArg.dynamicallyDangledClone().cType!, channelHandshakeLimitsArg.dynamicallyDangledClone().cType!, channelConfigArg.dynamicallyDangledClone().cType!, acceptForwardsToPrivChannelsArg, acceptInboundChannelsArg, manuallyAcceptInboundChannelsArg)
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisPtrPointer: UnsafePointer<LDKUserConfig>) in
+				UserConfig_get_accept_intercept_htlcs(thisPtrPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+						
+
+						return returnValue
+					}
+		
+					/// If this is set to true, LDK will intercept HTLCs that are attempting to be forwarded over
+					/// fake short channel ids generated via [`ChannelManager::get_intercept_scid`]. Upon HTLC
+					/// intercept, LDK will generate an [`Event::HTLCIntercepted`] which MUST be handled by the user.
+					/// 
+					/// Setting this to true may break backwards compatibility with LDK versions < 0.0.113.
+					/// 
+					/// Default value: false.
+					/// 
+					/// [`ChannelManager::get_intercept_scid`]: crate::ln::channelmanager::ChannelManager::get_intercept_scid
+					/// [`Event::HTLCIntercepted`]: crate::util::events::Event::HTLCIntercepted
+					public func setAcceptInterceptHtlcs(val: Bool) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafeMutablePointer(to: &self.cType!) { (thisPtrPointer: UnsafeMutablePointer<LDKUserConfig>) in
+				UserConfig_set_accept_intercept_htlcs(thisPtrPointer, val)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+						
+
+						return returnValue
+					}
+		
+					/// Constructs a new UserConfig given each field
+					public init(channelHandshakeConfigArg: ChannelHandshakeConfig, channelHandshakeLimitsArg: ChannelHandshakeLimits, channelConfigArg: ChannelConfig, acceptForwardsToPrivChannelsArg: Bool, acceptInboundChannelsArg: Bool, manuallyAcceptInboundChannelsArg: Bool, acceptInterceptHtlcsArg: Bool) {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = UserConfig_new(channelHandshakeConfigArg.dynamicallyDangledClone().cType!, channelHandshakeLimitsArg.dynamicallyDangledClone().cType!, channelConfigArg.dynamicallyDangledClone().cType!, acceptForwardsToPrivChannelsArg, acceptInboundChannelsArg, manuallyAcceptInboundChannelsArg, acceptInterceptHtlcsArg)
 
 						// cleanup
 						

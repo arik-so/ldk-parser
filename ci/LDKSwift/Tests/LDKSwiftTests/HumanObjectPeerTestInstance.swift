@@ -207,8 +207,8 @@ public class HumanObjectPeerTestInstance {
                 super.init()
             }
             
-            override func getChannelSigner(inbound: Bool, channelValueSatoshis: UInt64) -> Bindings.Sign {
-                let ck = self.interface.getChannelSigner(inbound: inbound, channelValueSatoshis: channelValueSatoshis)
+			override func deriveChannelSigner(channelValueSatoshis: UInt64, channelKeysId: [UInt8]) -> Bindings.Sign {
+                let ck = self.interface.deriveChannelSigner(channelValueSatoshis: channelValueSatoshis, channelKeysId: channelKeysId)
                 return ck
             }
         }
@@ -506,7 +506,8 @@ public class HumanObjectPeerTestInstance {
             // initiate channel opening
             let config = UserConfig.initWithDefault()
             let theirNodeId = peer2.channelManager.getOurNodeId()
-            let channelOpenResult = peer1.channelManager.createChannel(theirNetworkKey: theirNodeId, channelValueSatoshis: FUNDING_SATOSHI_AMOUNT, pushMsat: 1000, userChannelId: 42, overrideConfig: config)
+            let userChannelId: [UInt8] = [UInt8](repeating: 42, count: 16);
+            let channelOpenResult = peer1.channelManager.createChannel(theirNetworkKey: theirNodeId, channelValueSatoshis: FUNDING_SATOSHI_AMOUNT, pushMsat: 1000, userChannelId: userChannelId, overrideConfig: config)
 
             XCTAssertTrue(channelOpenResult.isOk())
             let channels = peer1.channelManager.listChannels()
@@ -525,7 +526,8 @@ public class HumanObjectPeerTestInstance {
 
         let fundingReadyEvent = managerEvent.getValueAsFundingGenerationReady()!
         XCTAssertEqual(fundingReadyEvent.getChannelValueSatoshis(), FUNDING_SATOSHI_AMOUNT)
-        XCTAssertEqual(fundingReadyEvent.getUserChannelId(), 42)
+		let expectedUserChannelId: [UInt8] = [UInt8](repeating: 42, count: 16);
+        XCTAssertEqual(fundingReadyEvent.getUserChannelId(), expectedUserChannelId)
 
         let fundingOutputScript = fundingReadyEvent.getOutputScript();
         let temporaryChannelId = fundingReadyEvent.getTemporaryChannelId();
@@ -594,6 +596,16 @@ public class HumanObjectPeerTestInstance {
         XCTAssertEqual(usableChannelsA.count, 1)
         XCTAssertEqual(usableChannelsB.count, 1)
 
+		let peer1Event = try! await peer1.getManagerEvents(expectedCount: 1)[0]
+		guard case .ChannelReady = peer1Event.getValueType() else {
+			return XCTAssert(false, "Expected .ChannelReady, got \(peer1Event.getValueType())")
+		}
+
+		let peer2Event = try! await peer2.getManagerEvents(expectedCount: 1)[0]
+		guard case .ChannelReady = peer2Event.getValueType() else {
+			return XCTAssert(false, "Expected .ChannelReady, got \(peer2Event.getValueType())")
+		}
+
         let channelAToB = usableChannelsA[0]
         let channelBToA = usableChannelsB[0]
         XCTAssertEqual(channelAToB.getChannelValueSatoshis(), FUNDING_SATOSHI_AMOUNT)
@@ -640,13 +652,13 @@ public class HumanObjectPeerTestInstance {
             do {
                 // process payment
                 let peer2Event = try! await peer2.getManagerEvents(expectedCount: 1)[0]
-                guard case .PaymentReceived = peer2Event.getValueType() else {
+                guard case .PaymentClaimable = peer2Event.getValueType() else {
                     return XCTAssert(false, "Expected .PaymentReceived, got \(peer2Event.getValueType())")
                 }
-                let paymentReceived = peer2Event.getValueAsPaymentReceived()!
-                let paymentHash = paymentReceived.getPaymentHash()
-                print("received payment of \(paymentReceived.getAmountMsat()) with hash \(paymentHash)")
-                let paymentPurpose = paymentReceived.getPurpose()
+                let paymentClaimable = peer2Event.getValueAsPaymentClaimable()!
+                let paymentHash = paymentClaimable.getPaymentHash()
+                print("received payment of \(paymentClaimable.getAmountMsat()) with hash \(paymentHash)")
+                let paymentPurpose = paymentClaimable.getPurpose()
                 guard case .InvoicePayment = paymentPurpose.getValueType() else {
                     return XCTAssert(false, "Expected .InvoicePayment, got \(paymentPurpose.getValueType())")
                 }
@@ -763,13 +775,13 @@ public class HumanObjectPeerTestInstance {
             do {
                 // process payment
                 let peer1Event = try! await peer1.getManagerEvents(expectedCount: 1)[0]
-                guard case .PaymentReceived = peer1Event.getValueType() else {
+                guard case .PaymentClaimable = peer1Event.getValueType() else {
                     return XCTAssert(false, "Expected .PaymentReceived, got \(peer1Event.getValueType())")
                 }
-                let paymentReceived = peer1Event.getValueAsPaymentReceived()!
-                let paymentHash = paymentReceived.getPaymentHash()
-                print("received payment of \(paymentReceived.getAmountMsat()) with hash \(paymentHash)")
-                let paymentPurpose = paymentReceived.getPurpose()
+                let paymentClaimable = peer1Event.getValueAsPaymentClaimable()!
+                let paymentHash = paymentClaimable.getPaymentHash()
+                print("received payment of \(paymentClaimable.getAmountMsat()) with hash \(paymentHash)")
+                let paymentPurpose = paymentClaimable.getPurpose()
                 guard case .InvoicePayment = paymentPurpose.getValueType() else {
                     return XCTAssert(false, "Expected .InvoicePayment, got \(paymentPurpose.getValueType())")
                 }

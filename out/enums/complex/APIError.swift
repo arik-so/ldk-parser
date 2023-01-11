@@ -52,7 +52,7 @@
 			
 						/// A malformed Route was provided (eg overflowed value, node id mismatch, overly-looped route,
 						/// too-many-hops, etc).
-						case RouteError
+						case InvalidRoute
 			
 						/// We were unable to complete the request as the Channel required to do so is unable to
 						/// complete the request (or was not found). This can take many forms, including disconnected
@@ -89,8 +89,8 @@
 							case LDKAPIError_FeeRateTooHigh:
 								return .FeeRateTooHigh
 			
-							case LDKAPIError_RouteError:
-								return .RouteError
+							case LDKAPIError_InvalidRoute:
+								return .InvalidRoute
 			
 							case LDKAPIError_ChannelUnavailable:
 								return .ChannelUnavailable
@@ -199,15 +199,15 @@
 						return returnValue
 					}
 		
-					/// Utility method to constructs a new RouteError-variant APIError
-					public class func initWithRouteError(err: String) -> APIError {
+					/// Utility method to constructs a new InvalidRoute-variant APIError
+					public class func initWithInvalidRoute(err: String) -> APIError {
 						// native call variable prep
 						
 						let errPrimitiveWrapper = Str(value: err).dangle()
 				
 
 						// native method call
-						let nativeCallResult = APIError_route_error(errPrimitiveWrapper.cType!)
+						let nativeCallResult = APIError_invalid_route(errPrimitiveWrapper.cType!)
 
 						// cleanup
 						
@@ -331,12 +331,12 @@
 						return APIError_LDKFeeRateTooHigh_Body(cType: self.cType!.fee_rate_too_high, anchor: self)
 					}
 			
-					public func getValueAsRouteError() -> RouteError? {
-						if self.cType?.tag != LDKAPIError_RouteError {
+					public func getValueAsInvalidRoute() -> InvalidRoute? {
+						if self.cType?.tag != LDKAPIError_InvalidRoute {
 							return nil
 						}
 
-						return APIError_LDKRouteError_Body(cType: self.cType!.route_error, anchor: self)
+						return APIError_LDKInvalidRoute_Body(cType: self.cType!.invalid_route, anchor: self)
 					}
 			
 					public func getValueAsChannelUnavailable() -> ChannelUnavailable? {
@@ -510,11 +510,11 @@
 		
 					
 					/// 
-					internal typealias APIError_LDKRouteError_Body = RouteError
+					internal typealias APIError_LDKInvalidRoute_Body = InvalidRoute
 			
 
 					/// 
-					public class RouteError: NativeTypeWrapper {
+					public class InvalidRoute: NativeTypeWrapper {
 
 						
 
@@ -522,9 +522,9 @@
 						private static var instanceCounter: UInt = 0
 						internal let instanceNumber: UInt
 
-						internal var cType: LDKAPIError_LDKRouteError_Body?
+						internal var cType: LDKAPIError_LDKInvalidRoute_Body?
 
-						internal init(cType: LDKAPIError_LDKRouteError_Body) {
+						internal init(cType: LDKAPIError_LDKInvalidRoute_Body) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -532,7 +532,7 @@
 							super.init(conflictAvoidingVariableName: 0)
 						}
 
-						internal init(cType: LDKAPIError_LDKRouteError_Body, anchor: NativeTypeWrapper) {
+						internal init(cType: LDKAPIError_LDKInvalidRoute_Body, anchor: NativeTypeWrapper) {
 							Self.instanceCounter += 1
 							self.instanceNumber = Self.instanceCounter
 							self.cType = cType
@@ -555,7 +555,7 @@
 						}
 		
 
-						internal func dangle(_ shouldDangle: Bool = true) -> RouteError {
+						internal func dangle(_ shouldDangle: Bool = true) -> InvalidRoute {
 							self.dangling = shouldDangle
 							return self
 						}

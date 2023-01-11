@@ -139,14 +139,32 @@
 							return returnValue
 						}
 		
-						func getChannelSignerLambda(this_arg: UnsafeRawPointer?, inbound: Bool, channel_value_satoshis: UInt64) -> LDKSign {
-							let instance: KeysInterface = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "KeysInterface::getChannelSignerLambda")
+						func generateChannelKeysIdLambda(this_arg: UnsafeRawPointer?, inbound: Bool, channel_value_satoshis: UInt64, user_channel_id: LDKU128) -> LDKThirtyTwoBytes {
+							let instance: KeysInterface = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "KeysInterface::generateChannelKeysIdLambda")
 
 							// Swift callback variable prep
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.getChannelSigner(inbound: inbound, channelValueSatoshis: channel_value_satoshis)
+							let swiftCallbackResult = instance.generateChannelKeysId(inbound: inbound, channelValueSatoshis: channel_value_satoshis, userChannelId: U128(cType: user_channel_id).getValue())
+
+							// cleanup
+							
+
+							// return value (do some wrapping)
+							let returnValue = ThirtyTwoBytes(value: swiftCallbackResult).dangle().cType!
+
+							return returnValue
+						}
+		
+						func deriveChannelSignerLambda(this_arg: UnsafeRawPointer?, channel_value_satoshis: UInt64, channel_keys_id: LDKThirtyTwoBytes) -> LDKSign {
+							let instance: KeysInterface = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "KeysInterface::deriveChannelSignerLambda")
+
+							// Swift callback variable prep
+											
+
+							// Swift callback call
+							let swiftCallbackResult = instance.deriveChannelSigner(channelValueSatoshis: channel_value_satoshis, channelKeysId: ThirtyTwoBytes(cType: channel_keys_id).getValue())
 
 							// cleanup
 							
@@ -193,14 +211,14 @@
 							return returnValue
 						}
 		
-						func signInvoiceLambda(this_arg: UnsafeRawPointer?, hrp_bytes: LDKu8slice, invoice_data: LDKCVec_u5Z, receipient: LDKRecipient) -> LDKCResult_RecoverableSignatureNoneZ {
+						func signInvoiceLambda(this_arg: UnsafeRawPointer?, hrp_bytes: LDKu8slice, invoice_data: LDKCVec_U5Z, receipient: LDKRecipient) -> LDKCResult_RecoverableSignatureNoneZ {
 							let instance: KeysInterface = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "KeysInterface::signInvoiceLambda")
 
 							// Swift callback variable prep
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.signInvoice(hrpBytes: u8slice(cType: hrp_bytes).dangle().getValue(), invoiceData: Vec_u5Z(cType: invoice_data).getValue(), receipient: Recipient(value: receipient))
+							let swiftCallbackResult = instance.signInvoice(hrpBytes: u8slice(cType: hrp_bytes).dangle().getValue(), invoiceData: Vec_U5Z(cType: invoice_data).getValue(), receipient: Recipient(value: receipient))
 
 							// cleanup
 							
@@ -255,7 +273,8 @@
 							ecdh: ecdhLambda,
 							get_destination_script: getDestinationScriptLambda,
 							get_shutdown_scriptpubkey: getShutdownScriptpubkeyLambda,
-							get_channel_signer: getChannelSignerLambda,
+							generate_channel_keys_id: generateChannelKeysIdLambda,
+							derive_channel_signer: deriveChannelSignerLambda,
 							get_secure_random_bytes: getSecureRandomBytesLambda,
 							read_chan_signer: readChanSignerLambda,
 							sign_invoice: signInvoiceLambda,
@@ -267,12 +286,12 @@
 					
 					/// Get node secret key based on the provided [`Recipient`].
 					/// 
-					/// The node_id/network_key is the public key that corresponds to this secret key.
+					/// The `node_id`/`network_key` is the public key that corresponds to this secret key.
 					/// 
-					/// This method must return the same value each time it is called with a given `Recipient`
+					/// This method must return the same value each time it is called with a given [`Recipient`]
 					/// parameter.
 					/// 
-					/// Errors if the `Recipient` variant is not supported by the implementation.
+					/// Errors if the [`Recipient`] variant is not supported by the implementation.
 					open func getNodeSecret(recipient: Recipient) -> Result_SecretKeyNoneZ {
 						
 						Bindings.print("Error: KeysInterface::getNodeSecret MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
@@ -282,12 +301,12 @@
 					/// Get node id based on the provided [`Recipient`]. This public key corresponds to the secret in
 					/// [`get_node_secret`].
 					/// 
-					/// This method must return the same value each time it is called with a given `Recipient`
+					/// This method must return the same value each time it is called with a given [`Recipient`]
 					/// parameter.
 					/// 
-					/// Errors if the `Recipient` variant is not supported by the implementation.
+					/// Errors if the [`Recipient`] variant is not supported by the implementation.
 					/// 
-					/// [`get_node_secret`]: KeysInterface::get_node_secret
+					/// [`get_node_secret`]: Self::get_node_secret
 					open func getNodeId(recipient: Recipient) -> Result_PublicKeyNoneZ {
 						
 						Bindings.print("Error: KeysInterface::getNodeId MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
@@ -298,7 +317,7 @@
 					/// one is provided. Note that this tweak can be applied to `other_key` instead of our node
 					/// secret, though this is less efficient.
 					/// 
-					/// Errors if the `Recipient` variant is not supported by the implementation.
+					/// Errors if the [`Recipient`] variant is not supported by the implementation.
 					/// 
 					/// [`node secret`]: Self::get_node_secret
 					open func ecdh(recipient: Recipient, otherKey: [UInt8], tweak: [UInt8]?) -> Result_SharedSecretNoneZ {
@@ -327,13 +346,25 @@
 						abort()
 					}
 		
-					/// Get a new set of Sign for per-channel secrets. These MUST be unique even if you
+					/// Get a new set of [`Sign`] for per-channel secrets. These MUST be unique even if you
 					/// restarted with some stale data!
 					/// 
 					/// This method must return a different value each time it is called.
-					open func getChannelSigner(inbound: Bool, channelValueSatoshis: UInt64) -> Sign {
+					open func generateChannelKeysId(inbound: Bool, channelValueSatoshis: UInt64, userChannelId: [UInt8]) -> [UInt8] {
 						
-						Bindings.print("Error: KeysInterface::getChannelSigner MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: KeysInterface::generateChannelKeysId MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
+						abort()
+					}
+		
+					/// Derives the private key material backing a `Signer`.
+					/// 
+					/// To derive a new `Signer`, a fresh `channel_keys_id` should be obtained through
+					/// [`KeysInterface::generate_channel_keys_id`]. Otherwise, an existing `Signer` can be
+					/// re-derived from its `channel_keys_id`, which can be obtained through its trait method
+					/// [`BaseSign::channel_keys_id`].
+					open func deriveChannelSigner(channelValueSatoshis: UInt64, channelKeysId: [UInt8]) -> Sign {
+						
+						Bindings.print("Error: KeysInterface::deriveChannelSigner MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -348,12 +379,19 @@
 						abort()
 					}
 		
-					/// Reads a `Signer` for this `KeysInterface` from the given input stream.
+					/// Reads a [`Signer`] for this [`KeysInterface`] from the given input stream.
 					/// This is only called during deserialization of other objects which contain
-					/// `Sign`-implementing objects (ie `ChannelMonitor`s and `ChannelManager`s).
+					/// [`Sign`]-implementing objects (i.e., [`ChannelMonitor`]s and [`ChannelManager`]s).
 					/// The bytes are exactly those which `<Self::Signer as Writeable>::write()` writes, and
 					/// contain no versioning scheme. You may wish to include your own version prefix and ensure
 					/// you've read all of the provided bytes to ensure no corruption occurred.
+					/// 
+					/// This method is slowly being phased out -- it will only be called when reading objects
+					/// written by LDK versions prior to 0.0.113.
+					/// 
+					/// [`Signer`]: Self::Signer
+					/// [`ChannelMonitor`]: crate::chain::channelmonitor::ChannelMonitor
+					/// [`ChannelManager`]: crate::ln::channelmanager::ChannelManager
 					open func readChanSigner(reader: [UInt8]) -> Result_SignDecodeErrorZ {
 						
 						Bindings.print("Error: KeysInterface::readChanSigner MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
@@ -364,11 +402,11 @@
 					/// By parameterizing by the raw invoice bytes instead of the hash, we allow implementors of
 					/// this trait to parse the invoice and make sure they're signing what they expect, rather than
 					/// blindly signing the hash.
-					/// The hrp is ascii bytes, while the invoice data is base32.
+					/// The `hrp` is ASCII bytes, while the invoice data is base32-encoded.
 					/// 
 					/// The secret key used to sign the invoice is dependent on the [`Recipient`].
 					/// 
-					/// Errors if the `Recipient` variant is not supported by the implementation.
+					/// Errors if the [`Recipient`] variant is not supported by the implementation.
 					open func signInvoice(hrpBytes: [UInt8], invoiceData: [UInt8], receipient: Recipient) -> Result_RecoverableSignatureNoneZ {
 						
 						Bindings.print("Error: KeysInterface::signInvoice MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
@@ -429,12 +467,12 @@
 					
 					/// Get node secret key based on the provided [`Recipient`].
 					/// 
-					/// The node_id/network_key is the public key that corresponds to this secret key.
+					/// The `node_id`/`network_key` is the public key that corresponds to this secret key.
 					/// 
-					/// This method must return the same value each time it is called with a given `Recipient`
+					/// This method must return the same value each time it is called with a given [`Recipient`]
 					/// parameter.
 					/// 
-					/// Errors if the `Recipient` variant is not supported by the implementation.
+					/// Errors if the [`Recipient`] variant is not supported by the implementation.
 					public override func getNodeSecret(recipient: Recipient) -> Result_SecretKeyNoneZ {
 						// native call variable prep
 						
@@ -456,12 +494,12 @@
 					/// Get node id based on the provided [`Recipient`]. This public key corresponds to the secret in
 					/// [`get_node_secret`].
 					/// 
-					/// This method must return the same value each time it is called with a given `Recipient`
+					/// This method must return the same value each time it is called with a given [`Recipient`]
 					/// parameter.
 					/// 
-					/// Errors if the `Recipient` variant is not supported by the implementation.
+					/// Errors if the [`Recipient`] variant is not supported by the implementation.
 					/// 
-					/// [`get_node_secret`]: KeysInterface::get_node_secret
+					/// [`get_node_secret`]: Self::get_node_secret
 					public override func getNodeId(recipient: Recipient) -> Result_PublicKeyNoneZ {
 						// native call variable prep
 						
@@ -484,7 +522,7 @@
 					/// one is provided. Note that this tweak can be applied to `other_key` instead of our node
 					/// secret, though this is less efficient.
 					/// 
-					/// Errors if the `Recipient` variant is not supported by the implementation.
+					/// Errors if the [`Recipient`] variant is not supported by the implementation.
 					/// 
 					/// [`node secret`]: Self::get_node_secret
 					public override func ecdh(recipient: Recipient, otherKey: [UInt8], tweak: [UInt8]?) -> Result_SharedSecretNoneZ {
@@ -556,21 +594,55 @@
 						return returnValue
 					}
 		
-					/// Get a new set of Sign for per-channel secrets. These MUST be unique even if you
+					/// Get a new set of [`Sign`] for per-channel secrets. These MUST be unique even if you
 					/// restarted with some stale data!
 					/// 
 					/// This method must return a different value each time it is called.
-					public override func getChannelSigner(inbound: Bool, channelValueSatoshis: UInt64) -> Sign {
+					public override func generateChannelKeysId(inbound: Bool, channelValueSatoshis: UInt64, userChannelId: [UInt8]) -> [UInt8] {
 						// native call variable prep
 						
+						let userChannelIdPrimitiveWrapper = U128(value: userChannelId)
+				
 
 						
 
 						// native method call
-						let nativeCallResult = self.cType!.get_channel_signer(self.cType!.this_arg, inbound, channelValueSatoshis)
+						let nativeCallResult = self.cType!.generate_channel_keys_id(self.cType!.this_arg, inbound, channelValueSatoshis, userChannelIdPrimitiveWrapper.cType!)
 
 						// cleanup
 						
+						// for elided types, we need this
+						userChannelIdPrimitiveWrapper.noOpRetain()
+				
+
+						// return value (do some wrapping)
+						let returnValue = ThirtyTwoBytes(cType: nativeCallResult).getValue()
+
+						return returnValue
+					}
+		
+					/// Derives the private key material backing a `Signer`.
+					/// 
+					/// To derive a new `Signer`, a fresh `channel_keys_id` should be obtained through
+					/// [`KeysInterface::generate_channel_keys_id`]. Otherwise, an existing `Signer` can be
+					/// re-derived from its `channel_keys_id`, which can be obtained through its trait method
+					/// [`BaseSign::channel_keys_id`].
+					public override func deriveChannelSigner(channelValueSatoshis: UInt64, channelKeysId: [UInt8]) -> Sign {
+						// native call variable prep
+						
+						let channelKeysIdPrimitiveWrapper = ThirtyTwoBytes(value: channelKeysId)
+				
+
+						
+
+						// native method call
+						let nativeCallResult = self.cType!.derive_channel_signer(self.cType!.this_arg, channelValueSatoshis, channelKeysIdPrimitiveWrapper.cType!)
+
+						// cleanup
+						
+						// for elided types, we need this
+						channelKeysIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
 						let returnValue = NativelyImplementedSign(cType: nativeCallResult, anchor: self)
@@ -601,12 +673,19 @@
 						return returnValue
 					}
 		
-					/// Reads a `Signer` for this `KeysInterface` from the given input stream.
+					/// Reads a [`Signer`] for this [`KeysInterface`] from the given input stream.
 					/// This is only called during deserialization of other objects which contain
-					/// `Sign`-implementing objects (ie `ChannelMonitor`s and `ChannelManager`s).
+					/// [`Sign`]-implementing objects (i.e., [`ChannelMonitor`]s and [`ChannelManager`]s).
 					/// The bytes are exactly those which `<Self::Signer as Writeable>::write()` writes, and
 					/// contain no versioning scheme. You may wish to include your own version prefix and ensure
 					/// you've read all of the provided bytes to ensure no corruption occurred.
+					/// 
+					/// This method is slowly being phased out -- it will only be called when reading objects
+					/// written by LDK versions prior to 0.0.113.
+					/// 
+					/// [`Signer`]: Self::Signer
+					/// [`ChannelMonitor`]: crate::chain::channelmonitor::ChannelMonitor
+					/// [`ChannelManager`]: crate::ln::channelmanager::ChannelManager
 					public override func readChanSigner(reader: [UInt8]) -> Result_SignDecodeErrorZ {
 						// native call variable prep
 						
@@ -634,17 +713,17 @@
 					/// By parameterizing by the raw invoice bytes instead of the hash, we allow implementors of
 					/// this trait to parse the invoice and make sure they're signing what they expect, rather than
 					/// blindly signing the hash.
-					/// The hrp is ascii bytes, while the invoice data is base32.
+					/// The `hrp` is ASCII bytes, while the invoice data is base32-encoded.
 					/// 
 					/// The secret key used to sign the invoice is dependent on the [`Recipient`].
 					/// 
-					/// Errors if the `Recipient` variant is not supported by the implementation.
+					/// Errors if the [`Recipient`] variant is not supported by the implementation.
 					public override func signInvoice(hrpBytes: [UInt8], invoiceData: [UInt8], receipient: Recipient) -> Result_RecoverableSignatureNoneZ {
 						// native call variable prep
 						
 						let hrpBytesPrimitiveWrapper = u8slice(value: hrpBytes)
 				
-						let invoiceDataVector = Vec_u5Z(array: invoiceData).dangle()
+						let invoiceDataVector = Vec_U5Z(array: invoiceData).dangle()
 				
 
 						

@@ -4,7 +4,7 @@
 			import LDKHeaders
 			#endif
 
-			/// A simple implementation of Sign that just keeps the private keys in memory.
+			/// A simple implementation of [`Sign`] that just keeps the private keys in memory.
 			/// 
 			/// This implementation performs no policy checks and is insufficient by itself as
 			/// a secure external signer.
@@ -13,7 +13,7 @@
 			extension Bindings {
 		
 
-				/// A simple implementation of Sign that just keeps the private keys in memory.
+				/// A simple implementation of [`Sign`] that just keeps the private keys in memory.
 				/// 
 				/// This implementation performs no policy checks and is insufficient by itself as
 				/// a secure external signer.
@@ -66,7 +66,8 @@
 						return returnValue
 					}
 		
-					/// Private key of anchor tx
+					/// Holder secret key in the 2-of-2 multisig script of a channel. This key also backs the
+					/// holder's anchor output in a commitment transaction, if one is present.
 					public func getFundingKey() -> [UInt8]? {
 						// native call variable prep
 						
@@ -93,7 +94,8 @@
 						return returnValue
 					}
 		
-					/// Private key of anchor tx
+					/// Holder secret key in the 2-of-2 multisig script of a channel. This key also backs the
+					/// holder's anchor output in a commitment transaction, if one is present.
 					public func setFundingKey(val: [UInt8]) {
 						// native call variable prep
 						
@@ -121,7 +123,7 @@
 						return returnValue
 					}
 		
-					/// Holder secret key for blinded revocation pubkey
+					/// Holder secret key for blinded revocation pubkey.
 					public func getRevocationBaseKey() -> [UInt8]? {
 						// native call variable prep
 						
@@ -148,7 +150,7 @@
 						return returnValue
 					}
 		
-					/// Holder secret key for blinded revocation pubkey
+					/// Holder secret key for blinded revocation pubkey.
 					public func setRevocationBaseKey(val: [UInt8]) {
 						// native call variable prep
 						
@@ -176,7 +178,7 @@
 						return returnValue
 					}
 		
-					/// Holder secret key used for our balance in counterparty-broadcasted commitment transactions
+					/// Holder secret key used for our balance in counterparty-broadcasted commitment transactions.
 					public func getPaymentKey() -> [UInt8]? {
 						// native call variable prep
 						
@@ -203,7 +205,7 @@
 						return returnValue
 					}
 		
-					/// Holder secret key used for our balance in counterparty-broadcasted commitment transactions
+					/// Holder secret key used for our balance in counterparty-broadcasted commitment transactions.
 					public func setPaymentKey(val: [UInt8]) {
 						// native call variable prep
 						
@@ -231,7 +233,7 @@
 						return returnValue
 					}
 		
-					/// Holder secret key used in HTLC tx
+					/// Holder secret key used in an HTLC transaction.
 					public func getDelayedPaymentBaseKey() -> [UInt8]? {
 						// native call variable prep
 						
@@ -258,7 +260,7 @@
 						return returnValue
 					}
 		
-					/// Holder secret key used in HTLC tx
+					/// Holder secret key used in an HTLC transaction.
 					public func setDelayedPaymentBaseKey(val: [UInt8]) {
 						// native call variable prep
 						
@@ -286,7 +288,7 @@
 						return returnValue
 					}
 		
-					/// Holder htlc secret key used in commitment tx htlc outputs
+					/// Holder HTLC secret key used in commitment transaction HTLC outputs.
 					public func getHtlcBaseKey() -> [UInt8]? {
 						// native call variable prep
 						
@@ -313,7 +315,7 @@
 						return returnValue
 					}
 		
-					/// Holder htlc secret key used in commitment tx htlc outputs
+					/// Holder HTLC secret key used in commitment transaction HTLC outputs.
 					public func setHtlcBaseKey(val: [UInt8]) {
 						// native call variable prep
 						
@@ -341,7 +343,7 @@
 						return returnValue
 					}
 		
-					/// Commitment seed
+					/// Commitment seed.
 					public func getCommitmentSeed() -> [UInt8]? {
 						// native call variable prep
 						
@@ -368,7 +370,7 @@
 						return returnValue
 					}
 		
-					/// Commitment seed
+					/// Commitment seed.
 					public func setCommitmentSeed(val: [UInt8]) {
 						// native call variable prep
 						
@@ -419,7 +421,7 @@
 						return returnValue
 					}
 		
-					/// Create a new InMemorySigner
+					/// Creates a new [`InMemorySigner`].
 					public init(nodeSecret: [UInt8], fundingKey: [UInt8], revocationBaseKey: [UInt8], paymentKey: [UInt8], delayedPaymentBaseKey: [UInt8], htlcBaseKey: [UInt8], commitmentSeed: [UInt8], channelValueSatoshis: UInt64, channelKeysId: [UInt8]) {
 						// native call variable prep
 						
@@ -486,8 +488,9 @@
 			
 					}
 		
-					/// Counterparty pubkeys.
-					/// Will panic if ready_channel wasn't called.
+					/// Returns the counterparty's pubkeys.
+					/// 
+					/// Will panic if [`BaseSign::provide_channel_parameters`] has not been called before.
 					public func counterpartyPubkeys() -> ChannelPublicKeys {
 						// native call variable prep
 						
@@ -510,10 +513,11 @@
 						return returnValue
 					}
 		
-					/// The contest_delay value specified by our counterparty and applied on holder-broadcastable
-					/// transactions, ie the amount of time that we have to wait to recover our funds if we
+					/// Returns the `contest_delay` value specified by our counterparty and applied on holder-broadcastable
+					/// transactions, i.e., the amount of time that we have to wait to recover our funds if we
 					/// broadcast a transaction.
-					/// Will panic if ready_channel wasn't called.
+					/// 
+					/// Will panic if [`BaseSign::provide_channel_parameters`] has not been called before.
 					public func counterpartySelectedContestDelay() -> UInt16 {
 						// native call variable prep
 						
@@ -536,10 +540,11 @@
 						return returnValue
 					}
 		
-					/// The contest_delay value specified by us and applied on transactions broadcastable
-					/// by our counterparty, ie the amount of time that they have to wait to recover their funds
+					/// Returns the `contest_delay` value specified by us and applied on transactions broadcastable
+					/// by our counterparty, i.e., the amount of time that they have to wait to recover their funds
 					/// if they broadcast a transaction.
-					/// Will panic if ready_channel wasn't called.
+					/// 
+					/// Will panic if [`BaseSign::provide_channel_parameters`] has not been called before.
 					public func holderSelectedContestDelay() -> UInt16 {
 						// native call variable prep
 						
@@ -562,8 +567,9 @@
 						return returnValue
 					}
 		
-					/// Whether the holder is the initiator
-					/// Will panic if ready_channel wasn't called.
+					/// Returns whether the holder is the initiator.
+					/// 
+					/// Will panic if [`BaseSign::provide_channel_parameters`] has not been called before.
 					public func isOutbound() -> Bool {
 						// native call variable prep
 						
@@ -587,7 +593,8 @@
 					}
 		
 					/// Funding outpoint
-					/// Will panic if ready_channel wasn't called.
+					/// 
+					/// Will panic if [`BaseSign::provide_channel_parameters`] has not been called before.
 					public func fundingOutpoint() -> OutPoint {
 						// native call variable prep
 						
@@ -610,10 +617,10 @@
 						return returnValue
 					}
 		
-					/// Obtain a ChannelTransactionParameters for this channel, to be used when verifying or
+					/// Returns a [`ChannelTransactionParameters`] for this channel, to be used when verifying or
 					/// building transactions.
 					/// 
-					/// Will panic if ready_channel wasn't called.
+					/// Will panic if [`BaseSign::provide_channel_parameters`] has not been called before.
 					public func getChannelParameters() -> ChannelTransactionParameters {
 						// native call variable prep
 						
@@ -636,8 +643,9 @@
 						return returnValue
 					}
 		
-					/// Whether anchors should be used.
-					/// Will panic if ready_channel wasn't called.
+					/// Returns whether anchors should be used.
+					/// 
+					/// Will panic if [`BaseSign::provide_channel_parameters`] has not been called before.
 					public func optAnchors() -> Bool {
 						// native call variable prep
 						
@@ -660,12 +668,14 @@
 						return returnValue
 					}
 		
-					/// Sign the single input of spend_tx at index `input_idx` which spends the output
-					/// described by descriptor, returning the witness stack for the input.
+					/// Sign the single input of `spend_tx` at index `input_idx`, which spends the output described
+					/// by `descriptor`, returning the witness stack for the input.
 					/// 
-					/// Returns an Err if the input at input_idx does not exist, has a non-empty script_sig,
-					/// is not spending the outpoint described by `descriptor.outpoint`,
-					/// or if an output descriptor script_pubkey does not match the one we can spend.
+					/// Returns an error if the input at `input_idx` does not exist, has a non-empty `script_sig`,
+					/// is not spending the outpoint described by [`descriptor.outpoint`],
+					/// or if an output descriptor `script_pubkey` does not match the one we can spend.
+					/// 
+					/// [`descriptor.outpoint`]: StaticPaymentOutputDescriptor::outpoint
 					public func signCounterpartyPaymentInput(spendTx: [UInt8], inputIdx: UInt, descriptor: StaticPaymentOutputDescriptor) -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						
@@ -697,13 +707,16 @@
 						return returnValue
 					}
 		
-					/// Sign the single input of spend_tx at index `input_idx` which spends the output
-					/// described by descriptor, returning the witness stack for the input.
+					/// Sign the single input of `spend_tx` at index `input_idx` which spends the output
+					/// described by `descriptor`, returning the witness stack for the input.
 					/// 
-					/// Returns an Err if the input at input_idx does not exist, has a non-empty script_sig,
-					/// is not spending the outpoint described by `descriptor.outpoint`, does not have a
-					/// sequence set to `descriptor.to_self_delay`, or if an output descriptor
-					/// script_pubkey does not match the one we can spend.
+					/// Returns an error if the input at `input_idx` does not exist, has a non-empty `script_sig`,
+					/// is not spending the outpoint described by [`descriptor.outpoint`], does not have a
+					/// sequence set to [`descriptor.to_self_delay`], or if an output descriptor
+					/// `script_pubkey` does not match the one we can spend.
+					/// 
+					/// [`descriptor.outpoint`]: DelayedPaymentOutputDescriptor::outpoint
+					/// [`descriptor.to_self_delay`]: DelayedPaymentOutputDescriptor::to_self_delay
 					public func signDynamicP2wshInput(spendTx: [UInt8], inputIdx: UInt, descriptor: DelayedPaymentOutputDescriptor) -> Result_CVec_CVec_u8ZZNoneZ {
 						// native call variable prep
 						

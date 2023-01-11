@@ -193,10 +193,9 @@
 					/// 
 					/// `user_channel_id` will be provided back as in
 					/// [`Event::FundingGenerationReady::user_channel_id`] to allow tracking of which events
-					/// correspond with which `create_channel` call. Note that the `user_channel_id` defaults to 0
-					/// for inbound channels, so you may wish to avoid using 0 for `user_channel_id` here.
-					/// `user_channel_id` has no meaning inside of LDK, it is simply copied to events and otherwise
-					/// ignored.
+					/// correspond with which `create_channel` call. Note that the `user_channel_id` defaults to a
+					/// randomized value for inbound channels. `user_channel_id` has no meaning inside of LDK, it
+					/// is simply copied to events and otherwise ignored.
 					/// 
 					/// Raises [`APIError::APIMisuseError`] when `channel_value_satoshis` > 2**24 or `push_msat` is
 					/// greater than `channel_value_satoshis * 1k` or `channel_value_satoshis < 1000`.
@@ -217,16 +216,18 @@
 					/// [`Event::ChannelClosed::channel_id`]: events::Event::ChannelClosed::channel_id
 					/// 
 					/// Note that override_config (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public func createChannel(theirNetworkKey: [UInt8], channelValueSatoshis: UInt64, pushMsat: UInt64, userChannelId: UInt64, overrideConfig: UserConfig) -> Result__u832APIErrorZ {
+					public func createChannel(theirNetworkKey: [UInt8], channelValueSatoshis: UInt64, pushMsat: UInt64, userChannelId: [UInt8], overrideConfig: UserConfig) -> Result__u832APIErrorZ {
 						// native call variable prep
 						
 						let theirNetworkKeyPrimitiveWrapper = PublicKey(value: theirNetworkKey)
+				
+						let userChannelIdPrimitiveWrapper = U128(value: userChannelId)
 				
 
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
-				ChannelManager_create_channel(thisArgPointer, theirNetworkKeyPrimitiveWrapper.cType!, channelValueSatoshis, pushMsat, userChannelId, overrideConfig.dynamicallyDangledClone().cType!)
+				ChannelManager_create_channel(thisArgPointer, theirNetworkKeyPrimitiveWrapper.cType!, channelValueSatoshis, pushMsat, userChannelIdPrimitiveWrapper.cType!, overrideConfig.dynamicallyDangledClone().cType!)
 						}
 				
 
@@ -234,6 +235,9 @@
 						
 						// for elided types, we need this
 						theirNetworkKeyPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						userChannelIdPrimitiveWrapper.noOpRetain()
 				
 
 						
@@ -529,21 +533,27 @@
 					/// Value parameters are provided via the last hop in route, see documentation for RouteHop
 					/// fields for more info.
 					/// 
-					/// Note that if the payment_hash already exists elsewhere (eg you're sending a duplicative
-					/// payment), we don't do anything to stop you! We always try to ensure that if the provided
-					/// next hop knows the preimage to payment_hash they can claim an additional amount as
-					/// specified in the last hop in the route! Thus, you should probably do your own
-					/// payment_preimage tracking (which you should already be doing as they represent \"proof of
-					/// payment\") and prevent double-sends yourself.
+					/// If a pending payment is currently in-flight with the same [`PaymentId`] provided, this
+					/// method will error with an [`APIError::InvalidRoute`]. Note, however, that once a payment
+					/// is no longer pending (either via [`ChannelManager::abandon_payment`], or handling of an
+					/// [`Event::PaymentSent`]) LDK will not stop you from sending a second payment with the same
+					/// [`PaymentId`].
 					/// 
-					/// May generate SendHTLCs message(s) event on success, which should be relayed.
+					/// Thus, in order to ensure duplicate payments are not sent, you should implement your own
+					/// tracking of payments, including state to indicate once a payment has completed. Because you
+					/// should also ensure that [`PaymentHash`]es are not re-used, for simplicity, you should
+					/// consider using the [`PaymentHash`] as the key for tracking payments. In that case, the
+					/// [`PaymentId`] should be a copy of the [`PaymentHash`] bytes.
+					/// 
+					/// May generate SendHTLCs message(s) event on success, which should be relayed (e.g. via
+					/// [`PeerManager::process_events`]).
 					/// 
 					/// Each path may have a different return value, and PaymentSendValue may return a Vec with
 					/// each entry matching the corresponding-index entry in the route paths, see
 					/// PaymentSendFailure for more info.
 					/// 
 					/// In general, a path may raise:
-					/// * [`APIError::RouteError`] when an invalid route or forwarding parameter (cltv_delta, fee,
+					/// * [`APIError::InvalidRoute`] when an invalid route or forwarding parameter (cltv_delta, fee,
 					/// node public key) is specified.
 					/// * [`APIError::ChannelUnavailable`] if the next-hop channel is not available for updates
 					/// (including due to previous monitor update failure or new permanent monitor update
@@ -560,17 +570,23 @@
 					/// newer nodes, it will be provided to you in the invoice. If you do not have one, the Route
 					/// must not contain multiple paths as multi-path payments require a recipient-provided
 					/// payment_secret.
+					/// 
 					/// If a payment_secret *is* provided, we assume that the invoice had the payment_secret feature
 					/// bit set (either as required or as available). If multiple paths are present in the Route,
 					/// we assume the invoice had the basic_mpp feature set.
 					/// 
+					/// [`Event::PaymentSent`]: events::Event::PaymentSent
+					/// [`PeerManager::process_events`]: crate::ln::peer_handler::PeerManager::process_events
+					/// 
 					/// Note that payment_secret (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
+					public func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8], paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
 						// native call variable prep
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
 						let paymentSecretPrimitiveWrapper = ThirtyTwoBytes(value: paymentSecret)
+				
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
 				
 
 						// native method call
@@ -578,7 +594,7 @@
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 				
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-				ChannelManager_send_payment(thisArgPointer, routePointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
+				ChannelManager_send_payment(thisArgPointer, routePointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!, paymentIdPrimitiveWrapper.cType!)
 						}
 				
 						}
@@ -592,10 +608,13 @@
 						// for elided types, we need this
 						paymentSecretPrimitiveWrapper.noOpRetain()
 				
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -644,15 +663,21 @@
 		
 					/// Signals that no further retries for the given payment will occur.
 					/// 
-					/// After this method returns, any future calls to [`retry_payment`] for the given `payment_id`
-					/// will fail with [`PaymentSendFailure::ParameterError`]. If no such event has been generated,
-					/// an [`Event::PaymentFailed`] event will be generated as soon as there are no remaining
-					/// pending HTLCs for this payment.
+					/// After this method returns, no future calls to [`retry_payment`] for the given `payment_id`
+					/// are allowed. If no [`Event::PaymentFailed`] event had been generated before, one will be
+					/// generated as soon as there are no remaining pending HTLCs for this payment.
 					/// 
 					/// Note that calling this method does *not* prevent a payment from succeeding. You must still
 					/// wait until you receive either a [`Event::PaymentFailed`] or [`Event::PaymentSent`] event to
 					/// determine the ultimate status of a payment.
 					/// 
+					/// If an [`Event::PaymentFailed`] event is generated and we restart without this
+					/// [`ChannelManager`] having been persisted, the payment may still be in the pending state
+					/// upon restart. This allows further calls to [`retry_payment`] (and requiring a second call
+					/// to [`abandon_payment`] to mark the payment as failed again). Otherwise, future calls to
+					/// [`retry_payment`] will fail with [`PaymentSendFailure::ParameterError`].
+					/// 
+					/// [`abandon_payment`]: Self::abandon_payment
 					/// [`retry_payment`]: Self::retry_payment
 					/// [`Event::PaymentFailed`]: events::Event::PaymentFailed
 					/// [`Event::PaymentSent`]: events::Event::PaymentSent
@@ -689,7 +714,8 @@
 					/// would be able to guess -- otherwise, an intermediate node may claim the payment and it will
 					/// never reach the recipient.
 					/// 
-					/// See [`send_payment`] documentation for more details on the return value of this function.
+					/// See [`send_payment`] documentation for more details on the return value of this function
+					/// and idempotency guarantees provided by the [`PaymentId`] key.
 					/// 
 					/// Similar to regular payments, you MUST NOT reuse a `payment_preimage` value. See
 					/// [`send_payment`] for more information about the risks of duplicate preimage usage.
@@ -699,10 +725,12 @@
 					/// [`send_payment`]: Self::send_payment
 					/// 
 					/// Note that payment_preimage (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8]) -> Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ {
+					public func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8], paymentId: [UInt8]) -> Result_PaymentHashPaymentSendFailureZ {
 						// native call variable prep
 						
 						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
+				
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
 				
 
 						// native method call
@@ -710,7 +738,7 @@
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 				
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-				ChannelManager_send_spontaneous_payment(thisArgPointer, routePointer, paymentPreimagePrimitiveWrapper.cType!)
+				ChannelManager_send_spontaneous_payment(thisArgPointer, routePointer, paymentPreimagePrimitiveWrapper.cType!, paymentIdPrimitiveWrapper.cType!)
 						}
 				
 						}
@@ -721,10 +749,13 @@
 						// for elided types, we need this
 						paymentPreimagePrimitiveWrapper.noOpRetain()
 				
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
 
 						
 						// return value (do some wrapping)
-						let returnValue = Result_C2Tuple_PaymentHashPaymentIdZPaymentSendFailureZ(cType: nativeCallResult, anchor: self)
+						let returnValue = Result_PaymentHashPaymentSendFailureZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue
@@ -884,6 +915,98 @@
 						return returnValue
 					}
 		
+					/// Attempts to forward an intercepted HTLC over the provided channel id and with the provided
+					/// amount to forward. Should only be called in response to an [`HTLCIntercepted`] event.
+					/// 
+					/// Intercepted HTLCs can be useful for Lightning Service Providers (LSPs) to open a just-in-time
+					/// channel to a receiving node if the node lacks sufficient inbound liquidity.
+					/// 
+					/// To make use of intercepted HTLCs, set [`UserConfig::accept_intercept_htlcs`] and use
+					/// [`ChannelManager::get_intercept_scid`] to generate short channel id(s) to put in the
+					/// receiver's invoice route hints. These route hints will signal to LDK to generate an
+					/// [`HTLCIntercepted`] event when it receives the forwarded HTLC, and this method or
+					/// [`ChannelManager::fail_intercepted_htlc`] MUST be called in response to the event.
+					/// 
+					/// Note that LDK does not enforce fee requirements in `amt_to_forward_msat`, and will not stop
+					/// you from forwarding more than you received.
+					/// 
+					/// Errors if the event was not handled in time, in which case the HTLC was automatically failed
+					/// backwards.
+					/// 
+					/// [`UserConfig::accept_intercept_htlcs`]: crate::util::config::UserConfig::accept_intercept_htlcs
+					/// [`HTLCIntercepted`]: events::Event::HTLCIntercepted
+					public func forwardInterceptedHtlc(interceptId: [UInt8], nextHopChannelId: [UInt8], NextNodeId: [UInt8], amtToForwardMsat: UInt64) -> Result_NoneAPIErrorZ {
+						// native call variable prep
+						
+						let interceptIdPrimitiveWrapper = ThirtyTwoBytes(value: interceptId)
+				
+						let tupledNextHopChannelId = Bindings.arrayToUInt8Tuple32(array: nextHopChannelId)
+					
+						let NextNodeIdPrimitiveWrapper = PublicKey(value: NextNodeId)
+				
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
+				
+						withUnsafePointer(to: tupledNextHopChannelId) { (tupledNextHopChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
+				ChannelManager_forward_intercepted_htlc(thisArgPointer, interceptIdPrimitiveWrapper.cType!, tupledNextHopChannelIdPointer, NextNodeIdPrimitiveWrapper.cType!, amtToForwardMsat)
+						}
+				
+						}
+				
+
+						// cleanup
+						
+						// for elided types, we need this
+						interceptIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						NextNodeIdPrimitiveWrapper.noOpRetain()
+				
+
+						
+						// return value (do some wrapping)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
+						
+
+						return returnValue
+					}
+		
+					/// Fails the intercepted HTLC indicated by intercept_id. Should only be called in response to
+					/// an [`HTLCIntercepted`] event. See [`ChannelManager::forward_intercepted_htlc`].
+					/// 
+					/// Errors if the event was not handled in time, in which case the HTLC was automatically failed
+					/// backwards.
+					/// 
+					/// [`HTLCIntercepted`]: events::Event::HTLCIntercepted
+					public func failInterceptedHtlc(interceptId: [UInt8]) -> Result_NoneAPIErrorZ {
+						// native call variable prep
+						
+						let interceptIdPrimitiveWrapper = ThirtyTwoBytes(value: interceptId)
+				
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
+				ChannelManager_fail_intercepted_htlc(thisArgPointer, interceptIdPrimitiveWrapper.cType!)
+						}
+				
+
+						// cleanup
+						
+						// for elided types, we need this
+						interceptIdPrimitiveWrapper.noOpRetain()
+				
+
+						
+						// return value (do some wrapping)
+						let returnValue = Result_NoneAPIErrorZ(cType: nativeCallResult, anchor: self)
+						
+
+						return returnValue
+					}
+		
 					/// Processes HTLCs which are pending waiting on random forward delay.
 					/// 
 					/// Should only really ever be called in response to a PendingHTLCsForwardable event.
@@ -945,12 +1068,12 @@
 					}
 		
 					/// Indicates that the preimage for payment_hash is unknown or the received amount is incorrect
-					/// after a PaymentReceived event, failing the HTLC back to its origin and freeing resources
+					/// after a PaymentClaimable event, failing the HTLC back to its origin and freeing resources
 					/// along the path (including in our own channel on which we received it).
 					/// 
 					/// Note that in some cases around unclean shutdown, it is possible the payment may have
 					/// already been claimed by you via [`ChannelManager::claim_funds`] prior to you seeing (a
-					/// second copy of) the [`events::Event::PaymentReceived`] event. Alternatively, the payment
+					/// second copy of) the [`events::Event::PaymentClaimable`] event. Alternatively, the payment
 					/// may have already been failed automatically by LDK if it was nearing its expiration time.
 					/// 
 					/// While LDK will never claim a payment automatically on your behalf (i.e. without you calling
@@ -985,7 +1108,7 @@
 						return returnValue
 					}
 		
-					/// Provides a payment preimage in response to [`Event::PaymentReceived`], generating any
+					/// Provides a payment preimage in response to [`Event::PaymentClaimable`], generating any
 					/// [`MessageSendEvent`]s needed to claim the payment.
 					/// 
 					/// Note that calling this method does *not* guarantee that the payment has been claimed. You
@@ -993,16 +1116,15 @@
 					/// provided to your [`EventHandler`] when [`process_pending_events`] is next called.
 					/// 
 					/// Note that if you did not set an `amount_msat` when calling [`create_inbound_payment`] or
-					/// [`create_inbound_payment_for_hash`] you must check that the amount in the `PaymentReceived`
+					/// [`create_inbound_payment_for_hash`] you must check that the amount in the `PaymentClaimable`
 					/// event matches your expectation. If you fail to do so and call this method, you may provide
 					/// the sender \"proof-of-payment\" when they did not fulfill the full expected payment.
 					/// 
-					/// [`Event::PaymentReceived`]: crate::util::events::Event::PaymentReceived
+					/// [`Event::PaymentClaimable`]: crate::util::events::Event::PaymentClaimable
 					/// [`Event::PaymentClaimed`]: crate::util::events::Event::PaymentClaimed
 					/// [`process_pending_events`]: EventsProvider::process_pending_events
 					/// [`create_inbound_payment`]: Self::create_inbound_payment
 					/// [`create_inbound_payment_for_hash`]: Self::create_inbound_payment_for_hash
-					/// [`get_and_clear_pending_msg_events`]: MessageSendEventsProvider::get_and_clear_pending_msg_events
 					public func claimFunds(paymentPreimage: [UInt8]) {
 						// native call variable prep
 						
@@ -1069,12 +1191,14 @@
 					/// 
 					/// [`Event::OpenChannelRequest`]: events::Event::OpenChannelRequest
 					/// [`Event::ChannelClosed::user_channel_id`]: events::Event::ChannelClosed::user_channel_id
-					public func acceptInboundChannel(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], userChannelId: UInt64) -> Result_NoneAPIErrorZ {
+					public func acceptInboundChannel(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], userChannelId: [UInt8]) -> Result_NoneAPIErrorZ {
 						// native call variable prep
 						
 						let tupledTemporaryChannelId = Bindings.arrayToUInt8Tuple32(array: temporaryChannelId)
 					
 						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
+						let userChannelIdPrimitiveWrapper = U128(value: userChannelId)
 				
 
 						// native method call
@@ -1082,7 +1206,7 @@
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 				
 						withUnsafePointer(to: tupledTemporaryChannelId) { (tupledTemporaryChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-				ChannelManager_accept_inbound_channel(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, userChannelId)
+				ChannelManager_accept_inbound_channel(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, userChannelIdPrimitiveWrapper.cType!)
 						}
 				
 						}
@@ -1092,6 +1216,9 @@
 						
 						// for elided types, we need this
 						counterpartyNodeIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						userChannelIdPrimitiveWrapper.noOpRetain()
 				
 
 						
@@ -1120,12 +1247,14 @@
 					/// 
 					/// [`Event::OpenChannelRequest`]: events::Event::OpenChannelRequest
 					/// [`Event::ChannelClosed::user_channel_id`]: events::Event::ChannelClosed::user_channel_id
-					public func acceptInboundChannelFromTrustedPeer_0conf(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], userChannelId: UInt64) -> Result_NoneAPIErrorZ {
+					public func acceptInboundChannelFromTrustedPeer_0conf(temporaryChannelId: [UInt8], counterpartyNodeId: [UInt8], userChannelId: [UInt8]) -> Result_NoneAPIErrorZ {
 						// native call variable prep
 						
 						let tupledTemporaryChannelId = Bindings.arrayToUInt8Tuple32(array: temporaryChannelId)
 					
 						let counterpartyNodeIdPrimitiveWrapper = PublicKey(value: counterpartyNodeId)
+				
+						let userChannelIdPrimitiveWrapper = U128(value: userChannelId)
 				
 
 						// native method call
@@ -1133,7 +1262,7 @@
 						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
 				
 						withUnsafePointer(to: tupledTemporaryChannelId) { (tupledTemporaryChannelIdPointer: UnsafePointer<UInt8Tuple32>) in
-				ChannelManager_accept_inbound_channel_from_trusted_peer_0conf(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, userChannelId)
+				ChannelManager_accept_inbound_channel_from_trusted_peer_0conf(thisArgPointer, tupledTemporaryChannelIdPointer, counterpartyNodeIdPrimitiveWrapper.cType!, userChannelIdPrimitiveWrapper.cType!)
 						}
 				
 						}
@@ -1143,6 +1272,9 @@
 						
 						// for elided types, we need this
 						counterpartyNodeIdPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						userChannelIdPrimitiveWrapper.noOpRetain()
 				
 
 						
@@ -1159,8 +1291,8 @@
 					/// This differs from [`create_inbound_payment_for_hash`] only in that it generates the
 					/// [`PaymentHash`] and [`PaymentPreimage`] for you.
 					/// 
-					/// The [`PaymentPreimage`] will ultimately be returned to you in the [`PaymentReceived`], which
-					/// will have the [`PaymentReceived::payment_preimage`] field filled in. That should then be
+					/// The [`PaymentPreimage`] will ultimately be returned to you in the [`PaymentClaimable`], which
+					/// will have the [`PaymentClaimable::payment_preimage`] field filled in. That should then be
 					/// passed directly to [`claim_funds`].
 					/// 
 					/// See [`create_inbound_payment_for_hash`] for detailed documentation on behavior and requirements.
@@ -1176,8 +1308,8 @@
 					/// Errors if `min_value_msat` is greater than total bitcoin supply.
 					/// 
 					/// [`claim_funds`]: Self::claim_funds
-					/// [`PaymentReceived`]: events::Event::PaymentReceived
-					/// [`PaymentReceived::payment_preimage`]: events::Event::PaymentReceived::payment_preimage
+					/// [`PaymentClaimable`]: events::Event::PaymentClaimable
+					/// [`PaymentClaimable::payment_preimage`]: events::Event::PaymentClaimable::payment_preimage
 					/// [`create_inbound_payment_for_hash`]: Self::create_inbound_payment_for_hash
 					public func createInboundPayment(minValueMsat: UInt64?, invoiceExpiryDeltaSecs: UInt32) -> Result_C2Tuple_PaymentHashPaymentSecretZNoneZ {
 						// native call variable prep
@@ -1239,7 +1371,7 @@
 					/// Gets a [`PaymentSecret`] for a given [`PaymentHash`], for which the payment preimage is
 					/// stored external to LDK.
 					/// 
-					/// A [`PaymentReceived`] event will only be generated if the [`PaymentSecret`] matches a
+					/// A [`PaymentClaimable`] event will only be generated if the [`PaymentSecret`] matches a
 					/// payment secret fetched via this method or [`create_inbound_payment`], and which is at least
 					/// the `min_value_msat` provided here, if one is provided.
 					/// 
@@ -1249,7 +1381,7 @@
 					/// 
 					/// `min_value_msat` should be set if the invoice being generated contains a value. Any payment
 					/// received for the returned [`PaymentHash`] will be required to be at least `min_value_msat`
-					/// before a [`PaymentReceived`] event will be generated, ensuring that we do not provide the
+					/// before a [`PaymentClaimable`] event will be generated, ensuring that we do not provide the
 					/// sender \"proof-of-payment\" unless they have paid the required amount.
 					/// 
 					/// `invoice_expiry_delta_secs` describes the number of seconds that the invoice is valid for
@@ -1260,9 +1392,9 @@
 					/// 
 					/// Note that we use block header time to time-out pending inbound payments (with some margin
 					/// to compensate for the inaccuracy of block header timestamps). Thus, in practice we will
-					/// accept a payment and generate a [`PaymentReceived`] event for some time after the expiry.
+					/// accept a payment and generate a [`PaymentClaimable`] event for some time after the expiry.
 					/// If you need exact expiry semantics, you should enforce them upon receipt of
-					/// [`PaymentReceived`].
+					/// [`PaymentClaimable`].
 					/// 
 					/// Note that invoices generated for inbound payments should have their `min_final_cltv_expiry`
 					/// set to at least [`MIN_FINAL_CLTV_EXPIRY`].
@@ -1278,7 +1410,7 @@
 					/// Errors if `min_value_msat` is greater than total bitcoin supply.
 					/// 
 					/// [`create_inbound_payment`]: Self::create_inbound_payment
-					/// [`PaymentReceived`]: events::Event::PaymentReceived
+					/// [`PaymentClaimable`]: events::Event::PaymentClaimable
 					public func createInboundPaymentForHash(paymentHash: [UInt8], minValueMsat: UInt64?, invoiceExpiryDeltaSecs: UInt32) -> Result_PaymentSecretNoneZ {
 						// native call variable prep
 						
@@ -1433,6 +1565,58 @@
 						return returnValue
 					}
 		
+					/// Gets a fake short channel id for use in receiving intercepted payments. These fake scids are
+					/// used when constructing the route hints for HTLCs intended to be intercepted. See
+					/// [`ChannelManager::forward_intercepted_htlc`].
+					/// 
+					/// Note that this method is not guaranteed to return unique values, you may need to call it a few
+					/// times to get a unique scid.
+					public func getInterceptScid() -> UInt64 {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
+				ChannelManager_get_intercept_scid(thisArgPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = nativeCallResult
+						
+
+						return returnValue
+					}
+		
+					/// Gets inflight HTLC information by processing pending outbound payments that are in
+					/// our channels. May be used during pathfinding to account for in-use channel liquidity.
+					public func computeInflightHtlcs() -> InFlightHtlcs {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKChannelManager>) in
+				ChannelManager_compute_inflight_htlcs(thisArgPointer)
+						}
+				
+
+						// cleanup
+						
+
+						
+						// return value (do some wrapping)
+						let returnValue = InFlightHtlcs(cType: nativeCallResult, anchor: self).dangle(false)
+						
+
+						return returnValue
+					}
+		
 					/// Constructs a new MessageSendEventsProvider which calls the relevant methods on this_arg.
 					/// This copies the `inner` pointer in this_arg and thus the returned MessageSendEventsProvider must be freed before this_arg is
 					public func asMessageSendEventsProvider() -> MessageSendEventsProvider {
@@ -1531,10 +1715,14 @@
 		
 					/// Blocks until ChannelManager needs to be persisted or a timeout is reached. It returns a bool
 					/// indicating whether persistence is necessary. Only one listener on
-					/// `await_persistable_update` or `await_persistable_update_timeout` is guaranteed to be woken
-					/// up.
+					/// [`await_persistable_update`], [`await_persistable_update_timeout`], or a future returned by
+					/// [`get_persistable_update_future`] is guaranteed to be woken up.
 					/// 
 					/// Note that this method is not available with the `no-std` feature.
+					/// 
+					/// [`await_persistable_update`]: Self::await_persistable_update
+					/// [`await_persistable_update_timeout`]: Self::await_persistable_update_timeout
+					/// [`get_persistable_update_future`]: Self::get_persistable_update_future
 					public func awaitPersistableUpdateTimeout(maxWait: UInt64) -> Bool {
 						// native call variable prep
 						
@@ -1558,8 +1746,11 @@
 					}
 		
 					/// Blocks until ChannelManager needs to be persisted. Only one listener on
-					/// `await_persistable_update` or `await_persistable_update_timeout` is guaranteed to be woken
-					/// up.
+					/// [`await_persistable_update`], `await_persistable_update_timeout`, or a future returned by
+					/// [`get_persistable_update_future`] is guaranteed to be woken up.
+					/// 
+					/// [`await_persistable_update`]: Self::await_persistable_update
+					/// [`get_persistable_update_future`]: Self::get_persistable_update_future
 					public func awaitPersistableUpdate() {
 						// native call variable prep
 						

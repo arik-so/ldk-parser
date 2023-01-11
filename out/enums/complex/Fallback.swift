@@ -116,7 +116,7 @@
 					public class func initWithSegWitProgram(version: UInt8, program: [UInt8]) -> Fallback {
 						// native call variable prep
 						
-						let versionPrimitiveWrapper = u5(value: version)
+						let versionPrimitiveWrapper = U5(value: version)
 				
 						let programVector = Vec_u8Z(array: program).dangle()
 				
@@ -335,7 +335,7 @@
 						/// 
 						public func getVersion() -> UInt8 {
 							// return value (do some wrapping)
-							let returnValue = u5(cType: self.cType!.version, anchor: self).getValue()
+							let returnValue = U5(cType: self.cType!.version, anchor: self).getValue()
 
 							return returnValue;
 						}

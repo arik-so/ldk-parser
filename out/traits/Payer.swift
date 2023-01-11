@@ -7,11 +7,35 @@
 			import Foundation
 
 			/// A trait defining behavior of an [`Invoice`] payer.
+			/// 
+			/// While the behavior of [`InvoicePayer`] provides idempotency of duplicate `send_*payment` calls
+			/// with the same [`PaymentHash`], it is up to the `Payer` to provide idempotency across restarts.
+			/// 
+			/// [`ChannelManager`] provides idempotency for duplicate payments with the same [`PaymentId`].
+			/// 
+			/// In order to trivially ensure idempotency for payments, the default `Payer` implementation
+			/// reuses the [`PaymentHash`] bytes as the [`PaymentId`]. Custom implementations wishing to
+			/// provide payment idempotency with a different idempotency key (i.e. [`PaymentId`]) should map
+			/// the [`Invoice`] or spontaneous payment target pubkey to their own idempotency key.
+			/// 
+			/// [`ChannelManager`]: lightning::ln::channelmanager::ChannelManager
 			public typealias Payer = Bindings.Payer
 
 			extension Bindings {
 
 				/// A trait defining behavior of an [`Invoice`] payer.
+				/// 
+				/// While the behavior of [`InvoicePayer`] provides idempotency of duplicate `send_*payment` calls
+				/// with the same [`PaymentHash`], it is up to the `Payer` to provide idempotency across restarts.
+				/// 
+				/// [`ChannelManager`] provides idempotency for duplicate payments with the same [`PaymentId`].
+				/// 
+				/// In order to trivially ensure idempotency for payments, the default `Payer` implementation
+				/// reuses the [`PaymentHash`] bytes as the [`PaymentId`]. Custom implementations wishing to
+				/// provide payment idempotency with a different idempotency key (i.e. [`PaymentId`]) should map
+				/// the [`Invoice`] or spontaneous payment target pubkey to their own idempotency key.
+				/// 
+				/// [`ChannelManager`]: lightning::ln::channelmanager::ChannelManager
 				open class Payer: NativeTraitWrapper {
 
 					
@@ -85,14 +109,14 @@
 							return returnValue
 						}
 		
-						func sendPaymentLambda(this_arg: UnsafeRawPointer?, route: UnsafePointer<LDKRoute>, payment_hash: LDKThirtyTwoBytes, payment_secret: LDKThirtyTwoBytes) -> LDKCResult_PaymentIdPaymentSendFailureZ {
+						func sendPaymentLambda(this_arg: UnsafeRawPointer?, route: UnsafePointer<LDKRoute>, payment_hash: LDKThirtyTwoBytes, payment_secret: LDKThirtyTwoBytes, payment_id: LDKThirtyTwoBytes) -> LDKCResult_NonePaymentSendFailureZ {
 							let instance: Payer = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "Payer::sendPaymentLambda")
 
 							// Swift callback variable prep
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.sendPayment(route: Route(cType: route.pointee).dangle().clone(), paymentHash: ThirtyTwoBytes(cType: payment_hash).getValue(), paymentSecret: ThirtyTwoBytes(cType: payment_secret).getValue())
+							let swiftCallbackResult = instance.sendPayment(route: Route(cType: route.pointee).dangle().clone(), paymentHash: ThirtyTwoBytes(cType: payment_hash).getValue(), paymentSecret: ThirtyTwoBytes(cType: payment_secret).getValue(), paymentId: ThirtyTwoBytes(cType: payment_id).getValue())
 
 							// cleanup
 							
@@ -103,14 +127,14 @@
 							return returnValue
 						}
 		
-						func sendSpontaneousPaymentLambda(this_arg: UnsafeRawPointer?, route: UnsafePointer<LDKRoute>, payment_preimage: LDKThirtyTwoBytes) -> LDKCResult_PaymentIdPaymentSendFailureZ {
+						func sendSpontaneousPaymentLambda(this_arg: UnsafeRawPointer?, route: UnsafePointer<LDKRoute>, payment_preimage: LDKThirtyTwoBytes, payment_id: LDKThirtyTwoBytes) -> LDKCResult_NonePaymentSendFailureZ {
 							let instance: Payer = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "Payer::sendSpontaneousPaymentLambda")
 
 							// Swift callback variable prep
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.sendSpontaneousPayment(route: Route(cType: route.pointee).dangle().clone(), paymentPreimage: ThirtyTwoBytes(cType: payment_preimage).getValue())
+							let swiftCallbackResult = instance.sendSpontaneousPayment(route: Route(cType: route.pointee).dangle().clone(), paymentPreimage: ThirtyTwoBytes(cType: payment_preimage).getValue(), paymentId: ThirtyTwoBytes(cType: payment_id).getValue())
 
 							// cleanup
 							
@@ -157,6 +181,24 @@
 							return returnValue
 						}
 		
+						func inflightHtlcsLambda(this_arg: UnsafeRawPointer?) -> LDKInFlightHtlcs {
+							let instance: Payer = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "Payer::inflightHtlcsLambda")
+
+							// Swift callback variable prep
+											
+
+							// Swift callback call
+							let swiftCallbackResult = instance.inflightHtlcs()
+
+							// cleanup
+							
+
+							// return value (do some wrapping)
+							let returnValue = swiftCallbackResult.cType!
+
+							return returnValue
+						}
+		
 						func freeLambda(this_arg: UnsafeMutableRawPointer?) -> Void {
 							let instance: Payer = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "Payer::freeLambda")
 
@@ -184,6 +226,7 @@
 							send_spontaneous_payment: sendSpontaneousPaymentLambda,
 							retry_payment: retryPaymentLambda,
 							abandon_payment: abandonPaymentLambda,
+							inflight_htlcs: inflightHtlcsLambda,
 							free: freeLambda
 						)
 					}
@@ -206,14 +249,14 @@
 					/// Sends a payment over the Lightning Network using the given [`Route`].
 					/// 
 					/// Note that payment_secret (or a relevant inner pointer) may be NULL or all-0s to represent None
-					open func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
+					open func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8], paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
 						
 						Bindings.print("Error: Payer::sendPayment MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
 					/// Sends a spontaneous payment over the Lightning Network using the given [`Route`].
-					open func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
+					open func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8], paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
 						
 						Bindings.print("Error: Payer::sendSpontaneousPayment MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
@@ -230,6 +273,14 @@
 					open func abandonPayment(paymentId: [UInt8]) -> Void {
 						
 						Bindings.print("Error: Payer::abandonPayment MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
+						abort()
+					}
+		
+					/// Construct an [`InFlightHtlcs`] containing information about currently used up liquidity
+					/// across payments.
+					open func inflightHtlcs() -> InFlightHtlcs {
+						
+						Bindings.print("Error: Payer::inflightHtlcs MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -311,12 +362,14 @@
 					/// Sends a payment over the Lightning Network using the given [`Route`].
 					/// 
 					/// Note that payment_secret (or a relevant inner pointer) may be NULL or all-0s to represent None
-					public override func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
+					public override func sendPayment(route: Route, paymentHash: [UInt8], paymentSecret: [UInt8], paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
 						// native call variable prep
 						
 						let paymentHashPrimitiveWrapper = ThirtyTwoBytes(value: paymentHash)
 				
 						let paymentSecretPrimitiveWrapper = ThirtyTwoBytes(value: paymentSecret)
+				
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
 				
 
 						
@@ -324,7 +377,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-				self.cType!.send_payment(self.cType!.this_arg, routePointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!)
+				self.cType!.send_payment(self.cType!.this_arg, routePointer, paymentHashPrimitiveWrapper.cType!, paymentSecretPrimitiveWrapper.cType!, paymentIdPrimitiveWrapper.cType!)
 						}
 				
 
@@ -336,18 +389,23 @@
 						// for elided types, we need this
 						paymentSecretPrimitiveWrapper.noOpRetain()
 				
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult)
+						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
 		
 					/// Sends a spontaneous payment over the Lightning Network using the given [`Route`].
-					public override func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8]) -> Result_PaymentIdPaymentSendFailureZ {
+					public override func sendSpontaneousPayment(route: Route, paymentPreimage: [UInt8], paymentId: [UInt8]) -> Result_NonePaymentSendFailureZ {
 						// native call variable prep
 						
 						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
+				
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
 				
 
 						
@@ -355,7 +413,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: route.cType!) { (routePointer: UnsafePointer<LDKRoute>) in
-				self.cType!.send_spontaneous_payment(self.cType!.this_arg, routePointer, paymentPreimagePrimitiveWrapper.cType!)
+				self.cType!.send_spontaneous_payment(self.cType!.this_arg, routePointer, paymentPreimagePrimitiveWrapper.cType!, paymentIdPrimitiveWrapper.cType!)
 						}
 				
 
@@ -364,9 +422,12 @@
 						// for elided types, we need this
 						paymentPreimagePrimitiveWrapper.noOpRetain()
 				
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
 
 						// return value (do some wrapping)
-						let returnValue = Result_PaymentIdPaymentSendFailureZ(cType: nativeCallResult)
+						let returnValue = Result_NonePaymentSendFailureZ(cType: nativeCallResult)
 
 						return returnValue
 					}
@@ -419,6 +480,26 @@
 
 						// return value (do some wrapping)
 						let returnValue = nativeCallResult
+
+						return returnValue
+					}
+		
+					/// Construct an [`InFlightHtlcs`] containing information about currently used up liquidity
+					/// across payments.
+					public override func inflightHtlcs() -> InFlightHtlcs {
+						// native call variable prep
+						
+
+						
+
+						// native method call
+						let nativeCallResult = self.cType!.inflight_htlcs(self.cType!.this_arg)
+
+						// cleanup
+						
+
+						// return value (do some wrapping)
+						let returnValue = InFlightHtlcs(cType: nativeCallResult)
 
 						return returnValue
 					}

@@ -6,44 +6,24 @@
 			// necessary for abort() calls
 			import Foundation
 
-			/// A trait to sign lightning channel transactions as described in BOLT 3.
+			/// A trait to sign Lightning channel transactions as described in
+			/// [BOLT 3](https://github.com/lightning/bolts/blob/master/03-transactions.md).
 			/// 
-			/// Signing services could be implemented on a hardware wallet. In this case,
-			/// the current Sign would be a front-end on top of a communication
-			/// channel connected to your secure device and lightning key material wouldn't
-			/// reside on a hot server. Nevertheless, a this deployment would still need
-			/// to trust the ChannelManager to avoid loss of funds as this latest component
-			/// could ask to sign commitment transaction with HTLCs paying to attacker pubkeys.
-			/// 
-			/// A more secure iteration would be to use hashlock (or payment points) to pair
-			/// invoice/incoming HTLCs with outgoing HTLCs to implement a no-trust-ChannelManager
-			/// at the price of more state and computation on the hardware wallet side. In the future,
-			/// we are looking forward to design such interface.
-			/// 
-			/// In any case, ChannelMonitor or fallback watchtowers are always going to be trusted
-			/// to act, as liveness and breach reply correctness are always going to be hard requirements
-			/// of LN security model, orthogonal of key management issues.
+			/// Signing services could be implemented on a hardware wallet and should implement signing
+			/// policies in order to be secure. Please refer to the [VLS Policy
+			/// Controls](https://gitlab.com/lightning-signer/validating-lightning-signer/-/blob/main/docs/policy-controls.md)
+			/// for an example of such policies.
 			public typealias BaseSign = Bindings.BaseSign
 
 			extension Bindings {
 
-				/// A trait to sign lightning channel transactions as described in BOLT 3.
+				/// A trait to sign Lightning channel transactions as described in
+				/// [BOLT 3](https://github.com/lightning/bolts/blob/master/03-transactions.md).
 				/// 
-				/// Signing services could be implemented on a hardware wallet. In this case,
-				/// the current Sign would be a front-end on top of a communication
-				/// channel connected to your secure device and lightning key material wouldn't
-				/// reside on a hot server. Nevertheless, a this deployment would still need
-				/// to trust the ChannelManager to avoid loss of funds as this latest component
-				/// could ask to sign commitment transaction with HTLCs paying to attacker pubkeys.
-				/// 
-				/// A more secure iteration would be to use hashlock (or payment points) to pair
-				/// invoice/incoming HTLCs with outgoing HTLCs to implement a no-trust-ChannelManager
-				/// at the price of more state and computation on the hardware wallet side. In the future,
-				/// we are looking forward to design such interface.
-				/// 
-				/// In any case, ChannelMonitor or fallback watchtowers are always going to be trusted
-				/// to act, as liveness and breach reply correctness are always going to be hard requirements
-				/// of LN security model, orthogonal of key management issues.
+				/// Signing services could be implemented on a hardware wallet and should implement signing
+				/// policies in order to be secure. Please refer to the [VLS Policy
+				/// Controls](https://gitlab.com/lightning-signer/validating-lightning-signer/-/blob/main/docs/policy-controls.md)
+				/// for an example of such policies.
 				open class BaseSign: NativeTraitWrapper {
 
 					
@@ -330,14 +310,14 @@
 							return returnValue
 						}
 		
-						func readyChannelLambda(this_arg: UnsafeMutableRawPointer?, channel_parameters: UnsafePointer<LDKChannelTransactionParameters>) -> Void {
-							let instance: BaseSign = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "BaseSign::readyChannelLambda")
+						func provideChannelParametersLambda(this_arg: UnsafeMutableRawPointer?, channel_parameters: UnsafePointer<LDKChannelTransactionParameters>) -> Void {
+							let instance: BaseSign = Bindings.pointerToInstance(pointer: this_arg!, sourceMarker: "BaseSign::provideChannelParametersLambda")
 
 							// Swift callback variable prep
 											
 
 							// Swift callback call
-							let swiftCallbackResult = instance.readyChannel(channelParameters: ChannelTransactionParameters(cType: channel_parameters.pointee).dangle().clone())
+							let swiftCallbackResult = instance.provideChannelParameters(channelParameters: ChannelTransactionParameters(cType: channel_parameters.pointee).dangle().clone())
 
 							// cleanup
 							
@@ -384,7 +364,7 @@
 							sign_closing_transaction: signClosingTransactionLambda,
 							sign_holder_anchor_input: signHolderAnchorInputLambda,
 							sign_channel_announcement: signChannelAnnouncementLambda,
-							ready_channel: readyChannelLambda,
+							provide_channel_parameters: provideChannelParametersLambda,
 							free: freeLambda
 						)
 					}
@@ -392,7 +372,7 @@
 					
 					/// Gets the per-commitment point for a specific commitment number
 					/// 
-					/// Note that the commitment number starts at (1 << 48) - 1 and counts backwards.
+					/// Note that the commitment number starts at `(1 << 48) - 1` and counts backwards.
 					open func getPerCommitmentPoint(idx: UInt64) -> [UInt8] {
 						
 						Bindings.print("Error: BaseSign::getPerCommitmentPoint MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
@@ -406,7 +386,7 @@
 					/// 
 					/// May be called more than once for the same index.
 					/// 
-					/// Note that the commitment number starts at (1 << 48) - 1 and counts backwards.
+					/// Note that the commitment number starts at `(1 << 48) - 1` and counts backwards.
 					open func releaseCommitmentSecret(idx: UInt64) -> [UInt8] {
 						
 						Bindings.print("Error: BaseSign::releaseCommitmentSecret MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
@@ -424,7 +404,7 @@
 					/// A validating signer should ensure that an HTLC output is removed only when the matching
 					/// preimage is provided, or when the value to holder is restored.
 					/// 
-					/// NOTE: all the relevant preimages will be provided, but there may also be additional
+					/// Note that all the relevant preimages will be provided, but there may also be additional
 					/// irrelevant or duplicate preimages.
 					open func validateHolderCommitment(holderTx: HolderCommitmentTransaction, preimages: [[UInt8]]) -> Result_NoneNoneZ {
 						
@@ -432,9 +412,9 @@
 						abort()
 					}
 		
-					/// Gets an arbitrary identifier describing the set of keys which are provided back to you in
-					/// some SpendableOutputDescriptor types. This should be sufficient to identify this
-					/// Sign object uniquely and lookup or re-derive its keys.
+					/// Returns an arbitrary identifier describing the set of keys which are provided back to you in
+					/// some [`SpendableOutputDescriptor`] types. This should be sufficient to identify this
+					/// [`BaseSign`] object uniquely and lookup or re-derive its keys.
 					open func channelKeysId() -> [UInt8] {
 						
 						Bindings.print("Error: BaseSign::channelKeysId MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
@@ -452,7 +432,7 @@
 					/// A validating signer should ensure that an HTLC output is removed only when the matching
 					/// preimage is provided, or when the value to holder is restored.
 					/// 
-					/// NOTE: all the relevant preimages will be provided, but there may also be additional
+					/// Note that all the relevant preimages will be provided, but there may also be additional
 					/// irrelevant or duplicate preimages.
 					open func signCounterpartyCommitment(commitmentTx: CommitmentTransaction, preimages: [[UInt8]]) -> Result_C2Tuple_SignatureCVec_SignatureZZNoneZ {
 						
@@ -470,17 +450,21 @@
 						abort()
 					}
 		
-					/// Create a signatures for a holder's commitment transaction and its claiming HTLC transactions.
-					/// This will only ever be called with a non-revoked commitment_tx.  This will be called with the
-					/// latest commitment_tx when we initiate a force-close.
-					/// This will be called with the previous latest, just to get claiming HTLC signatures, if we are
-					/// reacting to a ChannelMonitor replica that decided to broadcast before it had been updated to
-					/// the latest.
+					/// Creates a signature for a holder's commitment transaction and its claiming HTLC transactions.
+					/// 
+					/// This will be called
+					/// - with a non-revoked `commitment_tx`.
+					/// - with the latest `commitment_tx` when we initiate a force-close.
+					/// - with the previous `commitment_tx`, just to get claiming HTLC
+					/// signatures, if we are reacting to a [`ChannelMonitor`]
+					/// [replica](https://github.com/lightningdevkit/rust-lightning/blob/main/GLOSSARY.md#monitor-replicas)
+					/// that decided to broadcast before it had been updated to the latest `commitment_tx`.
+					/// 
 					/// This may be called multiple times for the same transaction.
 					/// 
 					/// An external signer implementation should check that the commitment has not been revoked.
 					/// 
-					/// May return Err if key derivation fails.  Callers, such as ChannelMonitor, will panic in such a case.
+					/// [`ChannelMonitor`]: crate::chain::channelmonitor::ChannelMonitor
 					open func signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction) -> Result_C2Tuple_SignatureCVec_SignatureZZNoneZ {
 						
 						Bindings.print("Error: BaseSign::signHolderCommitmentAndHtlcs MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
@@ -497,9 +481,9 @@
 					/// 
 					/// Amount is value of the output spent by this input, committed to in the BIP 143 signature.
 					/// 
-					/// per_commitment_key is revocation secret which was provided by our counterparty when they
+					/// `per_commitment_key` is revocation secret which was provided by our counterparty when they
 					/// revoked the state which they eventually broadcast. It's not a _holder_ secret key and does
-					/// not allow the spending of any funds by itself (you need our holder revocation_secret to do
+					/// not allow the spending of any funds by itself (you need our holder `revocation_secret` to do
 					/// so).
 					open func signJusticeRevokedOutput(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?) -> Result_SignatureNoneZ {
 						
@@ -515,14 +499,15 @@
 					/// It may be called multiple times for same output(s) if a fee-bump is needed with regards
 					/// to an upcoming timelock expiration.
 					/// 
-					/// Amount is value of the output spent by this input, committed to in the BIP 143 signature.
+					/// `amount` is the value of the output spent by this input, committed to in the BIP 143
+					/// signature.
 					/// 
-					/// per_commitment_key is revocation secret which was provided by our counterparty when they
+					/// `per_commitment_key` is revocation secret which was provided by our counterparty when they
 					/// revoked the state which they eventually broadcast. It's not a _holder_ secret key and does
 					/// not allow the spending of any funds by itself (you need our holder revocation_secret to do
 					/// so).
 					/// 
-					/// htlc holds HTLC elements (hash, timelock), thus changing the format of the witness script
+					/// `htlc` holds HTLC elements (hash, timelock), thus changing the format of the witness script
 					/// (which is committed to in the BIP 143 signatures).
 					open func signJusticeRevokedHtlc(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?, htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						
@@ -538,12 +523,12 @@
 					/// signed for here. It may be called multiple times for same output(s) if a fee-bump is
 					/// needed with regards to an upcoming timelock expiration.
 					/// 
-					/// Witness_script is either a offered or received script as defined in BOLT3 for HTLC
+					/// `witness_script` is either an offered or received script as defined in BOLT3 for HTLC
 					/// outputs.
 					/// 
-					/// Amount is value of the output spent by this input, committed to in the BIP 143 signature.
+					/// `amount` is value of the output spent by this input, committed to in the BIP 143 signature.
 					/// 
-					/// Per_commitment_point is the dynamic point corresponding to the channel state
+					/// `per_commitment_point` is the dynamic point corresponding to the channel state
 					/// detected onchain. It has been generated by our counterparty and is used to derive
 					/// channel state keys, which are then included in the witness script and committed to in the
 					/// BIP 143 signature.
@@ -587,18 +572,14 @@
 					}
 		
 					/// Set the counterparty static channel data, including basepoints,
-					/// counterparty_selected/holder_selected_contest_delay and funding outpoint.
-					/// This is done as soon as the funding outpoint is known.  Since these are static channel data,
-					/// they MUST NOT be allowed to change to different values once set.
+					/// `counterparty_selected`/`holder_selected_contest_delay` and funding outpoint. Since these
+					/// are static channel data, they MUST NOT be allowed to change to different values once set,
+					/// as LDK may call this method more than once.
 					/// 
 					/// channel_parameters.is_populated() MUST be true.
-					/// 
-					/// We bind holder_selected_contest_delay late here for API convenience.
-					/// 
-					/// Will be called before any signatures are applied.
-					open func readyChannel(channelParameters: ChannelTransactionParameters) -> Void {
+					open func provideChannelParameters(channelParameters: ChannelTransactionParameters) -> Void {
 						
-						Bindings.print("Error: BaseSign::readyChannel MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
+						Bindings.print("Error: BaseSign::provideChannelParameters MUST be overridden! Offending class: \(String(describing: self)). Aborting.", severity: .ERROR)
 						abort()
 					}
 		
@@ -617,7 +598,7 @@
 					
 
 					
-					/// Gets the holder's channel public keys and basepoints
+					/// Returns the holder's channel public keys and basepoints.
 					public func getPubkeys() -> ChannelPublicKeys {
 						// return value (do some wrapping)
 						let returnValue = ChannelPublicKeys(cType: self.cType!.pubkeys, anchor: self)
@@ -649,7 +630,7 @@
 					
 					/// Gets the per-commitment point for a specific commitment number
 					/// 
-					/// Note that the commitment number starts at (1 << 48) - 1 and counts backwards.
+					/// Note that the commitment number starts at `(1 << 48) - 1` and counts backwards.
 					public override func getPerCommitmentPoint(idx: UInt64) -> [UInt8] {
 						// native call variable prep
 						
@@ -675,7 +656,7 @@
 					/// 
 					/// May be called more than once for the same index.
 					/// 
-					/// Note that the commitment number starts at (1 << 48) - 1 and counts backwards.
+					/// Note that the commitment number starts at `(1 << 48) - 1` and counts backwards.
 					public override func releaseCommitmentSecret(idx: UInt64) -> [UInt8] {
 						// native call variable prep
 						
@@ -705,7 +686,7 @@
 					/// A validating signer should ensure that an HTLC output is removed only when the matching
 					/// preimage is provided, or when the value to holder is restored.
 					/// 
-					/// NOTE: all the relevant preimages will be provided, but there may also be additional
+					/// Note that all the relevant preimages will be provided, but there may also be additional
 					/// irrelevant or duplicate preimages.
 					public override func validateHolderCommitment(holderTx: HolderCommitmentTransaction, preimages: [[UInt8]]) -> Result_NoneNoneZ {
 						// native call variable prep
@@ -733,9 +714,9 @@
 						return returnValue
 					}
 		
-					/// Gets an arbitrary identifier describing the set of keys which are provided back to you in
-					/// some SpendableOutputDescriptor types. This should be sufficient to identify this
-					/// Sign object uniquely and lookup or re-derive its keys.
+					/// Returns an arbitrary identifier describing the set of keys which are provided back to you in
+					/// some [`SpendableOutputDescriptor`] types. This should be sufficient to identify this
+					/// [`BaseSign`] object uniquely and lookup or re-derive its keys.
 					public override func channelKeysId() -> [UInt8] {
 						// native call variable prep
 						
@@ -765,7 +746,7 @@
 					/// A validating signer should ensure that an HTLC output is removed only when the matching
 					/// preimage is provided, or when the value to holder is restored.
 					/// 
-					/// NOTE: all the relevant preimages will be provided, but there may also be additional
+					/// Note that all the relevant preimages will be provided, but there may also be additional
 					/// irrelevant or duplicate preimages.
 					public override func signCounterpartyCommitment(commitmentTx: CommitmentTransaction, preimages: [[UInt8]]) -> Result_C2Tuple_SignatureCVec_SignatureZZNoneZ {
 						// native call variable prep
@@ -824,17 +805,21 @@
 						return returnValue
 					}
 		
-					/// Create a signatures for a holder's commitment transaction and its claiming HTLC transactions.
-					/// This will only ever be called with a non-revoked commitment_tx.  This will be called with the
-					/// latest commitment_tx when we initiate a force-close.
-					/// This will be called with the previous latest, just to get claiming HTLC signatures, if we are
-					/// reacting to a ChannelMonitor replica that decided to broadcast before it had been updated to
-					/// the latest.
+					/// Creates a signature for a holder's commitment transaction and its claiming HTLC transactions.
+					/// 
+					/// This will be called
+					/// - with a non-revoked `commitment_tx`.
+					/// - with the latest `commitment_tx` when we initiate a force-close.
+					/// - with the previous `commitment_tx`, just to get claiming HTLC
+					/// signatures, if we are reacting to a [`ChannelMonitor`]
+					/// [replica](https://github.com/lightningdevkit/rust-lightning/blob/main/GLOSSARY.md#monitor-replicas)
+					/// that decided to broadcast before it had been updated to the latest `commitment_tx`.
+					/// 
 					/// This may be called multiple times for the same transaction.
 					/// 
 					/// An external signer implementation should check that the commitment has not been revoked.
 					/// 
-					/// May return Err if key derivation fails.  Callers, such as ChannelMonitor, will panic in such a case.
+					/// [`ChannelMonitor`]: crate::chain::channelmonitor::ChannelMonitor
 					public override func signHolderCommitmentAndHtlcs(commitmentTx: HolderCommitmentTransaction) -> Result_C2Tuple_SignatureCVec_SignatureZZNoneZ {
 						// native call variable prep
 						
@@ -867,9 +852,9 @@
 					/// 
 					/// Amount is value of the output spent by this input, committed to in the BIP 143 signature.
 					/// 
-					/// per_commitment_key is revocation secret which was provided by our counterparty when they
+					/// `per_commitment_key` is revocation secret which was provided by our counterparty when they
 					/// revoked the state which they eventually broadcast. It's not a _holder_ secret key and does
-					/// not allow the spending of any funds by itself (you need our holder revocation_secret to do
+					/// not allow the spending of any funds by itself (you need our holder `revocation_secret` to do
 					/// so).
 					public override func signJusticeRevokedOutput(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?) -> Result_SignatureNoneZ {
 						// native call variable prep
@@ -911,14 +896,15 @@
 					/// It may be called multiple times for same output(s) if a fee-bump is needed with regards
 					/// to an upcoming timelock expiration.
 					/// 
-					/// Amount is value of the output spent by this input, committed to in the BIP 143 signature.
+					/// `amount` is the value of the output spent by this input, committed to in the BIP 143
+					/// signature.
 					/// 
-					/// per_commitment_key is revocation secret which was provided by our counterparty when they
+					/// `per_commitment_key` is revocation secret which was provided by our counterparty when they
 					/// revoked the state which they eventually broadcast. It's not a _holder_ secret key and does
 					/// not allow the spending of any funds by itself (you need our holder revocation_secret to do
 					/// so).
 					/// 
-					/// htlc holds HTLC elements (hash, timelock), thus changing the format of the witness script
+					/// `htlc` holds HTLC elements (hash, timelock), thus changing the format of the witness script
 					/// (which is committed to in the BIP 143 signatures).
 					public override func signJusticeRevokedHtlc(justiceTx: [UInt8], input: UInt, amount: UInt64, perCommitmentKey: [UInt8]?, htlc: HTLCOutputInCommitment) -> Result_SignatureNoneZ {
 						// native call variable prep
@@ -964,12 +950,12 @@
 					/// signed for here. It may be called multiple times for same output(s) if a fee-bump is
 					/// needed with regards to an upcoming timelock expiration.
 					/// 
-					/// Witness_script is either a offered or received script as defined in BOLT3 for HTLC
+					/// `witness_script` is either an offered or received script as defined in BOLT3 for HTLC
 					/// outputs.
 					/// 
-					/// Amount is value of the output spent by this input, committed to in the BIP 143 signature.
+					/// `amount` is value of the output spent by this input, committed to in the BIP 143 signature.
 					/// 
-					/// Per_commitment_point is the dynamic point corresponding to the channel state
+					/// `per_commitment_point` is the dynamic point corresponding to the channel state
 					/// detected onchain. It has been generated by our counterparty and is used to derive
 					/// channel state keys, which are then included in the witness script and committed to in the
 					/// BIP 143 signature.
@@ -1088,16 +1074,12 @@
 					}
 		
 					/// Set the counterparty static channel data, including basepoints,
-					/// counterparty_selected/holder_selected_contest_delay and funding outpoint.
-					/// This is done as soon as the funding outpoint is known.  Since these are static channel data,
-					/// they MUST NOT be allowed to change to different values once set.
+					/// `counterparty_selected`/`holder_selected_contest_delay` and funding outpoint. Since these
+					/// are static channel data, they MUST NOT be allowed to change to different values once set,
+					/// as LDK may call this method more than once.
 					/// 
 					/// channel_parameters.is_populated() MUST be true.
-					/// 
-					/// We bind holder_selected_contest_delay late here for API convenience.
-					/// 
-					/// Will be called before any signatures are applied.
-					public override func readyChannel(channelParameters: ChannelTransactionParameters) {
+					public override func provideChannelParameters(channelParameters: ChannelTransactionParameters) {
 						// native call variable prep
 						
 
@@ -1106,7 +1088,7 @@
 						// native method call
 						let nativeCallResult = 
 						withUnsafePointer(to: channelParameters.cType!) { (channelParametersPointer: UnsafePointer<LDKChannelTransactionParameters>) in
-				self.cType!.ready_channel(self.cType!.this_arg, channelParametersPointer)
+				self.cType!.provide_channel_parameters(self.cType!.this_arg, channelParametersPointer)
 						}
 				
 

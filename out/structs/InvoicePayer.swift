@@ -100,9 +100,12 @@
 		
 					/// Pays the given [`Invoice`], caching it for later use in case a retry is needed.
 					/// 
-					/// You should ensure that the `invoice.payment_hash()` is unique and the same payment_hash has
-					/// never been paid before. Because [`InvoicePayer`] is stateless no effort is made to do so
-					/// for you.
+					/// [`Invoice::payment_hash`] is used as the [`PaymentId`], which ensures idempotency as long
+					/// as the payment is still pending. Once the payment completes or fails, you must ensure that
+					/// a second payment with the same [`PaymentHash`] is never sent.
+					/// 
+					/// If you wish to use a different payment idempotency token, see
+					/// [`Self::pay_invoice_with_id`].
 					public func payInvoice(invoice: Invoice) -> Result_PaymentIdPaymentErrorZ {
 						// native call variable prep
 						
@@ -129,12 +132,57 @@
 						return returnValue
 					}
 		
+					/// Pays the given [`Invoice`] with a custom idempotency key, caching the invoice for later use
+					/// in case a retry is needed.
+					/// 
+					/// Note that idempotency is only guaranteed as long as the payment is still pending. Once the
+					/// payment completes or fails, no idempotency guarantees are made.
+					/// 
+					/// You should ensure that the [`Invoice::payment_hash`] is unique and the same [`PaymentHash`]
+					/// has never been paid before.
+					/// 
+					/// See [`Self::pay_invoice`] for a variant which uses the [`PaymentHash`] for the idempotency
+					/// token.
+					public func payInvoiceWithId(invoice: Invoice, paymentId: [UInt8]) -> Result_NonePaymentErrorZ {
+						// native call variable prep
+						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
+				
+						withUnsafePointer(to: invoice.cType!) { (invoicePointer: UnsafePointer<LDKInvoice>) in
+				InvoicePayer_pay_invoice_with_id(thisArgPointer, invoicePointer, paymentIdPrimitiveWrapper.cType!)
+						}
+				
+						}
+				
+
+						// cleanup
+						
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
+
+						
+						// return value (do some wrapping)
+						let returnValue = Result_NonePaymentErrorZ(cType: nativeCallResult, anchor: self)
+						
+
+						return returnValue
+					}
+		
 					/// Pays the given zero-value [`Invoice`] using the given amount, caching it for later use in
 					/// case a retry is needed.
 					/// 
-					/// You should ensure that the `invoice.payment_hash()` is unique and the same payment_hash has
-					/// never been paid before. Because [`InvoicePayer`] is stateless no effort is made to do so
-					/// for you.
+					/// [`Invoice::payment_hash`] is used as the [`PaymentId`], which ensures idempotency as long
+					/// as the payment is still pending. Once the payment completes or fails, you must ensure that
+					/// a second payment with the same [`PaymentHash`] is never sent.
+					/// 
+					/// If you wish to use a different payment idempotency token, see
+					/// [`Self::pay_zero_value_invoice_with_id`].
 					public func payZeroValueInvoice(invoice: Invoice, amountMsats: UInt64) -> Result_PaymentIdPaymentErrorZ {
 						// native call variable prep
 						
@@ -161,11 +209,54 @@
 						return returnValue
 					}
 		
+					/// Pays the given zero-value [`Invoice`] using the given amount and custom idempotency key,
+					/// caching the invoice for later use in case a retry is needed.
+					/// 
+					/// Note that idempotency is only guaranteed as long as the payment is still pending. Once the
+					/// payment completes or fails, no idempotency guarantees are made.
+					/// 
+					/// You should ensure that the [`Invoice::payment_hash`] is unique and the same [`PaymentHash`]
+					/// has never been paid before.
+					/// 
+					/// See [`Self::pay_zero_value_invoice`] for a variant which uses the [`PaymentHash`] for the
+					/// idempotency token.
+					public func payZeroValueInvoiceWithId(invoice: Invoice, amountMsats: UInt64, paymentId: [UInt8]) -> Result_NonePaymentErrorZ {
+						// native call variable prep
+						
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
+				
+						withUnsafePointer(to: invoice.cType!) { (invoicePointer: UnsafePointer<LDKInvoice>) in
+				InvoicePayer_pay_zero_value_invoice_with_id(thisArgPointer, invoicePointer, amountMsats, paymentIdPrimitiveWrapper.cType!)
+						}
+				
+						}
+				
+
+						// cleanup
+						
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
+
+						
+						// return value (do some wrapping)
+						let returnValue = Result_NonePaymentErrorZ(cType: nativeCallResult, anchor: self)
+						
+
+						return returnValue
+					}
+		
 					/// Pays `pubkey` an amount using the hash of the given preimage, caching it for later use in
 					/// case a retry is needed.
 					/// 
-					/// You should ensure that `payment_preimage` is unique and that its `payment_hash` has never
-					/// been paid before. Because [`InvoicePayer`] is stateless no effort is made to do so for you.
+					/// The hash of the [`PaymentPreimage`] is used as the [`PaymentId`], which ensures idempotency
+					/// as long as the payment is still pending. Once the payment completes or fails, you must
+					/// ensure that a second payment with the same [`PaymentPreimage`] is never sent.
 					public func payPubkey(pubkey: [UInt8], paymentPreimage: [UInt8], amountMsats: UInt64, finalCltvExpiryDelta: UInt32) -> Result_PaymentIdPaymentErrorZ {
 						// native call variable prep
 						
@@ -193,6 +284,51 @@
 						
 						// return value (do some wrapping)
 						let returnValue = Result_PaymentIdPaymentErrorZ(cType: nativeCallResult, anchor: self)
+						
+
+						return returnValue
+					}
+		
+					/// Pays `pubkey` an amount using the hash of the given preimage and a custom idempotency key,
+					/// caching the invoice for later use in case a retry is needed.
+					/// 
+					/// Note that idempotency is only guaranteed as long as the payment is still pending. Once the
+					/// payment completes or fails, no idempotency guarantees are made.
+					/// 
+					/// You should ensure that the [`PaymentPreimage`] is unique and the corresponding
+					/// [`PaymentHash`] has never been paid before.
+					public func payPubkeyWithId(pubkey: [UInt8], paymentPreimage: [UInt8], paymentId: [UInt8], amountMsats: UInt64, finalCltvExpiryDelta: UInt32) -> Result_NonePaymentErrorZ {
+						// native call variable prep
+						
+						let pubkeyPrimitiveWrapper = PublicKey(value: pubkey)
+				
+						let paymentPreimagePrimitiveWrapper = ThirtyTwoBytes(value: paymentPreimage)
+				
+						let paymentIdPrimitiveWrapper = ThirtyTwoBytes(value: paymentId)
+				
+
+						// native method call
+						let nativeCallResult = 
+						withUnsafePointer(to: self.cType!) { (thisArgPointer: UnsafePointer<LDKInvoicePayer>) in
+				InvoicePayer_pay_pubkey_with_id(thisArgPointer, pubkeyPrimitiveWrapper.cType!, paymentPreimagePrimitiveWrapper.cType!, paymentIdPrimitiveWrapper.cType!, amountMsats, finalCltvExpiryDelta)
+						}
+				
+
+						// cleanup
+						
+						// for elided types, we need this
+						pubkeyPrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentPreimagePrimitiveWrapper.noOpRetain()
+				
+						// for elided types, we need this
+						paymentIdPrimitiveWrapper.noOpRetain()
+				
+
+						
+						// return value (do some wrapping)
+						let returnValue = Result_NonePaymentErrorZ(cType: nativeCallResult, anchor: self)
 						
 
 						return returnValue

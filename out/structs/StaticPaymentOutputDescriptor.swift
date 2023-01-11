@@ -4,15 +4,17 @@
 			import LDKHeaders
 			#endif
 
-			/// Information about a spendable output to our \"payment key\". See
-			/// SpendableOutputDescriptor::StaticPaymentOutput for more details on how to spend this.
+			/// Information about a spendable output to our \"payment key\".
+			/// 
+			/// See [`SpendableOutputDescriptor::StaticPaymentOutput`] for more details on how to spend this.
 			public typealias StaticPaymentOutputDescriptor = Bindings.StaticPaymentOutputDescriptor
 
 			extension Bindings {
 		
 
-				/// Information about a spendable output to our \"payment key\". See
-				/// SpendableOutputDescriptor::StaticPaymentOutput for more details on how to spend this.
+				/// Information about a spendable output to our \"payment key\".
+				/// 
+				/// See [`SpendableOutputDescriptor::StaticPaymentOutput`] for more details on how to spend this.
 				public class StaticPaymentOutputDescriptor: NativeTypeWrapper {
 
 					let initialCFreeability: Bool
@@ -62,7 +64,7 @@
 						return returnValue
 					}
 		
-					/// The outpoint which is spendable
+					/// The outpoint which is spendable.
 					public func getOutpoint() -> OutPoint {
 						// native call variable prep
 						
@@ -85,7 +87,7 @@
 						return returnValue
 					}
 		
-					/// The outpoint which is spendable
+					/// The outpoint which is spendable.
 					public func setOutpoint(val: OutPoint) {
 						// native call variable prep
 						
@@ -108,7 +110,7 @@
 						return returnValue
 					}
 		
-					/// The output which is referenced by the given outpoint
+					/// The output which is referenced by the given outpoint.
 					/// 
 					/// Returns a copy of the field.
 					public func getOutput() -> TxOut {
@@ -133,7 +135,7 @@
 						return returnValue
 					}
 		
-					/// The output which is referenced by the given outpoint
+					/// The output which is referenced by the given outpoint.
 					public func setOutput(val: TxOut) {
 						// native call variable prep
 						
@@ -156,9 +158,8 @@
 						return returnValue
 					}
 		
-					/// Arbitrary identification information returned by a call to
-					/// `Sign::channel_keys_id()`. This may be useful in re-deriving keys used in
-					/// the channel to spend the output.
+					/// Arbitrary identification information returned by a call to [`BaseSign::channel_keys_id`].
+					/// This may be useful in re-deriving keys used in the channel to spend the output.
 					public func getChannelKeysId() -> [UInt8]? {
 						// native call variable prep
 						
@@ -185,9 +186,8 @@
 						return returnValue
 					}
 		
-					/// Arbitrary identification information returned by a call to
-					/// `Sign::channel_keys_id()`. This may be useful in re-deriving keys used in
-					/// the channel to spend the output.
+					/// Arbitrary identification information returned by a call to [`BaseSign::channel_keys_id`].
+					/// This may be useful in re-deriving keys used in the channel to spend the output.
 					public func setChannelKeysId(val: [UInt8]) {
 						// native call variable prep
 						

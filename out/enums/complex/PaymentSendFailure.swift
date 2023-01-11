@@ -43,23 +43,43 @@
 					public enum PaymentSendFailureType {
 						
 						/// A parameter which was passed to send_payment was invalid, preventing us from attempting to
-						/// send the payment at all. No channel state has been changed or messages sent to peers, and
-						/// once you've changed the parameter at error, you can freely retry the payment in full.
+						/// send the payment at all.
+						/// 
+						/// You can freely resend the payment in full (with the parameter error fixed).
+						/// 
+						/// Because the payment failed outright, no payment tracking is done, you do not need to call
+						/// [`ChannelManager::abandon_payment`] and [`ChannelManager::retry_payment`] will *not* work
+						/// for this payment.
 						case ParameterError
 			
 						/// A parameter in a single path which was passed to send_payment was invalid, preventing us
-						/// from attempting to send the payment at all. No channel state has been changed or messages
-						/// sent to peers, and once you've changed the parameter at error, you can freely retry the
-						/// payment in full.
+						/// from attempting to send the payment at all.
+						/// 
+						/// You can freely resend the payment in full (with the parameter error fixed).
 						/// 
 						/// The results here are ordered the same as the paths in the route object which was passed to
 						/// send_payment.
+						/// 
+						/// Because the payment failed outright, no payment tracking is done, you do not need to call
+						/// [`ChannelManager::abandon_payment`] and [`ChannelManager::retry_payment`] will *not* work
+						/// for this payment.
 						case PathParameterError
 			
 						/// All paths which were attempted failed to send, with no channel state change taking place.
-						/// You can freely retry the payment in full (though you probably want to do so over different
+						/// You can freely resend the payment in full (though you probably want to do so over different
 						/// paths than the ones selected).
-						case AllFailedRetrySafe
+						/// 
+						/// Because the payment failed outright, no payment tracking is done, you do not need to call
+						/// [`ChannelManager::abandon_payment`] and [`ChannelManager::retry_payment`] will *not* work
+						/// for this payment.
+						case AllFailedResendSafe
+			
+						/// Indicates that a payment for the provided [`PaymentId`] is already in-flight and has not
+						/// yet completed (i.e. generated an [`Event::PaymentSent`]) or been abandoned (via
+						/// [`ChannelManager::abandon_payment`]).
+						/// 
+						/// [`Event::PaymentSent`]: events::Event::PaymentSent
+						case DuplicatePayment
 			
 						/// Some paths which were attempted failed to send, though possibly not all. At least some
 						/// paths have irrevocably committed to the HTLC and retrying the payment in full would result
@@ -85,8 +105,11 @@
 							case LDKPaymentSendFailure_PathParameterError:
 								return .PathParameterError
 			
-							case LDKPaymentSendFailure_AllFailedRetrySafe:
-								return .AllFailedRetrySafe
+							case LDKPaymentSendFailure_AllFailedResendSafe:
+								return .AllFailedResendSafe
+			
+							case LDKPaymentSendFailure_DuplicatePayment:
+								return .DuplicatePayment
 			
 							case LDKPaymentSendFailure_PartialFailure:
 								return .PartialFailure
@@ -183,20 +206,39 @@
 						return returnValue
 					}
 		
-					/// Utility method to constructs a new AllFailedRetrySafe-variant PaymentSendFailure
-					public class func initWithAllFailedRetrySafe(a: [APIError]) -> PaymentSendFailure {
+					/// Utility method to constructs a new AllFailedResendSafe-variant PaymentSendFailure
+					public class func initWithAllFailedResendSafe(a: [APIError]) -> PaymentSendFailure {
 						// native call variable prep
 						
 						let aVector = Vec_APIErrorZ(array: a).dangle()
 				
 
 						// native method call
-						let nativeCallResult = PaymentSendFailure_all_failed_retry_safe(aVector.cType!)
+						let nativeCallResult = PaymentSendFailure_all_failed_resend_safe(aVector.cType!)
 
 						// cleanup
 						
 						// aVector.noOpRetain()
 				
+
+						
+						// return value (do some wrapping)
+						let returnValue = PaymentSendFailure(cType: nativeCallResult)
+						
+
+						return returnValue
+					}
+		
+					/// Utility method to constructs a new DuplicatePayment-variant PaymentSendFailure
+					public class func initWithDuplicatePayment() -> PaymentSendFailure {
+						// native call variable prep
+						
+
+						// native method call
+						let nativeCallResult = PaymentSendFailure_duplicate_payment()
+
+						// cleanup
+						
 
 						
 						// return value (do some wrapping)
@@ -252,12 +294,12 @@
 						return Vec_CResult_NoneAPIErrorZZ(cType: self.cType!.path_parameter_error, anchor: self).getValue()
 					}
 			
-					public func getValueAsAllFailedRetrySafe() -> [APIError]? {
-						if self.cType?.tag != LDKPaymentSendFailure_AllFailedRetrySafe {
+					public func getValueAsAllFailedResendSafe() -> [APIError]? {
+						if self.cType?.tag != LDKPaymentSendFailure_AllFailedResendSafe {
 							return nil
 						}
 
-						return Vec_APIErrorZ(cType: self.cType!.all_failed_retry_safe, anchor: self).getValue()
+						return Vec_APIErrorZ(cType: self.cType!.all_failed_resend_safe, anchor: self).getValue()
 					}
 			
 					public func getValueAsPartialFailure() -> PartialFailure? {
